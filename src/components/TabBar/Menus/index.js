@@ -55,7 +55,7 @@ const Menus = forwardRef(
     // 内容DOM
     function getMenus() {
       if (!Array.isArray(list)) {
-        console.log('SeedsUI TabBar: Parameter list is wrong')
+        console.log('Lyrixi TabBar: Parameter list is wrong')
         return null
       }
 

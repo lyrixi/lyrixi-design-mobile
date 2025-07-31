@@ -147,7 +147,7 @@ const Modal = forwardRef(
                 setCurrentValue(value)
               }
             } catch (error) {
-              console.log('SeedsUI SelectModal: ', error)
+              console.log('Lyrixi SelectModal: ', error)
               setCurrentValue(value)
             }
           }

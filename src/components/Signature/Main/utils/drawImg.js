@@ -3,7 +3,7 @@ import startCoord from './startCoord'
 // 绘制图片
 function drawImg(fillStyle, { ctx, width, height }) {
   if (!fillStyle?.src) {
-    console.log('SeedsUI Error:手写签名drawImg缺少imgSrc')
+    console.log('Lyrixi Error:手写签名drawImg缺少imgSrc')
     return
   }
   let imgW = fillStyle.width

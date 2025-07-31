@@ -2,7 +2,7 @@
 
 <img height="180" src="https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png">
 
-<h1>SeedsUI for React</h1>
+<h1>Lyrixi for React</h1>
 
 An enterprise-class UI design language and React UI library.
 
@@ -54,7 +54,7 @@ Add scripts to `index.html`
 <script src="https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/externals/dayjs.1.11.8.min.js"></script>
 <script src="https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/externals/ahooks.3.8.1.min.js"></script>
 <script src="https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/externals/lodash.4.17.21.min.js"></script>
-<!-- SeedsUI must defer -->
+<!-- Lyrixi must defer -->
 <script
   defer
   src="https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/externals/lyrixi-design-mobile.min.js"
@@ -83,7 +83,7 @@ return {
     dayjs: 'dayjs',
     lodash: '_',
     ahooks: 'ahooks',
-    'lyrixi-design-mobile': 'SeedsUI'
+    'lyrixi-design-mobile': 'Lyrixi'
   },
   // [自定义修改]公共cdn文件 end
   target: ['browserslist'],

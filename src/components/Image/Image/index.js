@@ -236,7 +236,7 @@ const Image = forwardRef(
     // 重新上传
     async function handleReUpload(item, index) {
       if (typeof onChange !== 'function') {
-        console.warn('SeedsUI Image: onChange is not a function')
+        console.warn('Lyrixi Image: onChange is not a function')
         return
       }
       let newList = [...list]

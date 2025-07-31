@@ -69,7 +69,7 @@ export default defineConfig({
   ],
   metas: [{ name: 'viewport', content: 'width=device-width,viewport-fit=cover' }],
   themeConfig: {
-    name: 'SeedsUI',
+    name: 'Lyrixi',
     // 导航
     nav: {
       'zh-CN': [
@@ -93,7 +93,7 @@ export default defineConfig({
     },
     // 底部
     footer:
-      '<div class="homepage-copyright">Copyright © 2023 | Powered <span style="color: #ff8800;">❤</span> by <a href="https://github.com/colaboy/lyrixi-design-mobile" target="_blank" rel="noreferrer">SeedsUI</a></div>',
+      '<div class="homepage-copyright">Copyright © 2023 | Powered <span style="color: #ff8800;">❤</span> by <a href="https://github.com/colaboy/lyrixi-design-mobile" target="_blank" rel="noreferrer">Lyrixi</a></div>',
     // 配置 demo 预览器的设备宽度，默认为 375px
     deviceWidth: 375,
     // 配置为空数组时可禁用 umi-hd 高清方案, 否则预览时会缩小
@@ -136,52 +136,11 @@ export default defineConfig({
   ],
   // 代理
   proxy: {
-    // 代理-api(访问 /api/users 就能访问到 http://jsonplaceholder.typicode.com/users 的数据。)
+    /* 代理跨域请求 */
     '/api': {
       target: proxyServer,
       changeOrigin: true,
       pathRewrite: { '^/api': '' }
-    },
-    // 代理登录
-    '/login': {
-      target: proxyServer,
-      changeOrigin: true,
-      pathRewrite: {
-        '^/login': '/'
-      }
-    },
-    /* 代理登录: 登陆页面的其它请求start */
-    '/auth': {
-      target: proxyServer,
-      changeOrigin: true
-    },
-    '/platform': {
-      target: proxyServer,
-      changeOrigin: true
-    },
-    '/app/apaas': {
-      target: proxyServer,
-      changeOrigin: true,
-      pathRewrite: { '^/api/app/apaas': '' }
-    },
-    '/apaas': {
-      target: proxyServer,
-      changeOrigin: true,
-      pathRewrite: { '^/api/apaas': '' }
-    },
-    '/portal': {
-      target: proxyServer,
-      changeOrigin: true
-    },
-    /* 代理登录: 登陆页面的其它请求end */
-    // 代理-pdf
-    '/contract_redirect/': {
-      // target: 'https://contract.yoururl.com',
-      target: 'https://contract-test.yoururl.com',
-      changeOrigin: true,
-      pathRewrite: {
-        '^/contract_redirect/': '/'
-      }
     }
   }
 })

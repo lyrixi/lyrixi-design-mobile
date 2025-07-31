@@ -13,7 +13,7 @@ export default () => {
   // 底部
   const footerGroups = [
     {
-      title: 'SeedsUI',
+      title: 'Lyrixi',
       items: [
         {
           title: 'GitHub',

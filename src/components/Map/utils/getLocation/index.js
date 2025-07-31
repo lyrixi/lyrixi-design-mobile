@@ -26,11 +26,11 @@ function getLocation(options) {
     Bridge.getLocation({
       type: type,
       success: async (data) => {
-        console.log('SeedsUI location success:', data)
+        console.log('Lyrixi location success:', data)
         resolve(data)
       },
       fail: (error) => {
-        console.error('SeedsUI location fail:', error)
+        console.error('Lyrixi location fail:', error)
         // 赋值
         resolve(LocaleUtil.locale('定位失败, 请检查定位权限是否开启', 'SeedsUI_location_failed'))
       }

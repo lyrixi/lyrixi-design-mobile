@@ -1,0 +1,77 @@
+@import 'Group/CheckboxGroup.less';
+
+// Checkbox控件
+.checkbox {
+  .inline-flex;
+  .flex-middle;
+  vertical-align: middle;
+  // 禁用状态
+  &[disabled] {
+    .checkbox-icon {
+      background-color: #f8f7f7;
+      border-color: #e5e5e5;
+    }
+    .checkbox-content,
+    &.checked {
+      opacity: 0.5;
+    }
+  }
+}
+
+// input图标
+.checkbox-icon {
+  .inline-flex;
+  .flex-middle;
+  .flex-center;
+  box-sizing: border-box;
+  vertical-align: middle;
+  width: 22px;
+  height: 22px;
+
+  // 默认样式
+  &.default {
+    line-height: 14px;
+    border: 1px solid #ced2d8;
+    border-radius: 100%;
+  }
+  // 勾子样式
+  &.tick {
+  }
+}
+
+// input图标选中状态
+.checkbox.checked {
+  // 默认样式
+  .checkbox-icon.default {
+    border: 0;
+    background-color: var(--primary);
+    color: white;
+    font-family: 'seeds-icons';
+    &:extend(.seeds-icon-ok all);
+    &:before {
+      width: 12px;
+      height: 12px;
+      font-size: 12px;
+      line-height: 12px;
+      font-weight: bold;
+    }
+  }
+  // 勾子样式
+  .checkbox-icon.tick {
+    color: var(--primary);
+    font-family: 'seeds-icons';
+    &:extend(.seeds-icon-ok all);
+    &:before {
+      width: 18px;
+      height: 18px;
+      font-size: 18px;
+      line-height: 18px;
+      font-weight: bold;
+    }
+  }
+}
+
+// content
+.checkbox-content {
+  margin-left: var(--space-xs);
+}

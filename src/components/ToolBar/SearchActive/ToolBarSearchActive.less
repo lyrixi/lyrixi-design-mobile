@@ -1,0 +1,27 @@
+// 激活时要占满左右
+.toolbar-search-bar {
+  display: flex;
+  flex: auto;
+  align-items: center;
+  gap: 8px;
+
+  // 占满左右
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: var(--toolbar-bg);
+}
+
+// Ok button
+.toolbar-search-button-ok {
+  padding: 0 2px;
+  color: var(--primary);
+}
+
+// Cancel button
+.toolbar-search-button-cancel {
+  padding: 0 2px;
+}

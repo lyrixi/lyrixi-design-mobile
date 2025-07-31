@@ -1,0 +1,79 @@
+// 悬浮按钮
+.float-button-container {
+  position: fixed;
+  z-index: 2;
+  bottom: 80px;
+  right: 8px;
+  .float-button:not(:first-child) {
+    margin-top: 16px;
+  }
+}
+.float-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  background: #ffffff;
+  border: 0.5px solid rgba(221, 226, 232, 1);
+  box-shadow: 0px 2px 5px 1px rgba(44, 53, 69, 0.15);
+  color: var(--navbar-icon);
+}
+
+.float-button-icon {
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+  &.m {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+  }
+}
+.float-button-icon-more {
+  font-family: 'seeds-icons';
+  &:extend(.seeds-icon-three-dots all);
+  font-size: 34px;
+  width: 34px;
+  height: 34px;
+}
+.float-button-label {
+  font-size: var(--font-size-m);
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  .nowrap2;
+}
+.float-button-icon + .float-button-label {
+  font-size: var(--font-size-s);
+}
+
+// Adapt to the safe area
+// 子元素自动安全区
+.auto-safe-area-children {
+  #root > .float-button-container {
+    &:extend(.safe-area all);
+    &:extend(.safe-area.border-bottom all);
+  }
+}
+
+// Adapt to the safe area: className
+.float-button-container.safeArea {
+  &:extend(.safe-area all);
+  &:extend(.safe-area.border-bottom all);
+}
+
+// Adapt to the safe area: safeArea={false}
+.float-button-container.clearSafeArea {
+  &:extend(.clear-safe-area all);
+  &:extend(.clear-safe-area.border-bottom all);
+}
+// Adapt to the safe area: safeArea={true}
+.auto-safe-area-children {
+  .float-button-container.autoSafeArea {
+    &:extend(.safe-area all);
+    &:extend(.safe-area.border-bottom all);
+  }
+}

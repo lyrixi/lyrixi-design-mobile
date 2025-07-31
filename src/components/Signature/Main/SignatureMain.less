@@ -1,0 +1,67 @@
+// 签名主体区域
+.signature-main {
+  position: relative;
+  display: flex;
+  flex: 1;
+  margin: 20px;
+}
+
+// 签名绘制区域
+.signature-main-canvas {
+  position: relative;
+  background: #f7f9fd;
+  border-radius: var(--radius-s);
+
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  &::before {
+    font-size: 100px;
+    content: '签名';
+    white-space: nowrap;
+    color: rgba(92, 102, 113, 0.05);
+    letter-spacing: 24px;
+    text-align: center;
+    transform: rotate(90deg);
+  }
+  canvas {
+    position: absolute;
+  }
+}
+
+// 按钮区域
+.signature-main-buttons {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-left: 14px;
+}
+.signature-main-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 96px;
+  width: 40px;
+  border-radius: var(--radius-s);
+  font-size: var(--font-size-l);
+  box-sizing: border-box;
+  p {
+    transform: rotate(90deg);
+  }
+}
+.signature-main-button + .signature-main-button {
+  margin-top: 20px;
+}
+.signature-main-button-clear {
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+.signature-main-button-cancel {
+  border: 1px solid var(--border);
+}
+.signature-main-button-ok {
+  color: white;
+  background-color: var(--primary);
+}

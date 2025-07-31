@@ -1,0 +1,37 @@
+// 自增高文本框
+.seed-input-autofit {
+  position: relative;
+  box-sizing: border-box;
+  line-height: 0;
+
+  flex: 1;
+  // 解决flex1失效的问题
+  min-width: 0;
+}
+
+.seed-input-autofit-pre {
+  visibility: hidden;
+  span {
+    display: inline;
+  }
+}
+// 自适应标签与多行文本框文字间距一致
+.seed-input-autofit-pre,
+.seed-input-autofit-textarea {
+  display: block;
+  min-height: 22px;
+  line-height: 22px;
+  padding: 10px 0;
+  &:extend(.appearance);
+}
+// 多行文本框容器
+.seed-input-autofit-textarea {
+  // position: relative; // 为了解决ios输入时白屏的BUG
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  // 部分手机上宽度显示不全
+  width: 100%;
+}

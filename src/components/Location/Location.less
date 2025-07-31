@@ -1,0 +1,95 @@
+/*
+ * 文本框
+ */
+
+// 定位控件
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// 加载中时图标不允许点击
+.location-combo.positioning {
+  .location-combo-icon {
+    pointer-events: none;
+  }
+}
+
+.location-combo-positioning,
+.location-combo-positioning textarea {
+  color: var(--auxiliary);
+}
+.location-combo-error,
+.location-combo-error textarea {
+  color: var(--danger);
+}
+.location-combo-success,
+.location-combo-success textarea {
+  color: var(--link);
+}
+
+.location-combo-icon {
+  width: 22px;
+  height: 22px;
+  background-size: contain;
+  margin-left: 12px;
+}
+.location-combo-icon-location {
+  .flex;
+  .flex-middle;
+  .flex-center;
+  font-family: 'seeds-icons';
+  &:extend(.seeds-icon-map-zoom-update all);
+  color: #aab1b8;
+  font-size: 16px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+
+  &.active {
+    animation-name: rotate360;
+    animation-duration: 500ms;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+.location-combo-icon-choose {
+  background-image: url(https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/location/location-choose.png);
+}
+.location-combo-icon-preview {
+  background-image: url(https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/location/location-choose.png);
+  &.disabled {
+    opacity: 0.5;
+  }
+}
+
+// 底部
+.mappage-footer {
+  .flex;
+  gap: 12px;
+  padding: 6px 12px;
+  background-color: white;
+  box-shadow: inset 0px 0.5px 0px 0px rgba(230, 232, 235, 1);
+}
+.mappage-footer-ok,
+.mappage-footer-clear {
+  font-weight: bold;
+  font-size: 16px;
+  .flex-1;
+  height: 40px;
+  border-radius: 10px;
+}
+.mappage-footer-ok {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+.mappage-footer-clear {
+  background: #e7e9eb;
+}

@@ -1,0 +1,75 @@
+// Selector
+// Select.Selector
+.selector {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  row-gap: 8px;
+  column-gap: 8px;
+
+  box-sizing: border-box;
+}
+.selector-item {
+  background-color: #f3f4f5;
+  border-radius: 8px;
+  box-sizing: border-box;
+  height: 37px;
+  padding: 0 2px;
+  position: relative;
+  text-align: center;
+
+  display: flex; /* 使用 Flexbox */
+  flex-direction: column; /* 确保文本从上到下排列 */
+  justify-content: center; /* 垂直居中 */
+}
+
+.selector-item-name {
+  max-height: 100%;
+  // 超出两行换行
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 限制显示两行 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// 选中标记
+.selector-item-checked-mark {
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid var(--primary);
+  border-left: 10px solid transparent;
+  border-right: 10px solid var(--primary);
+}
+.selector-item-checked-mark-icon {
+  font-family: 'seeds-icons';
+  &:extend(.seeds-icon-ok all);
+  width: 12px;
+  height: 12px;
+  line-height: 12px;
+  transform: scale(0.7);
+  text-align: center;
+  color: white;
+
+  position: absolute;
+  left: -3px;
+  top: -2px;
+}
+
+// 选中
+.selector-item[data-checked='true'] {
+  background-color: white;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+
+  // background-color: var(--primary-lighten);
+  // color: var(--primary);
+  // .selector-item-checked-mark {
+  //   display: block;
+  // }
+}

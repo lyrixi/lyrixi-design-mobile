@@ -1,0 +1,23 @@
+.form-item {
+  padding: var(--space-l) 0;
+  position: relative;
+  .border-b;
+}
+
+.form-item-layout-horizontal {
+  .form-item-label {
+    padding-right: var(--space-l);
+  }
+  .form-item-main {
+    padding-right: var(--space-l);
+  }
+}
+
+.form-item-layout-vertical {
+  .form-item-label + .form-item-main {
+    margin-top: var(--space-m);
+  }
+  .form-item-main {
+    padding-right: var(--space-l);
+  }
+}

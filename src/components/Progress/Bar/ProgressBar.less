@@ -1,0 +1,49 @@
+.seed-progress-bar {
+  position: relative;
+  display: block;
+  --seed-progress-fill-color: #1890ff;
+  --seed-progress-bg-color: #f0f0f0;
+  --seed-progress-track-width: 8px;
+  --seed-progress-animation-duration: 0.3s;
+  --seed-progress-animation-timing: ease;
+  box-sizing: border-box;
+  background: var(--seed-progress-bg-color);
+  height: var(--seed-progress-track-width);
+  border-radius: calc(var(--seed-progress-track-width) / 2);
+  overflow: hidden;
+
+  &.primary {
+    --seed-progress-fill-color: var(--primary);
+  }
+
+  &.link {
+    --seed-progress-fill-color: var(--link);
+  }
+
+  &.warning {
+    --seed-progress-fill-color: var(--warning);
+  }
+
+  &.danger {
+    --seed-progress-fill-color: var(--danger);
+  }
+
+  &.success {
+    --seed-progress-fill-color: var(--success);
+  }
+
+  .seed-progress-bar-fill {
+    height: 100%;
+    background: var(--seed-progress-fill-color);
+    border-radius: calc(var(--seed-progress-track-width) / 2);
+    transition: width var(--seed-progress-animation-duration, 0.3s)
+      var(--seed-progress-animation-timing, ease);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 12px;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}

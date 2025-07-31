@@ -1,0 +1,22 @@
+// Icon size
+.steps-item.horizontal.center {
+  .steps-item-rail {
+    top: calc(var(--steps-icon-size) / 2);
+    left: calc(50% + calc(var(--steps-icon-size) / 2));
+    width: calc(100% - var(--steps-icon-size));
+  }
+}
+
+.steps-item.horizontal.center {
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .steps-item-rail {
+    height: 1px;
+    position: absolute;
+    background-color: var(--border);
+  }
+}

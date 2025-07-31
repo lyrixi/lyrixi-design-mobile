@@ -1,0 +1,48 @@
+@import 'Aside/LayoutAside.less';
+@import 'Footer/LayoutFooter.less';
+@import 'Header/LayoutHeader.less';
+@import 'Main/LayoutMain.less';
+
+/*
+* Layout
+*/
+.layout {
+  // flex布局
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: var(--app-background-color);
+  &.layout-has-aside {
+    flex-direction: row;
+  }
+}
+
+// 撑满展示
+.layout.full {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+// Adapt to the safe area: className
+.layout.safeArea {
+  &:extend(.safe-area all);
+  &:extend(.safe-area.border-bottom all);
+}
+// Adapt to the safe area: safeArea={false}
+.layout.clearSafeArea {
+  &:extend(.clear-safe-area all);
+  &:extend(.clear-safe-area.border-bottom all);
+}
+// Adapt to the safe area: safeArea={true}
+.auto-safe-area-children {
+  .layout.autoSafeArea {
+    &:extend(.safe-area all);
+    &:extend(.safe-area.border-bottom all);
+  }
+}

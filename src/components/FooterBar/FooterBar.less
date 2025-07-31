@@ -1,0 +1,115 @@
+.footerbar {
+  display: flex;
+  gap: 10px;
+
+  background-color: white;
+  .border-t;
+  // 统一文字行高, 解决文字垂直对齐的问题
+  line-height: 1;
+}
+
+// Compatiable old models. Don't use gap
+.bad-android,
+.bad-ios {
+  .footerbar {
+    gap: initial;
+    & > div:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}
+
+// 公共样式
+.footerbar-tab-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 有边框按钮
+.footerbar-default {
+  padding: 8px 12px;
+  .footerbar-tab {
+    height: 40px;
+    text-align: center;
+    padding: 0 12px;
+    color: #5d646c;
+  }
+  .footerbar-tab-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+  }
+  .footerbar-tab-name {
+    font-size: var(--font-size-s);
+    margin-top: 4px;
+  }
+  .footerbar-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    border-radius: 8px;
+    height: 40px;
+    border: 0;
+    font-size: var(--font-size-xl);
+  }
+  .footerbar-button.default {
+    background: var(--app-background-color);
+  }
+  .footerbar-button.primary {
+    color: white;
+    background: var(--primary);
+  }
+}
+
+// 纯文字按钮
+.footerbar-text {
+  height: 50px;
+  color: #5d646c;
+
+  .footerbar-tab-icon {
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .footerbar-tab,
+  .footerbar-button {
+    display: flex;
+    height: 100%;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footerbar-button.primary {
+    color: var(--primary);
+  }
+}
+
+.footerbar-tab-icon-more {
+  font-family: 'seeds-icons';
+  &:extend(.seeds-icon-three-dots all);
+}
+
+// Disabled
+.footerbar-button.default {
+  &.disabled {
+    pointer-events: none;
+    color: var(--disabled);
+  }
+}
+
+.footerbar-button.primary {
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+}
+.footerbar-tab {
+  &.disabled {
+    pointer-events: none;
+    color: var(--disabled);
+  }
+}

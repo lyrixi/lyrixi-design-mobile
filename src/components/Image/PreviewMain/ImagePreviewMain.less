@@ -1,0 +1,92 @@
+@import url(PreviewReload/PreviewReload.less);
+@import url(PreviewChoose/PreviewChoose.less);
+@import url(PreviewDelete/PreviewDelete.less);
+@import url(PreviewClose/PreviewClose.less);
+@import url(PreviewItem/PreviewItem.less);
+
+.image-preview-main {
+  display: flex;
+  .swiper-wrapper {
+    height: auto;
+    flex: 1;
+  }
+  .swiper-slide {
+    overflow: hidden;
+  }
+
+  // Top reserve space
+  &.closable {
+    .swiper-wrapper {
+      margin-top: 50px;
+    }
+  }
+
+  // Bottom reserve space
+  &.clearable,
+  &.choosable {
+    .swiper-wrapper {
+      margin-bottom: 80px;
+    }
+  }
+
+  position: relative;
+  // pagination
+  .swiper-pagination {
+    pointer-events: none;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    bottom: auto;
+    width: auto;
+    color: var(--quaternary);
+    > span {
+      vertical-align: baseline;
+    }
+  }
+
+  // 上传中
+  &.uploading {
+    // 显示转圈
+    .image-preview-main-choose {
+      .image-uploading {
+        display: block;
+      }
+    }
+    // 上传中不允许删除与关闭
+    .image-preview-main-delete,
+    .image-preview-main-close,
+    .image-preview-main-reload {
+      display: none;
+    }
+  }
+}
+
+// 页面级
+.image-preview-main-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+// Adapt to the safe area: className
+.image-preview-main-page.safeArea {
+  &:extend(.safe-area all);
+  &:extend(.safe-area.border-bottom all);
+}
+
+// Adapt to the safe area: safeArea={false}
+.image-preview-main-page.clearSafeArea {
+  &:extend(.clear-safe-area all);
+  &:extend(.clear-safe-area.border-bottom all);
+}
+// Adapt to the safe area: safeArea={true}
+.auto-safe-area-children {
+  .image-preview-main-page.autoSafeArea {
+    &:extend(.safe-area all);
+    &:extend(.safe-area.border-bottom all);
+  }
+}

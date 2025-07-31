@@ -1,0 +1,83 @@
+/*
+定义变量-----------------------------------------------------------------------------------------
+*/
+
+// 基础颜色(控件多基于如下几种颜色)
+:root {
+  // 动画时长(例如遮等)
+  --animation-duration: 300ms;
+  --animation-duration-open: 300ms;
+  --animation-duration-close: 250ms;
+  // 全局背景色
+  --app-background-color: #f1f2f5;
+  // 颜色
+  --mask-bg: rgba(0, 0, 0, 30%);
+  --default: #1a1c1f;
+  --secondary: #5c646c;
+  --auxiliary: #85909c;
+  --tertiary: #a9b1b9;
+  --quaternary: #a9b1b9;
+  --placeholder: #a9b1b9;
+  --disabled: #a9b1b9;
+  --button: white;
+  --button-lighten: #f1f2f5;
+  --primary: #ff9008;
+  --primary-lighten: #fff7e6;
+  --link: #0076ff;
+  --link-lighten: #e6f4ff;
+  --warning: #f4984e;
+  --warning-lighten: #fffbe6;
+  --danger: #fc484a;
+  --danger-lighten: #fff1f0;
+  --success: #00a870;
+  --success-lighten: #f6ffed;
+  --border: #e6e8eb;
+  --navbar-bg: #f1f2f5;
+  --navbar-icon: #62666c;
+  // --navbar-icon: #50565d;
+  --divider-bg: #f9fafb;
+  --placeholder-icon: #c2c6cd;
+  // 颜色rgb
+  --default-rgb: 26, 28, 31;
+  --secondary-rgb: 92, 100, 108;
+  --auxiliary-rgb: 119, 129, 140;
+  --tertiary-rgb: 169, 177, 185;
+  --quaternary-rgb: 169, 177, 185;
+  --placeholder-rgb: 169, 177, 185;
+  --disabled-rgb: 169, 177, 185;
+  --button-rgb: 255, 255, 255;
+  --primary-rgb: 255, 144, 8;
+  --link-rgb: 0, 118, 255;
+  --warning-rgb: 244, 152, 78;
+  --danger-rgb: 252, 72, 74;
+  --success-rgb: 0, 168, 112;
+  --border-rgb: 230, 232, 235;
+  --navbar-icon-rgb: 80, 86, 93;
+  --placeholder-icon-rgb: 194, 198, 205;
+  // 文字大小
+  --font-size-xxxl: 20px;
+  --font-size-xxl: 18px;
+  --font-size-xl: 16px;
+  --font-size-l: 15px;
+  --font-size-m: 14px;
+  --font-size-s: 12px;
+  --font-size-xs: 11px;
+  // 圆角大小
+  --radius-xl: 12px;
+  --radius-l: 10px;
+  --radius-m: 8px;
+  --radius-s: 6px;
+  --radius-xs: 4px;
+  --radius-xxs: 3px;
+  // 间距大小
+  --space-xxl: 16px;
+  --space-xl: 12px;
+  --space-l: 10px;
+  --space-m: 8px;
+  --space-s: 6px;
+  --space-xs: 4px;
+  --space-xxs: 2px;
+  // 安全区
+  --safe-area-inset-top: env(safe-area-inset-top);
+  --safe-area-inset-bottom: env(safe-area-inset-bottom);
+}

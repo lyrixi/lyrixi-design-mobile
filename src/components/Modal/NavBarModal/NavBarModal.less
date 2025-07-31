@@ -1,0 +1,36 @@
+// picker遮罩, 基于.mask
+.modal-navbarmodal-mask {
+}
+
+.modal-navbarmodal {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  // 高度太小会影响日期区间控件, 在小屏手机上完整的显示
+  max-height: 95%;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+
+  background-color: white;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+// Adapt to the safe area: className
+.modal-navbarmodal.safeArea {
+  &:extend(.safe-area all);
+  &:extend(.safe-area.border-bottom all);
+}
+// Adapt to the safe area: safeArea={false}
+.modal-navbarmodal.clearSafeArea {
+  &:extend(.clear-safe-area all);
+  &:extend(.clear-safe-area.border-bottom all);
+}
+// Adapt to the safe area: safeArea={true}
+.auto-safe-area-children {
+  .modal-navbarmodal.autoSafeArea {
+    &:extend(.safe-area all);
+    &:extend(.safe-area.border-bottom all);
+  }
+}

@@ -1,0 +1,27 @@
+@import 'AutoFit/InputAutoFit.less';
+@import 'Icon/InputIcon.less';
+@import 'NumberBox/InputNumberBox.less';
+@import 'PasswordStrength/InputPasswordStrength.less';
+@import 'Range/InputRange.less';
+@import 'Rate/InputRate.less';
+@import 'Text/InputText.less';
+@import 'Url/InputUrl.less';
+
+// Input输入框控件
+// 输入框容器
+.seed-input {
+  position: relative;
+  .flex;
+  .flex-middle;
+
+  flex: 1;
+  // 解决flex1失效的问题
+  min-width: 0;
+  &.disabled {
+    color: rgba(0, 0, 0, 0.25);
+    border-color: #d9d9d9;
+    .seed-input-icon-clear {
+      display: none;
+    }
+  }
+}

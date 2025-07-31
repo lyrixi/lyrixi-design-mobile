@@ -1,0 +1,136 @@
+// Mark标签
+// 基础样式
+.mark {
+  padding: 3px 4px;
+
+  color: white;
+  font-size: var(--font-size-xs);
+  border-radius: 3px;
+  border-width: 0;
+  border-style: solid;
+
+  &.s {
+    padding: 0px 4px;
+  }
+}
+
+// 填充模式
+.mark {
+  // 默认取color颜色
+  color: white;
+  background-color: var(--color);
+  border-color: var(--color);
+
+  &.default {
+    color: var(--default);
+    background-color: white;
+    border-color: var(--border);
+  }
+  &.primary {
+    color: white;
+    background-color: var(--primary);
+    border-color: var(--primary);
+  }
+  &.link {
+    color: white;
+    background-color: var(--link);
+    border-color: var(--link);
+  }
+  &.warning {
+    color: white;
+    background-color: var(--warning);
+    border-color: var(--warning);
+  }
+  &.danger {
+    color: white;
+    background-color: var(--danger);
+    border-color: var(--danger);
+  }
+  &.success {
+    color: white;
+    background-color: var(--success);
+    border-color: var(--success);
+  }
+}
+
+// 线框模式
+.mark.outline {
+  border-width: 1px;
+
+  // 默认取color颜色
+  color: var(--color);
+  background-color: transparent;
+  border-color: var(--color);
+
+  &.default {
+    color: var(--default);
+    background-color: transparent;
+    border-color: var(--border);
+  }
+  &.primary {
+    color: var(--primary);
+    background-color: transparent;
+    border-color: var(--primary);
+  }
+  &.link {
+    color: var(--link);
+    background-color: transparent;
+    border-color: var(--link);
+  }
+  &.warning {
+    color: var(--warning);
+    background-color: transparent;
+    border-color: var(--warning);
+  }
+  &.danger {
+    color: var(--danger);
+    background-color: transparent;
+    border-color: var(--danger);
+  }
+  &.success {
+    color: var(--success);
+    background-color: transparent;
+    border-color: var(--success);
+  }
+}
+
+// light-outline
+.mark.light-outline {
+  border-width: 1px;
+
+  // 默认取color颜色
+  color: var(--color);
+  background-color: transparent;
+  border-color: var(--color);
+
+  &.default {
+    color: var(--default);
+    background-color: white;
+    border-color: var(--border);
+  }
+  &.primary {
+    color: var(--primary);
+    background-color: var(--primary-lighten);
+    border-color: var(--primary);
+  }
+  &.link {
+    color: var(--link);
+    background-color: var(--link-lighten);
+    border-color: var(--link);
+  }
+  &.warning {
+    color: var(--warning);
+    background-color: var(--warning-lighten);
+    border-color: var(--warning);
+  }
+  &.danger {
+    color: var(--danger);
+    background-color: var(--danger-lighten);
+    border-color: var(--danger);
+  }
+  &.success {
+    color: var(--success);
+    background-color: var(--success-lighten);
+    border-color: var(--success);
+  }
+}

@@ -1,0 +1,31 @@
+// ToolBar button
+.toolbar-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding: 0 12px;
+  background-color: white;
+  border-radius: 8px;
+  border: 0;
+  flex: none;
+  &.active {
+    color: var(--primary);
+  }
+
+  &.toolbar-button-compact-item:not(.toolbar-button-compact-first-item) {
+    border-left-width: 1px;
+    border-color: var(--border);
+    border-style: solid;
+  }
+
+  &.square,
+  &.circle {
+    width: 30px;
+    padding: 0;
+  }
+
+  &.circle {
+    border-radius: 100%;
+  }
+}

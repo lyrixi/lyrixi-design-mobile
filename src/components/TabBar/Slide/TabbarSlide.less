@@ -1,0 +1,65 @@
+.tabbar-slide {
+  max-width: 96%;
+  position: relative;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  color: var(--secondary);
+  background-color: var(--navbar-bg);
+  padding: 3px;
+  border-radius: 6px;
+}
+
+// Separator
+.tabbar-slide-separator {
+  display: flex;
+  // 强制拉伸到容器高度
+  align-self: stretch;
+}
+
+// Separator align to name
+.tabbar-slide-tab-description {
+  &.top {
+    + .tabbar-slide-separator {
+      align-items: end;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+.tabbar-slide-tab-wrapper {
+  position: relative;
+  flex: auto;
+  padding: 4px 8px;
+  min-height: 16px;
+
+  display: flex;
+  align-items: center;
+}
+
+.tabbar-slide-tab-wrapper.active {
+  color: white;
+  background-color: var(--primary);
+  border-color: var(--primary);
+  border-radius: 4px;
+}
+
+// Tab
+.tabbar-slide-tab {
+  white-space: nowrap;
+  text-align: center;
+}
+
+// 文本
+.tabbar-slide-tab-name {
+  font-size: var(--font-size-s);
+}
+.tabbar-slide-tab-description {
+  color: var(--secondary);
+  font-size: var(--font-size-s);
+}
+.tabbar-slide-tab-name + .tabbar-slide-tab-description,
+.tabbar-slide-tab-description + .tabbar-slide-tab-name {
+  margin-top: var(--space-m);
+}

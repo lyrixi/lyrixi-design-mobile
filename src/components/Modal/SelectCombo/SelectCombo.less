@@ -1,0 +1,52 @@
+// 多选框样式
+.select-combo-tags {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding: 10px 0;
+  &.disabled,
+  &.readOnly {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+// 内容框
+.select-combo-tags-content {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  flex: 1;
+  &.nowrap {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-x: auto;
+  }
+}
+// 内容框-点位空文本框
+.select-combo-tags-placeholder {
+  height: 22px;
+  color: var(--placeholder);
+}
+// 内容框-单项内容
+.select-combo-tags-item {
+  display: inline-flex;
+  align-items: center;
+  // background: #fff4e6;
+  background: var(--app-background-color);
+  border-radius: 4px;
+  padding: 2px 8px;
+}
+
+// 清空按钮
+.select-combo-tags-item-clear {
+  margin-left: 2px;
+  font-family: 'seeds-icons';
+  color: var(--secondary);
+  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  font-family: 'seeds-icons';
+  &:extend(.seeds-icon-close all);
+}

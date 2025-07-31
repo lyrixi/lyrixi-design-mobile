@@ -1,0 +1,31 @@
+// 签名按钮
+.signature-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  height: 32px;
+  background-color: #f1f2f5;
+  color: #5c646c;
+  border-radius: 6px;
+
+  &[disabled],
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+// 上传图标与文字
+.signature-button-icon-add,
+.signature-button-label {
+  pointer-events: none;
+}
+.signature-button-icon-add {
+  width: 14px;
+  height: 14px;
+  font-size: 14px;
+  line-height: 14px;
+  font-family: 'seeds-icons';
+  &:extend(.seeds-icon-signature all);
+  margin-right: 4px;
+}

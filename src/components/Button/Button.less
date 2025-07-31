@@ -1,0 +1,245 @@
+// Button按钮
+// 基础样式
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  height: 40px;
+  padding: 0 16px;
+  font-size: var(--font-size-l);
+  box-sizing: border-box;
+
+  // Shape
+  &.shape-round,
+  &.shape-circle {
+    border-radius: 40px;
+  }
+  &.shape-square,
+  &.shape-circle {
+    width: 40px;
+  }
+
+  // Size
+  &.xxs {
+    height: 20px;
+    padding: 0 4px;
+    font-size: var(--font-size-xs);
+    &.shape-round,
+    &.shape-circle {
+      border-radius: 20px;
+    }
+    &.shape-square,
+    &.shape-circle {
+      width: 20px;
+    }
+  }
+  &.xs {
+    height: 24px;
+    padding: 0 8px;
+    font-size: var(--font-size-s);
+    &.shape-round,
+    &.shape-circle {
+      border-radius: 24px;
+    }
+    &.shape-square,
+    &.shape-circle {
+      width: 24px;
+    }
+  }
+  &.s {
+    height: 32px;
+    padding: 0 12px;
+    font-size: var(--font-size-m);
+    &.shape-round,
+    &.shape-circle {
+      border-radius: 32px;
+    }
+    &.shape-square,
+    &.shape-circle {
+      padding: 0;
+      width: 32px;
+    }
+  }
+  &.m {
+  }
+  &.l {
+    height: 48px;
+    padding: 0 20px;
+    // 字号太大会不好看
+    font-size: var(--font-size-xl);
+
+    &.shape-round,
+    &.shape-circle {
+      border-radius: 48px;
+    }
+    &.shape-square,
+    &.shape-circle {
+      width: 48px;
+    }
+  }
+  &.xl {
+    height: 56px;
+    padding: 0 24px;
+    // 字号太大会不好看
+    font-size: var(--font-size-xxl);
+
+    &.shape-round,
+    &.shape-circle {
+      border-radius: 56px;
+    }
+    &.shape-square,
+    &.shape-circle {
+      width: 24px;
+    }
+  }
+
+  // Disabled events
+  &[disabled],
+  &.disabled {
+    pointer-events: none;
+  }
+
+  // Color
+  &.outline,
+  &.text {
+    background-color: transparent;
+  }
+  &.text {
+    border: 0;
+  }
+
+  &,
+  &.default {
+    color: var(--default);
+    background-color: var(--button);
+    border: 1px solid var(--border);
+    &.disabled,
+    &[disabled] {
+      color: var(--disabled);
+    }
+
+    // &.outline,
+    // &.text {
+    //   color: var(--primary);
+    // }
+    &.outline {
+      border: 1px solid var(--border);
+    }
+
+    &.fill {
+      background-color: var(--button-lighten);
+    }
+  }
+  &.primary {
+    color: white;
+    background-color: var(--primary);
+    border: 0;
+    &.disabled,
+    &[disabled] {
+      opacity: 0.3;
+    }
+
+    &.outline,
+    &.text {
+      color: var(--primary);
+      background-color: transparent;
+    }
+    &.outline {
+      border: 1px solid var(--primary);
+    }
+
+    &.fill {
+      background-color: var(--primary-lighten);
+    }
+  }
+  &.link {
+    color: white;
+    background-color: var(--link);
+    border: 0;
+    &.disabled,
+    &[disabled] {
+      opacity: 0.3;
+    }
+
+    &.outline,
+    &.text {
+      color: var(--link);
+      background-color: transparent;
+    }
+    &.outline {
+      border: 1px solid var(--link);
+    }
+
+    &.fill {
+      background-color: var(--link-lighten);
+    }
+  }
+  &.warning {
+    color: white;
+    background-color: var(--warning);
+    border: 0;
+    &.disabled,
+    &[disabled] {
+      opacity: 0.3;
+    }
+
+    &.outline,
+    &.text {
+      color: var(--warning);
+      background-color: transparent;
+    }
+    &.outline {
+      border: 1px solid var(--warning);
+    }
+
+    &.fill {
+      background-color: var(--warning-lighten);
+    }
+  }
+  &.danger {
+    color: white;
+    background-color: var(--danger);
+    border: 0;
+    &.disabled,
+    &[disabled] {
+      opacity: 0.3;
+    }
+
+    &.outline,
+    &.text {
+      color: var(--danger);
+      background-color: transparent;
+    }
+    &.outline {
+      border: 1px solid var(--danger);
+    }
+
+    &.fill {
+      background-color: var(--danger-lighten);
+    }
+  }
+  &.success {
+    color: white;
+    background-color: var(--success);
+    border: 0;
+    &.disabled,
+    &[disabled] {
+      opacity: 0.3;
+    }
+
+    &.outline,
+    &.text {
+      color: var(--success);
+      background-color: transparent;
+    }
+    &.outline {
+      border: 1px solid var(--success);
+    }
+
+    &.fill {
+      background-color: var(--success-lighten);
+    }
+  }
+}

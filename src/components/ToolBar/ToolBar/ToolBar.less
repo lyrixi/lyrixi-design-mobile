@@ -1,0 +1,54 @@
+:root {
+  // Bg gray, input white
+  --toolbar-bg: var(--app-background-color);
+  --toolbar-search-input-bg: white;
+  --toolbar-invert-bg: white;
+  --toolbar-invert-search-input-bg: var(--app-background-color);
+}
+
+.toolbar-bg {
+  background-color: var(--toolbar-bg);
+  &.invert {
+    background-color: var(--toolbar-invert-bg);
+  }
+}
+.toolbar {
+  // 相对定位
+  position: relative;
+  gap: 8px;
+  margin: 0 12px;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  .toolbar-bg;
+
+  &.invert {
+    .toolbar-bg.invert;
+  }
+
+  // 活动状态, 必须关闭弹窗后才可点击
+  &.active {
+    * {
+      pointer-events: none;
+    }
+  }
+}
+
+// Compatiable old models. Don't use gap
+.bad-android,
+.bad-ios {
+  .toolbar {
+    gap: initial;
+    & > div:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+}
+
+.toolbar-icon {
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}

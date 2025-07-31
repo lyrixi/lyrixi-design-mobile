@@ -1,0 +1,67 @@
+import React from 'react'
+
+import { Layout, Divider, Steps, Card } from 'lyrixi-design-mobile'
+
+const list = [
+  {
+    id: 'finish',
+    title: 'Finished',
+    description: 'This is a description.'
+  },
+  {
+    id: 'progress',
+    title: 'In Progress',
+    description: 'This is a description.'
+  },
+  {
+    id: 'wait',
+    title: 'Waiting',
+    description: 'This is a description.'
+  }
+]
+
+export default () => {
+  return (
+    <Layout className="full">
+      <Layout.Main>
+        <Card>
+          <Divider>Center & Horizontal</Divider>
+          <Steps
+            iconSize={24}
+            value={{ index: 1 }}
+            list={list}
+            align="center"
+            direction="horizontal"
+          />
+        </Card>
+
+        <Card>
+          <Divider>Center & Vertical</Divider>
+          <Steps
+            iconSize={24}
+            value={{ index: 1 }}
+            list={list}
+            align="center"
+            direction="vertical"
+          />
+        </Card>
+
+        <Card>
+          <Divider>Left & Horizontal</Divider>
+          <Steps
+            iconSize={24}
+            value={{ index: 1 }}
+            list={list}
+            align="left"
+            direction="horizontal"
+          />
+        </Card>
+
+        <Card>
+          <Divider>Left & Vertical</Divider>
+          <Steps iconSize={24} value={{ index: 1 }} list={list} align="left" direction="vertical" />
+        </Card>
+      </Layout.Main>
+    </Layout>
+  )
+}

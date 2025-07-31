@@ -1,0 +1,100 @@
+@import 'components/CenterMarker/MapCenterMarker.less';
+@import 'components/LocationControl/MapLocationControl.less';
+@import 'components/NearbyControl/MapNearbyControl.less';
+@import 'components/NearbyControl/Current/MapNavigation.less';
+@import 'components/SearchControl/MapSearchControl.less';
+@import 'components/ZoomControl/MapZoomControl.less';
+
+.map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  // 降低地图瓦片图层级别
+  .leaflet-pane {
+    z-index: 1;
+  }
+  // 完全隐藏logo, 会违反Google的使用条款, 请自行修改
+  .leaflet-bottom.leaflet-left {
+    display: none;
+  }
+  .leaflet-bottom.leaflet-right {
+    display: none;
+  }
+}
+
+// 地图报错提示
+.map-container-result,
+.map-main-result {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+.map-container-result {
+  background-color: var(--app-background-color);
+}
+
+// Modal
+.map-modal {
+  height: 95%;
+  max-height: 95% !important;
+}
+
+// Main
+.map-main {
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.map-main-map {
+  position: relative;
+  flex: 1 1;
+}
+
+// 地图容器
+.map-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// 当前地图
+.map-api-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  visibility: hidden;
+  * {
+    pointer-events: none;
+  }
+}
+
+// Adapt to the safe area: className
+.map-modal.safeArea {
+  &:extend(.safe-area all);
+  &:extend(.safe-area.border-bottom all);
+}
+// Adapt to the safe area: safeArea={false}
+.map-modal.clearSafeArea {
+  &:extend(.clear-safe-area all);
+  &:extend(.clear-safe-area.border-bottom all);
+}
+// Adapt to the safe area: safeArea={true}
+.auto-safe-area-children {
+  .map-modal.autoSafeArea {
+    &:extend(.safe-area all);
+    &:extend(.safe-area.border-bottom all);
+  }
+}

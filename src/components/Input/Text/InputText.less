@@ -1,0 +1,106 @@
+// Input
+.seed-input-node {
+  flex: 1;
+  // 解决flex1失效的问题
+  min-width: 0;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-l);
+}
+
+.seed-input-text {
+  font-size: inherit;
+
+  flex: 1;
+  // 解决flex1失效的问题
+  min-width: 0;
+
+  display: block;
+  min-height: 22px;
+  line-height: 22px;
+  padding: 10px 0;
+  height: 100%;
+  box-sizing: border-box;
+
+  position: relative; // 为了解决ios输入时白屏的BUG
+  text-align: left;
+  &:extend(.appearance);
+  &[disabled] {
+    color: #b2b2b2;
+    opacity: 1; // 解决iosdisabled颜色变淡的问题
+    -webkit-text-fill-color: #b2b2b2; // 解决iosdisabled颜色变淡的问题
+  }
+}
+
+// Input: Placeholder
+.seed-input-placeholder {
+  color: var(--placeholder);
+}
+
+// Input: 失焦时显示(不能用flex, 否则text-center不生效)
+.seed-input-formatter {
+  font-size: inherit;
+  pointer-events: none;
+
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+// Input: textarea默认高度为60px
+.seed-type-textarea {
+  height: 60px;
+}
+
+// Icon
+.seed-left-icon {
+  margin-right: 4px;
+}
+.seed-right-icon {
+  margin-left: 12px;
+}
+
+// Input: formatter单行文本框一行显示, 多行则多行显示
+.seed-type-text,
+.seed-type-number,
+.seed-type-tel,
+.seed-type-url,
+.seed-type-password,
+.seed-type-search {
+  .seed-input-formatter {
+    // overflow-x: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.seed-type-textarea,
+.seed-type-autoFit {
+  .seed-input-formatter {
+    // overflow-y: auto;
+    top: 0;
+    padding: 10px 0;
+    line-height: 22px;
+    overflow: hidden;
+  }
+}
+
+// Input: 获焦显示框, 失焦显示formatter
+.seed-has-formatter .seed-input-node {
+  .seed-input-text,
+  .seed-input-autofit-textarea {
+    opacity: 0;
+  }
+  .seed-input-autofit:has(.seed-input-autofit-textarea:focus),
+  .seed-input-text:focus,
+  .seed-input-autofit-textarea:focus {
+    & + .seed-input-formatter {
+      opacity: 0;
+    }
+    opacity: 1;
+  }
+}

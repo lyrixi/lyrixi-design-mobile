@@ -1,0 +1,120 @@
+// SafeArea安全区域
+.safe-area,
+.auto-safe-area-children .auto-safe-area {
+  // 定位
+  &.top {
+    top: var(--safe-area-inset-top);
+  }
+  &.bottom {
+    bottom: var(--safe-area-inset-bottom);
+  }
+  // 间距
+  &.padding-top {
+    padding-top: var(--safe-area-inset-top);
+  }
+  &.padding-bottom {
+    padding-bottom: var(--safe-area-inset-bottom);
+  }
+  &.margin-top {
+    padding-top: var(--safe-area-inset-top);
+  }
+  &.margin-bottom {
+    padding-bottom: var(--safe-area-inset-bottom);
+  }
+  // 高度
+  &.height-top {
+    height: var(--safe-area-inset-top);
+  }
+  &.height-bottom {
+    height: var(--safe-area-inset-bottom);
+  }
+  // 边框
+  &.border-top,
+  &.border-bottom {
+    border-style: solid;
+    border-width: 0;
+    border-color: transparent;
+  }
+  &.border-top {
+    border-top-width: var(--safe-area-inset-top);
+  }
+  &.border-bottom {
+    border-bottom-width: var(--safe-area-inset-bottom);
+  }
+  // before&after
+  &.before::before,
+  &.after::after {
+    content: '';
+    display: block;
+    flex: none;
+  }
+  &.before::before {
+    height: var(--safe-area-inset-top);
+  }
+  &.after::after {
+    height: var(--safe-area-inset-bottom);
+  }
+}
+
+// 清除安全区
+.clear-safe-area {
+  // 定位
+  &.top {
+    top: 0 !important;
+  }
+  &.bottom {
+    bottom: 0 !important;
+  }
+  // 间距
+  &.padding-top {
+    padding-top: 0 !important;
+  }
+  &.padding-bottom {
+    padding-bottom: 0 !important;
+  }
+  &.margin-top {
+    padding-top: 0 !important;
+  }
+  &.margin-bottom {
+    padding-bottom: 0 !important;
+  }
+  // 高度
+  &.height-top {
+    height: 0 !important;
+  }
+  &.height-bottom {
+    height: 0 !important;
+  }
+  // 边框
+  &.border-top {
+    border-top-width: 0 !important;
+  }
+  &.border-bottom {
+    border-bottom-width: 0 !important;
+  }
+  // before&after
+  &.before::before {
+    height: 0 !important;
+  }
+  &.after::after {
+    height: 0 !important;
+  }
+}
+
+// 自定义元素安全区
+[data-safe-area='border-bottom'] {
+  &:extend(.safe-area all);
+  &:extend(.safe-area.border-bottom all);
+}
+[data-safe-area='after'] {
+  &:extend(.safe-area all);
+  &:extend(.safe-area.after all);
+}
+
+// 根元素自动安全区，业务无需控制安全区
+.auto-safe-area-root {
+  #root {
+    &:extend(.safe-area all);
+    &:extend(.safe-area.border-bottom all);
+  }
+}

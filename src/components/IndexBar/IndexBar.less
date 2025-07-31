@@ -1,0 +1,64 @@
+@import 'Anchor/IndexBarAnchor.less';
+
+// Indexbar索引栏
+.indexbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  font-size: var(--font-size-s);
+  overflow: hidden;
+
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.indexbar-button {
+  width: 40px;
+  text-align: center;
+
+  .indexbar-button-name {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    color: var(--default);
+    border-radius: 100%;
+    pointer-events: none;
+  }
+}
+
+.indexbar-button.active {
+  .indexbar-button-name {
+    color: var(--primary);
+  }
+}
+
+.indexbar-tooltip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: none;
+  width: 80px;
+  height: 80px;
+  margin-top: -40px;
+  margin-left: -40px;
+  color: #fff;
+  font-size: 35px;
+  line-height: 80px;
+  text-align: center;
+  background-color: var(--mask-bg);
+  border-radius: 40px;
+  transition: 200ms;
+}
+
+.indexbar.active + .indexbar-tooltip {
+  display: block;
+}

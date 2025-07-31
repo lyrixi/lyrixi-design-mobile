@@ -1,0 +1,31 @@
+.select-main-result {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.select-main {
+  position: relative;
+  overflow: auto;
+  .flex-1;
+  min-height: 200px;
+
+  // 列表样式
+  .list-divider {
+    font-size: var(--font-size-s);
+    padding: var(--space-m) 4px;
+    color: var(--default-color);
+    margin: 0 var(--space-xl);
+    .border-b;
+  }
+
+  .list-item {
+    margin: 0 var(--space-xl);
+
+    &.active {
+      color: var(--primary);
+    }
+  }
+}

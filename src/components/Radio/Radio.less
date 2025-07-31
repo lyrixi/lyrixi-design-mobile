@@ -1,0 +1,26 @@
+// input图标
+.checkbox-icon {
+  &.radio {
+    line-height: 14px;
+    border: 1px solid #ced2d8;
+    border-radius: 100%;
+  }
+}
+
+// input图标选中状态
+.checkbox.checked {
+  .checkbox-icon.radio {
+    border: 0;
+    background-color: var(--primary);
+    color: white;
+    font-family: 'seeds-icons';
+    &:extend(.seeds-icon-ok all);
+    &:before {
+      width: 12px;
+      height: 12px;
+      font-size: 12px;
+      line-height: 12px;
+      font-weight: bold;
+    }
+  }
+}

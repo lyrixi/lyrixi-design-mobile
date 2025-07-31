@@ -1,0 +1,120 @@
+.tabbar-tabs {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+// Separator
+.tabbar-tabs-separator {
+  display: flex;
+  // 强制拉伸到容器高度
+  align-self: stretch;
+}
+
+// Separator align to name
+.tabbar-tabs-tab-description {
+  &.top {
+    + .tabbar-tabs-separator {
+      align-items: end;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+// 两个选中线长, 其它短
+.tabbar-tabs.tabbar-tabs-total-2 {
+  .tabbar-tabs-tab-wrapper.active {
+    color: var(--primary);
+
+    .tabbar-tabs-tab-name {
+      font-weight: 500;
+    }
+
+    &::after {
+      display: block;
+    }
+  }
+}
+
+.tabbar-tabs:not(.tabbar-tabs-total-2) {
+  .tabbar-tabs-tab-wrapper.active {
+    color: var(--primary);
+
+    .tabbar-tabs-tab-name {
+      font-weight: 500;
+    }
+
+    .tabbar-tabs-tab::after {
+      display: block;
+    }
+  }
+}
+
+// 选中条
+.tabbar-tabs-tab-line {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--primary);
+  transform-origin: center center;
+  content: '';
+  border-radius: 2px;
+}
+
+.tabbar-tabs-tab {
+  &::after {
+    .tabbar-tabs-tab-line;
+  }
+}
+.tabbar-tabs-tab-wrapper {
+  &::after {
+    .tabbar-tabs-tab-line;
+    left: 12px;
+    right: 12px;
+  }
+}
+
+// 单项
+.tabbar-tabs-tab-wrapper {
+  position: relative;
+  flex: auto;
+  padding: 0 var(--space-xl);
+
+  // 禁用
+  &.disabled,
+  &[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.tabbar-tabs-tab {
+  white-space: nowrap;
+  padding: var(--space-l) 0 var(--space-l);
+  margin: 0 auto;
+  width: min-content;
+  font-size: var(--font-size-l);
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+}
+
+.tabbar-tabs-tab-name {
+  font-size: var(--font-size-l);
+}
+
+.tabbar-tabs-tab-description {
+  color: var(--secondary);
+  font-size: var(--font-size-s);
+}
+
+.tabbar-tabs-tab-name + .tabbar-tabs-tab-description,
+.tabbar-tabs-tab-description + .tabbar-tabs-tab-name {
+  margin-top: var(--space-s);
+}

@@ -1,0 +1,92 @@
+@import 'StepHorizontalCenter/StepHorizontalCenter.less';
+@import 'StepHorizontalLeft/StepHorizontalLeft.less';
+@import 'StepVerticalCenter/StepVerticalCenter.less';
+@import 'StepVerticalLeft/StepVerticalLeft.less';
+
+// 步骤条
+.steps {
+  display: flex;
+  position: relative;
+}
+
+.steps-vertical {
+  flex-direction: column;
+  .steps-item {
+    padding-bottom: 32px;
+  }
+}
+
+// Item公共样式
+.steps-item {
+  position: relative;
+  display: flex;
+  &.finish {
+    .steps-item-icon {
+      color: var(--primary);
+    }
+    .steps-item-icon-circle {
+      background-color: var(--primary);
+      color: white;
+    }
+    .steps-item-rail {
+      background-color: var(--primary) !important;
+    }
+  }
+  &.active {
+    .steps-item-icon {
+      color: var(--primary);
+    }
+    .steps-item-icon-circle {
+      background-color: var(--primary);
+      color: white;
+    }
+  }
+  &.error {
+    .steps-item-title,
+    .steps-item-description {
+      color: var(--danger);
+    }
+    .steps-item-icon {
+      color: var(--danger);
+    }
+    .steps-item-icon-circle {
+      background-color: var(--danger);
+      color: white;
+    }
+  }
+}
+
+.steps-item-content {
+  flex: 1;
+}
+.steps-item-title {
+  height: var(--steps-title-height);
+  line-height: var(--steps-title-height);
+}
+
+.steps-item-description {
+  color: var(--auxiliary);
+}
+
+// Icon
+.steps-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--steps-icon-size);
+  height: var(--steps-icon-size);
+  color: var(--border);
+}
+
+.steps-item-icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--steps-icon-size);
+  height: var(--steps-icon-size);
+  border-radius: 100%;
+  color: white;
+  background-color: var(--border);
+}

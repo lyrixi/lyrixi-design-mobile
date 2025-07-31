@@ -34,6 +34,9 @@ export default defineConfig({
   ],
   styles: [
     `
+    .dumi-default-header-right {
+      margin-left: 30px;
+    }
     /* windows滚动条样式 */
     * { scrollbar-width: thin !important; }
 
@@ -57,6 +60,10 @@ export default defineConfig({
       }
     }
 
+    .dumi-default-sidebar {
+      width: 250px !important;
+    }
+
     /* 点击编辑按钮, 激活编辑器 */
     .dumi-default-previewer-meta.active{
       .dumi-default-source-code-editor-textarea {
@@ -73,22 +80,16 @@ export default defineConfig({
     // 导航
     nav: {
       'zh-CN': [
-        { title: '安装', link: '/guide' },
+        { title: '设计', link: '/design/introduce' },
         { title: '组件', link: '/components' },
         { title: '工具', link: '/utils' },
-        { title: '模板', link: '/pages' },
-        { title: '开发规范', link: '/dev' },
-        { title: '设计', link: '/ux/introduce' },
-        { title: '问答', link: '/faq' }
+        { title: '模板', link: '/pages' }
       ],
       'en-US': [
-        { title: 'Install', link: '/en-US/guide' },
+        { title: 'Design', link: '/en-US/design/introduce' },
         { title: 'Components', link: '/en-US/components' },
         { title: 'Utils', link: '/en-US/utils' },
-        { title: 'Template', link: '/en-US/pages' },
-        { title: 'Dev Standards', link: '/en-US/dev' },
-        { title: 'Design', link: '/en-US/ux/introduce' },
-        { title: 'FAQ', link: '/en-US/faq' }
+        { title: 'Template', link: '/en-US/pages' }
       ]
     },
     // 底部

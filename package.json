@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "dumi dev",
-    "build": "father build",
+    "build": "father build && node src/scripts/build-after.js",
     "build:watch": "father dev",
     "docs:build": "dumi build",
     "docs:preview": "dumi preview",
@@ -16,7 +16,8 @@
     "lint": "npm run lint:es && npm run lint:css",
     "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
     "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
-    "prepublishOnly": "father doctor && npm run build"
+    "prepublishOnly": "father doctor && npm run build",
+    "translate": "node src/scripts/translate-src.js"
   },
   "authors": [
     "Lyrixi"

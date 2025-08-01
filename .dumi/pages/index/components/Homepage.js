@@ -14,30 +14,21 @@ export default () => {
     <div className="homepage">
       {/* 内容部分 */}
       <div className="main">
-        {/* <div className="header"> */}
-        <div className="main-left">
-          <h1 className="title">勤策</h1>
-          <h1 className="title" style={{ marginTop: 12 }}>
-            Design Mobile
-          </h1>
-          <p className="description">
-            {trans(
-              'A Mobile First HTMl5 and CSS3 UI Framework',
-              '为产品设计提供通用指导原则，助力产研团队高效协作，为用户提供友好的产品体验'
-            )}
-          </p>
-          <p className="buttons">
-            <a href={trans('/en-US/', '/ux/introduce')}>{trans('Get Started', '开始使用')}</a>
-            <a href={trans('/en-US/ux/introduce', '/components')}>
-              {trans('Components', '组件列表')}
-            </a>
-          </p>
-        </div>
-        {/* logo动画 */}
-        <div className="main-right">
-          <img src={phone} style={{ width: 298 }} />
-        </div>
-        {/* </div> */}
+        <h1 className="title" style={{ marginTop: 12 }}>
+          Lyrixi Design Mobile
+        </h1>
+        <p className="description">
+          {trans(
+            'A Mobile First HTMl5 and CSS3 UI Framework',
+            '为产品设计提供通用指导原则，助力产研团队高效协作，为用户提供友好的产品体验'
+          )}
+        </p>
+        <p className="buttons">
+          <a href={trans('/en-US/', '/design/introduce')}>{trans('Get Started', '开始使用')}</a>
+          <a href={trans('/en-US/design/introduce', '/components')}>
+            {trans('Components', '组件列表')}
+          </a>
+        </p>
       </div>
       {/* 卡片 */}
       <div className="snippets">

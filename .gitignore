@@ -7,6 +7,5 @@ node_modules
 
 # 自定义修改
 /locale
-docs
 lib
 umd

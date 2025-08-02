@@ -36,9 +36,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -84,9 +84,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -132,9 +132,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -179,9 +179,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -227,9 +227,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -274,9 +274,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -318,9 +318,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -359,9 +359,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -403,9 +403,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -450,9 +450,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -497,9 +497,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -545,9 +545,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -592,9 +592,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -639,9 +639,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -686,9 +686,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -734,9 +734,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -781,9 +781,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -829,9 +829,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -879,9 +879,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -929,9 +929,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -975,9 +975,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -1023,9 +1023,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -1070,9 +1070,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -1119,9 +1119,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -1167,9 +1167,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -1216,9 +1216,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -1262,9 +1262,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -1311,9 +1311,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -1351,9 +1351,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -1396,9 +1396,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -1441,9 +1441,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -1492,9 +1492,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -1541,9 +1541,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -1590,9 +1590,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -1638,9 +1638,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -1686,9 +1686,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -1735,9 +1735,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -1783,9 +1783,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -1833,9 +1833,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -1883,9 +1883,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -1924,9 +1924,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -1973,9 +1973,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -2020,9 +2020,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -2067,9 +2067,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -2110,9 +2110,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -2154,9 +2154,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -2205,9 +2205,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -2254,9 +2254,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -2298,9 +2298,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -2348,9 +2348,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -2395,9 +2395,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -2437,9 +2437,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -2484,9 +2484,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -2531,9 +2531,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -2578,9 +2578,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -2626,9 +2626,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -2676,9 +2676,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -2724,9 +2724,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -2774,9 +2774,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -2814,9 +2814,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -2863,9 +2863,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -2911,9 +2911,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -2962,9 +2962,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -3012,9 +3012,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -3053,9 +3053,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -3100,9 +3100,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -3148,9 +3148,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -3198,9 +3198,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -3247,9 +3247,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -3293,9 +3293,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -3340,9 +3340,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -3388,9 +3388,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -3436,9 +3436,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -3486,9 +3486,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -3530,9 +3530,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -3570,9 +3570,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -3613,9 +3613,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -3654,9 +3654,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -3700,9 +3700,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -3746,9 +3746,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -3794,9 +3794,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -3836,9 +3836,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -3876,9 +3876,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -3923,9 +3923,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -3973,9 +3973,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -4017,9 +4017,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -4061,9 +4061,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -4105,9 +4105,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -4152,9 +4152,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -4199,9 +4199,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -4247,9 +4247,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -4293,9 +4293,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -4335,9 +4335,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -4381,9 +4381,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -4421,9 +4421,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -4470,9 +4470,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -4516,9 +4516,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -4567,9 +4567,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -4613,9 +4613,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -4657,9 +4657,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -4705,9 +4705,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -4752,9 +4752,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -4799,9 +4799,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -4839,9 +4839,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -4887,9 +4887,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -4931,9 +4931,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -4977,9 +4977,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -5025,9 +5025,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -5072,9 +5072,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -5119,9 +5119,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -5168,9 +5168,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -5211,9 +5211,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -5256,9 +5256,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -5302,9 +5302,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -5347,9 +5347,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -5390,9 +5390,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -5435,9 +5435,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -5483,9 +5483,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -5528,9 +5528,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -5575,9 +5575,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -5616,9 +5616,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -5663,9 +5663,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -5703,9 +5703,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -5751,9 +5751,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -5800,9 +5800,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -5849,9 +5849,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -5900,9 +5900,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -5951,9 +5951,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -5999,9 +5999,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -6047,9 +6047,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -6093,9 +6093,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -6146,9 +6146,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -6195,9 +6195,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -6242,9 +6242,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -6288,9 +6288,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -6335,9 +6335,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -6382,9 +6382,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -6430,9 +6430,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -6478,9 +6478,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -6528,9 +6528,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -6579,9 +6579,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -6629,9 +6629,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -6678,9 +6678,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -6718,9 +6718,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -6769,9 +6769,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -6820,9 +6820,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -6870,9 +6870,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -6921,9 +6921,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -6970,9 +6970,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -7020,9 +7020,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -7069,9 +7069,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -7119,9 +7119,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]
@@ -7170,9 +7170,9 @@ export default [
         iconUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         iconRetinaUrl: '/src/pages/PernodRicard/assets/icon/noExpand.png',
         shadowUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowRetinaUrl:
-          'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png',
+          'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png',
         shadowSize: [33, 33],
         iconSize: [24, 33],
         iconAnchor: [12, 16]

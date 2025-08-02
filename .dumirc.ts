@@ -13,8 +13,8 @@ const proxyServer = 'http://172.31.3.215:6020'
 // 导出配置，国际化有问题所以暂时只用中文
 export default defineConfig({
   outputPath: 'docs',
-  favicons: ['https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/favicon.png'],
-  logo: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png',
+  favicons: ['https://lyrixi.github.io/lyrixi-design-mobile/assets/images/favicon.ico'],
+  logo: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png',
   // 设置html引用资源路径
   publicPath: '/lyrixi-design-mobile/',
   // 设置路由前缀，通常用于部署到非根目录

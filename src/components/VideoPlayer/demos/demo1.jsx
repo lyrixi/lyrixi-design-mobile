@@ -8,7 +8,7 @@ export default () => {
       <Layout.Main>
         <VideoPlayer
           ref={videoPlayerRef}
-          poster={'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png'}
+          poster={'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png'}
           src={'https://player.alicdn.com/video/aliyunmedia.mp4'}
           autoPlay={false}
           header={

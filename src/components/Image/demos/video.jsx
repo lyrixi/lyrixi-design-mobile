@@ -12,7 +12,7 @@ export default () => {
   const [list, setList] = useState([
     {
       id: '1',
-      thumb: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png',
+      thumb: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png',
       src: 'https://player.alicdn.com/video/aliyunmedia.mp4',
       status: 'success'
     },

@@ -9,8 +9,8 @@ async function loadSource(
     key: '',
     type: '', // google
     leaflet: {
-      css: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/css/leaflet.css',
-      js: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/js/leaflet.js'
+      css: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/css/leaflet.css',
+      js: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/js/leaflet.js'
     }
   }
 ) {

@@ -12,6 +12,7 @@
     "build": "father build && node src/scripts/build-after.js",
     "build:watch": "father dev",
     "dev": "dumi dev",
+    "docs-after": "node src/scripts/docs-after.js",
     "docs:build": "dumi build && node src/scripts/docs-after.js",
     "docs:preview": "dumi preview",
     "doctor": "father doctor",

@@ -23,7 +23,7 @@ React 19 UI library for mobile.
 ```html
 <link
   rel="stylesheet"
-  href="https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/externals/seedsui-react.min.css"
+  href="https://lyrixi.github.io/lyrixi-design-mobile/assets/externals/seedsui-react.min.css"
 />
 ```
 

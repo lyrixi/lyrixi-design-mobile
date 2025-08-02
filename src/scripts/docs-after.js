@@ -31,22 +31,10 @@ function copyFolder(current, target, cb) {
     cb && cb()
   })
 }
-// 删除文件中的指定代码
-function deleteCode(filePath, code) {
-  fs.readFile(filePath, 'utf8', function (err, data) {
-    if (typeof data === 'string') {
-      let newContent = data.replace(code, '')
-      fs.writeFile(filePath, newContent, 'utf8', (err) => {
-        if (err) throw err
-        console.log(`successfully delete '${filePath} code '${code}'`)
-      })
-    }
-  })
-}
 
 // 复制src/externalAssets到src/docs/assets
-const currentLocaleFolder = `./src/externalAssets`
-const targetLocaleFolder = `./src/docs/assets`
+const currentLocaleFolder = `./externalAssets`
+const targetLocaleFolder = `./docs/assets`
 deleteFolder(targetLocaleFolder)
 createFolder(targetLocaleFolder)
 copyFolder(currentLocaleFolder, targetLocaleFolder)

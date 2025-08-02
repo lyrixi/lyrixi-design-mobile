@@ -5,8 +5,10 @@
 
 // 首页主体内容
 .homepage {
-  padding: 1px 0 40px 0;
-  overflow: hidden;
+  width: 100%;
+  bottom: 65px;
+  top: 76px;
+  position: absolute;
   background-image: url('./assets/bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,12 +23,7 @@
     margin: 50px auto 0 auto;
     padding: 0 64px;
     box-sizing: content-box;
-    display: flex;
-    align-items: center;
-
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
+    text-align: center;
 
     .buttons {
       margin-top: 20px;
@@ -43,36 +40,27 @@
       color: #1f1f1f;
       margin: 20px auto 56px auto;
     }
-    .buttons {
+    .button-start {
       margin: 28px auto 0 auto;
-
-      a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 16px;
-        height: 44px;
-        width: 138px;
-        border-radius: 22px;
-        color: #000;
-        margin-right: 24px;
-      }
-      a:first-child {
-        background-color: #30e3b2;
-        border: 1px solid #30e3b2;
-        color: white;
-      }
-      a:last-child {
-        border: 1px solid #f5f6fb;
-        color: #2d2d2d;
-      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      height: 44px;
+      width: 138px;
+      border-radius: 22px;
+      color: #000;
+      background-color: #30e3b2;
+      border: 1px solid #30e3b2;
+      color: white;
+      box-shadow: 0 6px 12px 0 rgba(95, 251, 208, 0.7);
     }
   }
 
   // 下面的卡片
   .snippets {
-    max-width: 1200px;
-    margin: 0 auto 0 auto;
+    max-width: 800px;
+    margin: 56px auto 0 auto;
     padding: 0 64px;
     gap: 30px;
     box-sizing: content-box;
@@ -81,24 +69,33 @@
     align-items: center;
   }
   .snippet {
-    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 223px;
-    border-radius: 16px;
-    border: 1px solid #daebff;
-    padding: 0 24px;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
     .title {
       width: 100%;
-      font-size: 18px;
+      font-size: 24px;
+      color: white;
     }
     .description {
-      color: #5c646c;
+      color: rgba(255, 255, 255, 0.7);
       margin-top: 20px;
       font-size: 14px;
     }
+  }
+  .snippet:nth-child(1) {
+    background-color: rgba(48, 227, 178, 0.7);
+  }
+  .snippet:nth-child(2) {
+    background-color: rgba(250, 124, 231, 0.7);
+  }
+  .snippet:nth-child(3) {
+    background-color: rgba(250, 215, 49, 0.7);
   }
 }
 

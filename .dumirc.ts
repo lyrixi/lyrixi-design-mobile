@@ -34,6 +34,9 @@ export default defineConfig({
   ],
   styles: [
     `
+    .dumi-default-header-left {
+      width: initial;
+    }
     .dumi-default-header-right {
       margin-left: 30px;
     }
@@ -94,7 +97,7 @@ export default defineConfig({
     },
     // 底部
     footer:
-      '<div class="homepage-copyright">Copyright © 2023 | Powered <span style="color: #ff8800;">❤</span> by <a href="https://github.com/colaboy/lyrixi-design-mobile" target="_blank" rel="noreferrer">Lyrixi</a></div>',
+      '<div class="homepage-copyright">Copyright © Infinity | By <span style="color: red">❤</span> <a href="https://github.com/lyrixi/lyrixi-design-mobile" target="_blank" rel="noreferrer">Lyrixi</a></div>',
     // 配置 demo 预览器的设备宽度，默认为 375px
     deviceWidth: 375,
     // 配置为空数组时可禁用 umi-hd 高清方案, 否则预览时会缩小

@@ -19,7 +19,10 @@ export default () => {
         <p className="description">
           {trans('The best React component library for mobile', '最好用的移动端React组件库')}
         </p>
-        <a className="button-start" href={trans('/en-US/', '/design/introduce')}>
+        <a
+          className="button-start"
+          href={trans('/en-US/', '/lyrixi-design-mobile/design/introduce')}
+        >
           {trans('Get Started', '开始使用')}
         </a>
       </div>

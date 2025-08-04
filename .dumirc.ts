@@ -4,11 +4,7 @@ import { defineConfig } from 'dumi'
 // const packageJson = require('./package.json')
 
 // 代理服务
-const proxyServer = 'http://172.31.3.215:6020'
-/*
-'https://sftcloud.qince.com'
-'http://172.31.3.215:6020'
-*/
+const proxyServer = 'https://www.lyrixi.com'
 
 // 导出配置，国际化有问题所以暂时只用中文
 export default defineConfig({

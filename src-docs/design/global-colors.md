@@ -18,12 +18,13 @@ toc: content
 
 ## 文字色
 
-| Name       | Token                |
-| ---------- | -------------------- |
-| 普通文字色 | font-color-default   |
-| 二级文字色 | font-color-secondary |
-| 三级文字色 | font-color-tertiary  |
-| 禁用文字色 | font-color-disabled  |
+| Name       | Token                 |
+| ---------- | --------------------- |
+| 普通文字色 | font-color-default    |
+| 二级文字色 | font-color-secondary  |
+| 三级文字色 | font-color-tertiary   |
+| 四级文字色 | font-color-quaternary |
+| 禁用文字色 | font-color-disabled   |
 
 ## 功能色
 

@@ -53,20 +53,20 @@ export default () => {
         <APILoader
           loading={<Loading content="Loading..." />}
           config={{
-            key: '7b6e260fc45a67b31a265e22575f1c5e',
+            key: 'bmap key',
             type: 'bmap',
             markerIcons: {
               centerMarkerIcon: {
-                iconUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-custom-shop.png`,
-                iconRetinaUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-custom-shop.png`,
-                shadowUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-shadow.png`,
-                shadowRetinaUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-shadow.png`
+                iconUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-custom-shop.png`,
+                iconRetinaUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-custom-shop.png`,
+                shadowUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png`,
+                shadowRetinaUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png`
               },
               markerIcon: {
-                iconUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-icon.png`,
-                iconRetinaUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-icon-2x.png`,
-                shadowUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-shadow.png`,
-                shadowRetinaUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-shadow.png`
+                iconUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-icon.png`,
+                iconRetinaUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-icon-2x.png`,
+                shadowUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png`,
+                shadowRetinaUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png`
               }
             }
           }}

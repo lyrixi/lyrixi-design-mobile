@@ -1,10 +1,1480 @@
-"use strict";(self.webpackChunklyrixi_design_mobile=self.webpackChunklyrixi_design_mobile||[]).push([[9529],{74130:function(l,e,n){var s;n.r(e),n.d(e,{demos:function(){return p}});var y=n(17061),i=n.n(y),f=n(17156),c=n.n(f),o=n(67294),m=n(49886),p={"src-utils-array-util-demo-demo1":{component:o.memo(o.lazy(function(){return Promise.all([n.e(1415),n.e(9154),n.e(8363),n.e(3047),n.e(2424),n.e(2433)]).then(n.bind(n,62132))})),asset:{type:"BLOCK",id:"src-utils-array-util-demo-demo1",refAtomIds:[],dependencies:{"index.jsx":{type:"FILE",value:n(63455).Z},react:{type:"NPM",value:"19.1.1"},"lyrixi-design-mobile":{type:"NPM",value:"0.0.1"}},entry:"index.jsx"},context:{react:s||(s=n.t(o,2)),"lyrixi-design-mobile":m},renderOpts:{compile:function(){var u=c()(i()().mark(function g(){var a,r=arguments;return i()().wrap(function(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,n.e(250).then(n.bind(n,90250));case 2:return t.abrupt("return",(a=t.sent).default.apply(a,r));case 3:case"end":return t.stop()}},g)}));function d(){return u.apply(this,arguments)}return d}()}}}},91866:function(l,e,n){var s;n.r(e),n.d(e,{demos:function(){return p}});var y=n(17061),i=n.n(y),f=n(17156),c=n.n(f),o=n(67294),m=n(49886),p={"src-utils-asset-util-demo-loadjs":{component:o.memo(o.lazy(function(){return Promise.all([n.e(1415),n.e(9154),n.e(8363),n.e(3047),n.e(2424),n.e(2433)]).then(n.bind(n,13534))})),asset:{type:"BLOCK",id:"src-utils-asset-util-demo-loadjs",refAtomIds:[],dependencies:{"index.jsx":{type:"FILE",value:n(88724).Z},react:{type:"NPM",value:"19.1.1"},"lyrixi-design-mobile":{type:"NPM",value:"0.0.1"}},entry:"index.jsx"},context:{react:s||(s=n.t(o,2)),"lyrixi-design-mobile":m},renderOpts:{compile:function(){var u=c()(i()().mark(function g(){var a,r=arguments;return i()().wrap(function(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,n.e(250).then(n.bind(n,90250));case 2:return t.abrupt("return",(a=t.sent).default.apply(a,r));case 3:case"end":return t.stop()}},g)}));function d(){return u.apply(this,arguments)}return d}()}},"src-utils-asset-util-demo-getfileextension":{component:o.memo(o.lazy(function(){return Promise.all([n.e(1415),n.e(9154),n.e(8363),n.e(3047),n.e(2424),n.e(2433)]).then(n.bind(n,16334))})),asset:{type:"BLOCK",id:"src-utils-asset-util-demo-getfileextension",refAtomIds:[],dependencies:{"index.jsx":{type:"FILE",value:n(64288).Z},react:{type:"NPM",value:"19.1.1"},"lyrixi-design-mobile":{type:"NPM",value:"0.0.1"}},entry:"index.jsx"},context:{react:s||(s=n.t(o,2)),"lyrixi-design-mobile":m},renderOpts:{compile:function(){var u=c()(i()().mark(function g(){var a,r=arguments;return i()().wrap(function(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,n.e(250).then(n.bind(n,90250));case 2:return t.abrupt("return",(a=t.sent).default.apply(a,r));case 3:case"end":return t.stop()}},g)}));function d(){return u.apply(this,arguments)}return d}()}}}},83131:function(l,e,n){var s;n.r(e),n.d(e,{demos:function(){return a}});var y=n(17061),i=n.n(y),f=n(17156),c=n.n(f),o=n(67294),m=n(71415),p=n.n(m),u=n(49886),d=n(2550),g=n(90067),a={"src-utils-bridge-demo-all":{component:o.memo(o.lazy(function(){return Promise.all([n.e(1415),n.e(9154),n.e(8363),n.e(3047),n.e(2424),n.e(2433)]).then(n.bind(n,97157))})),asset:{type:"BLOCK",id:"src-utils-bridge-demo-all",refAtomIds:[],dependencies:{"index.jsx":{type:"FILE",value:n(72629).Z},react:{type:"NPM",value:"19.1.1"},vconsole:{type:"NPM",value:"3.15.1"},"lyrixi-design-mobile":{type:"NPM",value:"0.0.1"}},entry:"index.jsx"},context:{react:s||(s=n.t(o,2)),vconsole:m,"lyrixi-design-mobile":u},renderOpts:{compile:function(){var r=c()(i()().mark(function t(){var E,v=arguments;return i()().wrap(function(D){for(;;)switch(D.prev=D.next){case 0:return D.next=2,n.e(250).then(n.bind(n,90250));case 2:return D.abrupt("return",(E=D.sent).default.apply(E,v));case 3:case"end":return D.stop()}},t)}));function h(){return r.apply(this,arguments)}return h}()}},"src-utils-bridge-demo-dingtalk":{component:o.memo(o.lazy(function(){return Promise.all([n.e(1415),n.e(9154),n.e(8363),n.e(3047),n.e(2424),n.e(2433)]).then(n.bind(n,88079))})),asset:{type:"BLOCK",id:"src-utils-bridge-demo-dingtalk",refAtomIds:[],dependencies:{"index.jsx":{type:"FILE",value:n(28606).Z},react:{type:"NPM",value:"19.1.1"},"react-syntax-highlighter":{type:"NPM",value:"15.6.1"},"lyrixi-design-mobile":{type:"NPM",value:"0.0.1"}},entry:"index.jsx"},context:{react:s||(s=n.t(o,2)),"react-syntax-highlighter":d,"react-syntax-highlighter/dist/esm/styles/prism":g,"lyrixi-design-mobile":u},renderOpts:{compile:function(){var r=c()(i()().mark(function t(){var E,v=arguments;return i()().wrap(function(D){for(;;)switch(D.prev=D.next){case 0:return D.next=2,n.e(250).then(n.bind(n,90250));case 2:return D.abrupt("return",(E=D.sent).default.apply(E,v));case 3:case"end":return D.stop()}},t)}));function h(){return r.apply(this,arguments)}return h}()}}}},7858:function(l,e,n){var s;n.r(e),n.d(e,{demos:function(){return p}});var y=n(17061),i=n.n(y),f=n(17156),c=n.n(f),o=n(67294),m=n(49886),p={"src-utils-clipboard-demo-demo1":{component:o.memo(o.lazy(function(){return Promise.all([n.e(1415),n.e(9154),n.e(8363),n.e(3047),n.e(2424),n.e(2433)]).then(n.bind(n,34323))})),asset:{type:"BLOCK",id:"src-utils-clipboard-demo-demo1",refAtomIds:[],dependencies:{"index.jsx":{type:"FILE",value:n(4076).Z},react:{type:"NPM",value:"19.1.1"},"lyrixi-design-mobile":{type:"NPM",value:"0.0.1"}},entry:"index.jsx"},context:{react:s||(s=n.t(o,2)),"lyrixi-design-mobile":m},renderOpts:{compile:function(){var u=c()(i()().mark(function g(){var a,r=arguments;return i()().wrap(function(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,n.e(250).then(n.bind(n,90250));case 2:return t.abrupt("return",(a=t.sent).default.apply(a,r));case 3:case"end":return t.stop()}},g)}));function d(){return u.apply(this,arguments)}return d}()}}}},87045:function(l,e,n){var s;n.r(e),n.d(e,{demos:function(){return p}});var y=n(17061),i=n.n(y),f=n(17156),c=n.n(f),o=n(67294),m=n(49886),p={"src-utils-dom-util-demo-demo1":{component:o.memo(o.lazy(function(){return Promise.all([n.e(1415),n.e(9154),n.e(8363),n.e(3047),n.e(2424),n.e(2433)]).then(n.bind(n,953))})),asset:{type:"BLOCK",id:"src-utils-dom-util-demo-demo1",refAtomIds:[],dependencies:{"index.jsx":{type:"FILE",value:n(32209).Z},react:{type:"NPM",value:"19.1.1"},"lyrixi-design-mobile":{type:"NPM",value:"0.0.1"}},entry:"index.jsx"},context:{react:s||(s=n.t(o,2)),"lyrixi-design-mobile":m},renderOpts:{compile:function(){var u=c()(i()().mark(function g(){var a,r=arguments;return i()().wrap(function(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,n.e(250).then(n.bind(n,90250));case 2:return t.abrupt("return",(a=t.sent).default.apply(a,r));case 3:case"end":return t.stop()}},g)}));function d(){return u.apply(this,arguments)}return d}()}}}},2156:function(l,e,n){var s;n.r(e),n.d(e,{demos:function(){return p}});var y=n(17061),i=n.n(y),f=n(17156),c=n.n(f),o=n(67294),m=n(49886),p={"src-utils-date-util-demo-demo1":{component:o.memo(o.lazy(function(){return Promise.all([n.e(1415),n.e(9154),n.e(8363),n.e(3047),n.e(2424),n.e(2433)]).then(n.bind(n,63702))})),asset:{type:"BLOCK",id:"src-utils-date-util-demo-demo1",refAtomIds:[],dependencies:{"index.jsx":{type:"FILE",value:n(91018).Z},react:{type:"NPM",value:"19.1.1"},"lyrixi-design-mobile":{type:"NPM",value:"0.0.1"}},entry:"index.jsx"},context:{react:s||(s=n.t(o,2)),"lyrixi-design-mobile":m},renderOpts:{compile:function(){var u=c()(i()().mark(function g(){var a,r=arguments;return i()().wrap(function(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,n.e(250).then(n.bind(n,90250));case 2:return t.abrupt("return",(a=t.sent).default.apply(a,r));case 3:case"end":return t.stop()}},g)}));function d(){return u.apply(this,arguments)}return d}()}}}},41968:function(l,e,n){var s;n.r(e),n.d(e,{demos:function(){return p}});var y=n(17061),i=n.n(y),f=n(17156),c=n.n(f),o=n(67294),m=n(49886),p={"src-utils-debugger-demo-demo1":{component:o.memo(o.lazy(function(){return Promise.all([n.e(1415),n.e(9154),n.e(8363),n.e(3047),n.e(2424),n.e(2433)]).then(n.bind(n,77659))})),asset:{type:"BLOCK",id:"src-utils-debugger-demo-demo1",refAtomIds:[],dependencies:{"index.jsx":{type:"FILE",value:n(40025).Z},react:{type:"NPM",value:"19.1.1"},"lyrixi-design-mobile":{type:"NPM",value:"0.0.1"}},entry:"index.jsx"},context:{react:s||(s=n.t(o,2)),"lyrixi-design-mobile":m},renderOpts:{compile:function(){var u=c()(i()().mark(function g(){var a,r=arguments;return i()().wrap(function(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,n.e(250).then(n.bind(n,90250));case 2:return t.abrupt("return",(a=t.sent).default.apply(a,r));case 3:case"end":return t.stop()}},g)}));function d(){return u.apply(this,arguments)}return d}()}}}},23188:function(l,e,n){var s;n.r(e),n.d(e,{demos:function(){return p}});var y=n(17061),i=n.n(y),f=n(17156),c=n.n(f),o=n(67294),m=n(49886),p={"src-utils-device-demo-demo1":{component:o.memo(o.lazy(function(){return Promise.all([n.e(1415),n.e(9154),n.e(8363),n.e(3047),n.e(2424),n.e(2433)]).then(n.bind(n,61904))})),asset:{type:"BLOCK",id:"src-utils-device-demo-demo1",refAtomIds:[],dependencies:{"index.jsx":{type:"FILE",value:n(58469).Z},react:{type:"NPM",value:"19.1.1"},"lyrixi-design-mobile":{type:"NPM",value:"0.0.1"}},entry:"index.jsx"},context:{react:s||(s=n.t(o,2)),"lyrixi-design-mobile":m},renderOpts:{compile:function(){var u=c()(i()().mark(function g(){var a,r=arguments;return i()().wrap(function(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,n.e(250).then(n.bind(n,90250));case 2:return t.abrupt("return",(a=t.sent).default.apply(a,r));case 3:case"end":return t.stop()}},g)}));function d(){return u.apply(this,arguments)}return d}()}}}},35410:function(l,e,n){var s;n.r(e),n.d(e,{demos:function(){return p}});var y=n(17061),i=n.n(y),f=n(17156),c=n.n(f),o=n(67294),m=n(49886),p={"src-utils-event-util-demo-demo1":{component:o.memo(o.lazy(function(){return Promise.all([n.e(1415),n.e(9154),n.e(8363),n.e(3047),n.e(2424),n.e(2433)]).then(n.bind(n,95816))})),asset:{type:"BLOCK",id:"src-utils-event-util-demo-demo1",refAtomIds:[],dependencies:{"index.jsx":{type:"FILE",value:n(50312).Z},react:{type:"NPM",value:"19.1.1"},"lyrixi-design-mobile":{type:"NPM",value:"0.0.1"}},entry:"index.jsx"},context:{react:s||(s=n.t(o,2)),"lyrixi-design-mobile":m},renderOpts:{compile:function(){var u=c()(i()().mark(function g(){var a,r=arguments;return i()().wrap(function(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,n.e(250).then(n.bind(n,90250));case 2:return t.abrupt("return",(a=t.sent).default.apply(a,r));case 3:case"end":return t.stop()}},g)}));function d(){return u.apply(this,arguments)}return d}()}}}},32160:function(l,e,n){var s;n.r(e),n.d(e,{demos:function(){return p}});var y=n(17061),i=n.n(y),f=n(17156),c=n.n(f),o=n(67294),m=n(49886),p={"src-utils-full-screen-demo-demo1":{component:o.memo(o.lazy(function(){return Promise.all([n.e(1415),n.e(9154),n.e(8363),n.e(3047),n.e(2424),n.e(2433)]).then(n.bind(n,63369))})),asset:{type:"BLOCK",id:"src-utils-full-screen-demo-demo1",refAtomIds:[],dependencies:{"index.jsx":{type:"FILE",value:n(7425).Z},react:{type:"NPM",value:"19.1.1"},"lyrixi-design-mobile":{type:"NPM",value:"0.0.1"}},entry:"index.jsx"},context:{react:s||(s=n.t(o,2)),"lyrixi-design-mobile":m},renderOpts:{compile:function(){var u=c()(i()().mark(function g(){var a,r=arguments;return i()().wrap(function(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,n.e(250).then(n.bind(n,90250));case 2:return t.abrupt("return",(a=t.sent).default.apply(a,r));case 3:case"end":return t.stop()}},g)}));function d(){return u.apply(this,arguments)}return d}()}}}},42531:function(l,e,n){var s;n.r(e),n.d(e,{demos:function(){return p}});var y=n(17061),i=n.n(y),f=n(17156),c=n.n(f),o=n(67294),m=n(49886),p={"src-utils-geo-util-demo-demo1":{component:o.memo(o.lazy(function(){return Promise.all([n.e(1415),n.e(9154),n.e(8363),n.e(3047),n.e(2424),n.e(2433)]).then(n.bind(n,64868))})),asset:{type:"BLOCK",id:"src-utils-geo-util-demo-demo1",refAtomIds:[],dependencies:{"index.jsx":{type:"FILE",value:n(70997).Z},react:{type:"NPM",value:"19.1.1"},"lyrixi-design-mobile":{type:"NPM",value:"0.0.1"}},entry:"index.jsx"},context:{react:s||(s=n.t(o,2)),"lyrixi-design-mobile":m},renderOpts:{compile:function(){var u=c()(i()().mark(function g(){var a,r=arguments;return i()().wrap(function(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,n.e(250).then(n.bind(n,90250));case 2:return t.abrupt("return",(a=t.sent).default.apply(a,r));case 3:case"end":return t.stop()}},g)}));function d(){return u.apply(this,arguments)}return d}()}}}},46101:function(l,e,n){var s;n.r(e),n.d(e,{demos:function(){return a}});var y=n(17061),i=n.n(y),f=n(17156),c=n.n(f),o=n(67294),m=n(49886),p=n(27484),u=n.n(p),d=n(33852),g=n.n(d),a={"src-utils-locale-util-demo-locale":{component:o.memo(o.lazy(function(){return Promise.all([n.e(1415),n.e(9154),n.e(8363),n.e(3047),n.e(2424),n.e(2433)]).then(n.bind(n,37017))})),asset:{type:"BLOCK",id:"src-utils-locale-util-demo-locale",refAtomIds:[],dependencies:{"index.jsx":{type:"FILE",value:n(49178).Z},react:{type:"NPM",value:"19.1.1"},"lyrixi-design-mobile":{type:"NPM",value:"0.0.1"},dayjs:{type:"NPM",value:"1.11.13"}},entry:"index.jsx"},context:{react:s||(s=n.t(o,2)),"lyrixi-design-mobile":m,dayjs:p,"dayjs/locale/zh-cn":d},renderOpts:{compile:function(){var r=c()(i()().mark(function t(){var E,v=arguments;return i()().wrap(function(D){for(;;)switch(D.prev=D.next){case 0:return D.next=2,n.e(250).then(n.bind(n,90250));case 2:return D.abrupt("return",(E=D.sent).default.apply(E,v));case 3:case"end":return D.stop()}},t)}));function h(){return r.apply(this,arguments)}return h}()}}}},43567:function(l,e,n){var s;n.r(e),n.d(e,{demos:function(){return d}});var y=n(17061),i=n.n(y),f=n(17156),c=n.n(f),o=n(67294),m=n(71415),p=n.n(m),u=n(49886),d={"src-utils-math-util-demo-demo1":{component:o.memo(o.lazy(function(){return Promise.all([n.e(1415),n.e(9154),n.e(8363),n.e(3047),n.e(2424),n.e(2433)]).then(n.bind(n,7930))})),asset:{type:"BLOCK",id:"src-utils-math-util-demo-demo1",refAtomIds:[],dependencies:{"index.jsx":{type:"FILE",value:n(14444).Z},react:{type:"NPM",value:"19.1.1"},vconsole:{type:"NPM",value:"3.15.1"},"lyrixi-design-mobile":{type:"NPM",value:"0.0.1"}},entry:"index.jsx"},context:{react:s||(s=n.t(o,2)),vconsole:m,"lyrixi-design-mobile":u},renderOpts:{compile:function(){var g=c()(i()().mark(function r(){var h,t=arguments;return i()().wrap(function(v){for(;;)switch(v.prev=v.next){case 0:return v.next=2,n.e(250).then(n.bind(n,90250));case 2:return v.abrupt("return",(h=v.sent).default.apply(h,t));case 3:case"end":return v.stop()}},r)}));function a(){return g.apply(this,arguments)}return a}()}}}},19524:function(l,e,n){var s;n.r(e),n.d(e,{demos:function(){return d}});var y=n(17061),i=n.n(y),f=n(17156),c=n.n(f),o=n(67294),m=n(71415),p=n.n(m),u=n(49886),d={"src-utils-object-util-demo-demo1":{component:o.memo(o.lazy(function(){return Promise.all([n.e(1415),n.e(9154),n.e(8363),n.e(3047),n.e(2424),n.e(2433)]).then(n.bind(n,65911))})),asset:{type:"BLOCK",id:"src-utils-object-util-demo-demo1",refAtomIds:[],dependencies:{"index.jsx":{type:"FILE",value:n(8815).Z},react:{type:"NPM",value:"19.1.1"},vconsole:{type:"NPM",value:"3.15.1"},"lyrixi-design-mobile":{type:"NPM",value:"0.0.1"}},entry:"index.jsx"},context:{react:s||(s=n.t(o,2)),vconsole:m,"lyrixi-design-mobile":u},renderOpts:{compile:function(){var g=c()(i()().mark(function r(){var h,t=arguments;return i()().wrap(function(v){for(;;)switch(v.prev=v.next){case 0:return v.next=2,n.e(250).then(n.bind(n,90250));case 2:return v.abrupt("return",(h=v.sent).default.apply(h,t));case 3:case"end":return v.stop()}},r)}));function a(){return g.apply(this,arguments)}return a}()}}}},11693:function(l,e,n){var s;n.r(e),n.d(e,{demos:function(){return p}});var y=n(17061),i=n.n(y),f=n(17156),c=n.n(f),o=n(67294),m=n(49886),p={"src-utils-request-demo-common":{component:o.memo(o.lazy(function(){return Promise.all([n.e(1415),n.e(9154),n.e(8363),n.e(3047),n.e(2424),n.e(2433)]).then(n.bind(n,46203))})),asset:{type:"BLOCK",id:"src-utils-request-demo-common",refAtomIds:[],dependencies:{"index.jsx":{type:"FILE",value:n(68191).Z},react:{type:"NPM",value:"19.1.1"},"lyrixi-design-mobile":{type:"NPM",value:"0.0.1"}},entry:"index.jsx"},context:{react:s||(s=n.t(o,2)),"lyrixi-design-mobile":m},renderOpts:{compile:function(){var u=c()(i()().mark(function g(){var a,r=arguments;return i()().wrap(function(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,n.e(250).then(n.bind(n,90250));case 2:return t.abrupt("return",(a=t.sent).default.apply(a,r));case 3:case"end":return t.stop()}},g)}));function d(){return u.apply(this,arguments)}return d}()}},"src-utils-request-demo-cache":{component:o.memo(o.lazy(function(){return Promise.all([n.e(1415),n.e(9154),n.e(8363),n.e(3047),n.e(2424),n.e(2433)]).then(n.bind(n,21484))})),asset:{type:"BLOCK",id:"src-utils-request-demo-cache",refAtomIds:[],dependencies:{"index.jsx":{type:"FILE",value:n(64981).Z},react:{type:"NPM",value:"19.1.1"},"lyrixi-design-mobile":{type:"NPM",value:"0.0.1"}},entry:"index.jsx"},context:{react:s||(s=n.t(o,2)),"lyrixi-design-mobile":m},renderOpts:{compile:function(){var u=c()(i()().mark(function g(){var a,r=arguments;return i()().wrap(function(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,n.e(250).then(n.bind(n,90250));case 2:return t.abrupt("return",(a=t.sent).default.apply(a,r));case 3:case"end":return t.stop()}},g)}));function d(){return u.apply(this,arguments)}return d}()}}}},27388:function(l,e,n){var s;n.r(e),n.d(e,{demos:function(){return p}});var y=n(17061),i=n.n(y),f=n(17156),c=n.n(f),o=n(67294),m=n(49886),p={"src-utils-storage-demo-usecachestate":{component:o.memo(o.lazy(function(){return Promise.all([n.e(1415),n.e(9154),n.e(8363),n.e(3047),n.e(2424),n.e(2433)]).then(n.bind(n,79014))})),asset:{type:"BLOCK",id:"src-utils-storage-demo-usecachestate",refAtomIds:[],dependencies:{"index.jsx":{type:"FILE",value:n(56626).Z},react:{type:"NPM",value:"19.1.1"},"lyrixi-design-mobile":{type:"NPM",value:"0.0.1"}},entry:"index.jsx"},context:{react:s||(s=n.t(o,2)),"lyrixi-design-mobile":m},renderOpts:{compile:function(){var u=c()(i()().mark(function g(){var a,r=arguments;return i()().wrap(function(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,n.e(250).then(n.bind(n,90250));case 2:return t.abrupt("return",(a=t.sent).default.apply(a,r));case 3:case"end":return t.stop()}},g)}));function d(){return u.apply(this,arguments)}return d}()}}}},81380:function(l,e,n){n.r(e),n.d(e,{texts:function(){return s}});const s=[]},76319:function(l,e,n){n.r(e),n.d(e,{texts:function(){return s}});const s=[]},83133:function(l,e,n){n.r(e),n.d(e,{texts:function(){return s}});const s=[]},1568:function(l,e,n){n.r(e),n.d(e,{texts:function(){return s}});const s=[]},97246:function(l,e,n){n.r(e),n.d(e,{texts:function(){return s}});const s=[]},27725:function(l,e,n){n.r(e),n.d(e,{texts:function(){return s}});const s=[]},73775:function(l,e,n){n.r(e),n.d(e,{texts:function(){return s}});const s=[]},56974:function(l,e,n){n.r(e),n.d(e,{texts:function(){return s}});const s=[]},74653:function(l,e,n){n.r(e),n.d(e,{texts:function(){return s}});const s=[]},31217:function(l,e,n){n.r(e),n.d(e,{texts:function(){return s}});const s=[]},6684:function(l,e,n){n.r(e),n.d(e,{texts:function(){return s}});const s=[]},70013:function(l,e,n){n.r(e),n.d(e,{texts:function(){return s}});const s=[{value:"\u652F\u6301\u7684\u8BED\u8A00\u5217\u8868",paraId:0,tocIndex:1},{value:"LocaleUtil.setLocale(language, data)\u8BBE\u7F6E\u8BED\u8A00, \u8BBE\u7F6E\u540E, \u4E24\u4E2A\u53D8\u91CF\u5C06\u6709\u503C: window.seedsLocaleLanguage \u6807\u8BC6\u8BED\u8A00, window.seedsLocaleData \u8BB0\u5F55\u56FD\u9645\u5316\u6570\u636E",paraId:1,tocIndex:2},{value:"LocaleUtil.setLocale \u540E, LocaleUtil.locale \u9ED8\u8BA4\u8BFB\u53D6 window.seedsLocaleData \u5BF9\u8C61, \u4E5F\u53EF\u4EE5\u589E\u52A0 window.localeData \u5BF9\u8C61\u8986\u76D6 window.seedsLocaleData \u5BF9\u8C61",paraId:2,tocIndex:3},{value:`import React from 'react'
+'use strict'
+;(self.webpackChunklyrixi_design_mobile = self.webpackChunklyrixi_design_mobile || []).push([
+  [9529],
+  {
+    74130: function (l, e, n) {
+      var s
+      n.r(e),
+        n.d(e, {
+          demos: function () {
+            return p
+          }
+        })
+      var y = n(17061),
+        i = n.n(y),
+        f = n(17156),
+        c = n.n(f),
+        o = n(67294),
+        m = n(49886),
+        p = {
+          'src-utils-array-util-demo-demo1': {
+            component: o.memo(
+              o.lazy(function () {
+                return Promise.all([
+                  n.e(1415),
+                  n.e(9154),
+                  n.e(8363),
+                  n.e(3047),
+                  n.e(2424),
+                  n.e(2433)
+                ]).then(n.bind(n, 62132))
+              })
+            ),
+            asset: {
+              type: 'BLOCK',
+              id: 'src-utils-array-util-demo-demo1',
+              refAtomIds: [],
+              dependencies: {
+                'index.jsx': { type: 'FILE', value: n(63455).Z },
+                react: { type: 'NPM', value: '19.1.1' },
+                'lyrixi-design-mobile': { type: 'NPM', value: '0.0.1' }
+              },
+              entry: 'index.jsx'
+            },
+            context: { react: s || (s = n.t(o, 2)), 'lyrixi-design-mobile': m },
+            renderOpts: {
+              compile: (function () {
+                var u = c()(
+                  i()().mark(function g() {
+                    var a,
+                      r = arguments
+                    return i()().wrap(function (t) {
+                      for (;;)
+                        switch ((t.prev = t.next)) {
+                          case 0:
+                            return (t.next = 2), n.e(250).then(n.bind(n, 90250))
+                          case 2:
+                            return t.abrupt('return', (a = t.sent).default.apply(a, r))
+                          case 3:
+                          case 'end':
+                            return t.stop()
+                        }
+                    }, g)
+                  })
+                )
+                function d() {
+                  return u.apply(this, arguments)
+                }
+                return d
+              })()
+            }
+          }
+        }
+    },
+    91866: function (l, e, n) {
+      var s
+      n.r(e),
+        n.d(e, {
+          demos: function () {
+            return p
+          }
+        })
+      var y = n(17061),
+        i = n.n(y),
+        f = n(17156),
+        c = n.n(f),
+        o = n(67294),
+        m = n(49886),
+        p = {
+          'src-utils-asset-util-demo-loadjs': {
+            component: o.memo(
+              o.lazy(function () {
+                return Promise.all([
+                  n.e(1415),
+                  n.e(9154),
+                  n.e(8363),
+                  n.e(3047),
+                  n.e(2424),
+                  n.e(2433)
+                ]).then(n.bind(n, 13534))
+              })
+            ),
+            asset: {
+              type: 'BLOCK',
+              id: 'src-utils-asset-util-demo-loadjs',
+              refAtomIds: [],
+              dependencies: {
+                'index.jsx': { type: 'FILE', value: n(88724).Z },
+                react: { type: 'NPM', value: '19.1.1' },
+                'lyrixi-design-mobile': { type: 'NPM', value: '0.0.1' }
+              },
+              entry: 'index.jsx'
+            },
+            context: { react: s || (s = n.t(o, 2)), 'lyrixi-design-mobile': m },
+            renderOpts: {
+              compile: (function () {
+                var u = c()(
+                  i()().mark(function g() {
+                    var a,
+                      r = arguments
+                    return i()().wrap(function (t) {
+                      for (;;)
+                        switch ((t.prev = t.next)) {
+                          case 0:
+                            return (t.next = 2), n.e(250).then(n.bind(n, 90250))
+                          case 2:
+                            return t.abrupt('return', (a = t.sent).default.apply(a, r))
+                          case 3:
+                          case 'end':
+                            return t.stop()
+                        }
+                    }, g)
+                  })
+                )
+                function d() {
+                  return u.apply(this, arguments)
+                }
+                return d
+              })()
+            }
+          },
+          'src-utils-asset-util-demo-getfileextension': {
+            component: o.memo(
+              o.lazy(function () {
+                return Promise.all([
+                  n.e(1415),
+                  n.e(9154),
+                  n.e(8363),
+                  n.e(3047),
+                  n.e(2424),
+                  n.e(2433)
+                ]).then(n.bind(n, 16334))
+              })
+            ),
+            asset: {
+              type: 'BLOCK',
+              id: 'src-utils-asset-util-demo-getfileextension',
+              refAtomIds: [],
+              dependencies: {
+                'index.jsx': { type: 'FILE', value: n(64288).Z },
+                react: { type: 'NPM', value: '19.1.1' },
+                'lyrixi-design-mobile': { type: 'NPM', value: '0.0.1' }
+              },
+              entry: 'index.jsx'
+            },
+            context: { react: s || (s = n.t(o, 2)), 'lyrixi-design-mobile': m },
+            renderOpts: {
+              compile: (function () {
+                var u = c()(
+                  i()().mark(function g() {
+                    var a,
+                      r = arguments
+                    return i()().wrap(function (t) {
+                      for (;;)
+                        switch ((t.prev = t.next)) {
+                          case 0:
+                            return (t.next = 2), n.e(250).then(n.bind(n, 90250))
+                          case 2:
+                            return t.abrupt('return', (a = t.sent).default.apply(a, r))
+                          case 3:
+                          case 'end':
+                            return t.stop()
+                        }
+                    }, g)
+                  })
+                )
+                function d() {
+                  return u.apply(this, arguments)
+                }
+                return d
+              })()
+            }
+          }
+        }
+    },
+    83131: function (l, e, n) {
+      var s
+      n.r(e),
+        n.d(e, {
+          demos: function () {
+            return a
+          }
+        })
+      var y = n(17061),
+        i = n.n(y),
+        f = n(17156),
+        c = n.n(f),
+        o = n(67294),
+        m = n(71415),
+        p = n.n(m),
+        u = n(49886),
+        d = n(2550),
+        g = n(90067),
+        a = {
+          'src-utils-bridge-demo-all': {
+            component: o.memo(
+              o.lazy(function () {
+                return Promise.all([
+                  n.e(1415),
+                  n.e(9154),
+                  n.e(8363),
+                  n.e(3047),
+                  n.e(2424),
+                  n.e(2433)
+                ]).then(n.bind(n, 97157))
+              })
+            ),
+            asset: {
+              type: 'BLOCK',
+              id: 'src-utils-bridge-demo-all',
+              refAtomIds: [],
+              dependencies: {
+                'index.jsx': { type: 'FILE', value: n(72629).Z },
+                react: { type: 'NPM', value: '19.1.1' },
+                vconsole: { type: 'NPM', value: '3.15.1' },
+                'lyrixi-design-mobile': { type: 'NPM', value: '0.0.1' }
+              },
+              entry: 'index.jsx'
+            },
+            context: { react: s || (s = n.t(o, 2)), vconsole: m, 'lyrixi-design-mobile': u },
+            renderOpts: {
+              compile: (function () {
+                var r = c()(
+                  i()().mark(function t() {
+                    var E,
+                      v = arguments
+                    return i()().wrap(function (D) {
+                      for (;;)
+                        switch ((D.prev = D.next)) {
+                          case 0:
+                            return (D.next = 2), n.e(250).then(n.bind(n, 90250))
+                          case 2:
+                            return D.abrupt('return', (E = D.sent).default.apply(E, v))
+                          case 3:
+                          case 'end':
+                            return D.stop()
+                        }
+                    }, t)
+                  })
+                )
+                function h() {
+                  return r.apply(this, arguments)
+                }
+                return h
+              })()
+            }
+          },
+          'src-utils-bridge-demo-dingtalk': {
+            component: o.memo(
+              o.lazy(function () {
+                return Promise.all([
+                  n.e(1415),
+                  n.e(9154),
+                  n.e(8363),
+                  n.e(3047),
+                  n.e(2424),
+                  n.e(2433)
+                ]).then(n.bind(n, 88079))
+              })
+            ),
+            asset: {
+              type: 'BLOCK',
+              id: 'src-utils-bridge-demo-dingtalk',
+              refAtomIds: [],
+              dependencies: {
+                'index.jsx': { type: 'FILE', value: n(28606).Z },
+                react: { type: 'NPM', value: '19.1.1' },
+                'react-syntax-highlighter': { type: 'NPM', value: '15.6.1' },
+                'lyrixi-design-mobile': { type: 'NPM', value: '0.0.1' }
+              },
+              entry: 'index.jsx'
+            },
+            context: {
+              react: s || (s = n.t(o, 2)),
+              'react-syntax-highlighter': d,
+              'react-syntax-highlighter/dist/esm/styles/prism': g,
+              'lyrixi-design-mobile': u
+            },
+            renderOpts: {
+              compile: (function () {
+                var r = c()(
+                  i()().mark(function t() {
+                    var E,
+                      v = arguments
+                    return i()().wrap(function (D) {
+                      for (;;)
+                        switch ((D.prev = D.next)) {
+                          case 0:
+                            return (D.next = 2), n.e(250).then(n.bind(n, 90250))
+                          case 2:
+                            return D.abrupt('return', (E = D.sent).default.apply(E, v))
+                          case 3:
+                          case 'end':
+                            return D.stop()
+                        }
+                    }, t)
+                  })
+                )
+                function h() {
+                  return r.apply(this, arguments)
+                }
+                return h
+              })()
+            }
+          }
+        }
+    },
+    7858: function (l, e, n) {
+      var s
+      n.r(e),
+        n.d(e, {
+          demos: function () {
+            return p
+          }
+        })
+      var y = n(17061),
+        i = n.n(y),
+        f = n(17156),
+        c = n.n(f),
+        o = n(67294),
+        m = n(49886),
+        p = {
+          'src-utils-clipboard-demo-demo1': {
+            component: o.memo(
+              o.lazy(function () {
+                return Promise.all([
+                  n.e(1415),
+                  n.e(9154),
+                  n.e(8363),
+                  n.e(3047),
+                  n.e(2424),
+                  n.e(2433)
+                ]).then(n.bind(n, 34323))
+              })
+            ),
+            asset: {
+              type: 'BLOCK',
+              id: 'src-utils-clipboard-demo-demo1',
+              refAtomIds: [],
+              dependencies: {
+                'index.jsx': { type: 'FILE', value: n(4076).Z },
+                react: { type: 'NPM', value: '19.1.1' },
+                'lyrixi-design-mobile': { type: 'NPM', value: '0.0.1' }
+              },
+              entry: 'index.jsx'
+            },
+            context: { react: s || (s = n.t(o, 2)), 'lyrixi-design-mobile': m },
+            renderOpts: {
+              compile: (function () {
+                var u = c()(
+                  i()().mark(function g() {
+                    var a,
+                      r = arguments
+                    return i()().wrap(function (t) {
+                      for (;;)
+                        switch ((t.prev = t.next)) {
+                          case 0:
+                            return (t.next = 2), n.e(250).then(n.bind(n, 90250))
+                          case 2:
+                            return t.abrupt('return', (a = t.sent).default.apply(a, r))
+                          case 3:
+                          case 'end':
+                            return t.stop()
+                        }
+                    }, g)
+                  })
+                )
+                function d() {
+                  return u.apply(this, arguments)
+                }
+                return d
+              })()
+            }
+          }
+        }
+    },
+    87045: function (l, e, n) {
+      var s
+      n.r(e),
+        n.d(e, {
+          demos: function () {
+            return p
+          }
+        })
+      var y = n(17061),
+        i = n.n(y),
+        f = n(17156),
+        c = n.n(f),
+        o = n(67294),
+        m = n(49886),
+        p = {
+          'src-utils-dom-util-demo-demo1': {
+            component: o.memo(
+              o.lazy(function () {
+                return Promise.all([
+                  n.e(1415),
+                  n.e(9154),
+                  n.e(8363),
+                  n.e(3047),
+                  n.e(2424),
+                  n.e(2433)
+                ]).then(n.bind(n, 953))
+              })
+            ),
+            asset: {
+              type: 'BLOCK',
+              id: 'src-utils-dom-util-demo-demo1',
+              refAtomIds: [],
+              dependencies: {
+                'index.jsx': { type: 'FILE', value: n(32209).Z },
+                react: { type: 'NPM', value: '19.1.1' },
+                'lyrixi-design-mobile': { type: 'NPM', value: '0.0.1' }
+              },
+              entry: 'index.jsx'
+            },
+            context: { react: s || (s = n.t(o, 2)), 'lyrixi-design-mobile': m },
+            renderOpts: {
+              compile: (function () {
+                var u = c()(
+                  i()().mark(function g() {
+                    var a,
+                      r = arguments
+                    return i()().wrap(function (t) {
+                      for (;;)
+                        switch ((t.prev = t.next)) {
+                          case 0:
+                            return (t.next = 2), n.e(250).then(n.bind(n, 90250))
+                          case 2:
+                            return t.abrupt('return', (a = t.sent).default.apply(a, r))
+                          case 3:
+                          case 'end':
+                            return t.stop()
+                        }
+                    }, g)
+                  })
+                )
+                function d() {
+                  return u.apply(this, arguments)
+                }
+                return d
+              })()
+            }
+          }
+        }
+    },
+    2156: function (l, e, n) {
+      var s
+      n.r(e),
+        n.d(e, {
+          demos: function () {
+            return p
+          }
+        })
+      var y = n(17061),
+        i = n.n(y),
+        f = n(17156),
+        c = n.n(f),
+        o = n(67294),
+        m = n(49886),
+        p = {
+          'src-utils-date-util-demo-demo1': {
+            component: o.memo(
+              o.lazy(function () {
+                return Promise.all([
+                  n.e(1415),
+                  n.e(9154),
+                  n.e(8363),
+                  n.e(3047),
+                  n.e(2424),
+                  n.e(2433)
+                ]).then(n.bind(n, 63702))
+              })
+            ),
+            asset: {
+              type: 'BLOCK',
+              id: 'src-utils-date-util-demo-demo1',
+              refAtomIds: [],
+              dependencies: {
+                'index.jsx': { type: 'FILE', value: n(91018).Z },
+                react: { type: 'NPM', value: '19.1.1' },
+                'lyrixi-design-mobile': { type: 'NPM', value: '0.0.1' }
+              },
+              entry: 'index.jsx'
+            },
+            context: { react: s || (s = n.t(o, 2)), 'lyrixi-design-mobile': m },
+            renderOpts: {
+              compile: (function () {
+                var u = c()(
+                  i()().mark(function g() {
+                    var a,
+                      r = arguments
+                    return i()().wrap(function (t) {
+                      for (;;)
+                        switch ((t.prev = t.next)) {
+                          case 0:
+                            return (t.next = 2), n.e(250).then(n.bind(n, 90250))
+                          case 2:
+                            return t.abrupt('return', (a = t.sent).default.apply(a, r))
+                          case 3:
+                          case 'end':
+                            return t.stop()
+                        }
+                    }, g)
+                  })
+                )
+                function d() {
+                  return u.apply(this, arguments)
+                }
+                return d
+              })()
+            }
+          }
+        }
+    },
+    41968: function (l, e, n) {
+      var s
+      n.r(e),
+        n.d(e, {
+          demos: function () {
+            return p
+          }
+        })
+      var y = n(17061),
+        i = n.n(y),
+        f = n(17156),
+        c = n.n(f),
+        o = n(67294),
+        m = n(49886),
+        p = {
+          'src-utils-debugger-demo-demo1': {
+            component: o.memo(
+              o.lazy(function () {
+                return Promise.all([
+                  n.e(1415),
+                  n.e(9154),
+                  n.e(8363),
+                  n.e(3047),
+                  n.e(2424),
+                  n.e(2433)
+                ]).then(n.bind(n, 77659))
+              })
+            ),
+            asset: {
+              type: 'BLOCK',
+              id: 'src-utils-debugger-demo-demo1',
+              refAtomIds: [],
+              dependencies: {
+                'index.jsx': { type: 'FILE', value: n(40025).Z },
+                react: { type: 'NPM', value: '19.1.1' },
+                'lyrixi-design-mobile': { type: 'NPM', value: '0.0.1' }
+              },
+              entry: 'index.jsx'
+            },
+            context: { react: s || (s = n.t(o, 2)), 'lyrixi-design-mobile': m },
+            renderOpts: {
+              compile: (function () {
+                var u = c()(
+                  i()().mark(function g() {
+                    var a,
+                      r = arguments
+                    return i()().wrap(function (t) {
+                      for (;;)
+                        switch ((t.prev = t.next)) {
+                          case 0:
+                            return (t.next = 2), n.e(250).then(n.bind(n, 90250))
+                          case 2:
+                            return t.abrupt('return', (a = t.sent).default.apply(a, r))
+                          case 3:
+                          case 'end':
+                            return t.stop()
+                        }
+                    }, g)
+                  })
+                )
+                function d() {
+                  return u.apply(this, arguments)
+                }
+                return d
+              })()
+            }
+          }
+        }
+    },
+    23188: function (l, e, n) {
+      var s
+      n.r(e),
+        n.d(e, {
+          demos: function () {
+            return p
+          }
+        })
+      var y = n(17061),
+        i = n.n(y),
+        f = n(17156),
+        c = n.n(f),
+        o = n(67294),
+        m = n(49886),
+        p = {
+          'src-utils-device-demo-demo1': {
+            component: o.memo(
+              o.lazy(function () {
+                return Promise.all([
+                  n.e(1415),
+                  n.e(9154),
+                  n.e(8363),
+                  n.e(3047),
+                  n.e(2424),
+                  n.e(2433)
+                ]).then(n.bind(n, 61904))
+              })
+            ),
+            asset: {
+              type: 'BLOCK',
+              id: 'src-utils-device-demo-demo1',
+              refAtomIds: [],
+              dependencies: {
+                'index.jsx': { type: 'FILE', value: n(58469).Z },
+                react: { type: 'NPM', value: '19.1.1' },
+                'lyrixi-design-mobile': { type: 'NPM', value: '0.0.1' }
+              },
+              entry: 'index.jsx'
+            },
+            context: { react: s || (s = n.t(o, 2)), 'lyrixi-design-mobile': m },
+            renderOpts: {
+              compile: (function () {
+                var u = c()(
+                  i()().mark(function g() {
+                    var a,
+                      r = arguments
+                    return i()().wrap(function (t) {
+                      for (;;)
+                        switch ((t.prev = t.next)) {
+                          case 0:
+                            return (t.next = 2), n.e(250).then(n.bind(n, 90250))
+                          case 2:
+                            return t.abrupt('return', (a = t.sent).default.apply(a, r))
+                          case 3:
+                          case 'end':
+                            return t.stop()
+                        }
+                    }, g)
+                  })
+                )
+                function d() {
+                  return u.apply(this, arguments)
+                }
+                return d
+              })()
+            }
+          }
+        }
+    },
+    35410: function (l, e, n) {
+      var s
+      n.r(e),
+        n.d(e, {
+          demos: function () {
+            return p
+          }
+        })
+      var y = n(17061),
+        i = n.n(y),
+        f = n(17156),
+        c = n.n(f),
+        o = n(67294),
+        m = n(49886),
+        p = {
+          'src-utils-event-util-demo-demo1': {
+            component: o.memo(
+              o.lazy(function () {
+                return Promise.all([
+                  n.e(1415),
+                  n.e(9154),
+                  n.e(8363),
+                  n.e(3047),
+                  n.e(2424),
+                  n.e(2433)
+                ]).then(n.bind(n, 95816))
+              })
+            ),
+            asset: {
+              type: 'BLOCK',
+              id: 'src-utils-event-util-demo-demo1',
+              refAtomIds: [],
+              dependencies: {
+                'index.jsx': { type: 'FILE', value: n(50312).Z },
+                react: { type: 'NPM', value: '19.1.1' },
+                'lyrixi-design-mobile': { type: 'NPM', value: '0.0.1' }
+              },
+              entry: 'index.jsx'
+            },
+            context: { react: s || (s = n.t(o, 2)), 'lyrixi-design-mobile': m },
+            renderOpts: {
+              compile: (function () {
+                var u = c()(
+                  i()().mark(function g() {
+                    var a,
+                      r = arguments
+                    return i()().wrap(function (t) {
+                      for (;;)
+                        switch ((t.prev = t.next)) {
+                          case 0:
+                            return (t.next = 2), n.e(250).then(n.bind(n, 90250))
+                          case 2:
+                            return t.abrupt('return', (a = t.sent).default.apply(a, r))
+                          case 3:
+                          case 'end':
+                            return t.stop()
+                        }
+                    }, g)
+                  })
+                )
+                function d() {
+                  return u.apply(this, arguments)
+                }
+                return d
+              })()
+            }
+          }
+        }
+    },
+    32160: function (l, e, n) {
+      var s
+      n.r(e),
+        n.d(e, {
+          demos: function () {
+            return p
+          }
+        })
+      var y = n(17061),
+        i = n.n(y),
+        f = n(17156),
+        c = n.n(f),
+        o = n(67294),
+        m = n(49886),
+        p = {
+          'src-utils-full-screen-demo-demo1': {
+            component: o.memo(
+              o.lazy(function () {
+                return Promise.all([
+                  n.e(1415),
+                  n.e(9154),
+                  n.e(8363),
+                  n.e(3047),
+                  n.e(2424),
+                  n.e(2433)
+                ]).then(n.bind(n, 63369))
+              })
+            ),
+            asset: {
+              type: 'BLOCK',
+              id: 'src-utils-full-screen-demo-demo1',
+              refAtomIds: [],
+              dependencies: {
+                'index.jsx': { type: 'FILE', value: n(7425).Z },
+                react: { type: 'NPM', value: '19.1.1' },
+                'lyrixi-design-mobile': { type: 'NPM', value: '0.0.1' }
+              },
+              entry: 'index.jsx'
+            },
+            context: { react: s || (s = n.t(o, 2)), 'lyrixi-design-mobile': m },
+            renderOpts: {
+              compile: (function () {
+                var u = c()(
+                  i()().mark(function g() {
+                    var a,
+                      r = arguments
+                    return i()().wrap(function (t) {
+                      for (;;)
+                        switch ((t.prev = t.next)) {
+                          case 0:
+                            return (t.next = 2), n.e(250).then(n.bind(n, 90250))
+                          case 2:
+                            return t.abrupt('return', (a = t.sent).default.apply(a, r))
+                          case 3:
+                          case 'end':
+                            return t.stop()
+                        }
+                    }, g)
+                  })
+                )
+                function d() {
+                  return u.apply(this, arguments)
+                }
+                return d
+              })()
+            }
+          }
+        }
+    },
+    42531: function (l, e, n) {
+      var s
+      n.r(e),
+        n.d(e, {
+          demos: function () {
+            return p
+          }
+        })
+      var y = n(17061),
+        i = n.n(y),
+        f = n(17156),
+        c = n.n(f),
+        o = n(67294),
+        m = n(49886),
+        p = {
+          'src-utils-geo-util-demo-demo1': {
+            component: o.memo(
+              o.lazy(function () {
+                return Promise.all([
+                  n.e(1415),
+                  n.e(9154),
+                  n.e(8363),
+                  n.e(3047),
+                  n.e(2424),
+                  n.e(2433)
+                ]).then(n.bind(n, 64868))
+              })
+            ),
+            asset: {
+              type: 'BLOCK',
+              id: 'src-utils-geo-util-demo-demo1',
+              refAtomIds: [],
+              dependencies: {
+                'index.jsx': { type: 'FILE', value: n(70997).Z },
+                react: { type: 'NPM', value: '19.1.1' },
+                'lyrixi-design-mobile': { type: 'NPM', value: '0.0.1' }
+              },
+              entry: 'index.jsx'
+            },
+            context: { react: s || (s = n.t(o, 2)), 'lyrixi-design-mobile': m },
+            renderOpts: {
+              compile: (function () {
+                var u = c()(
+                  i()().mark(function g() {
+                    var a,
+                      r = arguments
+                    return i()().wrap(function (t) {
+                      for (;;)
+                        switch ((t.prev = t.next)) {
+                          case 0:
+                            return (t.next = 2), n.e(250).then(n.bind(n, 90250))
+                          case 2:
+                            return t.abrupt('return', (a = t.sent).default.apply(a, r))
+                          case 3:
+                          case 'end':
+                            return t.stop()
+                        }
+                    }, g)
+                  })
+                )
+                function d() {
+                  return u.apply(this, arguments)
+                }
+                return d
+              })()
+            }
+          }
+        }
+    },
+    46101: function (l, e, n) {
+      var s
+      n.r(e),
+        n.d(e, {
+          demos: function () {
+            return a
+          }
+        })
+      var y = n(17061),
+        i = n.n(y),
+        f = n(17156),
+        c = n.n(f),
+        o = n(67294),
+        m = n(49886),
+        p = n(27484),
+        u = n.n(p),
+        d = n(33852),
+        g = n.n(d),
+        a = {
+          'src-utils-locale-util-demo-locale': {
+            component: o.memo(
+              o.lazy(function () {
+                return Promise.all([
+                  n.e(1415),
+                  n.e(9154),
+                  n.e(8363),
+                  n.e(3047),
+                  n.e(2424),
+                  n.e(2433)
+                ]).then(n.bind(n, 37017))
+              })
+            ),
+            asset: {
+              type: 'BLOCK',
+              id: 'src-utils-locale-util-demo-locale',
+              refAtomIds: [],
+              dependencies: {
+                'index.jsx': { type: 'FILE', value: n(49178).Z },
+                react: { type: 'NPM', value: '19.1.1' },
+                'lyrixi-design-mobile': { type: 'NPM', value: '0.0.1' },
+                dayjs: { type: 'NPM', value: '1.11.13' }
+              },
+              entry: 'index.jsx'
+            },
+            context: {
+              react: s || (s = n.t(o, 2)),
+              'lyrixi-design-mobile': m,
+              dayjs: p,
+              'dayjs/locale/zh-cn': d
+            },
+            renderOpts: {
+              compile: (function () {
+                var r = c()(
+                  i()().mark(function t() {
+                    var E,
+                      v = arguments
+                    return i()().wrap(function (D) {
+                      for (;;)
+                        switch ((D.prev = D.next)) {
+                          case 0:
+                            return (D.next = 2), n.e(250).then(n.bind(n, 90250))
+                          case 2:
+                            return D.abrupt('return', (E = D.sent).default.apply(E, v))
+                          case 3:
+                          case 'end':
+                            return D.stop()
+                        }
+                    }, t)
+                  })
+                )
+                function h() {
+                  return r.apply(this, arguments)
+                }
+                return h
+              })()
+            }
+          }
+        }
+    },
+    43567: function (l, e, n) {
+      var s
+      n.r(e),
+        n.d(e, {
+          demos: function () {
+            return d
+          }
+        })
+      var y = n(17061),
+        i = n.n(y),
+        f = n(17156),
+        c = n.n(f),
+        o = n(67294),
+        m = n(71415),
+        p = n.n(m),
+        u = n(49886),
+        d = {
+          'src-utils-math-util-demo-demo1': {
+            component: o.memo(
+              o.lazy(function () {
+                return Promise.all([
+                  n.e(1415),
+                  n.e(9154),
+                  n.e(8363),
+                  n.e(3047),
+                  n.e(2424),
+                  n.e(2433)
+                ]).then(n.bind(n, 7930))
+              })
+            ),
+            asset: {
+              type: 'BLOCK',
+              id: 'src-utils-math-util-demo-demo1',
+              refAtomIds: [],
+              dependencies: {
+                'index.jsx': { type: 'FILE', value: n(14444).Z },
+                react: { type: 'NPM', value: '19.1.1' },
+                vconsole: { type: 'NPM', value: '3.15.1' },
+                'lyrixi-design-mobile': { type: 'NPM', value: '0.0.1' }
+              },
+              entry: 'index.jsx'
+            },
+            context: { react: s || (s = n.t(o, 2)), vconsole: m, 'lyrixi-design-mobile': u },
+            renderOpts: {
+              compile: (function () {
+                var g = c()(
+                  i()().mark(function r() {
+                    var h,
+                      t = arguments
+                    return i()().wrap(function (v) {
+                      for (;;)
+                        switch ((v.prev = v.next)) {
+                          case 0:
+                            return (v.next = 2), n.e(250).then(n.bind(n, 90250))
+                          case 2:
+                            return v.abrupt('return', (h = v.sent).default.apply(h, t))
+                          case 3:
+                          case 'end':
+                            return v.stop()
+                        }
+                    }, r)
+                  })
+                )
+                function a() {
+                  return g.apply(this, arguments)
+                }
+                return a
+              })()
+            }
+          }
+        }
+    },
+    19524: function (l, e, n) {
+      var s
+      n.r(e),
+        n.d(e, {
+          demos: function () {
+            return d
+          }
+        })
+      var y = n(17061),
+        i = n.n(y),
+        f = n(17156),
+        c = n.n(f),
+        o = n(67294),
+        m = n(71415),
+        p = n.n(m),
+        u = n(49886),
+        d = {
+          'src-utils-object-util-demo-demo1': {
+            component: o.memo(
+              o.lazy(function () {
+                return Promise.all([
+                  n.e(1415),
+                  n.e(9154),
+                  n.e(8363),
+                  n.e(3047),
+                  n.e(2424),
+                  n.e(2433)
+                ]).then(n.bind(n, 65911))
+              })
+            ),
+            asset: {
+              type: 'BLOCK',
+              id: 'src-utils-object-util-demo-demo1',
+              refAtomIds: [],
+              dependencies: {
+                'index.jsx': { type: 'FILE', value: n(8815).Z },
+                react: { type: 'NPM', value: '19.1.1' },
+                vconsole: { type: 'NPM', value: '3.15.1' },
+                'lyrixi-design-mobile': { type: 'NPM', value: '0.0.1' }
+              },
+              entry: 'index.jsx'
+            },
+            context: { react: s || (s = n.t(o, 2)), vconsole: m, 'lyrixi-design-mobile': u },
+            renderOpts: {
+              compile: (function () {
+                var g = c()(
+                  i()().mark(function r() {
+                    var h,
+                      t = arguments
+                    return i()().wrap(function (v) {
+                      for (;;)
+                        switch ((v.prev = v.next)) {
+                          case 0:
+                            return (v.next = 2), n.e(250).then(n.bind(n, 90250))
+                          case 2:
+                            return v.abrupt('return', (h = v.sent).default.apply(h, t))
+                          case 3:
+                          case 'end':
+                            return v.stop()
+                        }
+                    }, r)
+                  })
+                )
+                function a() {
+                  return g.apply(this, arguments)
+                }
+                return a
+              })()
+            }
+          }
+        }
+    },
+    11693: function (l, e, n) {
+      var s
+      n.r(e),
+        n.d(e, {
+          demos: function () {
+            return p
+          }
+        })
+      var y = n(17061),
+        i = n.n(y),
+        f = n(17156),
+        c = n.n(f),
+        o = n(67294),
+        m = n(49886),
+        p = {
+          'src-utils-request-demo-common': {
+            component: o.memo(
+              o.lazy(function () {
+                return Promise.all([
+                  n.e(1415),
+                  n.e(9154),
+                  n.e(8363),
+                  n.e(3047),
+                  n.e(2424),
+                  n.e(2433)
+                ]).then(n.bind(n, 46203))
+              })
+            ),
+            asset: {
+              type: 'BLOCK',
+              id: 'src-utils-request-demo-common',
+              refAtomIds: [],
+              dependencies: {
+                'index.jsx': { type: 'FILE', value: n(68191).Z },
+                react: { type: 'NPM', value: '19.1.1' },
+                'lyrixi-design-mobile': { type: 'NPM', value: '0.0.1' }
+              },
+              entry: 'index.jsx'
+            },
+            context: { react: s || (s = n.t(o, 2)), 'lyrixi-design-mobile': m },
+            renderOpts: {
+              compile: (function () {
+                var u = c()(
+                  i()().mark(function g() {
+                    var a,
+                      r = arguments
+                    return i()().wrap(function (t) {
+                      for (;;)
+                        switch ((t.prev = t.next)) {
+                          case 0:
+                            return (t.next = 2), n.e(250).then(n.bind(n, 90250))
+                          case 2:
+                            return t.abrupt('return', (a = t.sent).default.apply(a, r))
+                          case 3:
+                          case 'end':
+                            return t.stop()
+                        }
+                    }, g)
+                  })
+                )
+                function d() {
+                  return u.apply(this, arguments)
+                }
+                return d
+              })()
+            }
+          },
+          'src-utils-request-demo-cache': {
+            component: o.memo(
+              o.lazy(function () {
+                return Promise.all([
+                  n.e(1415),
+                  n.e(9154),
+                  n.e(8363),
+                  n.e(3047),
+                  n.e(2424),
+                  n.e(2433)
+                ]).then(n.bind(n, 21484))
+              })
+            ),
+            asset: {
+              type: 'BLOCK',
+              id: 'src-utils-request-demo-cache',
+              refAtomIds: [],
+              dependencies: {
+                'index.jsx': { type: 'FILE', value: n(64981).Z },
+                react: { type: 'NPM', value: '19.1.1' },
+                'lyrixi-design-mobile': { type: 'NPM', value: '0.0.1' }
+              },
+              entry: 'index.jsx'
+            },
+            context: { react: s || (s = n.t(o, 2)), 'lyrixi-design-mobile': m },
+            renderOpts: {
+              compile: (function () {
+                var u = c()(
+                  i()().mark(function g() {
+                    var a,
+                      r = arguments
+                    return i()().wrap(function (t) {
+                      for (;;)
+                        switch ((t.prev = t.next)) {
+                          case 0:
+                            return (t.next = 2), n.e(250).then(n.bind(n, 90250))
+                          case 2:
+                            return t.abrupt('return', (a = t.sent).default.apply(a, r))
+                          case 3:
+                          case 'end':
+                            return t.stop()
+                        }
+                    }, g)
+                  })
+                )
+                function d() {
+                  return u.apply(this, arguments)
+                }
+                return d
+              })()
+            }
+          }
+        }
+    },
+    27388: function (l, e, n) {
+      var s
+      n.r(e),
+        n.d(e, {
+          demos: function () {
+            return p
+          }
+        })
+      var y = n(17061),
+        i = n.n(y),
+        f = n(17156),
+        c = n.n(f),
+        o = n(67294),
+        m = n(49886),
+        p = {
+          'src-utils-storage-demo-usecachestate': {
+            component: o.memo(
+              o.lazy(function () {
+                return Promise.all([
+                  n.e(1415),
+                  n.e(9154),
+                  n.e(8363),
+                  n.e(3047),
+                  n.e(2424),
+                  n.e(2433)
+                ]).then(n.bind(n, 79014))
+              })
+            ),
+            asset: {
+              type: 'BLOCK',
+              id: 'src-utils-storage-demo-usecachestate',
+              refAtomIds: [],
+              dependencies: {
+                'index.jsx': { type: 'FILE', value: n(56626).Z },
+                react: { type: 'NPM', value: '19.1.1' },
+                'lyrixi-design-mobile': { type: 'NPM', value: '0.0.1' }
+              },
+              entry: 'index.jsx'
+            },
+            context: { react: s || (s = n.t(o, 2)), 'lyrixi-design-mobile': m },
+            renderOpts: {
+              compile: (function () {
+                var u = c()(
+                  i()().mark(function g() {
+                    var a,
+                      r = arguments
+                    return i()().wrap(function (t) {
+                      for (;;)
+                        switch ((t.prev = t.next)) {
+                          case 0:
+                            return (t.next = 2), n.e(250).then(n.bind(n, 90250))
+                          case 2:
+                            return t.abrupt('return', (a = t.sent).default.apply(a, r))
+                          case 3:
+                          case 'end':
+                            return t.stop()
+                        }
+                    }, g)
+                  })
+                )
+                function d() {
+                  return u.apply(this, arguments)
+                }
+                return d
+              })()
+            }
+          }
+        }
+    },
+    81380: function (l, e, n) {
+      n.r(e),
+        n.d(e, {
+          texts: function () {
+            return s
+          }
+        })
+      const s = []
+    },
+    76319: function (l, e, n) {
+      n.r(e),
+        n.d(e, {
+          texts: function () {
+            return s
+          }
+        })
+      const s = []
+    },
+    83133: function (l, e, n) {
+      n.r(e),
+        n.d(e, {
+          texts: function () {
+            return s
+          }
+        })
+      const s = []
+    },
+    1568: function (l, e, n) {
+      n.r(e),
+        n.d(e, {
+          texts: function () {
+            return s
+          }
+        })
+      const s = []
+    },
+    97246: function (l, e, n) {
+      n.r(e),
+        n.d(e, {
+          texts: function () {
+            return s
+          }
+        })
+      const s = []
+    },
+    27725: function (l, e, n) {
+      n.r(e),
+        n.d(e, {
+          texts: function () {
+            return s
+          }
+        })
+      const s = []
+    },
+    73775: function (l, e, n) {
+      n.r(e),
+        n.d(e, {
+          texts: function () {
+            return s
+          }
+        })
+      const s = []
+    },
+    56974: function (l, e, n) {
+      n.r(e),
+        n.d(e, {
+          texts: function () {
+            return s
+          }
+        })
+      const s = []
+    },
+    74653: function (l, e, n) {
+      n.r(e),
+        n.d(e, {
+          texts: function () {
+            return s
+          }
+        })
+      const s = []
+    },
+    31217: function (l, e, n) {
+      n.r(e),
+        n.d(e, {
+          texts: function () {
+            return s
+          }
+        })
+      const s = []
+    },
+    6684: function (l, e, n) {
+      n.r(e),
+        n.d(e, {
+          texts: function () {
+            return s
+          }
+        })
+      const s = []
+    },
+    70013: function (l, e, n) {
+      n.r(e),
+        n.d(e, {
+          texts: function () {
+            return s
+          }
+        })
+      const s = [
+        { value: '\u652F\u6301\u7684\u8BED\u8A00\u5217\u8868', paraId: 0, tocIndex: 1 },
+        {
+          value:
+            'LocaleUtil.setLocale(language, data)\u8BBE\u7F6E\u8BED\u8A00, \u8BBE\u7F6E\u540E, \u4E24\u4E2A\u53D8\u91CF\u5C06\u6709\u503C: window.seedsLocaleLanguage \u6807\u8BC6\u8BED\u8A00, window.seedsLocaleData \u8BB0\u5F55\u56FD\u9645\u5316\u6570\u636E',
+          paraId: 1,
+          tocIndex: 2
+        },
+        {
+          value:
+            'LocaleUtil.setLocale \u540E, LocaleUtil.locale \u9ED8\u8BA4\u8BFB\u53D6 window.seedsLocaleData \u5BF9\u8C61, \u4E5F\u53EF\u4EE5\u589E\u52A0 window.localeData \u5BF9\u8C61\u8986\u76D6 window.seedsLocaleData \u5BF9\u8C61',
+          paraId: 2,
+          tocIndex: 3
+        },
+        {
+          value: `import React from 'react'
 import { LocaleUtil } from 'lyrixi-design-mobile'
 
 // \u5176\u4E2Dkey\u7684\u503C\u4E3A: \u534A\u5F84{0}\u7C73
 LocaleUtil.locale('\u534A\u5F841000\u7C73', 'key', [1000]) // => \u534A\u5F841000\u7C73
-`,paraId:3,tocIndex:3},{value:"\u4E5F\u53EF\u4EE5\u901A\u8FC7\u76F4\u63A5\u4FEE\u6539window.localeData\u4FEE\u6539\u56FD\u9645\u5316\u6570\u636E",paraId:4,tocIndex:3},{value:`\u76EE\u5F55: src/utils/LocaleUtil/resources/*.json
-\u6587\u4EF6:`,paraId:5,tocIndex:4},{value:"en_US",paraId:6,tocIndex:4},{value:"zh_CN",paraId:6,tocIndex:4},{value:"zh_HK",paraId:6,tocIndex:4},{value:"vi_VN",paraId:6,tocIndex:4}]},63040:function(l,e,n){n.r(e),n.d(e,{texts:function(){return s}});const s=[]},42472:function(l,e,n){n.r(e),n.d(e,{texts:function(){return s}});const s=[]},89159:function(l,e,n){n.r(e),n.d(e,{texts:function(){return s}});const s=[]},97666:function(l,e,n){n.r(e),n.d(e,{texts:function(){return s}});const s=[]},63455:function(l,e){e.Z=`import React from 'react'
+`,
+          paraId: 3,
+          tocIndex: 3
+        },
+        {
+          value:
+            '\u4E5F\u53EF\u4EE5\u901A\u8FC7\u76F4\u63A5\u4FEE\u6539window.localeData\u4FEE\u6539\u56FD\u9645\u5316\u6570\u636E',
+          paraId: 4,
+          tocIndex: 3
+        },
+        {
+          value: `\u76EE\u5F55: src/utils/LocaleUtil/resources/*.json
+\u6587\u4EF6:`,
+          paraId: 5,
+          tocIndex: 4
+        },
+        { value: 'en_US', paraId: 6, tocIndex: 4 },
+        { value: 'zh_CN', paraId: 6, tocIndex: 4 },
+        { value: 'zh_HK', paraId: 6, tocIndex: 4 },
+        { value: 'vi_VN', paraId: 6, tocIndex: 4 }
+      ]
+    },
+    63040: function (l, e, n) {
+      n.r(e),
+        n.d(e, {
+          texts: function () {
+            return s
+          }
+        })
+      const s = []
+    },
+    42472: function (l, e, n) {
+      n.r(e),
+        n.d(e, {
+          texts: function () {
+            return s
+          }
+        })
+      const s = []
+    },
+    89159: function (l, e, n) {
+      n.r(e),
+        n.d(e, {
+          texts: function () {
+            return s
+          }
+        })
+      const s = []
+    },
+    97666: function (l, e, n) {
+      n.r(e),
+        n.d(e, {
+          texts: function () {
+            return s
+          }
+        })
+      const s = []
+    },
+    63455: function (l, e) {
+      e.Z = `import React from 'react'
 import { Clipboard, Toast } from 'lyrixi-design-mobile'
 
 export default () => {
@@ -21,7 +1491,10 @@ export default () => {
     </>
   )
 }
-`},64288:function(l,e){e.Z=`import React from 'react'
+`
+    },
+    64288: function (l, e) {
+      e.Z = `import React from 'react'
 import { AssetUtil } from 'lyrixi-design-mobile'
 
 export default () => {
@@ -47,7 +1520,10 @@ export default () => {
     </>
   )
 }
-`},88724:function(l,e){e.Z=`import React from 'react'
+`
+    },
+    88724: function (l, e) {
+      e.Z = `import React from 'react'
 import { AssetUtil } from 'lyrixi-design-mobile'
 
 export default () => {
@@ -82,7 +1558,10 @@ export default () => {
     </>
   )
 }
-`},72629:function(l,e){e.Z=`import React, { useEffect, useRef, useState } from 'react'
+`
+    },
+    72629: function (l, e) {
+      e.Z = `import React, { useEffect, useRef, useState } from 'react'
 import vconsole from 'vconsole'
 
 import { Loading, Button } from 'lyrixi-design-mobile'
@@ -532,13 +2011,13 @@ export default () => {
                   wechat: {
                     title: '\u6807\u9898',
                     description: '\u63CF\u8FF0',
-                    imageUrl: 'https://res.waiqin365.com/d/seedsui/logo.png',
+                    imageUrl: 'https:https://lyrixi.github.io/lyrixi-design-mobile/assets/logo.png',
                     url: 'https://www.baidu.com'
                   },
                   miniprogram: {
                     title: '\u6807\u9898',
                     description: '\u63CF\u8FF0',
-                    imageUrl: 'https://res.waiqin365.com/d/seedsui/logo.png',
+                    imageUrl: 'https:https://lyrixi.github.io/lyrixi-design-mobile/assets/logo.png',
                     url: 'https://servicewechat.com/wxascheme/jump_wxa?url=weixin://dl/business/?t=IUGVzjsue7u',
                     miniProgramId: 'gh_00011085b545',
                     miniProgramPath:
@@ -547,25 +2026,25 @@ export default () => {
                   moments: {
                     title: '\u6807\u9898',
                     description: '\u63CF\u8FF0',
-                    imageUrl: 'https://res.waiqin365.com/d/seedsui/logo.png',
+                    imageUrl: 'https:https://lyrixi.github.io/lyrixi-design-mobile/assets/logo.png',
                     url: 'https://www.baidu.com'
                   },
                   wecom: {
                     title: '\u6807\u9898',
                     description: '\u63CF\u8FF0',
-                    imageUrl: 'https://res.waiqin365.com/d/seedsui/logo.png',
+                    imageUrl: 'https:https://lyrixi.github.io/lyrixi-design-mobile/assets/logo.png',
                     url: 'https://www.baidu.com'
                   },
                   dingtalk: {
                     title: '\u6807\u9898',
                     description: '\u63CF\u8FF0',
-                    imageUrl: 'https://res.waiqin365.com/d/seedsui/logo.png',
+                    imageUrl: 'https:https://lyrixi.github.io/lyrixi-design-mobile/assets/logo.png',
                     url: 'https://www.baidu.com'
                   },
                   lark: {
                     title: '\u6807\u9898',
                     description: '\u63CF\u8FF0',
-                    imageUrl: 'https://res.waiqin365.com/d/seedsui/logo.png',
+                    imageUrl: 'https:https://lyrixi.github.io/lyrixi-design-mobile/assets/logo.png',
                     url: 'https://www.baidu.com'
                   }
                 })
@@ -583,7 +2062,10 @@ export default () => {
     </Layout>
   )
 }
-`},28606:function(l,e){e.Z=`import React from 'react'
+`
+    },
+    28606: function (l, e) {
+      e.Z = `import React from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
@@ -649,7 +2131,10 @@ export default () => {
     </Layout>
   )
 }
-`},4076:function(l,e){e.Z=`import React from 'react'
+`
+    },
+    4076: function (l, e) {
+      e.Z = `import React from 'react'
 import { Clipboard, Toast } from 'lyrixi-design-mobile'
 
 export default () => {
@@ -666,7 +2151,10 @@ export default () => {
     </>
   )
 }
-`},32209:function(l,e){e.Z=`import React from 'react'
+`
+    },
+    32209: function (l, e) {
+      e.Z = `import React from 'react'
 import { DOMUtil } from 'lyrixi-design-mobile'
 
 export default () => {
@@ -681,7 +2169,10 @@ export default () => {
     </>
   )
 }
-`},91018:function(l,e){e.Z=`import React from 'react'
+`
+    },
+    91018: function (l, e) {
+      e.Z = `import React from 'react'
 import { Layout, Card, Divider, DateUtil } from 'lyrixi-design-mobile'
 
 export default () => {
@@ -746,7 +2237,10 @@ export default () => {
     </Layout>
   )
 }
-`},40025:function(l,e){e.Z=`import React, { useEffect } from 'react'
+`
+    },
+    40025: function (l, e) {
+      e.Z = `import React, { useEffect } from 'react'
 import { Layout, Debugger } from 'lyrixi-design-mobile'
 
 export default () => {
@@ -761,7 +2255,10 @@ export default () => {
     </Layout>
   )
 }
-`},58469:function(l,e){e.Z=`import React from 'react'
+`
+    },
+    58469: function (l, e) {
+      e.Z = `import React from 'react'
 
 import { Layout, Device, Card } from 'lyrixi-design-mobile'
 
@@ -809,7 +2306,10 @@ export default () => {
     </Layout>
   )
 }
-`},50312:function(l,e){e.Z=`import React from 'react'
+`
+    },
+    50312: function (l, e) {
+      e.Z = `import React from 'react'
 
 import { Layout, GeoUtil } from 'lyrixi-design-mobile'
 
@@ -820,7 +2320,10 @@ export default () => {
     </Layout>
   )
 }
-`},7425:function(l,e){e.Z=`import React from 'react'
+`
+    },
+    7425: function (l, e) {
+      e.Z = `import React from 'react'
 
 import { Layout, GeoUtil } from 'lyrixi-design-mobile'
 
@@ -831,7 +2334,10 @@ export default () => {
     </Layout>
   )
 }
-`},70997:function(l,e){e.Z=`import React from 'react'
+`
+    },
+    70997: function (l, e) {
+      e.Z = `import React from 'react'
 
 import { Layout, GeoUtil } from 'lyrixi-design-mobile'
 
@@ -842,7 +2348,10 @@ export default () => {
     </Layout>
   )
 }
-`},49178:function(l,e){e.Z=`import React from 'react'
+`
+    },
+    49178: function (l, e) {
+      e.Z = `import React from 'react'
 
 import { Layout, LocaleUtil, Divider, Card, DateUtil } from 'lyrixi-design-mobile'
 import dayjs from 'dayjs'
@@ -890,7 +2399,10 @@ export default () => {
     </Layout>
   )
 }
-`},14444:function(l,e){e.Z=`import React from 'react'
+`
+    },
+    14444: function (l, e) {
+      e.Z = `import React from 'react'
 import vconsole from 'vconsole'
 
 import { MathUtil } from 'lyrixi-design-mobile'
@@ -916,7 +2428,10 @@ export default () => {
     </Layout>
   )
 }
-`},8815:function(l,e){e.Z=`import React from 'react'
+`
+    },
+    8815: function (l, e) {
+      e.Z = `import React from 'react'
 import vconsole from 'vconsole'
 
 import { ObjectUtil, Divider, Layout } from 'lyrixi-design-mobile'
@@ -934,7 +2449,10 @@ export default () => {
     </Layout>
   )
 }
-`},64981:function(l,e){e.Z=`import React from 'react'
+`
+    },
+    64981: function (l, e) {
+      e.Z = `import React from 'react'
 import { Request, Toast } from 'lyrixi-design-mobile'
 
 export default () => {
@@ -954,7 +2472,10 @@ export default () => {
     </>
   )
 }
-`},68191:function(l,e){e.Z=`import React from 'react'
+`
+    },
+    68191: function (l, e) {
+      e.Z = `import React from 'react'
 import { Request, Toast } from 'lyrixi-design-mobile'
 
 export default () => {
@@ -970,7 +2491,10 @@ export default () => {
     </>
   )
 }
-`},56626:function(l,e){e.Z=`import React from 'react'
+`
+    },
+    56626: function (l, e) {
+      e.Z = `import React from 'react'
 import { Storage, Layout, Button } from 'lyrixi-design-mobile'
 
 export default () => {
@@ -1011,4 +2535,7 @@ export default () => {
     </Layout>
   )
 }
-`}}]);
+`
+    }
+  }
+])

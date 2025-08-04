@@ -1,3 +1,15 @@
+---
+nav:
+  title: 设计
+  order: -1
+group:
+  title: 设计
+  order: 1
+title: 介绍
+order: 1
+toc: content
+---
+
 <div align="center"><a name="readme-top"></a>
 
 <img height="180" src="https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png">

@@ -79,7 +79,7 @@ export default defineConfig({
     // 导航
     nav: {
       'zh-CN': [
-        { title: '设计', link: '/design/introduce' },
+        { title: '设计', link: '/design/design-introduce' },
         { title: '组件', link: '/components' },
         { title: '工具', link: '/utils' },
         { title: '模板', link: '/pages' }

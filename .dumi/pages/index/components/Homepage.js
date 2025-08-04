@@ -30,7 +30,7 @@ export default () => {
       <div className="snippets">
         <div className="snippet">
           <div className="title">设计原则</div>
-          <div className="description">全局样式, API思想</div>
+          <div className="description">极简Token, API统一, 简单易用</div>
         </div>
         <div className="snippet">
           <div className="title">组件</div>

@@ -10,7 +10,7 @@ order: 2
 toc: content
 ---
 
-<p style="font-size:24px;font-weight: bold;">不要改样式</p>
+## 不要改组件样式
 
 错误用法:
 
@@ -26,4 +26,34 @@ toc: content
 import { Input } from 'lyrixi-design-mobile'
 
 export default () => <Input.Text style={{ height: '40px' }} />
+```
+
+## 属性不要用动态 props 定义
+
+错误定义:
+
+```jsx
+return (
+  <header
+    {...props}
+    className={`layout-header${props.className ? ' ' + props.className : ''}`}
+    ref={rootRef}
+  >
+    {children}
+  </header>
+)
+```
+
+正确用法
+
+```jsx
+return (
+  <header
+    style={style}
+    className={`layout-header${className ? ' ' + className : ''}`}
+    ref={rootRef}
+  >
+    {children}
+  </header>
+)
 ```

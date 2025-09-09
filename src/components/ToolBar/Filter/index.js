@@ -3,27 +3,39 @@ import React, { useState, useRef, forwardRef, useImperativeHandle, useEffect } f
 // 内库使用-start
 import DOMUtil from './../../../utils/DOMUtil'
 import FilterModal from './../../Modal/FilterModal'
+import Button from './../../Button'
 // 内库使用-end
 
 /* 测试使用-start
-import { DOMUtil, Modal } from 'lyrixi-design-mobile'
+import { DOMUtil, Modal, Button } from 'lyrixi-design-mobile'
 const FilterModal = Modal.FilterModal
 测试使用-end */
 
 const Filter = forwardRef(
   (
     {
+      // Button Style
+      color = 'default',
+      variant = 'text',
+      shape,
+      comboStyle,
+      comboClassName,
+
+      // Content
       icon,
-      active,
+
+      // Modal
+      maskClassName,
+      maskStyle,
+      modalClassName,
+      modalStyle,
       onCancel,
       onOk,
       onReset,
       onConfig,
       buttons,
       onVisibleChange,
-      modalProps,
-      children,
-      ...props
+      children
     },
     ref
   ) => {
@@ -58,9 +70,14 @@ const Filter = forwardRef(
     return (
       <>
         {/* Combo */}
-        <div
-          {...props}
-          className={DOMUtil.classNames('toolbar-filter', props.className, active ? 'active' : '')}
+        <Button
+          color={color}
+          variant={variant}
+          size="s"
+          radius="s"
+          shape={shape}
+          className={DOMUtil.classNames('toolbar-button', comboClassName)}
+          style={comboStyle}
           onClick={() => {
             setVisible(true)
           }}
@@ -68,12 +85,12 @@ const Filter = forwardRef(
         >
           {icon ? (
             DOMUtil.getIconNode(icon, {
-              className: 'toolbar-icon toolbar-filter-icon'
+              className: 'toolbar-button-icon'
             })
           ) : (
-            <div className={'toolbar-icon toolbar-filter-icon default'}></div>
+            <div className={'toolbar-button-icon toolbar-button-icon-filter'}></div>
           )}
-        </div>
+        </Button>
 
         {/* Modal */}
         <FilterModal
@@ -82,7 +99,14 @@ const Filter = forwardRef(
           onReset={onReset}
           onConfig={onConfig}
           buttons={buttons}
-          {...modalProps}
+          maskProps={{
+            className: maskClassName,
+            style: maskStyle
+          }}
+          style={{
+            className: modalClassName,
+            style: modalStyle
+          }}
           onVisibleChange={setVisible}
           visible={visible}
         >
@@ -92,5 +116,8 @@ const Filter = forwardRef(
     )
   }
 )
+
+// Component Name, for compact
+Filter.componentName = 'ToolBar.Filter'
 
 export default Filter

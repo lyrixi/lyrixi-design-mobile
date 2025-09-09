@@ -9,7 +9,7 @@ function useForm(form) {
       form ?? {
         ...rcForm,
         scrollToField: (name, options) => {
-          let fieldDOM = document.getElementById(`form-item-${name}`)
+          let fieldDOM = document.getElementById(`seed-form-item-${name}`)
 
           if (fieldDOM) {
             fieldDOM.scrollIntoView({ behavior: 'smooth', block: 'start', ...options })

@@ -23,7 +23,7 @@ const Modal = forwardRef(
       onBeforeChange,
 
       // Main
-      type,
+      type = 'date',
       min,
       max,
       hourStep,

@@ -1,11 +1,11 @@
 // 比较类型
 function compareType(type1, type2) {
   const sorts = ['country', 'province', 'city', 'district', 'street']
-  let type1Lvl = sorts.indexOf(type1)
-  let type2Lvl = sorts.indexOf(type2)
-  if (typeof type1Lvl === 'number' && typeof type2Lvl === 'number') {
-    if (type1Lvl !== type2Lvl) {
-      return type1Lvl > type2Lvl ? 1 : -1
+  let type1Index = sorts.indexOf(type1)
+  let type2Index = sorts.indexOf(type2)
+  if (typeof type1Index === 'number' && typeof type2Index === 'number') {
+    if (type1Index !== type2Index) {
+      return type1Index > type2Index ? 1 : -1
     } else {
       return 0
     }

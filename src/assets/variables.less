@@ -5,80 +5,82 @@
 // 基础颜色(控件多基于如下几种颜色)
 :root {
   // 动画时长(例如遮等)
-  --animation-duration: 300ms;
-  --animation-duration-open: 300ms;
-  --animation-duration-close: 250ms;
-  // 全局背景色
-  --app-background-color: #f1f2f5;
+  --seed-animation-duration: 300ms;
+  --seed-animation-duration-open: 300ms;
+  --seed-animation-duration-close: 250ms;
+
+  // 背景色
+  --seed-bg-default: #f1f2f5;
+  --seed-bg-mask: rgba(0, 0, 0, 30%);
+  --seed-bg-divider: #f9fafb;
+  --seed-bg-button-default: white;
+  --seed-bg-button-default-lighten: #f1f2f5;
+
+  // 文字色
+  --seed-font-color-default: #1a1c1f;
+  --seed-font-color-secondary: #5c646c;
+  --seed-font-color-tertiary: #85909c;
+  --seed-font-color-quaternary: #a9b1b9;
+  --seed-font-color-disabled: #a9b1b9;
+
+  --seed-font-color-default-rgb: 26, 28, 31;
+  --seed-font-color-secondary-rgb: 92, 100, 108;
+  --seed-font-color-tertiary-rgb: 119, 129, 140;
+  --seed-font-color-quaternary-rgb: 169, 177, 185;
+  --seed-font-color-disabled-rgb: 169, 177, 185;
+
+  // 边框色
+  --seed-border-color: #e6e8eb;
+
   // 颜色
-  --mask-bg: rgba(0, 0, 0, 30%);
-  --default: #1a1c1f;
-  --secondary: #5c646c;
-  --auxiliary: #85909c;
-  --tertiary: #a9b1b9;
-  --quaternary: #a9b1b9;
-  --placeholder: #a9b1b9;
-  --disabled: #a9b1b9;
-  --button: white;
-  --button-lighten: #f1f2f5;
-  --primary: #ff9008;
-  --primary-lighten: #fff7e6;
-  --link: #0076ff;
-  --link-lighten: #e6f4ff;
-  --warning: #f4984e;
-  --warning-lighten: #fffbe6;
-  --danger: #fc484a;
-  --danger-lighten: #fff1f0;
-  --success: #00a870;
-  --success-lighten: #f6ffed;
-  --border: #e6e8eb;
-  --navbar-bg: #f1f2f5;
-  --navbar-icon: #62666c;
-  // --navbar-icon: #50565d;
-  --divider-bg: #f9fafb;
-  --placeholder-icon: #c2c6cd;
-  // 颜色rgb
-  --default-rgb: 26, 28, 31;
-  --secondary-rgb: 92, 100, 108;
-  --auxiliary-rgb: 119, 129, 140;
-  --tertiary-rgb: 169, 177, 185;
-  --quaternary-rgb: 169, 177, 185;
-  --placeholder-rgb: 169, 177, 185;
-  --disabled-rgb: 169, 177, 185;
-  --button-rgb: 255, 255, 255;
-  --primary-rgb: 255, 144, 8;
-  --link-rgb: 0, 118, 255;
-  --warning-rgb: 244, 152, 78;
-  --danger-rgb: 252, 72, 74;
-  --success-rgb: 0, 168, 112;
-  --border-rgb: 230, 232, 235;
-  --navbar-icon-rgb: 80, 86, 93;
-  --placeholder-icon-rgb: 194, 198, 205;
+  --seed-primary: #ff9008;
+  --seed-primary-lighten: #fff7e6;
+  --seed-link: #0076ff;
+  --seed-link-lighten: #e6f4ff;
+  --seed-warning: #f4984e;
+  --seed-warning-lighten: #fffbe6;
+  --seed-danger: #fc484a;
+  --seed-danger-lighten: #fff1f0;
+  --seed-success: #00a870;
+  --seed-success-lighten: #f6ffed;
+
+  --seed-primary-rgb: 255, 144, 8;
+  --seed-link-rgb: 0, 118, 255;
+  --seed-warning-rgb: 244, 152, 78;
+  --seed-danger-rgb: 252, 72, 74;
+  --seed-success-rgb: 0, 168, 112;
+
   // 文字大小
-  --font-size-xxxl: 20px;
-  --font-size-xxl: 18px;
-  --font-size-xl: 16px;
-  --font-size-l: 15px;
-  --font-size-m: 14px;
-  --font-size-s: 12px;
-  --font-size-xs: 11px;
+  --seed-font-size-xxxl: 20px;
+  --seed-font-size-xxl: 18px;
+  --seed-font-size-xl: 16px;
+  --seed-font-size-l: 15px;
+  --seed-font-size-m: 14px;
+  --seed-font-size-s: 12px;
+  --seed-font-size-xs: 11px;
+
   // 圆角大小
-  --radius-xl: 12px;
-  --radius-l: 10px;
-  --radius-m: 8px;
-  --radius-s: 6px;
-  --radius-xs: 4px;
-  --radius-xxs: 3px;
+  --seed-radius-xl: 12px;
+  --seed-radius-l: 10px;
+  --seed-radius-m: 8px;
+  --seed-radius-s: 6px;
+  --seed-radius-xs: 4px;
+  --seed-radius-xxs: 3px;
+
   // 间距大小
-  --space-xxl: 16px;
-  --space-xl: 14px;
-  --space-l: 12px;
-  --space-m: 10px;
-  --space-s: 8px;
-  --space-xs: 6px;
-  --space-xxs: 4px;
-  --space-xxxs: 2px;
+  --seed-space-xxl: 16px;
+  --seed-space-xl: 14px;
+  --seed-space-l: 12px;
+  --seed-space-m: 10px;
+  --seed-space-s: 8px;
+  --seed-space-xs: 6px;
+  --seed-space-xxs: 4px;
+  --seed-space-xxxs: 2px;
+
   // 安全区
-  --safe-area-inset-top: env(safe-area-inset-top);
-  --safe-area-inset-bottom: env(safe-area-inset-bottom);
+  --seed-safe-area-inset-top: env(safe-area-inset-top);
+  --seed-safe-area-inset-bottom: env(safe-area-inset-bottom);
+
+  // Input控件
+  --seed-input-height-m: 20px;
 }

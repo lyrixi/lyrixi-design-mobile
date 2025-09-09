@@ -7,12 +7,12 @@ export default () => {
   const [list, setList] = useState([
     {
       name: '1',
-      src: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png',
+      src: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png',
       status: 'fail'
     },
     {
       name: '2',
-      src: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png'
+      src: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png'
     }
   ])
 
@@ -44,7 +44,7 @@ export default () => {
   }
 
   return (
-    <Layout className="full">
+    <Layout className="full bg-white">
       <Layout.Main>
         <Divider>Default Upload</Divider>
         <Upload

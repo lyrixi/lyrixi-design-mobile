@@ -97,7 +97,7 @@ const Edit = () => {
           <Form
             form={form}
             style={{ margin: '0 12px' }}
-            labelCol={{ ellipsis: { rows: 1, expandable: true } }}
+            labelCol={{ ellipsis: { rows: 2, expandable: true } }}
           >
             <Form.Item
               name="input"
@@ -112,7 +112,7 @@ const Edit = () => {
                 }
               ]}
             >
-              <Input.Text placeholder={locale('Please input')} maxLength={50} />
+              <Input.Text allowClear placeholder={locale('Please input')} maxLength={50} />
             </Form.Item>
             <Form.Item
               name="textarea"
@@ -122,13 +122,14 @@ const Edit = () => {
                 return <div className="text-right">{`${value?.length || '0'} / 150`}</div>
               }}
             >
-              <Input.Textarea placeholder={locale('Please input')} />
+              <Input.Textarea allowClear placeholder={locale('Please input')} />
             </Form.Item>
             <Form.Item name="autoFit" label={locale('Auto fit')}>
-              <Input.AutoFit placeholder={locale('Please input')} />
+              <Input.AutoFit allowClear placeholder={locale('Please input')} />
             </Form.Item>
             <Form.Item name="selectTags" label={locale('Select Tags')}>
               <Select.Combo
+                multiple
                 mode="tags"
                 placeholder={locale('Please select')}
                 list={[
@@ -142,17 +143,11 @@ const Edit = () => {
                   }
                 ]}
                 allowClear
-                clear={({ clearable, triggerClear }) => {
-                  return clearable ? (
-                    <Input.IconClear onClick={triggerClear} />
-                  ) : (
-                    <Input.IconRightArrow />
-                  )
-                }}
               />
             </Form.Item>
             <Form.Item name="select" label={locale('Select')}>
               <Select.Combo
+                multiple={false}
                 placeholder={locale('Please select')}
                 list={[
                   {
@@ -165,13 +160,6 @@ const Edit = () => {
                   }
                 ]}
                 allowClear
-                clear={({ clearable, triggerClear }) => {
-                  return clearable ? (
-                    <Input.IconClear onClick={triggerClear} />
-                  ) : (
-                    <Input.IconRightArrow />
-                  )
-                }}
               />
             </Form.Item>
             <Form.Item name="picker" label={locale('Picker')}>
@@ -188,13 +176,6 @@ const Edit = () => {
                   }
                 ]}
                 allowClear
-                clear={({ clearable, triggerClear }) => {
-                  return clearable ? (
-                    <Input.IconClear onClick={triggerClear} />
-                  ) : (
-                    <Input.IconRightArrow />
-                  )
-                }}
               />
             </Form.Item>
             <Form.Item name="switch" valuePropName="checked" label={locale('Switch')}>
@@ -257,7 +238,7 @@ const Edit = () => {
               />
             </Form.Item>
             <Form.Item name="number" label={locale('Number')}>
-              <Input.Number placeholder={locale('Please input')} />
+              <Input.Number allowClear placeholder={locale('Please input')} />
             </Form.Item>
             <Form.Item
               name="numberBox"
@@ -278,7 +259,7 @@ const Edit = () => {
                 return <Input.PasswordStrength value={value} style={{ marginTop: 8 }} />
               }}
             >
-              <Input.Password placeholder={locale('Please input')} />
+              <Input.Password allowClear placeholder={locale('Please input')} />
             </Form.Item>
             <Form.Item name="range" label={locale('Range')}>
               <Input.Range />
@@ -287,13 +268,13 @@ const Edit = () => {
               <Input.Rate />
             </Form.Item>
             <Form.Item name="tel" label={locale('Tel')}>
-              <Input.Tel placeholder={locale('Please input')} />
+              <Input.Tel allowClear placeholder={locale('Please input')} />
             </Form.Item>
             <Form.Item name="url" label={locale('Url')}>
-              <Input.Url placeholder={locale('Please input')} />
+              <Input.Url allowClear placeholder={locale('Please input')} />
             </Form.Item>
             <Form.Item name="signature" layout="vertical" label={locale('Signature')}>
-              <Signature.Combo />
+              <Signature.Combo allowClear={true} />
             </Form.Item>
           </Form>
         </Card>
@@ -301,71 +282,19 @@ const Edit = () => {
           <Divider>Vertical Layout</Divider>
           <Form form={form} layout="vertical" style={{ margin: '0 12px' }}>
             <Form.Item name="datetime" label={locale('Datetime')}>
-              <DatePicker.Combo
-                type="datetime"
-                placeholder={locale('Please select')}
-                allowClear
-                clear={({ clearable, triggerClear }) => {
-                  return clearable ? (
-                    <Input.IconClear onClick={triggerClear} />
-                  ) : (
-                    <Input.IconRightArrow />
-                  )
-                }}
-              />
+              <DatePicker.Combo type="datetime" placeholder={locale('Please select')} allowClear />
             </Form.Item>
             <Form.Item name="date" label={locale('Date')}>
-              <DatePicker.Combo
-                placeholder={locale('Please select')}
-                allowClear
-                clear={({ clearable, triggerClear }) => {
-                  return clearable ? (
-                    <Input.IconClear onClick={triggerClear} />
-                  ) : (
-                    <Input.IconRightArrow />
-                  )
-                }}
-              />
+              <DatePicker.Combo placeholder={locale('Please select')} allowClear />
             </Form.Item>
             <Form.Item name="time" label={locale('Time')}>
-              <DatePicker.Combo
-                type="time"
-                placeholder={locale('Please select')}
-                allowClear
-                clear={({ clearable, triggerClear }) => {
-                  return clearable ? (
-                    <Input.IconClear onClick={triggerClear} />
-                  ) : (
-                    <Input.IconRightArrow />
-                  )
-                }}
-              />
+              <DatePicker.Combo type="time" placeholder={locale('Please select')} allowClear />
             </Form.Item>
             <Form.Item name="dateRange" label={locale('Date range')}>
-              <DatePicker.RangeCombo
-                placeholder={locale('Please select')}
-                allowClear
-                clear={({ clearable, triggerClear }) => {
-                  return clearable ? (
-                    <Input.IconClear onClick={triggerClear} />
-                  ) : (
-                    <Input.IconRightArrow />
-                  )
-                }}
-              />
+              <DatePicker.RangeCombo placeholder={locale('Please select')} allowClear />
             </Form.Item>
             <Form.Item name="district" label={locale('District')}>
-              <Cascader.DistrictCombo
-                placeholder={locale('Please select')}
-                allowClear
-                clear={({ clearable, triggerClear }) => {
-                  return clearable ? (
-                    <Input.IconClear onClick={triggerClear} />
-                  ) : (
-                    <Input.IconRightArrow />
-                  )
-                }}
-              />
+              <Cascader.DistrictCombo placeholder={locale('Please select')} allowClear />
             </Form.Item>
             <Form.Item name="location" label={locale('Location')}>
               <Location.Combo
@@ -378,9 +307,6 @@ const Edit = () => {
                 allowClear
                 previewVisible
                 chooseVisible
-                clear={({ clearable, triggerClear }) => {
-                  return clearable ? <Input.IconClear onClick={triggerClear} /> : null
-                }}
               />
             </Form.Item>
             <Form.Item name="signature" label={locale('Signature')}>
@@ -396,12 +322,12 @@ const Edit = () => {
                 list={[
                   {
                     name: '1',
-                    src: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png',
+                    src: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png',
                     status: 'fail'
                   },
                   {
                     name: '2',
-                    src: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png'
+                    src: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png'
                   }
                 ]}
                 count={9}
@@ -421,28 +347,28 @@ const Edit = () => {
                   {
                     id: '1',
                     thumb:
-                      'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png',
-                    src: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png',
+                      'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png',
+                    src: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png',
                     status: 'fail'
                   },
                   {
                     id: '2',
                     thumb:
-                      'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png',
+                      'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png',
                     src: 'https://www.wilsoncomm.com.hk/image/cache/catalog/product-3566/6ca91b2b19a3d19b6cbe4f618a028e65-850x850.jpg'
                     // status: 'uploading'
                   },
                   {
                     id: '3',
                     thumb:
-                      'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png',
-                    thumb: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png'
+                      'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png',
+                    thumb: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png'
                   },
                   {
                     id: '4',
                     thumb:
-                      'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png',
-                    src: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png'
+                      'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png',
+                    src: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png'
                   }
                 ]}
                 count={9}

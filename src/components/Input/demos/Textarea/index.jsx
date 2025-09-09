@@ -8,11 +8,6 @@ export default () => {
       <Input.Textarea
         value={value}
         allowClear
-        inputProps={{
-          style: {
-            padding: '12px'
-          }
-        }}
         formatter={(newValue) => {
           return '$' + newValue
         }}

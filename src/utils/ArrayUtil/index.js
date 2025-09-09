@@ -1,4 +1,5 @@
 import deepTree from './deepTree'
+import searchDeepTree from './searchDeepTree'
 import getDeepTreeNode from './getDeepTreeNode'
 import getDeepTreeNodes from './getDeepTreeNodes'
 import getDeepTreePredecessorNodes from './getDeepTreePredecessorNodes'
@@ -18,6 +19,7 @@ import isEqual from './isEqual'
 
 const ArrayUtil = {
   deepTree,
+  searchDeepTree,
   getDeepTreeNode,
   getDeepTreeNodes,
   getDeepTreePredecessorNodes,

@@ -41,7 +41,7 @@
     height: 16px;
   }
   .footerbar-tab-name {
-    font-size: var(--font-size-s);
+    font-size: var(--seed-font-size-s);
     margin-top: 4px;
   }
   .footerbar-button {
@@ -52,14 +52,14 @@
     border-radius: 8px;
     height: 40px;
     border: 0;
-    font-size: var(--font-size-xl);
+    font-size: var(--seed-font-size-xl);
   }
   .footerbar-button.default {
-    background: var(--app-background-color);
+    background: var(--seed-bg-default);
   }
   .footerbar-button.primary {
     color: white;
-    background: var(--primary);
+    background: var(--seed-primary);
   }
 }
 
@@ -84,7 +84,7 @@
   }
 
   .footerbar-button.primary {
-    color: var(--primary);
+    color: var(--seed-primary);
   }
 }
 
@@ -97,7 +97,7 @@
 .footerbar-button.default {
   &.disabled {
     pointer-events: none;
-    color: var(--disabled);
+    color: var(--seed-font-color-disabled);
   }
 }
 
@@ -110,6 +110,6 @@
 .footerbar-tab {
   &.disabled {
     pointer-events: none;
-    color: var(--disabled);
+    color: var(--seed-font-color-disabled);
   }
 }

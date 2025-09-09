@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef, forwardRef, useImperativeHandle } from 'react'
-import _ from 'lodash'
-import { updateValueType, compareType } from './../DistrictMain/utils'
+import React, { useState, useRef, forwardRef, useImperativeHandle } from 'react'
+import { formatType, compareType } from './../DistrictMain/utils'
+import findDistrictLeafIndex from './../DistrictMain/utils/findDistrictLeafIndex'
 import DistrictMain from './../DistrictMain'
 
 // 内库使用-start
@@ -22,15 +22,10 @@ const DistrictModal = forwardRef(
       // Modal
       value,
 
+      searchVisible,
       visible,
       min = '',
-      isCountry,
-      isProvince,
-      isMunicipality,
-      isPrefecture,
-      isCity,
-      isDistrict,
-      isStreet,
+      ok,
 
       // Main
       startType,
@@ -43,8 +38,8 @@ const DistrictModal = forwardRef(
     },
     ref
   ) => {
-    // min需要根据list计算value的type, getList后才能计算value的type
-    const listRef = useRef(null)
+    // eslint-disable-next-line
+    type = formatType(type)
 
     // 是否显示右上角确认按钮
     let [okVisible, setOkVisible] = useState(null)
@@ -57,43 +52,22 @@ const DistrictModal = forwardRef(
       }
     })
 
-    useEffect(() => {
-      if (!visible || !min || _.isEmpty(value)) {
-        return
-      }
-      if (!modalRef.current?.getList) return
-
-      // 查询列表后再Ok按钮显示状态
-      queryList()
-
-      // eslint-disable-next-line
-    }, [visible])
-
-    // 查询列表后再Ok按钮显示状态
-    async function queryList() {
-      listRef.current = await modalRef.current?.getList(value)
-      updateOkVisible(value, listRef.current)
-    }
+    // useEffect(() => {
+    //   if (visible) {
+    //     updateOkVisible(value)
+    //   }
+    //   // eslint-disable-next-line
+    // }, [visible])
 
     // 根据min判断是否显示确定按钮
-    function updateOkVisible(tabs, list) {
-      if (!min || !Array.isArray(tabs) || !tabs.length) return
+    function updateOkVisible(tabs) {
+      // 没有值或者没有最小值限制, 则需要一直选到叶子节点, 不显示确定按钮
+      if (!Array.isArray(tabs) || !tabs.length || !min) {
+        setOkVisible(false)
+        return
+      }
 
-      let newOkVisible = null
-
-      // 获取末级类型
-      updateValueType(tabs, list, {
-        type,
-        isCountry,
-        isProvince,
-        isMunicipality,
-        isPrefecture,
-        isCity,
-        isDistrict,
-        isStreet
-      })
-
-      newOkVisible = false
+      let newOkVisible = false
 
       // 比较类型, 判断是否显示确定按钮
       let currentTypes = tabs[tabs.length - 1]?.type
@@ -109,28 +83,28 @@ const DistrictModal = forwardRef(
       setOkVisible(newOkVisible)
     }
 
+    // 加载完成后, 会更新value的值, 再更新Ok按钮显示状态
+    function handleLoad() {
+      updateOkVisible(value)
+    }
+
     // 下钻根据min更新Ok按钮显示状态
-    function handleDrillDown(tabs, { list } = {}) {
-      updateOkVisible(tabs, list)
+    function handleDrillDown(tabs) {
+      updateOkVisible(tabs)
     }
 
     // 扩展非标准属性
     if (!props.mainProps) {
       props.mainProps = {}
     }
+    props.mainProps.searchVisible = searchVisible
     props.mainProps.startType = startType
     props.mainProps.type = type
     props.mainProps.loadCountries = loadCountries
     props.mainProps.loadCountryRegions = loadCountryRegions
     props.mainProps.loadStreets = loadStreets
     props.mainProps.editableOptions = editableOptions
-    props.mainProps.isCountry = isCountry
-    props.mainProps.isProvince = isProvince
-    props.mainProps.isMunicipality = isMunicipality
-    props.mainProps.isPrefecture = isPrefecture
-    props.mainProps.isCity = isCity
-    props.mainProps.isDistrict = isDistrict
-    props.mainProps.isStreet = isStreet
+    props.mainProps.onLoad = handleLoad
     props.mainProps.onChange = handleDrillDown
 
     return (
@@ -141,14 +115,14 @@ const DistrictModal = forwardRef(
         {...props}
         main={props?.main || DistrictMain}
         changeClosable={(newValue, newArguments, { triggerOk }) => {
-          let lastTab =
-            Array.isArray(newValue) && newValue.length ? newValue[newValue.length - 1] : null
-          if (lastTab?.isLeaf) {
+          if (!Array.isArray(newValue) || !newValue.length) return
+          const leafIndex = findDistrictLeafIndex(newValue, type)
+          if (typeof leafIndex === 'number') {
             triggerOk(newValue)
             return true
           }
         }}
-        ok={props?.hasOwnProperty?.('ok') ? props?.ok : okVisible ? '' : null}
+        ok={ok ? ok : okVisible ? '' : null}
         className={`cascader-modal${props.className ? ' ' + props.className : ''}`}
       />
     )

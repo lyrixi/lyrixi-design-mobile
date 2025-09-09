@@ -1,0 +1,26 @@
+// 当没有确定按钮时，删除按钮占满整个高度
+.seed-keyboard-has-ok {
+  .seed-keyboard-button-action.delete {
+    height: 50px;
+    flex: none;
+  }
+}
+
+// 操作按钮样式
+.seed-keyboard-button-action {
+  flex: 1;
+  width: 90px;
+
+  .seed-keyboard-icon {
+    font-size: 24px;
+    color: var(--seed-font-color-default);
+  }
+
+  // 确定按钮
+  &.ok {
+    background-color: var(--seed-primary);
+    color: white;
+    flex: 1;
+    height: auto;
+  }
+}

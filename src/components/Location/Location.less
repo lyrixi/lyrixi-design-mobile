@@ -22,15 +22,15 @@
 
 .location-combo-positioning,
 .location-combo-positioning textarea {
-  color: var(--auxiliary);
+  color: var(--seed-font-color-tertiary);
 }
 .location-combo-error,
 .location-combo-error textarea {
-  color: var(--danger);
+  color: var(--seed-danger);
 }
 .location-combo-success,
 .location-combo-success textarea {
-  color: var(--link);
+  color: var(--seed-link);
 }
 
 .location-combo-icon {
@@ -60,36 +60,11 @@
   }
 }
 .location-combo-icon-choose {
-  background-image: url(https://lyrixi.github.io/lyrixi-design-mobile/assets/images/location/location-choose.png);
+  background-image: url(https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/location/location-choose.png);
 }
 .location-combo-icon-preview {
-  background-image: url(https://lyrixi.github.io/lyrixi-design-mobile/assets/images/location/location-choose.png);
+  background-image: url(https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/location/location-choose.png);
   &.disabled {
     opacity: 0.5;
   }
-}
-
-// 底部
-.mappage-footer {
-  .flex;
-  gap: 12px;
-  padding: 6px 12px;
-  background-color: white;
-  box-shadow: inset 0px 0.5px 0px 0px rgba(230, 232, 235, 1);
-}
-.mappage-footer-ok,
-.mappage-footer-clear {
-  font-weight: bold;
-  font-size: 16px;
-  .flex-1;
-  height: 40px;
-  border-radius: 10px;
-}
-.mappage-footer-ok {
-  background-color: var(--primary);
-  border-color: var(--primary);
-  color: white;
-}
-.mappage-footer-clear {
-  background: #e7e9eb;
 }

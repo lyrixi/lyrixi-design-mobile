@@ -7,17 +7,20 @@ import formatValue from './../utils/formatValue'
 import formatList from './../utils/formatList'
 import Tabs from './Tabs'
 import ListItem from './ListItem'
+import SearchHeader from './SearchPage/Header'
+import SearchPage from './SearchPage'
+import updateIsLeaf from './updateIsLeaf'
 
 // 内库使用-start
 import LocaleUtil from './../../../utils/LocaleUtil'
 import ArrayUtil from './../../../utils/ArrayUtil'
-import Toast from './../../Toast'
 import IndexBar from './../../IndexBar'
 import Loading from './../../Loading'
+import Layout from './../../Layout'
 // 内库使用-end
 
 /* 测试使用-start
-import { LocaleUtil, ArrayUtil, Toast, IndexBar, Loading } from 'lyrixi-design-mobile'
+import { LocaleUtil, ArrayUtil, IndexBar, Loading, Layout } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // 主体
@@ -28,10 +31,11 @@ const Main = forwardRef(
       visible = true,
 
       // Main: common
+      searchVisible,
       value,
       allowClear,
       onChange,
-      onBeforeChange,
+      // onBeforeChange,
       onReLoad,
 
       list: externalList,
@@ -49,7 +53,12 @@ const Main = forwardRef(
     let [activeTab, setActiveTab] = useState(null)
 
     // 选中列表, 文本则为错误
-    let [list, setList] = useState(formatList(externalList))
+    let [currentList, setCurrentList] = useState(formatList(externalList))
+
+    // 搜索页面显示状态
+    const [keyword, setKeyword] = useState('')
+    let [searchPageVisible, setSearchPageVisible] = useState(false)
+    const [searchActive, setSearchActive] = useState(false)
 
     // 节点
     const mainRef = useRef(null)
@@ -57,21 +66,18 @@ const Main = forwardRef(
       return {
         mainDOM: mainRef.current,
         getMainDOM: () => mainRef.current,
-        // 当选择到叶子节点时，不触发onChange，允许用户手动点击确定提前获取最新的value
-        // getValue: () => {
-        //   return value
-        // },
         // 更新数据
         update: update,
-        // 设置叶子节点标识
-        updateIsLeaf: updateIsLeaf
+        // 设置叶子节点标识, id: 叶子节点id, tabs: tabs列表
+        updateIsLeaf: (tabs, id) => {
+          updateIsLeaf(tabs, id, { value, tabsRef })
+        }
       }
     })
 
     // 初始化tabs、选中tab、列表
     useEffect(() => {
       if (
-        value === undefined ||
         !visible ||
         !Array.isArray(externalList) ||
         !externalList.length ||
@@ -80,9 +86,9 @@ const Main = forwardRef(
         return
       }
 
-      update({ action: 'load' })
+      update(value, { action: 'load', list: externalList })
       // eslint-disable-next-line
-    }, [visible, JSON.stringify(value)])
+    }, [visible, JSON.stringify(value), JSON.stringify(externalList)])
 
     // 更新错误信息
     useEffect(() => {
@@ -90,39 +96,68 @@ const Main = forwardRef(
         return
       }
 
-      setList(externalList)
+      setCurrentList(externalList)
       // eslint-disable-next-line
     }, [visible, JSON.stringify(externalList)])
 
+    // 隐藏还原搜索状态
+    useEffect(() => {
+      if (!visible) {
+        resetSearch()
+      }
+      // eslint-disable-next-line
+    }, [visible])
+
     // 初始化tabs、选中tab、列表
-    async function update({ action } = {}) {
+    async function update(nextValue, { list: newExternalList, action } = {}) {
+      // 更新externalList
+      if (Array.isArray(newExternalList) && newExternalList.length) {
+        // eslint-disable-next-line
+        externalList = newExternalList
+      }
+
       // 更新tabs
-      tabsRef.current = _.cloneDeep(formatValue(value))
-      let lastTab = Array.isArray(value) && value.length ? value[value.length - 1] : null
+      tabsRef.current = _.cloneDeep(formatValue(nextValue))
+      let lastTab =
+        Array.isArray(nextValue) && nextValue.length ? nextValue[nextValue.length - 1] : null
 
       // 滚动条还原
       if (mainRef.current) {
         mainRef.current.scrollTop = 0
       }
-      // 获取当前列表
-      let newList = await getChildrenList(value, { action })
 
-      // 无数据, 且为叶子节点, 则渲染兄弟节点
-      if (_.isEmpty(newList) && Array.isArray(value) && value[value.length - 1].isLeaf) {
-        newList = await getSiblingList(value)
+      // 无值显示根列表
+      if (!lastTab) {
+        setActiveTab(null)
+        setCurrentList(newExternalList)
+        tabsRef.current = _.cloneDeep(formatValue(value))
+        return
       }
+
+      // 获取当前列表(按行为策略)
+      let newList = await getActionList(nextValue, { action })
 
       // 接口报错或无数据
       if (typeof newList === 'string' || _.isEmpty(newList)) {
         setActiveTab(lastTab)
-        setList(newList)
+        setCurrentList(newList)
+        tabsRef.current = _.cloneDeep(formatValue(value))
         return
       }
 
-      // 如果有子级, 则增加请选择
-      if (lastTab && !lastTab?.isLeaf) {
+      // 点击项, 触发onChange, 只有getActionList后才会更新isLeaf, 所以onChange需要放在getActionList后
+      if (action === 'clickItem') {
+        onChange && onChange(nextValue, { list: newExternalList })
+      }
+
+      // 如果没有子级
+      if (lastTab?.isLeaf) {
+      }
+      // 如果有子级, 增加请选择tab
+      else {
         // 请选择
         lastTab = {
+          isChoose: true,
           parentid: lastTab.id,
           id: '',
           name: LocaleUtil.locale('请选择', 'SeedsUI_placeholder_select')
@@ -131,63 +166,60 @@ const Main = forwardRef(
       }
 
       setActiveTab(lastTab)
-      setList(newList)
+      setCurrentList(newList)
     }
 
-    // 设置叶子节点
-    function updateIsLeaf(list, id) {
-      // 更新总列表叶子节点(外部列表数据变化会引起多个组件isLeaf相互影响)
-      // ArrayUtil.setDeepTreeNode(externalList, id, (node) => {
-      //   node.isLeaf = true
-      // })
-
-      // 更新当前列表叶子节点
-      for (let tab of list || []) {
-        if (tab && tab.id === id) {
-          tab.isLeaf = true
-          break
-        }
+    // 统一根据操作行为获取列表:
+    // - clickItem/load: 优先查子级, 无子级则显示同级
+    // - clickTab: 显示同级
+    async function getActionList(tabs, { action } = {}) {
+      if (!Array.isArray(tabs) || !tabs.length) {
+        return externalList
       }
 
-      // 更新value叶子节点
-      for (let tab of value || []) {
-        if (tab && tab.id === id) {
-          tab.isLeaf = true
-          break
-        }
+      let lastTab = tabs?.[tabs?.length - 1]
+
+      // clickItem/load查子级列表
+      if (['clickItem', 'load'].includes(action)) {
+        // 末级节点, 查询同级列表
+        const childrenList = await getChildrenList(
+          tabs.filter((tab) => !tab.isChoose && !tab.isLeaf)
+        )
+        if (typeof childrenList === 'string') return childrenList
+        if (Array.isArray(childrenList)) return childrenList
+
+        // 无子级返回同级列表
+        return await getSiblingList(tabs)
       }
 
-      // 更新tabs叶子节点
-      for (let tab of tabsRef.current || []) {
-        if (tab && tab.id === id) {
-          tab.isLeaf = true
-          break
+      // clickTab
+      if (action === 'clickTab') {
+        // 点击请选择, 查询子级列表
+        if (lastTab?.isChoose) {
+          return await getChildrenList(tabs.filter((tab) => !tab.isChoose))
         }
+
+        // 点击非请选择查同级列表
+        return await getSiblingList(tabs)
       }
-      return list
     }
 
-    // 获取兄弟节点列表
+    // 获取同级列表
     async function getSiblingList(tabs) {
       let newList = await getChildrenList(tabs.slice(0, tabs.length - 1))
       return newList
     }
 
-    // 获取指定级别的列表数据, 最后一级则获取兄弟节点列表
-    async function getChildrenList(tabs, { action } = {}) {
-      let requestTabs = tabs?.filter?.((tab) => !tab.isLeaf)
-      let lastTab =
-        Array.isArray(requestTabs) && requestTabs.length
-          ? requestTabs[requestTabs.length - 1]
-          : null
+    // 获取下级列表, 没有返回null
+    async function getChildrenList(tabs) {
+      let lastTab = tabs?.[tabs?.length - 1]
 
-      // 下级或兄弟列表
+      // 下级列表
       let newList = null
 
       // externalList为空, 或者不合法, 需要重新获取
       if (!Array.isArray(externalList) || !externalList.length) {
-        newList = await loadData(tabs, { externalLoadData, externalList, action })
-        return newList
+        return LocaleUtil.locale('未获取到列表数据')
       }
 
       // 无值渲染根节点
@@ -199,19 +231,35 @@ const Main = forwardRef(
       newList = getTreeChildren(externalList, lastTab.id)
 
       // 无children, 动态获取子级
-      if (_.isEmpty(newList)) {
-        newList = await loadData(tabs, { externalLoadData, externalList, action })
+      if (!Array.isArray(newList)) {
+        newList = await loadData(tabs, { externalLoadData, externalList })
 
         // 接口报错
         if (typeof newList === 'string') {
           return newList
         }
+
         // 无值则为叶子节点
-        if (_.isEmpty(newList)) {
-          updateIsLeaf(tabs, lastTab.id)
+        if (!Array.isArray(newList)) {
+          // 更新value的叶子节点
+          updateIsLeaf(tabs, lastTab.id, { value, tabsRef })
+
+          // 更新externalList的叶子节点
+          ArrayUtil.setDeepTreeNode(externalList, lastTab.id, (node) => {
+            node.children = newList
+            node.isLeaf = true
+          })
+
           return null
         }
-        // 接口没报错, 也有值, 则正常返回
+        // 有值更新列表的children, 并返回
+        else {
+          ArrayUtil.setDeepTreeNode(externalList, lastTab.id, (node) => {
+            node.children = newList
+          })
+
+          return newList
+        }
       }
 
       return newList
@@ -241,49 +289,22 @@ const Main = forwardRef(
       // 不在tabs上, 为第一项
       else {
         if (value?.length) {
-          console.log(`Lyrixi Cascader.Main: 下钻项未匹配到上级, 请检查数据是否正确`, item, value)
+          console.log(`SeedsUI Cascader.Main: 下钻项未匹配到上级, 请检查数据是否正确`, item, value)
         }
         newValue = [{ ...item }]
       }
 
       // 选中项, 允许修改值Array | 继续true | 停止false
-      if (typeof onBeforeChange === 'function') {
-        let isOk = await onBeforeChange(newValue, { list: externalList })
-        if (Array.isArray(isOk)) {
-          newValue = isOk
-        }
-      }
+      // if (typeof onBeforeChange === 'function') {
+      //   let isOk = await onBeforeChange(newValue, { list: externalList })
+      //   if (Array.isArray(isOk)) {
+      //     newValue = isOk
+      //   }
+      //   if (isOk === false) return
+      // }
 
-      // 不是末级节点, 则获取下级列表, 用于校验是否能下钻, 补充标识: value中的isLeaf和externalList中的children
-      if (!newValue[newValue.length - 1].isLeaf) {
-        let isOk = await getChildrenList(newValue, {
-          action: 'clickItem'
-        })
-
-        // 接口报错停止下钻
-        if (typeof isOk === 'string') {
-          Toast.show({
-            content: isOk
-          })
-
-          // 挡住不让快速点击
-          setTimeout(() => {
-            Loading.hide({ id: '__SeedsUI_loading_cascader_drill_mask__' })
-          }, 300)
-          return
-        }
-      }
-
-      // 触发tab与列表更新
-      onChange && onChange(newValue, { list: externalList })
-
-      // 点击"请选择"上级选项, 点击相同选项值, 既不会触发关窗, 也不会触发tab更新, 需要强制触发更新(不是末级节点, 即使值相同, 也要触发更新下级列表)
-      if (
-        !newValue[newValue.length - 1].isLeaf &&
-        JSON.stringify(newValue) === JSON.stringify(value)
-      ) {
-        update({ action: 'clickItem' })
-      }
+      // 触发tab与列表更新(由上层value变更驱动); 若值未变化, 强制刷新子级
+      update(newValue, { action: 'clickItem', list: externalList })
 
       // 防止用户快速点击多次触发
       setTimeout(() => {
@@ -291,71 +312,101 @@ const Main = forwardRef(
       }, 300)
     }
 
+    // Tab 激活处理(点击tab时查同级)
+    const handleClickTab = async (tab) => {
+      // 滚动条还原
+      if (mainRef.current) {
+        mainRef.current.scrollTop = 0
+      }
+
+      // 点击tab时, 展示该tab同级(其父级的children)
+      let activeTabs = sliceArray(tabsRef.current, tab?.id)
+      let newList = await getActionList(activeTabs, { action: 'clickTab' })
+
+      setActiveTab(tab)
+      setCurrentList(newList)
+    }
+
     function getTabsNode() {
-      if (typeof list === 'string') return null
+      if (typeof currentList === 'string') return null
 
       if (typeof tabbar === 'function') {
         return tabbar({
           tabs: tabsRef.current,
           activeTab: activeTab,
-          triggerActiveTab: async (tab) => {
-            // 滚动条还原
-            if (mainRef.current) {
-              mainRef.current.scrollTop = 0
-            }
-
-            activeTab = tab
-            let newList = await getChildrenList(sliceArray(value, tab?.parentid), {
-              action: 'clickTab'
-            })
-
-            setActiveTab(activeTab)
-            setList(newList)
-          }
+          triggerActiveTab: handleClickTab
         })
       }
 
-      return (
-        <Tabs
-          tabs={tabsRef.current}
-          activeTab={activeTab}
-          onActiveTab={async (tab) => {
-            // 滚动条还原
-            if (mainRef.current) {
-              mainRef.current.scrollTop = 0
-            }
+      return <Tabs tabs={tabsRef.current} activeTab={activeTab} onActiveTab={handleClickTab} />
+    }
 
-            activeTab = tab
-            let newList = await getChildrenList(sliceArray(value, tab?.parentid), {
-              action: 'clickTab'
-            })
-
-            setActiveTab(activeTab)
-            setList(newList)
-          }}
-        />
-      )
+    // 重置搜索状态
+    function resetSearch() {
+      setKeyword('')
+      setSearchPageVisible(false)
+      setSearchActive(false)
     }
 
     return (
       <>
-        {/* Tab */}
-        {getTabsNode()}
+        {/* 主页面 */}
+        <Layout className="cascader-main">
+          {/* 搜索框 */}
+          {searchVisible && Array.isArray(externalList) && externalList.length > 0 && (
+            <SearchHeader
+              searchActive={searchActive}
+              setSearchActive={setSearchActive}
+              value={keyword}
+              onChange={setKeyword}
+              onClick={() => setSearchPageVisible(true)}
+              onCancel={resetSearch}
+            />
+          )}
 
-        {/* 主体 */}
-        <IndexBar className="cascader-indexbar">
-          <ListItem
-            ref={mainRef}
-            optionProps={optionProps}
-            // 选中列表
-            list={list}
-            value={value}
-            onReLoad={typeof onReLoad === 'function' ? () => onReLoad({ update }) : null}
-            // 阻止选择
-            onSelect={(item) => handleDrill(item)}
-            {...props}
-          />
-        </IndexBar>
+          {searchPageVisible ? (
+            // 搜索结果页面
+            <SearchPage
+              keyword={keyword}
+              list={externalList}
+              onChange={(newValue) => {
+                let lastItem = newValue[newValue.length - 1]
+                newValue.length = newValue.length - 1
+                // eslint-disable-next-line
+                value = newValue
+                tabsRef.current = newValue
+                resetSearch()
+
+                handleDrill(lastItem)
+              }}
+            />
+          ) : (
+            <>
+              {/* Tab */}
+              {getTabsNode()}
+
+              {/* 主体 */}
+              <IndexBar className="cascader-indexbar">
+                <ListItem
+                  ref={mainRef}
+                  optionProps={optionProps}
+                  // 选中列表
+                  list={currentList}
+                  value={value}
+                  onReLoad={async () => {
+                    if (typeof onReLoad !== 'function') return
+                    let newList = await onReLoad(value, { list: externalList, update })
+                    if (!newList) return
+                    setCurrentList(newList)
+                  }}
+                  // 阻止选择
+                  onSelect={(item) => handleDrill(item)}
+                  {...props}
+                />
+              </IndexBar>
+            </>
+          )}
+        </Layout>
       </>
     )
   }

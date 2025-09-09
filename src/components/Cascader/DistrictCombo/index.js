@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef, forwardRef, useImperativeHandle } from 'react'
 import _ from 'lodash'
-import { updateValueType, testEditableOptions } from './../DistrictMain/utils'
+import {
+  formatType,
+  formatDistrictValue,
+  findDistrictLeafIndex,
+  testEditableOptions
+} from './../DistrictMain/utils'
 import DistrictModal from './../DistrictModal'
 
 // 内库使用-start
@@ -20,18 +25,15 @@ const DistrictCombo = forwardRef(
       // Filter useless props to protect the feature
       multiple,
 
+      // Combo
+      readOnly,
+
       // Modal
       value,
       onChange,
 
       min = '',
-      isCountry,
-      isProvince,
-      isMunicipality,
-      isPrefecture,
-      isCity,
-      isDistrict,
-      isStreet,
+      searchVisible,
       modalProps,
 
       // Main
@@ -45,6 +47,9 @@ const DistrictCombo = forwardRef(
     },
     ref
   ) => {
+    // eslint-disable-next-line
+    type = formatType(type)
+
     // editableOptions需要根据list计算value的type, getList后才能计算value的type
     const listRef = useRef(null)
     let [readOnlyValue, setReadOnlyValue] = useState(null)
@@ -77,19 +82,13 @@ const DistrictCombo = forwardRef(
 
     // 清空操作，保留只读项，清空非只读项
     async function updateReadOnlyValue() {
-      if (_.isEmpty(value) || _.isEmpty(editableOptions)) return null
+      if (_.isEmpty(value) || _.isEmpty(editableOptions) || !Array.isArray(listRef.current)) {
+        return null
+      }
 
       // 更新value的type属性
-      updateValueType(value, listRef.current, {
-        type,
-        isCountry,
-        isProvince,
-        isMunicipality,
-        isPrefecture,
-        isCity,
-        isDistrict,
-        isStreet
-      })
+      // eslint-disable-next-line
+      value = formatDistrictValue(value, listRef.current, type)
 
       // 清空只能清空非只读项
       let newValue = []
@@ -115,14 +114,8 @@ const DistrictCombo = forwardRef(
           startType,
           type, // 'country', 'province', 'city', 'district', 'street'
           min,
-          // 判断是否是国省市区
-          isCountry,
-          isProvince,
-          isMunicipality,
-          isPrefecture,
-          isCity,
-          isDistrict,
-          isStreet,
+          searchVisible,
+          // 数据加载
           loadCountries,
           loadCountryRegions,
           loadStreets,
@@ -149,13 +142,12 @@ const DistrictCombo = forwardRef(
         }
         {...props}
         // 只读项与值一致, 并且已经下钻到最末经, 只读
-        readOnly={
-          Array.isArray(readOnlyValue) &&
-          ArrayUtil.isEqual(readOnlyValue, value) &&
-          readOnlyValue?.[readOnlyValue?.length - 1]?.isLeaf
-            ? true
-            : props?.readOnly
-        }
+        readOnly={(() => {
+          if (!Array.isArray(readOnlyValue) || !Array.isArray(value)) return readOnly
+          if (!ArrayUtil.isEqual(readOnlyValue, value)) return readOnly
+          const leafIndex = findDistrictLeafIndex(value, type)
+          return typeof leafIndex === 'number' ? true : readOnly
+        })()}
         modal={props?.modal || DistrictModal}
         clear={(clearParams) => {
           let clearable = clearParams?.clearable

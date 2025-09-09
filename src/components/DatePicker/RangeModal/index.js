@@ -28,7 +28,7 @@ const RangeModal = forwardRef(
       onVisibleChange,
 
       // Main
-      type,
+      type = 'date',
       diff,
       min,
       max,
@@ -92,14 +92,18 @@ const RangeModal = forwardRef(
         {...props}
         main={props?.main || RangeMain}
         onChange={(newValue, newArguments) => {
+          let currentValue = updateRangeValue(newValue, type)
+
           setCurrentRangeId(newArguments?.rangeId || null)
           onRangeIdChange && onRangeIdChange(newArguments?.rangeId || null)
 
-          onChange && onChange(newValue, { rangeId: newArguments?.rangeId || null })
+          onChange && onChange(currentValue, { rangeId: newArguments?.rangeId || null })
         }}
         onBeforeChange={async (newValue, newArguments) => {
           // 校验
-          let currentValue = validateRange(newValue, {
+          let currentValue = updateRangeValue(newValue, type)
+
+          currentValue = validateRange(currentValue, {
             type: type,
             min: min,
             max: max,
@@ -121,7 +125,7 @@ const RangeModal = forwardRef(
             }
           }
 
-          return updateRangeValue(currentValue, type)
+          return currentValue
         }}
         onVisibleChange={onVisibleChange}
         value={formatValue(value || defaultPickerValue)}

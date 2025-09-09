@@ -1,11 +1,10 @@
 ---
-category: Components
-group: Common
+group:
+  title: Icon
+  order: 2
+order: 1
 title: Icon
+toc: content
 ---
 
 # Icon
-
-## 示例
-
-<code src="./demos/demo1.jsx"></code>

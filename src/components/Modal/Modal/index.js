@@ -25,6 +25,7 @@ const Modal = forwardRef(
       visible,
       maskClosable = true,
       onVisibleChange,
+      onClose,
 
       maskProps = {},
 
@@ -66,14 +67,16 @@ const Modal = forwardRef(
         visible &&
         referenceDOM &&
         maskDOM &&
-        !maskProps?.style?.top &&
-        !maskProps?.style?.bottom
+        [undefined, null].includes(maskProps?.style?.top) &&
+        [undefined, null].includes(maskProps?.style?.bottom)
       ) {
         Tooltip.updatePositionByReferenceDOM(maskDOM, {
           referenceDOM: referenceDOM,
           parentDOM: portal,
           animation: animation,
-          offset: offset
+          offset: offset,
+          left: maskProps?.style?.left,
+          right: maskProps?.style?.right
         })
       }
     }
@@ -84,7 +87,10 @@ const Modal = forwardRef(
     // 点击遮罩
     function handleMaskClick(e) {
       if (maskProps?.onClick) maskProps.onClick(e)
-      if (maskClosable && onVisibleChange) onVisibleChange(false)
+      if (maskClosable) {
+        onVisibleChange && onVisibleChange(false)
+        onClose && onClose(e)
+      }
       e.stopPropagation()
     }
 

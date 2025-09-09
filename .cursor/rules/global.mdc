@@ -1,0 +1,11 @@
+---
+alwaysApply: true
+---
+
+# 全局规则
+
+- 所有中文必须用 LocaleUtil.locale 包裹
+- 生成代码时，遇到颜色和文字大小，一律使用 global-css.mdc 里的变量
+- 创建 div 时，优先使用 global-css.mdc 里的样式，若无再自己写样式
+- 样式统一写成一个单独的 less 文件
+- 组件复用 global-css.mdc 里的组件

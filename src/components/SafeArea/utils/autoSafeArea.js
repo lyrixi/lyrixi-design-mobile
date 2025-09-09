@@ -8,8 +8,8 @@ function autoSafeArea({ className = 'auto-safe-area-children', isSafeArea, debug
   }
   if (debug) {
     document.documentElement.classList.add(className)
-    document.documentElement.style.setProperty('--safe-area-inset-top', '44px')
-    document.documentElement.style.setProperty('--safe-area-inset-bottom', '34px')
+    document.documentElement.style.setProperty('--seed-safe-area-inset-top', '44px')
+    document.documentElement.style.setProperty('--seed-safe-area-inset-bottom', '34px')
     return
   }
   if (needsSafeArea()) {

@@ -27,7 +27,7 @@
 // 两个选中线长, 其它短
 .tabbar-tabs.tabbar-tabs-total-2 {
   .tabbar-tabs-tab-wrapper.active {
-    color: var(--primary);
+    color: var(--seed-primary);
 
     .tabbar-tabs-tab-name {
       font-weight: 500;
@@ -41,7 +41,7 @@
 
 .tabbar-tabs:not(.tabbar-tabs-total-2) {
   .tabbar-tabs-tab-wrapper.active {
-    color: var(--primary);
+    color: var(--seed-primary);
 
     .tabbar-tabs-tab-name {
       font-weight: 500;
@@ -61,7 +61,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background-color: var(--primary);
+  background-color: var(--seed-primary);
   transform-origin: center center;
   content: '';
   border-radius: 2px;
@@ -84,7 +84,7 @@
 .tabbar-tabs-tab-wrapper {
   position: relative;
   flex: auto;
-  padding: 0 var(--space-xl);
+  padding: 0 var(--seed-space-xl);
 
   // 禁用
   &.disabled,
@@ -96,25 +96,25 @@
 
 .tabbar-tabs-tab {
   white-space: nowrap;
-  padding: var(--space-l) 0 var(--space-l);
+  padding: var(--seed-space-l) 0 var(--seed-space-l);
   margin: 0 auto;
   width: min-content;
-  font-size: var(--font-size-l);
+  font-size: var(--seed-font-size-l);
   position: relative;
   cursor: pointer;
   text-align: center;
 }
 
 .tabbar-tabs-tab-name {
-  font-size: var(--font-size-l);
+  font-size: var(--seed-font-size-l);
 }
 
 .tabbar-tabs-tab-description {
-  color: var(--secondary);
-  font-size: var(--font-size-s);
+  color: var(--seed-font-color-secondary);
+  font-size: var(--seed-font-size-s);
 }
 
 .tabbar-tabs-tab-name + .tabbar-tabs-tab-description,
 .tabbar-tabs-tab-description + .tabbar-tabs-tab-name {
-  margin-top: var(--space-s);
+  margin-top: var(--seed-space-s);
 }

@@ -40,11 +40,11 @@ const ListItem = forwardRef(
     return (
       <div
         {...props}
-        className={`cascader-main${props?.className ? ' ' + props.className : ''}`}
+        className={`cascader-body${props?.className ? ' ' + props.className : ''}`}
         ref={ref}
       >
         {typeof list === 'string' && (
-          <Result title={list} status={status} className={`cascader-main-result`}>
+          <Result title={list} status={status} className={`cascader-body-result`}>
             {status === '500' && onReLoad && (
               <Button className="primary result-button" onClick={onReLoad}>
                 {LocaleUtil.locale('重新加载', 'SeedsUI_reload')}

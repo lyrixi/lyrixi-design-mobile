@@ -147,7 +147,7 @@ const Modal = forwardRef(
                 setCurrentValue(value)
               }
             } catch (error) {
-              console.log('Lyrixi SelectModal: ', error)
+              console.log('SeedsUI SelectModal: ', error)
               setCurrentValue(value)
             }
           }
@@ -161,7 +161,7 @@ const Modal = forwardRef(
         title={title || currentTitle}
         titleProps={titleProps}
         // 单选且不允许清空时, 修改即关闭
-        ok={ok ?? multiple !== false}
+        ok={ok === undefined ? multiple !== false : ok}
         onOk={handleOkClick}
         okProps={okProps}
         cancel={cancel}

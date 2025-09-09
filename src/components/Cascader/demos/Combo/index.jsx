@@ -2,7 +2,24 @@ import React, { useState } from 'react'
 import { Layout, Cascader, Loading, Input } from 'lyrixi-design-mobile'
 
 export default () => {
-  const [value, setValue] = useState(null)
+  const [value, setValue] = useState([
+    {
+      id: '1',
+      name: '根节点',
+      parentid: null
+    },
+    {
+      id: '1-1',
+      name: '子节点',
+      parentid: '1'
+    },
+    {
+      parentid: '1-1',
+      name: '孙子节点',
+      id: '1-1-1',
+      isLeaf: true
+    }
+  ])
 
   // 加载街道
   function loadData(tabs) {
@@ -19,6 +36,7 @@ export default () => {
       Loading.show()
       let streets = [
         {
+          parentid: lastTab.id,
           name: '孙子节点',
           id: '1-1-1'
         }

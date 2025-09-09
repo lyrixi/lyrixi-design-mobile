@@ -7,9 +7,9 @@ import formatStreets from './formatStreets'
 
 const api = {
   // 获取国家
-  loadCountries: async function () {
+  loadCountries: async function (type) {
     let result = await loadCountries()
-    return formatCountries(result)
+    return formatCountries(result, type)
   },
   /**
    * @description: 获取省市区
@@ -23,7 +23,7 @@ const api = {
   /**
    * @description: 获取街道
    * @param {Number} id 区ID
-   * @return {{id: '100200300', name: '沙洲街道', parentid: '100200', isStreet: true}}
+   * @return {{id: '100200300', name: '沙洲街道', parentid: '100200', type: ['street'], isLeaf: true}}
    */
   loadStreets: async function (districtId, { parent } = {}) {
     // 非市或区没有街道

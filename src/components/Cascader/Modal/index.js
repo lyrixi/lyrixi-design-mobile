@@ -15,6 +15,7 @@ const CascaderModal = forwardRef(
   (
     {
       // Filter useless props to protect the feature
+      searchVisible,
       multiple,
 
       // Main
@@ -34,6 +35,7 @@ const CascaderModal = forwardRef(
         main={props?.main || Main}
         mainProps={{
           ...mainProps,
+          searchVisible,
           list,
           loadData
         }}

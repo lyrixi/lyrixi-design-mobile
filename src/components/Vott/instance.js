@@ -80,7 +80,7 @@ let Vott = function (container, params) {
       ? document.querySelector(container)
       : container
   if (!s.container) {
-    console.warn('Lyrixi Error：未找到Container，请检查传入参数是否正确')
+    console.warn('SeedsUI Error：未找到Container，请检查传入参数是否正确')
     return
   }
 

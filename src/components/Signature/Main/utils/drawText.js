@@ -3,7 +3,7 @@ import startCoord from './startCoord'
 // 绘制文字
 function drawText(fillStyle = {}, { ctx, width, height }) {
   if (!fillStyle?.text) {
-    console.log('Lyrixi Error:手写签名drawFont缺少文字')
+    console.log('SeedsUI Error:手写签名drawFont缺少文字')
     return
   }
   let fontSize = fillStyle.fontSize || 15
@@ -11,7 +11,7 @@ function drawText(fillStyle = {}, { ctx, width, height }) {
   let fontPosition = fillStyle.position || 'bottom center'
   let fontStyle = fillStyle.color || 'rgba(0, 0, 0, 1)'
   if (isNaN(fontSize)) {
-    console.log('Lyrixi Error:文字大小请输入数字类型')
+    console.log('SeedsUI Error:文字大小请输入数字类型')
     return
   }
   let targetHeight = fontSize

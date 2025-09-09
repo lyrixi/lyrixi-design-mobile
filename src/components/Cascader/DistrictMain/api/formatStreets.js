@@ -8,7 +8,6 @@ function formatStreets(list, districtId) {
       name: item.text,
       id: item.id,
       type: ['street'],
-      isStreet: true,
       isLeaf: true
     }
   })

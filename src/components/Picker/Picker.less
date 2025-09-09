@@ -32,14 +32,14 @@
     padding: 0 8px;
     overflow: hidden;
 
-    color: var(--default);
+    color: var(--seed-font-color-default);
     font-size: 17px;
     line-height: 44px;
     white-space: nowrap;
     text-overflow: ellipsis;
     pointer-events: none;
     &.active {
-      color: var(--default);
+      color: var(--seed-font-color-default);
     }
   }
   &.lock li.active {
@@ -50,7 +50,8 @@
 .picker-layer {
   position: absolute;
   top: 0;
-  width: 100%;
+  left: 12px;
+  right: 12px;
   height: 100%;
   pointer-events: none;
 

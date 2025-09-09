@@ -18,6 +18,7 @@ const CascaderCombo = forwardRef(
       multiple,
       // Modal
       modalProps,
+      searchVisible,
 
       list,
       loadData,
@@ -34,7 +35,8 @@ const CascaderCombo = forwardRef(
         modalProps={{
           ...modalProps,
           list: list,
-          loadData: loadData
+          loadData: loadData,
+          searchVisible: searchVisible
         }}
       />
     )

@@ -3,7 +3,7 @@ import _ from 'lodash'
 import { Layout, Divider, DatePicker, DateUtil, Modal, Card, Toast } from 'lyrixi-design-mobile'
 
 export default () => {
-  const [value, setValue] = useState([null, new Date()])
+  const [value, setValue] = useState(null)
   // const [value, setValue] = useState([new Date(), null])
   // const [value, setValue] = useState([null, null])
   return (

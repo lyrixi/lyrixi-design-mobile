@@ -172,7 +172,7 @@ const PreviewMain = forwardRef(
     function handleDelete() {
       let index = swiperRef.current?.swiper?.activeIndex
       if (typeof index !== 'number') {
-        console.error('Lyrixi PreviewMain: index is not a number', swiperRef.current)
+        console.error('SeedsUI PreviewMain: index is not a number', swiperRef.current)
         return
       }
 
@@ -224,12 +224,12 @@ const PreviewMain = forwardRef(
     // 重新上传
     async function handleReUpload() {
       if (typeof onChange !== 'function') {
-        console.warn('Lyrixi Image: onChange is not a function')
+        console.warn('SeedsUI Image: onChange is not a function')
         return
       }
       let index = swiperRef.current?.swiper?.activeIndex
       if (typeof index !== 'number') {
-        console.error('Lyrixi PreviewMain: index is not a number', swiperRef.current)
+        console.error('SeedsUI PreviewMain: index is not a number', swiperRef.current)
         return
       }
 

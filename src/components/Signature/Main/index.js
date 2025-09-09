@@ -17,7 +17,8 @@ const Main = (
     onCancel,
     // 绘画配置
     color,
-    backgroundColor
+    backgroundColor,
+    style
   },
   ref
 ) => {
@@ -36,7 +37,7 @@ const Main = (
   })
 
   return (
-    <div ref={rootRef} className="signature-main">
+    <div ref={rootRef} className="signature-main" style={style}>
       {/* 绘制区域 */}
       <Signature ref={signatureRef} color={color} backgroundColor={backgroundColor} />
       {/* 按钮区域 */}

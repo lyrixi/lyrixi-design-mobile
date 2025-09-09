@@ -61,13 +61,13 @@ const FormItem = forwardRef(
                 extra={() => {
                   return getExtraNode(extra, {
                     params: { ...control, errors: renderMeta?.errors },
-                    className: 'form-item-main-input-extra'
+                    className: 'seed-form-item-main-input-extra'
                   })
                 }}
                 inputExtra={() => {
                   return getExtraNode(inputExtra, {
                     params: { ...control, errors: renderMeta?.errors },
-                    className: 'form-item-main-input-extra'
+                    className: 'seed-form-item-main-input-extra'
                   })
                 }}
                 error={renderMeta?.errors?.[0] || ''}

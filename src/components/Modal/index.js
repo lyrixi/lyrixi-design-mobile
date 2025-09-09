@@ -2,6 +2,8 @@ import Modal from './Modal'
 import NavBar from './NavBar'
 import NavBarCombo from './NavBarCombo'
 import NavBarModal from './NavBarModal'
+import DropdownCombo from './DropdownCombo'
+import DropdownModal from './DropdownModal'
 import SelectCombo from './SelectCombo'
 import SelectModal from './SelectModal'
 
@@ -16,6 +18,10 @@ import getClassNameByAnimation from './api/getClassNameByAnimation'
 Modal.NavBar = NavBar
 Modal.NavBarCombo = NavBarCombo
 Modal.NavBarModal = NavBarModal
+
+// Dropdown
+Modal.DropdownCombo = DropdownCombo
+Modal.DropdownModal = DropdownModal
 
 // Select base in NavBar
 Modal.SelectCombo = SelectCombo

@@ -41,12 +41,12 @@ const NavBarModal = forwardRef(
     },
     ref
   ) => {
-    // 节点
+    // Expose
     const modalRef = useRef(null)
     useImperativeHandle(ref, () => {
       return {
-        rootDOM: modalRef?.current,
-        getRootDOM: () => modalRef.current
+        modalDOM: modalRef?.current,
+        getModalDOM: () => modalRef.current
       }
     })
 

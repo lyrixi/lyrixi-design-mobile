@@ -1,28 +1,32 @@
-.form-item-label {
+.seed-form-item-label {
   display: flex;
   position: relative;
   vertical-align: middle;
   overflow: hidden;
   color: #6a737c;
 }
-.form-item-label-text {
+.seed-form-item-label-text {
+  font-size: var(--seed-font-size-l);
   vertical-align: middle;
 }
-.form-item-required {
-  display: inline-block;
+.seed-form-item-required {
+  font-family: SimSun, sans-serif;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   vertical-align: middle;
-  height: 20px;
-  line-height: 20px;
-  color: var(--danger);
+  color: var(--seed-danger);
+  height: var(--seed-input-height-m);
 }
-.form-item-help {
-  display: inline-block;
+.seed-form-item-help {
+  display: inline-flex;
   font-family: 'iconfont';
   vertical-align: middle;
-  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
   width: 20px;
-  height: 20px;
-  line-height: 20px;
+  height: var(--seed-input-height-m);
   margin: 0 2px;
   font-family: 'seeds-icons';
   &:extend(.seeds-icon-circle-question all);

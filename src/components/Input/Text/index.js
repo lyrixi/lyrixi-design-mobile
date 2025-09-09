@@ -1,30 +1,39 @@
 import React, { forwardRef, useRef, useImperativeHandle, useEffect } from 'react'
-import { maxLengthFormatter, minMaxFormatter, precisionFormatter } from './utils'
+import {
+  splitInputStyle,
+  maxLengthFormatter,
+  minMaxFormatter,
+  precisionFormatter,
+  correctValue as _correctValue
+} from './utils'
 import getClearNode from './getClearNode'
-import _correctValue from './correctValue'
 
 // 内库使用-start
-import MathUtil from './../../../utils/MathUtil'
 import DOMUtil from './../../../utils/DOMUtil'
+import MathUtil from '../../../utils/MathUtil'
 // 内库使用-end
 
 /* 测试使用-start
-import { MathUtil, DOMUtil } from 'lyrixi-design-mobile'
+import { DOMUtil, MathUtil } from 'lyrixi-design-mobile'
 测试使用-end */
 
 const InputText = (
   {
-    id,
-    name,
     // 容器
+    id,
     type = 'text', // 类型: text | number | tel | password | search | autoFit
-    style,
+    style: externalStyle,
     className,
     readOnly,
     disabled,
     // 文本框
+    name,
     value = '',
     inputMode,
+    enterKeyHint,
+    autoComplete,
+    autoCorrect,
+    spellCheck,
     formatter, // 指定输入框展示值的格式
     // 小数精度, 只有数值框才生效
     precision,
@@ -55,6 +64,8 @@ const InputText = (
 
     // 计划废弃inputProps, 使用props代替
     inputProps = {},
+
+    // 扩展属性
     ...props
   },
   ref
@@ -62,15 +73,12 @@ const InputText = (
   // 输入框展示值
   const displayValue = typeof formatter === 'function' ? formatter(value) : null
 
-  // 数值框默认inputMode
-  if (type === 'number' && !inputMode) {
-    // eslint-disable-next-line
-    inputMode = precision === 0 ? 'numeric' : 'decimal'
-  }
-
   // DOM
   const rootRef = useRef(null)
   const inputRef = useRef(null)
+
+  // InputStyle
+  const { style, inputStyle } = splitInputStyle(externalStyle)
 
   useImperativeHandle(ref, () => {
     return {
@@ -109,7 +117,7 @@ const InputText = (
 
   // 矫正最大长度和小数位截取
   function correctValue(val) {
-    return _correctValue(val, { min, max, maxLength, trim, precision })
+    return _correctValue(val, { type, min, max, maxLength, trim, precision })
   }
 
   // 获取焦点
@@ -120,7 +128,7 @@ const InputText = (
     if (autoSelect) {
       inputRef.current.select()
     }
-    // 设置光标位置到文本末尾
+    // 设置光标位置到文本末尾(number框不支持)
     else if (inputRef.current.value.length && inputRef.current.setSelectionRange) {
       const length = inputRef.current.value.length
       try {
@@ -146,16 +154,12 @@ const InputText = (
     let val = target.value
     // 此处不宜用target?.validity?.badInput矫正数值, 因为ios上.也返回空
 
-    // 矫正数值
-    if (type === 'number' && /^-?\d*\.?$/.test(val) === false) {
-      val = MathUtil.extractNumber(val)
-    }
-
     // 矫正maxLength和小数点位数(不能矫正其它框，因为矫正将无法输入中文)
-    if (MathUtil.isNumber(val)) {
+    if (val && type === 'number') {
       // 不能校验最小值，因为min={0.1}时，无法删除
       val = minMaxFormatter(val, { max })
       val = precisionFormatter(val, { precision, trim: false })
+      val = MathUtil.extractNumber(val)
       val = maxLengthFormatter(val, { maxLength })
       if (target.value !== val) {
         target.value = val
@@ -174,8 +178,13 @@ const InputText = (
     let target = e.target
     let val = target.value
 
+    // trim
+    if (trim && val && typeof val === 'string' && val.trim() !== val) {
+      val = val.trim()
+    }
+
     // 数值框失焦时需要矫正数值
-    if (MathUtil.isNumber(val)) {
+    if (type === 'number') {
       // 正常输入：矫正最大最小值、小数点、最大长度
       if (val && !isNaN(val)) {
         // 纠正数字
@@ -185,16 +194,12 @@ const InputText = (
       else {
         val = ''
       }
-    }
 
-    // trim
-    if (trim && val && typeof val === 'string' && val.trim() !== val) {
-      val = val.trim()
+      target.value = val
     }
 
     // 修改完回调
     if (val !== value) {
-      target.value = val
       if (onChange) onChange(val, { action: 'blur' })
     }
 
@@ -241,6 +246,10 @@ const InputText = (
         id,
         name,
         inputMode,
+        enterKeyHint,
+        autoComplete,
+        autoCorrect,
+        spellCheck,
         autoFocus,
         value,
         maxLength,
@@ -260,13 +269,12 @@ const InputText = (
         <div className={`seed-input-autofit`}>
           <textarea
             ref={inputRef}
-            id={id}
             name={name}
             inputMode={inputMode}
-            {...inputProps}
-            className={`seed-input-autofit-textarea${
-              inputProps?.className ? ' ' + inputProps?.className : ''
-            }`}
+            enterKeyHint={enterKeyHint}
+            autoComplete={autoComplete}
+            autoCorrect={autoCorrect}
+            spellCheck={spellCheck}
             autoFocus={autoFocus}
             value={value}
             maxLength={maxLength}
@@ -277,13 +285,11 @@ const InputText = (
             onBlur={handleBlur}
             onFocus={handleFocus}
             onKeyDown={handleKeyDown}
+            {...inputProps}
+            style={inputStyle}
+            className={`seed-input-autofit-textarea`}
           ></textarea>
-          <pre
-            style={inputProps?.style}
-            className={`seed-input-autofit-pre${
-              inputProps?.className ? ' ' + inputProps?.className : ''
-            }`}
-          >
+          <pre className={`seed-input-autofit-pre`} style={inputStyle}>
             <span>{value}</span>
           </pre>
         </div>
@@ -295,10 +301,12 @@ const InputText = (
       return (
         <textarea
           ref={inputRef}
-          id={id}
           name={name}
           inputMode={inputMode}
-          {...inputProps}
+          enterKeyHint={enterKeyHint}
+          autoComplete={autoComplete}
+          autoCorrect={autoCorrect}
+          spellCheck={spellCheck}
           autoFocus={autoFocus}
           value={value}
           maxLength={maxLength}
@@ -309,7 +317,9 @@ const InputText = (
           onBlur={handleBlur}
           onFocus={handleFocus}
           onKeyDown={handleKeyDown}
-          className={`seed-input-text${inputProps.className ? ' ' + inputProps.className : ''}`}
+          {...inputProps}
+          className={`seed-input-textarea`}
+          style={inputStyle}
         ></textarea>
       )
     }
@@ -318,12 +328,14 @@ const InputText = (
     return (
       <input
         ref={inputRef}
-        id={id}
         name={name}
-        type={type === 'number' ? 'text' : type} // number类型需要text，否则focus无法设置光标到末尾
+        type={type} // number类型需要text，否则focus无法设置光标到末尾
         inputMode={inputMode}
-        {...inputProps}
-        className={`seed-input-text${inputProps.className ? ' ' + inputProps.className : ''}`}
+        enterKeyHint={enterKeyHint}
+        autoComplete={autoComplete}
+        autoCorrect={autoCorrect}
+        spellCheck={spellCheck}
+        autoFocus={autoFocus}
         value={value}
         min={typeof min === 'number' ? min : ''}
         max={typeof max === 'number' ? max : ''}
@@ -332,10 +344,12 @@ const InputText = (
         readOnly={readOnly}
         placeholder={placeholder}
         onChange={handleChange}
-        autoFocus={autoFocus}
         onBlur={handleBlur}
         onFocus={handleFocus}
         onKeyDown={handleKeyDown}
+        {...inputProps}
+        style={inputStyle}
+        className={`seed-input-text`}
       />
     )
   }
@@ -343,11 +357,11 @@ const InputText = (
   return (
     <div
       {...props}
+      id={id}
       style={style}
       className={DOMUtil.classNames(
         `seed-input`,
         className,
-        `seed-type-${type}`,
         displayValue ? 'seed-has-formatter' : '',
         disabled ? ' disabled' : '',
         readOnly ? ' readonly' : ''
@@ -371,8 +385,8 @@ const InputText = (
         {/* Blur display value */}
         {displayValue ? (
           <div
-            className={DOMUtil.classNames(`seed-input-formatter`, inputProps?.className)}
-            style={inputProps?.style}
+            className={`seed-input-formatter`}
+            style={inputStyle}
             // Click to focus text
             onClick={() => {
               focus()

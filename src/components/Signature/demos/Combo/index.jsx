@@ -7,7 +7,7 @@ import { Signature, Layout, Toast, Device, Bridge } from 'lyrixi-design-mobile'
 
 export default () => {
   const [value, setValue] = useState(
-    'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png'
+    'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png'
   )
 
   useEffect(() => {

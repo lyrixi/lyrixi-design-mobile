@@ -30,7 +30,7 @@ const RangeCombo = forwardRef(
       onError,
 
       value,
-      type,
+      type = 'date',
       min,
       max,
       hourStep,

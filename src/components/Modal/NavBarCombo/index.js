@@ -35,14 +35,14 @@ const Combo = forwardRef(
     },
     ref
   ) => {
-    const rootRef = useRef(null)
+    const comboRef = useRef(null)
     const [visible, setVisible] = useState(false)
 
     // Expose
     useImperativeHandle(ref, () => {
       return {
-        rootDOM: rootRef.current,
-        getRootDOM: () => rootRef.current,
+        comboDOM: comboRef.current,
+        getComboDOM: () => comboRef.current,
         close: () => {
           setVisible(false)
         },
@@ -69,7 +69,7 @@ const Combo = forwardRef(
           onClick={() => {
             setVisible(true)
           }}
-          ref={rootRef}
+          ref={comboRef}
         >
           {combo}
         </div>

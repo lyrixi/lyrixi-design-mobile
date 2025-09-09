@@ -1,6 +1,8 @@
 import AutoFit from './AutoFit'
 import Number from './Number'
 import NumberBox from './NumberBox'
+import NumberKeyboard from './NumberKeyboard'
+import OTP from './OTP'
 import Password from './Password'
 import PasswordStrength from './PasswordStrength'
 import Range from './Range'
@@ -21,6 +23,8 @@ export default {
   AutoFit: AutoFit,
   Number: Number,
   NumberBox: NumberBox,
+  NumberKeyboard: NumberKeyboard,
+  OTP: OTP,
   Password: Password,
   PasswordStrength: PasswordStrength,
   Range: Range,

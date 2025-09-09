@@ -5,6 +5,7 @@
   grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
   row-gap: 8px;
   column-gap: 8px;
+  font-size: var(--seed-font-size-l);
 
   box-sizing: border-box;
 }
@@ -12,7 +13,7 @@
   background-color: #f3f4f5;
   border-radius: 8px;
   box-sizing: border-box;
-  height: 37px;
+  height: 36px;
   padding: 0 2px;
   position: relative;
   text-align: center;
@@ -23,6 +24,7 @@
 }
 
 .selector-item-name {
+  line-height: 18px;
   max-height: 100%;
   // 超出两行换行
   display: -webkit-box;
@@ -42,9 +44,9 @@
   height: 0;
 
   border-top: 8px solid transparent;
-  border-bottom: 8px solid var(--primary);
+  border-bottom: 8px solid var(--seed-primary);
   border-left: 10px solid transparent;
-  border-right: 10px solid var(--primary);
+  border-right: 10px solid var(--seed-primary);
 }
 .selector-item-checked-mark-icon {
   font-family: 'seeds-icons';
@@ -64,11 +66,12 @@
 // 选中
 .selector-item[data-checked='true'] {
   background-color: white;
-  color: var(--primary);
-  border: 1px solid var(--primary);
+  color: var(--seed-primary);
+  border: 1px solid var(--seed-primary);
+  font-weight: 500;
 
-  // background-color: var(--primary-lighten);
-  // color: var(--primary);
+  // background-color: var(--seed-primary-lighten);
+  // color: var(--seed-primary);
   // .selector-item-checked-mark {
   //   display: block;
   // }

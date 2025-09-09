@@ -5,10 +5,11 @@
   flex-wrap: nowrap;
   overflow-x: auto;
   scrollbar-width: none;
-  color: var(--secondary);
-  background-color: var(--navbar-bg);
-  padding: 3px;
+  color: var(--seed-font-color-secondary);
+  background-color: var(--seed-bg-default);
+  padding: 2px;
   border-radius: 6px;
+  gap: 2px;
 }
 
 // Separator
@@ -32,17 +33,19 @@
   position: relative;
   flex: auto;
   padding: 4px 8px;
-  min-height: 16px;
-
+  min-height: 26px;
+  min-width: 34px;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .tabbar-slide-tab-wrapper.active {
-  color: white;
-  background-color: var(--primary);
-  border-color: var(--primary);
-  border-radius: 4px;
+  background-color: white;
+  font-weight: 500;
+
+  border-radius: 6px;
 }
 
 // Tab
@@ -53,13 +56,13 @@
 
 // 文本
 .tabbar-slide-tab-name {
-  font-size: var(--font-size-s);
+  font-size: var(--seed-font-size-s);
 }
 .tabbar-slide-tab-description {
-  color: var(--secondary);
-  font-size: var(--font-size-s);
+  color: var(--seed-font-color-secondary);
+  font-size: var(--seed-font-size-s);
 }
 .tabbar-slide-tab-name + .tabbar-slide-tab-description,
 .tabbar-slide-tab-description + .tabbar-slide-tab-name {
-  margin-top: var(--space-m);
+  margin-top: var(--seed-space-s);
 }

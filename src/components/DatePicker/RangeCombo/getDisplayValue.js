@@ -6,7 +6,7 @@ import DateUtil from './../../../utils/DateUtil'
 import { DateUtil } from 'lyrixi-design-mobile'
 测试使用-end */
 
-// 显示名称
+// 显示名称(共用方法)
 function getDisplayValue({ value, type, rangeId, ranges, separator }) {
   if (!Array.isArray(value) || value.length !== 2) {
     return ''

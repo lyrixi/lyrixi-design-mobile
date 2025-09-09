@@ -79,14 +79,12 @@ export default defineConfig({
     // 导航
     nav: {
       'zh-CN': [
-        { title: '设计', link: '/design/design-introduce' },
-        { title: '组件', link: '/components' },
+        { title: '组件', link: '/components/install' },
         { title: '工具', link: '/utils' },
         { title: '模板', link: '/pages' }
       ],
       'en-US': [
-        { title: 'Design', link: '/en-US/design/introduce' },
-        { title: 'Components', link: '/en-US/components' },
+        { title: 'Components', link: '/en-US/components/install' },
         { title: 'Utils', link: '/en-US/utils' },
         { title: 'Template', link: '/en-US/pages' }
       ]

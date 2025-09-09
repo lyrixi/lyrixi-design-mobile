@@ -14,7 +14,7 @@ function ListBar({ value, list, onChange }) {
       value={value}
       list={list}
       checkable
-      checkbox={() => <i className="toolbar-list-item-checkbox"></i>}
+      checkbox={() => <i className="toolbar-dropdown-item-checkbox"></i>}
       checkboxPosition="right"
       onChange={onChange}
     />

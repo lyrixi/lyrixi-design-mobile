@@ -534,7 +534,7 @@ export default {
       errMsg: null
     },
     sku_price_tag_enabl: true,
-    originalImageUrl: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png',
+    originalImageUrl: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png',
     materials: {
       jpMaDetail: [],
       maDetail: [
@@ -553,7 +553,7 @@ export default {
           rate: 100,
           // 不存在的图片
           imageUrl:
-            'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/list/avatar-default.jpg',
+            'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/list/avatar-default.jpg',
           name: '清爽价格签',
           layers: [1],
           rank: 1,
@@ -632,7 +632,7 @@ export default {
   errReport: '',
   funcId: 12,
   id: '8901464828137340152',
-  imageUrl: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png',
+  imageUrl: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png',
   jpLstDoorInfo: [],
   lstDoorInfo: [],
   next: '',

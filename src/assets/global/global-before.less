@@ -4,14 +4,14 @@
 // 兼容样式设置
 ::selection {
   color: white;
-  background: var(--primary);
+  background: var(--seed-primary);
 }
 ::-webkit-input-placeholder {
-  color: #b6b6b6;
+  color: var(--seed-font-color-quaternary);
 }
 input::placeholder,
 textarea::placeholder {
-  color: var(--tertiary);
+  color: var(--seed-font-color-quaternary);
 }
 // 清除默认样式
 input[type='search']::-webkit-search-decoration,
@@ -53,9 +53,9 @@ body {
 body {
   font-family: -apple-system, blinkmacsystemfont, 'Helvetica Neue', helvetica, segoe ui, arial,
     roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
-  color: var(--default);
-  // background-color: var(--app-background-color);
-  font-size: var(--font-size-m);
+  color: var(--seed-font-color-default);
+  // background-color: var(--seed-bg-default);
+  font-size: var(--seed-font-size-m);
   word-wrap: break-word;
   word-break: break-all;
 
@@ -74,7 +74,7 @@ a {
   }
 }
 .placeholder {
-  color: #b6b6b6;
+  color: var(--seed-font-color-quaternary);
 }
 i {
   font-style: normal;
@@ -165,11 +165,11 @@ br {
 
 // Bg背景
 .bg-avatar-default {
-  background-image: url(https://lyrixi.github.io/lyrixi-design-mobile/assets/images/list/avatar-default.png);
+  background-image: url(https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/list/avatar-default.png);
 }
 
 .bg-image-default {
-  background-image: url(https://lyrixi.github.io/lyrixi-design-mobile/assets/images/list/image-default.png);
+  background-image: url(https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/list/image-default.png);
 }
 
 // 遮罩公共遮罩样式
@@ -182,13 +182,13 @@ br {
   z-index: 10;
   overflow: hidden;
 
-  background-color: var(--mask-bg);
+  background-color: var(--seed-bg-mask);
   visibility: hidden;
   opacity: 0;
-  transition-duration: var(--animation-duration-close);
+  transition-duration: var(--seed-animation-duration-close);
   transition-property: transform, opacity, visibility;
   &.active {
-    transition-duration: var(--animation-duration-open);
+    transition-duration: var(--seed-animation-duration-open);
     visibility: visible;
     opacity: 1;
   }
@@ -205,10 +205,10 @@ br {
   position: absolute;
   &[data-animation] {
     visibility: hidden;
-    transition-duration: var(--animation-duration-close);
+    transition-duration: var(--seed-animation-duration-close);
     transition-property: transform, opacity, visibility;
     &.active {
-      transition-duration: var(--animation-duration-open);
+      transition-duration: var(--seed-animation-duration-open);
       visibility: visible;
     }
   }
@@ -244,7 +244,9 @@ br {
     }
   }
   // 从上向下滑动
-  &[data-animation='slideDown'] {
+  &[data-animation='slideDown'],
+  &[data-animation='slideDownLeft'],
+  &[data-animation='slideDownRight'] {
     //top:0;
     transform: translate3d(0, -100%, 0);
     &.active {

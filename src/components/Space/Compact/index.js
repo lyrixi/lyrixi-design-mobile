@@ -22,7 +22,10 @@ const Compact = forwardRef(({ children, ...props }, ref) => {
         targetsBaseClass={{
           Button: 'button',
           'ToolBar.Button': 'toolbar-button',
-          'ToolBar.List': 'toolbar-list-combo'
+          'ToolBar.Dropdown': 'toolbar-button',
+          'ToolBar.DateRange': 'toolbar-button',
+          'ToolBar.List': 'toolbar-button',
+          'ToolBar.Filter': 'toolbar-button'
         }}
       >
         {children}

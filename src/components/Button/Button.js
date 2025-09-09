@@ -11,13 +11,27 @@ import { DOMUtil } from 'lyrixi-design-mobile'
 const Button = forwardRef(
   (
     {
+      // 颜色: default, primary, link, warning, danger, success
+      color,
+      // 变体: default, outline, text, fill
+      variant,
+      // 尺寸: xxs, xs, s, m, l, xl
+      size,
+      // 圆角: xxs, xs, s, m, l, xl
+      radius,
       // 形状: square, circle, round
       shape,
+      className,
       children,
       ...props
     },
     ref
   ) => {
+    // eslint-disable-next-line
+    if (color === 'default') color = undefined
+    // eslint-disable-next-line
+    if (variant === 'default') variant = undefined
+
     const rootRef = useRef(null)
 
     // Expose
@@ -33,8 +47,12 @@ const Button = forwardRef(
         {...props}
         className={DOMUtil.classNames(
           'button',
-          props.className,
-          typeof shape === 'string' ? 'shape-' + shape : ''
+          color,
+          variant && `variant-${variant}`,
+          size && `size-${size}`,
+          radius && `radius-${radius}`,
+          shape && `shape-${shape}`,
+          className
         )}
         ref={rootRef}
       >

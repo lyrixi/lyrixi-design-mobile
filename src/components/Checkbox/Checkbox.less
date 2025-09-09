@@ -25,8 +25,8 @@
   .flex-center;
   box-sizing: border-box;
   vertical-align: middle;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
 
   // 默认样式
   &.default {
@@ -44,7 +44,7 @@
   // 默认样式
   .checkbox-icon.default {
     border: 0;
-    background-color: var(--primary);
+    background-color: var(--seed-primary);
     color: white;
     font-family: 'seeds-icons';
     &:extend(.seeds-icon-ok all);
@@ -58,7 +58,7 @@
   }
   // 勾子样式
   .checkbox-icon.tick {
-    color: var(--primary);
+    color: var(--seed-primary);
     font-family: 'seeds-icons';
     &:extend(.seeds-icon-ok all);
     &:before {
@@ -72,6 +72,10 @@
 }
 
 // content
-.checkbox-content {
-  margin-left: var(--space-xs);
+.checkbox-icon + .checkbox-content {
+  margin-left: var(--seed-space-m);
+}
+
+.checkbox-content + .checkbox-icon {
+  margin-left: var(--seed-space-m);
 }

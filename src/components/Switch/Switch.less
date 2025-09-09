@@ -38,7 +38,7 @@
     }
   }
   &.active {
-    background-color: var(--primary);
+    background-color: var(--seed-primary);
 
     .switch-off {
       visibility: hidden;
@@ -58,7 +58,7 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  font-size: var(--font-size-s);
+  font-size: var(--seed-font-size-s);
 }
 
 // Size
@@ -100,7 +100,7 @@
 }
 
 .switch.m {
-  height: 24px;
+  height: var(--seed-input-height-m);
 
   .switch-on,
   .switch-off {
@@ -108,11 +108,11 @@
   }
 
   .switch-off {
-    margin-top: -24px;
+    margin-top: -var(--seed-input-height-m);
   }
   .switch-handle {
-    height: 22px;
-    width: 22px;
+    height: calc(var(--seed-input-height-m) - 2px);
+    width: calc(var(--seed-input-height-m) - 2px);
   }
 
   // 激活和非激活的位移与间距
@@ -123,19 +123,19 @@
     }
     // 主体内容
     .switch-inner {
-      padding-left: calc(24px + 2px);
+      padding-left: calc(var(--seed-input-height-m) + 2px);
       padding-right: 8px;
     }
   }
   &.active {
     // 小球
     .switch-handle {
-      left: calc(100% - 24px);
+      left: calc(100% - var(--seed-input-height-m));
     }
     // 主体内容
     .switch-inner {
       padding-left: 8px;
-      padding-right: calc(24px + 2px);
+      padding-right: calc(var(--seed-input-height-m) + 2px);
     }
   }
 }

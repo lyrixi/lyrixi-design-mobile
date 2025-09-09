@@ -22,35 +22,35 @@
   display: flex;
   &.finish {
     .steps-item-icon {
-      color: var(--primary);
+      color: var(--seed-primary);
     }
     .steps-item-icon-circle {
-      background-color: var(--primary);
+      background-color: var(--seed-primary);
       color: white;
     }
     .steps-item-rail {
-      background-color: var(--primary) !important;
+      background-color: var(--seed-primary) !important;
     }
   }
   &.active {
     .steps-item-icon {
-      color: var(--primary);
+      color: var(--seed-primary);
     }
     .steps-item-icon-circle {
-      background-color: var(--primary);
+      background-color: var(--seed-primary);
       color: white;
     }
   }
   &.error {
     .steps-item-title,
     .steps-item-description {
-      color: var(--danger);
+      color: var(--seed-danger);
     }
     .steps-item-icon {
-      color: var(--danger);
+      color: var(--seed-danger);
     }
     .steps-item-icon-circle {
-      background-color: var(--danger);
+      background-color: var(--seed-danger);
       color: white;
     }
   }
@@ -65,7 +65,7 @@
 }
 
 .steps-item-description {
-  color: var(--auxiliary);
+  color: var(--seed-font-color-tertiary);
 }
 
 // Icon
@@ -76,7 +76,7 @@
 
   width: var(--steps-icon-size);
   height: var(--steps-icon-size);
-  color: var(--border);
+  color: var(--seed-border-color);
 }
 
 .steps-item-icon-circle {
@@ -88,5 +88,5 @@
   height: var(--steps-icon-size);
   border-radius: 100%;
   color: white;
-  background-color: var(--border);
+  background-color: var(--seed-border-color);
 }

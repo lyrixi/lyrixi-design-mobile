@@ -10,13 +10,14 @@ import _ from 'lodash'
 import Modal from './../Modal'
 
 // 内库使用-start
+import DOMUtil from './../../../utils/DOMUtil'
 import Map from './../../Map'
 import Input from './../../Input'
 import LocaleUtil from './../../../utils/LocaleUtil'
 // 内库使用-end
 
 /* 测试使用-start
-import { LocaleUtil, Input, Map } from 'lyrixi-design-mobile'
+import { DOMUtil, LocaleUtil, Input, Map } from 'lyrixi-design-mobile'
 测试使用-end */
 
 const {
@@ -61,7 +62,6 @@ const LocationCombo = forwardRef(
       onLocationStatusChange,
       onChange,
       onError,
-      inputProps,
 
       // Modal
       modal,
@@ -336,23 +336,9 @@ const LocationCombo = forwardRef(
     // 加载和错误面板, 显示这些面板时将会隐藏文本框, 样式必须与文本框一致
     let statusNode = null
     if (locationStatus === '-1') {
-      statusNode = (
-        <div
-          className={`input-text ${inputProps?.className || ''} location-combo-positioning`}
-          style={inputProps?.style || {}}
-        >
-          {loadingText}
-        </div>
-      )
+      statusNode = <div className={`location-combo-positioning seed-input-text`}>{loadingText}</div>
     } else if (locationStatus === '0') {
-      statusNode = (
-        <div
-          className={`input-text ${inputProps?.className || ''} location-combo-error`}
-          style={inputProps?.style || {}}
-        >
-          {errMsgRef.current}
-        </div>
-      )
+      statusNode = <div className={`location-combo-error seed-input-text`}>{errMsgRef.current}</div>
     }
 
     // Modal Render
@@ -384,6 +370,12 @@ const LocationCombo = forwardRef(
           value={value?.value || value?.address || ''}
           {...props}
           rightIcon={<>{getRightIconNode()}</>}
+          className={DOMUtil.classNames(
+            'location-combo-success',
+            'location-combo',
+            props?.className,
+            locationStatus === '-1' ? ' positioning' : ''
+          )}
           input={
             statusNode
               ? () => {
@@ -391,16 +383,9 @@ const LocationCombo = forwardRef(
                 }
               : null
           }
-          inputProps={Object.assign({}, inputProps, {
-            className: `location-combo-success${
-              inputProps?.className ? ' ' + inputProps?.className : ''
-            }`
-          })}
-          className={`location-combo${props?.className ? props.className : ''}${
-            locationStatus === '-1' ? ' positioning' : ''
-          }`}
           ref={comboRef}
         />
+
         {/* 地图预览与选择 */}
         <ModalNode
           config={config}

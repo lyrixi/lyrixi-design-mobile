@@ -24,12 +24,12 @@ const FormMain = forwardRef(
       <div
         {...mainColProps}
         {...props}
-        className={`form-item-main${props.className ? ' ' + props.className : ''}${
+        className={`seed-form-item-main${props.className ? ' ' + props.className : ''}${
           layout === 'horizontal' ? ` col col-${span || globalSpan || 16}` : ''
         }`}
         ref={rootRef}
       >
-        <div className="form-item-main-input">
+        <div className="seed-form-item-main-input">
           {/* Children */}
           {ellipsis?.rows && typeof children === 'string' ? (
             <Div ellipsis={ellipsis || globalEllipsis}>{children}</Div>
@@ -37,12 +37,12 @@ const FormMain = forwardRef(
             children
           )}
           {/* Input extra */}
-          {getExtraNode(inputExtra, { className: 'form-item-main-input-extra' })}
+          {getExtraNode(inputExtra, { className: 'seed-form-item-main-input-extra' })}
         </div>
         {/* Error */}
-        {error && <div className="form-item-main-error">{error}</div>}
+        {error && <div className="seed-form-item-main-error">{error}</div>}
         {/* Main extra */}
-        {getExtraNode(extra, { className: 'form-item-main-extra' })}
+        {getExtraNode(extra, { className: 'seed-form-item-main-extra' })}
       </div>
     )
   }

@@ -1,6 +1,8 @@
-import React, { useRef, useImperativeHandle, forwardRef } from 'react'
-import { updateValueType } from './utils'
-import testStreet from './utils/updateValueType/testStreet'
+import React, { useEffect, useRef, useImperativeHandle, forwardRef } from 'react'
+import {
+  formatDistrictValue
+  // findDistrictLeafIndex
+} from './utils'
 import Main from './../Main'
 import Tabs from './Tabs'
 
@@ -14,74 +16,50 @@ const DistrictMain = forwardRef(
       // Main
       value,
 
-      type = '', // 'country', 'province', 'city', 'district', 'street' (只有中国时才生效, 因为只有中国有省市区)
+      type = 'street', // 'country', 'province', 'city', 'district', 'street' (只有中国时才生效, 因为只有中国有省市区)
       list,
       loadData,
       editableOptions,
-      // 判断是否是国省市区
-      isCountry,
-      isProvince,
-      isMunicipality,
-      isPrefecture,
-      isCity,
-      isDistrict,
-      isStreet,
+      onLoad,
       ...props
     },
     ref
   ) => {
+    // eslint-disable-next-line
+    value = formatDistrictValue(value, list, type)
+
     // Expose api
     const districtMainRef = useRef(null)
     useImperativeHandle(ref, () => {
       return {
-        updateValueType: _updateValueType,
         ...districtMainRef.current
       }
     })
 
-    // 更新value的type, 截取超出type部分
-    function _updateValueType(newValue, newList) {
-      let currentValue = newValue || value
-      let currentList = newList || list
-      return updateValueType(currentValue, currentList, {
-        type,
-        isCountry,
-        isProvince,
-        isMunicipality,
-        isPrefecture,
-        isCity,
-        isDistrict,
-        isStreet
-      })
-    }
-
-    // 点击选项前判断是否指定类型和isLeaf
-    async function handleBeforeChange(tabs) {
-      if (!Array.isArray(tabs) || !tabs.length) {
-        return tabs
+    useEffect(() => {
+      if (Array.isArray(list) && list.length) {
+        onLoad && onLoad(list)
       }
+      // eslint-disable-next-line
+    }, [list])
 
-      let lastTab = tabs[tabs.length - 1]
+    // 点击选项前判断是否指定类型
+    // async function handleBeforeChange(tabs) {
+    //   if (!Array.isArray(tabs) || !tabs.length) {
+    //     return tabs
+    //   }
 
-      // 街道无需再发请求
-      if (testStreet(tabs[tabs.length - 1], isStreet)) {
-        lastTab.isLeaf = true
-        return tabs
-      }
+    //   // 街道无需再发请求
+    //   if (typeof findDistrictLeafIndex(tabs, type) === 'number') {
+    //     return tabs
+    //   }
 
-      // 匹配类型，没传类型则允许下钻
-      if (!type) {
-        return true
-      }
-
-      // 末级增加isLeaf
-      _updateValueType(tabs)
-
-      return tabs
-    }
-
-    // eslint-disable-next-line
-    value = _updateValueType(value)
+    //   // 匹配类型，没传类型则允许下钻
+    //   if (!type) {
+    //     return true
+    //   }
+    //   return tabs
+    // }
 
     return (
       <Main
@@ -103,24 +81,14 @@ const DistrictMain = forwardRef(
         loadData={
           typeof loadData === 'function'
             ? (tabs, { list = null }) => {
-                // eslint-disable-next-line
-                tabs = _updateValueType(tabs, list)
-
                 return loadData(tabs, {
-                  list,
-                  isCountry,
-                  isProvince,
-                  isMunicipality,
-                  isPrefecture,
-                  isCity,
-                  isDistrict,
-                  isStreet
+                  list
                 })
               }
             : null
         }
         {...props}
-        onBeforeChange={handleBeforeChange}
+        // onBeforeChange={handleBeforeChange}
       />
     )
   }

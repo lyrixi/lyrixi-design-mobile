@@ -1,31 +1,156 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
+import getDisplayValue from './../../DatePicker/RangeCombo/getDisplayValue'
+import Dropdown from './../Dropdown'
 import DateRange from './DateRange'
 
+// 内库使用-start
+import DateUtil from './../../../utils/DateUtil'
+import LocaleUtil from './../../../utils/LocaleUtil'
+import DatePicker from './../../DatePicker'
+import FooterBar from './../../FooterBar'
+// 内库使用-end
+
+/* 测试使用-start
+import { DateUtil, LocaleUtil, DatePicker, FooterBar } from 'lyrixi-design-mobile'
+测试使用-end */
+
+const getDefaultRanges = DatePicker.getDefaultRanges
+
 // 日期区间
-function DateRangeBar({ portal, title, arrow, value, onChange, ...props }) {
-  const dateRangeRef = useRef(null)
+function DateRangeBar({
+  portal,
 
-  // 将所有dropdown合并到一个数组里, 用于全量关闭
-  useEffect(() => {
-    if (!window.dropdownRefs) window.dropdownRefs = []
-    window.dropdownRefs.push(dateRangeRef)
+  // Combo Style
+  variant,
+  color,
+  shape,
+  title,
+  arrow,
+  comboStyle,
+  comboClassName,
+
+  // Modal
+  maskClassName,
+  maskStyle,
+
+  // Combo Value
+  type = 'date',
+  min,
+  max,
+  rangeId: externalRangeId,
+  ranges,
+  value: externalValue,
+  allowClear,
+  onBeforeChange,
+  onChange
+  // Combo
+}) {
+  if (ranges === undefined) {
     // eslint-disable-next-line
-  }, [])
+    ranges = getDefaultRanges()
+  }
 
-  function handleChange(newValue) {
-    onChange && onChange(newValue)
+  const [rangeId, setRangeId] = useState(externalRangeId)
+  const [value, setValue] = useState(externalValue)
+  const dropdownRef = useRef(null)
+
+  useEffect(() => {
+    init()
+    // eslint-disable-next-line
+  }, [externalRangeId, externalValue])
+
+  // 初始化
+  function init() {
+    // 外部未传入rangeId, 则根据value获取rangeId
+    if (!externalRangeId && externalValue) {
+      // 如果有rangeId, 判断日期是否一致, 一致则使用rangeId
+      if (
+        rangeId &&
+        ranges[rangeId] &&
+        DateUtil.compareRange(externalValue, ranges[rangeId], type) === 0
+      ) {
+        // eslint-disable-next-line
+        externalRangeId = rangeId
+      }
+      // 如果没有externalRangeId, 则根据value获取externalRangeId
+      else {
+        // eslint-disable-next-line
+        externalRangeId = DatePicker.getRangeId(externalValue, { type, ranges })
+      }
+    }
+
+    if (externalRangeId !== rangeId) {
+      setRangeId(externalRangeId)
+    }
+
+    // Value
+    if (DateUtil.compare(externalValue, value, type) !== 0) {
+      setValue(externalValue)
+    }
+  }
+
+  // 修改
+  async function handleChange(newValue, { rangeId: newRangeId }) {
+    setRangeId(newRangeId)
+    setValue(newValue)
+  }
+
+  async function handleOk() {
+    if (typeof onBeforeChange === 'function') {
+      let goOn = await onBeforeChange(value, { rangeId })
+      if (!goOn) return
+    }
+
+    if (onChange) onChange(value, { rangeId })
+    dropdownRef.current?.close?.()
+  }
+
+  function handleCancel() {
+    init()
+    dropdownRef.current?.close?.()
   }
 
   return (
-    <DateRange
-      ref={dateRangeRef}
+    <Dropdown
       portal={portal}
-      title={title}
+      title={title || getDisplayValue({ value, type, rangeId, ranges })}
       arrow={arrow}
-      value={value}
-      onChange={handleChange}
-      {...props}
-    />
+      variant={variant}
+      color={color}
+      shape={shape}
+      comboStyle={comboStyle}
+      comboClassName={comboClassName}
+      maskClassName={maskClassName}
+      maskStyle={maskStyle}
+      onClose={handleCancel}
+      ref={dropdownRef}
+    >
+      <div className="toolbar-daterange-modal">
+        <div className="toolbar-daterange-modal-body">
+          <DateRange
+            min={min}
+            max={max}
+            value={value}
+            allowClear={allowClear}
+            rangeId={rangeId}
+            ranges={ranges}
+            onChange={handleChange}
+          />
+        </div>
+        <FooterBar>
+          <FooterBar.Button onClick={handleCancel}>
+            {LocaleUtil.locale('取消', 'SeedsUI_cancel')}
+          </FooterBar.Button>
+          <FooterBar.Button className="primary" onClick={handleOk}>
+            {LocaleUtil.locale('确定', 'SeedsUI_ok')}
+          </FooterBar.Button>
+        </FooterBar>
+      </div>
+    </Dropdown>
   )
 }
+
+// Component Name, for compact
+DateRangeBar.componentName = 'ToolBar.DateRange'
+
 export default DateRangeBar

@@ -1,0 +1,30 @@
+// Input.Node: Placeholder
+div.seed-input-text.placeholder {
+  color: var(--seed-font-color-quaternary);
+}
+
+// Input.Node: 解决自绘光标不能居中显示的问题
+div.seed-input-text {
+  display: flex;
+  align-items: center;
+}
+
+// InputNumber 光标样式
+.seed-input-text.focus::after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 18px;
+  background-color: currentColor;
+  animation: seed-input-cursor-blink 1s infinite;
+}
+@keyframes seed-input-cursor-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}

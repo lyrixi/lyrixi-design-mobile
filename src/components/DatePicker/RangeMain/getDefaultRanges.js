@@ -33,8 +33,14 @@ function getDefaultRanges() {
       new Date()
     ],
 
-    [LocaleUtil.locale('本周', 'SeedsUI_this_week')]: [dayjs().day(1).toDate(), new Date()],
-    [LocaleUtil.locale('本月', 'SeedsUI_this_month')]: [dayjs().date(1).toDate(), new Date()],
+    [LocaleUtil.locale('本周', 'SeedsUI_this_week')]: [
+      DateUtil.startOrEnd(new Date(), 'week', 'start'),
+      new Date()
+    ],
+    [LocaleUtil.locale('本月', 'SeedsUI_this_month')]: [
+      DateUtil.startOrEnd(new Date(), 'month', 'start'),
+      new Date()
+    ],
     [LocaleUtil.locale('上月', 'SeedsUI_last_month')]: [
       dayjs().date(1).subtract(1, 'month').toDate(),
       dayjs().date(1).subtract(1, 'day').toDate()

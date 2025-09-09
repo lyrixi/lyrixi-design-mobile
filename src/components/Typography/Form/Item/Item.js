@@ -16,12 +16,12 @@ const FormItem = forwardRef(({ name, layout, children, ...props }, ref) => {
   return (
     <div
       {...props}
-      className={`form-item${props.className ? ' ' + props.className : ''}${
+      className={`seed-form-item${props.className ? ' ' + props.className : ''}${
         (layout || globalLayout) === 'horizontal'
-          ? ` form-item-layout-horizontal row`
-          : ' form-item-layout-vertical'
+          ? ` seed-form-item-layout-horizontal row`
+          : ' seed-form-item-layout-vertical'
       }`}
-      id={`${name ? `form-item-${name}` : props?.id || ''}`}
+      id={`${name ? `seed-form-item-${name}` : props?.id || ''}`}
       ref={rootRef}
     >
       {children}

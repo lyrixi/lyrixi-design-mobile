@@ -1,28 +1,36 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 
-import Combo from './Combo'
+import Dropdown from './../Dropdown'
 import List from './List'
 
 // 列表下拉
 function ToolBarList({
-  portal,
-  title,
+  // Combo Style
+  variant,
+  color,
+  shape,
+  comboStyle,
+  comboClassName,
 
+  // Mask
+  maskClassName,
+  maskStyle,
+
+  // Modal
+  portal,
+  offset,
+  left,
+  right,
+
+  // Combo Value
+  title,
+  arrow,
   value,
   list,
   onBeforeChange,
-  onChange,
-  ...props
+  onChange
 }) {
   const dropdownRef = useRef(null)
-
-  // 将所有dropdown合并到一个数组里, 用于全量关闭
-  useEffect(() => {
-    if (!window.dropdownRefs) window.dropdownRefs = []
-    window.dropdownRefs.push(dropdownRef)
-    // eslint-disable-next-line
-  }, [])
-
   // 修改
   async function handleChange(newValue) {
     if (typeof onBeforeChange === 'function') {
@@ -36,32 +44,24 @@ function ToolBarList({
   }
 
   return (
-    <Combo
-      offset={{
-        top: 6
-      }}
-      maskProps={{
-        className: 'toolbar-list-modal-mask'
-      }}
+    <Dropdown
       portal={portal}
+      offset={offset}
+      left={left}
+      right={right}
+      variant={variant}
+      color={color}
+      shape={shape}
+      comboStyle={comboStyle}
+      comboClassName={comboClassName}
+      maskClassName={maskClassName}
+      maskStyle={maskStyle}
       title={title || value?.[0]?.name}
-      {...props}
-      onVisibleChange={(visible) => {
-        props?.onBeforeChange && props?.onBeforeChange?.(visible)
-
-        let toolbarDOM = dropdownRef.current?.comboDOM?.closest?.('.toolbar')
-        if (!toolbarDOM) return
-
-        if (visible) {
-          toolbarDOM.classList.add('active')
-        } else {
-          toolbarDOM.classList.remove('active')
-        }
-      }}
+      arrow={arrow}
       ref={dropdownRef}
     >
       <List value={value} list={list} onChange={handleChange} />
-    </Combo>
+    </Dropdown>
   )
 }
 

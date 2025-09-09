@@ -25,8 +25,8 @@ function Filter({ queryParams, onSearch }) {
 
   return (
     <ToolBar.Filter
-      active={active}
-      className={'toolbar-button'}
+      color={active ? 'primary' : 'default'}
+      variant="default"
       onVisibleChange={(visible) => {
         setVisible(visible)
       }}

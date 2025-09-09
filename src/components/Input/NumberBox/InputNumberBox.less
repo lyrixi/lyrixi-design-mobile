@@ -1,30 +1,66 @@
-.seed-numberbox,
-.seed-numberbox.m {
-  width: 150px;
-  height: 26px;
-}
 .seed-numberbox.xl {
-  width: 170px;
-  height: 40px;
+  border-radius: var(--seed-radius-xl);
+  width: 198px;
+  height: 48px;
   .seed-numberbox-button {
-    width: 40px;
+    width: 44px;
+  }
+  .seed-numberbox-button,
+  .seed-input-node {
+    font-size: var(--seed-font-size-l);
   }
 }
+
 .seed-numberbox.l {
-  width: 150px;
-  height: 32px;
+  border-radius: var(--seed-radius-l);
+  width: 168px;
+  height: 40px;
   .seed-numberbox-button {
     width: 32px;
   }
-}
-.seed-numberbox.s {
-  width: 80px;
-  height: 22px;
-  .seed-numberbox-button {
-    width: 22px;
-  }
+  .seed-numberbox-button,
   .seed-input-node {
-    font-size: 12px;
+    font-size: var(--seed-font-size-m);
+  }
+}
+
+.seed-numberbox,
+.seed-numberbox.m {
+  border-radius: var(--seed-radius-m);
+  width: 148px;
+  height: 32px;
+  .seed-numberbox-button {
+    width: 28px;
+  }
+  .seed-numberbox-button,
+  .seed-input-node {
+    font-size: var(--seed-font-size-s);
+  }
+}
+
+.seed-numberbox.s {
+  border-radius: var(--seed-radius-s);
+  width: 128px;
+  height: 24px;
+  .seed-numberbox-button {
+    width: 20px;
+  }
+  .seed-numberbox-button,
+  .seed-input-node {
+    font-size: var(--seed-font-size-xs);
+  }
+}
+
+.seed-numberbox.xs {
+  border-radius: var(--seed-radius-xs);
+  width: 128px;
+  height: 20px;
+  .seed-numberbox-button {
+    width: 16px;
+  }
+  .seed-numberbox-button,
+  .seed-input-node {
+    font-size: var(--seed-font-size-xs);
   }
 }
 
@@ -37,27 +73,28 @@
 }
 
 .seed-numberbox {
-  .inline-flex;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   overflow: hidden;
   text-align: center;
   vertical-align: middle;
   background-color: white;
-  border-radius: 4px;
-  &:extend(.flex-middle);
-  &:extend(.bordered);
+  border: 1px solid var(--seed-border-color);
+  box-sizing: border-box;
 }
 
 // 文本框
 .seed-numberbox-input {
-  height: 100%;
+  height: 100% !important;
+  padding: 0;
   .seed-input-node {
     height: 100%;
     .seed-input-text {
       text-align: center;
       text-overflow: ellipsis;
       height: 100%;
-      padding: 0;
     }
     .seed-input-formatter {
       text-align: center;
@@ -79,8 +116,8 @@
 
 .seed-numberbox-button-minus {
   left: 0;
-  color: var(--primary);
-  border-right: 1px solid var(--border);
+  color: var(--seed-primary);
+  border-right: 1px solid var(--seed-border-color);
   background-color: #f3f4f5;
   &[disabled] {
     color: #ccc;
@@ -89,8 +126,8 @@
 .seed-numberbox-button-plus {
   right: 0;
   color: white;
-  background-color: var(--primary);
-  border-left: 1px solid var(--primary);
+  background-color: var(--seed-primary);
+  border-left: 1px solid var(--seed-primary);
   &[disabled] {
     opacity: 0.6;
   }

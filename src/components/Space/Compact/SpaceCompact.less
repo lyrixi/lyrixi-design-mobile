@@ -6,19 +6,21 @@
 .button-compact-item,
 .toolbar-button-compact-item,
 .toolbar-list-combo-compact-item .toolbar-button {
-  // Sibling border merge
-  margin-right: -1px;
-  border-radius: 0;
+  border-radius: 0 !important;
 }
-.button.button-compact-first-item,
+.button-compact-first-item,
 .toolbar-button-compact-first-item,
 .toolbar-list-combo-compact-first-item .toolbar-button {
-  border-top-left-radius: var(--radius-m);
-  border-bottom-left-radius: var(--radius-m);
+  border-top-left-radius: var(--seed-radius-m) !important;
+  border-bottom-left-radius: var(--seed-radius-m) !important;
 }
-.button.button-compact-last-item,
+.button-compact-last-item,
 .toolbar-button-compact-last-item,
 .toolbar-list-combo-compact-last-item .toolbar-button {
-  border-top-right-radius: var(--radius-m);
-  border-bottom-right-radius: var(--radius-m);
+  border-top-right-radius: var(--seed-radius-m) !important;
+  border-bottom-right-radius: var(--seed-radius-m) !important;
+}
+
+&.toolbar-button-compact-item:not(.toolbar-button-compact-first-item) {
+  border-left: 1px solid var(--seed-border-color);
 }

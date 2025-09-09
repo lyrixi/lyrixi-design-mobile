@@ -28,7 +28,7 @@ LocaleUtil.locale('半径1000米', 'key', [1000]) // => 半径1000米
 
 `也可以通过直接修改window.localeData修改国际化数据`
 
-## Lyrixi 内部国际化文件
+## SeedsUI 内部国际化文件
 
 目录: src/utils/LocaleUtil/resources/\*.json
 文件:

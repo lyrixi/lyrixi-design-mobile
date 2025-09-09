@@ -1,6 +1,8 @@
 @import 'AutoFit/InputAutoFit.less';
 @import 'Icon/InputIcon.less';
+@import 'Node/InputNode.less';
 @import 'NumberBox/InputNumberBox.less';
+@import 'OTP/InputOTP.less';
 @import 'PasswordStrength/InputPasswordStrength.less';
 @import 'Range/InputRange.less';
 @import 'Rate/InputRate.less';
@@ -11,9 +13,9 @@
 // 输入框容器
 .seed-input {
   position: relative;
-  .flex;
-  .flex-middle;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex: 1;
   // 解决flex1失效的问题
   min-width: 0;

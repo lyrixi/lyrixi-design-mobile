@@ -6,6 +6,7 @@ import Add from './Add'
 const Combo = (
   {
     value,
+    allowClear = true,
     onBeforeChange,
     onChange,
     onPreview,
@@ -19,7 +20,14 @@ const Combo = (
 ) => {
   // 已签显示图片
   if (value && typeof value === 'string') {
-    return <Edit ref={ref} value={value} onDelete={onChange} onPreview={onPreview} />
+    return (
+      <Edit
+        ref={ref}
+        value={value}
+        onDelete={allowClear ? onChange : undefined}
+        onPreview={onPreview}
+      />
+    )
   }
 
   // 未签显示添加按钮

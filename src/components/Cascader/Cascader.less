@@ -29,7 +29,7 @@
       margin-right: 24px;
     }
     .cascader-option-title {
-      color: var(--primary);
+      color: var(--seed-primary);
       // font-weight: 600;
     }
   }
@@ -42,7 +42,7 @@
   width: 14px;
   height: 14px;
   margin-right: 4px;
-  color: var(--primary);
+  color: var(--seed-primary);
   font-size: 14px;
   font-family: 'seeds-icons';
   line-height: 14px;
@@ -59,7 +59,7 @@
   overflow-x: auto;
   // tab禁用又选中的情况下，不允许点击列表
   &:has(.active.disabled) {
-    & + .cascader-main .cascader-option {
+    & + .cascader-body .cascader-option {
       pointer-events: none;
       opacity: 0.5;
     }
@@ -72,7 +72,7 @@
   line-height: 32px;
   &.active {
     font-weight: 600;
-    border-bottom: 2px solid var(--primary);
+    border-bottom: 2px solid var(--seed-primary);
   }
   &.disabled {
     opacity: 0.5;

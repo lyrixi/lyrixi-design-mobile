@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react'
 
 // 内库使用
-import { Layout, Map } from 'lyrixi-design-mobile'
+import { Layout, Map, Button } from 'lyrixi-design-mobile'
 
 // 测试使用
 // import Map from 'library/components/Map'
@@ -11,47 +11,72 @@ const { APILoader, MapMarkers, LocationControl, Circles, coordsToWgs84 } = Map
 import getPoints from './getPoints'
 
 // 随机生成点, 用于测试性能
-const currentPoints = coordsToWgs84(
-  getPoints({
-    center: {
-      latitude: 39.907783490367706,
-      longitude: 116.39120737493609
-    },
-    // 半径5000000米
-    radius: 1000,
-    // 生成点数
-    count: 101
-  })
-)
+// const currentPoints = coordsToWgs84(
+//   getPoints({
+//     center: {
+//       latitude: 39.907783490367706,
+//       longitude: 116.39120737493609
+//     },
+//     // 半径5000000米
+//     radius: 1000,
+//     // 生成点数
+//     count: 101
+//   })
+// )
 
 // This coordsToWgs84 just example, no practical use
 const points = coordsToWgs84([
   {
-    address: '国家广告产业园北区',
-    latitude: 31.981827992209773,
-    longitude: 118.73498038509915,
-    type: 'gcj02'
-  },
-  {
-    latitude: 31.990433909567244,
-    longitude: 118.7376115295504,
-    type: 'gcj02',
-    address: '南京烽火科技',
     icon: {
-      html: '<div style="width:100px;background-color:red;">南京烽火科技</div>'
-    }
-  },
-  {
-    latitude: 31.98768,
-    longitude: 118.751785,
+      iconUrl: `https://cdn-icons-png.flaticon.com/128/13484/13484859.png`,
+      iconRetinaUrl: `https://cdn-icons-png.flaticon.com/128/13484/13484859.png`
+      // html: '<div style="background-color:red;color:white;">1</div>'
+    },
     type: 'gcj02',
-    address: '小行'
+    latitude: '31.982723',
+    longitude: '118.735298',
+    inChinaTo: 'bd09',
+    outChinaTo: 'wgs84',
+    isInChina: true
   },
   {
-    address: '国家广告产业园北区',
-    latitude: 31.981827992209773,
-    longitude: 118.73498038509915,
-    type: 'gcj02'
+    icon: {
+      iconUrl: `https://cdn-icons-png.flaticon.com/128/10096/10096738.png`,
+      iconRetinaUrl: `https://cdn-icons-png.flaticon.com/128/10096/10096738.png`
+      // html: '<div style="background-color:yellow;color:white;">2</div>'
+    },
+    type: 'gcj02',
+    latitude: '31.982594',
+    longitude: '118.735184',
+    inChinaTo: 'bd09',
+    outChinaTo: 'wgs84',
+    isInChina: true
+  },
+  {
+    icon: {
+      iconUrl: `https://cdn-icons-png.flaticon.com/128/14463/14463613.png`,
+      iconRetinaUrl: `https://cdn-icons-png.flaticon.com/128/14463/14463613.png`
+      // html: '<div style="background-color:green;color:white;">3</div>'
+    },
+    type: 'gcj02',
+    latitude: '31.98266',
+    longitude: '118.735237',
+    inChinaTo: 'bd09',
+    outChinaTo: 'wgs84',
+    isInChina: true
+  },
+  {
+    icon: {
+      iconUrl: `https://cdn-icons-png.flaticon.com/128/15047/15047495.png`,
+      iconRetinaUrl: `https://cdn-icons-png.flaticon.com/128/15047/15047495.png`
+      // html: '<div style="background-color:black;color:white;">4</div>'
+    },
+    type: 'gcj02',
+    latitude: '31.982693',
+    longitude: '118.73526',
+    inChinaTo: 'bd09',
+    outChinaTo: 'wgs84',
+    isInChina: true
   }
 ])
 
@@ -64,25 +89,37 @@ export default () => {
   //   }, 5000)
   // }, [])
 
+  function handleFocusPoint() {
+    mapRef.current.markersRef.current.focus(points[0])
+  }
+
+  function handleBlurPoint() {
+    mapRef.current.markersRef.current.blur()
+  }
+
   return (
     <Layout className="full">
+      <Layout.Header>
+        <Button onClick={handleFocusPoint}>Focus point</Button>
+        <Button onClick={handleBlurPoint}>Blur point</Button>
+      </Layout.Header>
       <Layout.Main>
         <APILoader
           config={{
-            key: 'bmap key',
+            key: '7b6e260fc45a67b31a265e22575f1c5e',
             type: 'bmap',
             markerIcons: {
               centerMarkerIcon: {
-                iconUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-custom-shop.png`,
-                iconRetinaUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-custom-shop.png`,
-                shadowUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png`,
-                shadowRetinaUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png`
+                iconUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-custom-shop.png`,
+                iconRetinaUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-custom-shop.png`,
+                shadowUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-shadow.png`,
+                shadowRetinaUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-shadow.png`
               },
               markerIcon: {
-                iconUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-icon.png`,
-                iconRetinaUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-icon-2x.png`,
-                shadowUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png`,
-                shadowRetinaUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png`
+                iconUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-icon.png`,
+                iconRetinaUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-icon-2x.png`,
+                shadowUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-shadow.png`,
+                shadowRetinaUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-shadow.png`
               }
             }
           }}
@@ -104,33 +141,33 @@ export default () => {
               // 标注
               markers={points}
               // 折线
-              polyline={points}
-              PolylineProps={{
-                color: '#ff8800'
-              }}
+              // polyline={points}
+              // PolylineProps={{
+              //   color: '#ff8800'
+              // }}
               // 圆圈
-              circles={[
-                {
-                  latitude: 31.981827992209773,
-                  longitude: 118.73498038509915,
-                  type: 'gcj02',
-                  radius: 500
-                  // color: '#ff8800'
-                }
-              ]}
-              CirclesProps={{
-                color: '#ff8800'
-              }}
+              // circles={[
+              //   {
+              //     latitude: 31.981827992209773,
+              //     longitude: 118.73498038509915,
+              //     type: 'gcj02',
+              //     radius: 500
+              //     // color: '#ff8800'
+              //   }
+              // ]}
+              // CirclesProps={{
+              //   color: '#ff8800'
+              // }}
               onMarkerClick={(e) => {
                 console.log('点击marker:', e)
                 console.log(mapRef.current)
                 // e.remove()
                 let newMarkerIcon = window.L.icon({
                   active: true,
-                  iconUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-icon.bak.png`,
-                  iconRetinaUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-icon.bak.png`,
-                  shadowUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png`,
-                  shadowRetinaUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png`,
+                  iconUrl: `https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-icon.bak.png`,
+                  iconRetinaUrl: `https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-icon.bak.png`,
+                  shadowUrl: `https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png`,
+                  shadowRetinaUrl: `https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png`,
                   shadowSize: [33, 33],
                   iconSize: [20, 33],
                   iconAnchor: [10, 16]
@@ -142,10 +179,10 @@ export default () => {
               //   // e.remove()
               //   let newMarkerIcon = window.L.icon({
               //     active: true,
-              //     iconUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-icon.bak.png`,
-              //     iconRetinaUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-icon.bak.png`,
-              //     shadowUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png`,
-              //     shadowRetinaUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png`,
+              //     iconUrl: `https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-icon.bak.png`,
+              //     iconRetinaUrl: `https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-icon.bak.png`,
+              //     shadowUrl: `https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png`,
+              //     shadowRetinaUrl: `https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png`,
               //     shadowSize: [33, 33],
               //     iconSize: [20, 33],
               //     iconAnchor: [10, 16]

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { createPortal } from 'react-dom'
-import { Layout } from 'lyrixi-design-mobile'
+import { SafeArea, Layout } from 'lyrixi-design-mobile'
 
 const list = []
 for (let i = 0; i < 100; i++) {
@@ -13,6 +13,7 @@ for (let i = 0; i < 100; i++) {
 export default () => {
   const { Header, Footer, Aside, Main } = Layout
   useEffect(() => {
+    SafeArea.autoSafeArea({ debug: true })
     document.getElementById('root').parentElement.removeChild(document.getElementById('root'))
   }, [])
 

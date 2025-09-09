@@ -1,32 +1,45 @@
 import React, { useRef, forwardRef, useImperativeHandle } from 'react'
 
-const Button = forwardRef(({ shape, children, ...props }, ref) => {
-  const rootRef = useRef(null)
+// 内库使用-start
+import DOMUtil from './../../../utils/DOMUtil'
+import Button from './../../Button'
+// 内库使用-end
 
-  // Expose
-  useImperativeHandle(ref, () => {
-    return {
-      rootDOM: rootRef.current,
-      getRootDOM: () => rootRef.current
-    }
-  })
+/* 测试使用-start
+import { DOMUtil, Button } from 'lyrixi-design-mobile'
+测试使用-end */
 
-  return (
-    <div
-      {...props}
-      className={
-        'toolbar-button' +
-        (props.className ? ' ' + props.className : '') +
-        (shape ? ' ' + shape : '')
+const ToolBarButton = forwardRef(
+  ({ variant, color, shape, className, style, children, onClick }, ref) => {
+    const rootRef = useRef(null)
+
+    // Expose
+    useImperativeHandle(ref, () => {
+      return {
+        rootDOM: rootRef.current,
+        getRootDOM: () => rootRef.current
       }
-      ref={rootRef}
-    >
-      {children}
-    </div>
-  )
-})
+    })
+
+    return (
+      <Button
+        style={style}
+        className={DOMUtil.classNames('toolbar-button', className)}
+        size="s"
+        radius="s"
+        variant={variant}
+        color={color}
+        shape={shape}
+        onClick={onClick}
+        ref={rootRef}
+      >
+        {children}
+      </Button>
+    )
+  }
+)
 
 // Component Name, for compact
-Button.componentName = 'ToolBar.Button'
+ToolBarButton.componentName = 'ToolBar.Button'
 
-export default Button
+export default ToolBarButton

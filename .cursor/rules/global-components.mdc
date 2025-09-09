@@ -1,0 +1,13 @@
+---
+alwaysApply: false
+---
+
+# 组件
+
+## 布局组件
+
+- 容器: Layout
+- 头: Layout.Header
+- 身体: Layout.Main
+- 侧边: Layout.Aside
+- 底: Layout.Footer

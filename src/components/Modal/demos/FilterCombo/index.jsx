@@ -18,8 +18,9 @@ export default () => {
             Click to toggle visible
           </div>
           <ToolBar.Filter
-            active
-            icon={<Icon className="toolbar-icon seeds-icons seeds-icon-search" />}
+            color="primary"
+            shape="square"
+            icon={<Icon className="toolbar-button-icon seeds-icons seeds-icon-search" />}
             onOk={({ close }) => {
               console.log('submit')
               close()
@@ -31,7 +32,8 @@ export default () => {
           </ToolBar.Filter>
           <ToolBar.Filter
             ref={filterRef}
-            className="toolbar-button"
+            variant="default"
+            shape="square"
             onOk={({ close }) => {
               console.log('submit')
               close()

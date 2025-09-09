@@ -25,7 +25,6 @@ const NumberBox = forwardRef(
       readOnly,
       disabled,
       // 文本框
-      inputProps = {},
       value,
       formatter,
       // 小数精度, 只有数值框才生效
@@ -170,7 +169,6 @@ const NumberBox = forwardRef(
           type="number"
           readOnly={readOnly}
           disabled={disabled}
-          inputProps={inputProps}
           value={value}
           formatter={formatter}
           precision={precision}

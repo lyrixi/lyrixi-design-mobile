@@ -25,7 +25,8 @@ function loadLeaflet({ css, js } = {}) {
     link.rel = 'stylesheet'
     // 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'
     link.href =
-      css || 'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/css/leaflet.css'
+      css ||
+      'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/css/leaflet.css'
     link.id = 'leaflet-css'
     document.head.appendChild(link)
 
@@ -38,7 +39,7 @@ function loadLeaflet({ css, js } = {}) {
     // Load js
     // 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
     AssetUtil.loadJs(
-      js || 'https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/js/leaflet.js',
+      js || 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/js/leaflet.js',
       {
         id: 'leaflet-js',
         // integrity: 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=',

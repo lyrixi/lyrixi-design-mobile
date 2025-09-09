@@ -53,20 +53,20 @@ export default () => {
         <APILoader
           loading={<Loading content="Loading..." />}
           config={{
-            key: 'bmap key',
+            key: '7b6e260fc45a67b31a265e22575f1c5e',
             type: 'bmap',
             markerIcons: {
               centerMarkerIcon: {
-                iconUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-custom-shop.png`,
-                iconRetinaUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-custom-shop.png`,
-                shadowUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png`,
-                shadowRetinaUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png`
+                iconUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-custom-shop.png`,
+                iconRetinaUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-custom-shop.png`,
+                shadowUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-shadow.png`,
+                shadowRetinaUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-shadow.png`
               },
               markerIcon: {
-                iconUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-icon.png`,
-                iconRetinaUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-icon-2x.png`,
-                shadowUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png`,
-                shadowRetinaUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png`
+                iconUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-icon.png`,
+                iconRetinaUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-icon-2x.png`,
+                shadowUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-shadow.png`,
+                shadowRetinaUrl: `//res.waiqin365.com/d/seedsui/plugin/leaflet/images/marker-shadow.png`
               }
             }
           }}
@@ -99,10 +99,10 @@ export default () => {
                 // e.remove()
                 let newMarkerIcon = window.L.icon({
                   active: true,
-                  iconUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-icon.bak.png`,
-                  iconRetinaUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-icon.bak.png`,
-                  shadowUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png`,
-                  shadowRetinaUrl: `https://lyrixi.github.io/lyrixi-design-mobile/assets/plugin/leaflet/images/marker-shadow.png`,
+                  iconUrl: `https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-icon.bak.png`,
+                  iconRetinaUrl: `https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-icon.bak.png`,
+                  shadowUrl: `https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png`,
+                  shadowRetinaUrl: `https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/plugin/leaflet/images/marker-shadow.png`,
                   shadowSize: [33, 33],
                   iconSize: [20, 33],
                   iconAnchor: [10, 16]

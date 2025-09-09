@@ -1,5 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { SafeArea, HistoryUtil, Toast, Layout, Divider, Bridge, Button, Image } from 'lyrixi-design-mobile'
+import {
+  SafeArea,
+  HistoryUtil,
+  Toast,
+  Layout,
+  Divider,
+  Bridge,
+  Button,
+  Image
+} from 'lyrixi-design-mobile'
 import uploadItem from './browser/uploadItem'
 // import VConsole from 'vconsole'
 // new VConsole()
@@ -10,25 +19,25 @@ export default () => {
   const [list, setList] = useState([
     {
       id: '1',
-      thumb: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png',
-      src: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png',
+      thumb: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png',
+      src: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png',
       status: 'fail'
     },
     {
       id: '2',
-      thumb: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png',
+      thumb: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png',
       src: 'https://www.wilsoncomm.com.hk/image/cache/catalog/product-3566/6ca91b2b19a3d19b6cbe4f618a028e65-850x850.jpg'
       // status: 'uploading'
     },
     {
       id: '3',
-      thumb: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png',
-      thumb: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png'
+      thumb: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png',
+      thumb: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png'
     },
     {
       id: '4',
-      thumb: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png',
-      src: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png'
+      thumb: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png',
+      src: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png'
     }
   ])
 

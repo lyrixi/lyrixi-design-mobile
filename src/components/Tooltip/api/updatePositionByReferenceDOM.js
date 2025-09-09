@@ -13,10 +13,10 @@ function updatePositionByReferenceDOM(
       : getPositionByReferenceDOM({ referenceDOM, animation })
 
   // 自定义位置
-  if (typeof bottom === 'number') {
-    current.style.bottom = bottom + 'px'
-  } else if (typeof top === 'number') {
-    current.style.top = top + 'px'
+  if (![undefined, null].includes(bottom)) {
+    current.style.bottom = bottom
+  } else if (![undefined, null].includes(top)) {
+    current.style.top = top
   }
   // 从下往上弹-计算位置
   else if (typeof position.bottom === 'number') {
@@ -28,10 +28,10 @@ function updatePositionByReferenceDOM(
   }
 
   // 自定义位置
-  if (typeof left === 'number') {
-    current.style.left = left + 'px'
-  } else if (typeof right === 'number') {
-    current.style.top = right + 'px'
+  if (![undefined, null].includes(left)) {
+    current.style.left = left
+  } else if (![undefined, null].includes(right)) {
+    current.style.right = right
   }
   // 左右弹出-计算位置
   // 左侧弹出

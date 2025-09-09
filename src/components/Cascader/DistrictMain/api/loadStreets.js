@@ -18,7 +18,7 @@ function loadStreets(districtId) {
 
     // 加载语言对应的文件
     Request.post(
-      'https://url/getStreet.do',
+      '/platform/combo/v1/getComboBox.do?comboCode=district_street',
       {
         districtId: districtId
       },

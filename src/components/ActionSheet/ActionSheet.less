@@ -19,8 +19,8 @@
 .actionsheet-header-title {
   flex: 1;
   text-align: center;
-  font-size: var(--font-size-s);
-  color: var(--secondary);
+  font-size: var(--seed-font-size-s);
+  color: var(--seed-font-color-secondary);
   background-color: white;
   padding: 16px 0 12px 0;
 }
@@ -33,7 +33,7 @@
   font-size: 16px;
   text-align: center;
   &:active {
-    background-color: var(--border);
+    background-color: var(--seed-border-color);
   }
 }
 .actionsheet-option {
@@ -43,11 +43,11 @@
   text-align: center;
   .border-b;
   &.active {
-    color: var(--primary);
+    color: var(--seed-primary);
   }
   &.disabled {
     pointer-events: none;
-    color: var(--disabled);
+    color: var(--seed-font-color-disabled);
   }
 }
 

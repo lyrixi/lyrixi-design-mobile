@@ -1,8 +1,18 @@
 import React, { useState, useRef } from 'react'
 
-import { Layout, NavBar, ToolBar, Divider, Icon, Space } from 'lyrixi-design-mobile'
+import {
+  LocaleUtil,
+  Layout,
+  NavBar,
+  ToolBar,
+  Divider,
+  Icon,
+  Space,
+  FooterBar
+} from 'lyrixi-design-mobile'
 
 export default () => {
+  const dropdownRef = useRef(null)
   const [mainDOM, setMainDOM] = useState(null)
   const [dateRange, setDateRange] = useState(null)
   const [item, setItem] = useState(null)
@@ -10,6 +20,31 @@ export default () => {
   const [searchActive, setSearchActive] = useState(false)
   const [invertSearchActive, setInvertSearchActive] = useState(false)
   const filterRef = useRef(null)
+
+  function getDropdownModalNode({ open, close } = {}) {
+    return (
+      <div>
+        <div style={{ height: '300px' }}>Modal Content</div>
+        <FooterBar>
+          <FooterBar.Button
+            onClick={() => {
+              typeof close === 'function' ? close() : dropdownRef.current.close()
+            }}
+          >
+            {LocaleUtil.locale('取消', 'SeedsUI_cancel')}
+          </FooterBar.Button>
+          <FooterBar.Button
+            className="primary"
+            onClick={() => {
+              console.log('ok')
+            }}
+          >
+            {LocaleUtil.locale('确定', 'SeedsUI_ok')}
+          </FooterBar.Button>
+        </FooterBar>
+      </div>
+    )
+  }
 
   return (
     <Layout className="full">
@@ -24,29 +59,66 @@ export default () => {
           setMainDOM(current?.rootDOM || null)
         }}
       >
+        {/* Dropdown */}
+        <Divider>Dropdown</Divider>
+        <div className="toolbar-bg">
+          <ToolBar>
+            <ToolBar.Dropdown left={12} title="Dropdown left" color="primary" variant="fill">
+              <div style={{ height: '300px' }}>Modal Content</div>
+            </ToolBar.Dropdown>
+            <ToolBar.Dropdown title="Dropdown ref" ref={dropdownRef}>
+              {getDropdownModalNode()}
+            </ToolBar.Dropdown>
+            <ToolBar.Dropdown title="Dropdown modal" modal={getDropdownModalNode} />
+            <ToolBar.Dropdown right={12} title="Dropdown right">
+              <div style={{ height: '300px' }}>Modal Content</div>
+            </ToolBar.Dropdown>
+          </ToolBar>
+        </div>
+
         <Divider>DateRange</Divider>
         <div className="toolbar-bg">
           <ToolBar>
             <ToolBar.DateRange
-              arrow={<div>^</div>}
+              arrow={({ active }) => {
+                if (active) {
+                  return '^'
+                }
+                return '>'
+              }}
               portal={mainDOM}
               title={!dateRange ? 'DateRange' : undefined}
               value={dateRange}
-              onChange={setDateRange}
+              // allowClear={true}
+              onChange={(newDateRange, { rangeId }) => {
+                console.log('修改:', newDateRange)
+                setDateRange(newDateRange)
+                // setDateRangeId(rangeId)
+              }}
             />
             <ToolBar.DateRange
               portal={mainDOM}
               title={!dateRange ? 'DateRange' : undefined}
               format="MM-DD"
               value={dateRange}
-              onChange={setDateRange}
+              // allowClear={true}
+              onChange={(newDateRange, { rangeId }) => {
+                console.log('修改:', newDateRange)
+                setDateRange(newDateRange)
+                // setDateRangeId(rangeId)
+              }}
             />
             <ToolBar.DateRange
               portal={mainDOM}
-              className="toolbar-button"
+              variant="fill"
               title={!dateRange ? 'DateRange' : undefined}
               value={dateRange}
-              onChange={setDateRange}
+              // allowClear={true}
+              onChange={(newDateRange, { rangeId }) => {
+                console.log('修改:', newDateRange)
+                setDateRange(newDateRange)
+                // setDateRangeId(rangeId)
+              }}
             />
           </ToolBar>
         </div>
@@ -55,6 +127,7 @@ export default () => {
         <div className="toolbar-bg">
           <ToolBar>
             <ToolBar.List
+              left={12}
               portal={mainDOM}
               title={!item ? 'List' : undefined}
               value={item}
@@ -77,7 +150,7 @@ export default () => {
             />
             <ToolBar.List
               portal={mainDOM}
-              className="toolbar-button"
+              variant="fill"
               title={!item ? 'List' : undefined}
               value={item}
               onChange={setItem}
@@ -116,17 +189,14 @@ export default () => {
               <ToolBar.List
                 portal={mainDOM}
                 arrow={null}
+                shape="square"
+                variant="fill"
                 title={({ active }) => {
-                  return (
-                    <ToolBar.Button shape="square" className={active ? 'active' : ''}>
-                      <Icon className="seeds-icons seeds-icon-three-dots"></Icon>
-                    </ToolBar.Button>
-                  )
+                  console.log('active:', active)
+                  return <Icon className="seeds-icons seeds-icon-three-dots"></Icon>
                 }}
-                maskProps={{
-                  style: {
-                    zIndex: 99
-                  }
+                maskStyle={{
+                  zIndex: 99
                 }}
                 value={item}
                 onChange={setItem}
@@ -142,14 +212,17 @@ export default () => {
                 ]}
               />
               <ToolBar.Button shape="square" onClick={() => console.log(1)}>
-                <Icon className="seeds-icons seeds-icon-filter-menu"></Icon>
+                <Icon className="seeds-icons seeds-icon-barcode"></Icon>
               </ToolBar.Button>
+              <ToolBar.Filter variant="fill" shape="square">
+                <div style={{ height: '300px' }}>Modal Content</div>
+              </ToolBar.Filter>
             </Space.Compact>
           </ToolBar>
         </div>
 
         {/* Filter */}
-        <Divider>Filter</Divider>
+        <Divider>Filter Side</Divider>
         <div className="toolbar-bg">
           <ToolBar>
             <ToolBar.Button
@@ -160,8 +233,9 @@ export default () => {
               Click to toggle filter modal visible
             </ToolBar.Button>
             <ToolBar.Filter
-              active
-              icon={<Icon className="toolbar-icon seeds-icons seeds-icon-search" />}
+              color="primary"
+              shape="square"
+              icon={<Icon className="toolbar-button-icon seeds-icons seeds-icon-search" />}
               onReset={() => {
                 console.log('reset')
               }}
@@ -169,13 +243,12 @@ export default () => {
                 console.log('submit')
               }}
             >
-              <div className="bg-white" style={{ height: '300px' }}>
-                Modal Content
-              </div>
+              <div style={{ height: '300px' }}>Modal Content</div>
             </ToolBar.Filter>
             <ToolBar.Filter
               ref={filterRef}
-              className="toolbar-button"
+              variant="fill"
+              shape="square"
               onReset={() => {
                 console.log('reset')
               }}
@@ -183,9 +256,7 @@ export default () => {
                 console.log('submit')
               }}
             >
-              <div className="bg-white" style={{ height: '300px' }}>
-                Modal Content
-              </div>
+              <div style={{ height: '300px' }}>Modal Content</div>
             </ToolBar.Filter>
           </ToolBar>
         </div>
@@ -199,6 +270,14 @@ export default () => {
                 console.log('search:', value)
               }}
             />
+            <Space.Compact>
+              <ToolBar.Button shape="square" onClick={() => console.log(1)}>
+                <Icon className="seeds-icons seeds-icon-barcode"></Icon>
+              </ToolBar.Button>
+              <ToolBar.Filter variant="fill" shape="square">
+                <div style={{ height: '300px' }}>Modal Content</div>
+              </ToolBar.Filter>
+            </Space.Compact>
           </ToolBar>
         </div>
 
@@ -212,6 +291,14 @@ export default () => {
                 setSearchActive(true)
               }}
             />
+            <Space.Compact>
+              <ToolBar.Button shape="square" onClick={() => console.log(1)}>
+                <Icon className="seeds-icons seeds-icon-barcode"></Icon>
+              </ToolBar.Button>
+              <ToolBar.Filter variant="fill" shape="square">
+                <div style={{ height: '300px' }}>Modal Content</div>
+              </ToolBar.Filter>
+            </Space.Compact>
             {searchActive && (
               <ToolBar.SearchActive
                 value={search}

@@ -1,30 +1,22 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 // 内库使用-start
 import LocaleUtil from './../../../../utils/LocaleUtil'
 import Loading from './../../../Loading'
-import Input from './../../../Input'
+import ToolBar from './../../../ToolBar'
 import Layout from './../../../../components/Layout'
 import Result from './../../../Result'
 import Typography from './../../../Typography'
 // 内库使用-end
 
 /* 测试使用-start
-import { LocaleUtil, Loading, Input, Layout, Result, Typography } from 'lyrixi-design-mobile'
+import { LocaleUtil, Loading, ToolBar, Layout, Result, Typography } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // 搜索
 function Page({ map, visible, onVisibleChange, onChange }) {
-  const inputRef = useRef(null)
   let [searchList, setSearchList] = useState(null)
   const [keyword, setKeyword] = useState('')
-
-  useEffect(() => {
-    if (visible && inputRef?.current?.inputDOM) {
-      inputRef.current.inputDOM.focus()
-    }
-    // eslint-disable-next-line
-  }, [visible])
 
   // 返回
   function handleBack() {
@@ -36,9 +28,8 @@ function Page({ map, visible, onVisibleChange, onChange }) {
   }
 
   // 搜索
-  async function handleSearch() {
-    let inputText = inputRef.current.inputDOM
-    if (!inputText.value) {
+  async function handleSearch(keyword) {
+    if (!keyword) {
       return
     }
     let center = map.getCenter()
@@ -47,7 +38,7 @@ function Page({ map, visible, onVisibleChange, onChange }) {
     })
     let list = await map.queryNearby({
       map: map,
-      keyword: inputText.value,
+      keyword: keyword,
       latitude: center.latitude,
       longitude: center.longitude,
       type: center.type
@@ -72,29 +63,19 @@ function Page({ map, visible, onVisibleChange, onChange }) {
   return (
     <Layout className="map-searchControl-page">
       <Layout.Header className="map-searchControl-header">
-        <form
-          action="."
-          className="map-searchControl-header-input"
-          style={{ backgroundColor: 'white' }}
-          onSubmit={(e) => {
-            e.preventDefault()
-            e.stopPropagation()
-            handleSearch()
+        <ToolBar.SearchActive
+          value={keyword}
+          onSearch={(keyword) => {
+            setKeyword(keyword)
+            handleSearch(keyword)
           }}
-        >
-          <Input.Text
-            ref={inputRef}
-            type="search"
-            value={keyword}
-            // placeholder={LocaleUtil.locale('搜索地点', 'SeedsUI_search_place')}
-            leftIcon={<i className="map-searchControl-header-input-icon"></i>}
-            allowClear
-            onChange={setKeyword}
-          />
-        </form>
-        <span className="map-searchControl-header-cancel" onClick={handleBack}>
-          {LocaleUtil.locale('取消', 'SeedsUI_cancel')}
-        </span>
+          // onBlur={() => {
+          //   setSearchActive(false)
+          // }}
+          onCancel={() => {
+            handleBack()
+          }}
+        />
       </Layout.Header>
       <div className="map-searchControl-body">
         {Array.isArray(searchList) && searchList.length
@@ -107,9 +88,7 @@ function Page({ map, visible, onVisibleChange, onChange }) {
                 >
                   <div className="map-searchControl-item-content">
                     <div className="map-searchControl-item-title">
-                      <Typography.Text highlight={inputRef?.current?.inputDOM?.value || ''}>
-                        {item.name}
-                      </Typography.Text>
+                      <Typography.Text highlight={keyword || ''}>{item.name}</Typography.Text>
                     </div>
                     <div className="map-searchControl-item-content-description">{item.address}</div>
                   </div>

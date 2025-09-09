@@ -8,7 +8,7 @@
   vertical-align: middle;
   height: 40px;
   padding: 0 16px;
-  font-size: var(--font-size-l);
+  font-size: var(--seed-font-size-l);
   box-sizing: border-box;
 
   // Shape
@@ -22,10 +22,10 @@
   }
 
   // Size
-  &.xxs {
+  &.size-xxs {
     height: 20px;
     padding: 0 4px;
-    font-size: var(--font-size-xs);
+    font-size: var(--seed-font-size-xs);
     &.shape-round,
     &.shape-circle {
       border-radius: 20px;
@@ -35,10 +35,10 @@
       width: 20px;
     }
   }
-  &.xs {
+  &.size-xs {
     height: 24px;
     padding: 0 8px;
-    font-size: var(--font-size-s);
+    font-size: var(--seed-font-size-s);
     &.shape-round,
     &.shape-circle {
       border-radius: 24px;
@@ -48,10 +48,10 @@
       width: 24px;
     }
   }
-  &.s {
+  &.size-s {
     height: 32px;
     padding: 0 12px;
-    font-size: var(--font-size-m);
+    font-size: var(--seed-font-size-m);
     &.shape-round,
     &.shape-circle {
       border-radius: 32px;
@@ -62,13 +62,13 @@
       width: 32px;
     }
   }
-  &.m {
+  &.size-m {
   }
-  &.l {
+  &.size-l {
     height: 48px;
     padding: 0 20px;
     // 字号太大会不好看
-    font-size: var(--font-size-xl);
+    font-size: var(--seed-font-size-xl);
 
     &.shape-round,
     &.shape-circle {
@@ -79,11 +79,11 @@
       width: 48px;
     }
   }
-  &.xl {
+  &.size-xl {
     height: 56px;
     padding: 0 24px;
     // 字号太大会不好看
-    font-size: var(--font-size-xxl);
+    font-size: var(--seed-font-size-xxl);
 
     &.shape-round,
     &.shape-circle {
@@ -101,145 +101,190 @@
     pointer-events: none;
   }
 
-  // Color
-  &.outline,
-  &.text {
+  // Color & Variant
+  &.variant-outline,
+  &.variant-text {
     background-color: transparent;
   }
-  &.text {
+  &.variant-text {
     border: 0;
   }
 
-  &,
-  &.default {
-    color: var(--default);
-    background-color: var(--button);
-    border: 1px solid var(--border);
+  & {
+    color: var(--seed-font-color-default);
+    background-color: var(--seed-bg-button-default);
+    border: 1px solid var(--seed-border-color);
     &.disabled,
     &[disabled] {
-      color: var(--disabled);
+      color: var(--seed-font-color-disabled);
     }
 
-    // &.outline,
-    // &.text {
-    //   color: var(--primary);
-    // }
-    &.outline {
-      border: 1px solid var(--border);
+    &.variant-outline {
+      border: 1px solid var(--seed-border-color);
     }
 
-    &.fill {
-      background-color: var(--button-lighten);
+    &.variant-fill {
+      background-color: var(--seed-bg-button-default-lighten);
     }
   }
   &.primary {
     color: white;
-    background-color: var(--primary);
+    .seed-button-icon {
+      color: white;
+    }
+    background-color: var(--seed-primary);
     border: 0;
     &.disabled,
     &[disabled] {
       opacity: 0.3;
     }
 
-    &.outline,
-    &.text {
-      color: var(--primary);
+    &.variant-outline,
+    &.variant-text {
+      color: var(--seed-primary);
+      .seed-button-icon {
+        color: var(--seed-primary);
+      }
       background-color: transparent;
     }
-    &.outline {
-      border: 1px solid var(--primary);
+    &.variant-outline {
+      border: 1px solid var(--seed-primary);
     }
 
-    &.fill {
-      background-color: var(--primary-lighten);
+    &.variant-fill {
+      color: var(--seed-primary);
+      .seed-button-icon {
+        color: var(--seed-primary);
+      }
+      background-color: var(--seed-primary-lighten);
     }
   }
   &.link {
     color: white;
-    background-color: var(--link);
+    .seed-button-icon {
+      color: white;
+    }
+    background-color: var(--seed-link);
     border: 0;
     &.disabled,
     &[disabled] {
       opacity: 0.3;
     }
 
-    &.outline,
-    &.text {
-      color: var(--link);
+    &.variant-outline,
+    &.variant-text {
+      color: var(--seed-link);
+      .seed-button-icon {
+        color: var(--seed-link);
+      }
       background-color: transparent;
     }
-    &.outline {
-      border: 1px solid var(--link);
+    &.variant-outline {
+      border: 1px solid var(--seed-link);
     }
 
-    &.fill {
-      background-color: var(--link-lighten);
+    &.variant-fill {
+      color: var(--seed-link);
+      .seed-button-icon {
+        color: var(--seed-link);
+      }
+      background-color: var(--seed-link-lighten);
     }
   }
   &.warning {
     color: white;
-    background-color: var(--warning);
+    .seed-button-icon {
+      color: white;
+    }
+    background-color: var(--seed-warning);
     border: 0;
     &.disabled,
     &[disabled] {
       opacity: 0.3;
     }
 
-    &.outline,
-    &.text {
-      color: var(--warning);
+    &.variant-outline,
+    &.variant-text {
+      color: var(--seed-warning);
+      .seed-button-icon {
+        color: var(--seed-warning);
+      }
       background-color: transparent;
     }
-    &.outline {
-      border: 1px solid var(--warning);
+    &.variant-outline {
+      border: 1px solid var(--seed-warning);
     }
 
-    &.fill {
-      background-color: var(--warning-lighten);
+    &.variant-fill {
+      color: var(--seed-warning);
+      .seed-button-icon {
+        color: var(--seed-warning);
+      }
+      background-color: var(--seed-warning-lighten);
     }
   }
   &.danger {
     color: white;
-    background-color: var(--danger);
+    .seed-button-icon {
+      color: white;
+    }
+    background-color: var(--seed-danger);
     border: 0;
     &.disabled,
     &[disabled] {
       opacity: 0.3;
     }
 
-    &.outline,
-    &.text {
-      color: var(--danger);
+    &.variant-outline,
+    &.variant-text {
+      color: var(--seed-danger);
+      .seed-button-icon {
+        color: var(--seed-danger);
+      }
       background-color: transparent;
     }
-    &.outline {
-      border: 1px solid var(--danger);
+    &.variant-outline {
+      border: 1px solid var(--seed-danger);
     }
 
-    &.fill {
-      background-color: var(--danger-lighten);
+    &.variant-fill {
+      color: var(--seed-danger);
+      .seed-button-icon {
+        color: var(--seed-danger);
+      }
+      background-color: var(--seed-danger-lighten);
     }
   }
   &.success {
     color: white;
-    background-color: var(--success);
+    .seed-button-icon {
+      color: white;
+    }
+    background-color: var(--seed-success);
     border: 0;
     &.disabled,
     &[disabled] {
       opacity: 0.3;
     }
 
-    &.outline,
-    &.text {
-      color: var(--success);
+    &.variant-outline,
+    &.variant-text {
+      color: var(--seed-success);
+      .seed-button-icon {
+        color: var(--seed-success);
+      }
       background-color: transparent;
     }
-    &.outline {
-      border: 1px solid var(--success);
+    &.variant-outline {
+      border: 1px solid var(--seed-success);
     }
 
-    &.fill {
-      background-color: var(--success-lighten);
+    &.variant-fill {
+      color: var(--seed-danger);
+      .seed-button-icon {
+        color: var(--seed-danger);
+      }
+      background-color: var(--seed-success-lighten);
     }
   }
 }

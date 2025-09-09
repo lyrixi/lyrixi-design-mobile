@@ -1174,7 +1174,7 @@
     "km_KH": "មិនទាន់មានទិន្នន័យនៅឡើយទេ",
     "kmr_IQ": "Tu agahî hîn agahiyek nehatiye dayîn",
     "kn_IN": "ಇನ್ನೂ ಯಾವುದೇ ಡೇಟಾ ಇಲ್ಲ",
-    "kk_KZ": "Деректер әлі жоқ",
+    "kk_KZ": "Дерек터 әлі жоқ",
     "ko_KR": "아직 데이터가 없습니다.",
     "lt_LT": "Dar nėra duomenų",
     "lv_LV": "Vēl nav datu",
@@ -1206,6 +1206,7 @@
     "uz_UZ": "Hozircha maʼlumot yoʻq",
     "zh_TW": "暫無數據"
   },
+
   "重新加载": {
     "key": "SeedsUI_reload",
     "ar_EG": "تحديث",

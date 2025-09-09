@@ -19,7 +19,11 @@ const Form = forwardRef(
 
     return (
       <FormContext.Provider value={{ layout, labelCol, mainCol, scrollerDOM: scrollerDOM }}>
-        <div ref={rootRef} className={`form-items${className ? ' ' + className : ''}`} {...props}>
+        <div
+          ref={rootRef}
+          className={`seed-form-items${className ? ' ' + className : ''}`}
+          {...props}
+        >
           {children}
         </div>
       </FormContext.Provider>

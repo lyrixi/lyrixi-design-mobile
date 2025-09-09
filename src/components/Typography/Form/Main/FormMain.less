@@ -1,36 +1,28 @@
-.form-item-main {
+.seed-form-item-main {
   position: relative;
   display: flex;
   flex-direction: column;
   min-width: 0;
 
   // 消除控件间距
-  .select-combo-tags,
-  .seed-input-text,
-  .seed-input-textarea,
-  .seed-input-autofit-textarea,
-  .seed-input-autofit-textarea + pre {
+  .select-combo-tags {
     padding: 0;
   }
-
-  .seed-input-autofit-textarea {
-    height: inherit;
-  }
 }
 
-.form-item-main-extra {
-  color: var(--tertiary);
+.seed-form-item-main-extra {
+  color: var(--seed-font-color-tertiary);
 }
 
-.form-item-main-input-extra {
-  color: var(--tertiary);
+.seed-form-item-main-input-extra {
+  color: var(--seed-font-color-tertiary);
 }
 
-.form-item-main-error {
-  color: var(--danger);
-  font-size: var(--font-size-s);
+.seed-form-item-main-error {
+  color: var(--seed-danger);
+  font-size: var(--seed-font-size-s);
 }
 
-.form-item-main-input {
+.seed-form-item-main-input {
   display: flex;
 }

@@ -23,7 +23,7 @@ export default () => {
         <img
           style={Logo}
           alt=""
-          src="https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png"
+          src="https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png"
         />
       </QRCode>
     </>

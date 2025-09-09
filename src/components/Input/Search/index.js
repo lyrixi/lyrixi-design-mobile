@@ -15,13 +15,10 @@ const Search = forwardRef(({ value, onChange, onSearch, ...props }, ref) => {
       ref={ref}
       // 移动端优化属性
       {...props}
-      inputProps={{
-        enterKeyHint: 'search',
-        autoComplete: 'off',
-        autoCorrect: 'off',
-        spellCheck: false,
-        ...props?.inputProps
-      }}
+      enterKeyHint="search"
+      autoComplete="off"
+      autoCorrect="off"
+      spellCheck="false"
       onPressEnter={(e) => {
         props?.onPressEnter && props.onPressEnter(e)
         e?.target?.blur?.()

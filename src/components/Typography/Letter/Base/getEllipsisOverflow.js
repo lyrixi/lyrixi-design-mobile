@@ -1,18 +1,24 @@
+import getEllipsisStyle from './getEllipsisStyle'
+
 // 判断是否显示展开收起按钮
 function getEllipsisOverflow({ rows, rowHeight, containerDOM }) {
   if (!containerDOM || !rows) {
     return false
   }
 
-  // 显示复制的容器, 隐藏原容器,
+  // 复制容器，隐藏原容器
   const containerDuplicate = containerDOM.cloneNode(true)
   containerDOM.parentNode.insertBefore(containerDuplicate, containerDOM.nextElementSibling)
   containerDOM.classList.add(`hide`)
 
-  // Force line clamp
-  containerDuplicate.classList.add(`typography-ellipsis`)
-  containerDuplicate.style.webkitLineClamp = rows
-  containerDuplicate.style.height = rows * (rowHeight || 20) + 'px'
+  // 设置复制容器，隐藏原容器
+  getEllipsisStyle(
+    {
+      rows: rows,
+      rowHeight: rowHeight
+    },
+    containerDuplicate
+  )
 
   // Judge if the content is overflow
   let isOverflow = false

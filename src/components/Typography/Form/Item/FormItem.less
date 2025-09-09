@@ -1,23 +1,27 @@
-.form-item {
-  padding: var(--space-l) 0;
+.seed-form-item {
+  padding: var(--seed-space-l) 0;
   position: relative;
   .border-b;
-}
-
-.form-item-layout-horizontal {
-  .form-item-label {
-    padding-right: var(--space-l);
-  }
-  .form-item-main {
-    padding-right: var(--space-l);
+  // 表单内文本框高度减小
+  .seed-input-text {
+    height: var(--seed-input-height-m);
   }
 }
 
-.form-item-layout-vertical {
-  .form-item-label + .form-item-main {
-    margin-top: var(--space-m);
+.seed-form-item-layout-horizontal {
+  .seed-form-item-label {
+    padding-right: var(--seed-space-m);
   }
-  .form-item-main {
-    padding-right: var(--space-l);
+  .seed-form-item-main {
+    padding-right: var(--seed-space-m);
+  }
+}
+
+.seed-form-item-layout-vertical {
+  .seed-form-item-label:not(.hide) + .seed-form-item-main {
+    margin-top: var(--seed-space-s);
+  }
+  .seed-form-item-main {
+    padding-right: var(--seed-space-m);
   }
 }

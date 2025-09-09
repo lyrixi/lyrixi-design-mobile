@@ -46,7 +46,7 @@
 .modal-footer {
   font-weight: 500;
   display: flex;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--seed-border-color);
   box-sizing: border-box;
 
   // 垂直排列按钮
@@ -55,7 +55,7 @@
 
     .modal-cancel + .modal-ok {
       border-left: 0;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--seed-border-color);
     }
   }
 }
@@ -89,7 +89,7 @@
 }
 
 .modal-ok {
-  color: var(--primary);
+  color: var(--seed-primary);
 
   * {
     pointer-events: none;
@@ -97,5 +97,5 @@
 }
 
 .modal-cancel + .modal-ok {
-  border-left: 1px solid var(--border);
+  border-left: 1px solid var(--seed-border-color);
 }

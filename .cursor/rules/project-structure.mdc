@@ -1,0 +1,35 @@
+# SeedsUI React 项目结构指南
+
+## 项目概述
+
+这是一个基于 React 的移动端 UI 组件库项目，使用 dumi 作为文档和构建工具。
+
+## 核心目录结构
+
+### 主要入口文件
+
+- [package.json](mdc:package.json) - 项目配置和依赖管理
+- [src/index.js](mdc:src/index.js) - 组件库主入口文件
+- [.dumirc.ts](mdc:.dumirc.ts) - dumi 配置文件
+
+### 组件目录
+
+- [src/components/](mdc:src/components/) - 所有 UI 组件
+  - 每个组件都有独立的目录，包含组件文件、样式文件、文档和示例
+  - 组件目录结构：`ComponentName/ComponentName.js`、`ComponentName.less`、`demos/`、`index.en-US.md`
+
+### 工具函数
+
+- [src/utils/](mdc:src/utils/) - 工具函数库
+  - 按功能分类：ArrayUtil、DateUtil、DOMUtil 等
+  - 每个工具模块都有独立的目录
+
+### 文档
+
+- [src-docs/](mdc:src-docs/) - 项目文档
+- [assets/](mdc:assets/) - 静态资源
+
+### 构建和脚本
+
+- [scripts/](mdc:scripts/) - 构建和工具脚本
+- [dist/](mdc:dist/) - 构建输出目录

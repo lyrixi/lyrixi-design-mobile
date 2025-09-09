@@ -1,0 +1,39 @@
+# 严禁
+
+## 不要改组件样式
+
+错误用法:
+
+```css
+.seed-input {
+  height: 40px;
+}
+```
+
+正确用法
+
+```
+import { Input } from 'lyrixi-design-mobile'
+
+export default () => <Input.Text style={{ height: '40px' }} />
+```
+
+## 组件属性不要用动态 props 定义
+
+错误定义:
+
+```
+<header
+  {...props}
+>
+  {children}
+</header>
+```
+
+正确用法
+
+```
+<header style={style} className={className}>
+  {children}
+</header>
+```

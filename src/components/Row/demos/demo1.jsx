@@ -12,8 +12,8 @@ export default () => {
             span={8}
             className="color-white"
             style={{
-              backgroundColor: 'var(--primary)',
-              padding: 'var(--space-m)',
+              backgroundColor: 'var(--seed-primary)',
+              padding: 'var(--seed-space-m)',
               border: '1px solid white',
               boxSizing: 'border-box'
             }}
@@ -24,8 +24,8 @@ export default () => {
             span={16}
             className="color-white"
             style={{
-              backgroundColor: 'var(--primary)',
-              padding: 'var(--space-m)',
+              backgroundColor: 'var(--seed-primary)',
+              padding: 'var(--seed-space-m)',
               border: '1px solid white',
               boxSizing: 'border-box'
             }}
@@ -36,8 +36,8 @@ export default () => {
             span={8}
             className="color-white"
             style={{
-              backgroundColor: 'var(--primary)',
-              padding: 'var(--space-m)',
+              backgroundColor: 'var(--seed-primary)',
+              padding: 'var(--seed-space-m)',
               border: '1px solid white',
               boxSizing: 'border-box'
             }}
@@ -48,8 +48,8 @@ export default () => {
             span={16}
             className="color-white"
             style={{
-              backgroundColor: 'var(--primary)',
-              padding: 'var(--space-m)',
+              backgroundColor: 'var(--seed-primary)',
+              padding: 'var(--seed-space-m)',
               border: '1px solid white',
               boxSizing: 'border-box'
             }}

@@ -1,31 +1,27 @@
 // ToolBar button
 .toolbar-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 30px;
-  padding: 0 12px;
-  background-color: white;
-  border-radius: 8px;
-  border: 0;
-  flex: none;
-  &.active {
-    color: var(--primary);
+  &.button {
+    border: 0;
   }
-
-  &.toolbar-button-compact-item:not(.toolbar-button-compact-first-item) {
-    border-left-width: 1px;
-    border-color: var(--border);
-    border-style: solid;
+  &.variant-fill {
+    background-color: white !important;
   }
-
-  &.square,
-  &.circle {
-    width: 30px;
+  &.variant-text {
     padding: 0;
   }
+}
 
-  &.circle {
-    border-radius: 100%;
-  }
+// ToolBar button icon
+.toolbar-button-icon {
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+// Icon filter
+.toolbar-button-icon-filter {
+  font-family: 'seeds-icons';
+  &:extend(.seeds-icon-filter-menu all);
 }

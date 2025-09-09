@@ -55,7 +55,7 @@ const Slide = forwardRef(
     // 内容DOM
     function getGroup() {
       if (!Array.isArray(list)) {
-        console.log('Lyrixi TabBar: Parameter list is wrong')
+        console.log('SeedsUI TabBar: Parameter list is wrong')
         return null
       }
 

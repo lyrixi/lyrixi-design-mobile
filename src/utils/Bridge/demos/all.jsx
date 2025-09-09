@@ -30,7 +30,7 @@ export default () => {
   const [videos, setVideos] = useState([
     {
       id: '1',
-      thumb: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png',
+      thumb: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png',
       src: 'https://player.alicdn.com/video/aliyunmedia.mp4',
       status: 'success'
     },
@@ -47,25 +47,25 @@ export default () => {
     wechat: {
       title: '标题',
       description: '描述',
-      imageUrl: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png',
+      imageUrl: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png',
       url: 'https://www.baidu.com'
     },
     wecom: {
       title: '标题',
       description: '描述',
-      imageUrl: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png',
+      imageUrl: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png',
       url: 'https://www.baidu.com'
     },
     dingtalk: {
       title: '标题',
       description: '描述',
-      imageUrl: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png',
+      imageUrl: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png',
       url: 'https://www.baidu.com'
     },
     lark: {
       title: '标题',
       description: '描述',
-      imageUrl: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png',
+      imageUrl: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png',
       url: 'https://www.baidu.com'
     }
   })
@@ -337,12 +337,12 @@ export default () => {
           onClick={() => {
             Bridge.previewImage({
               urls: [
-                'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png',
-                'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png'
+                'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png',
+                'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png'
               ],
 
               index: 0,
-              current: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png'
+              current: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png'
             })
           }}
         >
@@ -356,7 +356,7 @@ export default () => {
           style={{ margin: '12px 10px' }}
           onClick={() => {
             Bridge.previewFile({
-              url: 'https://lyrixi.github.io/lyrixi-design-mobile/assets/images/logo.png'
+              url: 'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png'
             })
           }}
         >
@@ -448,13 +448,13 @@ export default () => {
                   wechat: {
                     title: '标题',
                     description: '描述',
-                    imageUrl: 'https:https://lyrixi.github.io/lyrixi-design-mobile/assets/logo.png',
+                    imageUrl: 'https://res.waiqin365.com/d/seedsui/logo.png',
                     url: 'https://www.baidu.com'
                   },
                   miniprogram: {
                     title: '标题',
                     description: '描述',
-                    imageUrl: 'https:https://lyrixi.github.io/lyrixi-design-mobile/assets/logo.png',
+                    imageUrl: 'https://res.waiqin365.com/d/seedsui/logo.png',
                     url: 'https://servicewechat.com/wxascheme/jump_wxa?url=weixin://dl/business/?t=IUGVzjsue7u',
                     miniProgramId: 'gh_00011085b545',
                     miniProgramPath:
@@ -463,25 +463,25 @@ export default () => {
                   moments: {
                     title: '标题',
                     description: '描述',
-                    imageUrl: 'https:https://lyrixi.github.io/lyrixi-design-mobile/assets/logo.png',
+                    imageUrl: 'https://res.waiqin365.com/d/seedsui/logo.png',
                     url: 'https://www.baidu.com'
                   },
                   wecom: {
                     title: '标题',
                     description: '描述',
-                    imageUrl: 'https:https://lyrixi.github.io/lyrixi-design-mobile/assets/logo.png',
+                    imageUrl: 'https://res.waiqin365.com/d/seedsui/logo.png',
                     url: 'https://www.baidu.com'
                   },
                   dingtalk: {
                     title: '标题',
                     description: '描述',
-                    imageUrl: 'https:https://lyrixi.github.io/lyrixi-design-mobile/assets/logo.png',
+                    imageUrl: 'https://res.waiqin365.com/d/seedsui/logo.png',
                     url: 'https://www.baidu.com'
                   },
                   lark: {
                     title: '标题',
                     description: '描述',
-                    imageUrl: 'https:https://lyrixi.github.io/lyrixi-design-mobile/assets/logo.png',
+                    imageUrl: 'https://res.waiqin365.com/d/seedsui/logo.png',
                     url: 'https://www.baidu.com'
                   }
                 })

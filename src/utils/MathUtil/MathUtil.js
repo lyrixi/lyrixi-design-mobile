@@ -1,5 +1,7 @@
 // 是否为合法数值
 function isNumber(str) {
+  if (str === '-') return true
+
   // 1. 基础检查：空值/空白字符
   if (typeof str !== 'string' || str.trim() === '') return false
 

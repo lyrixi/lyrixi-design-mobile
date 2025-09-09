@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-// 校验只读
+// 校验只读, 一项项校验, 只读项更新样式
 function testEditableOptions(item, { editableOptions }) {
   // 未配置是否可编辑，默认为可编辑
   if (!editableOptions || _.isEmpty(editableOptions)) {

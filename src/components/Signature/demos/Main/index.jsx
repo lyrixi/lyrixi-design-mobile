@@ -7,6 +7,7 @@ export default () => {
       <Layout.Header className="text-center">手写签名</Layout.Header>
       <Layout.Main className="bg-white">
         <Signature.Main
+          style={{ height: 400 }}
           onChange={(base64) => {
             console.log(base64)
           }}

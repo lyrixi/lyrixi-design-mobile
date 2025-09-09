@@ -18,7 +18,8 @@ const Icon = forwardRef(({ size, children, ...props }, ref) => {
           ? {
               width: `${size}px`,
               height: `${size}px`,
-              fontSize: `${size}px`
+              fontSize: `${size}px`,
+              lineHeight: `${size}px`
             }
           : {}
       }

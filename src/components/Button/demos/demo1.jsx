@@ -3,7 +3,7 @@ import React from 'react'
 import { Layout, Divider, Button, Icon } from 'lyrixi-design-mobile'
 
 const buttonStyle = {
-  margin: 'var(--space-m)'
+  margin: 'var(--seed-space-m)'
 }
 
 export default () => {
@@ -12,108 +12,90 @@ export default () => {
       <Layout.Main className="bg-white">
         <Divider>Color & Variant</Divider>
         <div className="flex">
-          <Button className="radius-m" style={buttonStyle}>
+          <Button radius="m" style={buttonStyle}>
             default
           </Button>
-          <Button className="radius-m radius-m outline" style={buttonStyle}>
+          <Button variant="outline" radius="m" style={buttonStyle}>
             outline
           </Button>
-          <Button className="radius-m radius-m text fill outline" style={buttonStyle}>
+          <Button variant="fill" radius="m" style={buttonStyle}>
             fill
           </Button>
-          <Button className="radius-m text fill" style={buttonStyle}>
-            fill
-          </Button>
-          <Button className="radius-m text" style={buttonStyle}>
+          <Button variant="text" radius="m" style={buttonStyle}>
             text
           </Button>
         </div>
         <div className="flex">
-          <Button className="radius-m primary" style={buttonStyle}>
+          <Button color="primary" radius="m" style={buttonStyle}>
             primary
           </Button>
-          <Button className="radius-m primary radius-m outline" style={buttonStyle}>
+          <Button color="primary" variant="outline" radius="m" style={buttonStyle}>
             outline
           </Button>
-          <Button className="radius-m primary radius-m text fill outline" style={buttonStyle}>
+          <Button color="primary" variant="fill" radius="m" style={buttonStyle}>
             fill
           </Button>
-          <Button className="radius-m primary text fill" style={buttonStyle}>
-            fill
-          </Button>
-          <Button className="radius-m primary text" style={buttonStyle}>
+          <Button color="primary" variant="text" radius="m" style={buttonStyle}>
             text
           </Button>
         </div>
 
         <div className="flex">
-          <Button className="radius-m link" style={buttonStyle}>
+          <Button color="link" radius="m" style={buttonStyle}>
             link
           </Button>
-          <Button className="radius-m link radius-m outline" style={buttonStyle}>
+          <Button color="link" variant="outline" radius="m" style={buttonStyle}>
             outline
           </Button>
-          <Button className="radius-m link radius-m text fill outline" style={buttonStyle}>
+          <Button color="link" variant="fill" radius="m" style={buttonStyle}>
             fill
           </Button>
-          <Button className="radius-m link text fill" style={buttonStyle}>
-            fill
-          </Button>
-          <Button className="radius-m link text" style={buttonStyle}>
+          <Button color="link" variant="text" radius="m" style={buttonStyle}>
             text
           </Button>
         </div>
 
         <div className="flex">
-          <Button className="radius-m warning" style={buttonStyle}>
-            link
+          <Button color="warning" radius="m" style={buttonStyle}>
+            warning
           </Button>
-          <Button className="radius-m warning radius-m outline" style={buttonStyle}>
+          <Button color="warning" variant="outline" radius="m" style={buttonStyle}>
             outline
           </Button>
-          <Button className="radius-m warning radius-m text fill outline" style={buttonStyle}>
+          <Button color="warning" variant="fill" radius="m" style={buttonStyle}>
             fill
           </Button>
-          <Button className="radius-m warning text fill" style={buttonStyle}>
-            fill
-          </Button>
-          <Button className="radius-m warning text" style={buttonStyle}>
+          <Button color="warning" variant="text" radius="m" style={buttonStyle}>
             text
           </Button>
         </div>
 
         <div className="flex">
-          <Button className="radius-m danger" style={buttonStyle}>
+          <Button color="danger" radius="m" style={buttonStyle}>
             danger
           </Button>
-          <Button className="radius-m danger radius-m outline" style={buttonStyle}>
+          <Button color="danger" variant="outline" radius="m" style={buttonStyle}>
             outline
           </Button>
-          <Button className="radius-m danger radius-m text fill outline" style={buttonStyle}>
+          <Button color="danger" variant="fill" radius="m" style={buttonStyle}>
             fill
           </Button>
-          <Button className="radius-m danger text fill" style={buttonStyle}>
-            fill
-          </Button>
-          <Button className="radius-m danger text" style={buttonStyle}>
+          <Button color="danger" variant="text" radius="m" style={buttonStyle}>
             text
           </Button>
         </div>
 
         <div className="flex">
-          <Button className="radius-m success" style={buttonStyle}>
+          <Button color="success" radius="m" style={buttonStyle}>
             success
           </Button>
-          <Button className="radius-m success radius-m outline" style={buttonStyle}>
+          <Button color="success" variant="outline" radius="m" style={buttonStyle}>
             outline
           </Button>
-          <Button className="radius-m success radius-m text fill outline" style={buttonStyle}>
+          <Button color="success" variant="fill" radius="m" style={buttonStyle}>
             fill
           </Button>
-          <Button className="radius-m success text fill" style={buttonStyle}>
-            fill
-          </Button>
-          <Button className="radius-m success text" style={buttonStyle}>
+          <Button color="success" variant="text" radius="m" style={buttonStyle}>
             text
           </Button>
         </div>
@@ -122,39 +104,30 @@ export default () => {
 
         <Divider>Disabled</Divider>
         <div className="flex">
-          <Button className="disabled radius-m" style={buttonStyle}>
+          <Button disabled radius="m" style={buttonStyle}>
             default
           </Button>
-          <Button className="disabled radius-m radius-m outline" style={buttonStyle}>
+          <Button disabled variant="outline" radius="m" style={buttonStyle}>
             outline
           </Button>
-          <Button className="disabled radius-m radius-m text fill outline" style={buttonStyle}>
+          <Button disabled variant="fill" radius="m" style={buttonStyle}>
             fill
           </Button>
-          <Button className="disabled radius-m text fill" style={buttonStyle}>
-            fill
-          </Button>
-          <Button className="disabled radius-m text" style={buttonStyle}>
+          <Button disabled variant="text" radius="m" style={buttonStyle}>
             text
           </Button>
         </div>
         <div className="flex">
-          <Button className="disabled radius-m primary" style={buttonStyle}>
+          <Button disabled color="primary" radius="m" style={buttonStyle}>
             primary
           </Button>
-          <Button className="disabled radius-m primary radius-m outline" style={buttonStyle}>
+          <Button disabled color="primary" variant="outline" radius="m" style={buttonStyle}>
             outline
           </Button>
-          <Button
-            className="disabled radius-m primary radius-m text fill outline"
-            style={buttonStyle}
-          >
+          <Button disabled color="primary" variant="fill" radius="m" style={buttonStyle}>
             fill
           </Button>
-          <Button className="disabled radius-m primary text fill" style={buttonStyle}>
-            fill
-          </Button>
-          <Button className="disabled radius-m primary text" style={buttonStyle}>
+          <Button disabled color="primary" variant="text" radius="m" style={buttonStyle}>
             text
           </Button>
         </div>
@@ -162,41 +135,41 @@ export default () => {
 
         <Divider>Shape</Divider>
         <div className="bg-body">
-          <Button shape="round" className="primary" style={buttonStyle}>
+          <Button shape="round" color="primary" style={buttonStyle}>
             Round
           </Button>
-          <Button shape="circle" className="s primary" style={buttonStyle}>
+          <Button shape="circle" size="s" color="primary" style={buttonStyle}>
             <Icon className="seeds-icons seeds-icon-barcode"></Icon>
           </Button>
-          <Button shape="square" className="s radius-m" style={buttonStyle}>
+          <Button shape="square" size="s" radius="m" style={buttonStyle}>
             <Icon className="seeds-icons seeds-icon-barcode"></Icon>
           </Button>
           <br />
 
           <Divider>Flex</Divider>
-          <Button className="primary flex radius-m" style={buttonStyle}>
+          <Button color="primary" radius="m" className="flex" style={buttonStyle}>
             primary flex
           </Button>
         </div>
         <br />
 
         <Divider>Size & radius</Divider>
-        <Button className="primary xxs radius-xxs outline fill" style={buttonStyle}>
+        <Button color="primary" size="xxs" radius="xxs" variant="outline" style={buttonStyle}>
           primary xxs
         </Button>
-        <Button className="primary xs radius-xs" style={buttonStyle}>
+        <Button color="primary" size="xs" radius="xs" style={buttonStyle}>
           primary xs
         </Button>
-        <Button className="primary s radius-s" style={buttonStyle}>
+        <Button color="primary" size="s" radius="s" style={buttonStyle}>
           primary s
         </Button>
-        <Button className="primary m radius-m" style={buttonStyle}>
+        <Button color="primary" size="m" radius="m" style={buttonStyle}>
           primary m
         </Button>
-        <Button className="primary l radius-l" style={buttonStyle}>
+        <Button color="primary" size="l" radius="l" style={buttonStyle}>
           primary l
         </Button>
-        <Button className="primary xl radius-xl" style={buttonStyle}>
+        <Button color="primary" size="xl" radius="xl" style={buttonStyle}>
           primary xl
         </Button>
       </Layout.Main>

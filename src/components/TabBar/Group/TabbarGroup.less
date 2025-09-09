@@ -7,7 +7,7 @@
   overflow-x: auto;
   scrollbar-width: none;
 
-  color: var(--secondary);
+  color: var(--seed-font-color-secondary);
 }
 
 // Separator
@@ -28,18 +28,18 @@
 }
 
 .tabbar-group-tab-wrapper {
-  border: 1px solid var(--border);
+  border: 1px solid var(--seed-border-color);
   border-left-width: 0;
 
   position: relative;
   flex: auto;
-  padding: 0 var(--space-xl);
+  padding: 0 var(--seed-space-xl);
 }
 
 .tabbar-group-tab-wrapper.active {
-  color: var(--primary);
+  color: var(--seed-primary);
   background-color: #fff;
-  border-color: var(--primary);
+  border-color: var(--seed-primary);
 }
 
 // 每块只有上右下有边框, 选中时需要补充左边框
@@ -50,58 +50,58 @@
   top: -1px;
   bottom: -1px;
   width: 1px;
-  background-color: var(--primary);
+  background-color: var(--seed-primary);
 }
 
 // Tab
 .tabbar-group-tab {
   white-space: nowrap;
-  padding: var(--space-m) 0;
+  padding: var(--seed-space-s) 0;
   text-align: center;
 }
 
 // 圆角
 .tabbar-group-tab-wrapper:first-child {
-  border-start-start-radius: var(--radius-m);
-  border-end-start-radius: var(--radius-m);
+  border-start-start-radius: var(--seed-radius-m);
+  border-end-start-radius: var(--seed-radius-m);
   border-left-width: 1px;
 }
 .tabbar-group-tab-wrapper:last-child {
-  border-start-end-radius: var(--radius-m);
-  border-end-end-radius: var(--radius-m);
+  border-start-end-radius: var(--seed-radius-m);
+  border-end-end-radius: var(--seed-radius-m);
 }
 
 // 文本
 .tabbar-group-tab-name {
-  font-size: var(--font-size-m);
+  font-size: var(--seed-font-size-m);
 }
 .tabbar-group-tab-description {
-  color: var(--secondary);
-  font-size: var(--font-size-s);
+  color: var(--seed-font-color-secondary);
+  font-size: var(--seed-font-size-s);
 }
 .tabbar-group-tab-name + .tabbar-group-tab-description,
 .tabbar-group-tab-description + .tabbar-group-tab-name {
-  margin-top: var(--space-m);
+  margin-top: var(--seed-space-s);
 }
 
 // 尺寸
 .tabbar-group.s {
   // 圆角
   .tabbar-group-tab-wrapper:first-child {
-    border-start-start-radius: var(--radius-xs);
-    border-end-start-radius: var(--radius-xs);
+    border-start-start-radius: var(--seed-radius-xs);
+    border-end-start-radius: var(--seed-radius-xs);
   }
   .tabbar-group-tab-wrapper:last-child {
-    border-start-end-radius: var(--radius-xs);
-    border-end-end-radius: var(--radius-xs);
+    border-start-end-radius: var(--seed-radius-xs);
+    border-end-end-radius: var(--seed-radius-xs);
   }
 
   // 宽度
   .tabbar-group-tab-wrapper {
-    padding: 0 var(--space-s);
+    padding: 0 var(--seed-space-s);
   }
   // 高度
   .tabbar-group-tab {
-    padding: var(--space-xxs) 0;
+    padding: var(--seed-space-xxs) 0;
   }
 }

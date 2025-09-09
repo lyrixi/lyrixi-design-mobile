@@ -58,11 +58,11 @@ const FormItem = forwardRef(
     return (
       <div
         {...props}
-        className={`form-item${props.className ? ' ' + props.className : ''}${
+        className={`seed-form-item${props.className ? ' ' + props.className : ''}${
           layout === 'horizontal' ? ` row` : ''
         }`}
         style={{ height: height, ...props?.style }}
-        id={`${name ? `form-item-${name}` : props?.id || ''}`}
+        id={`${name ? `seed-form-item-${name}` : props?.id || ''}`}
         ref={rootRef}
       >
         {inViewArea ? children : null}

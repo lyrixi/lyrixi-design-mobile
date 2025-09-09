@@ -33,9 +33,20 @@ function MapMarkers(
   // 地图容器
   const mapRef = useRef(null)
 
+  const markersRef = useRef(null)
+  const circlesRef = useRef(null)
+  const polylineRef = useRef(null)
+  const zoomRef = useRef(null)
+
   // Expose
   useImperativeHandle(ref, () => {
-    return mapRef?.current
+    return {
+      ...mapRef?.current,
+      markersRef: markersRef,
+      polylineRef: polylineRef,
+      circlesRef: circlesRef,
+      zoomRef: zoomRef
+    }
   })
 
   useEffect(() => {
@@ -65,16 +76,16 @@ function MapMarkers(
       queryNearby={queryNearby}
     >
       {/* 标注点 */}
-      <Markers points={markers} onClick={onMarkerClick} />
+      <Markers ref={markersRef} points={markers} onClick={onMarkerClick} />
 
       {/* 圆圈 */}
-      {circles && <Circles points={circles} {...CirclesProps} />}
+      {circles && <Circles ref={circlesRef} points={circles} {...CirclesProps} />}
 
       {/* 折线 */}
-      {polyline && <Polyline points={polyline} {...PolylineProps} />}
+      {polyline && <Polyline ref={polylineRef} points={polyline} {...PolylineProps} />}
 
       {/* 缩放控件 */}
-      <ZoomControl style={{ bottom: '20px' }} {...ZoomControlProps} />
+      <ZoomControl ref={zoomRef} style={{ bottom: '20px' }} {...ZoomControlProps} />
 
       {children}
     </MapContainer>

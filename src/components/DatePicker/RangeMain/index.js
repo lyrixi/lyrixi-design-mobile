@@ -1,6 +1,7 @@
 import React, { useRef, forwardRef, useImperativeHandle } from 'react'
 import getTitleByType from './../utils/getTitleByType'
 import updateRangeValue from './updateRangeValue'
+import getDisplayValue from '../RangeCombo/getDisplayValue'
 import SelectorMain from './SelectorMain'
 import getDefaultRanges from './getDefaultRanges'
 import PickerMain from './PickerMain'
@@ -86,7 +87,12 @@ function RangeMain(
 
   // unify onChange
   function handleChange(newValue, { rangeId } = {}) {
-    onChange && onChange(updateRangeValue(newValue, type), { rangeId: rangeId || null, ranges })
+    onChange &&
+      onChange(updateRangeValue(newValue, type), {
+        rangeId: rangeId || null,
+        ranges,
+        displayValue: getDisplayValue({ value: newValue, type, rangeId, ranges, separator })
+      })
   }
 
   return (

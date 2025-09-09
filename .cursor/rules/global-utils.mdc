@@ -1,0 +1,155 @@
+---
+alwaysApply: false
+---
+
+# 工具函数组织规范
+
+## 目录结构
+
+工具函数按功能分类组织在 [src/utils/](mdc:src/utils/) 目录下：
+
+```
+utils/
+├── ArrayUtil/           # 数组操作工具
+├── DateUtil/            # 日期时间工具
+├── DOMUtil/             # DOM 操作工具
+├── ObjectUtil/          # 对象操作工具
+├── MathUtil/            # 数学计算工具
+├── Storage/             # 存储相关工具
+├── Request/             # 网络请求工具
+├── Bridge/              # 桥接工具
+├── Clipboard/           # 剪贴板工具
+├── Device/              # 设备信息工具
+├── EventUtil/           # 事件处理工具
+├── FullScreen/          # 全屏工具
+├── GeoUtil/             # 地理位置工具
+├── HistoryUtil/         # 历史记录工具
+├── LocaleUtil/          # 国际化工具
+└── Debugger/            # 调试工具
+```
+
+## 文件组织原则
+
+### 独立文件原则
+
+每个工具函数、hook 或组件都应该放在独立的文件中，避免聚合到中央文件如 `components.js`、`hooks.js` 或 `utils.js` 中。
+
+❌ 错误示例：
+
+```js
+// utils.js - 避免这样做
+export const formatDate = () => {
+  /* ... */
+}
+export const formatCurrency = () => {
+  /* ... */
+}
+export const validateEmail = () => {
+  /* ... */
+}
+```
+
+✅ 正确示例：
+
+```js
+// DateUtil/formatDate.js
+export const formatDate = () => {
+  /* ... */
+}
+
+// CurrencyUtil/formatCurrency.js
+export const formatCurrency = () => {
+  /* ... */
+}
+
+// ValidationUtil/validateEmail.js
+export const validateEmail = () => {
+  /* ... */
+}
+```
+
+## 工具函数规范
+
+- 每个工具函数应该有清晰的单一职责
+- 提供完整的 JSDoc 注释
+- 包含使用示例
+- 确保函数是纯函数（无副作用）
+- 提供适当的错误处理 description: globs: alwaysApply: false
+
+---
+
+# 工具函数组织规范
+
+## 目录结构
+
+工具函数按功能分类组织在 [src/utils/](mdc:src/utils/) 目录下：
+
+```
+utils/
+├── ArrayUtil/           # 数组操作工具
+├── DateUtil/            # 日期时间工具
+├── DOMUtil/             # DOM 操作工具
+├── ObjectUtil/          # 对象操作工具
+├── MathUtil/            # 数学计算工具
+├── Storage/             # 存储相关工具
+├── Request/             # 网络请求工具
+├── Bridge/              # 桥接工具
+├── Clipboard/           # 剪贴板工具
+├── Device/              # 设备信息工具
+├── EventUtil/           # 事件处理工具
+├── FullScreen/          # 全屏工具
+├── GeoUtil/             # 地理位置工具
+├── HistoryUtil/         # 历史记录工具
+├── LocaleUtil/          # 国际化工具
+└── Debugger/            # 调试工具
+```
+
+## 文件组织原则
+
+### 独立文件原则
+
+每个工具函数、hook 或组件都应该放在独立的文件中，避免聚合到中央文件如 `components.js`、`hooks.js` 或 `utils.js` 中。
+
+❌ 错误示例：
+
+```js
+// utils.js - 避免这样做
+export const formatDate = () => {
+  /* ... */
+}
+export const formatCurrency = () => {
+  /* ... */
+}
+export const validateEmail = () => {
+  /* ... */
+}
+```
+
+✅ 正确示例：
+
+```js
+// DateUtil/formatDate.js
+export const formatDate = () => {
+  /* ... */
+}
+
+// CurrencyUtil/formatCurrency.js
+export const formatCurrency = () => {
+  /* ... */
+}
+
+// ValidationUtil/validateEmail.js
+export const validateEmail = () => {
+  /* ... */
+}
+```
+
+## 工具函数规范
+
+- 每个工具函数应该有清晰的单一职责
+- 提供完整的 JSDoc 注释
+- 包含使用示例
+- 确保函数是纯函数（无副作用）
+- 提供适当的错误处理 description: globs: alwaysApply: false
+
+---

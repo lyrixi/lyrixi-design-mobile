@@ -2,13 +2,13 @@
 .confirm-footer {
   display: flex;
   position: relative;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--seed-border-color);
 
   // horizontal
   &[data-layout='horizontal'] {
     flex-direction: row;
     .confirm-button + .confirm-button {
-      border-left: 1px solid var(--border);
+      border-left: 1px solid var(--seed-border-color);
     }
   }
 
@@ -16,7 +16,7 @@
   &[data-layout='vertical'] {
     flex-direction: column;
     .confirm-button + .confirm-button {
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--seed-border-color);
     }
   }
 }

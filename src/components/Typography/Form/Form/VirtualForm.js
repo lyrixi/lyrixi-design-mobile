@@ -27,7 +27,7 @@ const VirtualForm = forwardRef(
       observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
-            // console.log(entry.target.classList.contains('form-item'))
+            // console.log(entry.target.classList.contains('seed-form-item'))
             const callback = observerCallbacksRef.current.get(entry.target)
             callback?.(entry.isIntersecting)
           })
@@ -60,7 +60,7 @@ const VirtualForm = forwardRef(
       >
         <div
           ref={rootRef}
-          className={`form-items virtual${className ? ' ' + className : ''}`}
+          className={`seed-form-items virtual${className ? ' ' + className : ''}`}
           {...props}
         >
           {children}

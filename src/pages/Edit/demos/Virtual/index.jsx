@@ -3,6 +3,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import {
   LocaleUtil,
   Toast,
+  Card,
   Layout,
   Result,
   Form,
@@ -91,264 +92,266 @@ const Edit = () => {
   return (
     <Layout className="full">
       <Layout.Main>
-        <Form form={form} style={{ marginLeft: '12px' }} virtual={true}>
-          <Form.Item
-            height={42}
-            name="input"
-            label={locale('Input')}
-            rules={[
-              {
-                required: true,
-                message: locale('Input cannot be empty')
-              }
-            ]}
-          >
-            <Input.Text placeholder={locale('Please input')} maxLength={50} />
-          </Form.Item>
-          <Form.Item
-            height={97}
-            name="textarea"
-            maxLength={150}
-            label={locale('Textarea')}
-            extra={({ value }) => {
-              return <div className="text-right">{`${value?.length || '0'} / 150`}</div>
-            }}
-          >
-            <Input.Textarea placeholder={locale('Please input')} />
-          </Form.Item>
-          <Form.Item height={42} name="autoFit" label={locale('Auto fit')}>
-            <Input.AutoFit placeholder={locale('Please input')} />
-          </Form.Item>
-          <Form.Item height={42} name="select" label={locale('Select')}>
-            <Select.Combo
-              placeholder={locale('Please select')}
-              list={[
+        <Card>
+          <Form form={form} style={{ margin: '0 12px' }} virtual={true}>
+            <Form.Item
+              height={44}
+              name="input"
+              label={locale('Input')}
+              rules={[
                 {
-                  id: '1',
-                  name: 'Option1'
-                },
-                {
-                  id: '2',
-                  name: 'Option2'
+                  required: true,
+                  message: locale('Input cannot be empty')
                 }
               ]}
-              allowClear
-              clear={({ clearable, triggerClear }) => {
-                return clearable ? (
-                  <Input.IconClear onClick={triggerClear} />
-                ) : (
-                  <Input.IconRightArrow />
-                )
+            >
+              <Input.Text placeholder={locale('Please input')} maxLength={50} />
+            </Form.Item>
+            <Form.Item
+              height={97}
+              name="textarea"
+              maxLength={150}
+              label={locale('Textarea')}
+              extra={({ value }) => {
+                return <div className="text-right">{`${value?.length || '0'} / 150`}</div>
               }}
-            />
-          </Form.Item>
-          <Form.Item height={42} name="picker" label={locale('Picker')}>
-            <Picker.Combo
-              placeholder={locale('Please select')}
-              list={[
+            >
+              <Input.Textarea placeholder={locale('Please input')} />
+            </Form.Item>
+            <Form.Item height={44} name="autoFit" label={locale('Auto fit')}>
+              <Input.AutoFit placeholder={locale('Please input')} />
+            </Form.Item>
+            <Form.Item height={44} name="select" label={locale('Select')}>
+              <Select.Combo
+                placeholder={locale('Please select')}
+                list={[
+                  {
+                    id: '1',
+                    name: 'Option1'
+                  },
+                  {
+                    id: '2',
+                    name: 'Option2'
+                  }
+                ]}
+                allowClear
+                clear={({ clearable, triggerClear }) => {
+                  return clearable ? (
+                    <Input.IconClear onClick={triggerClear} />
+                  ) : (
+                    <Input.IconRightArrow />
+                  )
+                }}
+              />
+            </Form.Item>
+            <Form.Item height={44} name="picker" label={locale('Picker')}>
+              <Picker.Combo
+                placeholder={locale('Please select')}
+                list={[
+                  {
+                    id: '1',
+                    name: 'Option1'
+                  },
+                  {
+                    id: '2',
+                    name: 'Option2'
+                  }
+                ]}
+                allowClear
+                clear={({ clearable, triggerClear }) => {
+                  return clearable ? (
+                    <Input.IconClear onClick={triggerClear} />
+                  ) : (
+                    <Input.IconRightArrow />
+                  )
+                }}
+              />
+            </Form.Item>
+            <Form.Item height={50} name="switch" valuePropName="checked" label={locale('Switch')}>
+              <Switch />
+            </Form.Item>
+            <Form.Item height={74} name="checkbox" label={locale('Checkbox')}>
+              <Checkbox.Group
+                placeholder={locale('Please select')}
+                list={[
+                  {
+                    id: '1',
+                    name: 'Option1'
+                  },
+                  {
+                    id: '2',
+                    name: 'Option2'
+                  }
+                ]}
+                allowClear
+              />
+            </Form.Item>
+            <Form.Item height={74} name="radio" label={locale('Radio')}>
+              <Radio.Group
+                placeholder={locale('Please select')}
+                list={[
+                  {
+                    id: '1',
+                    name: 'Option1'
+                  },
+                  {
+                    id: '2',
+                    name: 'Option2'
+                  }
+                ]}
+                allowClear
+              />
+            </Form.Item>
+            <Form.Item height={102} name="selector" label={locale('Selector')}>
+              <Selector
+                placeholder={locale('Please select')}
+                list={[
+                  {
+                    id: '1',
+                    name: 'Option1'
+                  },
+                  {
+                    id: '2',
+                    name: 'Option2'
+                  },
+                  {
+                    id: '3',
+                    name: 'Option3'
+                  },
+                  {
+                    id: '4',
+                    name: 'Option4'
+                  }
+                ]}
+                allowClear
+              />
+            </Form.Item>
+            <Form.Item height={44} name="number" label={locale('Number')}>
+              <Input.Number placeholder={locale('Please input')} />
+            </Form.Item>
+            <Form.Item
+              height={48}
+              name="numberBox"
+              label={locale('Number box')}
+              rules={[
                 {
-                  id: '1',
-                  name: 'Option1'
-                },
-                {
-                  id: '2',
-                  name: 'Option2'
+                  required: true,
+                  message: locale('Number box can not empty')
                 }
               ]}
-              allowClear
-              clear={({ clearable, triggerClear }) => {
-                return clearable ? (
-                  <Input.IconClear onClick={triggerClear} />
-                ) : (
-                  <Input.IconRightArrow />
-                )
+            >
+              <Input.NumberBox placeholder={locale('Please input')} />
+            </Form.Item>
+            <Form.Item
+              height={56}
+              name="password"
+              label={locale('Password')}
+              extra={({ value }) => {
+                return <Input.PasswordStrength value={value} style={{ marginTop: 8 }} />
               }}
-            />
-          </Form.Item>
-          <Form.Item height={50} name="switch" valuePropName="checked" label={locale('Switch')}>
-            <Switch />
-          </Form.Item>
-          <Form.Item height={74} name="checkbox" label={locale('Checkbox')}>
-            <Checkbox.Group
-              placeholder={locale('Please select')}
-              list={[
-                {
-                  id: '1',
-                  name: 'Option1'
-                },
-                {
-                  id: '2',
-                  name: 'Option2'
-                }
-              ]}
-              allowClear
-            />
-          </Form.Item>
-          <Form.Item height={74} name="radio" label={locale('Radio')}>
-            <Radio.Group
-              placeholder={locale('Please select')}
-              list={[
-                {
-                  id: '1',
-                  name: 'Option1'
-                },
-                {
-                  id: '2',
-                  name: 'Option2'
-                }
-              ]}
-              allowClear
-            />
-          </Form.Item>
-          <Form.Item height={102} name="selector" label={locale('Selector')}>
-            <Selector
-              placeholder={locale('Please select')}
-              list={[
-                {
-                  id: '1',
-                  name: 'Option1'
-                },
-                {
-                  id: '2',
-                  name: 'Option2'
-                },
-                {
-                  id: '3',
-                  name: 'Option3'
-                },
-                {
-                  id: '4',
-                  name: 'Option4'
-                }
-              ]}
-              allowClear
-            />
-          </Form.Item>
-          <Form.Item height={42} name="number" label={locale('Number')}>
-            <Input.Number placeholder={locale('Please input')} />
-          </Form.Item>
-          <Form.Item
-            height={48}
-            name="numberBox"
-            label={locale('Number box')}
-            rules={[
-              {
-                required: true,
-                message: locale('Number box can not empty')
-              }
-            ]}
-          >
-            <Input.NumberBox placeholder={locale('Please input')} />
-          </Form.Item>
-          <Form.Item
-            height={52}
-            name="password"
-            label={locale('Password')}
-            extra={({ value }) => {
-              return <Input.PasswordStrength value={value} />
-            }}
-          >
-            <Input.Password placeholder={locale('Please input')} />
-          </Form.Item>
-          <Form.Item height={55} name="range" label={locale('Range')}>
-            <Input.Range />
-          </Form.Item>
-          <Form.Item height={55} name="rate" label={locale('Rate')}>
-            <Input.Rate />
-          </Form.Item>
-          <Form.Item height={42} name="tel" label={locale('Tel')}>
-            <Input.Tel placeholder={locale('Please input')} />
-          </Form.Item>
-          <Form.Item height={42} name="url" label={locale('Url')}>
-            <Input.Url placeholder={locale('Please input')} />
-          </Form.Item>
-          <Form.Item height={42} name="datetime" label={locale('Datetime')}>
-            <DatePicker.Combo
-              type="datetime"
-              placeholder={locale('Please select')}
-              allowClear
-              clear={({ clearable, triggerClear }) => {
-                return clearable ? (
-                  <Input.IconClear onClick={triggerClear} />
-                ) : (
-                  <Input.IconRightArrow />
-                )
-              }}
-            />
-          </Form.Item>
-          <Form.Item height={42} name="date" label={locale('Date')}>
-            <DatePicker.Combo
-              placeholder={locale('Please select')}
-              allowClear
-              clear={({ clearable, triggerClear }) => {
-                return clearable ? (
-                  <Input.IconClear onClick={triggerClear} />
-                ) : (
-                  <Input.IconRightArrow />
-                )
-              }}
-            />
-          </Form.Item>
-          <Form.Item height={42} name="time" label={locale('Time')}>
-            <DatePicker.Combo
-              type="time"
-              placeholder={locale('Please select')}
-              allowClear
-              clear={({ clearable, triggerClear }) => {
-                return clearable ? (
-                  <Input.IconClear onClick={triggerClear} />
-                ) : (
-                  <Input.IconRightArrow />
-                )
-              }}
-            />
-          </Form.Item>
-          <Form.Item height={42} name="dateRange" label={locale('Date range')}>
-            <DatePicker.RangeCombo
-              placeholder={locale('Please select')}
-              allowClear
-              clear={({ clearable, triggerClear }) => {
-                return clearable ? (
-                  <Input.IconClear onClick={triggerClear} />
-                ) : (
-                  <Input.IconRightArrow />
-                )
-              }}
-            />
-          </Form.Item>
-          <Form.Item height={42} name="district" label={locale('District')}>
-            <Cascader.DistrictCombo
-              placeholder={locale('Please select')}
-              allowClear
-              clear={({ clearable, triggerClear }) => {
-                return clearable ? (
-                  <Input.IconClear onClick={triggerClear} />
-                ) : (
-                  <Input.IconRightArrow />
-                )
-              }}
-            />
-          </Form.Item>
-          <Form.Item height={42} name="location" label={locale('Location')}>
-            <Location.Combo
-              type="gcj02"
-              config={{
-                key: '',
-                type: 'bmap'
-              }}
-              placeholder={locale('Please select')}
-              allowClear
-              previewVisible
-              chooseVisible
-              clear={({ clearable, triggerClear }) => {
-                return clearable ? <Input.IconClear onClick={triggerClear} /> : null
-              }}
-            />
-          </Form.Item>
-          <Form.Item height={52} name="signature" label={locale('Signature')}>
-            <Signature.Combo />
-          </Form.Item>
-        </Form>
+            >
+              <Input.Password placeholder={locale('Please input')} />
+            </Form.Item>
+            <Form.Item height={55} name="range" label={locale('Range')}>
+              <Input.Range />
+            </Form.Item>
+            <Form.Item height={55} name="rate" label={locale('Rate')}>
+              <Input.Rate />
+            </Form.Item>
+            <Form.Item height={44} name="tel" label={locale('Tel')}>
+              <Input.Tel placeholder={locale('Please input')} />
+            </Form.Item>
+            <Form.Item height={44} name="url" label={locale('Url')}>
+              <Input.Url placeholder={locale('Please input')} />
+            </Form.Item>
+            <Form.Item height={44} name="datetime" label={locale('Datetime')}>
+              <DatePicker.Combo
+                type="datetime"
+                placeholder={locale('Please select')}
+                allowClear
+                clear={({ clearable, triggerClear }) => {
+                  return clearable ? (
+                    <Input.IconClear onClick={triggerClear} />
+                  ) : (
+                    <Input.IconRightArrow />
+                  )
+                }}
+              />
+            </Form.Item>
+            <Form.Item height={44} name="date" label={locale('Date')}>
+              <DatePicker.Combo
+                placeholder={locale('Please select')}
+                allowClear
+                clear={({ clearable, triggerClear }) => {
+                  return clearable ? (
+                    <Input.IconClear onClick={triggerClear} />
+                  ) : (
+                    <Input.IconRightArrow />
+                  )
+                }}
+              />
+            </Form.Item>
+            <Form.Item height={44} name="time" label={locale('Time')}>
+              <DatePicker.Combo
+                type="time"
+                placeholder={locale('Please select')}
+                allowClear
+                clear={({ clearable, triggerClear }) => {
+                  return clearable ? (
+                    <Input.IconClear onClick={triggerClear} />
+                  ) : (
+                    <Input.IconRightArrow />
+                  )
+                }}
+              />
+            </Form.Item>
+            <Form.Item height={44} name="dateRange" label={locale('Date range')}>
+              <DatePicker.RangeCombo
+                placeholder={locale('Please select')}
+                allowClear
+                clear={({ clearable, triggerClear }) => {
+                  return clearable ? (
+                    <Input.IconClear onClick={triggerClear} />
+                  ) : (
+                    <Input.IconRightArrow />
+                  )
+                }}
+              />
+            </Form.Item>
+            <Form.Item height={44} name="district" label={locale('District')}>
+              <Cascader.DistrictCombo
+                placeholder={locale('Please select')}
+                allowClear
+                clear={({ clearable, triggerClear }) => {
+                  return clearable ? (
+                    <Input.IconClear onClick={triggerClear} />
+                  ) : (
+                    <Input.IconRightArrow />
+                  )
+                }}
+              />
+            </Form.Item>
+            <Form.Item height={44} name="location" label={locale('Location')}>
+              <Location.Combo
+                type="gcj02"
+                config={{
+                  key: '',
+                  type: 'bmap'
+                }}
+                placeholder={locale('Please select')}
+                allowClear
+                previewVisible
+                chooseVisible
+                clear={({ clearable, triggerClear }) => {
+                  return clearable ? <Input.IconClear onClick={triggerClear} /> : null
+                }}
+              />
+            </Form.Item>
+            <Form.Item height={52} name="signature" label={locale('Signature')}>
+              <Signature.Combo />
+            </Form.Item>
+          </Form>
+        </Card>
       </Layout.Main>
 
       {/* Footer */}

@@ -5,7 +5,7 @@ import { Layout, Divider, Steps, Card, List, Button } from 'lyrixi-design-mobile
 const list = [
   {
     id: 'finish',
-    title: <p className="color-auxiliary">2025-12-01 12:30:27</p>,
+    title: <p className="color-tertiary">2025-12-01 12:30:27</p>,
     description: (
       <div className="color-default">
         <List.Item
@@ -18,7 +18,7 @@ const list = [
   },
   {
     id: 'progress',
-    title: <p className="color-auxiliary">2025-12-01 12:30:27</p>,
+    title: <p className="color-tertiary">2025-12-01 12:30:27</p>,
     description: (
       <div className="color-default">
         <List.Item
@@ -31,7 +31,7 @@ const list = [
   },
   {
     id: 'wait',
-    title: <p className="color-auxiliary">2025-12-01 12:30:27</p>,
+    title: <p className="color-tertiary">2025-12-01 12:30:27</p>,
     description: (
       <div className="color-default">
         <List.Item

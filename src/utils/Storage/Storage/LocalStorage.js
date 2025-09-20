@@ -9,6 +9,16 @@ const LocalStorage = {
     if (!key || typeof key !== 'string') return null
     return DataParse.parse(window.localStorage.getItem(key))
   },
+  getLocalStorageKeys: function () {
+    let storages = window.localStorage.valueOf()
+    let keys = null
+    for (let i = 0; i < storages.length; i++) {
+      if (!keys) keys = []
+      let key = storages.key(i)
+      keys.push(key)
+    }
+    return keys
+  },
   getLocalStorages: function () {
     let storages = window.localStorage.valueOf()
     let localStorages = null

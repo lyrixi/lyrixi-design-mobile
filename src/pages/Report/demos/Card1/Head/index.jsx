@@ -2,7 +2,9 @@
 import React from 'react'
 import { ToolBar, TabBar } from 'lyrixi-design-mobile'
 
-// 项目内部模块导入
+// 公共组件导入
+
+// 内部组件导入
 
 // 样式图片等资源文件导入
 

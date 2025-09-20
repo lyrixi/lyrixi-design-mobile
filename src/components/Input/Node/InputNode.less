@@ -1,10 +1,17 @@
-// InputText 值样式
-.seed-input-text-value {
-  display: inline-block;
+// Input.Node: Placeholder
+div.seed-input-text.placeholder {
+  color: var(--seed-font-color-quaternary);
+}
+
+// Input.Node: 解决自绘光标不能居中显示的问题
+div.seed-input-text {
+  display: flex;
+  align-items: center;
 }
 
 // InputNumber 光标样式
-.seed-input-cursor {
+.seed-input-text.focus::after {
+  content: '';
   display: inline-block;
   width: 1px;
   height: 18px;

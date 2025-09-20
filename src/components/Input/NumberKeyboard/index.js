@@ -1,7 +1,7 @@
 import React, { forwardRef, useImperativeHandle, useRef, useState } from 'react'
 import { maxLengthFormatter, minMaxFormatter, precisionFormatter } from './../Text/utils'
 
-import InputNumber from './InputNumber'
+import InputNode from './../Node'
 
 // 内库使用-start
 import Keyboard from './../../Keyboard'
@@ -53,6 +53,9 @@ const NumberKeyboard = forwardRef(
       ...inputRef.current,
       focus: () => {
         setKeyboardOpen(true)
+      },
+      blur: () => {
+        setKeyboardOpen(false)
       }
     }))
 
@@ -79,7 +82,7 @@ const NumberKeyboard = forwardRef(
     return (
       <>
         {/* 输入框 */}
-        <InputNumber
+        <InputNode
           ref={inputRef}
           type="number"
           // 值控制
@@ -114,7 +117,7 @@ const NumberKeyboard = forwardRef(
           onChange={handleChange}
           open={keyboardOpen}
           onClose={handleClose}
-          dot={inputMode === 'numeric' ? null : true}
+          dot={precision === 0 ? null : true}
           minus={min >= 0 ? null : true}
         />
       </>

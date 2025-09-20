@@ -95,7 +95,8 @@ const APILoader = forwardRef(
       return (
         <Result title={errMsg} className="map-container-result" status={'500'}>
           <Button
-            className="result-button primary"
+            className="result-button"
+            color="primary"
             onClick={() => {
               loadData()
             }}

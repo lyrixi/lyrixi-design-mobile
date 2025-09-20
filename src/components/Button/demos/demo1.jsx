@@ -8,95 +8,158 @@ const buttonStyle = {
 
 export default () => {
   return (
-    <Layout className="full">
-      <Layout.Main className="bg-white">
+    <Layout className="full" style={{ backgroundColor: '#f8f8f8' }}>
+      <Layout.Main>
         <Divider>Color & Variant</Divider>
-        <div className="flex">
-          <Button radius="m" style={buttonStyle}>
+        <div style={{ marginTop: 'var(--seed-space-l)' }}>
+          <Button color="default" radius="m" style={buttonStyle}>
             default
           </Button>
-          <Button variant="outline" radius="m" style={buttonStyle}>
-            outline
+          <Button color="default" radius="m" border="solid" style={buttonStyle}>
+            default
           </Button>
-          <Button variant="fill" radius="m" style={buttonStyle}>
-            fill
+          <br />
+          <Button color="default" variant="fill" radius="m" style={buttonStyle}>
+            variant="fill"
           </Button>
-          <Button variant="text" radius="m" style={buttonStyle}>
-            text
+          <Button color="default" variant="fill" border="solid" radius="m" style={buttonStyle}>
+            variant="fill" border="solid"
+          </Button>
+          <Button color="default" variant="fill" border="dashed" radius="m" style={buttonStyle}>
+            variant="fill" border="dashed"
+          </Button>
+          <Button color="default" variant="text" radius="m" style={buttonStyle}>
+            variant="text"
+          </Button>
+          <Button color="default" variant="text" border="solid" radius="m" style={buttonStyle}>
+            variant="text" border="solid"
+          </Button>
+          <Button color="default" variant="text" border="dashed" radius="m" style={buttonStyle}>
+            variant="text" border="dashed"
           </Button>
         </div>
-        <div className="flex">
+        <div style={{ marginTop: 'var(--seed-space-l)' }}>
           <Button color="primary" radius="m" style={buttonStyle}>
             primary
           </Button>
-          <Button color="primary" variant="outline" radius="m" style={buttonStyle}>
-            outline
-          </Button>
+          <br />
           <Button color="primary" variant="fill" radius="m" style={buttonStyle}>
-            fill
+            variant="fill"
+          </Button>
+          <Button color="primary" variant="fill" border="solid" radius="m" style={buttonStyle}>
+            variant="fill" border="solid"
+          </Button>
+          <Button color="primary" variant="fill" border="dashed" radius="m" style={buttonStyle}>
+            variant="fill" border="dashed"
           </Button>
           <Button color="primary" variant="text" radius="m" style={buttonStyle}>
-            text
+            variant="text"
+          </Button>
+          <Button color="primary" variant="text" border="solid" radius="m" style={buttonStyle}>
+            variant="text" border="solid"
+          </Button>
+          <Button color="primary" variant="text" border="dashed" radius="m" style={buttonStyle}>
+            variant="text" border="dashed"
           </Button>
         </div>
 
-        <div className="flex">
+        <div style={{ marginTop: 'var(--seed-space-l)' }}>
           <Button color="link" radius="m" style={buttonStyle}>
             link
           </Button>
-          <Button color="link" variant="outline" radius="m" style={buttonStyle}>
-            outline
-          </Button>
+          <br />
           <Button color="link" variant="fill" radius="m" style={buttonStyle}>
-            fill
+            variant="fill"
+          </Button>
+          <Button color="link" variant="fill" border="solid" radius="m" style={buttonStyle}>
+            variant="fill" border="solid"
+          </Button>
+          <Button color="link" variant="fill" border="dashed" radius="m" style={buttonStyle}>
+            variant="fill" border="dashed"
           </Button>
           <Button color="link" variant="text" radius="m" style={buttonStyle}>
-            text
+            variant="text"
+          </Button>
+          <Button color="link" variant="text" border="solid" radius="m" style={buttonStyle}>
+            variant="text" border="solid"
+          </Button>
+          <Button color="link" variant="text" border="dashed" radius="m" style={buttonStyle}>
+            variant="text" border="dashed"
           </Button>
         </div>
 
-        <div className="flex">
+        <div style={{ marginTop: 'var(--seed-space-l)' }}>
           <Button color="warning" radius="m" style={buttonStyle}>
             warning
           </Button>
-          <Button color="warning" variant="outline" radius="m" style={buttonStyle}>
-            outline
-          </Button>
+          <br />
           <Button color="warning" variant="fill" radius="m" style={buttonStyle}>
-            fill
+            variant="fill"
+          </Button>
+          <Button color="warning" variant="fill" border="solid" radius="m" style={buttonStyle}>
+            variant="fill" border="solid"
+          </Button>
+          <Button color="warning" variant="fill" border="dashed" radius="m" style={buttonStyle}>
+            variant="fill" border="dashed"
           </Button>
           <Button color="warning" variant="text" radius="m" style={buttonStyle}>
-            text
+            variant="text"
+          </Button>
+          <Button color="warning" variant="text" border="solid" radius="m" style={buttonStyle}>
+            variant="text" border="solid"
+          </Button>
+          <Button color="warning" variant="text" border="dashed" radius="m" style={buttonStyle}>
+            variant="text" border="dashed"
           </Button>
         </div>
 
-        <div className="flex">
+        <div style={{ marginTop: 'var(--seed-space-l)' }}>
           <Button color="danger" radius="m" style={buttonStyle}>
             danger
           </Button>
-          <Button color="danger" variant="outline" radius="m" style={buttonStyle}>
-            outline
-          </Button>
+          <br />
           <Button color="danger" variant="fill" radius="m" style={buttonStyle}>
-            fill
+            variant="fill"
+          </Button>
+          <Button color="danger" variant="fill" border="solid" radius="m" style={buttonStyle}>
+            variant="fill" border="solid"
+          </Button>
+          <Button color="danger" variant="fill" border="dashed" radius="m" style={buttonStyle}>
+            variant="fill" border="dashed"
           </Button>
           <Button color="danger" variant="text" radius="m" style={buttonStyle}>
-            text
+            variant="text"
+          </Button>
+          <Button color="danger" variant="text" border="solid" radius="m" style={buttonStyle}>
+            variant="text" border="solid"
+          </Button>
+          <Button color="danger" variant="text" border="dashed" radius="m" style={buttonStyle}>
+            variant="text" border="dashed"
           </Button>
         </div>
 
-        <div className="flex">
+        <div style={{ marginTop: 'var(--seed-space-l)' }}>
           <Button color="success" radius="m" style={buttonStyle}>
             success
           </Button>
-          <Button color="success" variant="outline" radius="m" style={buttonStyle}>
-            outline
-          </Button>
+          <br />
           <Button color="success" variant="fill" radius="m" style={buttonStyle}>
-            fill
+            variant="fill"
+          </Button>
+          <Button color="success" variant="fill" border="solid" radius="m" style={buttonStyle}>
+            variant="fill" border="solid"
+          </Button>
+          <Button color="success" variant="fill" border="dashed" radius="m" style={buttonStyle}>
+            variant="fill" border="dashed"
           </Button>
           <Button color="success" variant="text" radius="m" style={buttonStyle}>
-            text
+            variant="text"
+          </Button>
+          <Button color="success" variant="text" border="solid" radius="m" style={buttonStyle}>
+            variant="text" border="solid"
+          </Button>
+          <Button color="success" variant="text" border="dashed" radius="m" style={buttonStyle}>
+            variant="text" border="dashed"
           </Button>
         </div>
 
@@ -107,34 +170,41 @@ export default () => {
           <Button disabled radius="m" style={buttonStyle}>
             default
           </Button>
-          <Button disabled variant="outline" radius="m" style={buttonStyle}>
-            outline
-          </Button>
           <Button disabled variant="fill" radius="m" style={buttonStyle}>
             fill
           </Button>
           <Button disabled variant="text" radius="m" style={buttonStyle}>
             text
           </Button>
+          <Button disabled variant="text" border="solid" radius="m" style={buttonStyle}>
+            border
+          </Button>
         </div>
         <div className="flex">
-          <Button disabled color="primary" radius="m" style={buttonStyle}>
+          <Button color="primary" disabled radius="m" style={buttonStyle}>
             primary
           </Button>
-          <Button disabled color="primary" variant="outline" radius="m" style={buttonStyle}>
-            outline
-          </Button>
-          <Button disabled color="primary" variant="fill" radius="m" style={buttonStyle}>
+          <Button color="primary" disabled variant="fill" radius="m" style={buttonStyle}>
             fill
           </Button>
-          <Button disabled color="primary" variant="text" radius="m" style={buttonStyle}>
+          <Button color="primary" disabled variant="text" radius="m" style={buttonStyle}>
             text
+          </Button>
+          <Button
+            color="primary"
+            disabled
+            variant="text"
+            border="solid"
+            radius="m"
+            style={buttonStyle}
+          >
+            border
           </Button>
         </div>
         <br />
 
         <Divider>Shape</Divider>
-        <div className="bg-body">
+        <div>
           <Button shape="round" color="primary" style={buttonStyle}>
             Round
           </Button>
@@ -154,7 +224,7 @@ export default () => {
         <br />
 
         <Divider>Size & radius</Divider>
-        <Button color="primary" size="xxs" radius="xxs" variant="outline" style={buttonStyle}>
+        <Button color="primary" size="xxs" radius="xxs" style={buttonStyle}>
           primary xxs
         </Button>
         <Button color="primary" size="xs" radius="xs" style={buttonStyle}>

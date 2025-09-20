@@ -15,6 +15,7 @@ const InputText = ({
   type,
   // SelectCombo combo({}) passive properties
   value,
+  onChange,
   displayValue,
   separator,
   // comboRef,
@@ -26,7 +27,8 @@ const InputText = ({
 
   return (
     <Input.Node
-      value={value}
+      // 不设置value，会导致allowClear失效
+      value={startDate || endDate ? '1' : ''}
       formatter={() => {
         return startDate || endDate ? (
           <div className="datepicker-rangecombo-dates">
@@ -39,6 +41,11 @@ const InputText = ({
         ) : null
       }}
       {...props}
+      onChange={(val) => {
+        if (!val) {
+          onChange && onChange(null)
+        }
+      }}
       // ref={comboRef}
     />
   )

@@ -2,7 +2,9 @@
 import React, { useEffect, useState } from 'react'
 import { Device, Bridge, Result, LocaleUtil } from 'lyrixi-design-mobile'
 
-// 项目内部模块导入
+// 公共组件导入
+
+// 内部组件导入
 import { queryTabs, querySlides, queryData } from './api'
 import Content from './Content'
 import Head from './Head'

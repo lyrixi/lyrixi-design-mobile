@@ -9,7 +9,12 @@ export default () => {
       <Layout.Main>
         <Card>
           <Divider>Group(Controlled component)</Divider>
-          <Button className="primary flex" style={{ margin: '12px' }} onClick={() => setValue(2)}>
+          <Button
+            className="flex"
+            color="primary"
+            style={{ margin: '12px' }}
+            onClick={() => setValue(2)}
+          >
             Open Third
           </Button>
           {/* Group only allow single item appear */}

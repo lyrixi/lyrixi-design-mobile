@@ -26,7 +26,7 @@ toc: content
 | 属性      | 说明       | 类型                                                                     | 默认值      |
 | --------- | ---------- | ------------------------------------------------------------------------ | ----------- |
 | color     | 按钮颜色   | `'default' \| 'primary' \| 'link' \| 'warning' \| 'danger' \| 'success'` | `'default'` |
-| variant   | 按钮变体   | `'default' \| 'outline' \| 'text' \| 'fill'`                             | `'default'` |
+| variant   | 按钮变体   | `'default' \| 'text' \| 'fill'`                                          | `'default'` |
 | size      | 按钮尺寸   | `'xxs' \| 'xs' \| 's' \| 'm' \| 'l' \| 'xl'`                             | -           |
 | radius    | 圆角大小   | `'xxs' \| 'xs' \| 's' \| 'm' \| 'l' \| 'xl'`                             | -           |
 | shape     | 按钮形状   | `'square' \| 'circle' \| 'round'`                                        | -           |

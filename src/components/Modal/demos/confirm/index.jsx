@@ -76,7 +76,7 @@ export default () => {
             'url(https://cdn.pixabay.com/photo/2014/12/16/08/32/cherry-blossoms-570046_1280.jpg)'
         }}
       >
-        <Button className="flex l primary" onClick={handleToggle}>
+        <Button className="flex" color="primary" size="l" onClick={handleToggle}>
           Modal visible toggle
         </Button>
       </Layout.Main>

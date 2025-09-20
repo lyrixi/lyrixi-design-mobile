@@ -29,7 +29,9 @@ export default () => {
             }
           ]}
         >
-          <Button className="flex primary">Click to show confirm</Button>
+          <Button className="flex" color="primary">
+            Click to show confirm
+          </Button>
         </Confirm.Combo>
       </Layout.Main>
     </Layout>

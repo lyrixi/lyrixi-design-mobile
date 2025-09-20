@@ -249,7 +249,7 @@ const Main = forwardRef(
     function getReloadButton() {
       if (reload === true) {
         return (
-          <Button className="primary result-button" onClick={() => loadData('retry')}>
+          <Button className="result-button" color="primary" onClick={() => loadData('retry')}>
             {LocaleUtil.locale('重试', 'SeedsUI_retry')}
           </Button>
         )

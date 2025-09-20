@@ -75,11 +75,11 @@ export default () => {
         修改标注颜色为蓝色
       </Button>
 
-      <Button className="flex primary" onClick={handleAll}>
+      <Button className="flex" color="primary" onClick={handleAll}>
         全部标注
       </Button>
 
-      <Button className="flex success" onClick={handle1}>
+      <Button className="flex" color="success" onClick={handle1}>
         标注清爽阳光玫瑰葡萄
       </Button>
 

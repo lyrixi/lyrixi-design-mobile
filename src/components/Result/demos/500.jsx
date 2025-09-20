@@ -7,7 +7,8 @@ export default () => {
       <Layout.Main>
         <Result className="full" status={'500'}>
           <Button
-            className="result-button primary"
+            className="result-button"
+            color="primary"
             style={{ marginTop: 77 }}
             onClick={() => {
               window.top.wq.invoke('loadRequest')

@@ -2,7 +2,9 @@ import React, { useRef } from 'react'
 // 第三方库导入
 import { LocaleUtil, Storage, Layout } from 'lyrixi-design-mobile'
 
-// 项目内部模块导入
+// 公共组件导入
+
+// 内部组件导入
 import { queryData } from './../Common/api'
 import Header from './../Common/Header'
 import Main from './../Common/Main'

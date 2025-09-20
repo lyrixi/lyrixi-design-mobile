@@ -8,7 +8,7 @@ export default () => {
     <>
       <Layout>
         <Layout.Main>
-          <Button className="flex primary" onClick={() => setVisible(true)}>
+          <Button className="flex" color="primary" onClick={() => setVisible(true)}>
             Click to show confirm
           </Button>
         </Layout.Main>

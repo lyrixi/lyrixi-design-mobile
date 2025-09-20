@@ -20,7 +20,9 @@ import {
   Signature
 } from 'lyrixi-design-mobile'
 
-// 项目内部模块导入
+// 公共组件导入
+
+// 内部组件导入
 import { cacheConfig, queryData, validateData, saveData } from './api'
 import Footer from './Footer'
 
@@ -86,10 +88,21 @@ const Edit = () => {
         }
       })
     }
+    // 重复请求
+    else if (result.code === '2') {
+      Toast.show({
+        content: result.message || locale('请勿重复提交!'),
+        onVisibleChange: (visible) => {
+          if (visible === false) {
+            // 提交完成后操作: 返回等
+          }
+        }
+      })
+    }
     // 保存出错
     else {
-      // 重复请求需要重新生成token
-      if (result.code === '2') tokenRef.current = '' + Date.now()
+      // 请求出错需要重新生成token
+      tokenRef.current = '' + Date.now()
 
       Toast.show({
         content: result.message || locale('提交失败!')

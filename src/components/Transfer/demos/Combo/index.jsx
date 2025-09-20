@@ -53,7 +53,9 @@ export default () => {
                     triggerOk()
                   }}
                 >
-                  <Button className="listpicker-footer-submit primary">确定</Button>
+                  <Button className="listpicker-footer-submit" color="primary">
+                    确定
+                  </Button>
                 </Layout.Footer>
               )
             },

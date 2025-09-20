@@ -174,7 +174,7 @@ export default () => {
         />
       </Layout.Main>
       <Layout.Footer>
-        <Button className="flex primary" onClick={handleAsyncUpload}>
+        <Button className="flex" color="primary" onClick={handleAsyncUpload}>
           Sync Upload
         </Button>
       </Layout.Footer>

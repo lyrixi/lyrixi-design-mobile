@@ -2,8 +2,9 @@
 import React, { useEffect, useState } from 'react'
 import _ from 'lodash'
 import { LocaleUtil, Toast, Divider, Layout, Result, Typography, Card } from 'lyrixi-design-mobile'
+// 公共组件导入
 
-// 项目内部模块导入
+// 内部组件导入
 import { queryData, approveData } from './api'
 import Footer from './Footer'
 
@@ -14,6 +15,9 @@ const { Item, Label, Main } = Typography.Form
 
 // 表单编辑页面
 const FormDetail = () => {
+  // 防重复提交token
+  const tokenRef = useRef('' + Date.now())
+
   // 全屏提示: { status: 'empty|500', message: '', data: {} }
   const [result, setResult] = useState(null)
 
@@ -34,7 +38,7 @@ const FormDetail = () => {
   // 保存
   async function handleApprove() {
     // 保存表单数据
-    let result = await approveData()
+    let result = await approveData({ token: tokenRef.current })
     if (result.code === '1') {
       Toast.show({
         content: locale('审批通过!'),
@@ -45,8 +49,22 @@ const FormDetail = () => {
         }
       })
     }
+    // 重复请求
+    else if (result.code === '2') {
+      Toast.show({
+        content: result.message || locale('请勿重复提交!'),
+        onVisibleChange: (visible) => {
+          if (visible === false) {
+            // 提交完成后操作: 返回等
+          }
+        }
+      })
+    }
     // 保存出错
     else {
+      // 请求出错需要重新生成token
+      tokenRef.current = '' + Date.now()
+
       Toast.show({
         content: result.message || locale('审批失败!')
       })

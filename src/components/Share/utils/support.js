@@ -14,7 +14,7 @@ function support(shareTo) {
   }
 
   // WeCom only support wecom
-  if (Bridge.platform === 'wework') {
+  if (Bridge.platform === 'wecom') {
     if (shareTo?.wecom) return true
     return false
   }

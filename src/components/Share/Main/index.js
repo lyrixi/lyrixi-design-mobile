@@ -34,7 +34,7 @@ function Main({ className, style, shareTo, ...props }, ref) {
     if (Bridge.platform === 'wechat') {
       return <WeChat {...props} shareTo={shareTo} />
     }
-    if (Bridge.platform === 'wework') {
+    if (Bridge.platform === 'wecom') {
       return <WeCom {...props} shareTo={shareTo} />
     }
     if (Bridge.platform === 'lark') {

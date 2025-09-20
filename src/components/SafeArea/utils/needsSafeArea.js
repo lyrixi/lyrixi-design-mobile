@@ -15,13 +15,13 @@ function needsSafeArea() {
   if (Device.platform === 'wechatMiniprogram' || Device.platform === 'alipayMiniprogram') {
     return true
   }
-  if (Device.platform === 'wework') {
+  if (Device.platform === 'wecom') {
     return true
   }
   // 钉钉会自动加安全区, 也会自己去掉安全区，所以只能根据分辨率判断
   // if (
   //   Device.os === 'ios' &&
-  //   (Device.platform === 'wechat' || Device.platform === 'wework' || Device.platform === 'dingtalk')
+  //   (Device.platform === 'wechat' || Device.platform === 'wecom' || Device.platform === 'dingtalk')
   // ) {
   //   // iPhoneX
   //   if (window.innerWidth === 375 && window.innerHeight === 724) {

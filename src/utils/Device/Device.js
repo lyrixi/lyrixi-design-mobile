@@ -45,7 +45,7 @@ let Device = (function () {
     // 微信小程序
     if (ua.indexOf('miniprogram') > -1 && ua.indexOf('micromessenger') > -1) {
       if (ua.indexOf('wxwork') > -1) {
-        platform = 'weworkMiniprogram'
+        platform = 'wecomMiniprogram'
         platformMatch = ua.match(/wxwork\/([\w.]*)/)
       } else if (ua.indexOf('micromessenger') > -1) {
         platform = 'wechatMiniprogram'
@@ -55,7 +55,7 @@ let Device = (function () {
     }
     // 企业微信
     else if (ua.indexOf('wxwork') > -1) {
-      platform = 'wework'
+      platform = 'wecom'
       platformMatch = ua.match(/wxwork\/([\w.]*)/)
       if (platformMatch && platformMatch[1]) platformVersion = platformMatch[1]
     }

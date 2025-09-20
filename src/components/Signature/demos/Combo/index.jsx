@@ -35,12 +35,12 @@ export default () => {
             if (
               Device.device === 'mobile' &&
               (Bridge.platform === 'wechat' ||
-                Bridge.platform === 'wework' ||
+                Bridge.platform === 'wecom' ||
                 Bridge.platform === 'alipay' ||
                 Bridge.platform === 'dingtalk' ||
                 Bridge.platform === 'lark' ||
                 Bridge.platform === 'wechatMiniprogram' ||
-                Bridge.platform === 'weworkMiniprogram' ||
+                Bridge.platform === 'wecomMiniprogram' ||
                 Bridge.platform === 'alipayMiniprogram')
             ) {
               return 'nativeImage'

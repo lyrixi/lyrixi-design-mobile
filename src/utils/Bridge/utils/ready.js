@@ -10,15 +10,15 @@ import { LocaleUtil, AssetUtil } from 'lyrixi-design-mobile'
 /**
  * 动态加载桥接库
  * @param {Func} callback 加载完成回调
- * @param {Object} options {wechatLibSrc: '', weworkLibSrc: '', wqCordovaSrc: '', wqSrc: '', fail: func({errMsg: ''})}
+ * @param {Object} options {wechatLibSrc: '', wecomLibSrc: '', wqCordovaSrc: '', wqSrc: '', fail: func({errMsg: ''})}
  */
 function ready(callback, options = {}, platform) {
   // 微信支付宝平台
   if (
     platform === 'wechat' ||
     platform === 'wechatMiniprogram' ||
-    platform === 'wework' ||
-    platform === 'weworkMiniprogram' ||
+    platform === 'wecom' ||
+    platform === 'wecomMiniprogram' ||
     platform === 'alipay' ||
     platform === 'alipayMiniprogram' ||
     platform === 'dingtalk' ||
@@ -38,10 +38,10 @@ function ready(callback, options = {}, platform) {
       script.src = options.wechatLibSrc || '//res.wx.qq.com/open/js/jweixin-1.6.0.js'
     } else if (platform === 'wechatMiniprogram') {
       script.src = options.wechatMiniprogramLibSrc || '//res.wx.qq.com/open/js/jweixin-1.6.0.js'
-    } else if (platform === 'wework') {
-      script.src = options.weworkLibSrc || '//res.wx.qq.com/wwopen/js/jsapi/jweixin-1.0.0.js'
-    } else if (platform === 'weworkMiniprogram') {
-      script.src = options.weworkMiniprogramLibSrc || '//res.wx.qq.com/open/js/jweixin-1.6.0.js'
+    } else if (platform === 'wecom') {
+      script.src = options.wecomLibSrc || '//res.wx.qq.com/wwopen/js/jsapi/jweixin-1.0.0.js'
+    } else if (platform === 'wecomMiniprogram') {
+      script.src = options.wecomMiniprogramLibSrc || '//res.wx.qq.com/open/js/jweixin-1.6.0.js'
     } else if (platform === 'alipay' || platform === 'alipayMiniprogram') {
       script.src =
         options.alipayLibSrc ||

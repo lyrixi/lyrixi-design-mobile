@@ -15,9 +15,9 @@ import { Device } from 'lyrixi-design-mobile'
 let Bridge = {}
 if (
   Device.platform === 'wechat' ||
-  Device.platform === 'wework' ||
+  Device.platform === 'wecom' ||
   Device.platform === 'wechatMiniprogram' ||
-  Device.platform === 'weworkMiniprogram'
+  Device.platform === 'wecomMiniprogram'
 ) {
   Bridge = BridgeWx
 } else if (Device.platform === 'alipay' || Device.platform === 'alipayMiniprogram') {

@@ -1,6 +1,5 @@
 import React, { forwardRef } from 'react'
 import Modal from './../Modal'
-import Footer from './Footer'
 
 // 内库使用-start
 import LocaleUtil from './../../../utils/LocaleUtil'
@@ -18,11 +17,8 @@ function FilterModal(
     // Modal fixed properties
     visible,
     onVisibleChange,
-    buttons,
     onCancel,
-    onOk,
-    onReset,
-    onConfig,
+    footer,
     children,
     ...props
   },
@@ -62,13 +58,10 @@ function FilterModal(
         </Layout.Header>
         <Layout.Main>{children}</Layout.Main>
         {/* 底部 */}
-        <Footer
-          onOk={onOk}
-          onReset={onReset}
-          onConfig={onConfig}
-          onVisibleChange={onVisibleChange}
-          buttons={buttons}
-        />
+        {footer && typeof footer === 'function'
+          ? footer({ close: () => onVisibleChange && onVisibleChange(false) })
+          : footer
+        }
       </Layout>
     </Modal>
   )

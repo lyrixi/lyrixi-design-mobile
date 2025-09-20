@@ -30,10 +30,7 @@ const Filter = forwardRef(
       modalClassName,
       modalStyle,
       onCancel,
-      onOk,
-      onReset,
-      onConfig,
-      buttons,
+      footer,
       onVisibleChange,
       children
     },
@@ -95,10 +92,7 @@ const Filter = forwardRef(
         {/* Modal */}
         <FilterModal
           onCancel={onCancel}
-          onOk={onOk}
-          onReset={onReset}
-          onConfig={onConfig}
-          buttons={buttons}
+          footer={footer}
           maskProps={{
             className: maskClassName,
             style: maskStyle

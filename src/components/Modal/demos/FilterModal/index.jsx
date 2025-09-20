@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { Layout, Modal } from 'lyrixi-design-mobile'
+import { Layout, Modal, FooterBar } from 'lyrixi-design-mobile'
 
 export default () => {
   const referenceRef = useRef(null)
@@ -18,12 +18,35 @@ export default () => {
         </div>
         <Modal.FilterModal
           visible={true}
-          onConfig={() => {
-            console.log('setting')
-          }}
-          onReset={() => {
-            console.log('reset')
-          }}
+          footer={({ close }) => (
+            <Layout.Footer>
+              <FooterBar>
+                <FooterBar.Tab
+                  icon="seeds-icon-config"
+                  name="设置"
+                  onClick={() => {
+                    console.log('setting')
+                  }}
+                />
+                <FooterBar.Button
+                  onClick={() => {
+                    console.log('reset')
+                  }}
+                >
+                  重置
+                </FooterBar.Button>
+                <FooterBar.Button
+                  className="primary"
+                  onClick={() => {
+                    console.log('confirm')
+                    close()
+                  }}
+                >
+                  确定
+                </FooterBar.Button>
+              </FooterBar>
+            </Layout.Footer>
+          )}
         >
           <div className="bg-white" style={{ height: '300px' }}>
             Test

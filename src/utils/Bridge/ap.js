@@ -5,6 +5,7 @@ import BridgeBase from './base'
 import back from './utils/back'
 import ready from './utils/ready'
 import coordToFit from './utils/coordToFit'
+import wrapCallback from './utils/wrapCallback'
 
 // 内库使用-start
 import GeoUtil from './../GeoUtil'
@@ -39,15 +40,16 @@ let Bridge = {
     let newParams = coordToFit(params)
     console.log('调用支付宝地图...', newParams)
 
-    window.top.ap.openLocation({
+    const wrappedParams = wrapCallback({
       latitude: newParams.latitude,
       longitude: newParams.longitude,
       name: newParams.name || '',
       address: newParams.address || '',
-      fail: (error) => {
-        console.log('Alipay openLocation fail:', error)
-      }
+      success: newParams.success,
+      fail: newParams.fail
     })
+
+    window.top.ap.openLocation(wrappedParams)
   },
   /**
    * 获取当前地理位置
@@ -62,48 +64,48 @@ let Bridge = {
 
     // 调用定位
     console.log('调用支付宝定位...', params)
-    window.top.ap.getLocation({
-      ...otherParams,
-      type: '2',
-      success: (res) => {
-        let latitude = res.latitude
-        let longitude = res.longitude
 
-        if (!longitude || !latitude) {
-          console.error('支付宝定位失败', res)
-          if (fail) {
-            fail({
-              errMsg: 'getLocation:fail'
-            })
+    // 自定义success处理，但要包装成标准格式
+    const customSuccess = success
+      ? function (res) {
+          let latitude = res.latitude
+          let longitude = res.longitude
+
+          if (!longitude || !latitude) {
+            console.error('支付宝定位失败', res)
+            if (fail) {
+              fail({
+                status: 'error',
+                message: LocaleUtil.locale('定位成功, 但没有经纬度')
+              })
+            }
+            return
           }
-          return
-        }
 
-        if (type === 'wgs84') {
-          const points = GeoUtil.coordtransform([longitude, latitude], 'gcj02', 'wgs84')
-          longitude = points[0]
-          latitude = points[1]
-        }
+          if (type === 'wgs84') {
+            const points = GeoUtil.coordtransform([longitude, latitude], 'gcj02', 'wgs84')
+            longitude = points[0]
+            latitude = points[1]
+          }
 
-        if (success) {
           success({
-            errMsg: 'getLocation:ok',
+            status: 'success',
             longitude: longitude,
             latitude: latitude,
             type: type || 'gcj02',
             accuracy: res.accuracy
           })
         }
-      },
-      fail: (err) => {
-        console.log('getLocation:fail', err)
-        if (fail) {
-          fail({
-            errMsg: 'getLocation:fail'
-          })
-        }
-      }
+      : undefined
+
+    const wrappedParams = wrapCallback({
+      ...otherParams,
+      type: '2',
+      success: customSuccess,
+      fail: fail
     })
+
+    window.top.ap.getLocation(wrappedParams)
   },
   /**
    * 扫码
@@ -122,20 +124,23 @@ let Bridge = {
       }
     }
 
-    window.top.ap.scan({
-      type: type,
-      success: function (res) {
-        success && success({ resultStr: res.code })
-      },
-      fail: function (res) {
-        if (fail) {
-          fail({
-            errCode: res.errorCode,
-            errMsg: res.errorMessage
+    // 自定义success处理，但要包装成标准格式
+    const customSuccess = success
+      ? function (res) {
+          success({
+            status: 'success',
+            resultStr: res.code
           })
         }
-      }
+      : undefined
+
+    const wrappedParams = wrapCallback({
+      type: type,
+      success: customSuccess,
+      fail: fail
     })
+
+    window.top.ap.scan(wrappedParams)
   },
   /**
    * 照片预览
@@ -152,10 +157,15 @@ let Bridge = {
       index = params?.urls?.indexOf?.(params?.current)
       if (index < 0) index = 0
     }
-    window.top.ap.previewImage({
+
+    const wrappedParams = wrapCallback({
       urls: params?.urls,
-      current: index
+      current: index,
+      success: params?.success,
+      fail: params?.fail
     })
+
+    window.top.ap.previewImage(wrappedParams)
   }
 }
 

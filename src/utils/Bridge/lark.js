@@ -6,6 +6,7 @@ import BridgeBase from './base'
 import back from './utils/back'
 import ready from './utils/ready'
 import coordToFit from './utils/coordToFit'
+import wrapCallback from './utils/wrapCallback'
 
 // 内库使用-start
 import GeoUtil from './../GeoUtil'
@@ -27,12 +28,9 @@ let Bridge = {
    * 定制功能
    */
   // 关闭窗口
-  closeWindow: function () {
-    window.top.tt.closeWindow({
-      fail: function (res) {
-        console.log(`closeWindow fail: `, res)
-      }
-    })
+  closeWindow: function (params) {
+    const wrappedParams = wrapCallback(params)
+    window.top.tt.closeWindow(wrappedParams)
   },
   // 返回监听
   onHistoryBack: function (params) {
@@ -52,16 +50,18 @@ let Bridge = {
     } else if (scale > 18) {
       scale = 18
     }
-    window.top.tt.openLocation({
+
+    const wrappedParams = wrapCallback({
       latitude: newParams.latitude,
       longitude: newParams.longitude,
       scale: scale,
       name: newParams.name,
       address: newParams.address,
-      fail: (error) => {
-        console.log('Lark openLocation fail:', error)
-      }
+      success: newParams.success,
+      fail: newParams.fail
     })
+
+    window.top.tt.openLocation(wrappedParams)
   },
   /**
    * 获取当前地理位置
@@ -75,52 +75,58 @@ let Bridge = {
     const { type, success, fail } = params || {}
     let targetType = type || 'gcj02'
     console.log('调用飞书定位...', params)
-    window.top.tt.getLocation({
-      // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
-      type: targetType,
-      success: (res) => {
-        if (!res.longitude || !res.latitude) {
-          console.error('飞书定位失败', res)
-          if (fail) {
-            fail({
-              errMsg: 'getLocation:fail'
-            })
+
+    // 自定义success处理，但要包装成标准格式
+    const customSuccess = success
+      ? function (res) {
+          if (!res.longitude || !res.latitude) {
+            console.error('飞书定位失败', res)
+            if (fail) {
+              fail({
+                status: 'error',
+                message: LocaleUtil.locale('定位成功, 但没有经纬度')
+              })
+            }
+            return
           }
-          return
-        }
 
-        let result = {
-          errMsg: 'getLocation:ok',
-          longitude: res.longitude,
-          latitude: res.latitude,
-          type: res.type,
-          accuracy: res.accuracy
-        }
-
-        // If result type not params type, transform result type to params type
-        if (res.type && res.type !== targetType) {
-          const points = GeoUtil.coordtransform([res.longitude, res.latitude], res.type, targetType)
-
-          result = {
+          let result = {
             errMsg: 'getLocation:ok',
-            longitude: points[0],
-            latitude: points[1],
-            type: targetType,
+            longitude: res.longitude,
+            latitude: res.latitude,
+            type: res.type,
             accuracy: res.accuracy
           }
-        }
 
-        if (success) success(result)
-      },
-      fail: (err) => {
-        console.log('getLocation:fail', err)
-        if (fail) {
-          fail({
-            errMsg: 'getLocation:fail'
-          })
+          // If result type not params type, transform result type to params type
+          if (res.type && res.type !== targetType) {
+            const points = GeoUtil.coordtransform(
+              [res.longitude, res.latitude],
+              res.type,
+              targetType
+            )
+
+            result = {
+              status: 'success',
+              longitude: points[0],
+              latitude: points[1],
+              type: targetType,
+              accuracy: res.accuracy
+            }
+          }
+
+          success(result)
         }
-      }
+      : undefined
+
+    const wrappedParams = wrapCallback({
+      // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+      type: targetType,
+      success: customSuccess,
+      fail: fail
     })
+
+    window.top.tt.getLocation(wrappedParams)
   },
   /**
    * 扫码
@@ -129,16 +135,15 @@ let Bridge = {
    */
   scanQRCode(params = {}) {
     const { scanType, success, fail } = params || {}
-    window.top.tt.scanCode({
+
+    const wrappedParams = wrapCallback({
       scanType: scanType,
       barCodeInput: true,
-      success: (res) => {
-        success && success(res)
-      },
-      fail: (res) => {
-        fail && fail(res)
-      }
+      success: success,
+      fail: fail
     })
+
+    window.top.tt.scanCode(wrappedParams)
   },
   /**
    * 照片预览
@@ -157,16 +162,14 @@ let Bridge = {
     }
     let current = params?.urls?.[index]
 
-    window.top.tt.previewImage({
+    const wrappedParams = wrapCallback({
       urls: params?.urls,
       current: current,
-      success: (res) => {
-        params?.success && params.success(res)
-      },
-      fail: (res) => {
-        params?.fail && params.fail(res)
-      }
+      success: params?.success,
+      fail: params?.fail
     })
+
+    window.top.tt.previewImage(wrappedParams)
   }
 }
 

@@ -5,6 +5,7 @@ import BridgeBase from './base'
 import back from './utils/back'
 import ready from './utils/ready'
 import coordToFit from './utils/coordToFit'
+import wrapCallback from './utils/wrapCallback'
 
 // 内库使用-start
 import LocaleUtil from './../LocaleUtil'
@@ -64,7 +65,7 @@ let Bridge = {
       Toast.show({
         content: errMsg
       })
-      params?.fail && params.fail({ errMsg: errMsg })
+      params?.fail && params.fail({ status: 'error', message: errMsg })
       return
     }
 
@@ -72,7 +73,8 @@ let Bridge = {
     let newParams = coordToFit(params)
     console.log('调用企业微信地图...', newParams)
 
-    window.top.wx.openLocation(newParams) // eslint-disable-line
+    const wrappedParams = wrapCallback(newParams)
+    window.top.wx.openLocation(wrappedParams) // eslint-disable-line
   },
   /**
    * 获取当前地理位置
@@ -92,7 +94,8 @@ let Bridge = {
     }
 
     console.log('调用微信定位...', params)
-    window.top.wx.getLocation(params)
+    const wrappedParams = wrapCallback(params)
+    window.top.wx.getLocation(wrappedParams)
   },
   /*
    * 扫描二维码并返回结果
@@ -113,58 +116,66 @@ let Bridge = {
     }
 
     const { needResult, scanType, desc, success, ...othersParams } = params || {}
-    window.top.wx.scanQRCode({
+
+    // 自定义success处理，但要包装成标准格式
+    const customSuccess = success ? function (res) {
+      let wxRes = res
+      // 如果没有设置prefix为false或者空,则清除前缀
+      if (!params.prefix) {
+        if (res.resultStr.indexOf('QR,') >= 0) {
+          wxRes.resultStr = res.resultStr.substring('QR,'.length)
+        } else if (res.resultStr.indexOf('EAN_13,') >= 0) {
+          wxRes.resultStr = res.resultStr.substring('EAN_13,'.length)
+        } else if (res.resultStr.indexOf('EAN_8,') >= 0) {
+          wxRes.resultStr = res.resultStr.substring('EAN_8,'.length)
+        } else if (res.resultStr.indexOf('AZTEC,') >= 0) {
+          wxRes.resultStr = res.resultStr.substring('AZTEC,'.length)
+        } else if (res.resultStr.indexOf('DATAMATRIX,') >= 0) {
+          wxRes.resultStr = res.resultStr.substring('DATAMATRIX,'.length)
+        } else if (res.resultStr.indexOf('UPCA,') >= 0) {
+          wxRes.resultStr = res.resultStr.substring('UPCA,'.length)
+        } else if (res.resultStr.indexOf('UPC_A,') >= 0) {
+          wxRes.resultStr = res.resultStr.substring('UPC_A,'.length)
+        } else if (res.resultStr.indexOf('UPCE,') >= 0) {
+          wxRes.resultStr = res.resultStr.substring('UPCE,'.length)
+        } else if (res.resultStr.indexOf('UPC_E,') >= 0) {
+          wxRes.resultStr = res.resultStr.substring('UPC_E,'.length)
+        } else if (res.resultStr.indexOf('CODABAR,') >= 0) {
+          wxRes.resultStr = res.resultStr.substring('CODABAR,'.length)
+        } else if (res.resultStr.indexOf('CODE_39,') >= 0) {
+          wxRes.resultStr = res.resultStr.substring('CODE_39,'.length)
+        } else if (res.resultStr.indexOf('CODE_93,') >= 0) {
+          wxRes.resultStr = res.resultStr.substring('CODE_93,'.length)
+        } else if (res.resultStr.indexOf('CODE_128,') >= 0) {
+          wxRes.resultStr = res.resultStr.substring('CODE_128,'.length)
+        } else if (res.resultStr.indexOf('ITF,') >= 0) {
+          wxRes.resultStr = res.resultStr.substring('ITF,'.length)
+        } else if (res.resultStr.indexOf('MAXICODE,') >= 0) {
+          wxRes.resultStr = res.resultStr.substring('MAXICODE,'.length)
+        } else if (res.resultStr.indexOf('PDF_417,') >= 0) {
+          wxRes.resultStr = res.resultStr.substring('PDF_417,'.length)
+        } else if (res.resultStr.indexOf('RSS_14,') >= 0) {
+          wxRes.resultStr = res.resultStr.substring('RSS_14,'.length)
+        } else if (res.resultStr.indexOf('RSSEXPANDED,') >= 0) {
+          wxRes.resultStr = res.resultStr.substring('RSSEXPANDED,'.length)
+        }
+      }
+      // 调用原始回调，传入标准格式
+      success({
+        status: 'success',
+        ...wxRes
+      })
+    } : undefined
+
+    const wrappedParams = wrapCallback({
       needResult: needResult || 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果
       scanType: scanType || ['qrCode', 'barCode'],
       desc: desc || '二维码／条码',
-      success: function (res) {
-        if (!success) return
-        let wxRes = res
-        // 如果没有设置prefix为false或者空,则清除前缀
-        if (!params.prefix) {
-          if (res.resultStr.indexOf('QR,') >= 0) {
-            wxRes.resultStr = res.resultStr.substring('QR,'.length)
-          } else if (res.resultStr.indexOf('EAN_13,') >= 0) {
-            wxRes.resultStr = res.resultStr.substring('EAN_13,'.length)
-          } else if (res.resultStr.indexOf('EAN_8,') >= 0) {
-            wxRes.resultStr = res.resultStr.substring('EAN_8,'.length)
-          } else if (res.resultStr.indexOf('AZTEC,') >= 0) {
-            wxRes.resultStr = res.resultStr.substring('AZTEC,'.length)
-          } else if (res.resultStr.indexOf('DATAMATRIX,') >= 0) {
-            wxRes.resultStr = res.resultStr.substring('DATAMATRIX,'.length)
-          } else if (res.resultStr.indexOf('UPCA,') >= 0) {
-            wxRes.resultStr = res.resultStr.substring('UPCA,'.length)
-          } else if (res.resultStr.indexOf('UPC_A,') >= 0) {
-            wxRes.resultStr = res.resultStr.substring('UPC_A,'.length)
-          } else if (res.resultStr.indexOf('UPCE,') >= 0) {
-            wxRes.resultStr = res.resultStr.substring('UPCE,'.length)
-          } else if (res.resultStr.indexOf('UPC_E,') >= 0) {
-            wxRes.resultStr = res.resultStr.substring('UPC_E,'.length)
-          } else if (res.resultStr.indexOf('CODABAR,') >= 0) {
-            wxRes.resultStr = res.resultStr.substring('CODABAR,'.length)
-          } else if (res.resultStr.indexOf('CODE_39,') >= 0) {
-            wxRes.resultStr = res.resultStr.substring('CODE_39,'.length)
-          } else if (res.resultStr.indexOf('CODE_93,') >= 0) {
-            wxRes.resultStr = res.resultStr.substring('CODE_93,'.length)
-          } else if (res.resultStr.indexOf('CODE_128,') >= 0) {
-            wxRes.resultStr = res.resultStr.substring('CODE_128,'.length)
-          } else if (res.resultStr.indexOf('ITF,') >= 0) {
-            wxRes.resultStr = res.resultStr.substring('ITF,'.length)
-          } else if (res.resultStr.indexOf('MAXICODE,') >= 0) {
-            wxRes.resultStr = res.resultStr.substring('MAXICODE,'.length)
-          } else if (res.resultStr.indexOf('PDF_417,') >= 0) {
-            wxRes.resultStr = res.resultStr.substring('PDF_417,'.length)
-          } else if (res.resultStr.indexOf('RSS_14,') >= 0) {
-            wxRes.resultStr = res.resultStr.substring('RSS_14,'.length)
-          } else if (res.resultStr.indexOf('RSSEXPANDED,') >= 0) {
-            wxRes.resultStr = res.resultStr.substring('RSSEXPANDED,'.length)
-          }
-        }
-        // 回调
-        success(wxRes)
-      },
+      success: customSuccess,
       ...othersParams
     })
+
+    window.top.wx.scanQRCode(wrappedParams)
   },
   chooseImage: function (params) {
     // 微信PC端不支持扫码
@@ -182,7 +193,8 @@ let Bridge = {
       return
     }
 
-    window.top.wx.chooseImage(params)
+    const wrappedParams = wrapCallback(params)
+    window.top.wx.chooseImage(wrappedParams)
   },
   uploadImage: function (params) {
     // 微信PC端不支持扫码
@@ -199,7 +211,8 @@ let Bridge = {
       params?.fail?.({ errCode: 'PC_NOT_IMPLENMENTED', errMsg: errMsg })
       return
     }
-    window.top.wx.uploadImage(params)
+    const wrappedParams = wrapCallback(params)
+    window.top.wx.uploadImage(wrappedParams)
   },
   previewImage: function (params) {
     // 微信PC端不支持扫码
@@ -214,7 +227,8 @@ let Bridge = {
       })
       return
     }
-    window.top.wx.previewImage(params)
+    const wrappedParams = wrapCallback(params)
+    window.top.wx.previewImage(wrappedParams)
   },
   /**
    * 文件操作: 预览文件
@@ -241,7 +255,8 @@ let Bridge = {
       return
     }
 
-    window.top.wx.previewFile(params)
+    const wrappedParams = wrapCallback(params)
+    window.top.wx.previewFile(wrappedParams)
   }
 }
 

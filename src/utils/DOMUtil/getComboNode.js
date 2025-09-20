@@ -11,9 +11,21 @@ import React from 'react'
  * @param {Object} params.style - 内联样式对象
  * @returns {React.ReactElement} 返回组合节点
  */
-const getComboNode = ({ comboRef, combo, comboChildren, onClick, id, className, style }) => {
+const getComboNode = ({
+  // 渲染combo
+  combo,
+  comboRef,
+  visible,
+  // 渲染comboChildren
+  comboChildren,
+  id,
+  className,
+  style,
+  // 公用事件
+  onClick
+}) => {
   if (typeof combo === 'function') {
-    return combo({ comboRef, onClick })
+    return combo({ comboRef, visible, onClick })
   }
 
   return (

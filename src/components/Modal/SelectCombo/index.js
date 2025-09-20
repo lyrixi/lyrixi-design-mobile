@@ -14,11 +14,12 @@ import ComboWrapper from './ComboWrapper'
 import Tags from './Tags'
 
 // 内库使用-start
+import DOMUtil from './../../../utils/DOMUtil'
 import ObjectUtil from './../../../utils/ObjectUtil'
 // 内库使用-end
 
 /* 测试使用-start
-import { ObjectUtil } from 'lyrixi-design-mobile'
+import { DOMUtil, ObjectUtil } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // Combo
@@ -26,6 +27,10 @@ const Combo = forwardRef(
   (
     {
       // Modal
+      portal,
+      maskClassName,
+      maskStyle,
+
       value,
       onBeforeChange,
       onBeforeChecked,
@@ -33,6 +38,12 @@ const Combo = forwardRef(
       modal: ModalNode,
       title,
       modalProps,
+
+      // ComboNew
+      comboNew,
+      comboChildren,
+      comboStyle,
+      comboClassName,
 
       // Combo
       displayValueFormatter,
@@ -161,6 +172,22 @@ const Combo = forwardRef(
     }
 
     function getComboNode() {
+      if (typeof comboNew === 'function' || comboChildren) {
+        return DOMUtil.getComboNode({
+          // 渲染combo
+          combo: comboNew,
+          comboRef,
+          visible,
+          // 渲染comboChildren
+          comboChildren,
+          style: comboStyle,
+          className: DOMUtil.classNames(visible ? 'expand' : '', comboClassName),
+          // 公用事件
+          onClick: handleInputClick
+        })
+      }
+
+      // 此方法废弃, comboNew将替换combo
       if (typeof combo === 'function') {
         return (
           <ComboWrapper {...props} onClick={handleInputClick} ref={comboRef}>
@@ -269,6 +296,11 @@ const Combo = forwardRef(
             allowClear={allowClear}
             multiple={multiple}
             title={title}
+            portal={portal}
+            maskProps={{
+              className: maskClassName,
+              style: maskStyle
+            }}
             {...modalProps}
             onVisibleChange={setVisible}
             visible={visible}

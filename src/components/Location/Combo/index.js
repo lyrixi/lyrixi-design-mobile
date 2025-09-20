@@ -191,7 +191,7 @@ const LocationCombo = forwardRef(
       }
       // 定位并获取地址
       else {
-        handleLocation()
+        handleLocation('autoLocation')
       }
     }
 
@@ -220,7 +220,7 @@ const LocationCombo = forwardRef(
 
       // 点击整行定位
       if (clickAction === 'location') {
-        handleLocation(e)
+        handleLocation('clickInput')
         return
       }
 
@@ -264,16 +264,14 @@ const LocationCombo = forwardRef(
     }
 
     // 定位, isAutoLocation表示初始化时自动定位
-    async function handleLocation(e) {
-      if (e) {
-        e.stopPropagation()
-      }
+    async function handleLocation(action) {
       // 定位中...
       locationStatus = '-1'
       setLocationStatus('-1')
 
       // 开始定位
       let newValue = await getLocation({
+        action: action,
         type: type
       })
 
@@ -326,7 +324,10 @@ const LocationCombo = forwardRef(
             className={`location-combo-icon location-combo-icon-location${
               locationStatus === '-1' ? ' active' : ''
             }`}
-            onClick={handleLocation}
+            onClick={(e) => {
+              e.stopPropagation()
+              handleLocation('clickIcon')
+            }}
           ></i>
         )
       }

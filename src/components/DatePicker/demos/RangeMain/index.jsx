@@ -36,7 +36,7 @@ export default () => {
           //   console.log(error)
           // }}
           onChange={(newValue, { rangeId }) => {
-            console.log('修改:', newValue, rangeId)
+            console.log('修改:', newValue)
             setValue(newValue)
             setRangeId(rangeId)
           }}

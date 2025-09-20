@@ -88,16 +88,20 @@ const Combo = forwardRef(
       <>
         {/* Combo */}
         {DOMUtil.getComboNode({
-          comboRef,
+          // 渲染combo
           combo,
+          comboRef,
+          visible,
+          // 渲染comboChildren
           comboChildren,
-          onClick: handleClick,
           style: comboStyle,
           className: DOMUtil.classNames(
             'modal-dropdown-combo',
             visible ? 'expand' : '',
             comboClassName
-          )
+          ),
+          // 公用事件
+          onClick: handleClick
         })}
 
         {/* Modal */}

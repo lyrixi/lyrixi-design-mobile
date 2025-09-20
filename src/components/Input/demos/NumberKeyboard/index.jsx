@@ -43,7 +43,7 @@ export default () => {
           <Input.NumberKeyboard
             placeholder="负数(无小数)"
             value={value}
-            precision={0}
+            inputMode="numeric"
             onChange={(val) => {
               console.log('得到的值:', val)
               setValue(val)
@@ -56,7 +56,7 @@ export default () => {
           <Input.NumberKeyboard
             placeholder="无负数, 无小数"
             value={value}
-            precision={0}
+            inputMode="numeric"
             min={0}
             onChange={(val) => {
               console.log('得到的值:', val)
@@ -73,6 +73,19 @@ export default () => {
             formatter={(currentValue) => {
               return currentValue ? MathUtil.thousands(currentValue) : ''
             }}
+            onChange={(val) => {
+              console.log('得到的值:', val)
+              setValue(val)
+            }}
+          />
+        </Card>
+
+        <Card style={{ marginTop: '20px' }}>
+          <Divider>纯数字（无小数点和负号）</Divider>
+          <Input.NumberKeyboard
+            placeholder="无确定按钮"
+            value={value}
+            inputMode="numeric"
             onChange={(val) => {
               console.log('得到的值:', val)
               setValue(val)

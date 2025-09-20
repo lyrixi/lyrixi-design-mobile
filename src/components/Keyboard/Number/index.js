@@ -20,7 +20,6 @@ import { LocaleUtil, DOMUtil, Layout, Icon } from 'lyrixi-design-mobile'
 const KeyboardNumber = forwardRef(
   (
     {
-      portal,
       // 值控制
       value = '',
       onChange,
@@ -62,7 +61,6 @@ const KeyboardNumber = forwardRef(
       if (open && onOpen) {
         onOpen()
       }
-      // eslint-disable-next-line
     }, [open, onOpen])
 
     // 处理数字按键点击
@@ -93,12 +91,12 @@ const KeyboardNumber = forwardRef(
 
     // 处理删除按键
     const handleDelete = () => {
-      let newValue = ''
-      if (value.length > 0) {
-        newValue = value.slice(0, -1)
-      }
-      if (onChange) {
-        onChange(newValue, { action: 'delete' })
+      const currentValue = value || ''
+      if (currentValue.length > 0) {
+        const newValue = currentValue.slice(0, -1)
+        if (onChange) {
+          onChange(newValue, { action: 'delete' })
+        }
       }
     }
 
@@ -110,6 +108,7 @@ const KeyboardNumber = forwardRef(
       if (onClose) {
         onClose()
       }
+      e.stopPropagation()
     }
 
     // 处理取消按钮
@@ -120,6 +119,7 @@ const KeyboardNumber = forwardRef(
       if (onClose) {
         onClose(false)
       }
+      e.stopPropagation()
     }
 
     // 处理遮罩点击
@@ -127,6 +127,11 @@ const KeyboardNumber = forwardRef(
       if (maskClosable) {
         handleCancel(e)
       }
+      e.stopPropagation()
+    }
+
+    // 处理键盘容器点击
+    const handleKeyboardClick = (e) => {
       e.stopPropagation()
     }
 
@@ -198,7 +203,7 @@ const KeyboardNumber = forwardRef(
             open ? 'active' : '',
             ok !== null ? 'seed-keyboard-has-ok' : ''
           )}
-          onClick={(e) => e.stopPropagation()}
+          onClick={handleKeyboardClick}
         >
           {/* 顶部操作栏 */}
           <Layout.Header>
@@ -262,7 +267,7 @@ const KeyboardNumber = forwardRef(
     )
 
     // 渲染到body
-    return createPortal(KeyboardNode, portal || document.getElementById('root') || document.body)
+    return createPortal(KeyboardNode, document.body)
   }
 )
 

@@ -14,28 +14,6 @@ const Storage = {
     }
     return localforage.getItem(key)
   },
-  // 获取所有key
-  getKeys: () => {
-    return localforage.keys()
-  },
-  // 获取所有的数据
-  getItems: () => {
-    return new Promise((resolve, reject) => {
-      localforage
-        .keys()
-        .then(async (keys) => {
-          const items = {}
-          for (let key of keys) {
-            const value = await localforage.getItem(key)
-            items[key] = value
-          }
-          resolve(items)
-        })
-        .catch(function (err) {
-          reject(err)
-        })
-    })
-  },
   // 将数据保存到离线仓库。
   setItem: (key, value) => {
     if (!key) {

@@ -7,47 +7,71 @@ title: Input
 toc: content
 ---
 
+# Input
+
 输入框组件，提供多种类型的输入控件。
 
-## Input.AutoFit
+## 何时使用
 
-基于 Input.Text
+- 需要用户输入文本、数字、密码等信息时
+- 需要表单验证和格式化时
+- 需要特殊输入控件（如评分、范围选择等）时
+
+## 示例
+
+### Input.AutoFit
+
 <code src="./demos/AutoFit/index.jsx"></code>
 
-## Input.Number
+### Input.Number
 
-基于 Input.Text
 <code src="./demos/Number/index.jsx"></code>
 
-## Input.NumberBox
+### Input.NumberBox
 
 <code src="./demos/NumberBox/index.jsx"></code>
 
-## Input.Password
+### Input.Password
 
-基于 Input.Text
 <code src="./demos/Password/index.jsx"></code>
 
-## Input.PasswordStrength
+### Input.PasswordStrength
 
 <code src="./demos/PasswordStrength/index.jsx"></code>
 
-## Input.Range
+### Input.Range
 
 <code src="./demos/Range/index.jsx"></code>
 
-## Input.Rate
+### Input.Rate
 
 <code src="./demos/Rate/index.jsx"></code>
 
-## Input.Tel
+### Input.Tel
 
-基于 Input.Text
 <code src="./demos/Tel/index.jsx"></code>
 
-## Input.Text
+### Input.Text
 
 <code src="./demos/Text/index.jsx"></code>
+
+### Input.Textarea
+
+<code src="./demos/Textarea/index.jsx"></code>
+
+### Input.Url
+
+<code src="./demos/Url/index.jsx"></code>
+
+### Input.Search
+
+<code src="./demos/Search/index.jsx"></code>
+
+### Input.NumberKeyboard
+
+<code src="./demos/NumberKeyboard/index.jsx"></code>
+
+## Input.Text
 
 ### 属性
 
@@ -96,37 +120,3 @@ toc: content
 | inputDOM    | 输入框元素     | `HtmlInputElement`       |
 | getRootDOM  | 获取根元素     | () => `HtmlDivElement`   |
 | getInputDOM | 获取输入框元素 | () => `HtmlInputElement` |
-
-## Input.Textarea
-
-基于 Input.Text
-
-<code src="./demos/Textarea/index.jsx"></code>
-
-## Input.Url
-
-基于 Input.Text
-
-<code src="./demos/Url/index.jsx"></code>
-
-## Input.Search
-
-基于 Input.Text
-
-<code src="./demos/Search/index.jsx"></code>
-
-## Input.NumberKeyboard
-
-<code src="./demos/NumberKeyboard/index.jsx"></code>
-
-## Input.OTP
-
-### 功能说明
-
-• 自动跳转到下一个输入框
-• 支持退格键删除和跳转
-• 支持粘贴功能
-• 输入完成时触发 onComplete 回调
-• 支持 disabled 和 readOnly 状态
-
-<code src="./demos/OTP/index.jsx"></code>

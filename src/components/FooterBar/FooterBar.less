@@ -1,11 +1,17 @@
 .footerbar {
   display: flex;
   gap: 10px;
+  padding: 8px 12px;
 
   background-color: white;
   .border-t;
   // 统一文字行高, 解决文字垂直对齐的问题
   line-height: 1;
+}
+
+.footerbar-button {
+  flex: 1;
+  padding: 0;
 }
 
 // Compatiable old models. Don't use gap
@@ -19,97 +25,30 @@
   }
 }
 
-// 公共样式
+// Tab
+.footerbar-tab {
+  height: 40px;
+  text-align: center;
+  padding: 0 12px;
+  color: var(--seed-font-color-secondary);
+  &.disabled {
+    pointer-events: none;
+    color: var(--seed-font-color-disabled);
+  }
+}
 .footerbar-tab-icon {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
 }
-
-// 有边框按钮
-.footerbar-default {
-  padding: 8px 12px;
-  .footerbar-tab {
-    height: 40px;
-    text-align: center;
-    padding: 0 12px;
-    color: #5d646c;
-  }
-  .footerbar-tab-icon {
-    font-size: 16px;
-    width: 16px;
-    height: 16px;
-  }
-  .footerbar-tab-name {
-    font-size: var(--seed-font-size-s);
-    margin-top: 4px;
-  }
-  .footerbar-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    border-radius: 8px;
-    height: 40px;
-    border: 0;
-    font-size: var(--seed-font-size-xl);
-  }
-  .footerbar-button.default {
-    background: var(--seed-bg-default);
-  }
-  .footerbar-button.primary {
-    color: white;
-    background: var(--seed-primary);
-  }
+.footerbar-tab-name {
+  font-size: var(--seed-font-size-s);
+  margin-top: 4px;
 }
-
-// 纯文字按钮
-.footerbar-text {
-  height: 50px;
-  color: #5d646c;
-
-  .footerbar-tab-icon {
-    font-size: 22px;
-    width: 22px;
-    height: 22px;
-  }
-
-  .footerbar-tab,
-  .footerbar-button {
-    display: flex;
-    height: 100%;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .footerbar-button.primary {
-    color: var(--seed-primary);
-  }
-}
-
 .footerbar-tab-icon-more {
   font-family: 'seeds-icons';
   &:extend(.seeds-icon-three-dots all);
-}
-
-// Disabled
-.footerbar-button.default {
-  &.disabled {
-    pointer-events: none;
-    color: var(--seed-font-color-disabled);
-  }
-}
-
-.footerbar-button.primary {
-  &.disabled {
-    pointer-events: none;
-    opacity: 0.3;
-  }
-}
-.footerbar-tab {
-  &.disabled {
-    pointer-events: none;
-    color: var(--seed-font-color-disabled);
-  }
 }

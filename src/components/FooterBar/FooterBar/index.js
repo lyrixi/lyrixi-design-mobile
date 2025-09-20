@@ -1,5 +1,4 @@
 import React, { useImperativeHandle, forwardRef, useRef } from 'react'
-import Buttons from './../Buttons'
 
 // 内库使用-start
 import DOMUtil from './../../../utils/DOMUtil'
@@ -13,7 +12,6 @@ const Footer = forwardRef(
   (
     {
       type, // default: 默认; text: 文本;
-      buttons,
       children,
       ...props
     },
@@ -39,7 +37,6 @@ const Footer = forwardRef(
         ref={rootRef}
       >
         {children}
-        {buttons && <Buttons buttons={buttons} />}
       </footer>
     )
   }

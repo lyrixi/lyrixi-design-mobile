@@ -26,19 +26,14 @@ toc: content
 
 <code src="./demos/FooterBar.jsx"></code>
 
-### FooterBar buttons
-
-<code src="./demos/FooterButtons.jsx"></code>
-
 ## FooterBar
 
 ### 属性
 
-| 属性     | 说明     | 类型                  | 默认值      |
-| -------- | -------- | --------------------- | ----------- |
-| type     | 类型     | `'default' \| 'text'` | `'default'` |
-| buttons  | 按钮配置 | `array`               | -           |
-| children | 子元素   | `ReactNode`           | -           |
+| 属性     | 说明   | 类型                  | 默认值      |
+| -------- | ------ | --------------------- | ----------- |
+| type     | 类型   | `'default' \| 'text'` | `'default'` |
+| children | 子元素 | `ReactNode`           | -           |
 
 ### Ref
 

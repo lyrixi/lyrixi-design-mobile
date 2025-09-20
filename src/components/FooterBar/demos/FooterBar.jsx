@@ -142,7 +142,8 @@ export default () => {
             Cancel
           </FooterBar.Button>
           <FooterBar.Button
-            className="primary"
+            color="primary"
+            variant=""
             onClick={(e) => {
               console.log(e)
             }}
@@ -191,7 +192,8 @@ export default () => {
           </FooterBar.Button>
           <FooterBar.Button
             disabled
-            className="primary"
+            color="primary"
+            variant=""
             onClick={(e) => {
               console.log(e)
             }}

@@ -1,9 +1,9 @@
 import React, { forwardRef } from 'react'
+import MoreWrapper from './../MoreWrapper'
 
 // 内库使用-start
 import Icon from './../../Icon'
 import DOMUtil from './../../../utils/DOMUtil'
-import MoreWrapper from './../MoreWrapper'
 // 内库使用-end
 
 /* 测试使用-start

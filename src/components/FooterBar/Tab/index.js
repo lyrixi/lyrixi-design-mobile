@@ -1,8 +1,8 @@
 import React from 'react'
+import MoreWrapper from './../MoreWrapper'
 
 // 内库使用-start
 import DOMUtil from './../../../utils/DOMUtil'
-import MoreWrapper from './../MoreWrapper'
 // 内库使用-end
 
 /* 测试使用-start
@@ -17,11 +17,7 @@ export default function FooterBarTab({ disabled, name, icon, more, onClick, ...p
   const tab = (
     <div
       {...props}
-      className={DOMUtil.classNames(
-        'footerbar-tab',
-        props?.className,
-        disabled ? 'disabled' : ''
-      )}
+      className={DOMUtil.classNames('footerbar-tab', props?.className, disabled ? 'disabled' : '')}
     >
       <span className={`footerbar-tab-icon`}>
         {DOMUtil.getIconNode(icon || defaultIcon, { name, ...props })}

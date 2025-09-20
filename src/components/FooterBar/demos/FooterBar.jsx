@@ -6,9 +6,9 @@ export default () => {
     <Layout safeArea className="full">
       <Layout.Main>
         <Divider>Text Button</Divider>
-        <FooterBar type="text">
-          <FooterBar.Tab
-            name=""
+        <FooterBar>
+          <FooterBar.Icon
+            className="seeds-icon-three-dots"
             more={[
               {
                 id: 'option1',
@@ -26,15 +26,17 @@ export default () => {
               }
             ]}
           />
-          <FooterBar.Tab
-            icon={<Icon className="seeds-icon-config"></Icon>}
+          <FooterBar.Icon
+            className="seeds-icon-config"
             onClick={(e) => {
               console.log(e)
             }}
           />
 
           <FooterBar.Button
-            className="primary"
+            color="primary"
+            variant="text"
+            size="s"
             onClick={(e) => {
               console.log(e)
             }}
@@ -42,6 +44,8 @@ export default () => {
             Ok
           </FooterBar.Button>
           <FooterBar.Button
+            variant="text"
+            size="s"
             onClick={(e) => {
               console.log(e)
             }}
@@ -51,11 +55,12 @@ export default () => {
         </FooterBar>
 
         <Divider>Text Button disabled</Divider>
-        <FooterBar type="text">
-          <FooterBar.Tab
+        <FooterBar>
+          <FooterBar.Icon
+            disabled
+            className="seeds-icon-three-dots"
             more={[
               {
-                disabled: true,
                 id: 'option1',
                 name: 'Option 1',
                 onClick: (e) => {
@@ -71,35 +76,18 @@ export default () => {
               }
             ]}
           />
-          <FooterBar.Tab
+          <FooterBar.Icon
             disabled
-            icon={<Icon className="seeds-icon-config"></Icon>}
+            className="seeds-icon-config"
             onClick={(e) => {
               console.log(e)
             }}
           />
-          <FooterBar.Tab
-            disabled
-            more={[
-              {
-                id: 'option1',
-                name: 'Option 1',
-                onClick: (e) => {
-                  console.log(e)
-                }
-              },
-              {
-                id: 'option2',
-                name: 'Option 2',
-                onClick: (e) => {
-                  console.log(e)
-                }
-              }
-            ]}
-          />
           <FooterBar.Button
             disabled
-            className="primary"
+            color="primary"
+            variant="text"
+            size="s"
             onClick={(e) => {
               console.log(e)
             }}
@@ -108,6 +96,8 @@ export default () => {
           </FooterBar.Button>
           <FooterBar.Button
             disabled
+            variant="text"
+            size="s"
             onClick={(e) => {
               console.log(e)
             }}

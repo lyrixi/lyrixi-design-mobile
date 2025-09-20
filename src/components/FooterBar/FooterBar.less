@@ -1,5 +1,6 @@
 .footerbar {
   display: flex;
+  align-items: center;
   gap: 10px;
   padding: 8px 12px;
 
@@ -11,7 +12,13 @@
 
 .footerbar-button {
   flex: 1;
-  padding: 0;
+  padding: 0 !important;
+}
+
+.footerbar-icon {
+  color: var(--seed-font-color-secondary);
+  text-align: center;
+  flex: 1;
 }
 
 // Compatiable old models. Don't use gap

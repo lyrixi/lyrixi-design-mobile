@@ -65,7 +65,7 @@ let Bridge = {
       Toast.show({
         content: errMsg
       })
-      params?.fail && params.fail({ status: 'error', message: errMsg })
+      params?.onError && params.onError({ status: 'error', message: errMsg })
       return
     }
 
@@ -115,63 +115,65 @@ let Bridge = {
       return
     }
 
-    const { needResult, scanType, desc, success, ...othersParams } = params || {}
+    const { needResult, scanType, desc, onSuccess, ...othersParams } = params || {}
 
     // 自定义success处理，但要包装成标准格式
-    const customSuccess = success ? function (res) {
-      let wxRes = res
-      // 如果没有设置prefix为false或者空,则清除前缀
-      if (!params.prefix) {
-        if (res.resultStr.indexOf('QR,') >= 0) {
-          wxRes.resultStr = res.resultStr.substring('QR,'.length)
-        } else if (res.resultStr.indexOf('EAN_13,') >= 0) {
-          wxRes.resultStr = res.resultStr.substring('EAN_13,'.length)
-        } else if (res.resultStr.indexOf('EAN_8,') >= 0) {
-          wxRes.resultStr = res.resultStr.substring('EAN_8,'.length)
-        } else if (res.resultStr.indexOf('AZTEC,') >= 0) {
-          wxRes.resultStr = res.resultStr.substring('AZTEC,'.length)
-        } else if (res.resultStr.indexOf('DATAMATRIX,') >= 0) {
-          wxRes.resultStr = res.resultStr.substring('DATAMATRIX,'.length)
-        } else if (res.resultStr.indexOf('UPCA,') >= 0) {
-          wxRes.resultStr = res.resultStr.substring('UPCA,'.length)
-        } else if (res.resultStr.indexOf('UPC_A,') >= 0) {
-          wxRes.resultStr = res.resultStr.substring('UPC_A,'.length)
-        } else if (res.resultStr.indexOf('UPCE,') >= 0) {
-          wxRes.resultStr = res.resultStr.substring('UPCE,'.length)
-        } else if (res.resultStr.indexOf('UPC_E,') >= 0) {
-          wxRes.resultStr = res.resultStr.substring('UPC_E,'.length)
-        } else if (res.resultStr.indexOf('CODABAR,') >= 0) {
-          wxRes.resultStr = res.resultStr.substring('CODABAR,'.length)
-        } else if (res.resultStr.indexOf('CODE_39,') >= 0) {
-          wxRes.resultStr = res.resultStr.substring('CODE_39,'.length)
-        } else if (res.resultStr.indexOf('CODE_93,') >= 0) {
-          wxRes.resultStr = res.resultStr.substring('CODE_93,'.length)
-        } else if (res.resultStr.indexOf('CODE_128,') >= 0) {
-          wxRes.resultStr = res.resultStr.substring('CODE_128,'.length)
-        } else if (res.resultStr.indexOf('ITF,') >= 0) {
-          wxRes.resultStr = res.resultStr.substring('ITF,'.length)
-        } else if (res.resultStr.indexOf('MAXICODE,') >= 0) {
-          wxRes.resultStr = res.resultStr.substring('MAXICODE,'.length)
-        } else if (res.resultStr.indexOf('PDF_417,') >= 0) {
-          wxRes.resultStr = res.resultStr.substring('PDF_417,'.length)
-        } else if (res.resultStr.indexOf('RSS_14,') >= 0) {
-          wxRes.resultStr = res.resultStr.substring('RSS_14,'.length)
-        } else if (res.resultStr.indexOf('RSSEXPANDED,') >= 0) {
-          wxRes.resultStr = res.resultStr.substring('RSSEXPANDED,'.length)
+    const customSuccess = onSuccess
+      ? function (res) {
+          let wxRes = res
+          // 如果没有设置prefix为false或者空,则清除前缀
+          if (!params.prefix) {
+            if (res.resultStr.indexOf('QR,') >= 0) {
+              wxRes.resultStr = res.resultStr.substring('QR,'.length)
+            } else if (res.resultStr.indexOf('EAN_13,') >= 0) {
+              wxRes.resultStr = res.resultStr.substring('EAN_13,'.length)
+            } else if (res.resultStr.indexOf('EAN_8,') >= 0) {
+              wxRes.resultStr = res.resultStr.substring('EAN_8,'.length)
+            } else if (res.resultStr.indexOf('AZTEC,') >= 0) {
+              wxRes.resultStr = res.resultStr.substring('AZTEC,'.length)
+            } else if (res.resultStr.indexOf('DATAMATRIX,') >= 0) {
+              wxRes.resultStr = res.resultStr.substring('DATAMATRIX,'.length)
+            } else if (res.resultStr.indexOf('UPCA,') >= 0) {
+              wxRes.resultStr = res.resultStr.substring('UPCA,'.length)
+            } else if (res.resultStr.indexOf('UPC_A,') >= 0) {
+              wxRes.resultStr = res.resultStr.substring('UPC_A,'.length)
+            } else if (res.resultStr.indexOf('UPCE,') >= 0) {
+              wxRes.resultStr = res.resultStr.substring('UPCE,'.length)
+            } else if (res.resultStr.indexOf('UPC_E,') >= 0) {
+              wxRes.resultStr = res.resultStr.substring('UPC_E,'.length)
+            } else if (res.resultStr.indexOf('CODABAR,') >= 0) {
+              wxRes.resultStr = res.resultStr.substring('CODABAR,'.length)
+            } else if (res.resultStr.indexOf('CODE_39,') >= 0) {
+              wxRes.resultStr = res.resultStr.substring('CODE_39,'.length)
+            } else if (res.resultStr.indexOf('CODE_93,') >= 0) {
+              wxRes.resultStr = res.resultStr.substring('CODE_93,'.length)
+            } else if (res.resultStr.indexOf('CODE_128,') >= 0) {
+              wxRes.resultStr = res.resultStr.substring('CODE_128,'.length)
+            } else if (res.resultStr.indexOf('ITF,') >= 0) {
+              wxRes.resultStr = res.resultStr.substring('ITF,'.length)
+            } else if (res.resultStr.indexOf('MAXICODE,') >= 0) {
+              wxRes.resultStr = res.resultStr.substring('MAXICODE,'.length)
+            } else if (res.resultStr.indexOf('PDF_417,') >= 0) {
+              wxRes.resultStr = res.resultStr.substring('PDF_417,'.length)
+            } else if (res.resultStr.indexOf('RSS_14,') >= 0) {
+              wxRes.resultStr = res.resultStr.substring('RSS_14,'.length)
+            } else if (res.resultStr.indexOf('RSSEXPANDED,') >= 0) {
+              wxRes.resultStr = res.resultStr.substring('RSSEXPANDED,'.length)
+            }
+          }
+          // 调用原始回调，传入标准格式
+          onSuccess({
+            status: 'success',
+            ...wxRes
+          })
         }
-      }
-      // 调用原始回调，传入标准格式
-      success({
-        status: 'success',
-        ...wxRes
-      })
-    } : undefined
+      : undefined
 
     const wrappedParams = wrapCallback({
       needResult: needResult || 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果
       scanType: scanType || ['qrCode', 'barCode'],
       desc: desc || '二维码／条码',
-      success: customSuccess,
+      onSuccess: customSuccess,
       ...othersParams
     })
 
@@ -189,7 +191,7 @@ let Bridge = {
       Toast.show({
         content: errMsg
       })
-      params?.fail?.({ errCode: 'PC_NOT_IMPLENMENTED', errMsg: errMsg })
+      params?.onError?.({ status: 'PC_NOT_IMPLENMENTED', message: errMsg })
       return
     }
 
@@ -208,7 +210,7 @@ let Bridge = {
       Toast.show({
         content: errMsg
       })
-      params?.fail?.({ errCode: 'PC_NOT_IMPLENMENTED', errMsg: errMsg })
+      params?.onError?.({ status: 'PC_NOT_IMPLENMENTED', message: errMsg })
       return
     }
     const wrappedParams = wrapCallback(params)
@@ -251,7 +253,7 @@ let Bridge = {
       Toast.show({
         content: errMsg
       })
-      params?.fail && params.fail({ errMsg: errMsg })
+      params?.onError && params.onError({ errMsg: errMsg })
       return
     }
 

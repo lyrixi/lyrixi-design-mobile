@@ -77,8 +77,8 @@ let Bridge = {
           'scanQRCode'
         ])
       })
-      if (params.fail)
-        params.fail({
+      if (params.onError)
+        params.onError({
           errMsg: `scanQRCode:${LocaleUtil.locale(
             '扫码失败',
             'SeedsUI_scanCode_failed'
@@ -87,7 +87,7 @@ let Bridge = {
       return
     }
     setTimeout(function () {
-      if (params.success) params.success({ resultStr: '504823170310092750280333' })
+      if (params.onSuccess) params.onSuccess({ resultStr: '504823170310092750280333' })
     }, 500)
   },
   // 视频文件上传

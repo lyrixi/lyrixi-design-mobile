@@ -236,13 +236,13 @@ export default () => {
             onClick={() => {
               Bridge.scanQRCode({
                 scanType: ['barCode'],
-                success: (res) => {
+                onSuccess: (res) => {
                   console.log(res)
                   alert(JSON.stringify(res))
                 },
-                fail: (err) => {
-                  console.log(err)
-                  alert(JSON.stringify(err))
+                onError: (error) => {
+                  console.log(error)
+                  alert(JSON.stringify(error))
                 }
               })
             }}
@@ -262,16 +262,16 @@ export default () => {
               Bridge.chooseImage({
                 sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
                 sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-                success: (res) => {
+                onSuccess: (res) => {
                   console.log(res)
                   alert(JSON.stringify(res))
                   imageLocalIds.current = res?.localIds
                 },
-                fail: (res) => {
-                  console.log(res)
-                  alert(JSON.stringify(res))
+                onError: (error) => {
+                  console.log(error)
+                  alert(JSON.stringify(error))
                 },
-                cancel: (res) => {
+                onCancel: (res) => {
                   console.log(res)
                   alert(JSON.stringify(res))
                 }
@@ -301,24 +301,21 @@ export default () => {
                 localId: imageLocalIds.current[0],
                 isShowProgressTips: 0,
                 uploadDir: 'test',
-                success: function (res) {
+                onSuccess: function (res) {
                   console.log(res)
                   alert(JSON.stringify(res))
                   Loading.hide()
                 },
-                fail: function (res) {
+                onError: function (error) {
+                  console.log(error)
+                  alert(JSON.stringify(error))
+                  Loading.hide()
+                },
+                onCancel: function (res) {
                   console.log(res)
                   alert(JSON.stringify(res))
                   Loading.hide()
                 },
-                cancel: function (res) {
-                  console.log(res)
-                  alert(JSON.stringify(res))
-                  Loading.hide()
-                },
-                complete: function () {
-                  Loading.hide()
-                }
               })
             }}
           >
@@ -401,15 +398,15 @@ export default () => {
               })
               Bridge.getLocation({
                 type: 'gcj02',
-                success: (res) => {
+                onSuccess: (res) => {
                   Loading.hide()
                   console.log(res)
                   alert(JSON.stringify(res))
                 },
-                fail: (res) => {
+                onError: (error) => {
                   Loading.hide()
-                  console.log(res)
-                  alert(JSON.stringify(res))
+                  console.log(error)
+                  alert(JSON.stringify(error))
                 }
               })
             }}
@@ -427,15 +424,15 @@ export default () => {
               })
               Bridge.getLocation({
                 type: 'wgs84',
-                success: (res) => {
+                onSuccess: (res) => {
                   Loading.hide()
                   console.log(res)
                   alert(JSON.stringify(res))
                 },
-                fail: (res) => {
+                onError: (error) => {
                   Loading.hide()
-                  console.log(res)
-                  alert(JSON.stringify(res))
+                  console.log(error)
+                  alert(JSON.stringify(error))
                 }
               })
             }}

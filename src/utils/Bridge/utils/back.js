@@ -12,7 +12,7 @@ import { Device, Modal, LocaleUtil } from 'lyrixi-design-mobile'
 
 // 客户端默认返回控制
 async function back(backLvl, options, Bridge) {
-  const { success, fail } = options || {}
+  const { onSuccess, onError } = options || {}
   // 返回操作对象与返回层级
   let _backLvl = backLvl || -1
 
@@ -25,21 +25,20 @@ async function back(backLvl, options, Bridge) {
   }
 
   let isFromApp = Device.getUrlParameter('isFromApp') || ''
-  // 如果已经有h5返回监听, 优先执行h5返回监听
-  if (window.onHistoryBacks || window.onHistoryBack) {
-    console.log('back:window.onHistoryBack')
-    fail && fail()
-    return false
-  }
+
   // 自定义返回
-  else if (typeof window.onMonitorBack === 'function') {
+  if (typeof window.onMonitorBack === 'function') {
     console.log('back:window.onMonitorBack自定义返回')
     let monitor = await window.onMonitorBack()
     let isBack = monitor || false
     if (isBack) {
-      success && success()
+      onSuccess && onSuccess()
     } else {
-      fail && fail()
+      onError &&
+        onError({
+          status: 'error',
+          message: 'back:window.onMonitorBack'
+        })
     }
     return isBack
   }
@@ -52,7 +51,7 @@ async function back(backLvl, options, Bridge) {
     } catch (error) {
       console.log(error)
     }
-    success && success()
+    onSuccess && onSuccess()
     return true
   }
   // 返回首页
@@ -63,7 +62,7 @@ async function back(backLvl, options, Bridge) {
     } catch (error) {
       console.log(error)
     }
-    success && success()
+    onSuccess && onSuccess()
     return true
   }
   // 提示后，关闭返回，或者历史返回
@@ -96,11 +95,11 @@ async function back(backLvl, options, Bridge) {
           console.log('back:confirm, history')
           window.history.go(_backLvl)
         }
-        success && success()
+        onSuccess && onSuccess()
         return true
       },
       onCancel: () => {
-        fail && fail()
+        onError && onError()
         return true
       }
     })
@@ -108,7 +107,7 @@ async function back(backLvl, options, Bridge) {
   // 返回上一页
   else {
     window.history.go(_backLvl)
-    success && success()
+    onSuccess && onSuccess()
     return true
   }
 }

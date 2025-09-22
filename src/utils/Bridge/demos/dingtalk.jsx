@@ -24,7 +24,7 @@ export default () => {
   count: 5,
   sizeType: ['compressed'],
   sourceType: ['album', 'camera'],
-  success: async (res) => {
+  onSuccess: async (res) => {
     // Difference is result => res.localFiles
   }
 })`}
@@ -52,10 +52,10 @@ export default () => {
     uploadPath: formatUploadDir(uploadDir),
     // other formData
   },
-  success: function (result) {
+  onSuccess: function (result) {
     // Own server return result
   },
-  fail: function (error) {
+  onError: function (error) {
     // error
   }
 })`}

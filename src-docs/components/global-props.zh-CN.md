@@ -28,8 +28,12 @@ toc: content
 
 ## 全局事件
 
-| 方法名   | 说明         | 出参                                  | 默认值 |
-| -------- | ------------ | ------------------------------------- | ------ |
-| onChange | 修改         | [{id:'', name: ''}]/{id:'', name: ''} | Empty  |
-| onClose  | 点击关闭事件 | Empty                                 | Empty  |
-| onOpen   | 点击打开事件 | Empty                                 | Empty  |
+| 方法名    | 说明         | 出参                                  | 默认值 |
+| --------- | ------------ | ------------------------------------- | ------ |
+| onChange  | 修改         | [{id:'', name: ''}]/{id:'', name: ''} | Empty  |
+| onClose   | 点击关闭事件 | Empty                                 | Empty  |
+| onOpen    | 点击打开事件 | Empty                                 | Empty  |
+| onError   | 错误事件     | {status: '', message: ''}             | Empty  |
+| onSuccess | 成功事件     | result                                | Empty  |
+| onLoad    | 加载事件     | result                                | Empty  |
+| onCancel  | 取消事件     | Empty                                 | Empty  |

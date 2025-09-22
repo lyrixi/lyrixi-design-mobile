@@ -45,8 +45,7 @@ let Bridge = {
       longitude: newParams.longitude,
       name: newParams.name || '',
       address: newParams.address || '',
-      success: newParams.success,
-      fail: newParams.fail
+      ...newParams
     })
 
     window.top.ap.openLocation(wrappedParams)
@@ -60,21 +59,21 @@ let Bridge = {
    * @returns {Object} {latitude: '纬度', longitude: '经度', speed:'速度', accuracy:'位置精度'}
    */
   getLocation: function (params = {}) {
-    const { type, success, fail, complete, ...otherParams } = params || {}
+    const { type, onSuccess, onError, ...otherParams } = params || {}
 
     // 调用定位
     console.log('调用支付宝定位...', params)
 
     // 自定义success处理，但要包装成标准格式
-    const customSuccess = success
+    const customSuccess = onSuccess
       ? function (res) {
           let latitude = res.latitude
           let longitude = res.longitude
 
           if (!longitude || !latitude) {
             console.error('支付宝定位失败', res)
-            if (fail) {
-              fail({
+            if (onError) {
+              onError({
                 status: 'error',
                 message: LocaleUtil.locale('定位成功, 但没有经纬度')
               })
@@ -88,7 +87,7 @@ let Bridge = {
             latitude = points[1]
           }
 
-          success({
+          onSuccess({
             status: 'success',
             longitude: longitude,
             latitude: latitude,
@@ -101,8 +100,8 @@ let Bridge = {
     const wrappedParams = wrapCallback({
       ...otherParams,
       type: '2',
-      success: customSuccess,
-      fail: fail
+      onSuccess: customSuccess,
+      onError: onError
     })
 
     window.top.ap.getLocation(wrappedParams)
@@ -113,7 +112,7 @@ let Bridge = {
    * @returns {Object} {latitude: '纬度', longitude: '经度', speed:'速度', accuracy:'位置精度'}
    */
   scanQRCode(params = {}) {
-    const { scanType, success, fail } = params || {}
+    const { scanType, onSuccess, onError } = params || {}
 
     let type = ''
     if (scanType.length === 1) {
@@ -125,9 +124,9 @@ let Bridge = {
     }
 
     // 自定义success处理，但要包装成标准格式
-    const customSuccess = success
+    const customSuccess = onSuccess
       ? function (res) {
-          success({
+          onSuccess({
             status: 'success',
             resultStr: res.code
           })
@@ -136,8 +135,8 @@ let Bridge = {
 
     const wrappedParams = wrapCallback({
       type: type,
-      success: customSuccess,
-      fail: fail
+      onSuccess: customSuccess,
+      onError: onError
     })
 
     window.top.ap.scan(wrappedParams)
@@ -161,8 +160,7 @@ let Bridge = {
     const wrappedParams = wrapCallback({
       urls: params?.urls,
       current: index,
-      success: params?.success,
-      fail: params?.fail
+      ...params
     })
 
     window.top.ap.previewImage(wrappedParams)

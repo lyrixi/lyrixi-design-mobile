@@ -46,7 +46,7 @@ let Bridge = {
       console.log('模拟浏览器定位...', params)
       setTimeout(() => {
         let res = {
-          errMsg: 'getLocation:ok',
+          message: 'getLocation:ok',
           speed: '0.0',
           accuracy: '3.0.0',
           type: params.type || 'wgs84'
@@ -58,8 +58,7 @@ let Bridge = {
           res.latitude = 39.907783490367706
           res.longitude = 116.39120737493609
         }
-        if (params.success) params.success(res)
-        if (params.complete) params.complete(res)
+        if (params.onSuccess) params.onSuccess(res)
       }, 2000)
       return
     }
@@ -72,13 +71,10 @@ let Bridge = {
           let longitude = position.coords.longitude
           let latitude = position.coords.latitude
           if (!longitude || !latitude) {
-            if (params.fail)
-              params.fail({
-                errCode: 'LATLNG_ERROR',
-                errMsg: `getLocation:fail ${LocaleUtil.locale(
-                  '定位失败',
-                  'SeedsUI_location_failed'
-                )}`
+            if (params.onError)
+              params.onError({
+                status: 'LATLNG_ERROR',
+                message: `${LocaleUtil.locale('定位失败', 'SeedsUI_location_failed')}`
               })
           }
 
@@ -89,76 +85,73 @@ let Bridge = {
             latitude = points[1]
           }
           let res = {
-            errMsg: 'getLocation:ok',
+            message: 'getLocation:ok',
             speed: position.coords.speed,
             accuracy: position.coords.accuracy,
             longitude: longitude,
             latitude: latitude,
             type: params.type || 'wgs84'
           }
-          if (params.success) params.success(res)
+          if (params.onSuccess) params.onSuccess(res)
         },
         (error) => {
-          let errCode = ''
-          let errMsg = ''
+          let status = ''
+          let message = ''
           switch (error.code) {
             case error.PERMISSION_DENIED:
-              errCode = 'PERMISSION_DENIED'
-              errMsg = `getLocation:fail ${LocaleUtil.locale(
+              status = 'PERMISSION_DENIED'
+              message = `${LocaleUtil.locale(
                 '定位失败,用户拒绝请求地理定位',
                 'SeedsUI_location_permission_denied_error'
               )}`
               break
             case error.POSITION_UNAVAILABLE:
-              errCode = 'POSITION_UNAVAILABLE'
+              status = 'POSITION_UNAVAILABLE'
               console.log(
                 `${LocaleUtil.locale(
                   '定位失败,位置信息是不可用',
                   'SeedsUI_location_unavailable_error'
                 )}`
               )
-              errMsg = `getLocation:fail ${LocaleUtil.locale(
+              message = `${LocaleUtil.locale(
                 '定位失败,位置信息是不可用',
                 'SeedsUI_location_unavailable_error'
               )}`
               break
             case error.TIMEOUT:
-              errCode = 'TIMEOUT'
+              status = 'TIMEOUT'
               console.log(
                 `${LocaleUtil.locale(
                   '定位失败,位置信息是不可用',
                   'SeedsUI_location_unavailable_error'
                 )}`
               )
-              errMsg = `getLocation:fail ${LocaleUtil.locale(
+              message = `${LocaleUtil.locale(
                 '定位失败,请求获取用户位置超时',
                 'SeedsUI_location_timeout_error'
               )}`
               break
             case error.UNKNOWN_ERROR:
-              errCode = 'UNKNOWN_ERROR'
+              status = 'UNKNOWN_ERROR'
               console.log(
                 `${LocaleUtil.locale(
                   '定位失败,位置信息是不可用',
                   'SeedsUI_location_unavailable_error'
                 )}`
               )
-              errMsg = `getLocation:fail ${LocaleUtil.locale(
+              message = `${LocaleUtil.locale(
                 '定位失败,定位系统失效',
                 'SeedsUI_location_unknown_error'
               )}`
               break
             default:
-              errCode = 'LOCATION_ERROR'
+              status = 'LOCATION_ERROR'
               console.log(`${LocaleUtil.locale('定位失败', 'SeedsUI_location_failed')}`)
-              errMsg = `getLocation:fail ${LocaleUtil.locale(
-                '定位失败',
-                'SeedsUI_location_failed'
-              )}`
+              message = `${LocaleUtil.locale('定位失败', 'SeedsUI_location_failed')}`
           }
-          let res = { errCode: errCode, errMsg: errMsg }
+          let res = { status: status, message: message }
           console.log('调用浏览器定位失败', res)
-          if (params.fail) params.fail(res)
+          if (params.onError) params.onError(res)
         },
         {
           enableHighAccuracy: true, // 指示浏览器获取高精度的位置，默认为false
@@ -169,12 +162,9 @@ let Bridge = {
     } else {
       console.log(`${LocaleUtil.locale('当前浏览器不支持定位', 'SeedsUI_location_not_supported')}`)
       let res = {
-        errMsg: `getLocation:fail ${LocaleUtil.locale(
-          '当前浏览器不支持定位',
-          'SeedsUI_location_not_supported'
-        )}`
+        message: `${LocaleUtil.locale('当前浏览器不支持定位', 'SeedsUI_location_not_supported')}`
       }
-      if (params.fail) params.fail(res)
+      if (params.onError) params.onError(res)
     }
     return
   },
@@ -204,62 +194,62 @@ let Bridge = {
     console.log('logOut方法仅在app上工作')
   },
   openLocation: function (params) {
-    let errMsg = LocaleUtil.locale(
+    let message = LocaleUtil.locale(
       'openLocation仅可在企业微信或APP中使用',
       'SeedsUI_open_location_prompt',
 
       ['openLocation']
     )
     Toast.show({
-      content: errMsg
+      content: message
     })
-    params?.fail && params.fail({ errMsg: errMsg })
+    params?.onError && params.onError({ message: message })
   },
   chooseImage: function (params) {
-    let errMsg = LocaleUtil.locale(
+    let message = LocaleUtil.locale(
       'chooseImage仅可在移动端微信或APP中使用',
       'SeedsUI_chooseImage_prompt',
 
       ['chooseImage']
     )
     Toast.show({
-      content: errMsg
+      content: message
     })
-    params?.fail && params.fail({ errMsg: errMsg })
+    params?.onError && params.onError({ message: message })
   },
   uploadImage: function (params) {
-    let errMsg = LocaleUtil.locale(
+    let message = LocaleUtil.locale(
       'uploadImage仅可在移动端微信或APP中使用',
       'SeedsUI_uploadImage_prompt',
       ['uploadImage']
     )
     Toast.show({
-      content: errMsg
+      content: message
     })
-    params?.fail && params.fail({ errMsg: errMsg })
+    params?.onError && params.onError({ message: message })
   },
   previewImage: function (params = {}) {
-    let errMsg = LocaleUtil.locale(
+    let message = LocaleUtil.locale(
       'previewImage仅可在移动端微信或APP中使用',
       'SeedsUI_previewImage_prompt',
       ['previewImage']
     )
     Toast.show({
-      content: errMsg
+      content: message
     })
-    params?.fail && params.fail({ errMsg: errMsg })
+    params?.onError && params.onError({ message: message })
   },
   previewFile: function (params = {}) {
-    let errMsg = LocaleUtil.locale(
+    let message = LocaleUtil.locale(
       'previewFile仅可在企业微信或APP中使用',
       'SeedsUI_previewFile_prompt',
 
       ['previewFile']
     )
     Toast.show({
-      content: errMsg
+      content: message
     })
-    params?.fail && params.fail({ errMsg: errMsg })
+    params?.onError && params.onError({ message: message })
   }
 }
 export default Bridge

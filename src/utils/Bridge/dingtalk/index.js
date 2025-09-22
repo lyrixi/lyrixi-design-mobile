@@ -47,8 +47,8 @@ let Bridge = {
     if (typeof params?.title === 'string') {
       const wrappedParams = wrapCallback({
         title: params?.title,
-        success: params?.success,
-        fail: params?.fail
+        onSuccess: params?.onSuccess,
+        onError: params?.onError
       })
       window.top.dd.setNavigationTitle(wrappedParams)
     }
@@ -64,8 +64,8 @@ let Bridge = {
       address: newParams.address || '',
       latitude: newParams.latitude,
       longitude: newParams.longitude,
-      success: newParams.success,
-      fail: newParams.fail
+      onSuccess: newParams.onSuccess,
+      onError: newParams.onError
     })
 
     window.top.dd.openLocation(wrappedParams)
@@ -81,20 +81,20 @@ let Bridge = {
   getLocation: function (params = {}) {
     // 钉钉定位需要鉴权, 使用浏览器定位代替
     // BridgeBase.getBrowserLocation(params)
-    const { type, success, fail } = params || {}
+    const { type, onSuccess, onError } = params || {}
     let targetType = type || 'gcj02'
     console.log('调用钉钉定位...', params)
 
     // 自定义success处理，但要包装成标准格式
-    const customSuccess = success
+    const customSuccess = onSuccess
       ? function (res) {
           console.log('钉钉定位完成', res)
           let latitude = res.latitude
           let longitude = res.longitude
           if (!longitude || !latitude) {
             console.error('钉钉定位失败', res)
-            if (fail) {
-              fail({
+            if (onError) {
+              onError({
                 status: 'error',
                 message:
                   res.errorMessage || LocaleUtil.locale('定位失败', 'SeedsUI_location_failed')
@@ -122,7 +122,7 @@ let Bridge = {
             accuracy: res.accuracy
           }
           console.log('转换后坐标', result)
-          success({
+          onSuccess({
             status: 'success',
             ...result
           })
@@ -136,8 +136,8 @@ let Bridge = {
       cacheTimeout: 20,
       withReGeocode: false,
       targetAccuracy: '200',
-      success: customSuccess,
-      fail: fail
+      onSuccess: customSuccess,
+      onError: onError
     })
 
     window.top.dd.getLocation(wrappedParams)
@@ -148,7 +148,7 @@ let Bridge = {
    * @returns {Object} {latitude: '纬度', longitude: '经度', speed:'速度', accuracy:'位置精度'}
    */
   scanQRCode(params = {}) {
-    const { scanType, success, fail } = params || {}
+    const { scanType, onSuccess, onError } = params || {}
 
     let type = 'all'
     if (scanType.length === 1) {
@@ -160,9 +160,9 @@ let Bridge = {
     }
 
     // 自定义success处理，但要包装成标准格式
-    const customSuccess = success
+    const customSuccess = onSuccess
       ? function (res) {
-          success({
+          onSuccess({
             status: 'success',
             resultStr: res.text
           })
@@ -171,8 +171,8 @@ let Bridge = {
 
     const wrappedParams = wrapDingTalkCallback({
       type: type,
-      success: customSuccess,
-      fail: fail
+      onSuccess: customSuccess,
+      onError: onError
     })
 
     window.top.dd.biz.util.scan(wrappedParams)
@@ -186,7 +186,7 @@ let Bridge = {
     }
 
     // 自定义success处理，但要包装成标准格式
-    const customSuccess = params?.success
+    const customSuccess = params?.onSuccess
       ? async function (res) {
           let localFiles = []
           for (let item of res?.files) {
@@ -208,7 +208,7 @@ let Bridge = {
             localFiles.push(newItem)
           }
 
-          params.success({
+          params.onSuccess({
             status: 'success',
             localFiles: localFiles
           })
@@ -216,7 +216,7 @@ let Bridge = {
       : undefined
 
     // 自定义fail处理，但要包装成标准格式
-    const customFail = params?.fail
+    const customError = params?.onError
       ? function (error) {
           // Cancel: ios返回"11"; android拍照返回11,相册返回-1; 鸿蒙相册返回"-1";
           if (
@@ -225,12 +225,12 @@ let Bridge = {
             error?.errorCode === 11 ||
             error?.errorCode === -1
           ) {
-            params?.cancel && params.cancel()
+            params?.onCancel && params.onCancel()
           } else {
             console.error('钉钉uploadImage失败:', error)
-            params.fail({
+            params.onError({
               status: 'error',
-              message: `chooseImage:fail ${error?.errorCode || ''}`
+              message: `${error?.errorCode || ''}`
             })
           }
         }
@@ -241,37 +241,28 @@ let Bridge = {
       secret: false,
       position: 'back',
       sourceType: params?.sourceType || ['camera', 'album'],
-      success: customSuccess,
-      fail: customFail,
-      complete: params?.complete
+      onSuccess: customSuccess,
+      onError: customError
     })
 
     window.top.dd.chooseImage(wrappedParams)
   },
   // https://open.dingtalk.com/document/orgapp/jsapi-upload-file?spm=ding_open_doc.document.0.0.8e3325c7MejZDb
-  uploadImage: function ({
-    localFile,
-    url,
-    header = {},
-    formData = {},
-    success,
-    fail,
-    complete
-  } = {}) {
+  uploadImage: function ({ localFile, url, header = {}, formData = {}, onSuccess, onError } = {}) {
     // Determine whether the params are valid
     if (!localFile?.fileType || !localFile?.filePath) {
-      fail &&
-        fail({
+      onError &&
+        onError({
           status: 'error',
-          message: `uploadImage:fail localFile error`
+          message: `localFile error`
         })
       return
     }
     if (!url || typeof url !== 'string') {
-      fail &&
-        fail({
+      onError &&
+        onError({
           status: 'error',
-          message: `uploadImage:fail url error`
+          message: `url error`
         })
       return
     }
@@ -287,16 +278,16 @@ let Bridge = {
     })
 
     // 自定义success处理，但要包装成标准格式
-    const customSuccess = success
+    const customSuccess = onSuccess
       ? function (res) {
           console.log('钉钉uploadImage成功:', res)
           const { data, statusCode } = res
           // 官方文档写的String, 但实际返回是Number类型
           if (statusCode !== 200) {
-            fail &&
-              fail({
+            onError &&
+              onError({
                 status: 'error',
-                message: `uploadImage:fail ${LocaleUtil.locale(
+                message: `${LocaleUtil.locale(
                   '网络异常，上传失败',
                   'SeedsUI_upload_network_error'
                 )}`
@@ -311,7 +302,7 @@ let Bridge = {
             } catch (e) {}
           }
 
-          success({
+          onSuccess({
             status: 'success',
             ...result
           })
@@ -319,12 +310,12 @@ let Bridge = {
       : undefined
 
     // 自定义fail处理，但要包装成标准格式
-    const customFail = fail
+    const customError = onError
       ? function (error) {
           console.error('钉钉uploadImage失败:', error)
-          fail({
+          onError({
             status: 'error',
-            message: `uploadImage:fail ${error?.errorCode || ''}`
+            message: `${error?.errorCode || ''}`
           })
         }
       : undefined
@@ -336,9 +327,8 @@ let Bridge = {
       filePath: localFile.filePath,
       fileType: localFile.fileType,
       formData: formData,
-      success: customSuccess,
-      fail: customFail,
-      complete: complete
+      onSuccess: customSuccess,
+      onError: customError
     })
 
     window.top.dd.uploadFile(wrappedParams)
@@ -360,10 +350,10 @@ let Bridge = {
     }
 
     // 自定义fail处理，但要包装成标准格式
-    const customFail = function (error) {
+    const customError = function (error) {
       console.log('钉钉previewImage失败:', error)
-      params?.fail &&
-        params.fail({
+      params?.onError &&
+        params.onError({
           status: 'error',
           message: error?.errorMessage || LocaleUtil.locale('预览失败', 'SeedsUI_preview_failed')
         })
@@ -372,8 +362,8 @@ let Bridge = {
     const wrappedParams = wrapCallback({
       urls: params?.urls,
       current: index,
-      success: params?.success,
-      fail: customFail
+      onSuccess: params?.onSuccess,
+      onError: customError
     })
 
     window.top.dd.previewImage(wrappedParams)

@@ -57,8 +57,8 @@ let Bridge = {
       scale: scale,
       name: newParams.name,
       address: newParams.address,
-      success: newParams.success,
-      fail: newParams.fail
+      onSuccess: newParams.onSuccess,
+      onError: newParams.onError
     })
 
     window.top.tt.openLocation(wrappedParams)
@@ -72,17 +72,17 @@ let Bridge = {
    * @returns {Object} {latitude: '纬度', longitude: '经度', speed:'速度', accuracy:'位置精度'}
    */
   getLocation: function (params = {}) {
-    const { type, success, fail } = params || {}
+    const { type, onSuccess, onError } = params || {}
     let targetType = type || 'gcj02'
     console.log('调用飞书定位...', params)
 
     // 自定义success处理，但要包装成标准格式
-    const customSuccess = success
+    const customSuccess = onSuccess
       ? function (res) {
           if (!res.longitude || !res.latitude) {
             console.error('飞书定位失败', res)
-            if (fail) {
-              fail({
+            if (onError) {
+              onError({
                 status: 'error',
                 message: LocaleUtil.locale('定位成功, 但没有经纬度')
               })
@@ -115,15 +115,15 @@ let Bridge = {
             }
           }
 
-          success(result)
+          onSuccess(result)
         }
       : undefined
 
     const wrappedParams = wrapCallback({
       // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
       type: targetType,
-      success: customSuccess,
-      fail: fail
+      onSuccess: customSuccess,
+      onError: onError
     })
 
     window.top.tt.getLocation(wrappedParams)
@@ -134,13 +134,13 @@ let Bridge = {
    * @returns {Object} {latitude: '纬度', longitude: '经度', speed:'速度', accuracy:'位置精度'}
    */
   scanQRCode(params = {}) {
-    const { scanType, success, fail } = params || {}
+    const { scanType, onSuccess, onError } = params || {}
 
     const wrappedParams = wrapCallback({
       scanType: scanType,
       barCodeInput: true,
-      success: success,
-      fail: fail
+      onSuccess: onSuccess,
+      onError: onError
     })
 
     window.top.tt.scanCode(wrappedParams)
@@ -165,8 +165,8 @@ let Bridge = {
     const wrappedParams = wrapCallback({
       urls: params?.urls,
       current: current,
-      success: params?.success,
-      fail: params?.fail
+      onSuccess: params?.onSuccess,
+      onError: params?.onError
     })
 
     window.top.tt.previewImage(wrappedParams)

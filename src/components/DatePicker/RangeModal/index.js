@@ -77,13 +77,11 @@ const RangeModal = forwardRef(
     })
 
     // 子级DatePicker的zIndex必须大于父级
-    if (typeof props?.maskProps?.style?.zIndex === 'number') {
+    if (typeof props?.maskStyle?.zIndex === 'number') {
       if (!props.mainProps.datePickerModalProps) props.mainProps.datePickerModalProps = {}
-      if (!props.mainProps.datePickerModalProps.maskProps)
-        props.mainProps.datePickerModalProps.maskProps = {}
-      if (!props.mainProps.datePickerModalProps.maskProps.style)
-        props.mainProps.datePickerModalProps.maskProps.style = {}
-      props.mainProps.datePickerModalProps.maskProps.style.zIndex = props.maskProps.style.zIndex + 1
+      if (!props.mainProps.datePickerModalProps.maskStyle)
+        props.mainProps.datePickerModalProps.maskStyle = {}
+      props.mainProps.datePickerModalProps.maskStyle.zIndex = props.maskStyle.zIndex + 1
     }
 
     return (

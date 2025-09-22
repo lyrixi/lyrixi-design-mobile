@@ -9,7 +9,7 @@ import { LocaleUtil } from 'lyrixi-design-mobile'
 // 显示Loading
 // eslint-disable-next-line
 export default function (props) {
-  const { id, maskProps, className, style, content, onVisibleChange } = {
+  const { id, maskClassName, maskStyle, className, style, content, onVisibleChange } = {
     ...(this?.defaultProps || {}),
     ...(props || {})
   }
@@ -48,12 +48,12 @@ export default function (props) {
     // 更新mask
     mask.setAttribute(
       'class',
-      `loading-mask mask active${maskProps?.className ? ' ' + maskProps?.className : ''}`
+      `loading-mask mask active${maskClassName ? ' ' + maskClassName : ''}`
     )
     mask.setAttribute('id', loadingId)
     mask.setAttribute('style', '')
-    for (let key in maskProps?.style || {}) {
-      mask.style[key] = maskProps?.style[key]
+    for (let key in maskStyle || {}) {
+      mask.style[key] = maskStyle[key]
     }
 
     // 更新container

@@ -10,7 +10,8 @@ function show(props) {
     // Pop position: top、middle、bottom
     position,
     id,
-    maskProps,
+    maskClassName,
+    maskStyle,
     className,
     style,
     // Content html text
@@ -42,14 +43,14 @@ function show(props) {
     // Update mask
     mask.setAttribute(
       'class',
-      `mask toast-mask${maskProps?.className ? ' ' + maskProps?.className : ''}${
+      `mask toast-mask${maskClassName ? ' ' + maskClassName : ''}${
         maskClickable !== false ? ' toast-propagation' : ''
       }`
     )
     mask.setAttribute('id', toastId)
     mask.setAttribute('style', '')
-    for (let key in maskProps?.style || {}) {
-      mask.style[key] = maskProps?.style[key]
+    for (let key in maskStyle || {}) {
+      mask.style[key] = maskStyle[key]
     }
 
     // Update container

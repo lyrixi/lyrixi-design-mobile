@@ -33,10 +33,8 @@ const Url = forwardRef(
         },
         onError: () => {
           alert({
-            maskProps: {
-              style: {
-                zIndex: 100
-              }
+            maskStyle: {
+              zIndex: 100
             },
             title: LocaleUtil.locale('提示', 'SeedsUI_alert_title'),
             content:

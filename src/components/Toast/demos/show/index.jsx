@@ -5,11 +5,11 @@ export default () => {
   function handleToggle() {
     // Toast.defaultProps = {
     //   style: { backgroundColor: 'blue' },
-    //   maskProps: { style: { backgroundColor: 'red' } }
+    //   maskStyle: { backgroundColor: 'red' }
     // }
     let toast = Toast.show({
       style: { backgroundColor: 'blue', color: 'green' },
-      maskProps: { style: { backgroundColor: 'red' } },
+      maskStyle: { backgroundColor: 'red' },
       position: 'middle',
       content: 'show toast',
       duration: 2000,

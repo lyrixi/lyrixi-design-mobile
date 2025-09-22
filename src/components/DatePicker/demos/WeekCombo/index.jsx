@@ -37,10 +37,8 @@ export default () => {
         onVisibleChange={(visible) => {
           console.log('visible:', visible)
         }}
-        maskProps={{
-          style: {
-            zIndex: 999
-          }
+        maskStyle={{
+          zIndex: 999
         }}
         onChange={(newValue) => {
           setValue(newValue)

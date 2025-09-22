@@ -40,11 +40,9 @@ export default () => {
         console.log('第二层')
         Modal.confirm({
           title: '第二层',
-          maskProps: {
-            className: 'aa',
-            style: {
-              zIndex: 999
-            }
+          maskClassName: 'aa',
+          maskStyle: {
+            zIndex: 999
           },
           maskClosable: true,
           content: 'confirm content2',

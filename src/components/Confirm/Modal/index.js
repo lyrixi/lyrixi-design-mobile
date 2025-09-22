@@ -17,7 +17,8 @@ const Confirm = forwardRef(
     {
       portal,
       maskClosable,
-      maskProps,
+      maskClassName,
+      maskStyle,
       visible,
       onVisibleChange,
       animation = 'zoom',
@@ -41,7 +42,6 @@ const Confirm = forwardRef(
 
     // 点击遮罩
     function handleMaskClick(e) {
-      if (maskProps?.onClick) maskProps.onClick(e)
       if (maskClosable && onVisibleChange) onVisibleChange(false)
       e.stopPropagation()
     }
@@ -58,8 +58,8 @@ const Confirm = forwardRef(
 
     return createPortal(
       <div
-        {...maskProps}
-        className={DOMUtil.classNames('mask confirm-mask', maskProps?.className, getActiveClass())}
+        className={DOMUtil.classNames('mask confirm-mask', maskClassName, getActiveClass())}
+        style={maskStyle}
         onClick={handleMaskClick}
         ref={maskRef}
       >

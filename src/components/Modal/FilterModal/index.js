@@ -30,13 +30,12 @@ function FilterModal(
       ref={ref}
       animation="slideLeft" // slideLeft | slideRight | slideUp | slideDown | zoom | fade
       {...props}
-      maskProps={{
-        ...props?.maskProps,
-        onClick: () => {
-          // Set maskClosable false (default is true)
-          if (props?.maskClosable !== undefined && !props?.maskClosable) return
-          onCancel && onCancel()
-        }
+      maskClassName={props?.maskClassName}
+      maskStyle={props?.maskStyle}
+      onMaskClick={() => {
+        // Set maskClosable false (default is true)
+        if (props?.maskClosable !== undefined && !props?.maskClosable) return
+        onCancel && onCancel()
       }}
       className={DOMUtil.classNames('modal-filtermodal', props?.className)}
       visible={visible}

@@ -7,12 +7,12 @@ export default () => {
   function handleToggle() {
     // Loading.defaultProps = {
     //   style: { backgroundColor: 'blue' },
-    //   maskProps: { style: { backgroundColor: 'red' } }
+    //   maskStyle: { backgroundColor: 'red' }
     // }
 
     let loading = Loading.show({
       style: { backgroundColor: 'blue' },
-      maskProps: { style: { backgroundColor: 'red' } },
+      maskStyle: { backgroundColor: 'red' },
       className: 'abc',
       content: '自定义加载'
     })

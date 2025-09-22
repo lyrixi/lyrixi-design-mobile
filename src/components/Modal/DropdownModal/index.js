@@ -57,18 +57,16 @@ const DropdownModal = forwardRef(
             : 'seed-modal-dropdown-center'
         )}
         style={modalStyle}
-        maskProps={{
-          className: DOMUtil.classNames(
-            maskClassName,
-            ![undefined, null].includes(left) || ![undefined, null].includes(right)
-              ? 'seed-mask-dropdown-side'
-              : 'seed-mask-dropdown-center'
-          ),
-          style: {
-            ...maskStyle,
-            ...(![undefined, null].includes(left) ? { left: left } : {}),
-            ...(![undefined, null].includes(right) ? { right: right } : {})
-          }
+        maskClassName={DOMUtil.classNames(
+          maskClassName,
+          ![undefined, null].includes(left) || ![undefined, null].includes(right)
+            ? 'seed-mask-dropdown-side'
+            : 'seed-mask-dropdown-center'
+        )}
+        maskStyle={{
+          ...maskStyle,
+          ...(![undefined, null].includes(left) ? { left: left } : {}),
+          ...(![undefined, null].includes(right) ? { right: right } : {})
         }}
         onVisibleChange={onVisibleChange}
         onClose={onClose}

@@ -13,7 +13,8 @@ const Modal = forwardRef(
       animation = 'slideUp',
 
       // 遮罩
-      maskProps,
+      maskClassName,
+      maskStyle,
       maskClosable = true,
 
       // 标题
@@ -157,7 +158,8 @@ const Modal = forwardRef(
         }}
         // Modal: display properties
         animation={animation}
-        maskProps={maskProps}
+        maskClassName={maskClassName}
+        maskStyle={maskStyle}
         title={title || currentTitle}
         titleProps={titleProps}
         // 单选且不允许清空时, 修改即关闭

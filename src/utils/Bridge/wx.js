@@ -253,7 +253,7 @@ let Bridge = {
       Toast.show({
         content: errMsg
       })
-      params?.onError && params.onError({ errMsg: errMsg })
+      params?.onError && params.onError({ message: errMsg })
       return
     }
 

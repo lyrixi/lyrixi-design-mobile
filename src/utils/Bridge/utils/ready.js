@@ -10,7 +10,7 @@ import { LocaleUtil, AssetUtil } from 'lyrixi-design-mobile'
 /**
  * 动态加载桥接库
  * @param {Func} callback 加载完成回调
- * @param {Object} options {wechatLibSrc: '', wecomLibSrc: '', wqCordovaSrc: '', wqSrc: '', fail: func({errMsg: ''})}
+ * @param {Object} options {wechatLibSrc: '', wecomLibSrc: '', wqCordovaSrc: '', wqSrc: '', onError: function({message: ''})}
  */
 function ready(callback, options = {}, platform) {
   // 微信支付宝平台
@@ -64,8 +64,8 @@ function ready(callback, options = {}, platform) {
         // js加载失败
         else {
           console.error('支付小程序js加载失败')
-          options?.fail?.({
-            errMsg: LocaleUtil.locale(
+          options?.onError?.({
+            message: LocaleUtil.locale(
               '支付小程序js加载失败',
               'SeedsUI_alipayMiniProgram_js_load_failed'
             )
@@ -101,10 +101,10 @@ function ready(callback, options = {}, platform) {
 
       if (callback) callback()
     }
-    if (options.fail) {
+    if (options.onError) {
       script.onerror = function () {
-        options.fail({
-          errMsg: LocaleUtil.locale('微信js加载失败', 'SeedsUI_weChat_js_load_failed')
+        options.onError({
+          onError: LocaleUtil.locale('微信js加载失败', 'SeedsUI_weChat_js_load_failed')
         })
       }
     }

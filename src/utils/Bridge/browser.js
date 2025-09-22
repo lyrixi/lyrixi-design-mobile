@@ -79,7 +79,7 @@ let Bridge = {
       })
       if (params.onError)
         params.onError({
-          errMsg: `scanQRCode:${LocaleUtil.locale(
+          message: `scanQRCode:${LocaleUtil.locale(
             '扫码失败',
             'SeedsUI_scanCode_failed'
           )}, ${LocaleUtil.locale('请稍后重试', 'SeedsUI_try_again_later')}`

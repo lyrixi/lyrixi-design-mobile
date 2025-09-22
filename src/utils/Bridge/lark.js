@@ -91,7 +91,7 @@ let Bridge = {
           }
 
           let result = {
-            errMsg: 'getLocation:ok',
+            status: 'success',
             longitude: res.longitude,
             latitude: res.latitude,
             type: res.type,

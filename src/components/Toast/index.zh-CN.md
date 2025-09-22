@@ -28,22 +28,21 @@ title: Toast
 
 ### 属性
 
-| 属性     | 说明     | 类型      | 默认值  |
-| -------- | -------- | --------- | ------- |
-| duration | 显示时长（毫秒） | `number` | `2000` |
-| maskClickable | 遮罩是否可点击 | `boolean` | `true` |
-| position | 显示位置 | `'top' \| 'middle' \| 'bottom'` | `'middle'` |
-| id | 唯一标识 | `string` | - |
-| maskProps | 遮罩属性 | `object` | - |
-| className | 自定义类名 | `string` | - |
-| style | 自定义样式 | `object` | - |
-| content | 提示内容 | `string \| ReactNode` | - |
-| onVisibleChange | 可见性变化回调 | `(visible: boolean) => void` | - |
+| 属性            | 说明             | 类型                            | 默认值     |
+| --------------- | ---------------- | ------------------------------- | ---------- |
+| duration        | 显示时长（毫秒） | `number`                        | `2000`     |
+| maskClickable   | 遮罩是否可点击   | `boolean`                       | `true`     |
+| position        | 显示位置         | `'top' \| 'middle' \| 'bottom'` | `'middle'` |
+| id              | 唯一标识         | `string`                        | -          |
+| className       | 自定义类名       | `string`                        | -          |
+| style           | 自定义样式       | `object`                        | -          |
+| content         | 提示内容         | `string \| ReactNode`           | -          |
+| onVisibleChange | 可见性变化回调   | `(visible: boolean) => void`    | -          |
 
 ## Toast.hide
 
 ### 属性
 
-| 属性     | 说明     | 类型      | 默认值  |
-| -------- | -------- | --------- | ------- |
-| onVisibleChange | 可见性变化回调 | `(visible: boolean) => void` | - |
+| 属性            | 说明           | 类型                         | 默认值 |
+| --------------- | -------------- | ---------------------------- | ------ |
+| onVisibleChange | 可见性变化回调 | `(visible: boolean) => void` | -      |

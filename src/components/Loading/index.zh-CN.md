@@ -35,18 +35,17 @@ toc: content
 
 ### 属性
 
-| 属性     | 说明     | 类型      | 默认值  |
-| -------- | -------- | --------- | ------- |
-| portal | 渲染容器 | `HTMLElement` | - |
-| visible | 是否可见 | `boolean` | `true` |
-| maskProps | 遮罩属性 | `object` | `{}` |
-| icon | 加载图标 | `ReactNode \| function` | - |
-| content | 加载文本 | `string` | `'加载中...'` |
-| children | 自定义内容 | `ReactNode` | - |
+| 属性     | 说明       | 类型                    | 默认值        |
+| -------- | ---------- | ----------------------- | ------------- |
+| portal   | 渲染容器   | `HTMLElement`           | -             |
+| visible  | 是否可见   | `boolean`               | `true`        |
+| icon     | 加载图标   | `ReactNode \| function` | -             |
+| content  | 加载文本   | `string`                | `'加载中...'` |
+| children | 自定义内容 | `ReactNode`             | -             |
 
 ### Ref
 
-| 属性       | 说明                 | 类型                   |
-| ---------- | -------------------- | ---------------------- |
-| rootDOM    | 根元素               | `HtmlDivElement`       |
-| getRootDOM | 获取根元素           | () => `HtmlDivElement` |
+| 属性       | 说明       | 类型                   |
+| ---------- | ---------- | ---------------------- |
+| rootDOM    | 根元素     | `HtmlDivElement`       |
+| getRootDOM | 获取根元素 | () => `HtmlDivElement` |

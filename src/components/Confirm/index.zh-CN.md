@@ -36,7 +36,6 @@ toc: content
 | --------------- | ---------------- | ---------------------------- | -------- |
 | portal          | 渲染容器         | `HTMLElement`                | -        |
 | maskClosable    | 点击遮罩是否关闭 | `boolean`                    | -        |
-| maskProps       | 遮罩属性         | `object`                     | -        |
 | visible         | 是否可见         | `boolean`                    | -        |
 | onVisibleChange | 可见性变化回调   | `(visible: boolean) => void` | -        |
 | animation       | 动画类型         | `string`                     | `'zoom'` |

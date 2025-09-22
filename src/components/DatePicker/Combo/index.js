@@ -36,7 +36,7 @@ const DatePickerCombo = forwardRef(
     return (
       <Combo
         ref={ref}
-        displayValueFormatter={() => {
+        formatter={() => {
           return DateUtil.format(value, type)
         }}
         {...props}

@@ -38,7 +38,7 @@ const MultipleCombo = forwardRef(
     return (
       <Combo
         ref={ref}
-        displayValueFormatter={() => {
+        formatter={() => {
           return getDisplayValue({
             type: type,
             value: value,

@@ -6,7 +6,7 @@ import React, {
   useState,
   useEffect
 } from 'react'
-import getDisplayValue from './displayValueFormatter'
+import getDisplayValue from './formatter'
 
 import Input from './../../Input'
 
@@ -60,7 +60,7 @@ const Combo = forwardRef(
       comboClassName,
 
       // Combo
-      displayValueFormatter,
+      formatter,
       autoSize,
       allowClear,
       separator,
@@ -85,11 +85,11 @@ const Combo = forwardRef(
     ref
   ) => {
     // 显示文本格式化
-    if (typeof displayValueFormatter !== 'function') {
+    if (typeof formatter !== 'function') {
       // eslint-disable-next-line
-      displayValueFormatter = getDisplayValue
+      formatter = getDisplayValue
     }
-    let displayValue = displayValueFormatter(value, { separator })
+    let displayValue = formatter(value, { separator })
 
     // Expose methods
     const comboRef = useRef(null)

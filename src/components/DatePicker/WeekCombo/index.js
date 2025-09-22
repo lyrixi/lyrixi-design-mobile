@@ -34,7 +34,7 @@ const WeekCombo = forwardRef(
     return (
       <Combo
         ref={ref}
-        displayValueFormatter={() => {
+        formatter={() => {
           return DateUtil.format(value, 'week')
         }}
         {...props}

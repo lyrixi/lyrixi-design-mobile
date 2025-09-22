@@ -65,7 +65,7 @@ const RangeCombo = forwardRef(
         ref={ref}
         separator={separator}
         // 用于回显displayValue
-        displayValueFormatter={() => {
+        formatter={() => {
           return getDisplayValue({
             value: formatValue(value),
             type: format || type,

@@ -44,10 +44,10 @@ function loadLeaflet({ css, js } = {}) {
         id: 'leaflet-js',
         // integrity: 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=',
         // crossorigin: '',
-        success: () => {
+        onSuccess: () => {
           resolve(window.L)
         },
-        fail: () => {
+        onError: () => {
           resolve(`leaflet加载失败`)
         }
       }

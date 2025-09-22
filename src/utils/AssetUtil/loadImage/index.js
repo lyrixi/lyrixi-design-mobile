@@ -1,19 +1,21 @@
 // 动态加载script的方法
-function loadImage(src, { fail, success } = {}) {
+function loadImage(src, { onError, onSuccess } = {}) {
   return new Promise((resolve) => {
     const img = new Image()
     img.src = src
 
     const handleLoad = () => {
       resolve(true)
-      if (typeof success === 'function') success(img)
+      // 支持新的 onSuccess
+      if (typeof onSuccess === 'function') onSuccess(img)
 
       img.removeEventListener('load', handleLoad)
       img.removeEventListener('error', handleError)
     }
-    const handleError = () => {
+    const handleError = (error) => {
       resolve(false)
-      if (typeof fail === 'function') fail()
+      // 支持新的 onError
+      if (typeof onError === 'function') onError(error)
 
       img.removeEventListener('load', handleLoad)
       img.removeEventListener('error', handleError)

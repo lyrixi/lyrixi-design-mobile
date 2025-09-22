@@ -60,7 +60,7 @@ const Item = ({
     // 平台预览需要复制到剪贴板
     else {
       Clipboard.copy(previewUrl, {
-        success: () => {
+        onSuccess: () => {
           Toast.show({
             content: LocaleUtil.locale(
               '文件链接已复制到剪贴板，请粘贴到系统浏览器上下载',
@@ -68,7 +68,7 @@ const Item = ({
             )
           })
         },
-        fail: () => {
+        onError: () => {
           Modal.confirm({
             content: LocaleUtil.locale(
               `文件链接复制到剪贴板失败, 请长按复制<br/>${previewUrl}`,

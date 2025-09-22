@@ -9,7 +9,7 @@ import { LocaleUtil, Bridge } from 'lyrixi-design-mobile'
 
 // 分享至
 function share(params) {
-  let { title, description, url, imageUrl, onSuccess, onFail } = params || {}
+  let { title, description, url, imageUrl, onSuccess, onError } = params || {}
 
   if (Bridge.platform === 'lark') {
     window.top.tt.share({
@@ -23,11 +23,11 @@ function share(params) {
         onSuccess && onSuccess()
       },
       fail(err) {
-        console.log('Lark Share fail:', err)
+        console.log('Lark Share onError:', err)
 
-        onFail &&
-          onFail({
-            errMsg: err?.errMsg || LocaleUtil.locale('分享失败', 'SeedsUI_share_failed')
+        onError &&
+          onError({
+            message: err?.message || LocaleUtil.locale('分享失败', 'SeedsUI_share_failed')
           })
       }
     })
@@ -42,10 +42,10 @@ function share(params) {
         onSuccess && onSuccess()
       },
       onFail: function (err) {
-        console.log('DingTalk Share fail:', err)
-        onFail &&
-          onFail({
-            errMsg: err?.errMsg || LocaleUtil.locale('分享失败', 'SeedsUI_share_failed')
+        console.log('DingTalk Share onError:', err)
+        onError &&
+          onError({
+            message: err?.errMsg || LocaleUtil.locale('分享失败', 'SeedsUI_share_failed')
           })
       }
     })

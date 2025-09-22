@@ -40,7 +40,7 @@ const Combo = forwardRef(
       modalProps,
 
       // ComboNew
-      comboNew,
+      combo,
       comboChildren,
       comboStyle,
       comboClassName,
@@ -57,7 +57,6 @@ const Combo = forwardRef(
       placeholder,
       onClick,
       onBeforeOpen,
-      combo,
       clear = ({ triggerClear }) => {
         return ObjectUtil.isEmpty(value) || !allowClear ? (
           <Input.IconRightArrow />
@@ -172,10 +171,10 @@ const Combo = forwardRef(
     }
 
     function getComboNode() {
-      if (typeof comboNew === 'function' || comboChildren) {
+      if (typeof combo === 'function' || comboChildren) {
         return DOMUtil.getComboNode({
           // 渲染combo
-          combo: comboNew,
+          combo: combo,
           comboRef,
           visible,
           // 渲染comboChildren
@@ -185,36 +184,6 @@ const Combo = forwardRef(
           // 公用事件
           onClick: handleInputClick
         })
-      }
-
-      // 此方法废弃, comboNew将替换combo
-      if (typeof combo === 'function') {
-        return (
-          <ComboWrapper {...props} onClick={handleInputClick} ref={comboRef}>
-            {combo({
-              // ...props,
-              // Paasive properties
-              autoSize,
-              allowClear,
-              separator,
-              mode,
-              multiple,
-              readOnly,
-              disabled,
-              placeholder,
-
-              // Value
-              value,
-              displayValue,
-
-              // Input
-              clear: clearRender,
-              onChange: handleChange
-              // onClick: handleInputClick,
-              // comboRef: comboRef
-            })}
-          </ComboWrapper>
-        )
       }
 
       if (children) {

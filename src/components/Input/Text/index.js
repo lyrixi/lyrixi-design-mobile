@@ -62,9 +62,6 @@ const InputText = (
     onKeyDown,
     onPressEnter,
 
-    // 计划废弃inputProps, 使用props代替
-    inputProps = {},
-
     // 扩展属性
     ...props
   },
@@ -285,7 +282,6 @@ const InputText = (
             onBlur={handleBlur}
             onFocus={handleFocus}
             onKeyDown={handleKeyDown}
-            {...inputProps}
             style={inputStyle}
             className={`seed-input-autofit-textarea`}
           ></textarea>
@@ -317,7 +313,6 @@ const InputText = (
           onBlur={handleBlur}
           onFocus={handleFocus}
           onKeyDown={handleKeyDown}
-          {...inputProps}
           className={`seed-input-textarea`}
           style={inputStyle}
         ></textarea>
@@ -347,7 +342,6 @@ const InputText = (
         onBlur={handleBlur}
         onFocus={handleFocus}
         onKeyDown={handleKeyDown}
-        {...inputProps}
         style={inputStyle}
         className={`seed-input-text`}
       />

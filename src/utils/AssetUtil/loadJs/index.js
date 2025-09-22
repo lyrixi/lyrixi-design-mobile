@@ -12,8 +12,8 @@ function loadJs(
     crossorigin,
     integrity,
     referrerPolicy,
-    fail,
-    success
+    onError,
+    onSuccess
   } = {}
 ) {
   let attrs = {}
@@ -37,10 +37,12 @@ function loadJs(
       (error, script) => {
         if (error) {
           resolve(null)
-          if (typeof fail === 'function') fail()
+          // 支持新的 onError
+          if (typeof onError === 'function') onError(error)
         } else {
           resolve(script)
-          if (typeof success === 'function') success(script)
+          // 支持新的 onSuccess
+          if (typeof onSuccess === 'function') onSuccess(script)
         }
       }
     )

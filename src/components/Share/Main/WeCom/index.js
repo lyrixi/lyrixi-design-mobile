@@ -4,7 +4,7 @@ import Type from './../Type'
 // 企业微信只支持分享到企业微信
 function WeCom({ shareTo }) {
   if (shareTo?.wecom) {
-    let { title, description, url, imageUrl, onSuccess, onFail } = shareTo?.wecom || {}
+    let { title, description, url, imageUrl, onSuccess, onError } = shareTo?.wecom || {}
     return (
       <>
         <Type
@@ -24,9 +24,9 @@ function WeCom({ shareTo }) {
                 if (res.err_msg === 'shareAppMessage:ok') {
                   onSuccess && onSuccess()
                 } else {
-                  onFail &&
-                    onFail({
-                      errMsg: res?.errMsg || '分享失败'
+                  onError &&
+                    onError({
+                      message: res?.errMsg || '分享失败'
                     })
                 }
               }

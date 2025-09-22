@@ -19,7 +19,7 @@ export function wrapCallback(params = {}) {
 
   return {
     ...otherParams,
-    success: function(res) {
+    success: function (res) {
       if (onSuccess) {
         onSuccess({
           status: 'success',
@@ -27,7 +27,7 @@ export function wrapCallback(params = {}) {
         })
       }
     },
-    fail: function(err) {
+    fail: function (err) {
       if (onError) {
         // 提取错误信息
         let message = err?.errMsg || err?.errorMessage || err?.message || ''
@@ -44,7 +44,7 @@ export function wrapCallback(params = {}) {
         })
       }
     },
-    cancel: function() {
+    cancel: function () {
       if (onCancel) {
         onCancel()
       }
@@ -53,7 +53,7 @@ export function wrapCallback(params = {}) {
 }
 
 /**
- * 包装钉钉特殊格式的回调 (onSuccess/onFail)
+ * 包装钉钉特殊格式的回调 (onSuccess/onError)
  * @param {Object} params - 包含onSuccess、onError和onCancel回调的参数对象
  * @param {Function} params.onSuccess - 成功回调（会被映射到onSuccess）
  * @param {Function} params.onError - 失败回调（会被映射到onFail）
@@ -65,7 +65,7 @@ export function wrapDingTalkCallback(params = {}) {
 
   return {
     ...otherParams,
-    onSuccess: function(res) {
+    onSuccess: function (res) {
       if (onSuccess) {
         onSuccess({
           status: 'success',
@@ -73,7 +73,7 @@ export function wrapDingTalkCallback(params = {}) {
         })
       }
     },
-    onFail: function(err) {
+    onError: function (err) {
       if (onError) {
         // 提取错误信息
         let message = err?.errMsg || err?.errorMessage || err?.message || ''
@@ -90,7 +90,7 @@ export function wrapDingTalkCallback(params = {}) {
         })
       }
     },
-    cancel: function() {
+    cancel: function () {
       if (onCancel) {
         onCancel()
       }

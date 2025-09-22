@@ -26,12 +26,12 @@ const Url = forwardRef(
   ) => {
     function copyLink(url) {
       Clipboard.copy(url, {
-        success: () => {
+        onSuccess: () => {
           Toast.show({
             content: LocaleUtil.locale('链接已复制到剪贴板', 'SeedsUI_link_copy_success')
           })
         },
-        fail: () => {
+        onError: () => {
           alert({
             maskProps: {
               style: {

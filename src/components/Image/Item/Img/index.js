@@ -15,10 +15,10 @@ const Img = ({ src }) => {
   useEffect(() => {
     setBackGroundImage('')
     AssetUtil.loadImage(src, {
-      success: () => {
+      onSuccess: () => {
         setBackGroundImage(src)
       },
-      fail: () => {
+      onError: () => {
         setBackGroundImage('error')
       }
     })

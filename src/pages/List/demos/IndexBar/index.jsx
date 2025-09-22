@@ -40,7 +40,7 @@ const IndexBarList = () => {
             { page: page, rows: 20, ...queryParams },
             {
               // 请求完成, 显示IndexBar
-              success: () => {
+              onSuccess: () => {
                 setIndexBarVisible(true)
               }
             }

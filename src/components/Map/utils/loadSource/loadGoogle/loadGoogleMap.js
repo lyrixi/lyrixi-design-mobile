@@ -23,10 +23,10 @@ function loadGoogle(key) {
     // Load js
     AssetUtil.loadJs(`https://maps.googleapis.com/maps/api/js?key=${key}`, {
       id: 'google-map-js',
-      success: () => {
+      onSuccess: () => {
         resolve(window.google)
       },
-      fail: () => {
+      onError: () => {
         resolve(`google地图加载失败`)
       }
     })

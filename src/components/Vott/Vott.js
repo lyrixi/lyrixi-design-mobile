@@ -106,7 +106,7 @@ const Vott = forwardRef(
       BridgeBrowser.previewImage({
         urls: [src],
         layerHTML: previewHTML,
-        success: (s) => {
+        onSuccess: (s) => {
           let layer = s.container.querySelector('.preview-layer')
           wrapper = s.container.querySelector('.vott-wrapper')
           let svg = wrapper.querySelector('.vott-svg')

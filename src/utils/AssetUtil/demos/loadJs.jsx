@@ -7,10 +7,10 @@ export default () => {
       '//colaboy.github.io/lyrixi-design-mobile/assets/plugin/leaflet/js/leaflet.js',
       {
         id: 'leaflet-js',
-        success: () => {
+        onSuccess: () => {
           alert('Js load succeeded')
         },
-        fail: () => {
+        onError: () => {
           alert('Js load failed')
         }
       }

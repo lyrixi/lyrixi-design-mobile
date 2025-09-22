@@ -25,11 +25,11 @@ function getLocation(options) {
     // 开始定位
     Bridge.getLocation({
       type: type,
-      success: async (data) => {
+      onSuccess: async (data) => {
         console.log('SeedsUI location success:', data)
         resolve(data)
       },
-      fail: (error) => {
+      onError: (error) => {
         console.error('SeedsUI location fail:', error)
         // 赋值
         resolve(LocaleUtil.locale('定位失败, 请检查定位权限是否开启', 'SeedsUI_location_failed'))

@@ -86,7 +86,6 @@ toc: content
 | onFocus      | 聚焦事件     | `(e: Event) => void`                                                 | -        |
 | onKeyDown    | 按键事件     | `(e: Event) => void`                                                 | -        |
 | onPressEnter | 回车事件     | `(e: Event) => void`                                                 | -        |
-| inputProps   | 输入框属性   | `object`                                                             | `{}`     |
 
 ### Ref
 

@@ -5,12 +5,12 @@ function compressImage(file) {
     window.top.dd.compressImage({
       filePaths: [file.filePath],
       compressLevel: 2,
-      success: (res) => {
+      onSuccess: (res) => {
         const { filePaths } = res
         file.filePath = filePaths?.[0] || file.filePath
         resolve(file)
       },
-      fail: () => {
+      onError: () => {
         resolve(file)
       }
     })

@@ -14,7 +14,7 @@ import { Toast } from 'lyrixi-design-mobile'
 function WeChat({ shareTo }) {
   const [visible, setVisible] = useState(false)
   if (shareTo?.wechat) {
-    let { title, description, url, imageUrl, onSuccess, onFail } = shareTo?.wechat || {}
+    let { title, description, url, imageUrl, onSuccess, onError } = shareTo?.wechat || {}
     return (
       <>
         <Type
@@ -25,18 +25,18 @@ function WeChat({ shareTo }) {
               desc: description || '',
               link: url || '',
               imgUrl: imageUrl || '',
-              success: function (res) {
+              onSuccess: function (res) {
                 setVisible(true)
                 onSuccess && onSuccess()
               },
-              fail: function (err) {
-                console.log('WeChat Share fail:', err)
+              onError: function (err) {
+                console.log('WeChat Share onError:', err)
                 Toast.show({
                   content: err?.errMsg || '分享失败'
                 })
-                onFail &&
-                  onFail({
-                    errMsg: err?.errMsg || '分享失败'
+                onError &&
+                  onError({
+                    message: err?.errMsg || '分享失败'
                   })
               }
             })

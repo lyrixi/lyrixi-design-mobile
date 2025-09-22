@@ -26,7 +26,7 @@ function loadBMap(key) {
       `https://api.map.baidu.com/api?v=3.0&ak=${key}&callback=&callback=onBMapLoad`,
       {
         id: 'bmap-map-js',
-        success: () => {
+        onSuccess: () => {
           window.onBMapLoad = function () {
             if (window.BMap) {
               resolve(window.BMap)
@@ -35,7 +35,7 @@ function loadBMap(key) {
             }
           }
         },
-        fail: () => {
+        onError: () => {
           resolve(LocaleUtil.locale(`地图库加载失败, 请稍后再试`, 'SeedsUI_map_js_load_failed'))
         }
       }

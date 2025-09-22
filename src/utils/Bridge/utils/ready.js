@@ -104,7 +104,7 @@ function ready(callback, options = {}, platform) {
     if (options.onError) {
       script.onerror = function () {
         options.onError({
-          onError: LocaleUtil.locale('微信js加载失败', 'SeedsUI_weChat_js_load_failed')
+          message: LocaleUtil.locale('微信js加载失败', 'SeedsUI_weChat_js_load_failed')
         })
       }
     }

@@ -300,7 +300,7 @@ const PreviewMain = forwardRef(
               return (
                 <SwiperSlide
                   key={index}
-                  className={`image-preview-main-item${item.status ? ' ' + item.status : ''}`}
+                  className={DOMUtil.classNames('image-preview-main-item', item.status)}
                 >
                   <div className="swiper-zoom-container">
                     {type !== 'video' && (

@@ -12,6 +12,7 @@ import PreviewModal from './../PreviewModal'
 import Bridge from './../../../utils/Bridge'
 import LocaleUtil from './../../../utils/LocaleUtil'
 import Toast from './../../Toast'
+import DOMUtil from './../../../utils/DOMUtil'
 // 内库使用-end
 
 /* 测试使用-start
@@ -318,7 +319,7 @@ const Image = forwardRef(
       <div
         ref={rootRef}
         {...props}
-        className={`image${props.className ? ' ' + props.className : ''}`}
+        className={DOMUtil.classNames('image', props.className)}
       >
         {/* 图片上传: 上传按钮 */}
         {uploadPosition === 'start' && getChooseNode()}

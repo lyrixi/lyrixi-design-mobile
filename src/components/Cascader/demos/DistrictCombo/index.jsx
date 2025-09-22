@@ -170,7 +170,7 @@ export default () => {
             }}
             placeholder={'zIndex'}
             allowClear
-            modalProps={{ maskProps: { style: { zIndex: '9' } } }}
+            maskStyle={{ zIndex: '9' }}
           />
         </Card>
       </Layout.Main>

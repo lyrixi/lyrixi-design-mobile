@@ -22,9 +22,12 @@ function MapMarkers(
 
     onLoad,
     // Control Props
-    PolylineProps,
-    CirclesProps,
-    ZoomControlProps,
+    polylineClassName,
+    polylineStyle,
+    circlesClassName,
+    circlesStyle,
+    zoomControlClassName,
+    zoomControlStyle,
     children,
     ...props
   },
@@ -79,13 +82,31 @@ function MapMarkers(
       <Markers ref={markersRef} points={markers} onClick={onMarkerClick} />
 
       {/* 圆圈 */}
-      {circles && <Circles ref={circlesRef} points={circles} {...CirclesProps} />}
+      {circles && (
+        <Circles
+          ref={circlesRef}
+          points={circles}
+          className={circlesClassName}
+          style={circlesStyle}
+        />
+      )}
 
       {/* 折线 */}
-      {polyline && <Polyline ref={polylineRef} points={polyline} {...PolylineProps} />}
+      {polyline && (
+        <Polyline
+          ref={polylineRef}
+          points={polyline}
+          className={polylineClassName}
+          style={polylineStyle}
+        />
+      )}
 
       {/* 缩放控件 */}
-      <ZoomControl ref={zoomRef} style={{ bottom: '20px' }} {...ZoomControlProps} />
+      <ZoomControl
+        ref={zoomRef}
+        className={zoomControlClassName}
+        style={{ bottom: '20px', ...zoomControlStyle }}
+      />
 
       {children}
     </MapContainer>

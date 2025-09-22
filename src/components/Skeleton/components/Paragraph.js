@@ -12,44 +12,51 @@ import { DOMUtil, LocaleUtil, SafeArea } from 'lyrixi-design-mobile'
 const Paragraph = ({
   length,
   animated = true,
-  avatarProps,
+  avatarClassName,
+  avatarStyle,
   divider = 'card',
-  titleProps = {},
-  itemProps = {},
-  oddProps = {},
-  evenProps = {},
+  titleClassName,
+  titleStyle,
+  itemClassName,
+  itemStyle,
+  oddClassName,
+  oddStyle,
+  evenClassName,
+  evenStyle,
   ...props
 }) => {
   return (
     <div {...props} className={DOMUtil.classNames('skeleton-paragraph', divider, props?.className)}>
-      {avatarProps && (
+      {(avatarClassName || avatarStyle) && (
         <Block
           animated={animated}
-          {...avatarProps}
-          className={`skeleton-avatar${avatarProps.className ? ' ' + avatarProps.className : ''}`}
+          style={avatarStyle}
+          className={DOMUtil.classNames('skeleton-avatar', avatarClassName)}
         />
       )}
 
       <div className="skeleton-paragraph-content">
         {/* Title */}
-        {titleProps && (
+        {(titleClassName || titleStyle) && (
           <Block
             animated={animated}
-            {...titleProps}
-            className={`skeleton-title${titleProps.className ? ' ' + titleProps.className : ''}`}
+            style={titleStyle}
+            className={DOMUtil.classNames('skeleton-title', titleClassName)}
           />
         )}
 
         {/* Items */}
         {Array.from({ length: length ?? 2 }).map((_, index) => {
-          let currentItemProps = { ...itemProps, ...((index + 1) % 2 === 0 ? evenProps : oddProps) }
+          const isEven = (index + 1) % 2 === 0
+          const currentItemClassName = [itemClassName, isEven ? evenClassName : oddClassName].filter(Boolean).join(' ')
+          const currentItemStyle = { ...itemStyle, ...(isEven ? evenStyle : oddStyle) }
 
           return (
             <Block
               animated={animated}
               key={index}
-              {...currentItemProps}
-              className={`skeleton-item${props.className ? ' ' + props.className : ''}`}
+              style={currentItemStyle}
+              className={DOMUtil.classNames('skeleton-item', currentItemClassName)}
             />
           )
         })}

@@ -10,7 +10,8 @@ const Combo = (
     onBeforeChange,
     onChange,
     onPreview,
-    modalProps,
+    modalClassName,
+    modalStyle,
     // 绘画配置
     color,
     backgroundColor,
@@ -37,7 +38,8 @@ const Combo = (
       value={value}
       onBeforeChange={onBeforeChange}
       onChange={onChange}
-      modalProps={modalProps}
+      modalClassName={modalClassName}
+      modalStyle={modalStyle}
       // 绘画配置
       color={color}
       backgroundColor={backgroundColor}

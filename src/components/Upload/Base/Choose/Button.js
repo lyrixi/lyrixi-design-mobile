@@ -3,6 +3,7 @@ import Uploading from './../Uploading'
 
 // 内库使用-start
 import LocaleUtil from './../../../../utils/LocaleUtil'
+import DOMUtil from './../../../../utils/DOMUtil'
 // 内库使用-end
 
 /* 测试使用-start
@@ -25,7 +26,7 @@ const UploadButton = ({ uploading, ...props }, ref) => {
     <div
       ref={rootRef}
       {...props}
-      className={`upload-choose-button${props?.className ? ' ' + props.className : ''}`}
+      className={DOMUtil.classNames('upload-choose-button', props?.className)}
     >
       <i className={`upload-choose-icon upload-choose-icon-add`}></i>
 

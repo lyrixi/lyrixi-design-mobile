@@ -4,6 +4,7 @@ import _ from 'lodash'
 // 内库使用-start
 import Result from './../../Result'
 import List from './../../List'
+import DOMUtil from './../../../utils/DOMUtil'
 // 内库使用-end
 
 /* 测试使用-start
@@ -44,7 +45,7 @@ const Main = forwardRef(
     return (
       <div
         {...props}
-        className={`select-main${props?.className ? ' ' + props.className : ''}`}
+        className={DOMUtil.classNames('select-main', props?.className)}
         ref={mainRef}
       >
         {_.isEmpty(list) && <Result className="select-main-result" status="empty" />}

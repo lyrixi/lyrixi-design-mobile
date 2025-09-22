@@ -37,12 +37,18 @@ function MapChoose(
     onMarkerClick,
 
     // Control Props
-    SearchControlProps,
-    CenterMarkerProps,
-    MarkersProps,
-    ZoomControlProps,
-    LocationControlProps,
-    NearbyControlProps,
+    searchControlClassName,
+    searchControlStyle,
+    centerMarkerClassName,
+    centerMarkerStyle,
+    markersClassName,
+    markersStyle,
+    zoomControlClassName,
+    zoomControlStyle,
+    locationControlClassName,
+    locationControlStyle,
+    nearbyControlClassName,
+    nearbyControlStyle,
 
     children,
     ...props
@@ -167,7 +173,13 @@ function MapChoose(
       }}
     >
       {/* 搜索控件 */}
-      {readOnly ? null : <SearchControl onChange={handleChange} {...SearchControlProps} />}
+      {readOnly ? null : (
+        <SearchControl
+          onChange={handleChange}
+          className={searchControlClassName}
+          style={searchControlStyle}
+        />
+      )}
 
       {/* 中心标注点: 仅用于显示 */}
       <CenterMarker
@@ -190,16 +202,23 @@ function MapChoose(
                 handleChange(result)
               }
         }
-        {...CenterMarkerProps}
+        className={centerMarkerClassName}
+        style={centerMarkerStyle}
       />
 
       {/* 标注点 */}
-      {!readOnly ? <Markers points={points} onClick={onMarkerClick} {...MarkersProps} /> : null}
+      {!readOnly ? (
+        <Markers
+          points={points}
+          onClick={onMarkerClick}
+          className={markersClassName}
+          style={markersStyle}
+        />
+      ) : null}
 
       {/* 缩放控件 */}
       <ZoomControl
         ref={zoomRef}
-        style={{ bottom: readOnly ? '115px' : '145px' }}
         onZoomIn={(map) => {
           setTimeout(() => {
             console.log('放大', map.getZoom())
@@ -210,16 +229,17 @@ function MapChoose(
             console.log('缩小', map.getZoom())
           }, 300)
         }}
-        {...ZoomControlProps}
+        className={zoomControlClassName}
+        style={{ bottom: readOnly ? '115px' : '145px', ...zoomControlStyle }}
       />
 
       {/* 定位控件 */}
       {readOnly ? null : (
         <LocationControl
           ref={locationRef}
-          style={{ bottom: '145px' }}
+          style={{ bottom: '145px', ...locationControlStyle }}
           onChange={handleChange}
-          {...LocationControlProps}
+          className={locationControlClassName}
         />
       )}
 
@@ -240,7 +260,8 @@ function MapChoose(
           // }
           setPoints(list)
         }}
-        {...NearbyControlProps}
+        className={nearbyControlClassName}
+        style={nearbyControlStyle}
       />
 
       {children}

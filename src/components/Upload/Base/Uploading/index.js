@@ -2,6 +2,7 @@ import React from 'react'
 
 // 内库使用-start
 import Loading from './../../../Loading'
+import DOMUtil from './../../../../utils/DOMUtil'
 // 内库使用-end
 
 /* 测试使用-start
@@ -26,7 +27,7 @@ const Uploading = ({ uploading, item, className }) => {
   }
 
   return (
-    <div className={`upload-uploading${className ? ' ' + className : ''}`}>
+    <div className={DOMUtil.classNames('upload-uploading', className)}>
       {getUploadingNode(item)}
     </div>
   )

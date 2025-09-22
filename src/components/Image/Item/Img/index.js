@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 // 内库使用-start
 import AssetUtil from './../../../../utils/AssetUtil'
+import DOMUtil from './../../../../utils/DOMUtil'
 // 内库使用-end
 
 /* 测试使用-start
@@ -26,7 +27,7 @@ const Img = ({ src }) => {
 
   return (
     <div
-      className={`image-item-img${backgroundImage === 'error' ? ' error' : ''}`}
+      className={DOMUtil.classNames('image-item-img', backgroundImage === 'error' ? 'error' : null)}
       style={{ backgroundImage: backgroundImage === 'error' ? '' : `url(${backgroundImage})` }}
     ></div>
   )

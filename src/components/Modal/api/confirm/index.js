@@ -11,28 +11,34 @@ export default function confirm({
   onVisibleChange,
 
   // 遮罩
-  maskProps,
+  maskClassName,
+  maskStyle,
 
   // 标题
   title,
-  titleProps,
+  titleClassName,
+  titleStyle,
 
   // 内容
   content,
-  contentProps,
+  contentClassName,
+  contentStyle,
 
   // 底部
-  footerProps,
+  footerClassName,
+  footerStyle,
 
   // 确定, 默认显示确定按钮
   ok,
   onOk,
-  okProps,
+  okClassName,
+  okStyle,
 
   // 取消, confirm默认显示取消按钮
   cancel,
   onCancel,
-  cancelProps
+  cancelClassName,
+  cancelStyle
 }) {
   let mask = null
 
@@ -94,28 +100,34 @@ export default function confirm({
     onVisibleChange,
 
     // 遮罩
-    maskProps,
+    maskClassName,
+    maskStyle,
 
     // 标题
     title,
-    titleProps,
+    titleClassName,
+    titleStyle,
 
     // 内容
     content,
-    contentProps,
+    contentClassName,
+    contentStyle,
 
     // 底部
-    footerProps,
+    footerClassName,
+    footerStyle,
 
     // 确定, 默认显示确定按钮
     ok,
     onOk,
-    okProps,
+    okClassName,
+    okStyle,
 
     // 取消, confirm默认显示取消按钮
     cancel,
     onCancel,
-    cancelProps
+    cancelClassName,
+    cancelStyle
   })
 
   return mask

@@ -93,10 +93,8 @@ const Filter = forwardRef(
         <FilterModal
           onCancel={onCancel}
           footer={footer}
-          maskProps={{
-            className: maskClassName,
-            style: maskStyle
-          }}
+          maskClassName={maskClassName}
+          maskStyle={maskStyle}
           style={{
             className: modalClassName,
             style: modalStyle

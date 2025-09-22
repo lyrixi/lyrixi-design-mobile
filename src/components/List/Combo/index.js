@@ -15,7 +15,8 @@ const ListCombo = forwardRef(
   (
     {
       // Modal
-      modalProps,
+      modalClassName,
+      modalStyle,
 
       loadList,
       pull,
@@ -39,20 +40,19 @@ const ListCombo = forwardRef(
         {...props}
         // Modal
         modal={props?.modal || CascaderModal}
-        modalProps={{
-          ...modalProps,
-          loadList,
-          pull,
-          pagination,
-          // List config
-          wrapper,
-          layout,
-          multiple,
-          checkable,
-          checkbox,
-          checkboxProps,
-          checkboxPosition
-        }}
+        modalClassName={modalClassName}
+        modalStyle={modalStyle}
+        loadList={loadList}
+        pull={pull}
+        pagination={pagination}
+        // List config
+        wrapper={wrapper}
+        layout={layout}
+        multiple={multiple}
+        checkable={checkable}
+        checkbox={checkbox}
+        checkboxProps={checkboxProps}
+        checkboxPosition={checkboxPosition}
       />
     )
   }

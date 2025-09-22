@@ -3,6 +3,7 @@ import Main from './../Main'
 
 // 内库使用-start
 import LocaleUtil from './../../../utils/LocaleUtil'
+import DOMUtil from './../../../utils/DOMUtil'
 import BaseModal from './../../Modal'
 // 内库使用-end
 
@@ -44,7 +45,7 @@ const Modal = forwardRef(
         ref={modalRef}
         onVisibleChange={onVisibleChange}
         animation={animation}
-        className={`share-modal${className ? ' ' + className : ''}`}
+        className={DOMUtil.classNames('share-modal', className)}
       >
         <div className="share-modal-title">{LocaleUtil.locale('分享到', 'SeedsUI_share_to')}</div>
         <div className="share-modal-main">

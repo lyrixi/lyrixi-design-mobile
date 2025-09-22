@@ -1,5 +1,6 @@
 import React from 'react'
 import Uploading from './../Uploading'
+import DOMUtil from './../../../utils/DOMUtil'
 
 // 上传按钮
 const Choose = ({
@@ -82,12 +83,12 @@ const Choose = ({
 
   return (
     <div
-      className={`image-item image-choose${className ? ' ' + className : ''}`}
+      className={DOMUtil.classNames('image-item', 'image-choose', className)}
       data-type="upload"
       onClick={handleUploadClick}
     >
       {/* 拍照或者视频图标 */}
-      <div className={`image-choose-icon${type === 'video' ? ' video' : ''}`}></div>
+      <div className={DOMUtil.classNames('image-choose-icon', type === 'video' ? 'video' : null)}></div>
       {/* 启用file框 */}
       {onFileChange && (
         <input

@@ -9,6 +9,7 @@ import DingTalk from './DingTalk'
 import LocaleUtil from './../../../utils/LocaleUtil'
 import Bridge from './../../../utils/Bridge'
 import Result from './../../Result'
+import DOMUtil from './../../../utils/DOMUtil'
 // 内库使用-end
 
 /* 测试使用-start
@@ -60,7 +61,7 @@ function Main({ className, style, shareTo, ...props }, ref) {
   let isSupport = support(shareTo)
   return (
     <div
-      className={`share${className ? ' ' + className : ''}${isSupport ? '' : ' error'}`}
+      className={DOMUtil.classNames('share', className, !isSupport ? 'error' : null)}
       style={style}
       ref={mainRef}
     >

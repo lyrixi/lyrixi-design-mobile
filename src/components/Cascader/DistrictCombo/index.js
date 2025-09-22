@@ -34,7 +34,8 @@ const DistrictCombo = forwardRef(
 
       min = '',
       searchVisible,
-      modalProps,
+      modalClassName,
+      modalStyle,
 
       // Main
       startType, // 开始于国家country, 省份province
@@ -110,20 +111,17 @@ const DistrictCombo = forwardRef(
     return (
       <Combo
         ref={comboRef}
-        modalProps={{
-          startType,
-          type, // 'country', 'province', 'city', 'district', 'street'
-          min,
-          searchVisible,
-          // 数据加载
-          loadCountries,
-          loadCountryRegions,
-          loadStreets,
-          editableOptions,
-          ...modalProps,
-          // Main Props
-          mainProps: modalProps?.mainProps || {}
-        }}
+        modalClassName={modalClassName}
+        modalStyle={modalStyle}
+        startType={startType}
+        type={type} // 'country', 'province', 'city', 'district', 'street'
+        min={min}
+        searchVisible={searchVisible}
+        // 数据加载
+        loadCountries={loadCountries}
+        loadCountryRegions={loadCountryRegions}
+        loadStreets={loadStreets}
+        editableOptions={editableOptions}
         value={value}
         onChange={
           onChange

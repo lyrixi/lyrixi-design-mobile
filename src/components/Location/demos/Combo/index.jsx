@@ -109,24 +109,22 @@ export default () => {
         //     }, 1000)
         //   })
         // }}
-        modalProps={{
-          safeArea: true,
-          footer: ({ visible, triggerOk }) => {
-            return visible === 'choose' ? (
-              <Footer
-                onOk={() => {
-                  triggerOk()
-                }}
-                onClear={() => {
-                  triggerOk(null)
-                }}
-              />
-            ) : null
-          },
-          mainProps: {
-            // autoLocation: false,
-            zoom: 16
-          }
+        safeArea={true}
+        footer={({ visible, triggerOk }) => {
+          return visible === 'choose' ? (
+            <Footer
+              onOk={() => {
+                triggerOk()
+              }}
+              onClear={() => {
+                triggerOk(null)
+              }}
+            />
+          ) : null
+        }}
+        mainProps={{
+          // autoLocation: false,
+          zoom: 16
         }}
         // disabled
         allowClear

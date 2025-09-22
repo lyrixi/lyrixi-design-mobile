@@ -23,9 +23,7 @@ export default () => {
           // backgroundColor="white"
           // disabled={true}
           value={value}
-          modalProps={{
-            safeArea: 'auto'
-          }}
+          safeArea="auto"
           onChange={(newVal) => {
             console.log(newVal)
             setValue(newVal)

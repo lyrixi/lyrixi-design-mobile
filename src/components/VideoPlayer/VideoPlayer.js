@@ -6,6 +6,7 @@ import getSkinLayout from './getSkinLayout'
 
 // 内库使用-start
 import LocaleUtil from './../../utils/LocaleUtil'
+import DOMUtil from './../../utils/DOMUtil'
 // 内库使用-end
 
 /* 测试使用-start
@@ -141,7 +142,7 @@ const VideoPlayer = forwardRef(
 
     const DOM = (
       <div
-        className={`videoplayer-page${props.className ? ' ' + props.className : ''}`}
+        className={DOMUtil.classNames('videoplayer-page', props.className)}
         {...props}
         ref={rootRef}
       >

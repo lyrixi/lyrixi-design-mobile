@@ -12,7 +12,8 @@ const SelectCombo = forwardRef(
   (
     {
       // Modal
-      modalProps,
+      modalClassName,
+      modalStyle,
 
       list,
 
@@ -33,17 +34,16 @@ const SelectCombo = forwardRef(
         {...props}
         // Modal
         modal={props?.modal || Modal}
-        modalProps={{
-          ...modalProps,
-          list: list,
-          // List config
-          wrapper,
-          layout,
-          checkable,
-          checkbox,
-          checkboxProps,
-          checkboxPosition
-        }}
+        modalClassName={modalClassName}
+        modalStyle={modalStyle}
+        list={list}
+        // List config
+        wrapper={wrapper}
+        layout={layout}
+        checkable={checkable}
+        checkbox={checkbox}
+        checkboxProps={checkboxProps}
+        checkboxPosition={checkboxPosition}
       />
     )
   }

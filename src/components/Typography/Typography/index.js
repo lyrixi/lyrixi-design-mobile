@@ -1,4 +1,5 @@
 import React, { useImperativeHandle, forwardRef, useRef } from 'react'
+import DOMUtil from './../../../utils/DOMUtil'
 
 const Typography = forwardRef(({ children, ...props }, ref) => {
   const rootRef = useRef(null)
@@ -14,7 +15,7 @@ const Typography = forwardRef(({ children, ...props }, ref) => {
   return (
     <div
       {...props}
-      className={`typography${props.className ? ' ' + props.className : ''}`}
+      className={DOMUtil.classNames('typography', props.className)}
       ref={rootRef}
     >
       {children}

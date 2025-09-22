@@ -104,14 +104,12 @@ export default () => {
             style={{ margin: '0 12px' }}
             placeholder="Layout"
             multiple={false}
-            modalProps={{
-              title: 'Select',
-              header: () => {
-                return <p>Header</p>
-              },
-              footer: () => {
-                return <p>Footer</p>
-              }
+            title="Select"
+            header={() => {
+              return <p>Header</p>
+            }}
+            footer={() => {
+              return <p>Footer</p>
             }}
             allowClear
             value={value}
@@ -174,21 +172,19 @@ export default () => {
             style={{ margin: '0 12px' }}
             placeholder="Search"
             multiple={false}
-            modalProps={{
-              title: 'Select',
-              header: () => {
-                return (
-                  <ToolBar invert>
-                    <ToolBar.Search
-                      value={keyword}
-                      onSearch={(newKeyword) => {
-                        setKeyword(newKeyword)
-                        setList(List.searchList(listData, newKeyword))
-                      }}
-                    />
-                  </ToolBar>
-                )
-              }
+            title="Select"
+            header={() => {
+              return (
+                <ToolBar invert>
+                  <ToolBar.Search
+                    value={keyword}
+                    onSearch={(newKeyword) => {
+                      setKeyword(newKeyword)
+                      setList(List.searchList(listData, newKeyword))
+                    }}
+                  />
+                </ToolBar>
+              )
             }}
             allowClear
             value={value}

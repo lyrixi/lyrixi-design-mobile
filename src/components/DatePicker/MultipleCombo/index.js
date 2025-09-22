@@ -19,7 +19,8 @@ const MultipleCombo = forwardRef(
       separator,
 
       // Modal
-      modalProps,
+      modalClassName,
+      modalStyle,
 
       defaultPickerValue,
       onError,
@@ -48,17 +49,15 @@ const MultipleCombo = forwardRef(
         // Modal
         modal={props?.modal || MultipleModal}
         value={value}
-        modalProps={{
-          ...modalProps,
-          defaultPickerValue: defaultPickerValue,
-          onError: onError,
-
-          type: type,
-          min: min,
-          max: max,
-          hourStep: hourStep,
-          minuteStep: minuteStep
-        }}
+        modalClassName={modalClassName}
+        modalStyle={modalStyle}
+        defaultPickerValue={defaultPickerValue}
+        onError={onError}
+        type={type}
+        min={min}
+        max={max}
+        hourStep={hourStep}
+        minuteStep={minuteStep}
       />
     )
   }

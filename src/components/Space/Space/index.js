@@ -1,5 +1,9 @@
 import React, { useImperativeHandle, forwardRef, useRef } from 'react'
 
+// 内库使用-start
+import DOMUtil from './../../../utils/DOMUtil'
+// 内库使用-end
+
 const Space = forwardRef(({ size, children, ...props }, ref) => {
   const rootRef = useRef(null)
 
@@ -14,7 +18,7 @@ const Space = forwardRef(({ size, children, ...props }, ref) => {
   return (
     <div
       {...props}
-      className={`space${props.className ? ' ' + props.className : ''}`}
+      className={DOMUtil.classNames('space', props.className)}
       style={{
         gap: `${typeof size?.[0] === 'number' ? size[0] + 'px' : ''} ${
           typeof size?.[1] === 'number' ? size[1] + 'px' : ''

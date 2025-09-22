@@ -1,7 +1,7 @@
 import React from 'react'
 import { createPortal } from 'react-dom'
 
-function Guide({ portal, visible, maskProps = {}, onVisibleChange }) {
+function Guide({ portal, visible, maskClassName, maskStyle, onVisibleChange }) {
   const handlerClick = (e) => {
     e.stopPropagation()
     if (onVisibleChange) onVisibleChange(false)
@@ -9,10 +9,10 @@ function Guide({ portal, visible, maskProps = {}, onVisibleChange }) {
 
   return createPortal(
     <div
-      className={`mask share-mask${maskProps.className ? ' ' + maskProps.className : ''}${
+      className={`mask share-mask${maskClassName ? ' ' + maskClassName : ''}${
         visible ? ' active' : ''
       }`}
-      {...maskProps}
+      style={maskStyle}
       onClick={handlerClick}
     >
       <div className="share-tip-arrow"></div>

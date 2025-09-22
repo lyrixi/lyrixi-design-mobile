@@ -1,6 +1,7 @@
 import React, { useEffect, forwardRef } from 'react'
 import { createPortal } from 'react-dom'
 import PreviewMain from './../PreviewMain'
+import DOMUtil from './../../../utils/DOMUtil'
 
 // 内库使用-start
 import SelectModal from './../../Modal/NavBarModal'
@@ -41,8 +42,10 @@ const PreviewModal = forwardRef(
       onUpload,
       onChange,
 
-      modalProps,
-      mainProps
+      modalClassName,
+      modalStyle,
+      mainClassName,
+      mainStyle
     },
     ref
   ) => {
@@ -67,14 +70,14 @@ const PreviewModal = forwardRef(
       return createPortal(
         <PreviewMain
           safeArea={true}
-          {...mainProps}
+          className={DOMUtil.classNames('image-preview-main-page', mainClassName)}
+          style={mainStyle}
           ref={ref}
           visible={visible}
           type={type}
           list={list}
           current={current}
           // Style
-          className="image-preview-main-page"
           allowClose={true}
           allowChoose={allowChoose}
           allowClear={allowClear}
@@ -97,15 +100,16 @@ const PreviewModal = forwardRef(
 
     return (
       <SelectModal
-        {...modalProps}
+        className={DOMUtil.classNames('image-preview-modal', modalClassName)}
+        style={modalStyle}
         visible={visible}
         animation="slideUp"
-        className="image-preview-modal"
         onVisibleChange={handleVisibleChange}
         ok={false}
       >
         <PreviewMain
-          {...mainProps}
+          className={mainClassName}
+          style={mainStyle}
           ref={ref}
           visible={visible}
           type={type}

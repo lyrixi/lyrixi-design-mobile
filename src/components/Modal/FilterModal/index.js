@@ -5,6 +5,7 @@ import Modal from './../Modal'
 import LocaleUtil from './../../../utils/LocaleUtil'
 import Layout from './../../Layout'
 import NavBar from './../../NavBar'
+import DOMUtil from './../../../utils/DOMUtil'
 // 内库使用-end
 
 /* 测试使用-start
@@ -37,7 +38,7 @@ function FilterModal(
           onCancel && onCancel()
         }
       }}
-      className={`modal-filtermodal${props?.className ? ' ' + props.className : ''}`}
+      className={DOMUtil.classNames('modal-filtermodal', props?.className)}
       visible={visible}
       onVisibleChange={onVisibleChange}
     >

@@ -30,6 +30,8 @@ const Combo = forwardRef(
       portal,
       maskClassName,
       maskStyle,
+      modalClassName,
+      modalStyle,
 
       value,
       onBeforeChange,
@@ -37,7 +39,19 @@ const Combo = forwardRef(
       onChange,
       modal: ModalNode,
       title,
-      modalProps,
+
+      // Modal props (previously in modalProps)
+      list,
+      wrapper,
+      layout,
+      checkable,
+      checkbox,
+      checkboxProps,
+      checkboxPosition,
+      multiple,
+      loadList,
+      pull,
+      pagination,
 
       // ComboNew
       combo,
@@ -51,7 +65,6 @@ const Combo = forwardRef(
       allowClear,
       separator,
       mode,
-      multiple,
       readOnly,
       disabled,
       placeholder,
@@ -113,7 +126,7 @@ const Combo = forwardRef(
 
     useEffect(() => {
       if (visible === null) return
-      typeof modalProps?.onVisibleChange === 'function' && modalProps.onVisibleChange(visible)
+      // Removed modalProps.onVisibleChange handling
       typeof onVisibleChange === 'function' && onVisibleChange(visible)
 
       // eslint-disable-next-line
@@ -266,13 +279,23 @@ const Combo = forwardRef(
             multiple={multiple}
             title={title}
             portal={portal}
-            maskProps={{
-              className: maskClassName,
-              style: maskStyle
-            }}
-            {...modalProps}
+            maskClassName={maskClassName}
+            maskStyle={maskStyle}
+            className={modalClassName}
+            style={modalStyle}
             onVisibleChange={setVisible}
             visible={visible}
+            // Modal props (previously in modalProps)
+            list={list}
+            wrapper={wrapper}
+            layout={layout}
+            checkable={checkable}
+            checkbox={checkbox}
+            checkboxProps={checkboxProps}
+            checkboxPosition={checkboxPosition}
+            loadList={loadList}
+            pull={pull}
+            pagination={pagination}
           />
         )}
       </Fragment>

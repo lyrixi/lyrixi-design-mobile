@@ -17,7 +17,8 @@ const CascaderCombo = forwardRef(
       // Filter useless props to protect the feature
       multiple,
       // Modal
-      modalProps,
+      modalClassName,
+      modalStyle,
       searchVisible,
 
       list,
@@ -32,12 +33,11 @@ const CascaderCombo = forwardRef(
         {...props}
         // Modal
         modal={props?.modal || CascaderModal}
-        modalProps={{
-          ...modalProps,
-          list: list,
-          loadData: loadData,
-          searchVisible: searchVisible
-        }}
+        modalClassName={modalClassName}
+        modalStyle={modalStyle}
+        list={list}
+        loadData={loadData}
+        searchVisible={searchVisible}
       />
     )
   }

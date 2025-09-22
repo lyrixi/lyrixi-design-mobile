@@ -22,7 +22,8 @@ const Popup = forwardRef(
       style,
 
       // 遮罩
-      maskProps = {},
+      maskClassName,
+      maskStyle,
 
       // 显隐
       visible,
@@ -39,7 +40,6 @@ const Popup = forwardRef(
 
     // 点击遮罩
     function handleMaskClick(e) {
-      if (maskProps.onClick) maskProps.onClick(e)
       if (maskClosable && onVisibleChange) onVisibleChange(false)
       e.stopPropagation()
     }
@@ -78,10 +78,10 @@ const Popup = forwardRef(
 
     return createPortal(
       <div
-        {...maskProps}
-        className={`mask tooltip-mask${maskProps.className ? ' ' + maskProps.className : ''}${
+        className={`mask tooltip-mask${maskClassName ? ' ' + maskClassName : ''}${
           visible ? ' active' : ''
         }`}
+        style={maskStyle}
         onClick={handleMaskClick}
         ref={ref}
       >

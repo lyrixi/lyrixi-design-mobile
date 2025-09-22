@@ -33,11 +33,9 @@ export default () => {
           console.log(newValue)
           setMulValue(newValue)
         }}
-        modalProps={{
-          // title: '选择日期',
-          onVisibleChange: (visible) => {
-            console.log('visible:', visible)
-          }
+        // title="选择日期"
+        onVisibleChange={(visible) => {
+          console.log('visible:', visible)
         }}
         allowClear
         min={new Date()}

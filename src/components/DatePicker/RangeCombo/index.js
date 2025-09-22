@@ -22,7 +22,8 @@ const RangeCombo = forwardRef(
       separator,
 
       // Modal
-      modalProps,
+      modalClassName,
+      modalStyle,
 
       // Modal properties
       diff,
@@ -79,27 +80,26 @@ const RangeCombo = forwardRef(
         value={formatValue(value)}
         onChange={handleChange}
         modal={props?.modal || RangeModal}
-        modalProps={{
-          ...modalProps,
-          defaultPickerValue: defaultPickerValue,
-          type: type,
-          diff: diff,
-          onError: onError,
-          // 记录选中项
-          onRangeIdChange: (newRangeId) => {
-            rangeIdRef.current = newRangeId
-          },
-          min: min,
-          max: max,
-          hourStep: hourStep,
-          minuteStep: minuteStep,
-          disabledStart: disabledStart,
-          disabledEnd: disabledEnd,
-          rangeId: rangeIdRef.current,
-          ranges: ranges,
-          portal: portal,
-          titles: titles
+        modalClassName={modalClassName}
+        modalStyle={modalStyle}
+        defaultPickerValue={defaultPickerValue}
+        type={type}
+        diff={diff}
+        onError={onError}
+        // 记录选中项
+        onRangeIdChange={(newRangeId) => {
+          rangeIdRef.current = newRangeId
         }}
+        min={min}
+        max={max}
+        hourStep={hourStep}
+        minuteStep={minuteStep}
+        disabledStart={disabledStart}
+        disabledEnd={disabledEnd}
+        rangeId={rangeIdRef.current}
+        ranges={ranges}
+        portal={portal}
+        titles={titles}
       />
     )
   }

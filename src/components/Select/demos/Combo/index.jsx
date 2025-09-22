@@ -35,14 +35,12 @@ export default () => {
         <Card>
           <Divider>Single Select</Divider>
           <Select.Combo
-            modalProps={{
-              title: 'Select',
-              // 有些业务弹窗后就会变的异常卡顿, 解决方式如下:
-              // 1.visibility改为display能解决
-              // 2.不用root换任意一个div都是好的, root应该被恶意修改导致
-              // 3.挂载到body下也能解决
-              portal: document.body
-            }}
+            title="Select"
+            // 有些业务弹窗后就会变的异常卡顿, 解决方式如下:
+            // 1.visibility改为display能解决
+            // 2.不用root换任意一个div都是好的, root应该被恶意修改导致
+            // 3.挂载到body下也能解决
+            portal={document.body}
             style={{ margin: '0 12px' }}
             placeholder="Single Select"
             allowClear
@@ -56,9 +54,7 @@ export default () => {
         <Card>
           <Divider>Single Select, allow modal clear</Divider>
           <Select.Combo
-            modalProps={{
-              title: 'Select'
-            }}
+            title="Select"
             style={{ margin: '0 12px' }}
             placeholder="Single Select"
             allowClear
@@ -71,9 +67,7 @@ export default () => {
         <Card>
           <Divider>Multiple Select</Divider>
           <Select.Combo
-            modalProps={{
-              title: 'Select'
-            }}
+            title="Select"
             style={{ margin: '0 12px' }}
             placeholder="Multiple Select"
             multiple
@@ -87,9 +81,7 @@ export default () => {
         <Card>
           <Divider>Multiple Select separator</Divider>
           <Select.Combo
-            modalProps={{
-              title: 'Select'
-            }}
+            title="Select"
             style={{ margin: '0 12px' }}
             placeholder="Multiple Select"
             multiple
@@ -104,9 +96,7 @@ export default () => {
         <Card>
           <Divider>Single tags</Divider>
           <Select.Combo
-            modalProps={{
-              title: 'Select'
-            }}
+            title="Select"
             style={{ margin: '0 12px' }}
             placeholder="Multiple Select"
             mode={'tags'}
@@ -122,9 +112,7 @@ export default () => {
         <Card>
           <Divider>Multiple Tags</Divider>
           <Select.Combo
-            modalProps={{
-              title: 'Select'
-            }}
+            title="Select"
             style={{ margin: '0 12px' }}
             placeholder="Multiple Select"
             mode={'tags'}
@@ -140,9 +128,7 @@ export default () => {
         <Card>
           <Divider>Multiple Tags separator</Divider>
           <Select.Combo
-            modalProps={{
-              title: 'Select'
-            }}
+            title="Select"
             style={{ margin: '0 12px' }}
             placeholder="Multiple Select"
             mode={'tags'}
@@ -159,9 +145,7 @@ export default () => {
         <Card>
           <Divider>Checkbox</Divider>
           <Select.Combo
-            modalProps={{
-              title: 'Select'
-            }}
+            title="Select"
             style={{ margin: '0 12px' }}
             placeholder="Single Select"
             allowClear
@@ -182,14 +166,12 @@ export default () => {
             style={{ margin: '0 12px' }}
             placeholder="Layout"
             multiple={false}
-            modalProps={{
-              title: 'Select',
-              header: () => {
-                return <p>Header</p>
-              },
-              footer: () => {
-                return <p>Footer</p>
-              }
+            title="Select"
+            header={() => {
+              return <p>Header</p>
+            }}
+            footer={() => {
+              return <p>Footer</p>
             }}
             allowClear
             value={value}
@@ -201,9 +183,7 @@ export default () => {
         <Card>
           <Divider>onBeforeChange</Divider>
           <Select.Combo
-            modalProps={{
-              title: 'Select'
-            }}
+            title="Select"
             style={{ margin: '0 12px' }}
             placeholder="onBeforeChange"
             allowClear
@@ -232,9 +212,7 @@ export default () => {
         <Card>
           <Divider>List count more than 15, show Search</Divider>
           <Select.Combo
-            modalProps={{
-              title: 'Select'
-            }}
+            title="Select"
             style={{ margin: '0 12px' }}
             placeholder="Search"
             multiple={false}
@@ -254,20 +232,18 @@ export default () => {
             style={{ margin: '0 12px' }}
             placeholder="Search"
             multiple={false}
-            modalProps={{
-              title: 'Select',
-              header: () => {
-                return (
-                  <ToolBar invert>
-                    <ToolBar.Search
-                      value={keyword}
-                      onSearch={(newKeyword) => {
-                        setKeyword(newKeyword)
-                      }}
-                    />
-                  </ToolBar>
-                )
-              }
+            title="Select"
+            header={() => {
+              return (
+                <ToolBar invert>
+                  <ToolBar.Search
+                    value={keyword}
+                    onSearch={(newKeyword) => {
+                      setKeyword(newKeyword)
+                    }}
+                  />
+                </ToolBar>
+              )
             }}
             allowClear
             value={value}

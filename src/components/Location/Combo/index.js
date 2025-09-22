@@ -65,7 +65,8 @@ const LocationCombo = forwardRef(
 
       // Modal
       modal,
-      modalProps,
+      modalClassName,
+      modalStyle,
       ...props
     },
     ref
@@ -409,7 +410,8 @@ const LocationCombo = forwardRef(
           }}
           getAddress={getAddress}
           getLocation={getLocation}
-          {...(modalProps || {})}
+          className={modalClassName}
+          style={modalStyle}
         />
       </Fragment>
     )

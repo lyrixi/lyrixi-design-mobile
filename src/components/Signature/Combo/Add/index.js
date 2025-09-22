@@ -3,6 +3,7 @@ import Modal from './../../Modal'
 
 // 内库使用-start
 import LocaleUtil from './../../../../utils/LocaleUtil'
+import DOMUtil from './../../../../utils/DOMUtil'
 // 内库使用-end
 
 /* 测试使用-start
@@ -15,7 +16,8 @@ const Combo = (
     value,
     onBeforeChange,
     onChange,
-    modalProps,
+    modalClassName,
+    modalStyle,
     // 绘画配置
     color,
     backgroundColor,
@@ -60,7 +62,7 @@ const Combo = (
       <div
         ref={comboRef}
         {...props}
-        className={`signature-button${props?.className ? ' ' + props.className : ''}`}
+        className={DOMUtil.classNames('signature-button', props?.className)}
         onClick={handleSign}
       >
         <i className={`signature-button-icon-add`}></i>
@@ -81,7 +83,8 @@ const Combo = (
         // 绘画配置
         color={color}
         backgroundColor={backgroundColor}
-        {...modalProps}
+        className={modalClassName}
+        style={modalStyle}
       />
     </>
   )

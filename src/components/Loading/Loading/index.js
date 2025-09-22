@@ -11,7 +11,7 @@ import { LocaleUtil } from 'lyrixi-design-mobile'
 测试使用-start */
 
 const Loading = forwardRef(
-  ({ portal, visible = true, maskProps = {}, icon, content, children, ...props }, ref) => {
+  ({ portal, visible = true, maskClassName, maskStyle, icon, content, children, ...props }, ref) => {
     const rootRef = useRef(null)
     useImperativeHandle(ref, () => {
       return {
@@ -38,10 +38,10 @@ const Loading = forwardRef(
     // 组合Node
     let Node = (
       <div
-        {...maskProps}
         className={`loading-mask mask ${visible ? ' active' : ''}${
-          maskProps.className ? ' ' + maskProps.className : ''
+          maskClassName ? ' ' + maskClassName : ''
         }`}
+        style={maskStyle}
         ref={rootRef}
       >
         {children !== undefined ? (

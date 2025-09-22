@@ -1,7 +1,15 @@
 import React, { forwardRef, useRef, useImperativeHandle, useEffect } from 'react'
 import Instance from './instance.js'
 import BridgeBrowser from './../../utils/Bridge/browser'
+
+// 内库使用-start
 import LocaleUtil from './../../utils/LocaleUtil'
+import DOMUtil from './../../utils/DOMUtil'
+// 内库使用-end
+
+/* 测试使用-start
+import { LocaleUtil, DOMUtil } from 'lyrixi-design-mobile'
+测试使用-end */
 
 let loaded = 0 // eslint-disable-line
 
@@ -131,7 +139,7 @@ const Vott = forwardRef(
     return (
       <div
         {...props}
-        className={`vott-container${props.className ? ' ' + props.className : ''}`}
+        className={DOMUtil.classNames('vott-container', props.className)}
         ref={rootRef}
       >
         <div className="vott-wrapper" onClick={handleClick}>

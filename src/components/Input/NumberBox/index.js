@@ -3,6 +3,7 @@ import InputNumber from './../Number'
 
 // 内库使用-start
 import MathUtil from './../../../utils/MathUtil'
+import DOMUtil from './../../../utils/DOMUtil'
 // 内库使用-end
 
 /* 测试使用-start
@@ -14,8 +15,10 @@ const NumberBox = forwardRef(
   (
     {
       // 加减号
-      plusProps = {},
-      minusProps = {},
+      plusClassName,
+      plusStyle,
+      minusClassName,
+      minusStyle,
       stepFocus, // 点击加减按钮获取焦点
 
       // 文本框
@@ -134,7 +137,6 @@ const NumberBox = forwardRef(
       )
       // Callback
       handleChange(val)
-      if (minusProps.onClick) minusProps.onClick(e, val)
       if (stepFocus) {
         inputDOM.focus()
       }
@@ -154,7 +156,6 @@ const NumberBox = forwardRef(
       )
       // Callback
       handleChange(val)
-      if (plusProps.onClick) plusProps.onClick(e, val)
       if (stepFocus) {
         inputDOM.focus()
       }
@@ -201,16 +202,14 @@ const NumberBox = forwardRef(
       <div
         {...props}
         disabled={(!isNaN(min) && !isNaN(max) ? Number(min) >= Number(max) : false) || disabled}
-        className={`seed-numberbox${props.className ? ' ' + props.className : ''}`}
+        className={DOMUtil.classNames('seed-numberbox', props.className)}
         ref={rootRef}
       >
         <div
           // disabled={minDisabled}
-          {...minusProps}
+          style={minusStyle}
           type="button"
-          className={`seed-numberbox-button seed-numberbox-button-minus${
-            minusProps.className ? ' ' + minusProps.className : ''
-          }`}
+          className={DOMUtil.classNames('seed-numberbox-button', 'seed-numberbox-button-minus', minusClassName)}
           onClick={handleMinus}
         >
           <i className="seed-numberbox-button-minus-icon"></i>
@@ -218,11 +217,9 @@ const NumberBox = forwardRef(
         {getInputDOM()}
         <div
           // disabled={maxDisabled}
-          {...plusProps}
+          style={plusStyle}
           type="button"
-          className={`seed-numberbox-button seed-numberbox-button-plus${
-            plusProps.className ? ' ' + plusProps.className : ''
-          }`}
+          className={DOMUtil.classNames('seed-numberbox-button', 'seed-numberbox-button-plus', plusClassName)}
           onClick={handlePlus}
         >
           <i className="seed-numberbox-button-plus-icon"></i>

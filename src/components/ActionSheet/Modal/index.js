@@ -33,9 +33,12 @@ const Modal = forwardRef(
       // 定制属性
       title,
       cancel,
-      maskProps = {},
-      groupProps = {},
-      optionProps = {},
+      maskClassName,
+      maskStyle,
+      groupClassName,
+      groupStyle,
+      optionClassName,
+      optionStyle,
       animation = 'slideUp', // slideLeft | slideRight | slideUp | slideDown | zoom | fade
       ...props
     },
@@ -86,12 +89,6 @@ const Modal = forwardRef(
     async function handleClickMask(e) {
       e.stopPropagation()
 
-      if (maskProps.onClick) {
-        let goOn = maskProps.onClick(e)
-        if (goOn === false) {
-          return
-        }
-      }
       if (maskClosable && onVisibleChange) onVisibleChange(false)
     }
 
@@ -114,10 +111,10 @@ const Modal = forwardRef(
     }
     return createPortal(
       <div
-        {...maskProps}
+        style={maskStyle}
         className={DOMUtil.classNames(
           'mask actionsheet-mask',
-          maskProps?.className,
+          maskClassName,
           visible ? ' active' : ''
         )}
         onClick={handleClickMask}
@@ -140,16 +137,17 @@ const Modal = forwardRef(
             </div>
           )}
           <div
-            {...groupProps}
-            className={DOMUtil.classNames('actionsheet-main', groupProps?.className)}
+            style={groupStyle}
+            className={DOMUtil.classNames('actionsheet-main', groupClassName)}
           >
             {list &&
               list.map((item, index) => {
                 return (
                   <div
-                    {...optionProps}
+                    style={optionStyle}
                     className={DOMUtil.classNames(
                       'actionsheet-option',
+                      optionClassName,
                       item?.disabled ? 'disabled' : '',
                       value?.[item.id] ? 'active' : ''
                     )}

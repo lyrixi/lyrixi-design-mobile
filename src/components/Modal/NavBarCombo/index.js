@@ -18,7 +18,10 @@ const Combo = forwardRef(
       // NavBarModal
       portal,
       animation,
-      maskProps,
+      maskClassName,
+      maskStyle,
+      modalClassName,
+      modalStyle,
       title,
       titleProps,
       ok,
@@ -29,7 +32,6 @@ const Combo = forwardRef(
       onVisibleChange,
       cancelProps,
       maskClosable,
-      modalProps,
       children,
       ...props
     },
@@ -54,7 +56,6 @@ const Combo = forwardRef(
 
     useEffect(() => {
       if (visible === null) return
-      typeof modalProps?.onVisibleChange === 'function' && modalProps.onVisibleChange(visible)
       typeof onVisibleChange === 'function' && onVisibleChange(visible)
 
       // eslint-disable-next-line
@@ -78,7 +79,10 @@ const Combo = forwardRef(
         <NavBarModal
           portal={portal}
           animation={animation}
-          maskProps={maskProps}
+          maskClassName={maskClassName}
+          maskStyle={maskStyle}
+          className={modalClassName}
+          style={modalStyle}
           title={title}
           titleProps={titleProps}
           ok={ok}
@@ -88,7 +92,6 @@ const Combo = forwardRef(
           onCancel={onCancel}
           cancelProps={cancelProps}
           maskClosable={maskClosable}
-          {...modalProps}
           onVisibleChange={setVisible}
           visible={visible}
         >

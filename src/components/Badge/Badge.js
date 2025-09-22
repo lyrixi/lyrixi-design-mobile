@@ -1,5 +1,13 @@
 import React, { forwardRef, useRef, useImperativeHandle } from 'react'
 
+// 内库使用-start
+import DOMUtil from './../../utils/DOMUtil'
+// 内库使用-end
+
+/* 测试使用-start
+import { DOMUtil } from 'lyrixi-design-mobile'
+测试使用-end */
+
 // 数值标
 const Badge = forwardRef(
   (
@@ -32,11 +40,7 @@ const Badge = forwardRef(
       }
     }
     return (
-      <span
-        {...props}
-        className={`badge${props.className ? ' ' + props.className : ''}`}
-        ref={rootRef}
-      >
+      <span {...props} className={DOMUtil.classNames('badge', props.className)} ref={rootRef}>
         {text}
       </span>
     )

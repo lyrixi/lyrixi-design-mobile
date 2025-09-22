@@ -1,5 +1,9 @@
 import React from 'react'
 
+// 内库使用-start
+import DOMUtil from './../../../../utils/DOMUtil'
+// 内库使用-end
+
 import Button from './Button'
 
 // 上传按钮
@@ -68,7 +72,7 @@ const Upload = ({
 
   return (
     <div
-      className={`upload-choose${disabled ? ' disabled' : ''}${className ? ' ' + className : ''}`}
+      className={DOMUtil.classNames('upload-choose', disabled && 'disabled', className)}
       onClick={handleUploadClick}
     >
       {/* 上传按钮 */}

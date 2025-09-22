@@ -27,16 +27,14 @@ const Modal = forwardRef(
       onVisibleChange,
       onClose,
 
-      maskProps = {},
+      maskClassName,
+      maskStyle,
 
       children,
       ...props
     },
     ref
   ) => {
-    // 增加保护
-    // eslint-disable-next-line
-    if (!maskProps) maskProps = {}
 
     const modalRef = useRef(null)
     useImperativeHandle(ref, () => {
@@ -67,16 +65,16 @@ const Modal = forwardRef(
         visible &&
         referenceDOM &&
         maskDOM &&
-        [undefined, null].includes(maskProps?.style?.top) &&
-        [undefined, null].includes(maskProps?.style?.bottom)
+        [undefined, null].includes(maskStyle?.top) &&
+        [undefined, null].includes(maskStyle?.bottom)
       ) {
         Tooltip.updatePositionByReferenceDOM(maskDOM, {
           referenceDOM: referenceDOM,
           parentDOM: portal,
           animation: animation,
           offset: offset,
-          left: maskProps?.style?.left,
-          right: maskProps?.style?.right
+          left: maskStyle?.left,
+          right: maskStyle?.right
         })
       }
     }
@@ -86,7 +84,6 @@ const Modal = forwardRef(
 
     // 点击遮罩
     function handleMaskClick(e) {
-      if (maskProps?.onClick) maskProps.onClick(e)
       if (maskClosable) {
         onVisibleChange && onVisibleChange(false)
         onClose && onClose(e)
@@ -107,9 +104,9 @@ const Modal = forwardRef(
     let ModalNode = (
       <div
         data-animation={animation}
-        {...maskProps}
+        style={maskStyle}
         className={`mask modal-mask${
-          maskProps?.className ? ' ' + maskProps.className : ''
+          maskClassName ? ' ' + maskClassName : ''
         }${getActiveClass()}`}
         onClick={handleMaskClick}
         ref={modalRef}

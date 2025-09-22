@@ -26,13 +26,17 @@ export default function CustomDates({
   allowClear,
   onChange,
 
-  datePickerModalProps
+  // Modal props
+  modalClassName,
+  modalStyle
 }) {
   return (
     <div className="datepicker-rangeselector-date">
       <RangeCombo
         ranges={null}
-        modalProps={{ ...(datePickerModalProps || {}), portal: portal }}
+        modalClassName={modalClassName}
+        modalStyle={modalStyle}
+        portal={portal}
         // 使用自定义InputText显示
         combo={(comboProps) => {
           return <InputText type={type} {...comboProps} />

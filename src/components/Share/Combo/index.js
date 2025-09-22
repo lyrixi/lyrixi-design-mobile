@@ -5,6 +5,7 @@ import share from './../utils/share'
 
 // 内库使用-start
 import Bridge from './../../../utils/Bridge'
+import DOMUtil from './../../../utils/DOMUtil'
 // 内库使用-end
 
 /* 测试使用-start
@@ -19,7 +20,8 @@ const Combo = (
 
     // Modal
     portal,
-    modalProps,
+    modalClassName,
+    modalStyle,
 
     // Main
     shareTo,
@@ -89,16 +91,17 @@ const Combo = (
       <div
         ref={comboRef}
         {...props}
-        className={`share-button${props?.className ? ' ' + props.className : ''}`}
+        className={DOMUtil.classNames('share-button', props?.className)}
         onClick={handleClick}
       >
         {getChildren()}
       </div>
 
       <Modal
-        {...(modalProps || {})}
         ref={modalRef}
         portal={portal}
+        className={modalClassName}
+        style={modalStyle}
         visible={visible}
         onVisibleChange={(newVisible) => {
           setVisible(newVisible)

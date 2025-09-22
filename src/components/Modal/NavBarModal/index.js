@@ -24,7 +24,8 @@ const NavBarModal = forwardRef(
       // Modal: display properties
       portal,
       animation = 'slideUp',
-      maskProps,
+      maskClassName,
+      maskStyle,
       title,
       titleProps,
       ok,
@@ -65,7 +66,6 @@ const NavBarModal = forwardRef(
     function handleMaskClick(e) {
       e.stopPropagation()
       if (!e.target.classList.contains('mask')) return
-      if (maskProps?.onClick) maskProps.onClick(e)
       if (maskClosable) {
         onVisibleChange && onVisibleChange(false)
       }
@@ -73,10 +73,12 @@ const NavBarModal = forwardRef(
 
     let Node = (
       <div
-        {...maskProps}
-        className={`mask modal-navbarmodal-mask${
-          maskProps?.className ? ' ' + maskProps.className : ''
-        }${visible ? ' active' : ''}`}
+        className={DOMUtil.classNames(
+          'mask modal-navbarmodal-mask',
+          maskClassName,
+          visible ? 'active' : ''
+        )}
+        style={maskStyle}
         onClick={handleMaskClick}
         ref={modalRef}
       >

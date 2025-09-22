@@ -18,36 +18,42 @@ function updateAttribute(
     onVisibleChange,
 
     // 遮罩
-    maskProps,
+    maskClassName,
+    maskStyle,
 
     // 标题
     title,
-    titleProps,
+    titleClassName,
+    titleStyle,
 
     // 内容
     content,
-    contentProps,
+    contentClassName,
+    contentStyle,
 
     // 底部
-    footerProps,
+    footerClassName,
+    footerStyle,
 
     // 确定, 默认显示确定按钮
     ok,
     onOk,
-    okProps,
+    okClassName,
+    okStyle,
 
     // 取消, confirm默认显示取消按钮
     cancel,
     onCancel,
-    cancelProps
+    cancelClassName,
+    cancelStyle
   }
 ) {
   // 更新遮罩
-  updateStyle(mask, { ...maskProps, baseClassName: 'mask modal-mask' })
+  updateStyle(mask, { className: maskClassName, style: maskStyle, baseClassName: 'mask modal-mask' })
 
   // 更新标题
   let titleDOM = mask.querySelector('.modal-title')
-  updateStyle(titleDOM, { ...titleProps, baseClassName: 'modal-title' })
+  updateStyle(titleDOM, { className: titleClassName, style: titleStyle, baseClassName: 'modal-title' })
   if (title) {
     titleDOM?.classList?.remove?.('hide')
     titleDOM.innerHTML = title
@@ -57,7 +63,7 @@ function updateAttribute(
 
   // 更新内容
   let contentDOM = mask.querySelector('.modal-content')
-  updateStyle(contentDOM, { ...contentProps, baseClassName: 'modal-content' })
+  updateStyle(contentDOM, { className: contentClassName, style: contentStyle, baseClassName: 'modal-content' })
   if (content) {
     contentDOM.innerHTML = content
   } else {
@@ -66,16 +72,16 @@ function updateAttribute(
 
   // 更新底部
   let footerDOM = mask.querySelector('.modal-footer')
-  updateStyle(footerDOM, { ...footerProps, baseClassName: 'modal-footer' })
+  updateStyle(footerDOM, { className: footerClassName, style: footerStyle, baseClassName: 'modal-footer' })
 
   // 提交按钮
   let okDOM = mask.querySelector('.modal-ok')
-  updateStyle(okDOM, { ...okProps, baseClassName: 'modal-ok' })
+  updateStyle(okDOM, { className: okClassName, style: okStyle, baseClassName: 'modal-ok' })
   okDOM.innerHTML = ok || LocaleUtil.locale('确定', 'SeedsUI_ok')
 
   // 取消按钮
   let cancelDOM = mask.querySelector('.modal-cancel')
-  updateStyle(cancelDOM, { ...cancelProps, baseClassName: 'modal-cancel' })
+  updateStyle(cancelDOM, { className: cancelClassName, style: cancelStyle, baseClassName: 'modal-cancel' })
   cancelDOM.innerHTML = cancel || LocaleUtil.locale('取消', 'SeedsUI_cancel')
 
   if (cancel === null) {

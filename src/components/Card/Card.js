@@ -1,5 +1,13 @@
 import React, { useImperativeHandle, forwardRef, useRef } from 'react'
 
+// 内库使用-start
+import DOMUtil from './../../utils/DOMUtil'
+// 内库使用-end
+
+/* 测试使用-start
+import { DOMUtil } from 'lyrixi-design-mobile'
+测试使用-end */
+
 const Card = forwardRef(({ children, ...props }, ref) => {
   const rootRef = useRef(null)
 
@@ -12,7 +20,7 @@ const Card = forwardRef(({ children, ...props }, ref) => {
   })
 
   return (
-    <div {...props} className={`card${props.className ? ' ' + props.className : ''}`} ref={rootRef}>
+    <div {...props} className={DOMUtil.classNames('card', props.className)} ref={rootRef}>
       {children}
     </div>
   )

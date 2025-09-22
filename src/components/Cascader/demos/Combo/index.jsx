@@ -76,10 +76,8 @@ export default () => {
             console.log('修改:', newValue)
             setValue(newValue)
           }}
-          modalProps={{
-            safeArea: true,
-            title: '级联选择'
-          }}
+          safeArea={true}
+          title="级联选择"
           onVisibleChange={(visible) => {
             console.log('visible:', visible)
           }}

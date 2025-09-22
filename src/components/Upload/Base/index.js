@@ -1,5 +1,9 @@
 import React, { useImperativeHandle, forwardRef, useState, useRef } from 'react'
 
+// 内库使用-start
+import DOMUtil from './../../../utils/DOMUtil'
+// 内库使用-end
+
 import Choose from './Choose'
 import List from './List'
 
@@ -75,7 +79,7 @@ const Upload = forwardRef(
         <div
           ref={rootRef}
           {...props}
-          className={`upload${props.className ? ' ' + props.className : ''}`}
+          className={DOMUtil.classNames('upload', props.className)}
         >
           {getChooseNode({ className: 'image-choose-hidden' })}
           {children}
@@ -87,7 +91,7 @@ const Upload = forwardRef(
       <div
         ref={rootRef}
         {...props}
-        className={`upload${props.className ? ' ' + props.className : ''}`}
+        className={DOMUtil.classNames('upload', props.className)}
       >
         {/* 头部上传按钮 */}
         {uploadPosition === 'start' && (onChoose || onFileChange) && getChooseNode()}

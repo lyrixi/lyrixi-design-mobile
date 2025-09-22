@@ -1,5 +1,6 @@
 import React from 'react'
 import Uploading from './../../Uploading'
+import DOMUtil from './../../../../utils/DOMUtil'
 
 // 上传按钮
 const Choose = ({
@@ -57,7 +58,7 @@ const Choose = ({
 
   return (
     <div className="image-preview-main-choose" data-type="upload" onClick={handleUploadClick}>
-      <i className={`image-preview-main-choose-icon${type === 'video' ? ' video' : ''}`} />
+      <i className={DOMUtil.classNames('image-preview-main-choose-icon', type === 'video' ? 'video' : null)} />
       <input
         type="file"
         className="image-preview-main-choose-input-file"

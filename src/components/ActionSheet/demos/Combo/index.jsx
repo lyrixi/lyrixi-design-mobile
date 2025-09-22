@@ -51,12 +51,6 @@ export default () => {
             console.log('visible:', visible)
           }}
           // style={{ height: '100px', backgroundColor: '#f8f8f8' }}
-          modalProps={
-            {
-              // safeArea: true
-              // cancel: null
-            }
-          }
         />
       </Layout.Main>
     </Layout>

@@ -45,23 +45,21 @@ export default () => {
             console.log(newValue)
             setValue(newValue)
           }}
-          modalProps={{
-            footer: ({ value, triggerOk }) => {
-              return (
-                <Layout.Footer
-                  onClick={() => {
-                    triggerOk()
-                  }}
-                >
-                  <Button className="listpicker-footer-submit" color="primary">
-                    确定
-                  </Button>
-                </Layout.Footer>
-              )
-            },
-            mainProps: {
-              titles: { selected: '标题1', unSelected: '标题2' }
-            }
+          footer={({ value, triggerOk }) => {
+            return (
+              <Layout.Footer
+                onClick={() => {
+                  triggerOk()
+                }}
+              >
+                <Button className="listpicker-footer-submit" color="primary">
+                  确定
+                </Button>
+              </Layout.Footer>
+            )
+          }}
+          mainProps={{
+            titles: { selected: '标题1', unSelected: '标题2' }
           }}
         />
       </Layout.Main>

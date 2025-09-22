@@ -41,12 +41,10 @@ export default () => {
       <Picker.Combo
         ref={pickerRef}
         allowClear
-        modalProps={{
-          safeArea: true,
-          title: '标题',
-          cancel: null,
-          ok: ''
-        }}
+        safeArea={true}
+        title="标题"
+        cancel={null}
+        ok=""
         placeholder="Please select"
         value={value}
         list={list}

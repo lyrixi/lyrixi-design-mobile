@@ -14,7 +14,8 @@ const Combo = BaseModal.SelectCombo
 const ActionSheetCombo = (
   {
     // Modal
-    modalProps,
+    modalClassName,
+    modalStyle,
 
     title,
     list,
@@ -28,11 +29,10 @@ const ActionSheetCombo = (
       {...props}
       // Modal
       modal={Modal}
-      modalProps={{
-        ...modalProps,
-        title: title,
-        list: list
-      }}
+      modalClassName={modalClassName}
+      modalStyle={modalStyle}
+      title={title}
+      list={list}
     />
   )
 }

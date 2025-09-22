@@ -37,11 +37,9 @@ export default () => {
         onVisibleChange={(visible) => {
           console.log('visible:', visible)
         }}
-        modalProps={{
-          maskProps: {
-            style: {
-              zIndex: 999
-            }
+        maskProps={{
+          style: {
+            zIndex: 999
           }
         }}
         onChange={(newValue) => {

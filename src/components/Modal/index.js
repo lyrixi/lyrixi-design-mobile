@@ -9,8 +9,6 @@ import SelectModal from './SelectModal'
 
 import FilterModal from './FilterModal'
 
-import alert from './api/alert'
-import confirm from './api/confirm'
 import destroy from './api/destroy'
 import getClassNameByAnimation from './api/getClassNameByAnimation'
 
@@ -31,8 +29,6 @@ Modal.SelectModal = SelectModal
 Modal.FilterModal = FilterModal
 
 // Js Api
-Modal.alert = alert
-Modal.confirm = confirm
 Modal.destroy = destroy
 Modal.getClassNameByAnimation = getClassNameByAnimation
 

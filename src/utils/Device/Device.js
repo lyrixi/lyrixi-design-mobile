@@ -115,44 +115,6 @@ let Device = (function () {
     }
     return ''
   }
-  // 获取苹果设备名称
-  function getAppleDevice() {
-    // iPhoneX | iPhoneXS
-    if (/iphone/gi.test(ua) && window.screen.height === 812 && window.screen.width === 375)
-      return 'iPhoneX'
-    // iPhoneXSM | iPhoneXSR
-    if (/iphone/gi.test(ua) && window.screen.height === 896 && window.screen.width === 414)
-      return 'iPhoneXSM'
-    let model = appleModel()
-    switch (model) {
-      case '15b150':
-        return 'iPhone6s'
-      case '15b202':
-        return 'iPhone6'
-      case '13g36':
-        return 'iPhone5SE'
-      case '14e304':
-        return 'iPhone6P'
-      default:
-        return ''
-    }
-  }
-
-  // 网络监听
-  let onLineCallback
-  function handleOnline(e) {
-    onLineCallback(true)
-  }
-  function handleOffline(e) {
-    onLineCallback(false)
-  }
-  function onLine(callback) {
-    onLineCallback = callback
-    window.removeEventListener('online', handleOnline, false)
-    window.removeEventListener('offline', handleOffline, false)
-    window.addEventListener('online', handleOnline, false)
-    window.addEventListener('offline', handleOffline, false)
-  }
 
   // 获取地址栏参数
   function getUrlParameter(argName, argSearch) {
@@ -217,27 +179,6 @@ let Device = (function () {
   }
 
   return {
-    /**
-     * @deprecated since version 5.2.8
-     * 请勿使用此属性
-     */
-    appleDevice: getAppleDevice(),
-    /**
-     * @deprecated since version 5.2.8
-     * 请勿使用此属性
-     */
-    appVersion: window.navigator.appVersion,
-    /**
-     * @deprecated since version 5.2.8
-     * 请勿使用此属性
-     */
-    onLine: onLine,
-    /**
-     * @deprecated since version 5.2.8
-     * 请勿使用此属性
-     */
-    ua: ua,
-
     // 应用程序判断
     language: (window.navigator.browserLanguage || window.navigator.language).toLowerCase(),
     protocol: window.location.protocol,
@@ -251,7 +192,7 @@ let Device = (function () {
     platform: platform,
     platformVersion: platformVersion,
     isOnLine: window.navigator.onLine || true,
-    userAgent: ua,
+    userAgent: userAgent,
     getUrlParameter: getUrlParameter,
     screenWidth: getScreenWidth(),
     screenHeight: getScreenHeight(),

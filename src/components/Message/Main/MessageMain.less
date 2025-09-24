@@ -1,0 +1,16 @@
+.message-main {
+  flex: 1;
+  display: block;
+  overflow: auto;
+  font-size: 15px;
+  color: #35393e;
+  text-align: center;
+  line-height: 20px;
+  font-weight: 400;
+  word-wrap: break-word;
+  padding: 20px 12px;
+}
+
+.message-header:has(.message-title) + .message-main {
+  padding: 10px 12px 20px 12px;
+}

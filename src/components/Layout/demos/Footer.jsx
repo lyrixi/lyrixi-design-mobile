@@ -18,27 +18,6 @@ export default () => {
           onChange={(newValue) => {
             console.log(newValue)
           }}
-          buttonsType="text"
-          buttons={[
-            {
-              // name: 'More',
-              children: [
-                {
-                  id: 'option1',
-                  name: 'Option 1'
-                }
-              ]
-            },
-            {
-              id: 'ok',
-              name: '确定',
-              primary: true
-            },
-            {
-              id: 'cancel',
-              name: '取消'
-            }
-          ]}
         />
 
         <Divider>Text Button disabled</Divider>

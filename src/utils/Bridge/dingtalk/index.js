@@ -33,6 +33,11 @@ let Bridge = {
   // 关闭窗口
   closeWindow: function (params) {
     const wrappedParams = wrapCallback(params)
+    if (window.top.dd?.env?.platform === 'pc') {
+      window?.top?.dd?.quitPage(wrappedParams)
+      return
+    }
+
     window.top.dd.closePage(wrappedParams)
   },
   // 返回监听

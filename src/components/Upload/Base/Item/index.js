@@ -7,11 +7,11 @@ import Clipboard from './../../../../utils/Clipboard'
 import AssetUtil from './../../../../utils/AssetUtil'
 import Bridge from './../../../../utils/Bridge'
 import Toast from './../../../Toast'
-import Modal from './../../../Modal'
+import Message from './../../../Message'
 // 内库使用-end
 
 /* 测试使用-start
-import { LocaleUtil, Clipboard, AssetUtil, Bridge, Toast, Modal } from 'lyrixi-design-mobile'
+import { LocaleUtil, Clipboard, AssetUtil, Bridge, Toast, Message } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // Item
@@ -69,12 +69,17 @@ const Item = ({
           })
         },
         onError: () => {
-          Modal.confirm({
+          Message.open({
             content: LocaleUtil.locale(
               `文件链接复制到剪贴板失败, 请长按复制<br/>${previewUrl}`,
               'SeedsUI_clipboard_fail_confirm',
               [previewUrl]
-            )
+            ),
+            buttons: [{
+              name: '确定',
+              className: 'primary',
+              onClick: () => true
+            }]
           })
         }
       })

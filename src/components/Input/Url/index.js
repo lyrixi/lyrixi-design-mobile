@@ -5,13 +5,12 @@ import InputText from './../Text'
 import LocaleUtil from './../../../utils/LocaleUtil'
 import Clipboard from './../../../utils/Clipboard'
 import Toast from './../../Toast'
-// 直接引入Modal会死循环, 因为Modal里引入了Input
-import alert from './../../Modal/api/alert'
+// 使用Message代替Modal
+import Message from './../../Message'
 // 内库使用-end
 
 /* 测试使用-start
-import { LocaleUtil, Clipboard, Toast, Modal } from 'lyrixi-design-mobile'
-const alert = Modal.alert
+import { LocaleUtil, Clipboard, Toast, Message } from 'lyrixi-design-mobile'
 测试使用-end */
 
 const Url = forwardRef(
@@ -32,14 +31,19 @@ const Url = forwardRef(
           })
         },
         onError: () => {
-          alert({
+          Message.open({
             maskStyle: {
               zIndex: 100
             },
             title: LocaleUtil.locale('提示', 'SeedsUI_alert_title'),
             content:
               LocaleUtil.locale('链接复制到剪贴板失败, 请长按复制', 'SeedsUI_link_copy_error') +
-              `<br/>${url}`
+              `<br/>${url}`,
+            buttons: [{
+              name: '确定',
+              className: 'primary',
+              onClick: () => true
+            }]
           })
         }
       })

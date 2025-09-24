@@ -3,11 +3,11 @@ import _ from 'lodash'
 // 内库使用-start
 import LocaleUtil from './../../LocaleUtil'
 import Device from './../../Device'
-import Modal from './../../../components/Modal'
+import Message from './../../../components/Message'
 // 内库使用-end
 
 /* 测试使用-start
-import { Device, Modal, LocaleUtil } from 'lyrixi-design-mobile'
+import { Device, Message, LocaleUtil } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // 客户端默认返回控制
@@ -82,26 +82,35 @@ async function back(backLvl, options, Bridge) {
       }
     }
 
-    Modal.confirm({
+    Message.open({
       content: confirmCaption,
-      onOk: () => {
-        // 提示后关闭当前页面
-        if (isFromApp.indexOf('confirm-close') !== -1) {
-          console.log('back:confirm-close', Bridge.closeWindow)
-          Bridge.closeWindow()
+      buttons: [
+        {
+          name: '取消',
+          onClick: () => {
+            onError && onError()
+            return true
+          }
+        },
+        {
+          name: '确定',
+          className: 'primary',
+          onClick: () => {
+            // 提示后关闭当前页面
+            if (isFromApp.indexOf('confirm-close') !== -1) {
+              console.log('back:confirm-close', Bridge.closeWindow)
+              Bridge.closeWindow()
+            }
+            // 提示后返回上一页
+            else {
+              console.log('back:confirm, history')
+              window.history.go(_backLvl)
+            }
+            onSuccess && onSuccess()
+            return true
+          }
         }
-        // 提示后返回上一页
-        else {
-          console.log('back:confirm, history')
-          window.history.go(_backLvl)
-        }
-        onSuccess && onSuccess()
-        return true
-      },
-      onCancel: () => {
-        onError && onError()
-        return true
-      }
+      ]
     })
   }
   // 返回上一页

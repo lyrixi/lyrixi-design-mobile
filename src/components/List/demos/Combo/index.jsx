@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Layout, List, Card, Divider, Checkbox, Modal, ToolBar } from 'lyrixi-design-mobile'
+import { Layout, List, Card, Divider, Checkbox, Message, ToolBar } from 'lyrixi-design-mobile'
 import listData from './../data'
 
 export default () => {
@@ -133,30 +133,52 @@ export default () => {
             onBeforeChecked={(newValue) => {
               console.log('onBeforeChange', newValue)
               return new Promise((resolve) => {
-                Modal.confirm({
+                Message.open({
                   title: '你确定要修改吗？',
                   content: `你确定要修改吗`,
-                  onOk() {
-                    resolve(true)
-                  },
-                  onCancel() {
-                    resolve(false)
-                  }
+                  buttons: [
+                    {
+                      name: '取消',
+                      onClick: () => {
+                        resolve(false)
+                        return true
+                      }
+                    },
+                    {
+                      name: '确定',
+                      className: 'primary',
+                      onClick: () => {
+                        resolve(true)
+                        return true
+                      }
+                    }
+                  ]
                 })
               })
             }}
             onBeforeChange={(newValue) => {
               console.log('onBeforeChange', newValue)
               return new Promise((resolve) => {
-                Modal.confirm({
+                Message.open({
                   title: '你确定要修改吗？',
                   content: `你确定要修改吗`,
-                  onOk() {
-                    resolve(true)
-                  },
-                  onCancel() {
-                    resolve(false)
-                  }
+                  buttons: [
+                    {
+                      name: '取消',
+                      onClick: () => {
+                        resolve(false)
+                        return true
+                      }
+                    },
+                    {
+                      name: '确定',
+                      className: 'primary',
+                      onClick: () => {
+                        resolve(true)
+                        return true
+                      }
+                    }
+                  ]
                 })
               })
             }}

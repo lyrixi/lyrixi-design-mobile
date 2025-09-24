@@ -1,7 +1,7 @@
 ---
 category: Components
 group: Feedback
-title: Confirm
+title: Message
 ---
 
-# Confirm
+# Message

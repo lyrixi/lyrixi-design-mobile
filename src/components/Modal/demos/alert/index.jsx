@@ -1,19 +1,24 @@
 import React from 'react'
-import { Layout, Modal, Button } from 'lyrixi-design-mobile'
+import { Layout, Message, Button } from 'lyrixi-design-mobile'
 
 export default () => {
   function handleToggle() {
-    Modal.alert({
-      content: 'alert content'
+    Message.open({
+      content: 'alert content',
+      buttons: [{
+        name: '确定',
+        className: 'primary',
+        onClick: () => true
+      }]
     })
   }
 
   return (
     <Layout className="full">
-      <Layout.Header className="text-center">Modal.alert</Layout.Header>
+      <Layout.Header className="text-center">Message.open</Layout.Header>
       <Layout.Main className="bg-white">
         <Button className="flex" color="primary" size="l" onClick={handleToggle}>
-          Modal visible toggle
+          Message visible toggle
         </Button>
       </Layout.Main>
     </Layout>

@@ -1,72 +1,85 @@
 import React from 'react'
-import { Layout, Modal, Button } from 'lyrixi-design-mobile'
+import { Layout, Message, Button } from 'lyrixi-design-mobile'
 
 export default () => {
   function handleToggle() {
-    Modal.confirm({
+    Message.open({
       title: '第一层',
-      titleProps: {
-        className: 'text-left',
-        style: {
-          color: 'red'
-        }
+      titleStyle: {
+        color: 'red'
       },
       // 透传至外层
       portal: top.document.body,
       content:
         '最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度最大高度',
-      contentProps: {
-        className: 'text-left',
-        style: {
-          color: 'red'
-        }
+      contentStyle: {
+        color: 'red'
       },
-      footerProps: {
-        className: 'vertical'
-      },
-      cancelProps: {
-        className: 'text-left',
-        style: {
-          color: 'red'
-        }
-      },
-      okProps: {
-        className: 'text-left',
-        style: {
-          color: 'red'
-        }
-      },
-      onOk: () => {
-        console.log('第二层')
-        Modal.confirm({
-          title: '第二层',
-          maskClassName: 'aa',
-          maskStyle: {
-            zIndex: 999
+      buttonsLayout: 'vertical',
+      buttons: [
+        {
+          name: '取消',
+          style: {
+            color: 'red'
           },
-          maskClosable: true,
-          content: 'confirm content2',
-          onOk: () => {
-            console.log('第三层')
-            Modal.alert({
-              portal: document.body,
-              title: '第三层',
-              content: 'confirm content3',
-              onVisibleChange: (visible) => {
-                console.log('onVisibleChange:', visible)
-              }
+          onClick: () => {
+            return true
+          }
+        },
+        {
+          name: '确定',
+          className: 'primary',
+          style: {
+            color: 'red'
+          },
+          onClick: () => {
+            console.log('第二层')
+            Message.open({
+              title: '第二层',
+              maskClassName: 'aa',
+              maskStyle: {
+                zIndex: 999
+              },
+              maskClosable: true,
+              content: 'confirm content2',
+              buttons: [
+                {
+                  name: '取消',
+                  onClick: () => true
+                },
+                {
+                  name: '确定',
+                  className: 'primary',
+                  onClick: () => {
+                    console.log('第三层')
+                    Message.open({
+                      portal: document.body,
+                      title: '第三层',
+                      content: 'confirm content3',
+                      buttons: [{
+                        name: '确定',
+                        className: 'primary',
+                        onClick: () => true
+                      }],
+                      onVisibleChange: (visible) => {
+                        console.log('onVisibleChange:', visible)
+                      }
+                    })
+                    return false
+                  }
+                }
+              ]
             })
             return false
           }
-        })
-        return false
-      }
+        }
+      ]
     })
   }
 
   return (
     <Layout className="full">
-      <Layout.Header className="text-center">Modal.confirm</Layout.Header>
+      <Layout.Header className="text-center">Message.open</Layout.Header>
       <Layout.Main
         className="bg-white"
         style={{
@@ -75,7 +88,7 @@ export default () => {
         }}
       >
         <Button className="flex" color="primary" size="l" onClick={handleToggle}>
-          Modal visible toggle
+          Message visible toggle
         </Button>
       </Layout.Main>
     </Layout>

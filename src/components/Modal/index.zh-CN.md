@@ -45,11 +45,11 @@ title: Modal
 
 <code src="./demos/DropdownCombo/index.jsx"></code>
 
-### Modal.alert(使用 Confirm 组件代替)
+### Message.open 示例 (替代 Modal.alert)
 
 <code src="./demos/alert/index.jsx"></code>
 
-### Modal.confirm(使用 Confirm 组件代替)
+### Message.open 示例 (替代 Modal.confirm)
 
 <code src="./demos/confirm/index.jsx"></code>
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import _ from 'lodash'
-import { Layout, Divider, DatePicker, DateUtil, Modal, Card, Toast } from 'lyrixi-design-mobile'
+import { Layout, Divider, DatePicker, DateUtil, Message, Card, Toast } from 'lyrixi-design-mobile'
 
 export default () => {
   const [value, setValue] = useState(null)
@@ -128,15 +128,26 @@ export default () => {
             onBeforeChange={(newValue) => {
               console.log('onBeforeChange', newValue)
               return new Promise((resolve) => {
-                Modal.confirm({
+                Message.open({
                   title: 'Warning',
                   content: `Are you sure?`,
-                  onOk() {
-                    resolve(true)
-                  },
-                  onCancel() {
-                    resolve(false)
-                  }
+                  buttons: [
+                    {
+                      name: 'Cancel',
+                      onClick: () => {
+                        resolve(false)
+                        return true
+                      }
+                    },
+                    {
+                      name: 'OK',
+                      className: 'primary',
+                      onClick: () => {
+                        resolve(true)
+                        return true
+                      }
+                    }
+                  ]
                 })
               })
             }}

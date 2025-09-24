@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import _ from 'lodash'
-import { Layout, Divider, Select, List, Checkbox, Modal, Card, ToolBar } from 'lyrixi-design-mobile'
+import { Layout, Divider, Select, List, Checkbox, Message, Card, ToolBar } from 'lyrixi-design-mobile'
 import list from './listSimple'
 import listData from './listData'
 
@@ -194,14 +194,26 @@ export default () => {
             onBeforeChange={(newValue) => {
               console.log('onBeforeChange', newValue)
               return new Promise((resolve) => {
-                Modal.confirm({
+                Message.open({
                   title: '你确定要修改吗？',
                   content: `你确定要修改吗`,
-                  onOk() {
-                    resolve(true)
-                  },
-                  onCancel() {
-                    resolve(false)
+                  buttons: [
+                    {
+                      name: '取消',
+                      onClick: () => {
+                        resolve(false)
+                        return true
+                      }
+                    },
+                    {
+                      name: '确定',
+                      className: 'primary',
+                      onClick: () => {
+                        resolve(true)
+                        return true
+                      }
+                    }
+                  ]
                   }
                 })
               })

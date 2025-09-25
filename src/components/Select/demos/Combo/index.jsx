@@ -1,6 +1,15 @@
 import React, { useState, useRef } from 'react'
 import _ from 'lodash'
-import { Layout, Divider, Select, List, Checkbox, Message, Card, ToolBar } from 'lyrixi-design-mobile'
+import {
+  Layout,
+  Divider,
+  Select,
+  List,
+  Checkbox,
+  Message,
+  Card,
+  ToolBar
+} from 'lyrixi-design-mobile'
 import list from './listSimple'
 import listData from './listData'
 
@@ -214,7 +223,6 @@ export default () => {
                       }
                     }
                   ]
-                  }
                 })
               })
             }}

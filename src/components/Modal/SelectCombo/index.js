@@ -54,7 +54,7 @@ const Combo = forwardRef(
       pagination,
 
       // ComboNew
-      combo,
+      comboRender,
       comboChildren,
       comboStyle,
       comboClassName,
@@ -184,19 +184,26 @@ const Combo = forwardRef(
     }
 
     function getComboNode() {
-      if (typeof combo === 'function' || comboChildren) {
-        return DOMUtil.getComboNode({
-          // 渲染combo
-          combo: combo,
+      if (typeof comboRender === 'function') {
+        return comboRender({
           comboRef,
           visible,
-          // 渲染comboChildren
-          comboChildren,
           style: comboStyle,
           className: DOMUtil.classNames(visible ? 'expand' : '', comboClassName),
-          // 公用事件
           onClick: handleInputClick
         })
+      }
+      if (comboChildren) {
+        return (
+          <div
+            ref={comboRef}
+            style={comboStyle}
+            className={DOMUtil.classNames(visible ? 'expand' : '', comboClassName)}
+            onClick={handleInputClick}
+          >
+            {comboChildren}
+          </div>
+        )
       }
 
       if (children) {
@@ -259,10 +266,12 @@ const Combo = forwardRef(
         />
       )
     }
+    const ComboNode = getComboNode()
+
     return (
       <Fragment>
         {/* Combo */}
-        {getComboNode()}
+        {ComboNode}
 
         {/* Modal */}
         {ModalNode && (

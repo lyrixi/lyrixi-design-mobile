@@ -13,7 +13,7 @@ import { DOMUtil } from 'lyrixi-design-mobile'
 const Combo = forwardRef(
   (
     {
-      combo,
+      comboRender,
 
       // NavBarModal
       portal,
@@ -61,6 +61,15 @@ const Combo = forwardRef(
       // eslint-disable-next-line
     }, [visible])
 
+    // 获取Combo节点
+    function getComboNode() {
+      if (typeof comboRender === 'function') {
+        return comboRender()
+      }
+      return null
+    }
+    const ComboNode = getComboNode()
+
     return (
       <>
         {/* Combo */}
@@ -72,7 +81,7 @@ const Combo = forwardRef(
           }}
           ref={comboRef}
         >
-          {combo}
+          {ComboNode}
         </div>
 
         {/* Modal */}

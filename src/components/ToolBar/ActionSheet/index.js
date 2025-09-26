@@ -66,33 +66,36 @@ function ToolBarActionSheet({
     return arrowRender || <i className="seed-button-icon toolbar-dropdown-combo-arrow"></i>
   }
 
+  // 获取Combo节点
+  function getComboNode() {
+    return ({ visible, comboRef, onClick }) => (
+      <Button
+        ref={comboRef}
+        color={color}
+        variant={variant}
+        size="s"
+        radius="s"
+        shape={shape}
+        className={DOMUtil.classNames(
+          'toolbar-dropdown-combo toolbar-button',
+          comboClassName,
+          visible ? 'expand' : ''
+        )}
+        style={comboStyle}
+        onClick={onClick}
+      >
+        {getTitleNode(visible)}
+        {getArrowNode(visible)}
+      </Button>
+    )
+  }
+
   return (
     <ActionSheet.Combo
       portal={portal}
       maskClassName={maskClassName}
       maskStyle={maskStyle}
-      comboNew={({ visible, comboRef, onClick }) => {
-        return (
-          <Button
-            ref={comboRef}
-            color={color}
-            variant={variant}
-            size="s"
-            radius="s"
-            shape={shape}
-            className={DOMUtil.classNames(
-              'toolbar-dropdown-combo toolbar-button',
-              comboClassName,
-              visible ? 'expand' : ''
-            )}
-            style={comboStyle}
-            onClick={onClick}
-          >
-            {getTitleNode(visible)}
-            {getArrowNode(visible)}
-          </Button>
-        )
-      }}
+      comboRender={getComboNode}
       value={value?.[0]}
       list={list}
       onChange={handleChange}

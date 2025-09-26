@@ -14,7 +14,7 @@ const Combo = forwardRef(
   (
     {
       // Combo
-      combo, // 传入combo, 则下面的combo相关属性都不生效
+      comboRender, // 传入comboRender
       comboStyle,
       comboClassName,
       comboChildren,
@@ -84,25 +84,44 @@ const Combo = forwardRef(
       onOpen && onOpen()
     }
 
-    return (
-      <>
-        {/* Combo */}
-        {DOMUtil.getComboNode({
-          // 渲染combo
-          combo,
+    // 获取Combo节点
+    function getComboNode() {
+      if (typeof comboRender === 'function') {
+        return comboRender({
           comboRef,
           visible,
-          // 渲染comboChildren
-          comboChildren,
           style: comboStyle,
           className: DOMUtil.classNames(
             'modal-dropdown-combo',
             visible ? 'expand' : '',
             comboClassName
           ),
-          // 公用事件
           onClick: handleClick
-        })}
+        })
+      }
+
+      // 默认渲染 comboChildren
+      return (
+        <div
+          ref={comboRef}
+          style={comboStyle}
+          className={DOMUtil.classNames(
+            'modal-dropdown-combo',
+            visible ? 'expand' : '',
+            comboClassName
+          )}
+          onClick={handleClick}
+        >
+          {comboChildren}
+        </div>
+      )
+    }
+    const ComboNode = getComboNode()
+
+    return (
+      <>
+        {/* Combo */}
+        {ComboNode}
 
         {/* Modal */}
         <DropdownModal

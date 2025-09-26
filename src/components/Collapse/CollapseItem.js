@@ -12,9 +12,9 @@ import { DOMUtil } from 'lyrixi-design-mobile'
 // CollapseItem组件
 const CollapseItem = (
   {
-    header,
+    headerRender,
     title,
-    arrow = 'collapse-item-header-arrow-icon',
+    arrowRender = 'collapse-item-header-arrow-icon',
     arrowPosition = 'right',
     visible: externalVisible = true,
     onVisibleChange,
@@ -65,14 +65,38 @@ const CollapseItem = (
     }
   }
 
-  // 箭头
-  const ArrowNode = arrow ? (
-    <div className="collapse-item-header-arrow">
-      {DOMUtil.getIconNode(arrow, {
-        visible
-      })}
-    </div>
-  ) : null
+  // 获取箭头节点
+  function getArrowNode() {
+    if (typeof arrowRender !== 'function') return null
+
+    return <div className="collapse-item-header-arrow">{arrowRender({ visible })}</div>
+  }
+
+  const ArrowNode = getArrowNode()
+
+  // 获取Header节点
+  function getHeaderNode() {
+    // 默认Header
+    if (typeof headerRender !== 'function') {
+      return (
+        <div className="collapse-item-header-wrapper">
+          {arrowPosition === 'left' && ArrowNode}
+          {DOMUtil.getTextNode(title, {
+            className: 'collapse-item-header-title',
+            visible: visible
+          })}
+          {arrowPosition === 'right' && ArrowNode}
+        </div>
+      )
+    }
+
+    return headerRender({
+      arrow: ArrowNode,
+      arrowPosition,
+      visible
+    })
+  }
+  const HeaderNode = getHeaderNode()
 
   return (
     <div
@@ -81,24 +105,7 @@ const CollapseItem = (
       className={DOMUtil.classNames('collapse-item', props?.className, visible ? 'active' : '')}
     >
       <div className="collapse-item-header" onClick={handleClick}>
-        {header ? (
-          // 自定义Header
-          DOMUtil.getTextNode(header, {
-            arrow: ArrowNode,
-            arrowPosition,
-            visible
-          })
-        ) : (
-          // 默认Header
-          <div className="collapse-item-header-wrapper">
-            {arrowPosition === 'left' && ArrowNode}
-            {DOMUtil.getTextNode(title, {
-              className: 'collapse-item-header-title',
-              visible: visible
-            })}
-            {arrowPosition === 'right' && ArrowNode}
-          </div>
-        )}
+        {getHeaderNode()}
       </div>
       <CollapseTransition visible={visible}>
         <div className="collapse-item-main">{children}</div>

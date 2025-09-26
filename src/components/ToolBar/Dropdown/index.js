@@ -15,8 +15,9 @@ const Dropdown = forwardRef(
   (
     {
       // Combo
-      titleRender = '',
-      arrowRender = <i className="seed-button-icon toolbar-dropdown-combo-arrow"></i>,
+      title = '',
+      titleRender,
+      arrowRender = () => <i className="seed-button-icon toolbar-dropdown-combo-arrow"></i>,
 
       // Button Style
       color = 'default',
@@ -68,7 +69,7 @@ const Dropdown = forwardRef(
           active: visible
         })
       }
-      return <span className="toolbar-dropdown-combo-title">{titleRender}</span>
+      return <span className="toolbar-dropdown-combo-title">{title}</span>
     }
 
     // 获取箭头节点
@@ -76,7 +77,7 @@ const Dropdown = forwardRef(
       if (typeof arrowRender === 'function') {
         return arrowRender({ active: visible })
       }
-      return arrowRender || <i className="seed-button-icon toolbar-dropdown-combo-arrow"></i>
+      return <i className="seed-button-icon toolbar-dropdown-combo-arrow"></i>
     }
 
     // 获取Combo节点

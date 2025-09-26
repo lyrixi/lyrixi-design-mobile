@@ -113,14 +113,17 @@ export default () => {
         <Card>
           <Divider>Custom Arrow</Divider>
           <div style={{ margin: '0 12px' }}>
-            <Collapse.Item arrow="seeds-icon-star-fill" title="Arrow ClassName">
+            <Collapse.Item
+              arrowRender={() => <i className="seeds-icon seeds-icon-star-fill" />}
+              title="Arrow ClassName"
+            >
               <div className="flex flex-center flex-middle border-b" style={{ height: 100 }}>
                 Arrow ClassName
               </div>
             </Collapse.Item>
             <Collapse.Item
               visible={false}
-              arrow={() => {
+              arrowRender={() => {
                 return (
                   <i
                     className="seeds-icon-star-fill"
@@ -145,7 +148,7 @@ export default () => {
           <div style={{ margin: '0 12px' }}>
             <Collapse.Item
               visible={false}
-              header={({ visible, arrow }) => {
+              headerRender={({ visible, arrow }) => {
                 return (
                   <div
                     className="flex flex-middle"

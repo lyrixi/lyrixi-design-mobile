@@ -36,8 +36,7 @@ export default () => {
           <div>
             <h3>Using Message.Combo Component</h3>
             <Message.Combo
-              // icon={<Icon className="seeds-icon-config color-primary" size={80}></Icon>}
-              icon="seeds-icon-config color-primary"
+              iconRender={<Icon className="seeds-icon-config color-primary" size={80}></Icon>}
               title="Title"
               content={<div>Content</div>}
               buttonsLayout="vertical"

@@ -14,6 +14,9 @@ const Combo = forwardRef(
   (
     {
       comboRender,
+      comboChildren,
+      comboStyle,
+      comboClassName,
 
       // NavBarModal
       portal,
@@ -64,25 +67,40 @@ const Combo = forwardRef(
     // 获取Combo节点
     function getComboNode() {
       if (typeof comboRender === 'function') {
-        return comboRender()
+        return comboRender({
+          comboRef,
+          visible,
+          style: comboStyle,
+          className: DOMUtil.classNames(
+            'modal-navbar-combo',
+            visible ? 'expand' : '',
+            comboClassName
+          ),
+          onClick: () => {
+            setVisible(true)
+          }
+        })
       }
-      return null
+      return (
+        <div
+          {...props}
+          className={DOMUtil.classNames('modal-navbar-combo', comboClassName)}
+          style={comboStyle}
+          onClick={() => {
+            setVisible(true)
+          }}
+          ref={comboRef}
+        >
+          {comboChildren}
+        </div>
+      )
     }
     const ComboNode = getComboNode()
 
     return (
       <>
         {/* Combo */}
-        <div
-          {...props}
-          className={DOMUtil.classNames('modal-navbar-combo', props.className)}
-          onClick={() => {
-            setVisible(true)
-          }}
-          ref={comboRef}
-        >
-          {ComboNode}
-        </div>
+        {ComboNode}
 
         {/* Modal */}
         <NavBarModal

@@ -12,7 +12,7 @@ export default () => {
           <Divider>Only Title</Divider>
           <Modal.NavBarCombo
             ref={navBarComboRef}
-            combo="Click to show NavModal"
+            comboChildren={() => 'Click to show NavModal'}
             title="Title"
             ok={null}
             cancel={null}
@@ -35,7 +35,7 @@ export default () => {
         <Card>
           <Divider>Only Cancel</Divider>
           <Modal.NavBarCombo
-            combo="Click to show NavModal"
+            comboChildren={() => 'Click to show NavModal'}
             title="Title"
             ok={null}
             onOk={({ close }) => {
@@ -54,7 +54,7 @@ export default () => {
         <Card>
           <Divider>Ok and Cancel</Divider>
           <Modal.NavBarCombo
-            combo="Click to show NavModal"
+            comboChildren={() => 'Click to show NavModal'}
             title="Title"
             onOk={({ close }) => {
               console.log('Ok')

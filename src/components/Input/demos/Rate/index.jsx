@@ -48,7 +48,7 @@ export default () => {
           <Divider>Icon</Divider>
           <Input.Rate
             style={{ margin: '0 12px' }}
-            icon="seeds-icon-circle-question"
+            iconRender={() => <i className="seeds-icon seeds-icon-circle-question" />}
             value={value}
             onChange={setValue}
           />

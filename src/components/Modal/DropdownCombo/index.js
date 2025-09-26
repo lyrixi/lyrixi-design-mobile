@@ -15,9 +15,9 @@ const Combo = forwardRef(
     {
       // Combo
       comboRender, // 传入comboRender
+      comboChildren,
       comboStyle,
       comboClassName,
-      comboChildren,
 
       // Modal
       portal,

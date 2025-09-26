@@ -128,7 +128,7 @@ export default () => {
             ]}
           />
           <FooterBar.Tab
-            icon={<Icon className="seeds-icon-config"></Icon>}
+            iconRender={() => <Icon className="seeds-icon-config"></Icon>}
             name="Config"
             onClick={(e) => {
               console.log(e)
@@ -176,7 +176,7 @@ export default () => {
           />
           <FooterBar.Tab
             disabled
-            icon={<Icon className="seeds-icon-config"></Icon>}
+            iconRender={() => <Icon className="seeds-icon-config"></Icon>}
             name="Config"
             onClick={(e) => {
               console.log(e)

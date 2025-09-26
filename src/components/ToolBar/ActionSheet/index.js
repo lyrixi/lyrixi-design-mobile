@@ -25,8 +25,9 @@ function ToolBarActionSheet({
   maskStyle,
 
   // Combo Value
-  titleRender = '',
-  arrowRender = <i className="seed-button-icon toolbar-dropdown-combo-arrow"></i>,
+  title = '',
+  titleRender,
+  arrowRender = () => <i className="seed-button-icon toolbar-dropdown-combo-arrow"></i>,
   value,
   list,
   onBeforeChange,
@@ -52,10 +53,10 @@ function ToolBarActionSheet({
       return titleRender({
         className: 'toolbar-dropdown-combo-title',
         active: visible,
-        value: titleRender || value?.[0]?.name
+        value: value?.[0]?.name
       })
     }
-    return <span className="toolbar-dropdown-combo-title">{titleRender || value?.[0]?.name}</span>
+    return <span className="toolbar-dropdown-combo-title">{title || value?.[0]?.name}</span>
   }
 
   // 获取箭头节点
@@ -63,7 +64,7 @@ function ToolBarActionSheet({
     if (typeof arrowRender === 'function') {
       return arrowRender({ active: visible })
     }
-    return arrowRender || <i className="seed-button-icon toolbar-dropdown-combo-arrow"></i>
+    return <i className="seed-button-icon toolbar-dropdown-combo-arrow"></i>
   }
 
   // 获取Combo节点

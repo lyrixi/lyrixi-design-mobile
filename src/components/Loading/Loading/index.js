@@ -11,7 +11,7 @@ import { LocaleUtil } from 'lyrixi-design-mobile'
 测试使用-start */
 
 const Loading = forwardRef(
-  ({ portal, visible = true, maskClassName, maskStyle, icon, content, children, ...props }, ref) => {
+  ({ portal, visible = true, maskClassName, maskStyle, iconRender, content, children, ...props }, ref) => {
     const rootRef = useRef(null)
     useImperativeHandle(ref, () => {
       return {
@@ -24,16 +24,13 @@ const Loading = forwardRef(
 
     // render icon
     function getIconNode() {
-      if (typeof icon === 'function') {
-        return icon()
+      if (typeof iconRender === 'function') {
+        return iconRender()
       }
-      if (React.isValidElement(icon)) {
-        return icon
-      }
-
-      // Default Status
       return <SpinFade />
     }
+
+    const IconNode = getIconNode()
 
     // 组合Node
     let Node = (
@@ -48,7 +45,7 @@ const Loading = forwardRef(
           children
         ) : (
           <div className="loading" {...props}>
-            <div className="loading-icon">{getIconNode()}</div>
+            <div className="loading-icon">{IconNode}</div>
             <div className="loading-content">
               {content || `${LocaleUtil.locale('加载中', 'SeedsUI_refreshing')}...`}
             </div>

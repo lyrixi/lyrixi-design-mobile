@@ -174,7 +174,7 @@ const InputNode = (
       ref={rootRef}
     >
       {/* Left */}
-      {typeof leftIcon === 'function' ? leftIcon({ value }) : leftIcon}
+      {leftIcon}
 
       {/* Main */}
       <div
@@ -212,7 +212,7 @@ const InputNode = (
       })}
 
       {/* Right */}
-      {typeof rightIcon === 'function' ? rightIcon({ value }) : rightIcon}
+      {rightIcon}
     </div>
   )
 }

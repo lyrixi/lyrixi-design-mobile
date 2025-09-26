@@ -364,7 +364,7 @@ const InputText = (
       ref={rootRef}
     >
       {/* Left */}
-      {typeof leftIcon === 'function' ? leftIcon({ value }) : leftIcon}
+      {leftIcon}
 
       <div
         className={DOMUtil.classNames(
@@ -405,7 +405,7 @@ const InputText = (
       })}
 
       {/* Right */}
-      {typeof rightIcon === 'function' ? rightIcon({ value }) : rightIcon}
+      {rightIcon}
     </div>
   )
 }

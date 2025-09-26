@@ -44,7 +44,7 @@ const Tags = ({
         style={style}
         onClick={onAdd}
       >
-        {typeof leftIcon === 'function' ? leftIcon({ value }) : leftIcon}
+        {leftIcon}
         {/* 主体 */}
         <div
           {...contentProps}
@@ -93,7 +93,7 @@ const Tags = ({
             typeof onChange === 'function' && onChange('', { action: 'clickClear' })
           }
         })}
-        {typeof rightIcon === 'function' ? rightIcon({ value }) : rightIcon}
+        {rightIcon}
       </div>
     </>
   )

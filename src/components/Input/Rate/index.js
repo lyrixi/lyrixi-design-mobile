@@ -11,7 +11,7 @@ import { DOMUtil } from 'lyrixi-design-mobile'
 // 评分组件
 const Rate = forwardRef(
   (
-    { icon, value = 0, min = 0, max = 5, step = 0.5, readOnly, disabled, onChange, ...props },
+    { iconRender, value = 0, min = 0, max = 5, step = 0.5, readOnly, disabled, onChange, ...props },
     ref
   ) => {
     const rootRef = useRef(null)
@@ -45,6 +45,28 @@ const Rate = forwardRef(
       return '0%'
     }
 
+    // 获取图标节点
+    function getIconNode(index, isActive = false) {
+      if (typeof iconRender === 'function') {
+        return iconRender({
+          className: isActive ? 'seed-input-rate-item-icon-active' : 'seed-input-rate-item-icon',
+          style: isActive ? { width: getItemActiveWidth(index + 1) } : undefined
+        })
+      }
+
+      // 默认图标
+      return (
+        <div
+          className={
+            isActive
+              ? 'seed-input-rate-item-icon-active default'
+              : 'seed-input-rate-item-icon default'
+          }
+          style={isActive ? { width: getItemActiveWidth(index + 1) } : undefined}
+        ></div>
+      )
+    }
+
     return (
       <div
         {...props}
@@ -69,27 +91,13 @@ const Rate = forwardRef(
         />
 
         {new Array(max).fill(1).map((item, index) => {
+          const IconNode = getIconNode(index, false)
+          const ActiveIconNode = getIconNode(index, true)
+
           return (
             <div className="seed-input-rate-item" key={index}>
-              {icon ? (
-                DOMUtil.getIconNode(icon, {
-                  className: 'seed-input-rate-item-icon'
-                })
-              ) : (
-                <div className={'seed-input-rate-item-icon default'}></div>
-              )}
-
-              {icon ? (
-                DOMUtil.getIconNode(icon, {
-                  className: 'seed-input-rate-item-icon-active',
-                  style: { width: getItemActiveWidth(index + 1) }
-                })
-              ) : (
-                <div
-                  className={'seed-input-rate-item-icon-active default'}
-                  style={{ width: getItemActiveWidth(index + 1) }}
-                ></div>
-              )}
+              {IconNode}
+              {ActiveIconNode}
             </div>
           )
         })}

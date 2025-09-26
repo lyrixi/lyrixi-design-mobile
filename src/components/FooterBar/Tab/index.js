@@ -10,9 +10,23 @@ import { DOMUtil } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // 图文组合
-export default function FooterBarTab({ disabled, name, icon, more, onClick, ...props }) {
+export default function FooterBarTab({ disabled, name, iconRender, more, onClick, ...props }) {
   const hasMore = Array.isArray(more) && more.length
-  const defaultIcon = hasMore ? 'footerbar-tab-icon-more' : ''
+
+  // 获取图标节点
+  function getIconNode() {
+    if (typeof iconRender === 'function') {
+      return iconRender({ name, ...props })
+    }
+
+    // 默认图标
+    if (hasMore) {
+      return <i className="footerbar-tab-icon-more"></i>
+    }
+
+    return null
+  }
+  const IconNode = getIconNode()
 
   const tab = (
     <div
@@ -20,7 +34,7 @@ export default function FooterBarTab({ disabled, name, icon, more, onClick, ...p
       className={DOMUtil.classNames('footerbar-tab', props?.className, disabled ? 'disabled' : '')}
     >
       <span className={`footerbar-tab-icon`}>
-        {DOMUtil.getIconNode(icon || defaultIcon, { name, ...props })}
+        {IconNode}
       </span>
       <div className="footerbar-tab-name">{name}</div>
     </div>

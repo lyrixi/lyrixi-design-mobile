@@ -19,7 +19,7 @@ const MessageCombo = forwardRef(
   (
     {
       children,
-      icon,
+      iconRender,
       title,
       content,
       buttons,
@@ -51,6 +51,14 @@ const MessageCombo = forwardRef(
       setVisible(true)
     }
 
+    // 获取图标节点
+    function getIconNode() {
+      if (typeof iconRender !== 'function') return null
+
+      return <Icon>{iconRender()}</Icon>
+    }
+    const IconNode = getIconNode()
+
     return (
       <>
         <div
@@ -62,13 +70,9 @@ const MessageCombo = forwardRef(
           {children}
         </div>
         <Modal visible={visible} onVisibleChange={setVisible}>
-          {(icon || title) && (
+          {(IconNode || title) && (
             <Header>
-              {icon
-                ? DOMUtil.getIconNode(icon, {
-                    ParentNode: Icon
-                  })
-                : null}
+              {IconNode}
               {title && <Title>{title}</Title>}
             </Header>
           )}

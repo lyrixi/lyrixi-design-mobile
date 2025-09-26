@@ -8,7 +8,7 @@ import DOMUtil from './../../../utils/DOMUtil'
 import { DOMUtil } from 'lyrixi-design-mobile'
 测试使用-end */
 
-const NavBarIcon = forwardRef(({ children, shape, icon, size, ...props }, ref) => {
+const NavBarIcon = forwardRef(({ children, shape, iconRender, size, ...props }, ref) => {
   const rootRef = useRef(null)
 
   // Expose
@@ -19,9 +19,11 @@ const NavBarIcon = forwardRef(({ children, shape, icon, size, ...props }, ref) =
     }
   })
 
-  // 获取选中状态的Node
+  // 获取图标节点
   function getIconNode() {
-    return DOMUtil.getIconNode(icon, {
+    if (typeof iconRender !== 'function') return null
+
+    return iconRender({
       className: 'icon',
       style: size
         ? {
@@ -34,6 +36,7 @@ const NavBarIcon = forwardRef(({ children, shape, icon, size, ...props }, ref) =
   }
 
   const IconNode = getIconNode()
+
   if (!IconNode && !children) {
     return null
   }

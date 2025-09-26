@@ -81,10 +81,7 @@ const CollapseItem = (
       return (
         <div className="collapse-item-header-wrapper">
           {arrowPosition === 'left' && ArrowNode}
-          {DOMUtil.getTextNode(title, {
-            className: 'collapse-item-header-title',
-            visible: visible
-          })}
+          <div className="collapse-item-header-title">{title}</div>
           {arrowPosition === 'right' && ArrowNode}
         </div>
       )

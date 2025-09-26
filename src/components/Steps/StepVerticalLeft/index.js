@@ -11,26 +11,31 @@ import { DOMUtil } from 'lyrixi-design-mobile'
 // 步骤条
 const Step = ({
   iconChildren,
-  icon,
+  iconRender,
   // 状态： active, finish, error, wait
   status,
   rail,
   title,
   description
 }) => {
+  // 获取图标节点
+  function getIconNode() {
+    if (typeof iconRender === 'function') {
+      return iconRender({
+        children: iconChildren,
+        className: 'steps-item-icon-circle',
+        status
+      })
+    }
+    return <div className={'steps-item-icon-circle'}>{iconChildren}</div>
+  }
+  const IconNode = getIconNode()
+
   return (
     <div className={DOMUtil.classNames('steps-item vertical left', status)}>
       {/* Icon */}
       <div className="steps-item-icon">
-        {icon ? (
-          DOMUtil.getIconNode(icon, {
-            children: iconChildren,
-            className: 'steps-item-icon-circle',
-            status
-          })
-        ) : (
-          <div className={'steps-item-icon-circle'}>{iconChildren}</div>
-        )}
+        {IconNode}
       </div>
 
       {/* 连接线 */}

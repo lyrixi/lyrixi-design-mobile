@@ -22,7 +22,7 @@ const Filter = forwardRef(
       comboClassName,
 
       // Content
-      icon,
+      iconRender,
 
       // Modal
       maskClassName,
@@ -64,6 +64,15 @@ const Filter = forwardRef(
       // eslint-disable-next-line
     }, [visible])
 
+    // 获取图标节点
+    function getIconNode() {
+      if (typeof iconRender === 'function') {
+        return iconRender({ className: 'toolbar-button-icon' })
+      }
+      return <div className={'toolbar-button-icon toolbar-button-icon-filter'}></div>
+    }
+    const IconNode = getIconNode()
+
     return (
       <>
         {/* Combo */}
@@ -80,13 +89,7 @@ const Filter = forwardRef(
           }}
           ref={rootRef}
         >
-          {icon ? (
-            DOMUtil.getIconNode(icon, {
-              className: 'toolbar-button-icon'
-            })
-          ) : (
-            <div className={'toolbar-button-icon toolbar-button-icon-filter'}></div>
-          )}
+          {IconNode}
         </Button>
 
         {/* Modal */}

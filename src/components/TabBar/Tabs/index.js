@@ -18,7 +18,7 @@ const Tabs = forwardRef(
       /*
       [
         {
-          icon: Node,
+          iconRender: function,
           name: string,
           description: string,
           disabled
@@ -84,7 +84,7 @@ const Tabs = forwardRef(
               }}
             >
               <div className="tabbar-tabs-tab">
-                {typeof item.icon === 'function' ? item.icon({ checked: checked }) : item.icon}
+                {typeof item.iconRender === 'function' ? item.iconRender({ checked: checked }) : null}
                 {description && descriptionPosition === 'top' ? (
                   <div className={`tabbar-tabs-tab-description`}>{description}</div>
                 ) : null}

@@ -48,18 +48,9 @@ function FloatButton(
 
   // 获取图标
   function getIconNode(item) {
-    if (typeof item?.icon === 'function') {
-      return item.icon({ item }) || null
+    if (typeof item?.iconRender === 'function') {
+      return item.iconRender({ item, className: 'float-button-icon' })
     }
-
-    if (React.isValidElement(item?.icon)) {
-      return item.icon
-    }
-
-    if (typeof item?.icon === 'string') {
-      return <i className={`float-button-icon ${item.icon}${item.name ? ' m' : ' l'}`} />
-    }
-
     return null
   }
 

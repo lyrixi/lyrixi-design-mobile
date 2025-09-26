@@ -23,14 +23,14 @@ export default () => {
             ...(Storage.getLocalStorage('pos') || {})
           }}
           list={[
-            { id: '1', icon: 'float-button-icon-more' },
+            { id: '1', iconRender: () => <i className="float-button-icon float-button-icon-more"></i> },
             {
               id: '2',
               name: '2',
               className: 'bg-primary color-white',
-              icon: <i className="seeds-icon seeds-icon-plus" style={{ opacity: '0.5' }}></i>
+              iconRender: () => <i className="seeds-icon seeds-icon-plus" style={{ opacity: '0.5' }}></i>
             },
-            { id: '3', name: '3', icon: 'seeds-icon-plus' },
+            { id: '3', name: '3', iconRender: () => <i className="seeds-icon seeds-icon-plus"></i> },
             {
               id: '4',
               name: '12345678',

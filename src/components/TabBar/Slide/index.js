@@ -18,7 +18,7 @@ const Slide = forwardRef(
       /*
       [
         {
-          icon: Node,
+          iconRender: function,
           name: string,
           description: string,
           disabled
@@ -84,7 +84,7 @@ const Slide = forwardRef(
               }}
             >
               <div className="tabbar-slide-tab">
-                {typeof item.icon === 'function' ? item.icon({ checked: checked }) : item.icon}
+                {typeof item.iconRender === 'function' ? item.iconRender({ checked: checked }) : null}
                 {description && descriptionPosition === 'top' ? (
                   <div className={`tabbar-slide-tab-description`}>{description}</div>
                 ) : null}

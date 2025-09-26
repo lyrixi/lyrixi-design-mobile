@@ -63,12 +63,12 @@ export default () => {
         <TabBar.Group
           list={[
             {
-              icon: <i className="seeds-icon-file-text"></i>,
+              iconRender: () => <i className="seeds-icon-file-text"></i>,
               id: 'Fruit',
               name: 'Fruit'
             },
             {
-              icon: <i className="seeds-icon-file-text"></i>,
+              iconRender: () => <i className="seeds-icon-file-text"></i>,
               id: 'Vegetable',
               name: 'Vegetable'
             },
@@ -85,21 +85,21 @@ export default () => {
         <TabBar.Group
           list={[
             {
-              icon: <i className="seeds-icon-file-text"></i>,
+              iconRender: () => <i className="seeds-icon-file-text"></i>,
               id: 'Fruit',
               name: 'Fruit',
               description: 'description',
               content: 'content'
             },
             {
-              icon: <i className="seeds-icon-file-text"></i>,
+              iconRender: () => <i className="seeds-icon-file-text"></i>,
               id: 'Vegetable',
               name: 'Vegetable',
               description: 'description',
               content: 'content'
             },
             {
-              icon: <i className="seeds-icon-file-text"></i>,
+              iconRender: () => <i className="seeds-icon-file-text"></i>,
               id: 'Animal',
               name: 'Animal',
               description: 'description',

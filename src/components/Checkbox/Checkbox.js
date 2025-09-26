@@ -4,7 +4,7 @@ import React, { forwardRef, useRef, useImperativeHandle } from 'react'
 const Checkbox = forwardRef(
   (
     {
-      icon,
+      iconRender,
       iconPosition = 'left',
 
       checked,
@@ -35,23 +35,14 @@ const Checkbox = forwardRef(
       if (onChange) onChange(!checked)
     }
 
-    // 获取选中状态的Node
-    function getIconNode(checked) {
-      if (typeof icon === 'function') {
-        let newIcon = icon({ checked })
-        if (newIcon !== undefined) return newIcon
+    // 获取图标节点
+    function getIconNode() {
+      if (typeof iconRender === 'function') {
+        return iconRender({ checked, className: 'checkbox-icon' })
       }
-
-      if (React.isValidElement(icon)) {
-        return icon
-      }
-
-      if (typeof icon === 'string') {
-        return <span className={`checkbox-icon ${icon}`} />
-      }
-
       return <span className={`checkbox-icon default`} />
     }
+    const IconNode = getIconNode()
 
     return (
       <div
@@ -64,9 +55,9 @@ const Checkbox = forwardRef(
         }`}
         ref={rootRef}
       >
-        {iconPosition !== 'right' && getIconNode(checked)}
+        {iconPosition !== 'right' && IconNode}
         {children && <span className={`checkbox-content`}>{children}</span>}
-        {iconPosition === 'right' && getIconNode(checked)}
+        {iconPosition === 'right' && IconNode}
       </div>
     )
   }

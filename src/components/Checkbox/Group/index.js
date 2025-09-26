@@ -5,7 +5,7 @@ import Checkbox from '../Checkbox'
 const CheckboxGroup = forwardRef(
   (
     {
-      icon,
+      iconRender,
       iconPosition = 'left',
 
       allowClear,
@@ -47,7 +47,7 @@ const CheckboxGroup = forwardRef(
               return (
                 <Checkbox
                   key={item.id}
-                  icon={icon}
+                  iconRender={iconRender}
                   iconPosition={iconPosition}
                   checked={value?.findIndex?.((valueItem) => valueItem?.id === item.id) >= 0}
                   onChange={(checked) => {

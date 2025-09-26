@@ -10,7 +10,9 @@ export default () => {
         Common
       </Checkbox>
       <br />
-      <Checkbox checked={value} onChange={setValue} icon={'tick'}>
+      <Checkbox checked={value} onChange={setValue} iconRender={({ checked }) => (
+        <span className={`checkbox-icon tick`} />
+      )}>
         Custom
       </Checkbox>
       <br />

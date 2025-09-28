@@ -80,8 +80,8 @@ export default () => {
         <div className="toolbar-bg">
           <ToolBar>
             <ToolBar.DateRange
-              arrow={({ active }) => {
-                if (active) {
+              arrowRender={({ visible }) => {
+                if (visible) {
                   return '^'
                 }
                 return '>'
@@ -217,13 +217,10 @@ export default () => {
             <Space.Compact>
               <ToolBar.List
                 portal={mainDOM}
-                arrow={null}
+                arrowRender={null}
                 shape="square"
                 variant="fill"
-                title={({ active }) => {
-                  console.log('active:', active)
-                  return <Icon className="seeds-icons seeds-icon-three-dots"></Icon>
-                }}
+                title={<Icon className="seeds-icons seeds-icon-three-dots"></Icon>}
                 maskStyle={{
                   zIndex: 99
                 }}

@@ -37,7 +37,7 @@ const InputNode = (
     placeholder,
     leftIcon,
     rightIcon,
-    clear,
+    clearRender,
     allowClear,
     disabled,
     readOnly,
@@ -203,7 +203,7 @@ const InputNode = (
 
       {/* Clear Icon */}
       {getClearNode({
-        clear,
+        clearRender,
         allowClear,
         disabled,
         readOnly,

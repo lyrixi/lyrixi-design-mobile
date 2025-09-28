@@ -81,7 +81,7 @@ export default () => {
           onVisibleChange={(visible) => {
             console.log('visible:', visible)
           }}
-          clear={({ clearable, triggerClear }) => {
+          clearRender={({ clearable, triggerClear }) => {
             return clearable ? <Input.IconClear onClick={triggerClear} /> : <Input.IconRightArrow />
           }}
         />

@@ -25,7 +25,7 @@ export default () => {
           maxLength={18}
           trim={true}
           allowClear
-          clear={({ clearable, triggerClear }) => {
+          clearRender={({ clearable, triggerClear }) => {
             return clearable ? <Input.IconClear onClick={triggerClear} /> : <Input.IconRightArrow />
           }}
           // formatter={(currentValue) => {

@@ -66,7 +66,7 @@ const Dropdown = forwardRef(
       if (typeof titleRender === 'function') {
         return titleRender({
           className: 'toolbar-dropdown-combo-title',
-          active: visible
+          visible: visible
         })
       }
       return <span className="toolbar-dropdown-combo-title">{title}</span>
@@ -75,7 +75,7 @@ const Dropdown = forwardRef(
     // 获取箭头节点
     function getArrowNode(visible) {
       if (typeof arrowRender === 'function') {
-        return arrowRender({ active: visible })
+        return arrowRender({ visible: visible })
       }
       return <i className="seed-button-icon toolbar-dropdown-combo-arrow"></i>
     }

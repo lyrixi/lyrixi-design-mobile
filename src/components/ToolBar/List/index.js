@@ -24,7 +24,7 @@ function ToolBarList({
 
   // Combo Value
   title,
-  arrow,
+  arrowRender,
   value,
   list,
   onBeforeChange,
@@ -57,7 +57,7 @@ function ToolBarList({
       maskClassName={maskClassName}
       maskStyle={maskStyle}
       title={title || value?.[0]?.name}
-      arrow={arrow}
+      arrowRender={arrowRender}
       ref={dropdownRef}
     >
       <List value={value} list={list} onChange={handleChange} />

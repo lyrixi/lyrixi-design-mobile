@@ -59,7 +59,7 @@ export default () => {
                 }
               ]}
               // 互斥图标
-              clear={({ clearable, triggerClear }) => {
+              clearRender={({ clearable, triggerClear }) => {
                 return clearable ? (
                   <Input.IconClear onClick={triggerClear} />
                 ) : (
@@ -102,7 +102,7 @@ export default () => {
                 }
               ]}
               // 互斥图标
-              clear={({ clearable, triggerClear }) => {
+              clearRender={({ clearable, triggerClear }) => {
                 return clearable ? (
                   <Input.IconClear onClick={triggerClear} />
                 ) : (

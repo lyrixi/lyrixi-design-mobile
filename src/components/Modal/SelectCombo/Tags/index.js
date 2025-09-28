@@ -19,7 +19,7 @@ const Tags = ({
   leftIcon,
   rightIcon,
   // 清除按键
-  clear,
+  clearRender,
   className,
   style,
   contentProps,
@@ -83,7 +83,7 @@ const Tags = ({
           )}
         </div>
         {getClearNode({
-          clear,
+          clearRender,
           allowClear,
           disabled,
           readOnly,

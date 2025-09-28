@@ -35,7 +35,7 @@ const NumberKeyboard = forwardRef(
       formatter,
       leftIcon,
       rightIcon,
-      clear,
+      clearRender,
       allowClear,
       disabled,
       readOnly,
@@ -102,7 +102,7 @@ const NumberKeyboard = forwardRef(
           formatter={formatter}
           leftIcon={leftIcon}
           rightIcon={rightIcon}
-          clear={clear}
+          clearRender={clearRender}
           allowClear={allowClear}
           disabled={disabled}
           readOnly={readOnly}

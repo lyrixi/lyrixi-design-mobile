@@ -147,7 +147,7 @@ const DistrictCombo = forwardRef(
           return typeof leafIndex === 'number' ? true : readOnly
         })()}
         modal={props?.modal || DistrictModal}
-        clear={(clearParams) => {
+        clearRender={(clearParams) => {
           let clearable = clearParams?.clearable
 
           // 只读项与值一致, 不允许清空
@@ -156,8 +156,8 @@ const DistrictCombo = forwardRef(
           }
 
           // 自定义显隐清空按钮
-          if (typeof props?.clear === 'function') {
-            return props?.clear({ ...clearParams, clearable: clearable })
+          if (typeof props?.clearRender === 'function') {
+            return props?.clearRender({ ...clearParams, clearable: clearable })
           }
 
           // 默认清空按钮显隐

@@ -25,7 +25,7 @@ function DateRangeBar({
   color,
   shape,
   title,
-  arrow,
+  arrowRender,
   comboStyle,
   comboClassName,
 
@@ -114,7 +114,7 @@ function DateRangeBar({
     <Dropdown
       portal={portal}
       title={title || getDisplayValue({ value, type, rangeId, ranges })}
-      arrow={arrow}
+      arrowRender={arrowRender}
       variant={variant}
       color={color}
       shape={shape}

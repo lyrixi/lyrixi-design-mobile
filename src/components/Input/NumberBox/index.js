@@ -45,7 +45,7 @@ const NumberBox = forwardRef(
       leftIcon,
       rightIcon,
       // 清除按键
-      clear,
+      clearRender,
       allowClear,
       // 子内容
       children,
@@ -183,7 +183,7 @@ const NumberBox = forwardRef(
           leftIcon={leftIcon}
           rightIcon={rightIcon}
           allowClear={allowClear}
-          clear={clear}
+          clearRender={clearRender}
           onClick={onClick}
           onCompositionStart={onCompositionStart} // 输入开始时
           onCompositionUpdate={onCompositionUpdate} // 输入进行中

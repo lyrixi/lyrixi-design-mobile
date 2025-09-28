@@ -88,8 +88,6 @@ const CollapseItem = (
     }
 
     return headerRender({
-      arrow: ArrowNode,
-      arrowPosition,
       visible
     })
   }

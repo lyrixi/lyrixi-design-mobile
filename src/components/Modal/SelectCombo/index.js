@@ -70,7 +70,7 @@ const Combo = forwardRef(
       placeholder,
       onClick,
       onBeforeOpen,
-      clear = ({ triggerClear }) => {
+      clearRender = ({ triggerClear }) => {
         return ObjectUtil.isEmpty(value) || !allowClear ? (
           <Input.IconRightArrow />
         ) : (
@@ -170,8 +170,8 @@ const Combo = forwardRef(
       }
 
       // 自定义清空按钮
-      if (typeof clear === 'function') {
-        return clear({ ...clearParams, value: value, readOnly: readOnly })
+      if (typeof clearRender === 'function') {
+        return clearRender({ ...clearParams, value: value, readOnly: readOnly })
       }
 
       return undefined
@@ -220,7 +220,7 @@ const Combo = forwardRef(
             separator={separator}
             leftIcon={props?.leftIcon}
             rightIcon={props?.rightIcon}
-            clear={clearRender}
+            clearRender={clearRender}
             className={props?.className}
             style={props?.style}
             placeholder={placeholder}

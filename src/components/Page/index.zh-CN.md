@@ -3,13 +3,13 @@ group:
   title: 布局
   order: 2
 order: 1
-title: Layout
+title: Page
 toc: content
 ---
 
-# Layout
+# Page
 
-布局组件，用于页面整体布局。
+页面布局组件，用于页面整体布局。
 
 ## 何时使用
 
@@ -32,7 +32,7 @@ toc: content
 
 <code src="./demos/Footer.jsx"></code>
 
-## Layout
+## Page
 
 ### 属性
 

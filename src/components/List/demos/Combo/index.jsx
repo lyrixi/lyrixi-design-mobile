@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Layout, List, Card, Divider, Checkbox, Message, ToolBar } from 'lyrixi-design-mobile'
+import { Page, List, Card, Divider, Checkbox, Message, ToolBar } from 'lyrixi-design-mobile'
 import listData from './../data'
 
 export default () => {
@@ -10,9 +10,9 @@ export default () => {
 
   console.log(listRef)
   return (
-    <Layout className="full">
-      <Layout.Header className="text-center">List.Combo</Layout.Header>
-      <Layout.Main>
+    <Page>
+      <Page.Header className="text-center">List.Combo</Page.Header>
+      <Page.Main>
         <Card>
           <Divider>Default Select</Divider>
           <List.Combo
@@ -215,7 +215,7 @@ export default () => {
             checkable
           />
         </Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

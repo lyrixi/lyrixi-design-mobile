@@ -2,11 +2,11 @@ import React, { forwardRef } from 'react'
 import List from './../../List'
 
 // 内库使用-start
-import Layout from './../../../Layout'
+import Page from './../../../Page'
 // 内库使用-end
 
 /* 测试使用-start
-import { Layout } from 'lyrixi-design-mobile'
+import { Page } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // 列表
@@ -44,7 +44,7 @@ const Main = forwardRef(
     ref
   ) => {
     return (
-      <Layout.Main
+      <Page.Main
         {...props}
         ref={ref}
         className={`list-main${props.className ? ' ' + props.className : ''}`}
@@ -78,7 +78,7 @@ const Main = forwardRef(
 
         {/* 其它公共的提示信息 */}
         {children}
-      </Layout.Main>
+      </Page.Main>
     )
   }
 )

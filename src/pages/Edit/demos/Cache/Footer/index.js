@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, FooterBar, LocaleUtil } from 'lyrixi-design-mobile'
+import { Page, FooterBar, LocaleUtil } from 'lyrixi-design-mobile'
 
 // 样式图片等资源文件导入
 const locale = LocaleUtil.locale
@@ -7,7 +7,7 @@ const locale = LocaleUtil.locale
 // 底部
 function Footer({ onOk, onCancel }) {
   return (
-    <Layout.Footer>
+    <Page.Footer>
       <FooterBar>
         {onCancel && <FooterBar.Button onClick={onCancel}>{locale('Cancel')}</FooterBar.Button>}
         {onOk && (
@@ -16,7 +16,7 @@ function Footer({ onOk, onCancel }) {
           </FooterBar.Button>
         )}
       </FooterBar>
-    </Layout.Footer>
+    </Page.Footer>
   )
 }
 

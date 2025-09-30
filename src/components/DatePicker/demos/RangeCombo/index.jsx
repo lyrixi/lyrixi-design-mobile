@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import _ from 'lodash'
-import { Layout, Divider, DatePicker, DateUtil, Message, Card, Toast } from 'lyrixi-design-mobile'
+import { Page, Divider, DatePicker, DateUtil, Message, Card, Toast } from 'lyrixi-design-mobile'
 
 export default () => {
   const [value, setValue] = useState(null)
   // const [value, setValue] = useState([new Date(), null])
   // const [value, setValue] = useState([null, null])
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Card>
           <Divider>Year</Divider>
           <DatePicker.RangeCombo
@@ -226,7 +226,7 @@ export default () => {
             allowClear
           />
         </Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

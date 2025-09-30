@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { Layout, MathUtil, Input, Card, Divider } from 'lyrixi-design-mobile'
+import { Page, MathUtil, Input, Card, Divider } from 'lyrixi-design-mobile'
 
 export default () => {
   const numberKeyboardRef = useRef(null)
@@ -10,8 +10,8 @@ export default () => {
   }, [])
 
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Card>
           <Divider>小数和负数</Divider>
           <Input.NumberKeyboard
@@ -105,7 +105,7 @@ export default () => {
             }}
           />
         </Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

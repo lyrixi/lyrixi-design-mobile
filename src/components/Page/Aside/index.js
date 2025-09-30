@@ -6,13 +6,13 @@ import SafeArea from './../../SafeArea'
 // 内库使用-end
 
 /* 测试使用-start
-import { DOMUtil, SafeArea } from 'lyrixi-design-mobile'
+import { DOMUtil,SafeArea } from 'lyrixi-design-mobile'
 测试使用-end */
 
-const Footer = forwardRef(({ safeArea, children, ...props }, ref) => {
+const Aside = forwardRef(({ safeArea, children, ...props }, ref) => {
   const rootRef = useRef(null)
 
-  // Expose tools
+  // 节点
   useImperativeHandle(ref, () => {
     return {
       rootDOM: rootRef.current,
@@ -21,18 +21,18 @@ const Footer = forwardRef(({ safeArea, children, ...props }, ref) => {
   })
 
   return (
-    <footer
+    <aside
       {...props}
       className={DOMUtil.classNames(
-        'layout-footer',
+        'page-aside',
         SafeArea.getSafeAreaClassName(safeArea),
         props.className
       )}
       ref={rootRef}
     >
       {children}
-    </footer>
+    </aside>
   )
 })
 
-export default Footer
+export default Aside

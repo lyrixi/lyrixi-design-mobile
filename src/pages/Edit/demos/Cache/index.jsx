@@ -4,7 +4,7 @@ import {
   Storage,
   LocaleUtil,
   Toast,
-  Layout,
+  Page,
   Result,
   Form,
   Input,
@@ -111,8 +111,8 @@ const Edit = () => {
   }
 
   return (
-    <Layout className="full">
-      <Layout.Main
+    <Page className="full">
+      <Page.Main
         onScroll={function (e) {
           if (scrollThrottleRef.current) {
             window.clearTimeout(scrollThrottleRef.current)
@@ -399,14 +399,14 @@ const Edit = () => {
             <Signature.Combo />
           </Form.Item>
         </Form>
-      </Layout.Main>
+      </Page.Main>
 
       {/* Footer */}
       <Footer onOk={handleSave} />
 
       {/* Error */}
       {result?.message && <Result className="full" status={result.status} title={result.message} />}
-    </Layout>
+    </Page>
   )
 }
 

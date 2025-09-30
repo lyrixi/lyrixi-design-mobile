@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import _ from 'lodash'
-import { Card, Divider, Layout, Cascader } from 'lyrixi-design-mobile'
+import { Card, Divider, Page, Cascader } from 'lyrixi-design-mobile'
 
 export default () => {
   // 控件将会补充parentid和isDistrict, 所以顺序不能传错
@@ -29,8 +29,8 @@ export default () => {
     }, 2000)
   }, [])
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Card>
           <Divider>country</Divider>
           <Cascader.DistrictCombo
@@ -173,7 +173,7 @@ export default () => {
             maskStyle={{ zIndex: '9' }}
           />
         </Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

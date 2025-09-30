@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Layout, Divider, Steps, Card, List, Button } from 'lyrixi-design-mobile'
+import { Page, Divider, Steps, Card, List, Button } from 'lyrixi-design-mobile'
 
 const list = [
   {
@@ -50,13 +50,13 @@ const list = [
 
 export default () => {
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Card>
           <Divider>Center & Vertical</Divider>
           <Steps value={{ index: 1 }} list={list} align="center" direction="vertical" />
         </Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

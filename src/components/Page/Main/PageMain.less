@@ -1,7 +1,7 @@
 /*
 * Main
 */
-.layout-main {
+.page-main {
   // 绝对定布局
   // position:absolute;
   // top: 0;
@@ -17,7 +17,7 @@
 }
 
 // 下拉刷新-下拉或触底刷新样式
-@keyframes layout-main-pull-animation-spinner {
+@keyframes page-main-pull-animation-spinner {
   0% {
     transform: rotate(0deg);
   }
@@ -29,7 +29,7 @@
   }
 }
 // 下拉刷新-pull类型(头部和底部刷新同一个样式)
-.layout-main-pull-push {
+.page-main-pull-push {
   display: flex;
   align-items: flex-end;
   // 解决在flex父级下高度无法撑开的问题
@@ -40,7 +40,7 @@
   overflow: hidden;
   color: var(--seed-font-color-tertiary);
 }
-.layout-main-pull-push-wrapper {
+.page-main-pull-push-wrapper {
   .flex;
   .flex-middle;
   .flex-center;
@@ -48,13 +48,13 @@
   height: 40px;
   font-size: 13px;
 }
-.layout-main-pull-push-text {
+.page-main-pull-push-text {
   display: block;
   height: 20px;
   line-height: 20px;
 }
 // 按照ue要求改为不显示图标的样式(隐藏图标)
-.layout-main-pull-push-icon {
+.page-main-pull-push-icon {
   // UI要求去掉图标，此处隐藏起来
   display: none;
 
@@ -69,35 +69,35 @@
   transition-duration: var(--seed-animation-duration);
   transition-property: transform;
 
-  &.layout-main-pull-push-icon-up {
+  &.page-main-pull-push-icon-up {
     transform: rotate(0deg);
   }
-  &.layout-main-pull-push-icon-down {
+  &.page-main-pull-push-icon-down {
     transform: rotate(180deg);
   }
-  &.layout-main-pull-push-icon-none {
+  &.page-main-pull-push-icon-none {
     display: none;
   }
-  &.layout-main-pull-push-icon-loading {
+  &.page-main-pull-push-icon-loading {
     background-position: left bottom;
     transition-duration: 0ms;
-    animation: layout-main-pull-animation-spinner 1000ms infinite linear;
+    animation: page-main-pull-animation-spinner 1000ms infinite linear;
   }
 }
 
 // Adapt to the safe area: className
-.layout-main.safeArea {
+.page-main.safeArea {
   &:extend(.safe-area all);
   &:extend(.safe-area.after all);
 }
 // Adapt to the safe area: safeArea={false}
-.layout-main.clearSafeArea {
+.page-main.clearSafeArea {
   &:extend(.clear-safe-area all);
   &:extend(.clear-safe-area.after all);
 }
 // Adapt to the safe area: safeArea={true}
 .auto-safe-area-children {
-  .layout-main.autoSafeArea {
+  .page-main.autoSafeArea {
     &:extend(.safe-area all);
     &:extend(.safe-area.after all);
   }

@@ -1,10 +1,10 @@
 import React from 'react'
-import { Layout, Card, Divider, DateUtil } from 'lyrixi-design-mobile'
+import { Page, Card, Divider, DateUtil } from 'lyrixi-design-mobile'
 
 export default () => {
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page className="full">
+      <Page.Main>
         <Card>
           <Divider>toDate</Divider>
           <div
@@ -197,7 +197,7 @@ export default () => {
             Click to test getDaysInMonth & quarter
           </div>
         </Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

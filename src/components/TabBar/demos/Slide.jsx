@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Layout, Divider, TabBar } from 'lyrixi-design-mobile'
+import { Page, Divider, TabBar } from 'lyrixi-design-mobile'
 
 export default () => {
   const list = [
@@ -16,8 +16,8 @@ export default () => {
     setValue(value)
   }
   return (
-    <Layout className="full">
-      <Layout.Main style={{ backgroundColor: 'white' }}>
+    <Page>
+      <Page.Main style={{ backgroundColor: 'white' }}>
         <Divider>OverFlow</Divider>
         <TabBar.Slide
           list={[
@@ -123,7 +123,7 @@ export default () => {
           }}
           className="s"
         />
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

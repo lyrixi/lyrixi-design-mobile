@@ -1,11 +1,11 @@
 import React, { useRef, useEffect } from 'react'
-import { Layout, VideoPlayer, Button } from 'lyrixi-design-mobile'
+import { Page, VideoPlayer, Button } from 'lyrixi-design-mobile'
 
 export default () => {
   const videoPlayerRef = useRef(null)
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <VideoPlayer
           ref={videoPlayerRef}
           poster={'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png'}
@@ -20,8 +20,8 @@ export default () => {
             ></div>
           }
         />
-      </Layout.Main>
-      <Layout.Footer>
+      </Page.Main>
+      <Page.Footer>
         <Button
           onClick={() => {
             videoPlayerRef.current.play()
@@ -36,7 +36,7 @@ export default () => {
         >
           Pause
         </Button>
-      </Layout.Footer>
-    </Layout>
+      </Page.Footer>
+    </Page>
   )
 }

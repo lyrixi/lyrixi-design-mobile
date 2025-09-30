@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import { Layout, Message, Button } from 'lyrixi-design-mobile'
+import { Page, Message, Button } from 'lyrixi-design-mobile'
 
 export default () => {
   const [visible, setVisible] = useState(false)
 
   return (
     <>
-      <Layout>
-        <Layout.Main>
+      <Page>
+        <Page.Main>
           <Button className="flex" color="primary" onClick={() => setVisible(true)}>
             Click to show message
           </Button>
-        </Layout.Main>
-      </Layout>
+        </Page.Main>
+      </Page>
       <Message.Modal visible={visible} onVisibleChange={setVisible}>
         <Message.Header>
           <Message.Icon className="seeds-icon-config color-primary" />

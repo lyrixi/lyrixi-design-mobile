@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Icon, Layout, Message, Button } from 'lyrixi-design-mobile'
+import { Icon, Page, Message, Button } from 'lyrixi-design-mobile'
 
 export default () => {
   const handleOpenMessage = () => {
@@ -29,8 +29,8 @@ export default () => {
   }
 
   return (
-    <Layout>
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
           {/* Using Message.Combo component */}
           <div>
@@ -72,7 +72,7 @@ export default () => {
             </Button>
           </div>
         </div>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

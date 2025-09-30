@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { Divider, Layout, Card, Button, Collapse } from 'lyrixi-design-mobile'
+import { Divider, Page, Card, Button, Collapse } from 'lyrixi-design-mobile'
 
 export default () => {
   const [value, setValue] = useState(null)
 
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Card>
           <Divider>Group(Controlled component)</Divider>
           <Button
@@ -166,7 +166,7 @@ export default () => {
             </Collapse.Item>
           </div>
         </Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

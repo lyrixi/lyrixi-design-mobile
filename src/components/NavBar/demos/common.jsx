@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { Layout, NavBar, Button, Divider } from 'lyrixi-design-mobile'
+import { Page, NavBar, Button, Divider } from 'lyrixi-design-mobile'
 
 export default () => {
   return (
-    <Layout className="full bg-white">
-      <Layout.Main>
+    <Page className="full bg-white">
+      <Page.Main>
         <Divider>Normal</Divider>
         <NavBar>
           <NavBar.Button icon="seeds-icon-arrow-left">Back</NavBar.Button>
@@ -25,7 +25,7 @@ export default () => {
           <NavBar.Title>Title</NavBar.Title>
           <NavBar.Button className="primary">Ok</NavBar.Button>
         </NavBar>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

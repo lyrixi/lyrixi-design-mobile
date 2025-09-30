@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { Layout, Modal, FooterBar } from 'lyrixi-design-mobile'
+import { Page, Modal, FooterBar } from 'lyrixi-design-mobile'
 
 export default () => {
   const referenceRef = useRef(null)
@@ -10,16 +10,16 @@ export default () => {
   }
 
   return (
-    <Layout className="full">
-      <Layout.Header className="text-center">Modal</Layout.Header>
-      <Layout.Main className="bg-white">
+    <Page>
+      <Page.Header className="text-center">Modal</Page.Header>
+      <Page.Main className="bg-white">
         <div ref={referenceRef} className="demo-title" onClick={handleToggle}>
           Modal visible toggle
         </div>
         <Modal.FilterModal
           visible={true}
           footer={({ close }) => (
-            <Layout.Footer>
+            <Page.Footer>
               <FooterBar>
                 <FooterBar.Tab
                   icon="seeds-icon-config"
@@ -45,14 +45,14 @@ export default () => {
                   确定
                 </FooterBar.Button>
               </FooterBar>
-            </Layout.Footer>
+            </Page.Footer>
           )}
         >
           <div className="bg-white" style={{ height: '300px' }}>
             Test
           </div>
         </Modal.FilterModal>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

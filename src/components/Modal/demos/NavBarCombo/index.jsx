@@ -1,13 +1,13 @@
 import React from 'react'
-import { Layout, Modal, Card, Divider } from 'lyrixi-design-mobile'
+import { Page, Modal, Card, Divider } from 'lyrixi-design-mobile'
 
 export default () => {
   const navBarComboRef = React.useRef(null)
   console.log('navBarComboRef', navBarComboRef)
   return (
-    <Layout className="full">
-      <Layout.Header className="text-center">Modal</Layout.Header>
-      <Layout.Main className="bg-white">
+    <Page>
+      <Page.Header className="text-center">Modal</Page.Header>
+      <Page.Main className="bg-white">
         <Card>
           <Divider>Only Title</Divider>
           <Modal.NavBarCombo
@@ -69,7 +69,7 @@ export default () => {
             </div>
           </Modal.NavBarCombo>
         </Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

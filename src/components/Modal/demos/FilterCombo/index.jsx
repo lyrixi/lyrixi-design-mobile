@@ -1,13 +1,13 @@
 import React, { useRef } from 'react'
-import { Layout, ToolBar, Card, Divider, Icon } from 'lyrixi-design-mobile'
+import { Page, ToolBar, Card, Divider, Icon } from 'lyrixi-design-mobile'
 
 export default () => {
   const filterRef = useRef(null)
 
   return (
-    <Layout className="full">
-      <Layout.Header className="text-center">Modal</Layout.Header>
-      <Layout.Main>
+    <Page>
+      <Page.Header className="text-center">Modal</Page.Header>
+      <Page.Main>
         <Card>
           <Divider>Filter</Divider>
           <div
@@ -44,7 +44,7 @@ export default () => {
             </div>
           </ToolBar.Filter>
         </Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

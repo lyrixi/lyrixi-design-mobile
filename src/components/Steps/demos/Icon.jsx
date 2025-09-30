@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Layout, Divider, Steps, Icon, Card } from 'lyrixi-design-mobile'
+import { Page, Divider, Steps, Icon, Card } from 'lyrixi-design-mobile'
 
 const list = [
   {
@@ -25,8 +25,8 @@ const list = [
 
 export default () => {
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Card>
           <Divider>Global Icon</Divider>
           <Steps iconSize={32} value={{ index: 1 }} list={list} direction="horizontal" />
@@ -41,7 +41,7 @@ export default () => {
             direction="vertical"
           />
         </Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

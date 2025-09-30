@@ -1,10 +1,10 @@
 import React from 'react'
-import { Icon, Layout, Divider, FooterBar } from 'lyrixi-design-mobile'
+import { Icon, Page, Divider, FooterBar } from 'lyrixi-design-mobile'
 
 export default () => {
   return (
-    <Layout safeArea className="full">
-      <Layout.Main>
+    <Page safeArea>
+      <Page.Main>
         <Divider>Text Button</Divider>
         <FooterBar>
           <FooterBar.Icon
@@ -201,7 +201,7 @@ export default () => {
             Ok
           </FooterBar.Button>
         </FooterBar>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

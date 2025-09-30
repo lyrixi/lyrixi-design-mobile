@@ -3,13 +3,13 @@ import Modal from './../Modal'
 
 // 内库使用-start
 import LocaleUtil from './../../../utils/LocaleUtil'
-import Layout from './../../Layout'
+import Page from './../../Page'
 import NavBar from './../../NavBar'
 import DOMUtil from './../../../utils/DOMUtil'
 // 内库使用-end
 
 /* 测试使用-start
-import { LocaleUtil, Layout, NavBar } from 'lyrixi-design-mobile'
+import { LocaleUtil, Page, NavBar } from 'lyrixi-design-mobile'
 测试使用-start */
 
 // 侧边查询
@@ -41,8 +41,8 @@ function FilterModal(
       visible={visible}
       onVisibleChange={onVisibleChange}
     >
-      <Layout className="full modal-filtermodal-layout">
-        <Layout.Header>
+      <Page className="full modal-filtermodal-layout">
+        <Page.Header>
           <NavBar className="modal-filtermodal-navbar">
             <NavBar.Button
               onClick={() => {
@@ -55,14 +55,13 @@ function FilterModal(
             <NavBar.Title>{LocaleUtil.locale('筛选', 'SeedsUI_filter')}</NavBar.Title>
             <NavBar.Button>&nbsp;&nbsp;</NavBar.Button>
           </NavBar>
-        </Layout.Header>
-        <Layout.Main>{children}</Layout.Main>
+        </Page.Header>
+        <Page.Main>{children}</Page.Main>
         {/* 底部 */}
         {footer && typeof footer === 'function'
           ? footer({ close: () => onVisibleChange && onVisibleChange(false) })
-          : footer
-        }
-      </Layout>
+          : footer}
+      </Page>
     </Modal>
   )
 }

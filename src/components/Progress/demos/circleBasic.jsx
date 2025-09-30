@@ -1,10 +1,10 @@
 import React from 'react'
-import { Layout, Progress, Divider, Card } from 'lyrixi-design-mobile'
+import { Page, Progress, Divider, Card } from 'lyrixi-design-mobile'
 
 const BasicDemo = () => {
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Divider>基础用法</Divider>
         <Card>
           <Progress.Circle percent={75}>
@@ -69,8 +69,8 @@ const BasicDemo = () => {
             <span className="color-danger">Error</span>
           </Progress.Circle>
         </Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }
 

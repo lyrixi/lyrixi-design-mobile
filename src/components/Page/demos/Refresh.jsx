@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, List } from 'lyrixi-design-mobile'
+import { Page, List } from 'lyrixi-design-mobile'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 const list = []
@@ -29,9 +29,9 @@ export default () => {
   }
   return (
     // <div id="root" style={{ height: '300px', position: 'relative' }}>
-    <Layout safeArea className="full">
-      <Layout.Header style={{ height: 50, backgroundColor: 'white' }}>Header</Layout.Header>
-      <Layout.Main
+    <Page safeArea>
+      <Page.Header style={{ height: 50, backgroundColor: 'white' }}>Header</Page.Header>
+      <Page.Main
         onTopRefresh={handleTopRefresh}
         onBottomRefresh={handleBottomRefresh}
         touchStopPropagation={false}
@@ -55,8 +55,8 @@ export default () => {
           )
         })}
         <List.InfiniteScroll />
-      </Layout.Main>
-      <Layout.Footer
+      </Page.Main>
+      <Page.Footer
         onChange={(newValue) => {
           console.log(newValue)
         }}
@@ -68,7 +68,7 @@ export default () => {
           }
         ]}
       />
-    </Layout>
+    </Page>
     // </div>
   )
 }

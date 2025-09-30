@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Layout, Cascader, Loading, Input } from 'lyrixi-design-mobile'
+import { Page, Cascader, Loading, Input } from 'lyrixi-design-mobile'
 
 export default () => {
   const [value, setValue] = useState([
@@ -52,8 +52,8 @@ export default () => {
   }
 
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Cascader.Combo
           allowClear
           // multiple={false}
@@ -85,7 +85,7 @@ export default () => {
             return clearable ? <Input.IconClear onClick={triggerClear} /> : <Input.IconRightArrow />
           }}
         />
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

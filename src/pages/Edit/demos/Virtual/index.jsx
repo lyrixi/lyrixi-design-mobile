@@ -4,7 +4,7 @@ import {
   LocaleUtil,
   Toast,
   Card,
-  Layout,
+  Page,
   Result,
   Form,
   Input,
@@ -103,8 +103,8 @@ const Edit = () => {
   }
 
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page className="full">
+      <Page.Main>
         <Card>
           <Form form={form} style={{ margin: '0 12px' }} virtual={true}>
             <Form.Item
@@ -365,7 +365,7 @@ const Edit = () => {
             </Form.Item>
           </Form>
         </Card>
-      </Layout.Main>
+      </Page.Main>
 
       {/* Footer */}
       <Footer onOk={handleSave} />
@@ -374,7 +374,7 @@ const Edit = () => {
       {result?.message && (
         <Result className="full" status={mainStatus.status} title={mainStatus.title} />
       )}
-    </Layout>
+    </Page>
   )
 }
 

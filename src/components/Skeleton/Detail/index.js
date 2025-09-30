@@ -1,13 +1,13 @@
 import React from 'react'
 
-import Layout from './../../Layout'
+import Page from './../../Page'
 import Paragraph from './../components/Paragraph'
 import Tabs from './../components/Tabs'
 
 const Detail = ({ animated, divider, listLength = 2, paragraphLength = 10, ...props }) => {
   return (
-    <Layout className="full" {...props}>
-      <Layout.Main className="overflow-hidden">
+    <Page {...props}>
+      <Page.Main className="overflow-hidden">
         <Paragraph
           divider={divider}
           titleProps={{
@@ -27,8 +27,8 @@ const Detail = ({ animated, divider, listLength = 2, paragraphLength = 10, ...pr
             oddProps={{ style: { width: '73px' } }}
           />
         ))}
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }
 

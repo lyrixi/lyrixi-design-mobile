@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { Layout, Divider } from 'lyrixi-design-mobile'
+import { Page, Divider } from 'lyrixi-design-mobile'
 
 export default () => {
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Divider>Divider</Divider>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

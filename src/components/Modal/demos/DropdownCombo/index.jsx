@@ -1,10 +1,10 @@
 import React from 'react'
-import { Layout, Modal, Divider } from 'lyrixi-design-mobile'
+import { Page, Modal, Divider } from 'lyrixi-design-mobile'
 
 export default () => {
   return (
-    <Layout className="full">
-      <Layout.Main className="bg-white">
+    <Page>
+      <Page.Main className="bg-white">
         <Modal.DropdownCombo
           comboChildren={<Divider>Modal.DropdownCombo Left</Divider>}
           onVisibleChange={(visible) => {
@@ -42,7 +42,7 @@ export default () => {
             Modal Content Left
           </div>
         </Modal.DropdownCombo>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

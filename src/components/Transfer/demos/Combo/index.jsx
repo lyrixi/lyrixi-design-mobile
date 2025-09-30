@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Layout, Button } from 'lyrixi-design-mobile'
+import { Page, Button } from 'lyrixi-design-mobile'
 import { Transfer } from 'lyrixi-design-mobile'
 // import Transfer from 'library/components/Transfer'
 
@@ -10,9 +10,9 @@ export default () => {
     { id: '2', name: '2' }
   ])
   return (
-    <Layout className="full">
-      <Layout.Header className="text-center">Transfer.Combo</Layout.Header>
-      <Layout.Main className="bg-white">
+    <Page>
+      <Page.Header className="text-center">Transfer.Combo</Page.Header>
+      <Page.Main className="bg-white">
         <div className="demo-title">Transfer Combo</div>
         <Transfer.Combo
           ref={transferRef}
@@ -47,7 +47,7 @@ export default () => {
           }}
           footer={({ value, triggerOk }) => {
             return (
-              <Layout.Footer
+              <Page.Footer
                 onClick={() => {
                   triggerOk()
                 }}
@@ -55,14 +55,14 @@ export default () => {
                 <Button className="listpicker-footer-submit" color="primary">
                   确定
                 </Button>
-              </Layout.Footer>
+              </Page.Footer>
             )
           }}
           mainProps={{
             titles: { selected: '标题1', unSelected: '标题2' }
           }}
         />
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

@@ -3,11 +3,11 @@ import { createPortal } from 'react-dom'
 import Main from './../Main'
 
 // 内库使用-start
-import Layout from './../../Layout'
+import Page from './../../Page'
 // 内库使用-end
 
 /* 测试使用-start
-import { Layout } from 'lyrixi-design-mobile'
+import { Page } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // Modal
@@ -42,7 +42,7 @@ const Modal = forwardRef(
     })
 
     return createPortal(
-      <Layout
+      <Page
         ref={modalRef}
         {...props}
         className={`signature-modal${props?.className ? ' ' + props.className : ''}${
@@ -63,7 +63,7 @@ const Modal = forwardRef(
             backgroundColor={backgroundColor}
           />
         )}
-      </Layout>,
+      </Page>,
       portal || document.getElementById('root') || document.body
     )
   }

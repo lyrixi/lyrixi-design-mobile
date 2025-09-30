@@ -1,10 +1,10 @@
 import React from 'react'
-import { Layout, Chat } from 'lyrixi-design-mobile'
+import { Page, Chat } from 'lyrixi-design-mobile'
 
 export default () => {
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Chat.List
           // checkable
           list={[
@@ -34,7 +34,7 @@ export default () => {
             }
           ]}
         />
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

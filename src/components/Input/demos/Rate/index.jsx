@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { Layout, Card, Divider, Input } from 'lyrixi-design-mobile'
+import { Page, Card, Divider, Input } from 'lyrixi-design-mobile'
 
 export default () => {
   const [value, setValue] = useState(3)
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Card>
           <Divider>Common</Divider>
           <Input.Rate
@@ -53,7 +53,7 @@ export default () => {
             onChange={setValue}
           />
         </Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

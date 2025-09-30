@@ -1,10 +1,10 @@
 import React from 'react'
-import { Layout, Chat } from 'lyrixi-design-mobile'
+import { Page, Chat } from 'lyrixi-design-mobile'
 
 export default () => {
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Chat.Item
           avatar={'https://api.dicebear.com/7.x/miniavs/svg?seed=3'}
           id="1"
@@ -13,7 +13,7 @@ export default () => {
           position="left"
           time={new Date()}
         />
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

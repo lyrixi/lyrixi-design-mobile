@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Layout, Divider, Button, Icon } from 'lyrixi-design-mobile'
+import { Page, Divider, Button, Icon } from 'lyrixi-design-mobile'
 
 const buttonStyle = {
   margin: 'var(--seed-space-m)'
@@ -8,8 +8,8 @@ const buttonStyle = {
 
 export default () => {
   return (
-    <Layout className="full" style={{ backgroundColor: '#f8f8f8' }}>
-      <Layout.Main>
+    <Page style={{ backgroundColor: '#f8f8f8' }}>
+      <Page.Main>
         <Divider>Color & Variant</Divider>
         <div style={{ marginTop: 'var(--seed-space-l)' }}>
           <Button color="default" radius="m" style={buttonStyle}>
@@ -242,7 +242,7 @@ export default () => {
         <Button color="primary" size="xl" radius="xl" style={buttonStyle}>
           primary xl
         </Button>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

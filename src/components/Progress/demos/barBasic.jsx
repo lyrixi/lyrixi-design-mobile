@@ -1,10 +1,10 @@
 import React from 'react'
-import { Layout, Progress, Divider, Card } from 'lyrixi-design-mobile'
+import { Page, Progress, Divider, Card } from 'lyrixi-design-mobile'
 
 const BasicBarDemo = () => {
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Divider>基础用法</Divider>
         <Card style={{ padding: '10px 12px' }}>
           <Progress.Bar percent={75} />
@@ -40,8 +40,8 @@ const BasicBarDemo = () => {
           <Progress.Bar percent={100} className="success" style={{ margin: '12px 0' }} />
           <Progress.Bar percent={100} className="danger" />
         </Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }
 

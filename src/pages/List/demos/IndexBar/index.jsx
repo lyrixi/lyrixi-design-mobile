@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 // 第三方库导入
-import { IndexBar, Layout } from 'lyrixi-design-mobile'
+import { IndexBar, Page } from 'lyrixi-design-mobile'
 
 // 公共组件导入
 
@@ -20,7 +20,7 @@ const IndexBarList = () => {
   const [indexBarVisible, setIndexBarVisible] = useState(undefined)
 
   return (
-    <Layout className="full">
+    <Page className="full">
       {/* 搜索栏 */}
       <Header
         queryParams={queryParams}
@@ -63,7 +63,7 @@ const IndexBarList = () => {
           scrollerDOM={mainRef?.current?.rootDOM}
         ></IndexBar>
       )}
-    </Layout>
+    </Page>
   )
 }
 

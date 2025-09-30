@@ -3,13 +3,13 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 // 内库使用-start
-import { Layout, Divider } from 'lyrixi-design-mobile'
+import { Page, Divider } from 'lyrixi-design-mobile'
 // 内库使用-end
 
 export default () => {
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page className="full">
+      <Page.Main>
         <Divider>钉钉选择照片(结果不同)</Divider>
         <SyntaxHighlighter
           language="javascript"
@@ -60,7 +60,7 @@ export default () => {
   }
 })`}
         </SyntaxHighlighter>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

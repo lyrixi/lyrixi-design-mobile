@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Layout } from 'lyrixi-design-mobile'
+import { Page } from 'lyrixi-design-mobile'
 // import { Loading } from 'lyrixi-design-mobile'
 import Loading from './../../Loading/index.js'
 
@@ -22,9 +22,9 @@ export default () => {
   // }, [])
 
   return (
-    <Layout className="full">
-      <Layout.Header className="text-center">Loading</Layout.Header>
-      <Layout.Main className="bg-white">
+    <Page>
+      <Page.Header className="text-center">Loading</Page.Header>
+      <Page.Main className="bg-white">
         <Loading.SpinFade />
         <Loading.Ouroboros />
         <Loading.BallWave />
@@ -33,7 +33,7 @@ export default () => {
           icon={<Loading.Ouroboros />}
           content="自定义内容"
         />
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

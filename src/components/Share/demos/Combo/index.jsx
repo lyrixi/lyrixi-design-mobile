@@ -1,13 +1,13 @@
 import React, { useRef } from 'react'
-import { Share, Layout } from 'lyrixi-design-mobile'
+import { Share, Page } from 'lyrixi-design-mobile'
 
 export default () => {
   const shareComboRef = useRef(null)
   console.log(shareComboRef)
   return (
-    <Layout className="full">
-      <Layout.Header>When this platform is not supported, nothing will appear</Layout.Header>
-      <Layout.Main className="bg-white">
+    <Page>
+      <Page.Header>When this platform is not supported, nothing will appear</Page.Header>
+      <Page.Main className="bg-white">
         <Share.Combo
           ref={shareComboRef}
           shareTo={{
@@ -37,7 +37,7 @@ export default () => {
             }
           }}
         />
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

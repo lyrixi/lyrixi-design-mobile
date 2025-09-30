@@ -6,11 +6,11 @@ import getVisibleItems from './getVisibleItems'
 import List from './List'
 
 // 内库使用-start
-import Layout from './../../../Layout'
+import Page from './../../../Page'
 // 内库使用-end
 
 /* 测试使用-start
-import { Layout } from 'lyrixi-design-mobile'
+import { Page } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // 列表
@@ -145,7 +145,7 @@ const VirtualList = (
   }
 
   return (
-    <Layout.Main
+    <Page.Main
       {...props}
       ref={rootRef}
       className={`list-main${props.className ? ' ' + props.className : ''}`}
@@ -180,7 +180,7 @@ const VirtualList = (
 
       {/* 其它公共的提示信息 */}
       {children}
-    </Layout.Main>
+    </Page.Main>
   )
 }
 

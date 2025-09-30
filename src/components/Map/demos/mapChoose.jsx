@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 
 // 内库使用
-import { Layout, Map, Loading } from 'lyrixi-design-mobile'
+import { Page, Map, Loading } from 'lyrixi-design-mobile'
 
 // 测试使用
 // import Map from 'library/components/Map'
@@ -48,8 +48,8 @@ export default () => {
   */
 
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <APILoader
           loading={<Loading content="Loading..." />}
           config={{
@@ -147,7 +147,7 @@ export default () => {
             />
           </div>
         </APILoader>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Layout, List } from 'lyrixi-design-mobile'
+import { Page, List } from 'lyrixi-design-mobile'
 import listData from './listData'
 
 export default () => {
@@ -8,8 +8,8 @@ export default () => {
 
   console.log(listRef.current)
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <List
           ref={listRef}
           checkable
@@ -37,7 +37,7 @@ export default () => {
           //   return <div className="list-wrapper-custom">{children}</div>
           // }}
         />
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

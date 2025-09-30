@@ -1,11 +1,11 @@
 import React from 'react'
-import { Logger, Layout, Button, Input, Card, Divider, Form } from 'lyrixi-design-mobile'
+import { Logger, Page, Button, Input, Card, Divider, Form } from 'lyrixi-design-mobile'
 import upload from './upload'
 
 export default () => {
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page className="full">
+      <Page.Main>
         <Card>
           <Divider>Function</Divider>
           <div style={{ margin: '0 12px' }}>
@@ -97,7 +97,7 @@ export default () => {
             </Button>
           </div>
         </Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

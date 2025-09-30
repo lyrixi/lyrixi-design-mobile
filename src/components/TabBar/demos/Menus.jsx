@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Layout, Divider, TabBar } from 'lyrixi-design-mobile'
+import { Page, Divider, TabBar } from 'lyrixi-design-mobile'
 
 export default () => {
   const [value, setValue] = useState({ name: 'Vegetable', id: 'Vegetable' })
@@ -8,8 +8,8 @@ export default () => {
     setValue(value)
   }
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Divider>OverFlow</Divider>
         <TabBar.Menus
           list={[
@@ -110,7 +110,7 @@ export default () => {
             handleChange(newValue)
           }}
         />
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { Layout, GeoUtil } from 'lyrixi-design-mobile'
+import { Page, GeoUtil } from 'lyrixi-design-mobile'
 
 export default () => {
   return (
-    <Layout className="full">
-      <Layout.Main>定位</Layout.Main>
-    </Layout>
+    <Page className="full">
+      <Page.Main>定位</Page.Main>
+    </Page>
   )
 }

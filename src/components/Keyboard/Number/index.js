@@ -9,12 +9,12 @@ import ButtonQuick from './ButtonQuick'
 // 内库使用-start
 import LocaleUtil from './../../../utils/LocaleUtil'
 import DOMUtil from './../../../utils/DOMUtil'
-import Layout from '../../Layout'
+import Page from '../../Page'
 import Icon from './../../Icon'
 // 内库使用-end
 
 /* 测试使用-start
-import { LocaleUtil, DOMUtil, Layout, Icon } from 'lyrixi-design-mobile'
+import { LocaleUtil, DOMUtil, Page, Icon } from 'lyrixi-design-mobile'
 测试使用-end */
 
 const KeyboardNumber = forwardRef(
@@ -191,7 +191,7 @@ const KeyboardNumber = forwardRef(
         onClick={handleMaskClick}
         {...props}
       >
-        <Layout
+        <Page
           animation="slideUp"
           className={DOMUtil.classNames(
             'modal-animation bottom-center seed-keyboard-number-container',
@@ -201,7 +201,7 @@ const KeyboardNumber = forwardRef(
           onClick={(e) => e.stopPropagation()}
         >
           {/* 顶部操作栏 */}
-          <Layout.Header>
+          <Page.Header>
             {cancel !== null && (
               <ButtonQuick onClick={handleCancel}>
                 {cancel !== null ? (
@@ -211,11 +211,11 @@ const KeyboardNumber = forwardRef(
                 )}
               </ButtonQuick>
             )}
-          </Layout.Header>
+          </Page.Header>
 
           {/* 键盘主体 */}
-          <Layout>
-            <Layout.Main>
+          <Page>
+            <Page.Main>
               {/* 第一行 1-3 */}
               <div className="seed-keyboard-main-row">
                 <ButtonNumber onClick={handleNumber}>1</ButtonNumber>
@@ -239,9 +239,9 @@ const KeyboardNumber = forwardRef(
 
               {/* 第四行 根据配置动态布局 */}
               <div className="seed-keyboard-main-row">{getOperateRowNode()}</div>
-            </Layout.Main>
+            </Page.Main>
 
-            <Layout.Aside className="flex flex-vertical">
+            <Page.Aside className="flex flex-vertical">
               {/* 删除键 - 只在有确定按钮时显示在侧边栏 */}
               {isDeleteInMainRef.current === false && (
                 <ButtonAction className="delete" onClick={handleDelete}>
@@ -255,9 +255,9 @@ const KeyboardNumber = forwardRef(
                   {ok || LocaleUtil.locale('确定', 'SeedsUI_ok')}
                 </ButtonAction>
               )}
-            </Layout.Aside>
-          </Layout>
-        </Layout>
+            </Page.Aside>
+          </Page>
+        </Page>
       </div>
     )
 

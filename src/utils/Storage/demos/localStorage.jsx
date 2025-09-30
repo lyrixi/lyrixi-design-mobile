@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Storage, Layout, Button, Input, Card, Divider, Form } from 'lyrixi-design-mobile'
+import { Storage, Page, Button, Input, Card, Divider, Form } from 'lyrixi-design-mobile'
 
 export default () => {
   const [key, setKey] = useState('demo-key')
@@ -42,8 +42,8 @@ export default () => {
   }
 
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page className="full">
+      <Page.Main>
         <Divider>LocalStorage 示例</Divider>
 
         <Card>
@@ -137,7 +137,7 @@ export default () => {
             </div>
           </Card>
         )}
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

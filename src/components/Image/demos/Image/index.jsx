@@ -3,7 +3,7 @@ import {
   SafeArea,
   HistoryUtil,
   Toast,
-  Layout,
+  Page,
   Divider,
   Bridge,
   Button,
@@ -72,8 +72,8 @@ export default () => {
   }
 
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Divider>Default Image</Divider>
         <Image
           // async
@@ -172,12 +172,12 @@ export default () => {
           }}
           onUpload={uploadItem}
         />
-      </Layout.Main>
-      <Layout.Footer>
+      </Page.Main>
+      <Page.Footer>
         <Button className="flex" color="primary" onClick={handleAsyncUpload}>
           Sync Upload
         </Button>
-      </Layout.Footer>
-    </Layout>
+      </Page.Footer>
+    </Page>
   )
 }

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Layout, Debugger } from 'lyrixi-design-mobile'
+import { Page, Debugger } from 'lyrixi-design-mobile'
 
 export default () => {
   useEffect(() => {
@@ -8,8 +8,8 @@ export default () => {
   }, [])
 
   return (
-    <Layout className="full">
-      <Layout.Main>左下角点击10次呼出暗门</Layout.Main>
-    </Layout>
+    <Page className="full">
+      <Page.Main>左下角点击10次呼出暗门</Page.Main>
+    </Page>
   )
 }

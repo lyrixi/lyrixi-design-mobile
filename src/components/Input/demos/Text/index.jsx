@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import _ from 'lodash'
-import { Layout, Divider, Input, Card, Button } from 'lyrixi-design-mobile'
+import { Page, Divider, Input, Card, Button } from 'lyrixi-design-mobile'
 
 export default () => {
   const inputTextRef = useRef(null)
@@ -15,8 +15,8 @@ export default () => {
   }, [])
 
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Card>
           <Divider>基础用法</Divider>
           <Input.Text
@@ -145,7 +145,7 @@ export default () => {
             <p>• 支持ref操作（focus、blur等）</p>
           </div>
         </Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

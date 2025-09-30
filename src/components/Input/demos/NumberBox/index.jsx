@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { Layout, MathUtil, Divider, Card, Input } from 'lyrixi-design-mobile'
+import { Page, MathUtil, Divider, Card, Input } from 'lyrixi-design-mobile'
 
 export default () => {
   const [value, setValue] = useState('2.10')
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Divider>Size XS</Divider>
         <Card className="padding-horizontal-l padding-vertical-l">
           <Input.NumberBox
@@ -87,7 +87,7 @@ export default () => {
             allowClear
           />
         </Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

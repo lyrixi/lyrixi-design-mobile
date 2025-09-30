@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, Form, Divider, Select, Input, FooterBar, LocaleUtil } from 'lyrixi-design-mobile'
+import { Page, Form, Divider, Select, Input, FooterBar, LocaleUtil } from 'lyrixi-design-mobile'
 
 export default () => {
   // 表单
@@ -18,8 +18,8 @@ export default () => {
   }
 
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Divider>Horizontal</Divider>
         <Form
           layout="horizontal"
@@ -115,14 +115,14 @@ export default () => {
             <Input.AutoFit placeholder={LocaleUtil.locale('请输入')} />
           </Form.Item>
         </Form>
-      </Layout.Main>
-      <Layout.Footer className="listpicker-footer border-t">
+      </Page.Main>
+      <Page.Footer className="listpicker-footer border-t">
         <FooterBar>
           <FooterBar.Button className="primary" onClick={handleSave}>
             {LocaleUtil.locale('确定')}
           </FooterBar.Button>
         </FooterBar>
-      </Layout.Footer>
-    </Layout>
+      </Page.Footer>
+    </Page>
   )
 }

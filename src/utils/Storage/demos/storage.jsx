@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Storage, Layout, Button, Input, Card, Divider, Form } from 'lyrixi-design-mobile'
+import { Storage, Page, Button, Input, Card, Divider, Form } from 'lyrixi-design-mobile'
 
 export default () => {
   const [key, setKey] = useState('demo-storage-key')
@@ -69,8 +69,8 @@ export default () => {
   }
 
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page className="full">
+      <Page.Main>
         <Divider>Storage (LocalForage) 示例</Divider>
 
         <Card>
@@ -174,7 +174,7 @@ export default () => {
             <p>• 可以配置驱动类型的优先级</p>
           </div>
         </Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

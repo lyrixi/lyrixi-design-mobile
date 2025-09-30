@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react'
 
 // 内库使用
-import { Layout, Map, Button } from 'lyrixi-design-mobile'
+import { Page, Map, Button } from 'lyrixi-design-mobile'
 
 // 测试使用
 // import Map from 'library/components/Map'
@@ -98,12 +98,12 @@ export default () => {
   }
 
   return (
-    <Layout className="full">
-      <Layout.Header>
+    <Page>
+      <Page.Header>
         <Button onClick={handleFocusPoint}>Focus point</Button>
         <Button onClick={handleBlurPoint}>Blur point</Button>
-      </Layout.Header>
-      <Layout.Main>
+      </Page.Header>
+      <Page.Main>
         <APILoader
           config={{
             key: '7b6e260fc45a67b31a265e22575f1c5e',
@@ -209,7 +209,7 @@ export default () => {
             </MapMarkers>
           </div>
         </APILoader>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

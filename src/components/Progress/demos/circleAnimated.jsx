@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Layout, Progress, Divider, Card } from 'lyrixi-design-mobile'
+import { Page, Progress, Divider, Card } from 'lyrixi-design-mobile'
 
 const AnimatedDemo = () => {
   const [percent, setPercent] = useState(0)
@@ -9,8 +9,8 @@ const AnimatedDemo = () => {
   }
 
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Divider>Duration</Divider>
         <Card>
           <Progress.Circle
@@ -71,8 +71,8 @@ const AnimatedDemo = () => {
           />
           {percent}%
         </div>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }
 

@@ -10,7 +10,7 @@ import { DOMUtil, SafeArea } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // [safeArea] true: 自动安全区; false: 强制取消安全区
-const Layout = forwardRef(({ safeArea, animation, full = true, children, ...props }, ref) => {
+const Page = forwardRef(({ safeArea, animation, full = true, children, ...props }, ref) => {
   const rootRef = useRef(null)
 
   // Expose
@@ -23,19 +23,19 @@ const Layout = forwardRef(({ safeArea, animation, full = true, children, ...prop
 
   useEffect(() => {
     if (!rootRef.current) return
-    // 子级有aside则增加样式layout-has-aside
+    // 子级有aside则增加样式page-has-aside
     let aside = null
     if (rootRef.current.children) {
       for (let child of rootRef.current.children) {
-        if (child.classList.contains('layout-aside')) {
+        if (child.classList.contains('page-aside')) {
           aside = true
         }
       }
     }
     if (aside) {
-      rootRef.current.classList.add('layout-has-aside')
+      rootRef.current.classList.add('page-has-aside')
     } else {
-      rootRef.current.classList.remove('layout-has-aside')
+      rootRef.current.classList.remove('page-has-aside')
     }
     // eslint-disable-next-line
   }, [children])
@@ -44,7 +44,7 @@ const Layout = forwardRef(({ safeArea, animation, full = true, children, ...prop
     <section
       {...props}
       className={DOMUtil.classNames(
-        'layout',
+        'page',
         full ? 'full' : '',
         SafeArea.getSafeAreaClassName(safeArea),
         props.className
@@ -57,4 +57,4 @@ const Layout = forwardRef(({ safeArea, animation, full = true, children, ...prop
   )
 })
 
-export default Layout
+export default Page

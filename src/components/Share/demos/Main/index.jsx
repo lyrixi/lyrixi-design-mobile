@@ -1,11 +1,11 @@
 import React from 'react'
-import { Share, Layout } from 'lyrixi-design-mobile'
+import { Share, Page } from 'lyrixi-design-mobile'
 
 export default () => {
   return (
-    <Layout className="full">
-      <Layout.Header className="text-center">Share To</Layout.Header>
-      <Layout.Main className="bg-white">
+    <Page>
+      <Page.Header className="text-center">Share To</Page.Header>
+      <Page.Main className="bg-white">
         <Share.Main
           shareTo={{
             wechat: {
@@ -34,7 +34,7 @@ export default () => {
             }
           }}
         />
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

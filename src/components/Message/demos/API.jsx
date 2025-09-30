@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, Message, Button } from 'lyrixi-design-mobile'
+import { Page, Message, Button } from 'lyrixi-design-mobile'
 
 export default () => {
   const handleOpenMessage = () => {
@@ -76,8 +76,8 @@ export default () => {
   }
 
   return (
-    <Layout>
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
           <Button className="flex" color="primary" onClick={handleOpenMessage}>
             Open Message (Vertical)
@@ -95,7 +95,7 @@ export default () => {
             Close Current Message
           </Button>
         </div>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

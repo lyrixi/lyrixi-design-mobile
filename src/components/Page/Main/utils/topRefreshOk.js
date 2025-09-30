@@ -9,7 +9,7 @@ import { LocaleUtil } from 'lyrixi-design-mobile'
 // 刷新完成
 function topRefreshOk(topContainer, isOk) {
   return new Promise((resolve) => {
-    let topText = topContainer?.querySelector?.('.layout-main-pull-push-text')
+    let topText = topContainer?.querySelector?.('.page-main-pull-push-text')
 
     // 完成提示信息
     let finishMsg = ''
@@ -29,10 +29,10 @@ function topRefreshOk(topContainer, isOk) {
 
     setTimeout(() => {
       // 重置样式
-      let topIcon = topContainer?.querySelector?.('.layout-main-pull-push-icon')
+      let topIcon = topContainer?.querySelector?.('.page-main-pull-push-icon')
       if (topIcon) {
-        topIcon.classList.remove('layout-main-pull-push-icon-down')
-        topIcon.classList.remove('layout-main-pull-push-icon-loading')
+        topIcon.classList.remove('page-main-pull-push-icon-down')
+        topIcon.classList.remove('page-main-pull-push-icon-loading')
       }
       if (topContainer) topContainer.style.height = '0'
 

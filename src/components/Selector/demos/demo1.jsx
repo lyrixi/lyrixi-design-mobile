@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Layout, Selector } from 'lyrixi-design-mobile'
+import { Page, Selector } from 'lyrixi-design-mobile'
 
 export default () => {
   const [value, setValue] = useState([
@@ -10,8 +10,8 @@ export default () => {
   ])
 
   return (
-    <Layout className="full bg-white">
-      <Layout.Main>
+    <Page className="full bg-white">
+      <Page.Main>
         <Selector
           columns={3}
           // multiple
@@ -43,7 +43,7 @@ export default () => {
           // multiple={true}
           onChange={setValue}
         />
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

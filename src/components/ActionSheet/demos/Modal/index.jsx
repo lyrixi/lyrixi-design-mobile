@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Layout, ActionSheet, SafeArea } from 'lyrixi-design-mobile'
+import { Page, ActionSheet, SafeArea } from 'lyrixi-design-mobile'
 
 export default () => {
   const list = [
@@ -27,8 +27,8 @@ export default () => {
   }, [])
 
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         {JSON.stringify(value)}
         <ActionSheet.Modal
           visible={true}
@@ -42,7 +42,7 @@ export default () => {
             console.log('visible:', visible)
           }}
         />
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

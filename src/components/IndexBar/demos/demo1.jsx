@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react'
-import { Layout, IndexBar } from 'lyrixi-design-mobile'
+import { Page, IndexBar } from 'lyrixi-design-mobile'
 
 export default () => {
   const [list, setList] = useState([])
@@ -49,9 +49,9 @@ export default () => {
     })
   }
   return (
-    <Layout className="full">
+    <Page>
       <IndexBar>
-        <Layout.Main
+        <Page.Main
           onBottomRefresh={() => {
             return new Promise((resolve) => {
               setTimeout(() => {
@@ -90,8 +90,8 @@ export default () => {
           }}
         >
           <ul>{getListNodes()}</ul>
-        </Layout.Main>
+        </Page.Main>
       </IndexBar>
-    </Layout>
+    </Page>
   )
 }

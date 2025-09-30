@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, Message, Button } from 'lyrixi-design-mobile'
+import { Page, Message, Button } from 'lyrixi-design-mobile'
 
 export default () => {
   function handleToggle() {
@@ -56,11 +56,13 @@ export default () => {
                       portal: document.body,
                       title: '第三层',
                       content: 'confirm content3',
-                      buttons: [{
-                        name: '确定',
-                        className: 'primary',
-                        onClick: () => true
-                      }],
+                      buttons: [
+                        {
+                          name: '确定',
+                          className: 'primary',
+                          onClick: () => true
+                        }
+                      ],
                       onVisibleChange: (visible) => {
                         console.log('onVisibleChange:', visible)
                       }
@@ -78,9 +80,9 @@ export default () => {
   }
 
   return (
-    <Layout className="full">
-      <Layout.Header className="text-center">Message.open</Layout.Header>
-      <Layout.Main
+    <Page>
+      <Page.Header className="text-center">Message.open</Page.Header>
+      <Page.Main
         className="bg-white"
         style={{
           backgroundImage:
@@ -90,7 +92,7 @@ export default () => {
         <Button className="flex" color="primary" size="l" onClick={handleToggle}>
           Message visible toggle
         </Button>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

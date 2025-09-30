@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { Layout, Divider, Row } from 'lyrixi-design-mobile'
+import { Page, Divider, Row } from 'lyrixi-design-mobile'
 
 export default () => {
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Divider>Each row has twenty-four columns</Divider>
         <Row>
           <Row.Col
@@ -57,7 +57,7 @@ export default () => {
             Twenty-eight
           </Row.Col>
         </Row>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

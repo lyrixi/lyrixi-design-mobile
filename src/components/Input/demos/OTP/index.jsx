@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { Layout, Input, Card, Divider, FooterBar } from 'lyrixi-design-mobile'
+import { Page, Input, Card, Divider, FooterBar } from 'lyrixi-design-mobile'
 
 export default () => {
   const inputRef = useRef(null)
@@ -10,8 +10,8 @@ export default () => {
   }
 
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Card style={{ marginTop: '20px' }}>
           <Divider>数值类型</Divider>
           <Input.OTP
@@ -88,8 +88,8 @@ export default () => {
             }}
           />
         </Card>
-      </Layout.Main>
-      <Layout.Footer>
+      </Page.Main>
+      <Page.Footer>
         <FooterBar type="text">
           <FooterBar.Button onClick={() => inputRef.current?.focus()}>
             聚焦第一个输入框
@@ -98,7 +98,7 @@ export default () => {
             失焦所有输入框
           </FooterBar.Button>
         </FooterBar>
-      </Layout.Footer>
-    </Layout>
+      </Page.Footer>
+    </Page>
   )
 }

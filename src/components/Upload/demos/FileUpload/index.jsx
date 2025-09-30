@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { Toast, Layout, Divider, Bridge, Button, Upload } from 'lyrixi-design-mobile'
+import { Toast, Page, Divider, Bridge, Button, Upload } from 'lyrixi-design-mobile'
 import uploadItem from './browser/uploadItem'
 
 export default () => {
@@ -44,8 +44,8 @@ export default () => {
   }
 
   return (
-    <Layout className="full bg-white">
-      <Layout.Main>
+    <Page className="full bg-white">
+      <Page.Main>
         <Divider>Default Upload</Divider>
         <Upload
           // upload={(...params) => {
@@ -127,12 +127,12 @@ export default () => {
             'Custom Upload Render'
           )}
         </Upload>
-      </Layout.Main>
-      <Layout.Footer>
+      </Page.Main>
+      <Page.Footer>
         <Button className="flex" color="primary" onClick={handleAsyncUpload}>
           Sync Upload
         </Button>
-      </Layout.Footer>
-    </Layout>
+      </Page.Footer>
+    </Page>
   )
 }

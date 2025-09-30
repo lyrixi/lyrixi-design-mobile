@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { Layout, Device, Card } from 'lyrixi-design-mobile'
+import { Page, Device, Card } from 'lyrixi-design-mobile'
 
 export default () => {
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page className="full">
+      <Page.Main>
         <p className="demo-title">language</p>
         <Card style={{ padding: 12 }}>{Device.language}</Card>
 
@@ -42,7 +42,7 @@ export default () => {
         <Card style={{ padding: 12 }}>{Device.screenHeight}</Card>
         <p className="demo-title">compareVersion: 7_7_10 vs 7_7_5</p>
         <Card style={{ padding: 12 }}>{Device.compareVersion('7_7_10', '7_7_5', '_')}</Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

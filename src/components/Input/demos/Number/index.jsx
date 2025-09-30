@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { Layout, MathUtil, Input } from 'lyrixi-design-mobile'
+import { Page, MathUtil, Input } from 'lyrixi-design-mobile'
 // import VConsole from 'vconsole'
 
 // const vConsole = new VConsole()
@@ -12,8 +12,8 @@ export default () => {
     console.log(inputNumberRef.current)
   }, [])
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Input.Number
           ref={inputNumberRef}
           inputMode="numeric"
@@ -44,7 +44,7 @@ export default () => {
             return '$' + MathUtil.thousands(currentValue)
           }}
         />
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

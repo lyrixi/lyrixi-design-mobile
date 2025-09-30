@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
-import { Layout, List } from 'lyrixi-design-mobile'
+import { Page, List } from 'lyrixi-design-mobile'
 import list from './../data'
 
 export default () => {
   const [value, setValue] = useState(null)
   return (
-    <Layout className="full">
-      <Layout.Header className="text-center">List.Modal</Layout.Header>
-      <Layout.Main>
+    <Page>
+      <Page.Header className="text-center">List.Modal</Page.Header>
+      <Page.Main>
         <List.Modal
           visible={true}
           pagination
@@ -18,7 +18,7 @@ export default () => {
             setValue(value)
           }}
         />
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

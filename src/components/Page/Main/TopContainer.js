@@ -7,10 +7,10 @@ const TopContainer = forwardRef((props, ref) => {
     return rootRef.current
   })
   return (
-    <div ref={rootRef} className="layout-main-pull-push">
-      <div className="layout-main-pull-push-wrapper">
-        <div className="layout-main-pull-push-icon"></div>
-        <div className="layout-main-pull-push-text">
+    <div ref={rootRef} className="page-main-pull-push">
+      <div className="page-main-pull-push-wrapper">
+        <div className="page-main-pull-push-icon"></div>
+        <div className="page-main-pull-push-text">
           {LocaleUtil.locale('下拉可以刷新', 'SeedsUI_pull_down_refresh')}
         </div>
       </div>

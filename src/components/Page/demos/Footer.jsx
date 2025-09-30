@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, Divider } from 'lyrixi-design-mobile'
+import { Page, Divider } from 'lyrixi-design-mobile'
 
 const list = []
 for (let i = 0; i < 100; i++) {
@@ -11,17 +11,17 @@ for (let i = 0; i < 100; i++) {
 
 export default () => {
   return (
-    <Layout safeArea className="full">
-      <Layout.Main>
+    <Page safeArea>
+      <Page.Main>
         <Divider>Text Button</Divider>
-        <Layout.Footer
+        <Page.Footer
           onChange={(newValue) => {
             console.log(newValue)
           }}
         />
 
         <Divider>Text Button disabled</Divider>
-        <Layout.Footer
+        <Page.Footer
           onChange={(newValue) => {
             console.log(newValue)
           }}
@@ -63,7 +63,7 @@ export default () => {
         />
 
         <Divider>Button</Divider>
-        <Layout.Footer
+        <Page.Footer
           onChange={(newValue) => {
             console.log(newValue)
           }}
@@ -90,7 +90,7 @@ export default () => {
         />
 
         <Divider>Button disabled</Divider>
-        <Layout.Footer
+        <Page.Footer
           onChange={(newValue) => {
             console.log(newValue)
           }}
@@ -128,7 +128,7 @@ export default () => {
             }
           ]}
         />
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

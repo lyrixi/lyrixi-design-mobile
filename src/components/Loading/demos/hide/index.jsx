@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, Loading } from 'lyrixi-design-mobile'
+import { Page, Loading } from 'lyrixi-design-mobile'
 
 export default () => {
   function handleToggle() {
@@ -10,13 +10,13 @@ export default () => {
   }
 
   return (
-    <Layout className="full">
-      <Layout.Header className="text-center">Loading.hide</Layout.Header>
-      <Layout.Main className="bg-white">
+    <Page>
+      <Page.Header className="text-center">Loading.hide</Page.Header>
+      <Page.Main className="bg-white">
         <div className="demo-title" onClick={handleToggle}>
           Loading visible toggle
         </div>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

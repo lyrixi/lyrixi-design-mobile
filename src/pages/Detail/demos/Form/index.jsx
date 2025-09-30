@@ -1,7 +1,7 @@
 // 第三方库导入
 import React, { useEffect, useState } from 'react'
 import _ from 'lodash'
-import { LocaleUtil, Toast, Divider, Layout, Result, Typography, Card } from 'lyrixi-design-mobile'
+import { LocaleUtil, Toast, Divider, Page, Result, Typography, Card } from 'lyrixi-design-mobile'
 // 公共组件导入
 
 // 内部组件导入
@@ -72,10 +72,10 @@ const FormDetail = () => {
   }
 
   return (
-    <Layout className="full">
+    <Page className="full">
       {/* Data success */}
       {result?.data && (
-        <Layout.Main>
+        <Page.Main>
           <Card>
             <Divider>Horizontal Layout</Divider>
             <Typography.Form style={{ marginLeft: '12px' }}>
@@ -112,7 +112,7 @@ const FormDetail = () => {
               </Item>
             </Typography.Form>
           </Card>
-        </Layout.Main>
+        </Page.Main>
       )}
 
       {/* Footer */}
@@ -120,7 +120,7 @@ const FormDetail = () => {
 
       {/* Data error */}
       {result?.status && <Result className="full" status={result.status} title={result.message} />}
-    </Layout>
+    </Page>
   )
 }
 

@@ -16,11 +16,11 @@ import LocaleUtil from './../../../utils/LocaleUtil'
 import ArrayUtil from './../../../utils/ArrayUtil'
 import IndexBar from './../../IndexBar'
 import Loading from './../../Loading'
-import Layout from './../../Layout'
+import Page from './../../Page'
 // 内库使用-end
 
 /* 测试使用-start
-import { LocaleUtil, ArrayUtil, IndexBar, Loading, Layout } from 'lyrixi-design-mobile'
+import { LocaleUtil, ArrayUtil, IndexBar, Loading, Page } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // 主体
@@ -351,7 +351,7 @@ const Main = forwardRef(
     return (
       <>
         {/* 主页面 */}
-        <Layout className="cascader-main">
+        <Page className="cascader-main">
           {/* 搜索框 */}
           {searchVisible && Array.isArray(externalList) && externalList.length > 0 && (
             <SearchHeader
@@ -406,7 +406,7 @@ const Main = forwardRef(
               </IndexBar>
             </>
           )}
-        </Layout>
+        </Page>
       </>
     )
   }

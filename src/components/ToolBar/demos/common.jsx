@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react'
 
 import {
   LocaleUtil,
-  Layout,
+  Page,
   NavBar,
   ToolBar,
   Divider,
@@ -47,13 +47,13 @@ export default () => {
   }
 
   return (
-    <Layout className="full">
-      <Layout.Header>
+    <Page>
+      <Page.Header>
         <NavBar>
           <NavBar.Title>ToolBar</NavBar.Title>
         </NavBar>
-      </Layout.Header>
-      <Layout.Main
+      </Page.Header>
+      <Page.Main
         ref={(current) => {
           if (!current?.rootDOM) return
           setMainDOM(current?.rootDOM || null)
@@ -369,7 +369,7 @@ export default () => {
             )}
           </ToolBar>
         </div>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

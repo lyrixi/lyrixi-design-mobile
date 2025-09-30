@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import _ from 'lodash'
-import { DatePicker, Layout, DateUtil, LocaleUtil } from 'lyrixi-design-mobile'
+import { DatePicker, Page, DateUtil, LocaleUtil } from 'lyrixi-design-mobile'
 
 export default () => {
   const [rangeId, setRangeId] = useState(null)
   const [value, setValue] = useState([new Date(), new Date()])
   return (
-    <Layout className="full">
-      <Layout.Header className="text-center">日期快捷选择</Layout.Header>
-      <Layout.Main className="bg-white">
+    <Page>
+      <Page.Header className="text-center">日期快捷选择</Page.Header>
+      <Page.Main className="bg-white">
         <DatePicker.RangeMain
           // style={{ padding: 0 }}
           // allowClear
@@ -41,7 +41,7 @@ export default () => {
             setRangeId(rangeId)
           }}
         />
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

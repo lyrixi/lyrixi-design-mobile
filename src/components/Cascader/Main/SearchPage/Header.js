@@ -1,12 +1,12 @@
 import React from 'react'
 
 // 内库使用-start
-import Layout from './../../../Layout'
+import Page from './../../../Page'
 import ToolBar from './../../../ToolBar'
 // 内库使用-end
 
 /* 测试使用-start
-import { Layout, ToolBar } from 'lyrixi-design-mobile'
+import { Page, ToolBar } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // 搜索框组件
@@ -19,7 +19,7 @@ export default function SearchHeader({
   onCancel
 }) {
   return (
-    <Layout.Header className="cascader-search-header toolbar-invert">
+    <Page.Header className="cascader-search-header toolbar-invert">
       <ToolBar invert>
         <ToolBar.Search
           value={value}
@@ -42,6 +42,6 @@ export default function SearchHeader({
           />
         )}
       </ToolBar>
-    </Layout.Header>
+    </Page.Header>
   )
 }

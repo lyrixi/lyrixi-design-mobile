@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react'
 import _ from 'lodash'
-import { Layout, Input } from 'lyrixi-design-mobile'
+import { Page, Input } from 'lyrixi-design-mobile'
 
 export default () => {
   const [value, setValue] = useState('keyword')
 
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Input.Search
           trim
           precision={2}
@@ -20,7 +20,7 @@ export default () => {
           }}
         />
         Your search keyword: {value}
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

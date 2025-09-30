@@ -4,7 +4,7 @@ import {
   LocaleUtil,
   Toast,
   Divider,
-  Layout,
+  Page,
   Result,
   Form,
   Card,
@@ -103,8 +103,8 @@ const Edit = () => {
   }
 
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page className="full">
+      <Page.Main>
         <Card>
           <Divider>Horizontal Layout</Divider>
           <Form
@@ -395,14 +395,14 @@ const Edit = () => {
             </Form.Item>
           </Form>
         </Card>
-      </Layout.Main>
+      </Page.Main>
 
       {/* Footer */}
       <Footer onOk={handleSave} />
 
       {/* Error */}
       {result?.message && <Result className="full" status={result.status} title={result.title} />}
-    </Layout>
+    </Page>
   )
 }
 

@@ -4,17 +4,17 @@ import React, { useState } from 'react'
 import LocaleUtil from './../../../../utils/LocaleUtil'
 import Loading from './../../../Loading'
 import ToolBar from './../../../ToolBar'
-import Layout from './../../../../components/Layout'
+import Page from './../../../../components/Page'
 import Result from './../../../Result'
 import Typography from './../../../Typography'
 // 内库使用-end
 
 /* 测试使用-start
-import { LocaleUtil, Loading, ToolBar, Layout, Result, Typography } from 'lyrixi-design-mobile'
+import { LocaleUtil, Loading, ToolBar, Page, Result, Typography } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // 搜索
-function Page({ map, visible, onVisibleChange, onChange }) {
+function SearchPage({ map, visible, onVisibleChange, onChange }) {
   let [searchList, setSearchList] = useState(null)
   const [keyword, setKeyword] = useState('')
 
@@ -61,8 +61,8 @@ function Page({ map, visible, onVisibleChange, onChange }) {
   }
 
   return (
-    <Layout className="map-searchControl-page">
-      <Layout.Header className="map-searchControl-header">
+    <Page className="map-searchControl-page">
+      <Page.Header className="map-searchControl-header">
         <ToolBar.SearchActive
           value={keyword}
           onSearch={(keyword) => {
@@ -76,7 +76,7 @@ function Page({ map, visible, onVisibleChange, onChange }) {
             handleBack()
           }}
         />
-      </Layout.Header>
+      </Page.Header>
       <div className="map-searchControl-body">
         {Array.isArray(searchList) && searchList.length
           ? searchList.map((item, index) => {
@@ -106,7 +106,7 @@ function Page({ map, visible, onVisibleChange, onChange }) {
           <Result className="map-main-result" status="empty" />
         ) : null}
       </div>
-    </Layout>
+    </Page>
   )
 }
-export default Page
+export default SearchPage

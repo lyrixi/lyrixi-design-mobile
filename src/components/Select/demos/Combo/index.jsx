@@ -1,15 +1,6 @@
 import React, { useState, useRef } from 'react'
 import _ from 'lodash'
-import {
-  Layout,
-  Divider,
-  Select,
-  List,
-  Checkbox,
-  Message,
-  Card,
-  ToolBar
-} from 'lyrixi-design-mobile'
+import { Page, Divider, Select, List, Checkbox, Message, Card, ToolBar } from 'lyrixi-design-mobile'
 import list from './listSimple'
 import listData from './listData'
 
@@ -39,8 +30,8 @@ export default () => {
     }
   ])
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Card>
           <Divider>Single Select</Divider>
           <Select.Combo
@@ -274,7 +265,7 @@ export default () => {
             }}
           />
         </Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

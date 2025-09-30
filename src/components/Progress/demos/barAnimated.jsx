@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Layout, Progress, Divider, Card } from 'lyrixi-design-mobile'
+import { Page, Progress, Divider, Card } from 'lyrixi-design-mobile'
 
 const AnimatedBarDemo = () => {
   const [percent, setPercent] = useState(0)
@@ -9,8 +9,8 @@ const AnimatedBarDemo = () => {
   }
 
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Divider>Duration</Divider>
         <Card style={{ padding: '10px 12px' }}>
           <Progress.Bar
@@ -62,8 +62,8 @@ const AnimatedBarDemo = () => {
           />
           {percent}%
         </div>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }
 

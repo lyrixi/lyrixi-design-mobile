@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Layout, List } from 'lyrixi-design-mobile'
+import { Page, List } from 'lyrixi-design-mobile'
 import listData from './../listData'
 import VConsole from 'vconsole'
 
@@ -10,8 +10,8 @@ export default () => {
 
   console.log(mainRef.current)
   return (
-    <Layout className="full">
-      <Layout.Header className="text-center">Layout vertical</Layout.Header>
+    <Page>
+      <Page.Header className="text-center">Layout vertical</Page.Header>
       <List.Main
         ref={mainRef}
         layout="vertical"
@@ -29,7 +29,7 @@ export default () => {
           setValue(value)
         }}
       />
-      <Layout.Header className="text-center">Layout horizontal</Layout.Header>
+      <Page.Header className="text-center">Layout horizontal</Page.Header>
       <List.Main
         ref={mainRef}
         prepend={({ list, value, onChange, pagination }) => {
@@ -51,6 +51,6 @@ export default () => {
           setValue(value)
         }}
       />
-    </Layout>
+    </Page>
   )
 }

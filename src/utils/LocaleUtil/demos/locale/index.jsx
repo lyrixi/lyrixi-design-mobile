@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Layout, LocaleUtil, Divider, Card, DateUtil } from 'lyrixi-design-mobile'
+import { Page, LocaleUtil, Divider, Card, DateUtil } from 'lyrixi-design-mobile'
 import dayjs from 'dayjs'
 
 // 中文
@@ -17,8 +17,8 @@ LocaleUtil.setLocale('en_US', enUS)
 
 export default () => {
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page className="full">
+      <Page.Main>
         <Divider>Node</Divider>
         <Card style={{ padding: 'var(--seed-space-l)' }}>
           {LocaleUtil.locale('近7日', 'SeedsUI_last_days', [
@@ -44,7 +44,7 @@ export default () => {
 
         <Divider>Remark Number</Divider>
         <Card style={{ padding: 'var(--seed-space-l)' }}>{LocaleUtil.locale(7)}</Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

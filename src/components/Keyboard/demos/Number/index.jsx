@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
-import { Layout, Card, Divider, Input, Keyboard } from 'lyrixi-design-mobile'
+import { Page, Card, Divider, Input, Keyboard } from 'lyrixi-design-mobile'
 
 export default () => {
   const [open, setOpen] = useState(false)
   const [value, setValue] = useState('')
 
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Card>
           <Divider>Common</Divider>
           <Input.Node
@@ -44,7 +44,7 @@ export default () => {
             setOpen(false)
           }}
         />
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

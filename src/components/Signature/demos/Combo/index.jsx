@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Signature, Layout, Toast, Device, Bridge } from 'lyrixi-design-mobile'
+import { Signature, Page, Toast, Device, Bridge } from 'lyrixi-design-mobile'
 
 // Test safe area
 // import { SafeArea } from 'lyrixi-design-mobile'
@@ -15,9 +15,9 @@ export default () => {
   }, [])
 
   return (
-    <Layout className="full">
-      <Layout.Header className="text-center">手写签名</Layout.Header>
-      <Layout.Main className="bg-white">
+    <Page>
+      <Page.Header className="text-center">手写签名</Page.Header>
+      <Page.Main className="bg-white">
         <Signature.Combo
           // color="#000000"
           // backgroundColor="white"
@@ -66,7 +66,7 @@ export default () => {
             }
           }}
         />
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

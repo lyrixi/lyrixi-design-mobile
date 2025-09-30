@@ -81,14 +81,14 @@ const Main = forwardRef(
       // 拉动高度
       if (touchesRef.current.diffY > 100) touchesRef.current.diffY = 100
       topContainerRef.current.style.height = touchesRef.current.diffY + 'px'
-      let topIcon = topContainerRef.current?.querySelector?.('.layout-main-pull-push-icon')
-      let topText = topContainerRef.current?.querySelector?.('.layout-main-pull-push-text')
+      let topIcon = topContainerRef.current?.querySelector?.('.page-main-pull-push-icon')
+      let topText = topContainerRef.current?.querySelector?.('.page-main-pull-push-text')
       if (touchesRef.current.diffY >= threshold) {
-        if (topIcon) topIcon.classList.add('layout-main-pull-push-icon-down')
+        if (topIcon) topIcon.classList.add('page-main-pull-push-icon-down')
         if (topText)
           topText.innerHTML = LocaleUtil.locale('释放立即刷新', 'SeedsUI_release_refresh')
       } else {
-        if (topIcon) topIcon.classList.remove('layout-main-pull-push-icon-down')
+        if (topIcon) topIcon.classList.remove('page-main-pull-push-icon-down')
         if (topText)
           topText.innerHTML = LocaleUtil.locale('下拉可以刷新', 'SeedsUI_pull_down_refresh')
       }
@@ -106,11 +106,11 @@ const Main = forwardRef(
       }
       // 反之展示
       else {
-        let topIcon = topContainerRef.current?.querySelector?.('.layout-main-pull-push-icon')
-        let topText = topContainerRef.current?.querySelector?.('.layout-main-pull-push-text')
+        let topIcon = topContainerRef.current?.querySelector?.('.page-main-pull-push-icon')
+        let topText = topContainerRef.current?.querySelector?.('.page-main-pull-push-text')
         topContainerRef.current.style.height = threshold + 'px'
-        if (topIcon) topIcon.classList.remove('layout-main-pull-push-icon-down')
-        if (topIcon) topIcon.classList.add('layout-main-pull-push-icon-loading')
+        if (topIcon) topIcon.classList.remove('page-main-pull-push-icon-down')
+        if (topIcon) topIcon.classList.add('page-main-pull-push-icon-loading')
         if (topText) topText.innerHTML = `${LocaleUtil.locale('加载中', 'SeedsUI_refreshing')}...`
 
         // Trigger Events
@@ -138,7 +138,7 @@ const Main = forwardRef(
       <main
         {...props}
         className={DOMUtil.classNames(
-          'layout-main',
+          'page-main',
           SafeArea.getSafeAreaClassName(safeArea),
           props.className
         )}

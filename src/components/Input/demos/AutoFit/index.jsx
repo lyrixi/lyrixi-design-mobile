@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { Layout, Divider, Input } from 'lyrixi-design-mobile'
+import { Page, Divider, Input } from 'lyrixi-design-mobile'
 
 export default () => {
   const [value, setValue] = useState('')
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Divider>Common</Divider>
         <Input.AutoFit
           placeholder="AutoFit"
@@ -32,7 +32,7 @@ export default () => {
             console.log('触发blur')
           }}
         />
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

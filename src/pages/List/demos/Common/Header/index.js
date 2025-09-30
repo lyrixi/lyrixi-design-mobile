@@ -1,6 +1,6 @@
 // 第三方库导入
 import React, { useState } from 'react'
-import { LocaleUtil, Layout, ToolBar } from 'lyrixi-design-mobile'
+import { LocaleUtil, Page, ToolBar } from 'lyrixi-design-mobile'
 // 公共组件导入
 
 // 内部组件导入
@@ -13,7 +13,7 @@ const locale = LocaleUtil.locale
 const Header = ({ queryParams, onSearch }) => {
   const [searchActive, setSearchActive] = useState(false)
   return (
-    <Layout.Header>
+    <Page.Header>
       <ToolBar>
         {/* 搜索 */}
         <ToolBar.Search
@@ -41,7 +41,7 @@ const Header = ({ queryParams, onSearch }) => {
         {/* 筛选弹窗 */}
         <Filter queryParams={queryParams} onSearch={onSearch} />
       </ToolBar>
-    </Layout.Header>
+    </Page.Header>
   )
 }
 

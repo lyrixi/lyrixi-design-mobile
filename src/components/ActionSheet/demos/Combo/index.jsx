@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Layout, Device, ActionSheet, SafeArea } from 'lyrixi-design-mobile'
+import { Page, Device, ActionSheet, SafeArea } from 'lyrixi-design-mobile'
 
 export default () => {
   const list = [
@@ -36,8 +36,8 @@ export default () => {
   }, [])
 
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <ActionSheet.Combo
           placeholder="Please select"
           value={value}
@@ -52,7 +52,7 @@ export default () => {
           }}
           // style={{ height: '100px', backgroundColor: '#f8f8f8' }}
         />
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

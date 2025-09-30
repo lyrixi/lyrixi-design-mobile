@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Layout } from 'lyrixi-design-mobile'
+import { Page } from 'lyrixi-design-mobile'
 import { Transfer } from 'lyrixi-design-mobile'
 // import Transfer from 'library/components/Transfer'
 
@@ -9,9 +9,9 @@ export default () => {
     { id: '2', name: '2' }
   ])
   return (
-    <Layout className="full">
-      <Layout.Header className="text-center">Transfer.Modal</Layout.Header>
-      <Layout.Main className="bg-white">
+    <Page>
+      <Page.Header className="text-center">Transfer.Modal</Page.Header>
+      <Page.Main className="bg-white">
         <div className="demo-title">Transfer Modal</div>
         <Transfer.Modal
           visible
@@ -30,7 +30,7 @@ export default () => {
             setValue(newValue)
           }}
         />
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 // 第三方库导入
-import { Layout } from 'lyrixi-design-mobile'
+import { Page } from 'lyrixi-design-mobile'
 
 // 公共组件导入
 
@@ -20,7 +20,7 @@ const Virtual = () => {
   const mainRef = useRef(null)
 
   return (
-    <Layout className="full">
+    <Page className="full">
       {/* 搜索栏 */}
       <Header
         queryParams={queryParams}
@@ -47,7 +47,7 @@ const Virtual = () => {
           return queryData({ page: page, ...queryParams })
         }}
       />
-    </Layout>
+    </Page>
   )
 }
 

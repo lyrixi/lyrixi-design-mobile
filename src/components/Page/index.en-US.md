@@ -1,7 +1,7 @@
 ---
 category: Components
 group: Layout
-title: Layout
+title: Page
 ---
 
-# Layout
+# Page

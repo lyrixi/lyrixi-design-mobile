@@ -5,7 +5,7 @@ import {
   Loading,
   Button,
   Bridge,
-  Layout,
+  Page,
   Location,
   Image,
   Share,
@@ -85,8 +85,8 @@ export default () => {
   }, [])
 
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page className="full">
+      <Page.Main>
         <Divider>组件</Divider>
         <Card>
           <Divider>定位</Divider>
@@ -503,7 +503,7 @@ export default () => {
             </Button>
           </Share.Combo>
         </Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

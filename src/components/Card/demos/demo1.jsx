@@ -1,12 +1,12 @@
 import React from 'react'
-import { Layout, Card } from 'lyrixi-design-mobile'
+import { Page, Card } from 'lyrixi-design-mobile'
 
 export default () => {
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Card>1000</Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

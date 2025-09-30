@@ -1,5 +1,5 @@
 import React from 'react'
-import { Storage, Layout, Button } from 'lyrixi-design-mobile'
+import { Storage, Page, Button } from 'lyrixi-design-mobile'
 
 export default () => {
   const [data, setData] = Storage.useCacheState(null, {
@@ -7,8 +7,8 @@ export default () => {
     persist: true
   })
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page className="full">
+      <Page.Main>
         <h1>Cache State</h1>
         <p>{JSON.stringify(data)}</p>
         <Button
@@ -35,7 +35,7 @@ export default () => {
         >
           Get Cache
         </Button>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

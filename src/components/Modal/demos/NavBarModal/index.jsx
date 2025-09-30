@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { Layout, Modal } from 'lyrixi-design-mobile'
+import { Page, Modal } from 'lyrixi-design-mobile'
 
 export default () => {
   const referenceRef = useRef(null)
@@ -10,9 +10,9 @@ export default () => {
   }
 
   return (
-    <Layout className="full">
-      <Layout.Header className="text-center">Modal</Layout.Header>
-      <Layout.Main className="bg-white">
+    <Page>
+      <Page.Header className="text-center">Modal</Page.Header>
+      <Page.Main className="bg-white">
         <div ref={referenceRef} className="demo-title" onClick={handleToggle}>
           Modal visible toggle
         </div>
@@ -33,7 +33,7 @@ export default () => {
             Test
           </div>
         </Modal.NavBarModal>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

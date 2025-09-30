@@ -1,11 +1,11 @@
 import React from 'react'
-import { Layout, Result, Button, LocaleUtil } from 'lyrixi-design-mobile'
+import { Page, Result, Button, LocaleUtil } from 'lyrixi-design-mobile'
 
 export default () => {
   return (
-    <Layout className="full">
-      <Layout.Main>
-        <Result className="full" status={'500'}>
+    <Page>
+      <Page.Main>
+        <Result status={'500'}>
           <Button
             className="result-button"
             color="primary"
@@ -26,7 +26,7 @@ export default () => {
             {LocaleUtil.locale('返回')}
           </Button>
         </Result>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

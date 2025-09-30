@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { Layout, Divider, Switch } from 'lyrixi-design-mobile'
+import { Page, Divider, Switch } from 'lyrixi-design-mobile'
 
 export default () => {
   const [checked, setChecked] = useState(false)
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Divider>Size m</Divider>
         <Switch
           // disabled
@@ -34,7 +34,7 @@ export default () => {
           off="Off"
           onChange={setChecked}
         />
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

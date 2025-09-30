@@ -1,13 +1,13 @@
 import React, { useRef, useState } from 'react'
 
 // 内库使用-start
-import { Layout, Calendar } from 'lyrixi-design-mobile'
+import { Page, Calendar } from 'lyrixi-design-mobile'
 import DateUtil from '../../../utils/DateUtil'
 // 内库使用-end
 
 /* 测试使用-start
 import Calendar from 'library/components/Calendar'
-import { Layout, DateUtil } from 'lyrixi-design-mobile'
+import { Page, DateUtil } from 'lyrixi-design-mobile'
 测试使用-end */
 
 const selectionMode = 'range' // range
@@ -34,8 +34,8 @@ export default () => {
   }
 
   return (
-    <Layout className="full">
-      <Layout.Main
+    <Page>
+      <Page.Main
         onTopRefresh={() => {
           return new Promise((resolve) => {
             setTimeout(() => {
@@ -109,7 +109,7 @@ export default () => {
         >
           收缩
         </div>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

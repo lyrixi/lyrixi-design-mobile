@@ -14,7 +14,7 @@ const Header = forwardRef(({ safeArea, children, ...props }, ref) => {
   return (
     <header
       {...props}
-      className={`layout-header${props.className ? ' ' + props.className : ''}`}
+      className={`page-header${props.className ? ' ' + props.className : ''}`}
       ref={rootRef}
     >
       {children}

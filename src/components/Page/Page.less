@@ -1,12 +1,12 @@
-@import 'Aside/LayoutAside.less';
-@import 'Footer/LayoutFooter.less';
-@import 'Header/LayoutHeader.less';
-@import 'Main/LayoutMain.less';
+@import 'Aside/PageAside.less';
+@import 'Footer/PageFooter.less';
+@import 'Header/PageHeader.less';
+@import 'Main/PageMain.less';
 
 /*
-* Layout
+* Page
 */
-.layout {
+.page {
   // flex布局
   display: flex;
   flex: 1;
@@ -14,13 +14,13 @@
   box-sizing: border-box;
   overflow: hidden;
   background-color: var(--seed-bg-default);
-  &.layout-has-aside {
+  &.page-has-aside {
     flex-direction: row;
   }
 }
 
 // 撑满展示
-.layout.full {
+.page.full {
   position: absolute;
   top: 0;
   right: 0;
@@ -30,18 +30,18 @@
 }
 
 // Adapt to the safe area: className
-.layout.safeArea {
+.page.safeArea {
   &:extend(.safe-area all);
   &:extend(.safe-area.border-bottom all);
 }
 // Adapt to the safe area: safeArea={false}
-.layout.clearSafeArea {
+.page.clearSafeArea {
   &:extend(.clear-safe-area all);
   &:extend(.clear-safe-area.border-bottom all);
 }
 // Adapt to the safe area: safeArea={true}
 .auto-safe-area-children {
-  .layout.autoSafeArea {
+  .page.autoSafeArea {
     &:extend(.safe-area all);
     &:extend(.safe-area.border-bottom all);
   }

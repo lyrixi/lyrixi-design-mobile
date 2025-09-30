@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { Card, Layout, Modal, Divider } from 'lyrixi-design-mobile'
+import { Card, Page, Modal, Divider } from 'lyrixi-design-mobile'
 
 export default () => {
   return (
-    <Layout className="full">
-      <Layout.Main>
+    <Page>
+      <Page.Main>
         <Card>
           <Divider>Only Title</Divider>
           <Modal.NavBar ok={null} cancel={null} title="Title" />
@@ -18,7 +18,7 @@ export default () => {
           <Divider>Ok and Cancel</Divider>
           <Modal.NavBar title="Title" />
         </Card>
-      </Layout.Main>
-    </Layout>
+      </Page.Main>
+    </Page>
   )
 }

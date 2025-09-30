@@ -10,7 +10,7 @@ import { DOMUtil, SafeArea } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // [safeArea] true: 自动安全区; false: 强制取消安全区
-const Layout = forwardRef(({ safeArea, animation, children, ...props }, ref) => {
+const Layout = forwardRef(({ safeArea, animation, full = true, children, ...props }, ref) => {
   const rootRef = useRef(null)
 
   // Expose
@@ -45,6 +45,7 @@ const Layout = forwardRef(({ safeArea, animation, children, ...props }, ref) => 
       {...props}
       className={DOMUtil.classNames(
         'layout',
+        full ? 'full' : '',
         SafeArea.getSafeAreaClassName(safeArea),
         props.className
       )}

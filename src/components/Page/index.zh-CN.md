@@ -28,10 +28,6 @@ toc: content
 
 <code src="./demos/Refresh.jsx"></code>
 
-### 底部按钮
-
-<code src="./demos/Footer.jsx"></code>
-
 ## Page
 
 ### 属性

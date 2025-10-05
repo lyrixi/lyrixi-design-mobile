@@ -9,7 +9,6 @@ import SelectModal from './SelectModal'
 
 import FilterModal from './FilterModal'
 
-import destroy from './api/destroy'
 import getClassNameByAnimation from './api/getClassNameByAnimation'
 
 // NavBar

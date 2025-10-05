@@ -29,9 +29,7 @@ export default () => {
           //   return <Checkbox checked={checked} />
           // }}
           // true: 默认Card包裹Item
-          wrapper={true}
-          // wrapper={Wrapper}
-          // wrapper={function ({ children }) {
+          // itemRender={function ({ children }) {
           //   return <div className="list-wrapper-custom">{children}</div>
           // }}
         />

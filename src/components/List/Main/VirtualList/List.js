@@ -16,7 +16,7 @@ const List = (
     list,
     onChange,
     // List config
-    wrapper,
+    itemRender,
     layout,
     checkable,
     checkbox,
@@ -58,8 +58,8 @@ const List = (
           <Item
             key={item.id || item.virtualData.index}
             multiple={multiple}
-            // Custom Wrapper or Item
-            wrapper={wrapper}
+            // Custom ItemRender or Item
+            itemRender={itemRender}
             // Display Item
             title={item.name}
             // Other Item

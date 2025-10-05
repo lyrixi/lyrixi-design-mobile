@@ -26,7 +26,7 @@ const Main = forwardRef(
       onScroll,
 
       // List config
-      wrapper,
+      itemRender,
       layout,
       checkable,
       checkbox,
@@ -63,7 +63,7 @@ const Main = forwardRef(
             list={list}
             onChange={onChange}
             // List config
-            wrapper={wrapper}
+            itemRender={itemRender}
             layout={layout}
             checkable={checkable}
             checkbox={checkbox}

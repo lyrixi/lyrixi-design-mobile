@@ -42,7 +42,7 @@ const Combo = forwardRef(
 
       // Modal props (previously in modalProps)
       list,
-      wrapper,
+      itemRender,
       layout,
       checkable,
       checkbox,
@@ -295,7 +295,7 @@ const Combo = forwardRef(
             visible={visible}
             // Modal props (previously in modalProps)
             list={list}
-            wrapper={wrapper}
+            itemRender={itemRender}
             layout={layout}
             checkable={checkable}
             checkbox={checkbox}

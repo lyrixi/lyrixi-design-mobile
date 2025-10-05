@@ -30,7 +30,7 @@ const VirtualList = (
     onScroll,
 
     // List config
-    wrapper,
+    itemRender,
     layout,
     checkable,
     checkbox,
@@ -164,7 +164,7 @@ const VirtualList = (
         list={visibleItems}
         onChange={onChange}
         // List config
-        wrapper={wrapper}
+        itemRender={itemRender}
         layout={layout}
         checkable={checkable}
         checkbox={checkbox}

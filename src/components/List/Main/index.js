@@ -43,7 +43,7 @@ const Main = forwardRef(
       onLoad,
 
       // List config
-      wrapper,
+      itemRender,
       layout,
       checkable,
       checkbox,
@@ -301,7 +301,7 @@ const Main = forwardRef(
           }, 500)
         }}
         // List config
-        wrapper={wrapper}
+        itemRender={itemRender}
         layout={layout}
         checkable={checkable}
         checkbox={checkbox}

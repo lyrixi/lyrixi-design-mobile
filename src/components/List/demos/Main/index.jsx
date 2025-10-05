@@ -15,8 +15,6 @@ export default () => {
       <List.Main
         ref={mainRef}
         layout="vertical"
-        // true: 默认Card包裹Item
-        wrapper={true}
         // pagination
         value={value}
         reload={true}
@@ -38,7 +36,7 @@ export default () => {
         }}
         layout="horizontal"
         // true: 默认Card包裹Item
-        wrapper={true}
+        itemRender={true}
         // pagination
         value={value}
         reload={true}

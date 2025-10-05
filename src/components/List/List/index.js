@@ -30,7 +30,7 @@ const List = (
     // Group 配置项
     // Item 配置项
     layout, // vertical
-    wrapper,
+    itemRender,
     checkable,
     checkbox,
     checkboxPosition = 'right',
@@ -55,8 +55,8 @@ const List = (
       <Item
         key={item.id ?? index}
         multiple={multiple}
-        // Custom Wrapper or Item
-        wrapper={wrapper}
+        // Custom ItemRender or Item
+        itemRender={itemRender}
         // Display Item
         title={item.name}
         // Other Item

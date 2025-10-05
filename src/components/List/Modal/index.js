@@ -20,7 +20,7 @@ const ListModal = forwardRef(
       pagination,
 
       // List config
-      wrapper,
+      itemRender,
       layout,
       checkable,
       checkbox,
@@ -40,7 +40,7 @@ const ListModal = forwardRef(
           pull,
           pagination,
           // List config
-          wrapper,
+          itemRender,
           layout,
           checkable,
           checkbox,

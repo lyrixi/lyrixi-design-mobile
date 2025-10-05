@@ -23,7 +23,7 @@ const ListCombo = forwardRef(
       pagination,
 
       // List config
-      wrapper,
+      itemRender,
       layout,
       multiple = false,
       checkable = true,
@@ -45,7 +45,7 @@ const ListCombo = forwardRef(
         pull={pull}
         pagination={pagination}
         // List config
-        wrapper={wrapper}
+        itemRender={itemRender}
         layout={layout}
         multiple={multiple}
         checkable={checkable}

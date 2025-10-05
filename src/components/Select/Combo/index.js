@@ -18,7 +18,7 @@ const SelectCombo = forwardRef(
       list,
 
       // List config
-      wrapper,
+      itemRender,
       layout,
       checkable,
       checkbox,
@@ -37,7 +37,7 @@ const SelectCombo = forwardRef(
         modalStyle={modalStyle}
         list={list}
         // List config
-        wrapper={wrapper}
+        itemRender={itemRender}
         layout={layout}
         checkable={checkable}
         checkbox={checkbox}

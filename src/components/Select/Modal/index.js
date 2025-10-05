@@ -26,7 +26,7 @@ const Modal = forwardRef(
       list,
 
       // List config
-      wrapper,
+      itemRender,
       layout,
       checkable,
       checkbox,
@@ -65,7 +65,7 @@ const Modal = forwardRef(
           ...props?.mainProps,
           list: searchHeaderVisible ? List.searchList(list, keyword) : list,
           // List config
-          wrapper,
+          itemRender,
           layout,
           checkable,
           checkbox,

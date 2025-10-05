@@ -51,7 +51,7 @@ toc: content
 | value            | 当前选中值   | `any \| any[]`                       | -         |
 | list             | 数据列表     | `array`                              | -         |
 | layout           | 布局方式     | `'vertical'`                         | -         |
-| wrapper          | 自定义包装器 | `ReactNode`                          | -         |
+| itemRender       | 自定义包装器 | `function`                           | -         |
 | checkable        | 是否可选中   | `boolean`                            | -         |
 | checkbox         | 复选框配置   | `ReactNode \| function`              | -         |
 | checkboxPosition | 复选框位置   | `'left' \| 'right'`                  | `'right'` |

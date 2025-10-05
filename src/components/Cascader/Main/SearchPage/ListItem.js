@@ -26,9 +26,9 @@ export default function ListItem({ list, keyword, onChange }) {
             .join('/')
 
           // 移除children属性，避免被List组件当作子项展示
-          const { children, ...item } = item
+          const { children, ...restItem } = item
           return {
-            ...item,
+            ...restItem,
             title: <Typography.Text highlight={keyword}>{pathName}</Typography.Text>
           }
         })}

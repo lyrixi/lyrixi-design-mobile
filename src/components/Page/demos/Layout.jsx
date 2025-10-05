@@ -31,7 +31,7 @@ export default () => {
     <Page>
       <Header style={{ height: '44px', backgroundColor: '#7dbcea' }}>Header</Header>
       {/* <Main style={{ backgroundColor: 'rgba(16, 142, 233, 1)' }}>Main</Main> */}
-      <Page>
+      <Page full={false} layout="horizontal">
         <Aside style={{ width: '80px', backgroundColor: '#3ba0e9' }}>Aside</Aside>
         <Main
           safeArea

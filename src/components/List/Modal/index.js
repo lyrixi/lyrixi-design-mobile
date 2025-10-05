@@ -24,7 +24,6 @@ const ListModal = forwardRef(
       layout,
       checkable,
       checkbox,
-      checkboxProps,
       checkboxPosition,
       ...props
     },
@@ -45,7 +44,6 @@ const ListModal = forwardRef(
           layout,
           checkable,
           checkbox,
-          checkboxProps,
           checkboxPosition
         }}
         className={`list-modal${props.className ? ' ' + props.className : ''}`}

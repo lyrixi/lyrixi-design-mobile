@@ -1,5 +1,5 @@
 import React from 'react'
-import Wrapper from './Wrapper'
+import ItemWrapper from './Wrapper'
 
 // 内库使用-start
 import DOMUtil from './../../../utils/DOMUtil'
@@ -11,13 +11,16 @@ import { DOMUtil,Checkbox } from 'lyrixi-design-mobile'
 测试使用-end */
 
 const Item = ({
-  // Custom Wrapper or Item
-  wrapper,
+  multiple,
+  // Custom ItemWrapper or Item
+  itemRender,
 
   // Display Item
   disabled,
-  image,
-  avatar,
+  imageRender,
+  imageUrl,
+  avatarUrl,
+  avatarRender,
   title,
   description,
   note,
@@ -31,7 +34,6 @@ const Item = ({
   layout,
   checkable,
   checkbox,
-  checkboxProps,
   checkboxPosition = 'left',
   checked,
   onChange,
@@ -45,11 +47,11 @@ const Item = ({
     if (!checkable) return null
 
     if (typeof checkbox === 'function') {
-      let newCheckBox = checkbox({ ...(itemData || {}), checked, checkboxProps })
+      let newCheckBox = checkbox({ ...(itemData || {}), checked })
       if (newCheckBox !== undefined) return newCheckBox
     }
 
-    return <Checkbox checked={checked} {...checkboxProps} />
+    return <Checkbox checked={checked} />
   }
 
   // 获取note
@@ -68,17 +70,15 @@ const Item = ({
 
   // 渲染图片
   function getImageNode() {
-    if (!image) return null
-
-    if (typeof image === 'function') {
-      return image({ ...(itemData || {}), checked })
+    if (typeof imageRender === 'function') {
+      return imageRender({ ...(itemData || {}), checked })
     }
-    if (typeof image === 'string') {
+    if (typeof imageUrl === 'string') {
       return (
         <div className={`list-item-meta-image`}>
           <img
             alt=""
-            src={image}
+            src={imageUrl}
             onError={(e) => {
               e.target.parentNode.classList.add('fail')
             }}
@@ -90,22 +90,20 @@ const Item = ({
         </div>
       )
     }
-    return image
+    return null
   }
 
   // 渲染头像
   function getAvatarNode() {
-    if (!avatar) return null
-
-    if (typeof avatar === 'function') {
-      return avatar({ ...(itemData || {}), checked })
+    if (typeof avatarRender === 'function') {
+      return avatarRender({ ...(itemData || {}), checked })
     }
-    if (typeof avatar === 'string') {
+    if (typeof avatarUrl === 'string') {
       return (
         <div className={`list-item-meta-avatar`}>
           <img
             alt=""
-            src={avatar}
+            src={avatarUrl}
             onError={(e) => {
               e.target.parentNode.classList.add('fail')
             }}
@@ -117,7 +115,7 @@ const Item = ({
         </div>
       )
     }
-    return avatar
+    return null
   }
 
   // 获取action
@@ -133,10 +131,11 @@ const Item = ({
   function getItemNode() {
     return (
       <div
-        style={wrapper ? undefined : style}
+        style={style}
         className={DOMUtil.classNames(
           'list-item',
-          wrapper ? undefined : className,
+          className,
+          multiple ? 'multiple' : '',
           disabled ? 'disabled' : '',
           checked ? 'active' : '',
           layout ? layout : ''
@@ -178,11 +177,11 @@ const Item = ({
     )
   }
 
-  // Custom Wrapper or Item
-  if (wrapper) {
-    let WrapperNode = Wrapper
-    if (typeof wrapper === 'function') {
-      return wrapper({
+  // Custom ItemWrapper or Item
+  if (itemRender) {
+    let ItemWrapperNode = ItemWrapper
+    if (typeof itemRender === 'function') {
+      return itemRender({
         checked,
         onChange,
         // data
@@ -191,7 +190,6 @@ const Item = ({
         layout,
         checkable,
         checkbox,
-        checkboxProps,
         checkboxPosition,
         // Node
         children: getItemNode(),
@@ -201,14 +199,9 @@ const Item = ({
       })
     }
 
-    if (React.isValidElement(wrapper)) {
-      WrapperNode = wrapper
-    }
-
     return (
-      <WrapperNode
+      <ItemWrapperNode
         checked={checked}
-        checkboxProps={checkboxProps}
         onChange={onChange}
         // data
         itemData={itemData}
@@ -221,7 +214,7 @@ const Item = ({
         className={className}
       >
         {getItemNode()}
-      </WrapperNode>
+      </ItemWrapperNode>
     )
   }
 

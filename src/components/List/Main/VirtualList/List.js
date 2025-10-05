@@ -20,7 +20,6 @@ const List = (
     layout,
     checkable,
     checkbox,
-    checkboxProps,
     checkboxPosition,
     // virtual config
     height
@@ -58,6 +57,7 @@ const List = (
         return (
           <Item
             key={item.id || item.virtualData.index}
+            multiple={multiple}
             // Custom Wrapper or Item
             wrapper={wrapper}
             // Display Item
@@ -70,7 +70,6 @@ const List = (
             layout={layout}
             checkable={checkable}
             checkbox={item.checkbox || checkbox}
-            checkboxProps={multiple ? checkboxProps : { icon: 'tick', ...checkboxProps }}
             checkboxPosition={item.checkboxPosition || checkboxPosition}
             checked={value?.findIndex?.((valueItem) => valueItem?.id === item.id) >= 0}
             onChange={(checked) => {

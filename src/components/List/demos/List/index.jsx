@@ -15,9 +15,6 @@ export default () => {
           ref={listRef}
           checkable
           checkboxPosition="right"
-          checkboxProps={{
-            icon: 'tick'
-          }}
           allowClear
           multiple={true}
           value={value}

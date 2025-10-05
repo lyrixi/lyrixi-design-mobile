@@ -33,7 +33,6 @@ const List = (
     wrapper,
     checkable,
     checkbox,
-    checkboxProps,
     checkboxPosition = 'right',
     onChange
   },
@@ -55,6 +54,7 @@ const List = (
     return (
       <Item
         key={item.id ?? index}
+        multiple={multiple}
         // Custom Wrapper or Item
         wrapper={wrapper}
         // Display Item
@@ -67,7 +67,6 @@ const List = (
         layout={layout}
         checkable={checkable}
         checkbox={item.checkbox || checkbox}
-        checkboxProps={multiple ? checkboxProps : { icon: 'tick', ...checkboxProps }}
         checkboxPosition={item.checkboxPosition || checkboxPosition}
         checked={value?.findIndex?.((valueItem) => valueItem?.id === item.id) >= 0}
         onChange={(checked) => {

@@ -30,7 +30,6 @@ const Main = forwardRef(
       layout,
       checkable,
       checkbox,
-      checkboxProps,
       checkboxPosition,
 
       // Render
@@ -68,7 +67,6 @@ const Main = forwardRef(
             layout={layout}
             checkable={checkable}
             checkbox={checkbox}
-            checkboxProps={checkboxProps}
             checkboxPosition={checkboxPosition}
           />
         )}

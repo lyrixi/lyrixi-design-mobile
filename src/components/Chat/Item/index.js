@@ -14,7 +14,6 @@ const Chat = (
     checked,
     checkable,
     checkbox,
-    checkboxProps,
     checkboxPosition = 'left',
     // left | right
     position,
@@ -79,11 +78,11 @@ const Chat = (
     if (!checkable) return null
 
     if (typeof checkbox === 'function') {
-      let newCheckBox = checkbox({ ...(itemData || {}), checked, checkboxProps })
+      let newCheckBox = checkbox({ ...(itemData || {}), checked })
       if (newCheckBox !== undefined) return newCheckBox
     }
 
-    return <Checkbox checked={checked} {...checkboxProps} />
+    return <Checkbox checked={checked} />
   }
 
   return (

@@ -28,7 +28,6 @@ const ListCombo = forwardRef(
       multiple = false,
       checkable = true,
       checkbox,
-      checkboxProps,
       checkboxPosition,
       ...props
     },
@@ -51,7 +50,6 @@ const ListCombo = forwardRef(
         multiple={multiple}
         checkable={checkable}
         checkbox={checkbox}
-        checkboxProps={checkboxProps}
         checkboxPosition={checkboxPosition}
       />
     )

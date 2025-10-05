@@ -35,22 +35,21 @@ toc: content
 
 ### 属性
 
-| 属性     | 说明     | 类型      | 默认值  |
-| -------- | -------- | --------- | ------- |
-| visible | 是否可见 | `boolean` | `true` |
-| value | 当前选中值 | `any \| any[]` | - |
-| multiple | 是否多选 | `boolean` | - |
-| allowClear | 是否允许清除 | `boolean` | - |
-| onChange | 值变化回调 | `(value: any) => void` | - |
-| list | 选项列表 | `array` | - |
-| checkable | 是否可选中 | `boolean` | `true` |
-| checkbox | 是否显示复选框 | `boolean` | - |
-| checkboxProps | 复选框属性 | `object` | - |
-| checkboxPosition | 复选框位置 | `string` | - |
+| 属性             | 说明           | 类型                   | 默认值 |
+| ---------------- | -------------- | ---------------------- | ------ |
+| visible          | 是否可见       | `boolean`              | `true` |
+| value            | 当前选中值     | `any \| any[]`         | -      |
+| multiple         | 是否多选       | `boolean`              | -      |
+| allowClear       | 是否允许清除   | `boolean`              | -      |
+| onChange         | 值变化回调     | `(value: any) => void` | -      |
+| list             | 选项列表       | `array`                | -      |
+| checkable        | 是否可选中     | `boolean`              | `true` |
+| checkbox         | 是否显示复选框 | `boolean`              | -      |
+| checkboxPosition | 复选框位置     | `string`               | -      |
 
 ### Ref
 
-| 属性       | 说明                 | 类型                   |
-| ---------- | -------------------- | ---------------------- |
-| mainDOM    | 主容器元素           | `HtmlDivElement`       |
-| getMainDOM | 获取主容器元素       | () => `HtmlDivElement` |
+| 属性       | 说明           | 类型                   |
+| ---------- | -------------- | ---------------------- |
+| mainDOM    | 主容器元素     | `HtmlDivElement`       |
+| getMainDOM | 获取主容器元素 | () => `HtmlDivElement` |

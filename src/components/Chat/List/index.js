@@ -32,7 +32,6 @@ const List = (
     // Item 配置项
     checkable,
     checkbox,
-    checkboxProps,
     checkboxPosition,
     onChange
   },
@@ -57,7 +56,6 @@ const List = (
         itemData={item}
         checkable={checkable}
         checkbox={item.checkbox || checkbox}
-        checkboxProps={checkboxProps}
         checkboxPosition={item.checkboxPosition || checkboxPosition}
         position={item.position}
         avatar={item.avatar}

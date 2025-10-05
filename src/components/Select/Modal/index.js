@@ -30,7 +30,6 @@ const Modal = forwardRef(
       layout,
       checkable,
       checkbox,
-      checkboxProps,
       checkboxPosition,
 
       ...props
@@ -70,7 +69,6 @@ const Modal = forwardRef(
           layout,
           checkable,
           checkbox,
-          checkboxProps,
           checkboxPosition
         }}
         portal={portal}

@@ -46,7 +46,6 @@ const Combo = forwardRef(
       layout,
       checkable,
       checkbox,
-      checkboxProps,
       checkboxPosition,
       multiple,
       loadList,
@@ -300,7 +299,6 @@ const Combo = forwardRef(
             layout={layout}
             checkable={checkable}
             checkbox={checkbox}
-            checkboxProps={checkboxProps}
             checkboxPosition={checkboxPosition}
             loadList={loadList}
             pull={pull}

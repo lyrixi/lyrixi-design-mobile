@@ -34,7 +34,6 @@ const VirtualList = (
     layout,
     checkable,
     checkbox,
-    checkboxProps,
     checkboxPosition,
 
     // Render
@@ -169,7 +168,6 @@ const VirtualList = (
         layout={layout}
         checkable={checkable}
         checkbox={checkbox}
-        checkboxProps={checkboxProps}
         checkboxPosition={checkboxPosition}
         // virtual config
         height={totalHeight}

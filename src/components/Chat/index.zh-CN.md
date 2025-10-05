@@ -35,7 +35,6 @@ toc: content
 | list             | 消息列表         | `array`                  | -       |
 | checkable        | 是否可选中       | `boolean`                | -       |
 | checkbox         | 复选框配置       | `ReactNode \| function`  | -       |
-| checkboxProps    | 复选框属性       | `object`                 | -       |
 | checkboxPosition | 复选框位置       | `string`                 | -       |
 | onChange         | 选择变化回调     | `(value: array) => void` | -       |
 

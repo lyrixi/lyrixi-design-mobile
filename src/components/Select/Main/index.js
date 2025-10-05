@@ -27,7 +27,6 @@ const Main = forwardRef(
       list,
       checkable = true,
       checkbox,
-      checkboxProps,
       checkboxPosition,
       ...props
     },
@@ -43,11 +42,7 @@ const Main = forwardRef(
     })
 
     return (
-      <div
-        {...props}
-        className={DOMUtil.classNames('select-main', props?.className)}
-        ref={mainRef}
-      >
+      <div {...props} className={DOMUtil.classNames('select-main', props?.className)} ref={mainRef}>
         {_.isEmpty(list) && <Result className="select-main-result" status="empty" />}
 
         {/* 列表 */}
@@ -59,7 +54,6 @@ const Main = forwardRef(
           onChange={onChange}
           checkable={checkable}
           checkbox={checkbox}
-          checkboxProps={checkboxProps}
           checkboxPosition={checkboxPosition}
         />
       </div>

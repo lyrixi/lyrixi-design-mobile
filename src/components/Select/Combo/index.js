@@ -22,7 +22,6 @@ const SelectCombo = forwardRef(
       layout,
       checkable,
       checkbox,
-      checkboxProps,
       checkboxPosition,
       ...props
     },
@@ -42,7 +41,6 @@ const SelectCombo = forwardRef(
         layout={layout}
         checkable={checkable}
         checkbox={checkbox}
-        checkboxProps={checkboxProps}
         checkboxPosition={checkboxPosition}
       />
     )

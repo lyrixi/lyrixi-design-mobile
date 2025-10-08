@@ -28,7 +28,6 @@ Modal.SelectModal = SelectModal
 Modal.FilterModal = FilterModal
 
 // Js Api
-Modal.destroy = destroy
 Modal.getClassNameByAnimation = getClassNameByAnimation
 
 export default Modal

@@ -59,9 +59,8 @@ function ToolBarList({
       title={title || value?.[0]?.name}
       arrowRender={arrowRender}
       ref={dropdownRef}
-    >
-      <List value={value} list={list} onChange={handleChange} />
-    </Dropdown>
+      mainRender={() => <List value={value} list={list} onChange={handleChange} />}
+    />
   )
 }
 

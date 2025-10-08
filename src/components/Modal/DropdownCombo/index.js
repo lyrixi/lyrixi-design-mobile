@@ -28,8 +28,7 @@ const Combo = forwardRef(
       maskStyle,
       modalClassName,
       modalStyle,
-      modal,
-      children,
+      mainRender,
 
       onVisibleChange,
       onBeforeOpen,
@@ -141,8 +140,7 @@ const Combo = forwardRef(
           }}
           visible={visible}
         >
-          {children}
-          {typeof modal === 'function' && modal({ open: _open, close: _close })}
+          {typeof mainRender === 'function' && mainRender({ open: _open, close: _close })}
         </DropdownModal>
       </>
     )

@@ -63,16 +63,24 @@ export default () => {
         <Divider>Dropdown</Divider>
         <div className="toolbar-bg">
           <ToolBar>
-            <ToolBar.Dropdown left={12} title="Dropdown left" color="primary" variant="fill">
-              <div style={{ height: '300px' }}>Modal Content</div>
-            </ToolBar.Dropdown>
-            <ToolBar.Dropdown title="Dropdown ref" ref={dropdownRef}>
-              {getDropdownModalNode()}
-            </ToolBar.Dropdown>
-            <ToolBar.Dropdown title="Dropdown modal" modal={getDropdownModalNode} />
-            <ToolBar.Dropdown right={12} title="Dropdown right">
-              <div style={{ height: '300px' }}>Modal Content</div>
-            </ToolBar.Dropdown>
+            <ToolBar.Dropdown
+              left={12}
+              title="Dropdown left"
+              color="primary"
+              variant="fill"
+              mainRender={() => <div style={{ height: '300px' }}>Modal Content</div>}
+            />
+            <ToolBar.Dropdown
+              title="Dropdown ref"
+              ref={dropdownRef}
+              mainRender={() => getDropdownModalNode()}
+            />
+            <ToolBar.Dropdown title="Dropdown modal" mainRender={getDropdownModalNode} />
+            <ToolBar.Dropdown
+              right={12}
+              title="Dropdown right"
+              mainRender={() => <div style={{ height: '300px' }}>Modal Content</div>}
+            />
           </ToolBar>
         </div>
 

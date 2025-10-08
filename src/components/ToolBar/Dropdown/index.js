@@ -29,7 +29,7 @@ const Dropdown = forwardRef(
       // Mask
       maskClassName,
       maskStyle,
-      modal,
+      mainRender,
 
       // Modal
       portal,
@@ -38,7 +38,6 @@ const Dropdown = forwardRef(
       },
       left,
       right,
-      children,
 
       onClose,
       onOpen
@@ -116,7 +115,7 @@ const Dropdown = forwardRef(
         // Modal
         maskClassName={DOMUtil.classNames('toolbar-dropdown-mask', maskClassName)}
         maskStyle={maskStyle}
-        modal={modal}
+        mainRender={mainRender}
         modalClassName="toolbar-dropdown-modal"
         onOpen={() => {
           closeAllDropdown({ visibleRef: dropdownRef })
@@ -126,9 +125,7 @@ const Dropdown = forwardRef(
           onClose && onClose()
         }}
         onVisibleChange={setVisible}
-      >
-        {children}
-      </Modal.DropdownCombo>
+      />
     )
   }
 )

@@ -81,8 +81,8 @@ const Dropdown = forwardRef(
     }
 
     // 获取Combo节点
-    function getComboNode() {
-      return ({ comboRef, onClick }) => (
+    function getComboNode({ comboRef, onClick }) {
+      return (
         <Button
           ref={comboRef}
           color={color}

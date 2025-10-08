@@ -118,6 +118,7 @@ const Combo = forwardRef(
     }
     const ComboNode = getComboNode()
 
+    console.log('ComboNode', ComboNode)
     return (
       <>
         {/* Combo */}

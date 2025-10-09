@@ -53,11 +53,16 @@ const MultipleCombo = forwardRef(
         {...props}
         value={value}
         // Modal
-        modalRender={(modalProps) => {
-          const ModalComponent = MultipleModal
+        modalRender={({ modalRef, getComboDOM, value, allowClear, multiple, onChange }) => {
           return (
-            <ModalComponent
-              {...modalProps}
+            <MultipleModal
+              ref={modalRef}
+              getComboDOM={getComboDOM}
+              value={value}
+              allowClear={allowClear}
+              multiple={multiple}
+              onChange={onChange}
+              // Modal Props
               portal={portal}
               maskClassName={maskClassName}
               maskStyle={maskStyle}

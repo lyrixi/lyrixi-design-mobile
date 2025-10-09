@@ -37,10 +37,16 @@ const CascaderCombo = forwardRef(
         ref={ref}
         {...props}
         // Modal
-        modalRender={(modalProps) => {
+        modalRender={({ modalRef, getComboDOM, value, allowClear, multiple, onChange }) => {
           return (
             <CascaderModal
-              {...modalProps}
+              ref={modalRef}
+              getComboDOM={getComboDOM}
+              value={value}
+              allowClear={allowClear}
+              multiple={multiple}
+              onChange={onChange}
+              // Modal Props
               portal={portal}
               maskClassName={maskClassName}
               maskStyle={maskStyle}

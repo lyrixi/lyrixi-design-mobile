@@ -141,11 +141,16 @@ const DistrictCombo = forwardRef(
           const leafIndex = findDistrictLeafIndex(value, type)
           return typeof leafIndex === 'number' ? true : readOnly
         })()}
-        modalRender={(modalProps) => {
-          const ModalComponent = DistrictModal
+        modalRender={({ modalRef, getComboDOM, value, allowClear, multiple, onChange }) => {
           return (
-            <ModalComponent
-              {...modalProps}
+            <DistrictModal
+              ref={modalRef}
+              getComboDOM={getComboDOM}
+              value={value}
+              allowClear={allowClear}
+              multiple={multiple}
+              onChange={onChange}
+              // Modal Props
               portal={portal}
               maskClassName={maskClassName}
               maskStyle={maskStyle}

@@ -83,11 +83,16 @@ const RangeCombo = forwardRef(
         // Modal
         value={formatValue(value)}
         onChange={handleChange}
-        modalRender={(modalProps) => {
-          const ModalComponent = RangeModal
+        modalRender={({ modalRef, getComboDOM, value, allowClear, multiple, onChange }) => {
           return (
-            <ModalComponent
-              {...modalProps}
+            <RangeModal
+              ref={modalRef}
+              getComboDOM={getComboDOM}
+              value={value}
+              allowClear={allowClear}
+              multiple={multiple}
+              onChange={onChange}
+              // Modal Props
               portal={portal}
               maskClassName={maskClassName}
               maskStyle={maskStyle}

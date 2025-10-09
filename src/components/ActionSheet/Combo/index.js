@@ -28,7 +28,9 @@ const ActionSheetCombo = (
       ref={ref}
       {...props}
       // Modal
-      modal={Modal}
+      modalRender={(modalProps) => {
+        return <Modal {...modalProps} />
+      }}
       modalClassName={modalClassName}
       modalStyle={modalStyle}
       title={title}

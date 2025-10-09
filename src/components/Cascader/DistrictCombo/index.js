@@ -113,15 +113,6 @@ const DistrictCombo = forwardRef(
         ref={comboRef}
         modalClassName={modalClassName}
         modalStyle={modalStyle}
-        startType={startType}
-        type={type} // 'country', 'province', 'city', 'district', 'street'
-        min={min}
-        searchVisible={searchVisible}
-        // 数据加载
-        loadCountries={loadCountries}
-        loadCountryRegions={loadCountryRegions}
-        loadStreets={loadStreets}
-        editableOptions={editableOptions}
         value={value}
         onChange={
           onChange
@@ -146,7 +137,22 @@ const DistrictCombo = forwardRef(
           const leafIndex = findDistrictLeafIndex(value, type)
           return typeof leafIndex === 'number' ? true : readOnly
         })()}
-        modal={props?.modal || DistrictModal}
+        modalRender={(modalProps) => {
+          const ModalComponent = DistrictModal
+          return (
+            <ModalComponent
+              {...modalProps}
+              startType={startType}
+              type={type}
+              min={min}
+              searchVisible={searchVisible}
+              loadCountries={loadCountries}
+              loadCountryRegions={loadCountryRegions}
+              loadStreets={loadStreets}
+              editableOptions={editableOptions}
+            />
+          )
+        }}
         clearRender={(clearParams) => {
           let clearable = clearParams?.clearable
 

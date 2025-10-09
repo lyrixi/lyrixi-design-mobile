@@ -38,12 +38,19 @@ const ListCombo = forwardRef(
         ref={ref}
         {...props}
         // Modal
-        modal={props?.modal || CascaderModal}
+        modalRender={(modalProps) => {
+          const ModalComponent = CascaderModal
+          return (
+            <ModalComponent
+              {...modalProps}
+              loadList={loadList}
+              pull={pull}
+              pagination={pagination}
+            />
+          )
+        }}
         modalClassName={modalClassName}
         modalStyle={modalStyle}
-        loadList={loadList}
-        pull={pull}
-        pagination={pagination}
         // List config
         itemRender={itemRender}
         layout={layout}

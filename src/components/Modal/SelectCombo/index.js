@@ -37,7 +37,7 @@ const Combo = forwardRef(
       onBeforeChange,
       onBeforeChecked,
       onChange,
-      modal: ModalNode,
+      modalRender,
       title,
 
       // Modal props (previously in modalProps)
@@ -273,38 +273,37 @@ const Combo = forwardRef(
         {ComboNode}
 
         {/* Modal */}
-        {ModalNode && (
-          <ModalNode
-            ref={modalRef}
-            getComboDOM={() => {
+        {typeof modalRender === 'function' &&
+          modalRender({
+            ref: modalRef,
+            getComboDOM: () => {
               return comboRef.current
-            }}
-            value={value}
-            onBeforeChange={onBeforeChange}
-            onBeforeChecked={onBeforeChecked}
-            onChange={onChange}
-            allowClear={allowClear}
-            multiple={multiple}
-            title={title}
-            portal={portal}
-            maskClassName={maskClassName}
-            maskStyle={maskStyle}
-            className={modalClassName}
-            style={modalStyle}
-            onVisibleChange={setVisible}
-            visible={visible}
+            },
+            value: value,
+            onBeforeChange: onBeforeChange,
+            onBeforeChecked: onBeforeChecked,
+            onChange: onChange,
+            allowClear: allowClear,
+            multiple: multiple,
+            title: title,
+            portal: portal,
+            maskClassName: maskClassName,
+            maskStyle: maskStyle,
+            className: modalClassName,
+            style: modalStyle,
+            onVisibleChange: setVisible,
+            visible: visible,
             // Modal props (previously in modalProps)
-            list={list}
-            itemRender={itemRender}
-            layout={layout}
-            checkable={checkable}
-            checkbox={checkbox}
-            checkboxPosition={checkboxPosition}
-            loadList={loadList}
-            pull={pull}
-            pagination={pagination}
-          />
-        )}
+            list: list,
+            itemRender: itemRender,
+            layout: layout,
+            checkable: checkable,
+            checkbox: checkbox,
+            checkboxPosition: checkboxPosition,
+            loadList: loadList,
+            pull: pull,
+            pagination: pagination
+          })}
       </Fragment>
     )
   }

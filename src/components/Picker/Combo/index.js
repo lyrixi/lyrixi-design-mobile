@@ -27,10 +27,12 @@ const PickerCombo = forwardRef(
         ref={ref}
         {...props}
         // Modal
-        modal={props?.modal || Modal}
+        modalRender={(modalProps) => {
+          const ModalComponent = Modal
+          return <ModalComponent {...modalProps} defaultPickerValue={defaultPickerValue} />
+        }}
         modalClassName={modalClassName}
         modalStyle={modalStyle}
-        defaultPickerValue={defaultPickerValue}
         list={list}
       />
     )

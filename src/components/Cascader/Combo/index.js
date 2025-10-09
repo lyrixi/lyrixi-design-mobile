@@ -32,12 +32,12 @@ const CascaderCombo = forwardRef(
         ref={ref}
         {...props}
         // Modal
-        modal={props?.modal || CascaderModal}
+        modalRender={(modalProps) => {
+          return <CascaderModal {...modalProps} loadData={loadData} searchVisible={searchVisible} />
+        }}
         modalClassName={modalClassName}
         modalStyle={modalStyle}
         list={list}
-        loadData={loadData}
-        searchVisible={searchVisible}
       />
     )
   }

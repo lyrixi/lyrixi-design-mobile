@@ -351,7 +351,7 @@ const Main = forwardRef(
     return (
       <>
         {/* 主页面 */}
-        <Page className="cascader-main">
+        <Page full={false} className="cascader-main">
           {/* 搜索框 */}
           {searchVisible && Array.isArray(externalList) && externalList.length > 0 && (
             <SearchHeader

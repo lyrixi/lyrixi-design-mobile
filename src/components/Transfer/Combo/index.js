@@ -15,8 +15,13 @@ const TransferCombo = forwardRef(
   (
     {
       // Modal
+      portal,
+      maskClassName,
+      maskStyle,
       modalClassName,
       modalStyle,
+      title,
+      onBeforeChecked,
 
       list,
       ...props
@@ -30,11 +35,20 @@ const TransferCombo = forwardRef(
         // Modal
         modalRender={(modalProps) => {
           const ModalComponent = Modal
-          return <ModalComponent {...modalProps} />
+          return (
+            <ModalComponent
+              {...modalProps}
+              portal={portal}
+              maskClassName={maskClassName}
+              maskStyle={maskStyle}
+              className={modalClassName}
+              style={modalStyle}
+              title={title}
+              onBeforeChecked={onBeforeChecked}
+              list={list}
+            />
+          )
         }}
-        modalClassName={modalClassName}
-        modalStyle={modalStyle}
-        list={list}
       />
     )
   }

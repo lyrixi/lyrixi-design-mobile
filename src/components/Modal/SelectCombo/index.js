@@ -10,7 +10,6 @@ import getDisplayValue from './formatter'
 
 import Input from './../../Input'
 
-import ComboWrapper from './ComboWrapper'
 import Tags from './Tags'
 
 // 内库使用-start
@@ -26,60 +25,30 @@ import { DOMUtil, ObjectUtil } from 'lyrixi-design-mobile'
 const Combo = forwardRef(
   (
     {
-      // Modal
-      portal,
-      maskClassName,
-      maskStyle,
-      modalClassName,
-      modalStyle,
-
-      value,
-      onBeforeChange,
-      onBeforeChecked,
-      onChange,
+      // Modal Render
       modalRender,
-      title,
 
-      // Modal props (previously in modalProps)
-      list,
-      itemRender,
-      layout,
-      checkable,
-      checkbox,
-      checkboxPosition,
-      multiple,
-      loadList,
-      pull,
-      pagination,
-
-      // ComboNew
+      // Combo Render
       comboRender,
-      comboChildren,
       comboStyle,
       comboClassName,
 
       // Combo
+      value,
+      onBeforeChange,
+      onChange,
+      allowClear,
+      multiple,
       formatter,
       autoSize,
-      allowClear,
       separator,
       mode,
       readOnly,
       disabled,
       placeholder,
-      onClick,
       onBeforeOpen,
-      clearRender = ({ triggerClear }) => {
-        return ObjectUtil.isEmpty(value) || !allowClear ? (
-          <Input.IconRightArrow />
-        ) : (
-          <Input.IconClear onClick={triggerClear} />
-        )
-      },
-      onVisibleChange,
-
-      children,
-      ...props
+      clearRender,
+      onVisibleChange
     },
     ref
   ) => {
@@ -133,13 +102,11 @@ const Combo = forwardRef(
 
     // 点击文本框
     async function handleInputClick(e) {
+      e.stopPropagation()
       if (readOnly || disabled) return
       if (!visible && typeof onBeforeOpen === 'function') {
         let goOn = await onBeforeOpen()
         if (goOn === false) return
-      }
-      if (typeof onClick === 'function') {
-        onClick(e)
       }
 
       setVisible(!visible)
@@ -173,7 +140,11 @@ const Combo = forwardRef(
         return clearRender({ ...clearParams, value: value, readOnly: readOnly })
       }
 
-      return undefined
+      return ObjectUtil.isEmpty(value) || !allowClear ? (
+        <Input.IconRightArrow />
+      ) : (
+        <Input.IconClear onClick={clearParams?.triggerClear} />
+      )
     }
 
     // 文本框
@@ -189,28 +160,12 @@ const Combo = forwardRef(
           visible,
           style: comboStyle,
           className: DOMUtil.classNames(visible ? 'expand' : '', comboClassName),
-          onClick: handleInputClick
+          onClick: handleInputClick,
+          value,
+          allowClear,
+          multiple,
+          onChange: handleChange
         })
-      }
-      if (comboChildren) {
-        return (
-          <div
-            ref={comboRef}
-            style={comboStyle}
-            className={DOMUtil.classNames(visible ? 'expand' : '', comboClassName)}
-            onClick={handleInputClick}
-          >
-            {comboChildren}
-          </div>
-        )
-      }
-
-      if (children) {
-        return (
-          <ComboWrapper {...props} onClick={handleInputClick} ref={comboRef}>
-            {children}
-          </ComboWrapper>
-        )
       }
 
       if (mode === 'tags') {
@@ -275,34 +230,16 @@ const Combo = forwardRef(
         {/* Modal */}
         {typeof modalRender === 'function' &&
           modalRender({
-            ref: modalRef,
+            modalRef: modalRef,
             getComboDOM: () => {
               return comboRef.current
             },
             value: value,
-            onBeforeChange: onBeforeChange,
-            onBeforeChecked: onBeforeChecked,
-            onChange: onChange,
-            allowClear: allowClear,
-            multiple: multiple,
-            title: title,
-            portal: portal,
-            maskClassName: maskClassName,
-            maskStyle: maskStyle,
-            className: modalClassName,
-            style: modalStyle,
+            allowClear,
+            multiple,
+            onChange: handleChange,
             onVisibleChange: setVisible,
-            visible: visible,
-            // Modal props (previously in modalProps)
-            list: list,
-            itemRender: itemRender,
-            layout: layout,
-            checkable: checkable,
-            checkbox: checkbox,
-            checkboxPosition: checkboxPosition,
-            loadList: loadList,
-            pull: pull,
-            pagination: pagination
+            visible: visible
           })}
       </Fragment>
     )

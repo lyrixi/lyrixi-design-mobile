@@ -29,13 +29,19 @@ const DistrictCombo = forwardRef(
       readOnly,
 
       // Modal
+      portal,
+      maskClassName,
+      maskStyle,
+      modalClassName,
+      modalStyle,
+      title,
+      onBeforeChecked,
+
       value,
       onChange,
 
       min = '',
       searchVisible,
-      modalClassName,
-      modalStyle,
 
       // Main
       startType, // 开始于国家country, 省份province
@@ -111,8 +117,6 @@ const DistrictCombo = forwardRef(
     return (
       <Combo
         ref={comboRef}
-        modalClassName={modalClassName}
-        modalStyle={modalStyle}
         value={value}
         onChange={
           onChange
@@ -142,6 +146,13 @@ const DistrictCombo = forwardRef(
           return (
             <ModalComponent
               {...modalProps}
+              portal={portal}
+              maskClassName={maskClassName}
+              maskStyle={maskStyle}
+              className={modalClassName}
+              style={modalStyle}
+              title={title}
+              onBeforeChecked={onBeforeChecked}
               startType={startType}
               type={type}
               min={min}

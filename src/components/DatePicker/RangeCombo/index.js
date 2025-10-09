@@ -22,8 +22,13 @@ const RangeCombo = forwardRef(
       separator,
 
       // Modal
+      portal,
+      maskClassName,
+      maskStyle,
       modalClassName,
       modalStyle,
+      title,
+      onBeforeChecked,
 
       // Modal properties
       diff,
@@ -43,7 +48,6 @@ const RangeCombo = forwardRef(
       rangeId,
       ranges,
       titles,
-      portal,
       ...props
     },
     ref
@@ -84,6 +88,13 @@ const RangeCombo = forwardRef(
           return (
             <ModalComponent
               {...modalProps}
+              portal={portal}
+              maskClassName={maskClassName}
+              maskStyle={maskStyle}
+              className={modalClassName}
+              style={modalStyle}
+              title={title}
+              onBeforeChecked={onBeforeChecked}
               defaultPickerValue={defaultPickerValue}
               type={type}
               diff={diff}
@@ -99,13 +110,10 @@ const RangeCombo = forwardRef(
               disabledEnd={disabledEnd}
               rangeId={rangeIdRef.current}
               ranges={ranges}
-              portal={portal}
               titles={titles}
             />
           )
         }}
-        modalClassName={modalClassName}
-        modalStyle={modalStyle}
       />
     )
   }

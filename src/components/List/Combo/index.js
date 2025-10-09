@@ -15,9 +15,15 @@ const ListCombo = forwardRef(
   (
     {
       // Modal
+      portal,
+      maskClassName,
+      maskStyle,
       modalClassName,
       modalStyle,
+      title,
+      onBeforeChecked,
 
+      list,
       loadList,
       pull,
       pagination,
@@ -43,21 +49,26 @@ const ListCombo = forwardRef(
           return (
             <ModalComponent
               {...modalProps}
+              portal={portal}
+              maskClassName={maskClassName}
+              maskStyle={maskStyle}
+              className={modalClassName}
+              style={modalStyle}
+              title={title}
+              onBeforeChecked={onBeforeChecked}
+              list={list}
+              itemRender={itemRender}
+              layout={layout}
+              checkable={checkable}
+              checkbox={checkbox}
+              checkboxPosition={checkboxPosition}
               loadList={loadList}
               pull={pull}
               pagination={pagination}
             />
           )
         }}
-        modalClassName={modalClassName}
-        modalStyle={modalStyle}
-        // List config
-        itemRender={itemRender}
-        layout={layout}
         multiple={multiple}
-        checkable={checkable}
-        checkbox={checkbox}
-        checkboxPosition={checkboxPosition}
       />
     )
   }

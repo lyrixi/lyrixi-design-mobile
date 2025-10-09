@@ -17,8 +17,13 @@ const DatePickerCombo = forwardRef(
   (
     {
       // Modal
+      portal,
+      maskClassName,
+      maskStyle,
       modalClassName,
       modalStyle,
+      title,
+      onBeforeChecked,
 
       defaultPickerValue,
       onError,
@@ -40,11 +45,19 @@ const DatePickerCombo = forwardRef(
           return DateUtil.format(value, type)
         }}
         {...props}
+        value={value}
         // Modal
         modalRender={(modalProps) => {
           return (
             <Modal
               {...modalProps}
+              portal={portal}
+              maskClassName={maskClassName}
+              maskStyle={maskStyle}
+              className={modalClassName}
+              style={modalStyle}
+              title={title}
+              onBeforeChecked={onBeforeChecked}
               hourStep={hourStep}
               minuteStep={minuteStep}
               defaultPickerValue={defaultPickerValue}
@@ -55,9 +68,6 @@ const DatePickerCombo = forwardRef(
             />
           )
         }}
-        value={value}
-        modalClassName={modalClassName}
-        modalStyle={modalStyle}
       />
     )
   }

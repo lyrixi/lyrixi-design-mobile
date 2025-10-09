@@ -17,8 +17,13 @@ const WeekCombo = forwardRef(
   (
     {
       // Modal
+      portal,
+      maskClassName,
+      maskStyle,
       modalClassName,
       modalStyle,
+      title,
+      onBeforeChecked,
 
       defaultPickerValue,
       onError,
@@ -38,13 +43,20 @@ const WeekCombo = forwardRef(
           return DateUtil.format(value, 'week')
         }}
         {...props}
-        // Modal
         value={value}
+        // Modal
         modalRender={(modalProps) => {
           const ModalComponent = WeekModal
           return (
             <ModalComponent
               {...modalProps}
+              portal={portal}
+              maskClassName={maskClassName}
+              maskStyle={maskStyle}
+              className={modalClassName}
+              style={modalStyle}
+              title={title}
+              onBeforeChecked={onBeforeChecked}
               defaultPickerValue={defaultPickerValue}
               onError={onError}
               type={type}
@@ -53,8 +65,6 @@ const WeekCombo = forwardRef(
             />
           )
         }}
-        modalClassName={modalClassName}
-        modalStyle={modalStyle}
       />
     )
   }

@@ -14,8 +14,12 @@ const Combo = BaseModal.SelectCombo
 const ActionSheetCombo = (
   {
     // Modal
+    portal,
+    maskClassName,
+    maskStyle,
     modalClassName,
     modalStyle,
+    onBeforeChecked,
 
     title,
     list,
@@ -28,13 +32,27 @@ const ActionSheetCombo = (
       ref={ref}
       {...props}
       // Modal
-      modalRender={(modalProps) => {
-        return <Modal {...modalProps} />
+      modalRender={({ modalRef, getComboDOM, value, allowClear, multiple, onChange }) => {
+        return (
+          <Modal
+            ref={modalRef}
+            getComboDOM={getComboDOM}
+            value={value}
+            allowClear={allowClear}
+            multiple={multiple}
+            onChange={onChange}
+            // Modal Props
+            portal={portal}
+            maskClassName={maskClassName}
+            maskStyle={maskStyle}
+            className={modalClassName}
+            style={modalStyle}
+            title={title}
+            onBeforeChecked={onBeforeChecked}
+            list={list}
+          />
+        )
       }}
-      modalClassName={modalClassName}
-      modalStyle={modalStyle}
-      title={title}
-      list={list}
     />
   )
 }

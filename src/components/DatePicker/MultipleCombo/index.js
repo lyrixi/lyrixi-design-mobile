@@ -19,8 +19,13 @@ const MultipleCombo = forwardRef(
       separator,
 
       // Modal
+      portal,
+      maskClassName,
+      maskStyle,
       modalClassName,
       modalStyle,
+      title,
+      onBeforeChecked,
 
       defaultPickerValue,
       onError,
@@ -46,12 +51,20 @@ const MultipleCombo = forwardRef(
           })
         }}
         {...props}
+        value={value}
         // Modal
         modalRender={(modalProps) => {
           const ModalComponent = MultipleModal
           return (
             <ModalComponent
               {...modalProps}
+              portal={portal}
+              maskClassName={maskClassName}
+              maskStyle={maskStyle}
+              className={modalClassName}
+              style={modalStyle}
+              title={title}
+              onBeforeChecked={onBeforeChecked}
               defaultPickerValue={defaultPickerValue}
               onError={onError}
               type={type}
@@ -62,9 +75,6 @@ const MultipleCombo = forwardRef(
             />
           )
         }}
-        value={value}
-        modalClassName={modalClassName}
-        modalStyle={modalStyle}
       />
     )
   }

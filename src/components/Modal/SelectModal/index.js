@@ -5,14 +5,18 @@ import NavBarModal from './../NavBarModal'
 const Modal = forwardRef(
   (
     {
-      // 无用的属性
+      // Combo Transfer Props
       getComboDOM,
+      value,
+      allowClear,
+      multiple,
+      onChange,
 
-      // Modal fixed properties
-      portal,
+      // Modal render
       animation = 'slideUp',
 
       // 遮罩
+      portal,
       maskClassName,
       maskStyle,
       maskClosable = true,
@@ -39,15 +43,9 @@ const Modal = forwardRef(
       onBeforeChange,
       onBeforeChecked,
 
-      // Main
+      // Main Render
       main: MainNode,
       mainProps,
-
-      // Main properties
-      value,
-      allowClear,
-      multiple,
-      onChange,
 
       // Header and Footer
       headerRender,

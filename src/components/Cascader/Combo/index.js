@@ -17,8 +17,13 @@ const CascaderCombo = forwardRef(
       // Filter useless props to protect the feature
       multiple,
       // Modal
+      portal,
+      maskClassName,
+      maskStyle,
       modalClassName,
       modalStyle,
+      title,
+      onBeforeChecked,
       searchVisible,
 
       list,
@@ -33,11 +38,22 @@ const CascaderCombo = forwardRef(
         {...props}
         // Modal
         modalRender={(modalProps) => {
-          return <CascaderModal {...modalProps} loadData={loadData} searchVisible={searchVisible} />
+          return (
+            <CascaderModal
+              {...modalProps}
+              portal={portal}
+              maskClassName={maskClassName}
+              maskStyle={maskStyle}
+              className={modalClassName}
+              style={modalStyle}
+              title={title}
+              onBeforeChecked={onBeforeChecked}
+              list={list}
+              loadData={loadData}
+              searchVisible={searchVisible}
+            />
+          )
         }}
-        modalClassName={modalClassName}
-        modalStyle={modalStyle}
-        list={list}
       />
     )
   }

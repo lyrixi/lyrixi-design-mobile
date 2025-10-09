@@ -13,8 +13,13 @@ const PickerCombo = forwardRef(
   (
     {
       // Modal
+      portal,
+      maskClassName,
+      maskStyle,
       modalClassName,
       modalStyle,
+      title,
+      onBeforeChecked,
 
       defaultPickerValue,
       list,
@@ -29,11 +34,21 @@ const PickerCombo = forwardRef(
         // Modal
         modalRender={(modalProps) => {
           const ModalComponent = Modal
-          return <ModalComponent {...modalProps} defaultPickerValue={defaultPickerValue} />
+          return (
+            <ModalComponent
+              {...modalProps}
+              portal={portal}
+              maskClassName={maskClassName}
+              maskStyle={maskStyle}
+              className={modalClassName}
+              style={modalStyle}
+              title={title}
+              onBeforeChecked={onBeforeChecked}
+              list={list}
+              defaultPickerValue={defaultPickerValue}
+            />
+          )
         }}
-        modalClassName={modalClassName}
-        modalStyle={modalStyle}
-        list={list}
       />
     )
   }

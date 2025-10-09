@@ -28,13 +28,13 @@ const Page = forwardRef(({ safeArea, animation, full = true, layout, children, .
         'page',
         full ? 'full' : '',
         layout ? `flex-${layout}` : '',
-        SafeArea.getSafeAreaClassName(safeArea),
         props.className
       )}
       data-animation={animation}
       ref={rootRef}
     >
       {children}
+      {safeArea === true && <SafeArea />}
     </section>
   )
 })

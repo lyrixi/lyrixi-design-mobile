@@ -145,8 +145,7 @@ function FloatButton(
       {...props}
       className={DOMUtil.classNames(
         'float-button-container',
-        props?.className,
-        SafeArea.getSafeAreaClassName(safeArea)
+        props?.className
       )}
       onTouchStart={draggable ? handleTouchStart : null}
       onTouchMove={draggable ? handleTouchMove : null}
@@ -207,6 +206,7 @@ function FloatButton(
           )
         }
       })}
+      {safeArea === true && <SafeArea />}
     </div>
   )
 

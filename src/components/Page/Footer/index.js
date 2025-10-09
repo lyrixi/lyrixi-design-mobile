@@ -25,12 +25,12 @@ const Footer = forwardRef(({ safeArea, children, ...props }, ref) => {
       {...props}
       className={DOMUtil.classNames(
         'page-footer',
-        SafeArea.getSafeAreaClassName(safeArea),
         props.className
       )}
       ref={rootRef}
     >
       {children}
+      {safeArea === true && <SafeArea />}
     </footer>
   )
 })

@@ -71,22 +71,3 @@
   z-index: 1;
   box-sizing: border-box;
 }
-
-// Adapt to the safe area: className
-.image-preview-main-page.safeArea {
-  &:extend(.safe-area all);
-  &:extend(.safe-area.border-bottom all);
-}
-
-// Adapt to the safe area: safeArea={false}
-.image-preview-main-page.clearSafeArea {
-  &:extend(.clear-safe-area all);
-  &:extend(.clear-safe-area.border-bottom all);
-}
-// Adapt to the safe area: safeArea={true}
-.auto-safe-area-children {
-  .image-preview-main-page.autoSafeArea {
-    &:extend(.safe-area all);
-    &:extend(.safe-area.border-bottom all);
-  }
-}

@@ -2,9 +2,7 @@ import React, { useEffect } from 'react'
 import { SafeArea, FloatButton, Page, Divider, Storage } from 'lyrixi-design-mobile'
 
 export default () => {
-  useEffect(() => {
-    // SafeArea.autoSafeArea({ debug: true })
-  }, [])
+  useEffect(() => {}, [])
 
   return (
     <Page>

@@ -32,7 +32,6 @@ export default () => {
     if (Device.os === 'harmony' && Device.compareVersion(Device.osVersion, '19') < 1) {
       alert('bad harmony' + Device.osVersion)
     }
-    SafeArea.autoSafeArea({ debug: true })
   }, [])
 
   return (

@@ -139,7 +139,6 @@ const Main = forwardRef(
         {...props}
         className={DOMUtil.classNames(
           'page-main',
-          SafeArea.getSafeAreaClassName(safeArea),
           props.className
         )}
         ref={rootRef}
@@ -155,6 +154,7 @@ const Main = forwardRef(
         <TopContainer ref={topContainerRef} />
         {/* 内容 */}
         {children}
+        {safeArea === true && <SafeArea />}
       </main>
     )
   }

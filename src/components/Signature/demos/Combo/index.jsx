@@ -3,7 +3,7 @@ import { Signature, Page, Toast, Device, Bridge } from 'lyrixi-design-mobile'
 
 // Test safe area
 // import { SafeArea } from 'lyrixi-design-mobile'
-// SafeArea.autoSafeArea({ debug: true })
+// SafeArea.debug()
 
 export default () => {
   const [value, setValue] = useState(

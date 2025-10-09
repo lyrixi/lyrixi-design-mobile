@@ -115,7 +115,6 @@ const Modal = forwardRef(
           {...props}
           className={DOMUtil.classNames(
             'modal-animation modal',
-            SafeArea.getSafeAreaClassName(safeArea),
             animationClassName ? ' ' + animationClassName : '',
             props.className,
             getActiveClass()
@@ -124,6 +123,7 @@ const Modal = forwardRef(
           onClick={handleModalClick}
         >
           {children}
+          {safeArea === true && <SafeArea />}
         </div>
       </div>
     )

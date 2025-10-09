@@ -2,10 +2,7 @@ import React, { useEffect } from 'react'
 import { SafeArea } from 'lyrixi-design-mobile'
 
 export default () => {
-  useEffect(() => {
-    SafeArea.autoSafeArea()
-    console.log('是否需要安全区:', SafeArea.needsSafeArea())
-  }, [])
+  useEffect(() => {}, [])
 
   return (
     <div
@@ -16,9 +13,7 @@ export default () => {
       You can test it on mobile, if you can see a red rectangle, the mobile needs a safe area
       <SafeArea style={{ backgroundColor: 'red' }} />
       Use root stage safe area
-      <div>{`1. If you want to adapt to the safe area, you can invoke: SafeArea.autoSafeArea()`}</div>
-      <div>{`2. If you want to root safe area, you can invoke: SafeArea.autoSafeArea('auto-safe-area-root')`}</div>
-      <div>{`3. If you want to custom safe area, you can extend class: .auto-safe-area-children {...your class}`}</div>
+      <div>{`If you want to test to the safe area, you can invoke: SafeArea.debug()`}</div>
     </div>
   )
 }

@@ -91,7 +91,6 @@ const NavBarModal = forwardRef(
           className={DOMUtil.classNames(
             'modal-animation',
             'modal-navbarmodal',
-            SafeArea.getSafeAreaClassName(safeArea),
             props.className,
             visible ? ' active' : ''
           )}
@@ -115,6 +114,7 @@ const NavBarModal = forwardRef(
           />
           {/* 主体 */}
           {children}
+          {safeArea === true && <SafeArea />}
         </div>
       </div>
     )

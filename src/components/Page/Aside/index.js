@@ -25,12 +25,12 @@ const Aside = forwardRef(({ safeArea, children, ...props }, ref) => {
       {...props}
       className={DOMUtil.classNames(
         'page-aside',
-        SafeArea.getSafeAreaClassName(safeArea),
         props.className
       )}
       ref={rootRef}
     >
       {children}
+      {safeArea === true && <SafeArea />}
     </aside>
   )
 })

@@ -47,7 +47,6 @@ export default () => {
     Bridge.ready(() => {
       console.log('加载桥接')
     })
-    // SafeArea.autoSafeArea({ debug: true })
   }, [])
 
   // 异步上传

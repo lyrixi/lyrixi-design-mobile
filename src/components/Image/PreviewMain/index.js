@@ -272,7 +272,6 @@ const PreviewMain = forwardRef(
         onSlideChange={handleSwipe}
         className={DOMUtil.classNames(
           'image-preview-main',
-          SafeArea.getSafeAreaClassName(safeArea),
           className,
           allowClose ? ' closable' : '',
           chooseVisible && typeof onChange === 'function' ? ' choosable' : '',
@@ -355,6 +354,7 @@ const PreviewMain = forwardRef(
             }
           />
         ) : null}
+        {safeArea === true && <SafeArea />}
       </Swiper>
     )
   }

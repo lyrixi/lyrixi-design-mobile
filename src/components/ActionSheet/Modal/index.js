@@ -126,7 +126,6 @@ const Modal = forwardRef(
           {...props}
           className={DOMUtil.classNames(
             'modal-animation actionsheet-modal',
-            SafeArea.getSafeAreaClassName(safeArea),
             props?.className,
             visible ? ' active' : ''
           )}
@@ -165,6 +164,7 @@ const Modal = forwardRef(
               })}
           </div>
           {getCancelNode()}
+          {safeArea === true && <SafeArea />}
         </div>
       </div>,
       portal || document.getElementById('root') || document.body

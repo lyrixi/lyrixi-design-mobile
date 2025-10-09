@@ -1,7 +1,15 @@
 import React, { useImperativeHandle, forwardRef, useRef } from 'react'
 
+// 内库使用-start
+import DOMUtil from './../../utils/DOMUtil'
+// 内库使用-end
+
+/* 测试使用-start
+import { DOMUtil } from 'lyrixi-design-mobile'
+测试使用-end */
+
 // 安全区域
-const SafeArea = forwardRef(({ safeArea, ...props }, ref) => {
+const SafeArea = forwardRef(({ ...props }, ref) => {
   const rootRef = useRef(null)
 
   // Expose
@@ -15,9 +23,7 @@ const SafeArea = forwardRef(({ safeArea, ...props }, ref) => {
   return (
     <div
       {...props}
-      className={`${safeArea === 'auto' ? 'auto-safe-area' : 'safe-area'}${
-        props.className ? ' ' + props.className : ' height-bottom'
-      }`}
+      className={DOMUtil.classNames('safe-area height-bottom', props?.className)}
       ref={rootRef}
     ></div>
   )

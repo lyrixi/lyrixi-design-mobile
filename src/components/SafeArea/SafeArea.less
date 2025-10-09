@@ -1,6 +1,5 @@
 // SafeArea安全区域
-.safe-area,
-.auto-safe-area-children .auto-safe-area {
+.safe-area {
   // 定位
   &.top {
     top: var(--seed-safe-area-inset-top);
@@ -109,12 +108,4 @@
 [data-safe-area='after'] {
   &:extend(.safe-area all);
   &:extend(.safe-area.after all);
-}
-
-// 根元素自动安全区，业务无需控制安全区
-.auto-safe-area-root {
-  #root {
-    &:extend(.safe-area all);
-    &:extend(.safe-area.border-bottom all);
-  }
 }

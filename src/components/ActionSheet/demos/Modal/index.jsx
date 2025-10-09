@@ -22,9 +22,7 @@ export default () => {
   ]
   const [value, setValue] = useState(null)
 
-  useEffect(() => {
-    SafeArea.autoSafeArea()
-  }, [])
+  useEffect(() => {}, [])
 
   return (
     <Page>

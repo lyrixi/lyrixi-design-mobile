@@ -1,12 +1,8 @@
 import SafeArea from './SafeArea'
-import getSafeAreaClassName from './utils/getSafeAreaClassName'
-import autoSafeArea from './utils/autoSafeArea'
-import needsSafeArea from './utils/needsSafeArea'
-import onResize from './utils/onResize'
 
-SafeArea.getSafeAreaClassName = getSafeAreaClassName
-SafeArea.autoSafeArea = autoSafeArea
-SafeArea.needsSafeArea = needsSafeArea
-SafeArea.onResize = onResize
+SafeArea.debug = () => {
+  document.documentElement.style.setProperty('--seed-safe-area-inset-top', '44px')
+  document.documentElement.style.setProperty('--seed-safe-area-inset-bottom', '34px')
+}
 
 export default SafeArea

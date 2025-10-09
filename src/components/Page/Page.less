@@ -28,21 +28,3 @@
   left: 0;
   z-index: 0;
 }
-
-// Adapt to the safe area: className
-.page.safeArea {
-  &:extend(.safe-area all);
-  &:extend(.safe-area.border-bottom all);
-}
-// Adapt to the safe area: safeArea={false}
-.page.clearSafeArea {
-  &:extend(.clear-safe-area all);
-  &:extend(.clear-safe-area.border-bottom all);
-}
-// Adapt to the safe area: safeArea={true}
-.auto-safe-area-children {
-  .page.autoSafeArea {
-    &:extend(.safe-area all);
-    &:extend(.safe-area.border-bottom all);
-  }
-}

@@ -49,31 +49,3 @@
 .float-button-icon + .float-button-label {
   font-size: var(--seed-font-size-s);
 }
-
-// Adapt to the safe area
-// 子元素自动安全区
-.auto-safe-area-children {
-  #root > .float-button-container {
-    &:extend(.safe-area all);
-    &:extend(.safe-area.border-bottom all);
-  }
-}
-
-// Adapt to the safe area: className
-.float-button-container.safeArea {
-  &:extend(.safe-area all);
-  &:extend(.safe-area.border-bottom all);
-}
-
-// Adapt to the safe area: safeArea={false}
-.float-button-container.clearSafeArea {
-  &:extend(.clear-safe-area all);
-  &:extend(.clear-safe-area.border-bottom all);
-}
-// Adapt to the safe area: safeArea={true}
-.auto-safe-area-children {
-  .float-button-container.autoSafeArea {
-    &:extend(.safe-area all);
-    &:extend(.safe-area.border-bottom all);
-  }
-}

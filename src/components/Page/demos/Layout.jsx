@@ -13,7 +13,6 @@ for (let i = 0; i < 100; i++) {
 export default () => {
   const { Header, Footer, Aside, Main } = Page
   useEffect(() => {
-    SafeArea.autoSafeArea({ debug: true })
     document.getElementById('root').parentElement.removeChild(document.getElementById('root'))
   }, [])
 

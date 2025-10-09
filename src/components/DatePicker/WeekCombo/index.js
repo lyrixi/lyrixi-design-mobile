@@ -45,7 +45,7 @@ const WeekCombo = forwardRef(
         {...props}
         value={value}
         // Modal
-        modalRender={({ modalRef, getComboDOM, value, allowClear, multiple, onChange }) => {
+        modalRender={({ modalRef, getComboDOM, value, allowClear, multiple, onChange, visible, onVisibleChange }) => {
           return (
             <WeekModal
               ref={modalRef}
@@ -54,6 +54,8 @@ const WeekCombo = forwardRef(
               allowClear={allowClear}
               multiple={multiple}
               onChange={onChange}
+              visible={visible}
+              onVisibleChange={onVisibleChange}
               // Modal Props
               portal={portal}
               maskClassName={maskClassName}

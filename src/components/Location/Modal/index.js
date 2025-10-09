@@ -33,14 +33,6 @@ const LocationModal = forwardRef(
       return modalRef.current
     })
 
-    // 扩展非标准属性
-    if (!props.mainProps) {
-      props.mainProps = {}
-    }
-    if (config) props.mainProps.config = config
-    if (getLocation) props.mainProps.getLocation = getLocation
-    if (getAddress) props.mainProps.getAddress = getAddress
-
     return (
       <SelectModal
         ref={modalRef}
@@ -50,7 +42,21 @@ const LocationModal = forwardRef(
             : LocaleUtil.locale('查看地址', 'SeedsUI_view_address')
         }
         {...props}
-        main={props?.main || Main}
+        mainRender={({ mainRef, visible, value, allowClear, multiple, onChange }) => {
+          return (
+            <Main
+              ref={mainRef}
+              visible={visible}
+              value={value}
+              allowClear={allowClear}
+              multiple={multiple}
+              onChange={onChange}
+              config={config}
+              getLocation={getLocation}
+              getAddress={getAddress}
+            />
+          )
+        }}
         ok={visible === 'choose' ? '' : null}
         visible={visible}
         value={value}

@@ -37,8 +37,6 @@ function RangeMain(
     ranges,
     titles,
     portal,
-    selectorProps,
-    datePickerModalProps,
 
     ...props
   },
@@ -110,7 +108,6 @@ function RangeMain(
           onChange={handleChange}
           rangeId={rangeId}
           ranges={ranges}
-          {...(selectorProps || {})}
         />
       )}
 

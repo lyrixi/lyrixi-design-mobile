@@ -37,7 +37,7 @@ const SelectCombo = forwardRef(
         ref={ref}
         {...props}
         // Modal
-        modalRender={({ modalRef, getComboDOM, value, allowClear, multiple, onChange }) => {
+        modalRender={({ modalRef, getComboDOM, value, allowClear, multiple, onChange, visible, onVisibleChange }) => {
           return (
             <Modal
               ref={modalRef}
@@ -46,6 +46,8 @@ const SelectCombo = forwardRef(
               allowClear={allowClear}
               multiple={multiple}
               onChange={onChange}
+              visible={visible}
+              onVisibleChange={onVisibleChange}
               // Modal Props
               portal={portal}
               maskClassName={maskClassName}

@@ -33,6 +33,10 @@ const Combo = forwardRef(
       comboStyle,
       comboClassName,
 
+      // Input
+      leftIcon,
+      rightIcon,
+
       // Combo
       value,
       onBeforeChange,
@@ -172,11 +176,11 @@ const Combo = forwardRef(
         return (
           <Tags
             separator={separator}
-            leftIcon={props?.leftIcon}
-            rightIcon={props?.rightIcon}
+            leftIcon={leftIcon}
+            rightIcon={rightIcon}
+            className={comboClassName}
+            style={comboStyle}
             clearRender={clearRender}
-            className={props?.className}
-            style={props?.style}
             placeholder={placeholder}
             readOnly={readOnly}
             disabled={disabled}
@@ -196,7 +200,10 @@ const Combo = forwardRef(
           value={displayValue}
           readOnly
           placeholder={placeholder}
-          {...props}
+          leftIcon={leftIcon}
+          rightIcon={rightIcon}
+          className={comboClassName}
+          style={comboStyle}
           clear={clearRender}
           onClick={handleInputClick}
           onChange={async (text) => {

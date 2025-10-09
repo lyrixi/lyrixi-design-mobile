@@ -44,8 +44,7 @@ const Modal = forwardRef(
       onBeforeChecked,
 
       // Main Render
-      main: MainNode,
-      mainProps,
+      mainRender,
 
       // Header and Footer
       headerRender,
@@ -182,54 +181,50 @@ const Modal = forwardRef(
         {/* 纯渲染 */}
         {children}
         {/* 主体 */}
-        {!children && MainNode ? (
-          <MainNode
-            ref={mainRef}
-            {...(mainProps || {})}
-            visible={currentVisible}
-            value={currentValue}
-            allowClear={allowClear}
-            multiple={multiple}
-            onChange={async (newValue, newArguments) => {
-              currentArgumentsRef.current = newArguments
+        {!children && typeof mainRender === 'function'
+          ? mainRender({
+              mainRef,
+              visible: currentVisible,
+              value: currentValue,
+              allowClear,
+              multiple,
+              onChange: async (newValue, newArguments) => {
+                currentArgumentsRef.current = newArguments
 
-              // 无标题时更新标题
-              updateTitle()
+                // 无标题时更新标题
+                updateTitle()
 
-              // 自定义关闭
-              if (typeof changeClosable === 'function') {
-                let isClose = await changeClosable(newValue, newArguments, {
-                  triggerOk: handleChange
-                })
-                if (isClose === true) return
-              }
+                // 自定义关闭
+                if (typeof changeClosable === 'function') {
+                  let isClose = await changeClosable(newValue, newArguments, {
+                    triggerOk: handleChange
+                  })
+                  if (isClose === true) return
+                }
 
-              // 修改即关闭; 单选且不允许清空时, 修改即关闭
-              if (changeClosable === true || multiple === false) {
-                handleChange(newValue)
-                return
-              }
+                // 修改即关闭; 单选且不允许清空时, 修改即关闭
+                if (changeClosable === true || multiple === false) {
+                  handleChange(newValue)
+                  return
+                }
 
-              // 修改前校验
-              if (typeof onBeforeChecked === 'function') {
-                let goOn = await onBeforeChecked(newValue, newArguments)
-                if (goOn === false) return
+                // 修改前校验
+                if (typeof onBeforeChecked === 'function') {
+                  let goOn = await onBeforeChecked(newValue, newArguments)
+                  if (goOn === false) return
+
+                  // 修改值
+                  if (typeof goOn === 'object') {
+                    // eslint-disable-next-line
+                    newValue = goOn
+                  }
+                }
 
                 // 修改值
-                if (typeof goOn === 'object') {
-                  // eslint-disable-next-line
-                  newValue = goOn
-                }
+                setCurrentValue(newValue)
               }
-
-              // 修改值
-              setCurrentValue(newValue)
-
-              // 有些业务需要监听每次修改, 并不是关闭页面后修改, 例:handleDrillDown
-              mainProps?.onChange && mainProps.onChange(newValue, newArguments)
-            }}
-          />
-        ) : null}
+            })
+          : null}
 
         {/* 底部 */}
         {typeof footerRender === 'function'

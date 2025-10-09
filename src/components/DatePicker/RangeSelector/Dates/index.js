@@ -27,6 +27,8 @@ export default function CustomDates({
   onChange,
 
   // Modal props
+  maskClassName,
+  maskStyle,
   modalClassName,
   modalStyle
 }) {
@@ -34,6 +36,8 @@ export default function CustomDates({
     <div className="datepicker-rangeselector-date">
       <RangeCombo
         ranges={null}
+        maskClassName={maskClassName}
+        maskStyle={maskStyle}
         modalClassName={modalClassName}
         modalStyle={modalStyle}
         portal={portal}

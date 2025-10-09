@@ -14,12 +14,10 @@ const SelectModal = Modal.SelectModal
 const CascaderModal = forwardRef(
   (
     {
+      visible,
       // Filter useless props to protect the feature
       searchVisible,
       multiple,
-
-      // Main
-      mainProps,
 
       list,
       loadData,
@@ -31,13 +29,22 @@ const CascaderModal = forwardRef(
       <SelectModal
         ref={ref}
         ok={null}
+        visible={visible}
         {...props}
-        main={props?.main || Main}
-        mainProps={{
-          ...mainProps,
-          searchVisible,
-          list,
-          loadData
+        mainRender={({ mainRef, visible, value, allowClear, multiple, onChange }) => {
+          return (
+            <Main
+              ref={mainRef}
+              visible={visible}
+              value={value}
+              allowClear={allowClear}
+              multiple={multiple}
+              onChange={onChange}
+              searchVisible={searchVisible}
+              list={list}
+              loadData={loadData}
+            />
+          )
         }}
         changeClosable={(newValue, newArguments, { triggerOk }) => {
           let lastTab =

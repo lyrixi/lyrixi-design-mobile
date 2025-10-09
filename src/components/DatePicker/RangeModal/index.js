@@ -52,43 +52,40 @@ const RangeModal = forwardRef(
     // 当前选中项
     let [currentRangeId, setCurrentRangeId] = useState(rangeId)
 
-    // 扩展非标准属性
-    if (!props.mainProps) {
-      props.mainProps = {}
-    }
-    if (type) props.mainProps.type = type
-    if (min) props.mainProps.min = min
-    if (max) props.mainProps.max = max
-    if (hourStep) props.mainProps.hourStep = hourStep
-    if (minuteStep) props.mainProps.minuteStep = minuteStep
-    if (disabledStart) props.mainProps.disabledStart = disabledStart
-    if (disabledEnd) props.mainProps.disabledEnd = disabledEnd
-    if (titles) props.mainProps.titles = titles
-
-    props.mainProps.ranges = ranges
-    props.mainProps.portal = modalRef?.current?.rootDOM
-    props.mainProps.rangeId = currentRangeId
-    props.mainProps.onChange = (newValue, { rangeId: newRangeId } = {}) => {
-      setCurrentRangeId(newRangeId)
-    }
-
     useImperativeHandle(ref, () => {
       return modalRef.current
     })
-
-    // 子级DatePicker的zIndex必须大于父级
-    if (typeof props?.maskStyle?.zIndex === 'number') {
-      if (!props.mainProps.datePickerModalProps) props.mainProps.datePickerModalProps = {}
-      if (!props.mainProps.datePickerModalProps.maskStyle)
-        props.mainProps.datePickerModalProps.maskStyle = {}
-      props.mainProps.datePickerModalProps.maskStyle.zIndex = props.maskStyle.zIndex + 1
-    }
 
     return (
       <SelectModal
         ref={modalRef}
         {...props}
-        main={props?.main || RangeMain}
+        mainRender={({ mainRef, visible, value, allowClear, multiple, onChange: mainOnChange }) => {
+          return (
+            <RangeMain
+              ref={mainRef}
+              visible={visible}
+              value={value}
+              allowClear={allowClear}
+              multiple={multiple}
+              onChange={(newValue, { rangeId: newRangeId } = {}) => {
+                setCurrentRangeId(newRangeId)
+                mainOnChange(newValue, { rangeId: newRangeId })
+              }}
+              type={type}
+              min={min}
+              max={max}
+              hourStep={hourStep}
+              minuteStep={minuteStep}
+              disabledStart={disabledStart}
+              disabledEnd={disabledEnd}
+              titles={titles}
+              ranges={ranges}
+              portal={modalRef?.current?.rootDOM}
+              rangeId={currentRangeId}
+            />
+          )
+        }}
         onChange={(newValue, newArguments) => {
           let currentValue = updateRangeValue(newValue, type)
 

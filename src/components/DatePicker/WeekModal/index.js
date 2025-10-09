@@ -29,18 +29,24 @@ const WeekModal = forwardRef(
     },
     ref
   ) => {
-    // 扩展非标准属性
-    if (!props.mainProps) {
-      props.mainProps = {}
-    }
-    if (min) props.mainProps.min = min
-    if (max) props.mainProps.max = max
-
     return (
       <SelectModal
         ref={ref}
         {...props}
-        main={props?.main || WeekMain}
+        mainRender={({ mainRef, visible, value, allowClear, multiple, onChange }) => {
+          return (
+            <WeekMain
+              ref={mainRef}
+              visible={visible}
+              value={value}
+              allowClear={allowClear}
+              multiple={multiple}
+              onChange={onChange}
+              min={min}
+              max={max}
+            />
+          )
+        }}
         onBeforeChange={async (currentValue) => {
           // 校验
           if ((min || max) && currentValue) {

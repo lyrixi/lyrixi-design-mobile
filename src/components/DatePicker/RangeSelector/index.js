@@ -29,8 +29,6 @@ function RangeSelector(
     rangeId,
     ranges,
     portal,
-    selectorProps,
-    datePickerModalProps,
 
     ...props
   },
@@ -81,14 +79,12 @@ function RangeSelector(
         onChange={handleChange}
         rangeId={currentRangeId}
         ranges={ranges}
-        selectorProps={selectorProps}
         allowClear={allowClear}
       />
 
       {/* 自定义区间: 文本框选择 */}
       {customRangeId && currentRangeId === customRangeId && (
         <Dates
-          datePickerModalProps={datePickerModalProps}
           portal={portal}
           type={type}
           allowClear={allowClear}

@@ -33,18 +33,25 @@ const ListModal = forwardRef(
       <SelectModal
         ref={ref}
         {...props}
-        main={props?.main || Main}
-        mainProps={{
-          ...props?.mainProps,
-          loadList,
-          pull,
-          pagination,
-          // List config
-          itemRender,
-          layout,
-          checkable,
-          checkbox,
-          checkboxPosition
+        mainRender={({ mainRef, visible, value, allowClear, multiple, onChange }) => {
+          return (
+            <Main
+              ref={mainRef}
+              visible={visible}
+              value={value}
+              allowClear={allowClear}
+              multiple={multiple}
+              onChange={onChange}
+              loadList={loadList}
+              pull={pull}
+              pagination={pagination}
+              itemRender={itemRender}
+              layout={layout}
+              checkable={checkable}
+              checkbox={checkbox}
+              checkboxPosition={checkboxPosition}
+            />
+          )
         }}
         className={`list-modal${props.className ? ' ' + props.className : ''}`}
       />

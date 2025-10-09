@@ -44,7 +44,7 @@ const ListCombo = forwardRef(
         ref={ref}
         {...props}
         // Modal
-        modalRender={({ modalRef, getComboDOM, value, allowClear, multiple, onChange }) => {
+        modalRender={({ modalRef, getComboDOM, value, allowClear, multiple, onChange, visible, onVisibleChange }) => {
           return (
             <CascaderModal
               ref={modalRef}
@@ -53,6 +53,8 @@ const ListCombo = forwardRef(
               allowClear={allowClear}
               multiple={multiple}
               onChange={onChange}
+              visible={visible}
+              onVisibleChange={onVisibleChange}
               // Modal Props
               portal={portal}
               maskClassName={maskClassName}

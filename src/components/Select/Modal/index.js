@@ -60,16 +60,23 @@ const Modal = forwardRef(
         ref={ref}
         {...props}
         headerRender={searchHeaderVisible ? searchHeaderRender : headerRender}
-        main={props?.main || Main}
-        mainProps={{
-          ...props?.mainProps,
-          list: searchHeaderVisible ? List.searchList(list, keyword) : list,
-          // List config
-          itemRender,
-          layout,
-          checkable,
-          checkbox,
-          checkboxPosition
+        mainRender={({ mainRef, visible, value, allowClear, multiple, onChange }) => {
+          return (
+            <Main
+              ref={mainRef}
+              visible={visible}
+              value={value}
+              allowClear={allowClear}
+              multiple={multiple}
+              onChange={onChange}
+              list={searchHeaderVisible ? List.searchList(list, keyword) : list}
+              itemRender={itemRender}
+              layout={layout}
+              checkable={checkable}
+              checkbox={checkbox}
+              checkboxPosition={checkboxPosition}
+            />
+          )
         }}
         portal={portal}
         value={formatValue(value)}

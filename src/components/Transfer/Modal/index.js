@@ -23,17 +23,23 @@ const Modal = forwardRef(
     },
     ref
   ) => {
-    // 扩展非标准属性
-    if (!props.mainProps) {
-      props.mainProps = {}
-    }
-    if (list) props.mainProps.list = list
-
     return (
       <SelectModal
         ref={ref}
         {...props}
-        main={props?.main || Main}
+        mainRender={({ mainRef, visible, value, allowClear, multiple, onChange }) => {
+          return (
+            <Main
+              ref={mainRef}
+              visible={visible}
+              value={value}
+              allowClear={allowClear}
+              multiple={multiple}
+              onChange={onChange}
+              list={list}
+            />
+          )
+        }}
         className={`transfer-modal${props.className ? ' ' + props.className : ''}`}
         value={formatValue(value)}
       />

@@ -47,7 +47,7 @@ const DatePickerCombo = forwardRef(
         {...props}
         value={value}
         // Modal
-        modalRender={({ modalRef, getComboDOM, value, allowClear, multiple, onChange }) => {
+        modalRender={({ modalRef, getComboDOM, value, allowClear, multiple, onChange, visible, onVisibleChange }) => {
           return (
             <Modal
               ref={modalRef}
@@ -56,6 +56,8 @@ const DatePickerCombo = forwardRef(
               allowClear={allowClear}
               multiple={multiple}
               onChange={onChange}
+              visible={visible}
+              onVisibleChange={onVisibleChange}
               // Modal Props
               portal={portal}
               maskClassName={maskClassName}

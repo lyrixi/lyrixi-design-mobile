@@ -93,27 +93,35 @@ const DistrictModal = forwardRef(
       updateOkVisible(tabs)
     }
 
-    // 扩展非标准属性
-    if (!props.mainProps) {
-      props.mainProps = {}
-    }
-    props.mainProps.searchVisible = searchVisible
-    props.mainProps.startType = startType
-    props.mainProps.type = type
-    props.mainProps.loadCountries = loadCountries
-    props.mainProps.loadCountryRegions = loadCountryRegions
-    props.mainProps.loadStreets = loadStreets
-    props.mainProps.editableOptions = editableOptions
-    props.mainProps.onLoad = handleLoad
-    props.mainProps.onChange = handleDrillDown
-
     return (
       <SelectModal
         ref={modalRef}
         visible={visible}
         value={value}
         {...props}
-        main={props?.main || DistrictMain}
+        mainRender={({ mainRef, visible, value, allowClear, multiple, onChange }) => {
+          return (
+            <DistrictMain
+              ref={mainRef}
+              visible={visible}
+              value={value}
+              allowClear={allowClear}
+              multiple={multiple}
+              onChange={(newValue, newArguments) => {
+                handleDrillDown(newValue)
+                onChange(newValue, newArguments)
+              }}
+              searchVisible={searchVisible}
+              startType={startType}
+              type={type}
+              loadCountries={loadCountries}
+              loadCountryRegions={loadCountryRegions}
+              loadStreets={loadStreets}
+              editableOptions={editableOptions}
+              onLoad={handleLoad}
+            />
+          )
+        }}
         changeClosable={(newValue, newArguments, { triggerOk }) => {
           if (!Array.isArray(newValue) || !newValue.length) return
           const leafIndex = findDistrictLeafIndex(newValue, type)

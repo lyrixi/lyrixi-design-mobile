@@ -17,7 +17,6 @@ function Buttons({
   onChange,
   rangeId,
   ranges,
-  selectorProps,
   allowClear
 }) {
   return (
@@ -26,7 +25,6 @@ function Buttons({
       <Selector
         columns={3}
         allowClear={allowClear}
-        {...selectorProps}
         value={[{ id: rangeId }]}
         list={getSelectorOptions(ranges)}
         onChange={(newRange) => {

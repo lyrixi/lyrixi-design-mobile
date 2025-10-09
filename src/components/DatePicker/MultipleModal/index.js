@@ -32,21 +32,27 @@ const Modal = forwardRef(
     },
     ref
   ) => {
-    // 扩展非标准属性
-    if (!props.mainProps) {
-      props.mainProps = {}
-    }
-    if (type) props.mainProps.type = type
-    if (min) props.mainProps.min = min
-    if (max) props.mainProps.max = max
-    if (hourStep) props.mainProps.hourStep = hourStep
-    if (minuteStep) props.mainProps.minuteStep = minuteStep
-
     return (
       <SelectModal
         ref={ref}
         {...props}
-        main={props?.main || MultipleMain}
+        mainRender={({ mainRef, visible, value, allowClear, multiple, onChange }) => {
+          return (
+            <MultipleMain
+              ref={mainRef}
+              visible={visible}
+              value={value}
+              allowClear={allowClear}
+              multiple={multiple}
+              onChange={onChange}
+              type={type}
+              min={min}
+              max={max}
+              hourStep={hourStep}
+              minuteStep={minuteStep}
+            />
+          )
+        }}
         onBeforeChange={async (currentValue) => {
           // 校验
           if (min || max) {

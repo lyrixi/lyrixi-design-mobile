@@ -26,7 +26,7 @@ const VideoPlayer = forwardRef(
       params,
       onError,
 
-      header, // 状态栏
+      headerRender, // 状态栏
       children,
       ...props
     },
@@ -153,7 +153,7 @@ const VideoPlayer = forwardRef(
           playsInline={true}
           style={{ width: '100%', height: '100%' }}
         ></div>
-        {barVisible && header ? header : null}
+        {barVisible && headerRender ? headerRender() : null}
         {children}
       </div>
     )

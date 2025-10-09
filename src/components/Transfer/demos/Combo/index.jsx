@@ -45,7 +45,7 @@ export default () => {
             console.log(newValue)
             setValue(newValue)
           }}
-          footer={({ value, triggerOk }) => {
+          footerRender={({ value, triggerOk }) => {
             return (
               <Page.Footer
                 onClick={() => {

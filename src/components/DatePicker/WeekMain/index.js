@@ -75,7 +75,6 @@ function WeekMain(
       weekStart={'Monday'}
       selectionMode={'range'}
       value={rangeValueRef.current}
-      // header={false}
       onChange={handleChange}
       {...props}
       className={`datepicker-weekmain-calendar${props.className ? ' ' + props.className : ''}`}

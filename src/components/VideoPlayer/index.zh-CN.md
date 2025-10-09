@@ -35,7 +35,7 @@ toc: content
 | isLive   | 是否直播   | `boolean`                 | -      |
 | params   | 播放器参数 | `object`                  | -      |
 | onError  | 错误回调   | `(error: object) => void` | -      |
-| header   | 状态栏     | `ReactNode`               | -      |
+| headerRender | 状态栏渲染函数 | `() => ReactNode`         | -      |
 | children | 子元素     | `ReactNode`               | -      |
 
 ### Ref

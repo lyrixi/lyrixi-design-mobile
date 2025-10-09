@@ -36,7 +36,7 @@ toc: content
 | min            | 最小日期     | `Date`                               | -                            |
 | max            | 最大日期     | `Date`                               | -                            |
 | draggable      | 可拖动方向   | `array`                              | `['horizontal', 'vertical']` |
-| header         | 是否显示头部 | `boolean`                            | `true`                       |
+| headerRender   | 头部渲染函数 | `(params: object) => ReactNode`      | -                            |
 | dateRender     | 日期渲染函数 | `function`                           | -                            |
 | onLoad         | 加载回调     | `(date: Date, info: object) => void` | -                            |
 | onChange       | 选择变化回调 | `(date: Date, info: object) => void` | -                            |

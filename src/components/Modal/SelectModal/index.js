@@ -50,8 +50,8 @@ const Modal = forwardRef(
       onChange,
 
       // Header and Footer
-      header,
-      footer,
+      headerRender,
+      footerRender,
 
       // 纯渲染时不渲染Main
       children,
@@ -174,9 +174,9 @@ const Modal = forwardRef(
         portal={portal || document.getElementById('root') || document.body}
       >
         {/* 头部 */}
-        {typeof header === 'function'
-          ? header({ visible, value: currentValue, triggerOk: handleChange })
-          : header}
+        {typeof headerRender === 'function'
+          ? headerRender({ visible, value: currentValue, triggerOk: handleChange })
+          : null}
 
         {/* 分割线 */}
         {/* <div className="modal-header-divider"></div> */}
@@ -234,9 +234,9 @@ const Modal = forwardRef(
         ) : null}
 
         {/* 底部 */}
-        {typeof footer === 'function'
-          ? footer({ visible, value: currentValue, triggerOk: handleChange })
-          : footer}
+        {typeof footerRender === 'function'
+          ? footerRender({ visible, value: currentValue, triggerOk: handleChange })
+          : null}
       </NavBarModal>
     )
   }

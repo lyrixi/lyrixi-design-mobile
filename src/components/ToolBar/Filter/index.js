@@ -30,7 +30,7 @@ const Filter = forwardRef(
       modalClassName,
       modalStyle,
       onCancel,
-      footer,
+      footerRender,
       onVisibleChange,
       children
     },
@@ -95,7 +95,7 @@ const Filter = forwardRef(
         {/* Modal */}
         <FilterModal
           onCancel={onCancel}
-          footer={footer}
+          footerRender={footerRender}
           maskClassName={maskClassName}
           maskStyle={maskStyle}
           style={{

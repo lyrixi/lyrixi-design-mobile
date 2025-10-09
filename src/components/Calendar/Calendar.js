@@ -38,7 +38,7 @@ const Calendar = forwardRef(
       max, // 禁用之后日期
       draggable = ['horizontal', 'vertical'], // 是否允许垂直拖动
       // 头部渲染
-      header = true,
+      headerRender,
       // 单个日期渲染
       dateRender,
       // Event: listener the view change
@@ -307,7 +307,17 @@ const Calendar = forwardRef(
           selectionMode ? ` calendar-mode-${selectionMode}` : ''
         }`}
       >
-        {header === true && (
+        {typeof headerRender === 'function' ? (
+          headerRender({
+            title: getTitle(drawDate, titleFormatter, { type: drawTypeRef.current }),
+            onPreviousMonth: handlePreviousMonth,
+            onNextMonth: handleNextMonth,
+            onPreviousYear: handlePreviousYear,
+            onNextYear: handleNextYear,
+            drawDate,
+            titleFormatter
+          })
+        ) : (
           <Header
             onPreviousMonth={handlePreviousMonth}
             onNextMonth={handleNextMonth}
@@ -317,16 +327,6 @@ const Calendar = forwardRef(
             {getTitle(drawDate, titleFormatter, { type: drawTypeRef.current })}
           </Header>
         )}
-        {typeof header === 'function' &&
-          header({
-            title: getTitle(drawDate, titleFormatter, { type: drawTypeRef.current }),
-            onPreviousMonth: handlePreviousMonth,
-            onNextMonth: handleNextMonth,
-            onPreviousYear: handlePreviousYear,
-            onNextYear: handleNextYear,
-            drawDate,
-            titleFormatter
-          })}
         <div className="calendar-days">
           {Weeks.getWeekNames(weekStart).map((dayName) => {
             return (

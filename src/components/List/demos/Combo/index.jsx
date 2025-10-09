@@ -105,10 +105,10 @@ export default () => {
             placeholder="Layout"
             multiple={false}
             title="Select"
-            header={() => {
+            headerRender={() => {
               return <p>Header</p>
             }}
-            footer={() => {
+            footerRender={() => {
               return <p>Footer</p>
             }}
             allowClear
@@ -195,7 +195,7 @@ export default () => {
             placeholder="Search"
             multiple={false}
             title="Select"
-            header={() => {
+            headerRender={() => {
               return (
                 <ToolBar invert>
                   <ToolBar.Search

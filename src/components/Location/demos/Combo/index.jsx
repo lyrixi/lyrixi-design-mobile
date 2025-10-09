@@ -110,7 +110,7 @@ export default () => {
         //   })
         // }}
         safeArea={true}
-        footer={({ visible, triggerOk }) => {
+        footerRender={({ visible, triggerOk }) => {
           return visible === 'choose' ? (
             <Footer
               onOk={() => {

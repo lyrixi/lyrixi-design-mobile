@@ -18,7 +18,7 @@ export default () => {
         </div>
         <Modal.FilterModal
           visible={true}
-          footer={({ close }) => (
+          footerRender={({ close }) => (
             <Page.Footer>
               <FooterBar>
                 <FooterBar.Tab

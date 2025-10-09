@@ -11,14 +11,14 @@ export default () => {
           poster={'https://res.waiqin365.com/d/waiqin365_h5/seedsui/assets/images/logo.png'}
           src={'https://player.alicdn.com/video/aliyunmedia.mp4'}
           autoPlay={false}
-          header={
+          headerRender={() => (
             <div
               className="videoplayer-header-close"
               onClick={() => {
                 alert('close')
               }}
             ></div>
-          }
+          )}
         />
       </Page.Main>
       <Page.Footer>

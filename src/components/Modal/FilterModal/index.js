@@ -19,7 +19,7 @@ function FilterModal(
     visible,
     onVisibleChange,
     onCancel,
-    footer,
+    footerRender,
     children,
     ...props
   },
@@ -58,9 +58,9 @@ function FilterModal(
         </Page.Header>
         <Page.Main>{children}</Page.Main>
         {/* 底部 */}
-        {footer && typeof footer === 'function'
-          ? footer({ close: () => onVisibleChange && onVisibleChange(false) })
-          : footer}
+        {typeof footerRender === 'function'
+          ? footerRender({ close: () => onVisibleChange && onVisibleChange(false) })
+          : null}
       </Page>
     </Modal>
   )

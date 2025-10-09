@@ -20,7 +20,7 @@ const Modal = forwardRef(
       // Modal
       portal,
       value,
-      header,
+      headerRender,
 
       // Main
       list,
@@ -36,9 +36,9 @@ const Modal = forwardRef(
     },
     ref
   ) => {
-    // 没有设置header的情况下, 大于15项显示搜索
+    // 没有设置headerRender的情况下, 大于15项显示搜索
     const [keyword, setKeyword] = useState('')
-    let searchHeader =
+    let searchHeaderRender =
       Array.isArray(list) && list.length > 15
         ? () => {
             return (
@@ -53,13 +53,13 @@ const Modal = forwardRef(
             )
           }
         : null
-    let searchHeaderVisible = header !== undefined ? false : searchHeader
+    let searchHeaderVisible = headerRender !== undefined ? false : searchHeaderRender
 
     return (
       <SelectModal
         ref={ref}
         {...props}
-        header={searchHeaderVisible ? searchHeader : header}
+        headerRender={searchHeaderVisible ? searchHeaderRender : headerRender}
         main={props?.main || Main}
         mainProps={{
           ...props?.mainProps,

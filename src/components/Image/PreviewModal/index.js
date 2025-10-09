@@ -1,5 +1,4 @@
 import React, { useEffect, forwardRef } from 'react'
-import { createPortal } from 'react-dom'
 import PreviewMain from './../PreviewMain'
 import DOMUtil from './../../../utils/DOMUtil'
 

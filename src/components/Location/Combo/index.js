@@ -64,7 +64,6 @@ const LocationCombo = forwardRef(
       onError,
 
       // Modal
-      modal,
       modalClassName,
       modalStyle,
       ...props
@@ -343,12 +342,6 @@ const LocationCombo = forwardRef(
       statusNode = <div className={`location-combo-error seed-input-text`}>{errMsgRef.current}</div>
     }
 
-    // Modal Render
-    let ModalNode = Modal
-    if (modal) {
-      ModalNode = modal
-    }
-
     return (
       <Fragment>
         <Input.Text
@@ -389,7 +382,7 @@ const LocationCombo = forwardRef(
         />
 
         {/* 地图预览与选择 */}
-        <ModalNode
+        <Modal
           config={config}
           portal={portal}
           value={coordsToWgs84(value, type)}

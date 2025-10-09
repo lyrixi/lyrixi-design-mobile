@@ -25,7 +25,6 @@ const PreviewModal = forwardRef(
       // Style
       allowChoose = false,
       allowClear = false,
-      modal, // page
       portal,
 
       // Config
@@ -66,38 +65,6 @@ const PreviewModal = forwardRef(
       }
     }
 
-    if (modal === 'page') {
-      return createPortal(
-        <PreviewMain
-          safeArea={true}
-          className={DOMUtil.classNames('image-preview-main-page', mainClassName)}
-          style={mainStyle}
-          ref={ref}
-          visible={visible}
-          type={type}
-          list={list}
-          current={current}
-          // Style
-          allowClose={true}
-          allowChoose={allowChoose}
-          allowClear={allowClear}
-          // Config
-          count={count}
-          sourceType={sourceType}
-          sizeType={sizeType}
-          maxWidth={maxWidth}
-          // Events
-          onBeforeChoose={onBeforeChoose}
-          onChoose={onChoose}
-          onFileChange={onFileChange}
-          onUpload={onUpload}
-          onChange={onChange}
-          onVisibleChange={onVisibleChange}
-        />,
-        portal || document.getElementById('root') || document.body
-      )
-    }
-
     return (
       <SelectModal
         className={DOMUtil.classNames('image-preview-modal', modalClassName)}
@@ -106,6 +73,7 @@ const PreviewModal = forwardRef(
         animation="slideUp"
         onVisibleChange={handleVisibleChange}
         ok={false}
+        portal={portal}
       >
         <PreviewMain
           className={mainClassName}

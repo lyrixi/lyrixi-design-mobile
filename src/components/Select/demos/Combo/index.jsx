@@ -181,46 +181,6 @@ export default () => {
         </Card>
 
         <Card>
-          <Divider>onBeforeChange</Divider>
-          <Select.Combo
-            title="Select"
-            style={{ margin: '0 12px' }}
-            placeholder="onBeforeChange"
-            allowClear
-            multiple={false}
-            value={value}
-            list={list}
-            onChange={setValue}
-            onBeforeChange={(newValue) => {
-              console.log('onBeforeChange', newValue)
-              return new Promise((resolve) => {
-                Message.open({
-                  title: '你确定要修改吗？',
-                  content: `你确定要修改吗`,
-                  buttons: [
-                    {
-                      name: '取消',
-                      onClick: () => {
-                        resolve(false)
-                        return true
-                      }
-                    },
-                    {
-                      name: '确定',
-                      className: 'primary',
-                      onClick: () => {
-                        resolve(true)
-                        return true
-                      }
-                    }
-                  ]
-                })
-              })
-            }}
-          />
-        </Card>
-
-        <Card>
           <Divider>List count more than 15, show Search</Divider>
           <Select.Combo
             title="Select"

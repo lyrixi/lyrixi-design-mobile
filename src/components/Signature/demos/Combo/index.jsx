@@ -57,14 +57,6 @@ export default () => {
             // Video or image
             return 'browser'
           }}
-          onBeforeChange={(newVal) => {
-            if (!newVal) {
-              Toast.show({
-                content: '签名不能为空'
-              })
-              return false
-            }
-          }}
         />
       </Page.Main>
     </Page>

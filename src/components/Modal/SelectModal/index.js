@@ -40,7 +40,6 @@ const Modal = forwardRef(
 
       // Modal current properties
       changeClosable,
-      onBeforeChange,
       onBeforeChecked,
 
       // Main Render
@@ -104,17 +103,6 @@ const Modal = forwardRef(
       // 更新选中的值
       if (mainRef?.current?.getValue) {
         currentValue = mainRef.current.getValue()
-      }
-
-      // 修改前校验
-      if (typeof onBeforeChange === 'function') {
-        let goOn = await onBeforeChange(currentValue, currentArgumentsRef.current)
-        if (goOn === false) return
-
-        // 修改值
-        if (typeof goOn === 'object') {
-          currentValue = goOn
-        }
       }
 
       if (onChange) {

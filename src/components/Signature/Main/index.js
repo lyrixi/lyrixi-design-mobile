@@ -12,7 +12,6 @@ import { LocaleUtil } from 'lyrixi-design-mobile'
 // 手写签名
 const Main = (
   {
-    onBeforeChange,
     onChange,
     onCancel,
     // 绘画配置
@@ -58,13 +57,7 @@ const Main = (
           className="signature-main-button signature-main-button-ok"
           onClick={async () => {
             let base64 = await signatureRef?.current?.getBase64?.()
-            if (onBeforeChange) {
-              let goOn = await onBeforeChange(base64)
-              if (goOn === false) {
-                return
-              }
-            }
-            onChange?.(base64)
+            onChange && onChange(base64)
           }}
         >
           <p>{LocaleUtil.locale('确认', 'SeedsUI_confirm')}</p>

@@ -39,7 +39,6 @@ const Combo = forwardRef(
 
       // Combo
       value,
-      onBeforeChange,
       onChange,
       allowClear,
       multiple,
@@ -116,22 +115,6 @@ const Combo = forwardRef(
       setVisible(!visible)
     }
 
-    // 文本框修改值
-    async function handleChange(newValue) {
-      // 修改前校验
-      if (typeof onBeforeChange === 'function') {
-        let goOn = await onBeforeChange(newValue)
-        if (goOn === false) return
-
-        // 修改值
-        if (typeof goOn === 'object') {
-          // eslint-disable-next-line
-          newValue = goOn
-        }
-      }
-      onChange && onChange(newValue)
-    }
-
     // 渲染清空按钮
     function clearRender(clearParams) {
       // 只读不显示清空按钮
@@ -168,7 +151,7 @@ const Combo = forwardRef(
           value,
           allowClear,
           multiple,
-          onChange: handleChange
+          onChange: onChange
         })
       }
 
@@ -188,7 +171,7 @@ const Combo = forwardRef(
             value={value}
             onAdd={() => setVisible(true)}
             onEdit={() => setVisible(true)}
-            onChange={handleChange}
+            onChange={onChange}
           />
         )
       }
@@ -206,23 +189,8 @@ const Combo = forwardRef(
           style={comboStyle}
           clear={clearRender}
           onClick={handleInputClick}
-          onChange={async (text) => {
-            // 清空操作
-            if (!text) {
-              let currentValue = null
-              // 修改前校验
-              if (typeof onBeforeChange === 'function') {
-                let goOn = await onBeforeChange(currentValue)
-                if (goOn === false) return
-
-                // 修改值
-                if (typeof goOn === 'object') {
-                  currentValue = goOn
-                }
-              }
-              onChange && onChange(null)
-            }
-          }}
+          // 强制只读的控件, 只会清空时触发
+          onChange={onChange}
           ref={comboRef}
         />
       )
@@ -244,7 +212,7 @@ const Combo = forwardRef(
             value: value,
             allowClear,
             multiple,
-            onChange: handleChange,
+            onChange: onChange,
             onVisibleChange: setVisible,
             visible: visible
           })}

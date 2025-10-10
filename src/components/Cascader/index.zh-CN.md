@@ -39,7 +39,6 @@ toc: content
 | value          | 当前值       | `array`                     | -      |
 | allowClear     | 是否允许清除 | `boolean`                   | -      |
 | onChange       | 变化回调     | `(value: array) => void`    | -      |
-| onBeforeChange | 变化前回调   | `(value: array) => boolean` | -      |
 | onReLoad       | 重新加载回调 | `() => void`                | -      |
 | list           | 数据列表     | `array`                     | -      |
 | loadData       | 加载数据函数 | `function`                  | -      |

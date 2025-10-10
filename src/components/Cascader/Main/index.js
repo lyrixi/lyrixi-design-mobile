@@ -35,7 +35,6 @@ const Main = forwardRef(
       value,
       allowClear,
       onChange,
-      // onBeforeChange,
       onReLoad,
 
       list: externalList,
@@ -293,15 +292,6 @@ const Main = forwardRef(
         }
         newValue = [{ ...item }]
       }
-
-      // 选中项, 允许修改值Array | 继续true | 停止false
-      // if (typeof onBeforeChange === 'function') {
-      //   let isOk = await onBeforeChange(newValue, { list: externalList })
-      //   if (Array.isArray(isOk)) {
-      //     newValue = isOk
-      //   }
-      //   if (isOk === false) return
-      // }
 
       // 触发tab与列表更新(由上层value变更驱动); 若值未变化, 强制刷新子级
       update(newValue, { action: 'clickItem', list: externalList })

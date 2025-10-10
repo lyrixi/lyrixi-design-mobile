@@ -83,7 +83,16 @@ const RangeCombo = forwardRef(
         // Modal
         value={formatValue(value)}
         onChange={handleChange}
-        modalRender={({ modalRef, getComboDOM, value, allowClear, multiple, onChange, visible, onVisibleChange }) => {
+        modalRender={({
+          modalRef,
+          getComboDOM,
+          value,
+          allowClear,
+          multiple,
+          onChange,
+          visible,
+          onVisibleChange
+        }) => {
           return (
             <RangeModal
               ref={modalRef}
@@ -106,9 +115,6 @@ const RangeCombo = forwardRef(
               type={type}
               diff={diff}
               onError={onError}
-              onRangeIdChange={(newRangeId) => {
-                rangeIdRef.current = newRangeId
-              }}
               min={min}
               max={max}
               hourStep={hourStep}

@@ -17,7 +17,6 @@ const Modal = forwardRef(
       portal,
       visible,
       value,
-      onBeforeChange,
       onChange,
       onVisibleChange,
 
@@ -53,7 +52,6 @@ const Modal = forwardRef(
           <Main
             {...(mainProps || {})}
             value={value}
-            onBeforeChange={onBeforeChange}
             onChange={onChange}
             onCancel={() => {
               onVisibleChange && onVisibleChange(false)

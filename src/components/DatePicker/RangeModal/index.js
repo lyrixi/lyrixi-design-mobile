@@ -23,8 +23,6 @@ const RangeModal = forwardRef(
       defaultPickerValue,
       onError,
       onChange,
-      onBeforeChange,
-      onRangeIdChange,
       onVisibleChange,
 
       // Main
@@ -86,15 +84,7 @@ const RangeModal = forwardRef(
             />
           )
         }}
-        onChange={(newValue, newArguments) => {
-          let currentValue = updateRangeValue(newValue, type)
-
-          setCurrentRangeId(newArguments?.rangeId || null)
-          onRangeIdChange && onRangeIdChange(newArguments?.rangeId || null)
-
-          onChange && onChange(currentValue, { rangeId: newArguments?.rangeId || null })
-        }}
-        onBeforeChange={async (newValue, newArguments) => {
+        onChange={async (newValue, newArguments) => {
           // 校验
           let currentValue = updateRangeValue(newValue, type)
 
@@ -108,19 +98,13 @@ const RangeModal = forwardRef(
 
           if (currentValue === false) return false
 
-          // 修改提示
-          if (typeof onBeforeChange === 'function') {
-            let goOn = await onBeforeChange(currentValue, {
-              rangeId: newArguments?.rangeId,
-              ranges: ranges
-            })
-            // 只有合法值才需要处理, 其它值概不处理
-            if (goOn === false || typeof goOn === 'object') {
-              return goOn
-            }
+          // 触发 onChange
+          if (onChange) {
+            let goOn = await onChange(currentValue, { rangeId: newArguments?.rangeId || null })
+            return goOn
           }
 
-          return currentValue
+          setCurrentRangeId(newArguments?.rangeId || null)
         }}
         onVisibleChange={onVisibleChange}
         value={formatValue(value || defaultPickerValue)}

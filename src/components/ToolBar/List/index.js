@@ -27,17 +27,15 @@ function ToolBarList({
   arrowRender,
   value,
   list,
-  onBeforeChange,
   onChange
 }) {
   const dropdownRef = useRef(null)
   // 修改
   async function handleChange(newValue) {
-    if (typeof onBeforeChange === 'function') {
-      let goOn = await onBeforeChange(newValue)
-      if (!goOn) return
+    if (onChange) {
+      let goOn = await onChange(newValue)
+      if (goOn === false) return
     }
-    if (onChange) onChange(newValue)
 
     // 关闭下拉
     dropdownRef.current?.close?.()

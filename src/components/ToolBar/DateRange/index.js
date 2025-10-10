@@ -41,7 +41,6 @@ function DateRangeBar({
   ranges,
   value: externalValue,
   allowClear,
-  onBeforeChange,
   onChange
   // Combo
 }) {
@@ -96,12 +95,10 @@ function DateRangeBar({
   }
 
   async function handleOk() {
-    if (typeof onBeforeChange === 'function') {
-      let goOn = await onBeforeChange(value, { rangeId })
-      if (!goOn) return
+    if (onChange) {
+      let goOn = await onChange(value, { rangeId })
+      if (goOn === false) return
     }
-
-    if (onChange) onChange(value, { rangeId })
     dropdownRef.current?.close?.()
   }
 

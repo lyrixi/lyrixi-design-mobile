@@ -22,7 +22,6 @@ const Modal = forwardRef(
       getComboDOM,
       value,
       list,
-      onBeforeChange,
       onBeforeChecked,
       onChange,
 
@@ -70,18 +69,11 @@ const Modal = forwardRef(
         }
       }
 
-      // 修改提示
-      if (typeof onBeforeChange === 'function') {
-        let goOn = await onBeforeChange(currentValue)
-        if (goOn === false) return
-
-        // 修改值
-        if (typeof goOn === 'object') {
-          currentValue = goOn
-        }
-      }
       // 触发onChange事件
-      if (onChange) onChange(currentValue)
+      if (onChange) {
+        let goOn = await onChange(currentValue)
+        if (goOn === false) return
+      }
       if (onVisibleChange) onVisibleChange(false)
     }
 

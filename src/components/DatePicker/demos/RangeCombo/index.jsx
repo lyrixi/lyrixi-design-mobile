@@ -173,43 +173,6 @@ export default () => {
         </Card>
 
         <Card>
-          <Divider>onBeforeChange</Divider>
-          <DatePicker.RangeCombo
-            style={{ margin: '0 12px' }}
-            placeholder="onBeforeChange"
-            value={value}
-            onBeforeChange={(newValue) => {
-              console.log('onBeforeChange', newValue)
-              return new Promise((resolve) => {
-                Message.open({
-                  title: 'Warning',
-                  content: `Are you sure?`,
-                  buttons: [
-                    {
-                      name: 'Cancel',
-                      onClick: () => {
-                        resolve(false)
-                        return true
-                      }
-                    },
-                    {
-                      name: 'OK',
-                      className: 'primary',
-                      onClick: () => {
-                        resolve(true)
-                        return true
-                      }
-                    }
-                  ]
-                })
-              })
-            }}
-            onChange={setValue}
-            allowClear
-          />
-        </Card>
-
-        <Card>
           <Divider>Step</Divider>
           <DatePicker.RangeCombo
             style={{ margin: '0 12px' }}

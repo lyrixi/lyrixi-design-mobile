@@ -14,7 +14,6 @@ import { LocaleUtil } from 'lyrixi-design-mobile'
 const Combo = (
   {
     value,
-    onBeforeChange,
     onChange,
     modalClassName,
     modalStyle,
@@ -51,9 +50,13 @@ const Combo = (
   }
 
   // 修改签名
-  function handleChange(base64) {
+  async function handleChange(base64) {
+    // 触发 onChange
+    if (onChange) {
+      let goOn = await onChange(base64)
+      return goOn
+    }
     setVisible(false)
-    onChange?.(base64)
   }
 
   // 未签显示签名
@@ -75,7 +78,6 @@ const Combo = (
         ref={modalRef}
         visible={visible}
         value={value}
-        onBeforeChange={onBeforeChange}
         onChange={handleChange}
         onVisibleChange={(newVisible) => {
           setVisible(newVisible)

@@ -7,7 +7,6 @@ const Combo = (
   {
     value,
     allowClear = true,
-    onBeforeChange,
     onChange,
     onPreview,
     modalClassName,
@@ -36,7 +35,6 @@ const Combo = (
     <Add
       ref={ref}
       value={value}
-      onBeforeChange={onBeforeChange}
       onChange={onChange}
       modalClassName={modalClassName}
       modalStyle={modalStyle}

@@ -97,7 +97,6 @@ const Combo = forwardRef(
 
     useEffect(() => {
       if (visible === null) return
-      // Removed modalProps.onVisibleChange handling
       typeof onVisibleChange === 'function' && onVisibleChange(visible)
 
       // eslint-disable-next-line

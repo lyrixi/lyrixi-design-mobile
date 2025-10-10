@@ -13,12 +13,10 @@ const Edit = ({ animated, divider, listLength = 8, paragraphLength = 6, ...props
             divider={divider}
             length={paragraphLength}
             animated={animated}
-            titleProps={{
-              style: {
-                width: '75px'
-              }
+            titleStyle={{
+              width: '75px'
             }}
-            oddProps={{ style: { width: '106px', marginTop: '16px' } }}
+            oddStyle={{ width: '106px', marginTop: '16px' }}
           />
         ))}
       </Page.Main>

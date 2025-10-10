@@ -52,14 +52,14 @@ toc: content
 
 ### 属性
 
-| 属性               | 说明       | 类型                                                                         | 默认值   |
-| ------------------ | ---------- | ---------------------------------------------------------------------------- | -------- |
-| modalProps         | 模态框属性 | `object`                                                                     | -        |
-| defaultPickerValue | 默认选择值 | `Date`                                                                       | -        |
-| onError            | 错误回调   | `(error: Error) => void`                                                     | -        |
-| value              | 当前值     | `Date`                                                                       | -        |
-| type               | 选择类型   | `'year' \| 'quarter' \| 'month' \| 'date' \| 'time' \| 'datetime' \| 'week'` | `'date'` |
-| min                | 最小日期   | `Date`                                                                       | -        |
-| max                | 最大日期   | `Date`                                                                       | -        |
-| hourStep           | 小时步长   | `number`                                                                     | -        |
-| minuteStep         | 分钟步长   | `number`                                                                     | -        |
+| 属性 | 说明 | 类型 | 默认值 |
+| ---- | ---- | ---- | ------ |
+
+| defaultPickerValue | 默认选择值 | `Date` | - |
+| onError | 错误回调 | `(error: Error) => void` | - |
+| value | 当前值 | `Date` | - |
+| type | 选择类型 | `'year' \| 'quarter' \| 'month' \| 'date' \| 'time' \| 'datetime' \| 'week'` | `'date'` |
+| min | 最小日期 | `Date` | - |
+| max | 最大日期 | `Date` | - |
+| hourStep | 小时步长 | `number` | - |
+| minuteStep | 分钟步长 | `number` | - |

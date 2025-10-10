@@ -10,12 +10,10 @@ const Detail = ({ animated, divider, listLength = 2, paragraphLength = 10, ...pr
       <Page.Main className="overflow-hidden">
         <Paragraph
           divider={divider}
-          titleProps={{
-            style: {
-              width: '100px'
-            }
+          titleStyle={{
+            width: '100px'
           }}
-          avatarProps={{}}
+          avatarClassName=""
         />
         <Tabs />
         {Array.from({ length: listLength }).map((_, index) => (
@@ -24,7 +22,7 @@ const Detail = ({ animated, divider, listLength = 2, paragraphLength = 10, ...pr
             key={index}
             length={paragraphLength}
             animated={animated}
-            oddProps={{ style: { width: '73px' } }}
+            oddStyle={{ width: '73px' }}
           />
         ))}
       </Page.Main>

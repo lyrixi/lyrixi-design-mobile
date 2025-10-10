@@ -27,13 +27,16 @@ const NavBarModal = forwardRef(
       maskClassName,
       maskStyle,
       title,
-      titleProps,
+      titleClassName,
+      titleStyle,
       ok,
       onOk,
-      okProps,
+      okClassName,
+      okStyle,
       cancel,
       onCancel,
-      cancelProps,
+      cancelClassName,
+      cancelStyle,
       maskClosable = true,
 
       // 主体
@@ -98,10 +101,12 @@ const NavBarModal = forwardRef(
           {/* 头 */}
           <NavBar
             title={title}
-            titleProps={titleProps}
+            titleClassName={titleClassName}
+            titleStyle={titleStyle}
             cancel={cancel}
             onCancel={handleCancelClick}
-            cancelProps={cancelProps}
+            cancelClassName={cancelClassName}
+            cancelStyle={cancelStyle}
             ok={ok}
             onOk={
               typeof onOk === 'function'
@@ -110,7 +115,8 @@ const NavBarModal = forwardRef(
                   }
                 : null
             }
-            okProps={okProps}
+            okClassName={okClassName}
+            okStyle={okStyle}
           />
           {/* 主体 */}
           {children}

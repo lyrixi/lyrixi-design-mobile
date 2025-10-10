@@ -23,17 +23,20 @@ const Modal = forwardRef(
 
       // 标题
       title,
-      titleProps,
+      titleClassName,
+      titleStyle,
 
       // 确定按钮
       ok,
       onOk,
-      okProps,
+      okClassName,
+      okStyle,
 
       // 取消按钮
       cancel,
       onCancel,
-      cancelProps,
+      cancelClassName,
+      cancelStyle,
 
       visible,
       onVisibleChange,
@@ -145,14 +148,17 @@ const Modal = forwardRef(
         maskClassName={maskClassName}
         maskStyle={maskStyle}
         title={title || currentTitle}
-        titleProps={titleProps}
+        titleClassName={titleClassName}
+        titleStyle={titleStyle}
         // 单选且不允许清空时, 修改即关闭
         ok={ok === undefined ? multiple !== false : ok}
         onOk={handleOkClick}
-        okProps={okProps}
+        okClassName={okClassName}
+        okStyle={okStyle}
         cancel={cancel}
         onCancel={onCancel}
-        cancelProps={cancelProps}
+        cancelClassName={cancelClassName}
+        cancelStyle={cancelStyle}
         maskClosable={maskClosable}
         {...props}
         portal={portal || document.getElementById('root') || document.body}

@@ -26,14 +26,17 @@ const Combo = forwardRef(
       modalClassName,
       modalStyle,
       title,
-      titleProps,
+      titleClassName,
+      titleStyle,
       ok,
       onOk,
-      okProps,
+      okClassName,
+      okStyle,
       cancel,
       onCancel,
       onVisibleChange,
-      cancelProps,
+      cancelClassName,
+      cancelStyle,
       maskClosable,
       children,
       ...props
@@ -111,13 +114,16 @@ const Combo = forwardRef(
           className={modalClassName}
           style={modalStyle}
           title={title}
-          titleProps={titleProps}
+          titleClassName={titleClassName}
+          titleStyle={titleStyle}
           ok={ok}
           onOk={onOk}
-          okProps={okProps}
+          okClassName={okClassName}
+          okStyle={okStyle}
           cancel={cancel}
           onCancel={onCancel}
-          cancelProps={cancelProps}
+          cancelClassName={cancelClassName}
+          cancelStyle={cancelStyle}
           maskClosable={maskClosable}
           onVisibleChange={setVisible}
           visible={visible}

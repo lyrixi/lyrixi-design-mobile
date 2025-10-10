@@ -95,7 +95,6 @@ const Modal = forwardRef(
 
     // 事件
     async function handleOk(newValue) {
-      debugger
       if (newValue !== undefined) {
         currentValue = newValue
       }

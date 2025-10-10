@@ -208,10 +208,10 @@ const Combo = forwardRef(
             getComboDOM: () => {
               return comboRef.current
             },
-            value: value,
-            allowClear,
-            multiple,
-            onChange: onChange,
+            // value: value,
+            // allowClear,
+            // multiple,
+            // onChange: onChange,
             onVisibleChange: setVisible,
             visible: visible
           })}

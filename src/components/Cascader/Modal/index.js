@@ -21,7 +21,7 @@ const CascaderModal = forwardRef(
 
       list,
       loadData,
-      onSelect,
+      onChange: onChangeProp,
       ...props
     },
     ref
@@ -47,7 +47,7 @@ const CascaderModal = forwardRef(
             />
           )
         }}
-        onSelect={(newValue, { onOk, ...newArguments }) => {
+        onChange={(newValue, { onOk, ...newArguments }) => {
           let lastTab =
             Array.isArray(newValue) && newValue.length ? newValue[newValue.length - 1] : null
           if (lastTab?.isLeaf) {
@@ -55,8 +55,8 @@ const CascaderModal = forwardRef(
             return false
           }
 
-          if (onSelect) {
-            return onSelect(newValue, newArguments)
+          if (onChangeProp) {
+            return onChangeProp(newValue, newArguments)
           }
         }}
         className={`cascader-modal${props.className ? ' ' + props.className : ''}`}

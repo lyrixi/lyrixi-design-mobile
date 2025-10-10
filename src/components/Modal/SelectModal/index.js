@@ -41,9 +41,6 @@ const Modal = forwardRef(
       visible,
       onVisibleChange,
 
-      // Modal current properties
-      onSelect,
-
       // Main Render
       mainRender,
 
@@ -74,7 +71,7 @@ const Modal = forwardRef(
       return {
         modalDOM: modalRef?.current?.modalDOM,
         getModalDOM: () => modalRef?.current?.modalDOM,
-        triggerOk: handleChange,
+        triggerOk: handleOk,
         ...mainRef.current
       }
     })
@@ -97,7 +94,8 @@ const Modal = forwardRef(
     }
 
     // 事件
-    async function handleChange(newValue) {
+    async function handleOk(newValue) {
+      debugger
       if (newValue !== undefined) {
         currentValue = newValue
       }
@@ -107,8 +105,8 @@ const Modal = forwardRef(
         currentValue = mainRef.current.getValue()
       }
 
-      if (onChange) {
-        let goOn = await onChange(currentValue, currentArgumentsRef.current)
+      if (onOk) {
+        let goOn = await onOk(currentValue, currentArgumentsRef.current)
         if (goOn === false) return
       }
 
@@ -117,8 +115,9 @@ const Modal = forwardRef(
     }
 
     function handleOkClick(e) {
-      if (onOk) onOk(e)
-      handleChange(currentValue)
+      e.stopPropagation()
+
+      handleOk(currentValue)
     }
 
     return (
@@ -165,7 +164,7 @@ const Modal = forwardRef(
       >
         {/* 头部 */}
         {typeof headerRender === 'function'
-          ? headerRender({ visible, value: currentValue, triggerOk: handleChange })
+          ? headerRender({ visible, value: currentValue, triggerOk: handleOk })
           : null}
 
         {/* 分割线 */}
@@ -189,16 +188,16 @@ const Modal = forwardRef(
 
                 // 单选: 修改即关闭
                 if (multiple === false) {
-                  handleChange(newValue)
+                  handleOk(newValue)
                   return
                 }
 
                 // 多选: 自定义关闭
-                if (typeof onSelect === 'function') {
-                  let goOn = await onSelect(newValue, {
+                if (typeof onChange === 'function') {
+                  let goOn = await onChange(newValue, {
                     ...newArguments,
                     onOk: () => {
-                      handleChange(newValue, newArguments)
+                      handleOk(newValue, newArguments)
                     }
                   })
                   if (goOn === false) return
@@ -212,7 +211,7 @@ const Modal = forwardRef(
 
         {/* 底部 */}
         {typeof footerRender === 'function'
-          ? footerRender({ visible, value: currentValue, triggerOk: handleChange })
+          ? footerRender({ visible, value: currentValue, triggerOk: handleOk })
           : null}
       </NavBarModal>
     )

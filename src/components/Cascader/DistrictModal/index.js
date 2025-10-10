@@ -34,7 +34,8 @@ const DistrictModal = forwardRef(
       loadCountryRegions,
       loadStreets,
       editableOptions,
-      onSelect,
+      onChange,
+      onOk,
       ...props
     },
     ref
@@ -123,18 +124,15 @@ const DistrictModal = forwardRef(
             />
           )
         }}
-        onSelect={(newValue, { onOk, ...newArguments }) => {
+        onChange={(newValue, { onOk, ...newArguments }) => {
           if (!Array.isArray(newValue) || !newValue.length) return
           const leafIndex = findDistrictLeafIndex(newValue, type)
           if (typeof leafIndex === 'number') {
-            onOk(newValue)
+            onOk()
             return false
           }
-
-          if (onSelect) {
-            return onSelect(newValue, newArguments)
-          }
         }}
+        onOk={onOk}
         ok={ok ? ok : okVisible ? '' : null}
         className={`cascader-modal${props.className ? ' ' + props.className : ''}`}
       />

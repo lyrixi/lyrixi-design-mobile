@@ -22,9 +22,6 @@ const Combo = Modal.SelectCombo
 const DistrictCombo = forwardRef(
   (
     {
-      // Filter useless props to protect the feature
-      multiple,
-
       // Combo
       readOnly,
 
@@ -37,6 +34,8 @@ const DistrictCombo = forwardRef(
       title,
 
       value,
+      allowClear,
+      multiple,
       onChange,
 
       min = '',
@@ -133,6 +132,8 @@ const DistrictCombo = forwardRef(
             : null
         }
         {...props}
+        multiple={multiple}
+        allowClear={allowClear}
         // 只读项与值一致, 并且已经下钻到最末经, 只读
         readOnly={(() => {
           if (!Array.isArray(readOnlyValue) || !Array.isArray(value)) return readOnly
@@ -140,26 +141,19 @@ const DistrictCombo = forwardRef(
           const leafIndex = findDistrictLeafIndex(value, type)
           return typeof leafIndex === 'number' ? true : readOnly
         })()}
-        modalRender={({
-          modalRef,
-          getComboDOM,
-          value,
-          allowClear,
-          multiple,
-          onChange,
-          visible,
-          onVisibleChange
-        }) => {
+        modalRender={({ modalRef, getComboDOM, visible, onVisibleChange }) => {
           return (
             <DistrictModal
+              // 透传属性用于控制显隐, 及暴露modalDOM和getModalDOM
               ref={modalRef}
               getComboDOM={getComboDOM}
+              visible={visible}
+              onVisibleChange={onVisibleChange}
+              // Combo
               value={value}
               allowClear={allowClear}
               multiple={multiple}
-              onChange={onChange}
-              visible={visible}
-              onVisibleChange={onVisibleChange}
+              onOk={onChange}
               // Modal Props
               portal={portal}
               maskClassName={maskClassName}

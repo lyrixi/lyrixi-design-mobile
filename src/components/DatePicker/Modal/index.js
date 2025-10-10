@@ -20,7 +20,7 @@ const Modal = forwardRef(
       value,
       defaultPickerValue,
       onError,
-      onChange,
+      onOk,
 
       // Main
       type = 'date',
@@ -53,7 +53,7 @@ const Modal = forwardRef(
             />
           )
         }}
-        onChange={async (currentValue) => {
+        onOk={async (currentValue) => {
           // 校验
           if ((min || max) && currentValue) {
             let newValue = validateMaxMin(currentValue, {
@@ -69,9 +69,9 @@ const Modal = forwardRef(
             currentValue = newValue
           }
 
-          // 触发 onChange
-          if (onChange) {
-            let goOn = await onChange(currentValue)
+          // 触发 onOk
+          if (onOk) {
+            let goOn = await onOk(currentValue)
             return goOn
           }
         }}

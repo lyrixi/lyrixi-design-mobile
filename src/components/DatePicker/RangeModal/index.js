@@ -22,7 +22,7 @@ const RangeModal = forwardRef(
       value,
       defaultPickerValue,
       onError,
-      onChange,
+      onOk,
       onVisibleChange,
 
       // Main
@@ -84,7 +84,7 @@ const RangeModal = forwardRef(
             />
           )
         }}
-        onChange={async (newValue, newArguments) => {
+        onOk={async (newValue, newArguments) => {
           // 校验
           let currentValue = updateRangeValue(newValue, type)
 
@@ -98,9 +98,9 @@ const RangeModal = forwardRef(
 
           if (currentValue === false) return false
 
-          // 触发 onChange
-          if (onChange) {
-            let goOn = await onChange(currentValue, { rangeId: newArguments?.rangeId || null })
+          // 触发 onOk
+          if (onOk) {
+            let goOn = await onOk(currentValue, { rangeId: newArguments?.rangeId || null })
             return goOn
           }
 

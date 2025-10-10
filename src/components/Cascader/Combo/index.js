@@ -14,8 +14,6 @@ const Combo = Modal.SelectCombo
 const CascaderCombo = forwardRef(
   (
     {
-      // Filter useless props to protect the feature
-      multiple,
       // Modal
       portal,
       maskClassName,
@@ -24,6 +22,11 @@ const CascaderCombo = forwardRef(
       modalStyle,
       title,
       searchVisible,
+
+      value,
+      allowClear,
+      multiple,
+      onChange,
 
       list,
       loadData,
@@ -35,27 +38,24 @@ const CascaderCombo = forwardRef(
       <Combo
         ref={ref}
         {...props}
+        value={value}
+        allowClear={allowClear}
+        multiple={multiple}
+        onChange={onChange}
         // Modal
-        modalRender={({
-          modalRef,
-          getComboDOM,
-          value,
-          allowClear,
-          multiple,
-          onChange,
-          visible,
-          onVisibleChange
-        }) => {
+        modalRender={({ modalRef, getComboDOM, visible, onVisibleChange }) => {
           return (
             <CascaderModal
+              // 透传属性用于控制显隐, 及暴露modalDOM和getModalDOM
               ref={modalRef}
               getComboDOM={getComboDOM}
+              visible={visible}
+              onVisibleChange={onVisibleChange}
+              // Combo
               value={value}
               allowClear={allowClear}
               multiple={multiple}
               onChange={onChange}
-              visible={visible}
-              onVisibleChange={onVisibleChange}
               // Modal Props
               portal={portal}
               maskClassName={maskClassName}

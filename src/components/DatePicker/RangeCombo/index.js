@@ -35,6 +35,9 @@ const RangeCombo = forwardRef(
       onError,
 
       value,
+      allowClear,
+      multiple,
+      onChange,
       type = 'date',
       min,
       max,
@@ -42,7 +45,6 @@ const RangeCombo = forwardRef(
       minuteStep,
       disabledStart,
       disabledEnd,
-      onChange,
 
       rangeId,
       ranges,
@@ -81,27 +83,22 @@ const RangeCombo = forwardRef(
         {...props}
         // Modal
         value={formatValue(value)}
+        allowClear={allowClear}
+        multiple={multiple}
         onChange={handleChange}
-        modalRender={({
-          modalRef,
-          getComboDOM,
-          value,
-          allowClear,
-          multiple,
-          onChange,
-          visible,
-          onVisibleChange
-        }) => {
+        modalRender={({ modalRef, getComboDOM, visible, onVisibleChange }) => {
           return (
             <RangeModal
+              // 透传属性用于控制显隐, 及暴露modalDOM和getModalDOM
               ref={modalRef}
               getComboDOM={getComboDOM}
-              value={value}
-              allowClear={allowClear}
-              multiple={multiple}
-              onChange={onChange}
               visible={visible}
               onVisibleChange={onVisibleChange}
+              // Combo
+              value={formatValue(value)}
+              allowClear={allowClear}
+              multiple={multiple}
+              onOk={handleChange}
               // Modal Props
               portal={portal}
               maskClassName={maskClassName}

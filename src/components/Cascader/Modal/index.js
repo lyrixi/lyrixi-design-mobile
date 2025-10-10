@@ -21,6 +21,7 @@ const CascaderModal = forwardRef(
 
       list,
       loadData,
+      onSelect,
       ...props
     },
     ref
@@ -46,12 +47,16 @@ const CascaderModal = forwardRef(
             />
           )
         }}
-        changeClosable={(newValue, newArguments, { triggerOk }) => {
+        onSelect={(newValue, { onOk, ...newArguments }) => {
           let lastTab =
             Array.isArray(newValue) && newValue.length ? newValue[newValue.length - 1] : null
           if (lastTab?.isLeaf) {
-            triggerOk(newValue)
-            return true
+            onOk()
+            return false
+          }
+
+          if (onSelect) {
+            return onSelect(newValue, newArguments)
           }
         }}
         className={`cascader-modal${props.className ? ' ' + props.className : ''}`}

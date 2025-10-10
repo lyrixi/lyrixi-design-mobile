@@ -25,7 +25,6 @@ const MultipleCombo = forwardRef(
       modalClassName,
       modalStyle,
       title,
-      onBeforeChecked,
 
       defaultPickerValue,
       onError,
@@ -53,7 +52,16 @@ const MultipleCombo = forwardRef(
         {...props}
         value={value}
         // Modal
-        modalRender={({ modalRef, getComboDOM, value, allowClear, multiple, onChange, visible, onVisibleChange }) => {
+        modalRender={({
+          modalRef,
+          getComboDOM,
+          value,
+          allowClear,
+          multiple,
+          onChange,
+          visible,
+          onVisibleChange
+        }) => {
           return (
             <MultipleModal
               ref={modalRef}
@@ -71,7 +79,6 @@ const MultipleCombo = forwardRef(
               className={modalClassName}
               style={modalStyle}
               title={title}
-              onBeforeChecked={onBeforeChecked}
               defaultPickerValue={defaultPickerValue}
               onError={onError}
               type={type}

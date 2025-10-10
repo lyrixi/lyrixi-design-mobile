@@ -23,7 +23,6 @@ const CascaderCombo = forwardRef(
       modalClassName,
       modalStyle,
       title,
-      onBeforeChecked,
       searchVisible,
 
       list,
@@ -37,7 +36,16 @@ const CascaderCombo = forwardRef(
         ref={ref}
         {...props}
         // Modal
-        modalRender={({ modalRef, getComboDOM, value, allowClear, multiple, onChange, visible, onVisibleChange }) => {
+        modalRender={({
+          modalRef,
+          getComboDOM,
+          value,
+          allowClear,
+          multiple,
+          onChange,
+          visible,
+          onVisibleChange
+        }) => {
           return (
             <CascaderModal
               ref={modalRef}
@@ -55,7 +63,6 @@ const CascaderCombo = forwardRef(
               className={modalClassName}
               style={modalStyle}
               title={title}
-              onBeforeChecked={onBeforeChecked}
               list={list}
               loadData={loadData}
               searchVisible={searchVisible}

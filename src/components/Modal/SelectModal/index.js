@@ -39,8 +39,7 @@ const Modal = forwardRef(
       onVisibleChange,
 
       // Modal current properties
-      changeClosable,
-      onBeforeChecked,
+      onSelect,
 
       // Main Render
       mainRender,
@@ -182,30 +181,21 @@ const Modal = forwardRef(
                 // 无标题时更新标题
                 updateTitle()
 
-                // 自定义关闭
-                if (typeof changeClosable === 'function') {
-                  let isClose = await changeClosable(newValue, newArguments, {
-                    triggerOk: handleChange
-                  })
-                  if (isClose === true) return
-                }
-
-                // 修改即关闭; 单选且不允许清空时, 修改即关闭
-                if (changeClosable === true || multiple === false) {
+                // 单选: 修改即关闭
+                if (multiple === false) {
                   handleChange(newValue)
                   return
                 }
 
-                // 修改前校验
-                if (typeof onBeforeChecked === 'function') {
-                  let goOn = await onBeforeChecked(newValue, newArguments)
+                // 多选: 自定义关闭
+                if (typeof onSelect === 'function') {
+                  let goOn = await onSelect(newValue, {
+                    ...newArguments,
+                    onOk: () => {
+                      handleChange(newValue, newArguments)
+                    }
+                  })
                   if (goOn === false) return
-
-                  // 修改值
-                  if (typeof goOn === 'object') {
-                    // eslint-disable-next-line
-                    newValue = goOn
-                  }
                 }
 
                 // 修改值

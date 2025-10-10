@@ -28,7 +28,6 @@ const RangeCombo = forwardRef(
       modalClassName,
       modalStyle,
       title,
-      onBeforeChecked,
 
       // Modal properties
       diff,
@@ -110,7 +109,6 @@ const RangeCombo = forwardRef(
               className={modalClassName}
               style={modalStyle}
               title={title}
-              onBeforeChecked={onBeforeChecked}
               defaultPickerValue={defaultPickerValue}
               type={type}
               diff={diff}

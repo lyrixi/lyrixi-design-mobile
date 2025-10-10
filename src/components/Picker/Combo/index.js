@@ -19,7 +19,6 @@ const PickerCombo = forwardRef(
       modalClassName,
       modalStyle,
       title,
-      onBeforeChecked,
 
       defaultPickerValue,
       list,
@@ -32,7 +31,16 @@ const PickerCombo = forwardRef(
         ref={ref}
         {...props}
         // Modal
-        modalRender={({ modalRef, getComboDOM, value, allowClear, multiple, onChange, visible, onVisibleChange }) => {
+        modalRender={({
+          modalRef,
+          getComboDOM,
+          value,
+          allowClear,
+          multiple,
+          onChange,
+          visible,
+          onVisibleChange
+        }) => {
           return (
             <Modal
               ref={modalRef}
@@ -50,7 +58,6 @@ const PickerCombo = forwardRef(
               className={modalClassName}
               style={modalStyle}
               title={title}
-              onBeforeChecked={onBeforeChecked}
               list={list}
               defaultPickerValue={defaultPickerValue}
             />

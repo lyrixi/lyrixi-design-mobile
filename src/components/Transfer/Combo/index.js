@@ -21,7 +21,6 @@ const TransferCombo = forwardRef(
       modalClassName,
       modalStyle,
       title,
-      onBeforeChecked,
 
       list,
       ...props
@@ -33,7 +32,16 @@ const TransferCombo = forwardRef(
         ref={ref}
         {...props}
         // Modal
-        modalRender={({ modalRef, getComboDOM, value, allowClear, multiple, onChange, visible, onVisibleChange }) => {
+        modalRender={({
+          modalRef,
+          getComboDOM,
+          value,
+          allowClear,
+          multiple,
+          onChange,
+          visible,
+          onVisibleChange
+        }) => {
           return (
             <Modal
               ref={modalRef}
@@ -51,7 +59,6 @@ const TransferCombo = forwardRef(
               className={modalClassName}
               style={modalStyle}
               title={title}
-              onBeforeChecked={onBeforeChecked}
               list={list}
             />
           )

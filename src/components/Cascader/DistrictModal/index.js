@@ -34,6 +34,7 @@ const DistrictModal = forwardRef(
       loadCountryRegions,
       loadStreets,
       editableOptions,
+      onSelect,
       ...props
     },
     ref
@@ -122,12 +123,16 @@ const DistrictModal = forwardRef(
             />
           )
         }}
-        changeClosable={(newValue, newArguments, { triggerOk }) => {
+        onSelect={(newValue, { onOk, ...newArguments }) => {
           if (!Array.isArray(newValue) || !newValue.length) return
           const leafIndex = findDistrictLeafIndex(newValue, type)
           if (typeof leafIndex === 'number') {
-            triggerOk(newValue)
-            return true
+            onOk(newValue)
+            return false
+          }
+
+          if (onSelect) {
+            return onSelect(newValue, newArguments)
           }
         }}
         ok={ok ? ok : okVisible ? '' : null}

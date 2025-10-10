@@ -19,7 +19,6 @@ const ActionSheetCombo = (
     maskStyle,
     modalClassName,
     modalStyle,
-    onBeforeChecked,
 
     title,
     list,
@@ -59,7 +58,6 @@ const ActionSheetCombo = (
             className={modalClassName}
             style={modalStyle}
             title={title}
-            onBeforeChecked={onBeforeChecked}
             list={list}
           />
         )

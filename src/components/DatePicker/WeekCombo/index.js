@@ -23,7 +23,6 @@ const WeekCombo = forwardRef(
       modalClassName,
       modalStyle,
       title,
-      onBeforeChecked,
 
       defaultPickerValue,
       onError,
@@ -45,7 +44,16 @@ const WeekCombo = forwardRef(
         {...props}
         value={value}
         // Modal
-        modalRender={({ modalRef, getComboDOM, value, allowClear, multiple, onChange, visible, onVisibleChange }) => {
+        modalRender={({
+          modalRef,
+          getComboDOM,
+          value,
+          allowClear,
+          multiple,
+          onChange,
+          visible,
+          onVisibleChange
+        }) => {
           return (
             <WeekModal
               ref={modalRef}
@@ -63,7 +71,6 @@ const WeekCombo = forwardRef(
               className={modalClassName}
               style={modalStyle}
               title={title}
-              onBeforeChecked={onBeforeChecked}
               defaultPickerValue={defaultPickerValue}
               onError={onError}
               type={type}

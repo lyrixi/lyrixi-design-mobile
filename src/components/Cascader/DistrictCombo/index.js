@@ -35,7 +35,6 @@ const DistrictCombo = forwardRef(
       modalClassName,
       modalStyle,
       title,
-      onBeforeChecked,
 
       value,
       onChange,
@@ -141,7 +140,16 @@ const DistrictCombo = forwardRef(
           const leafIndex = findDistrictLeafIndex(value, type)
           return typeof leafIndex === 'number' ? true : readOnly
         })()}
-        modalRender={({ modalRef, getComboDOM, value, allowClear, multiple, onChange, visible, onVisibleChange }) => {
+        modalRender={({
+          modalRef,
+          getComboDOM,
+          value,
+          allowClear,
+          multiple,
+          onChange,
+          visible,
+          onVisibleChange
+        }) => {
           return (
             <DistrictModal
               ref={modalRef}
@@ -159,7 +167,6 @@ const DistrictCombo = forwardRef(
               className={modalClassName}
               style={modalStyle}
               title={title}
-              onBeforeChecked={onBeforeChecked}
               startType={startType}
               type={type}
               min={min}

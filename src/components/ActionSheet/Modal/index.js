@@ -22,7 +22,6 @@ const Modal = forwardRef(
       getComboDOM,
       value,
       list,
-      onBeforeChecked,
       onChange,
 
       visible = false,

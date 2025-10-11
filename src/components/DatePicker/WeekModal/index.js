@@ -33,11 +33,11 @@ const WeekModal = forwardRef(
       <SelectModal
         ref={ref}
         {...props}
-        mainRender={({ mainRef, visible, value, allowClear, multiple, onChange }) => {
+        mainRender={({ mainRef, open, value, allowClear, multiple, onChange }) => {
           return (
             <WeekMain
               ref={mainRef}
-              visible={visible}
+              visible={open}
               value={value}
               allowClear={allowClear}
               multiple={multiple}

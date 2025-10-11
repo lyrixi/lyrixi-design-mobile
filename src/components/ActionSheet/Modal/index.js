@@ -22,11 +22,11 @@ const Modal = forwardRef(
       getComboDOM,
       value,
       list,
-      onChange,
+      onOk,
 
-      visible = false,
+      open = false,
       maskClosable = true,
-      onVisibleChange,
+      onClose,
 
       // 定制属性
       title,
@@ -68,19 +68,19 @@ const Modal = forwardRef(
         }
       }
 
-      // 触发onChange事件
-      if (onChange) {
-        let goOn = await onChange(currentValue)
+      // 触发onOk事件
+      if (onOk) {
+        let goOn = await onOk(currentValue)
         if (goOn === false) return
       }
-      if (onVisibleChange) onVisibleChange(false)
+      if (onClose) onClose()
     }
 
     // 点击遮罩
     async function handleClickMask(e) {
       e.stopPropagation()
 
-      if (maskClosable && onVisibleChange) onVisibleChange(false)
+      if (maskClosable && onClose) onClose()
     }
 
     // 获取取消按钮节点
@@ -93,7 +93,7 @@ const Modal = forwardRef(
         <div
           className={`actionsheet-cancel`}
           onClick={() => {
-            if (onVisibleChange) onVisibleChange(false)
+            if (onClose) onClose()
           }}
         >
           {LocaleUtil.locale('取消', 'SeedsUI_cancel')}
@@ -106,7 +106,7 @@ const Modal = forwardRef(
         className={DOMUtil.classNames(
           'mask actionsheet-mask',
           maskClassName,
-          visible ? ' active' : ''
+          open ? ' active' : ''
         )}
         onClick={handleClickMask}
         ref={rootRef}
@@ -118,7 +118,7 @@ const Modal = forwardRef(
           className={DOMUtil.classNames(
             'modal-animation actionsheet-modal',
             props?.className,
-            visible ? ' active' : ''
+            open ? ' active' : ''
           )}
         >
           {title && (

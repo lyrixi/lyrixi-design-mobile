@@ -20,6 +20,11 @@ const ActionSheetCombo = (
     modalClassName,
     modalStyle,
 
+    value,
+    allowClear,
+    multiple,
+    onChange,
+
     title,
     list,
     ...props
@@ -31,26 +36,19 @@ const ActionSheetCombo = (
       ref={ref}
       {...props}
       // Modal
-      modalRender={({
-        modalRef,
-        getComboDOM,
-        value,
-        allowClear,
-        multiple,
-        onChange,
-        visible,
-        onVisibleChange
-      }) => {
+      modalRender={({ modalRef, getComboDOM, open, onClose }) => {
         return (
           <Modal
+            // 透传属性用于控制显隐, 及暴露modalDOM和getModalDOM
             ref={modalRef}
             getComboDOM={getComboDOM}
+            open={open}
+            onClose={onClose}
+            // Value
             value={value}
             allowClear={allowClear}
             multiple={multiple}
-            onChange={onChange}
-            visible={visible}
-            onVisibleChange={onVisibleChange}
+            onOk={onChange}
             // Modal Props
             portal={portal}
             maskClassName={maskClassName}

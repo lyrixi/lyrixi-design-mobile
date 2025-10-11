@@ -18,8 +18,9 @@ const NavBarModal = forwardRef(
       safeArea,
 
       // Modal fixed properties
-      visible,
-      onVisibleChange,
+      open,
+      onClose,
+      onOpen,
 
       // Modal: display properties
       portal,
@@ -55,22 +56,22 @@ const NavBarModal = forwardRef(
     })
 
     useEffect(() => {
-      if (visible) {
-        if (onVisibleChange) onVisibleChange(visible)
+      if (open) {
+        if (onOpen) onOpen(open)
       }
       // eslint-disable-next-line
-    }, [visible])
+    }, [open])
 
     // 事件
     function handleCancelClick(e) {
       onCancel && onCancel(e)
-      onVisibleChange && onVisibleChange(false)
+      onClose && onClose()
     }
     function handleMaskClick(e) {
       e.stopPropagation()
       if (!e.target.classList.contains('mask')) return
       if (maskClosable) {
-        onVisibleChange && onVisibleChange(false)
+        onClose && onClose()
       }
     }
 
@@ -79,7 +80,7 @@ const NavBarModal = forwardRef(
         className={DOMUtil.classNames(
           'mask modal-navbarmodal-mask',
           maskClassName,
-          visible ? 'active' : ''
+          open ? 'active' : ''
         )}
         style={maskStyle}
         onClick={handleMaskClick}
@@ -95,7 +96,7 @@ const NavBarModal = forwardRef(
             'modal-animation',
             'modal-navbarmodal',
             props.className,
-            visible ? ' active' : ''
+            open ? ' active' : ''
           )}
         >
           {/* 头 */}
@@ -111,7 +112,7 @@ const NavBarModal = forwardRef(
             onOk={
               typeof onOk === 'function'
                 ? () => {
-                    onOk({ close: () => onVisibleChange && onVisibleChange(false) })
+                    onOk({ close: () => onClose && onClose() })
                   }
                 : null
             }

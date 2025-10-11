@@ -52,14 +52,14 @@ const DatePickerCombo = forwardRef(
         multiple={multiple}
         onChange={onChange}
         // Modal
-        modalRender={({ modalRef, getComboDOM, visible, onVisibleChange }) => {
+        modalRender={({ modalRef, getComboDOM, open, onClose }) => {
           return (
             <Modal
               // 透传属性用于控制显隐, 及暴露modalDOM和getModalDOM
               ref={modalRef}
               getComboDOM={getComboDOM}
-              visible={visible}
-              onVisibleChange={onVisibleChange}
+              open={open}
+              onClose={onClose}
               // Combo
               value={value}
               allowClear={allowClear}

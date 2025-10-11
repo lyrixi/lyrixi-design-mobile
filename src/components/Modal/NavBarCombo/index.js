@@ -34,7 +34,8 @@ const Combo = forwardRef(
       okStyle,
       cancel,
       onCancel,
-      onVisibleChange,
+      onClose,
+      onOpen,
       cancelClassName,
       cancelStyle,
       maskClosable,
@@ -44,7 +45,7 @@ const Combo = forwardRef(
     ref
   ) => {
     const comboRef = useRef(null)
-    const [visible, setVisible] = useState(false)
+    const [open, setOpen] = useState(false)
 
     // Expose
     useImperativeHandle(ref, () => {
@@ -52,35 +53,34 @@ const Combo = forwardRef(
         comboDOM: comboRef.current,
         getComboDOM: () => comboRef.current,
         close: () => {
-          setVisible(false)
+          setOpen(false)
         },
         open: () => {
-          setVisible(true)
+          setOpen(true)
         }
       }
     })
 
     useEffect(() => {
-      if (visible === null) return
-      typeof onVisibleChange === 'function' && onVisibleChange(visible)
-
+      if (typeof open !== 'boolean') return
+      if (open) {
+        onOpen()
+      } else {
+        onClose()
+      }
       // eslint-disable-next-line
-    }, [visible])
+    }, [open])
 
     // 获取Combo节点
     function getComboNode() {
       if (typeof comboRender === 'function') {
         return comboRender({
           comboRef,
-          visible,
+          open,
           style: comboStyle,
-          className: DOMUtil.classNames(
-            'modal-navbar-combo',
-            visible ? 'expand' : '',
-            comboClassName
-          ),
+          className: DOMUtil.classNames('modal-navbar-combo', open ? 'expand' : '', comboClassName),
           onClick: () => {
-            setVisible(true)
+            setOpen(true)
           }
         })
       }
@@ -90,7 +90,7 @@ const Combo = forwardRef(
           className={DOMUtil.classNames('modal-navbar-combo', comboClassName)}
           style={comboStyle}
           onClick={() => {
-            setVisible(true)
+            setOpen(true)
           }}
           ref={comboRef}
         >
@@ -125,8 +125,8 @@ const Combo = forwardRef(
           cancelClassName={cancelClassName}
           cancelStyle={cancelStyle}
           maskClosable={maskClosable}
-          onVisibleChange={setVisible}
-          visible={visible}
+          onClose={setOpen}
+          open={open}
         >
           {children}
         </NavBarModal>

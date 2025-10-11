@@ -14,14 +14,15 @@ const SelectModal = Modal.SelectModal
 const CascaderModal = forwardRef(
   (
     {
-      visible,
+      open,
       // Filter useless props to protect the feature
       searchVisible,
       multiple,
 
       list,
       loadData,
-      onChange: onChangeProp,
+      onChange,
+      onOk,
       ...props
     },
     ref
@@ -30,13 +31,13 @@ const CascaderModal = forwardRef(
       <SelectModal
         ref={ref}
         ok={null}
-        visible={visible}
+        open={open}
         {...props}
-        mainRender={({ mainRef, visible, value, allowClear, multiple, onChange }) => {
+        mainRender={({ mainRef, open, value, allowClear, multiple, onChange }) => {
           return (
             <Main
               ref={mainRef}
-              visible={visible}
+              visible={open}
               value={value}
               allowClear={allowClear}
               multiple={multiple}
@@ -47,18 +48,19 @@ const CascaderModal = forwardRef(
             />
           )
         }}
-        onChange={(newValue, { onOk, ...newArguments }) => {
+        onChange={(newValue, { ok, ...newArguments }) => {
           let lastTab =
             Array.isArray(newValue) && newValue.length ? newValue[newValue.length - 1] : null
           if (lastTab?.isLeaf) {
-            onOk()
+            ok()
             return false
           }
 
-          if (onChangeProp) {
-            return onChangeProp(newValue, newArguments)
+          if (onChange) {
+            return onChange(newValue, newArguments)
           }
         }}
+        onOk={onOk}
         className={`cascader-modal${props.className ? ' ' + props.className : ''}`}
       />
     )

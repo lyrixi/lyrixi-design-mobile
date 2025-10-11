@@ -141,14 +141,14 @@ const DistrictCombo = forwardRef(
           const leafIndex = findDistrictLeafIndex(value, type)
           return typeof leafIndex === 'number' ? true : readOnly
         })()}
-        modalRender={({ modalRef, getComboDOM, visible, onVisibleChange }) => {
+        modalRender={({ modalRef, getComboDOM, open, onClose }) => {
           return (
             <DistrictModal
               // 透传属性用于控制显隐, 及暴露modalDOM和getModalDOM
               ref={modalRef}
               getComboDOM={getComboDOM}
-              visible={visible}
-              onVisibleChange={onVisibleChange}
+              open={open}
+              onClose={onClose}
               // Combo
               value={value}
               allowClear={allowClear}

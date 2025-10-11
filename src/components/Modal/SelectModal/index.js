@@ -1,4 +1,4 @@
-import React, { forwardRef, useState, useRef, useImperativeHandle } from 'react'
+import React, { useEffect, forwardRef, useState, useRef, useImperativeHandle } from 'react'
 import NavBarModal from './../NavBarModal'
 
 // Modal
@@ -38,8 +38,9 @@ const Modal = forwardRef(
       cancelClassName,
       cancelStyle,
 
-      visible,
-      onVisibleChange,
+      open,
+      onClose,
+      onOpen,
 
       // Main Render
       mainRender,
@@ -61,8 +62,8 @@ const Modal = forwardRef(
     const currentArgumentsRef = useRef(null)
     let [currentValue, setCurrentValue] = useState(undefined)
 
-    // 主体的visible, 若不加此变量, 主体(子节点)会先执行visible, 导致里面拿到的value是上次的
-    let [currentVisible, setCurrentVisible] = useState(false)
+    // 主体的open, 若不加此变量, 主体(子节点)会先执行open, 导致里面拿到的value是上次的
+    let [currentOpen, setCurrentOpen] = useState(undefined)
 
     // 节点
     const modalRef = useRef(null)
@@ -71,16 +72,21 @@ const Modal = forwardRef(
       return {
         modalDOM: modalRef?.current?.modalDOM,
         getModalDOM: () => modalRef?.current?.modalDOM,
-        triggerOk: handleOk,
+        ok: handleOk,
         ...mainRef.current
       }
     })
 
-    // 不能加此更新, 因为Cascader组件会改原对象, 加isLeaf, 导致每次改动都会触发
-    // useEffect(() => {
-    //   setCurrentValue(value)
-    //   // eslint-disable-next-line
-    // }, [JSON.stringify(value)])
+    // 必须等NavBarModal组件更新完成后触发
+    useEffect(() => {
+      if (typeof currentOpen !== 'boolean') return
+      if (currentOpen) {
+        onOpen && onOpen()
+      } else {
+        onClose && onClose()
+      }
+      // eslint-disable-next-line
+    }, [currentOpen])
 
     // 没有传入标题时, 需要动态更新标题（如果日期）
     function updateTitle() {
@@ -109,8 +115,8 @@ const Modal = forwardRef(
         if (goOn === false) return
       }
 
-      onVisibleChange && onVisibleChange(false)
-      setCurrentVisible(false)
+      // 点击确定按钮时触发 onClose
+      setCurrentOpen(false)
     }
 
     function handleOkClick(e) {
@@ -123,23 +129,22 @@ const Modal = forwardRef(
       <NavBarModal
         ref={modalRef}
         // Modal fixed properties
-        visible={visible}
-        onVisibleChange={(visible) => {
-          // 显示弹窗，更新标题和显示值
-          if (visible) {
-            updateTitle()
-            try {
-              if (JSON.stringify(value) !== JSON.stringify(currentValue)) {
-                setCurrentValue(value)
-              }
-            } catch (error) {
-              console.log('SeedsUI SelectModal: ', error)
+        open={open}
+        onClose={() => {
+          // 点击行为时才触发 onClose
+          setCurrentOpen(false)
+        }}
+        onOpen={() => {
+          updateTitle()
+          try {
+            if (JSON.stringify(value) !== JSON.stringify(currentValue)) {
               setCurrentValue(value)
             }
+          } catch (error) {
+            console.log('SeedsUI SelectModal: ', error)
+            setCurrentValue(value)
           }
-
-          onVisibleChange && onVisibleChange(visible)
-          setCurrentVisible(visible)
+          setCurrentOpen(true)
         }}
         // Modal: display properties
         animation={animation}
@@ -163,7 +168,7 @@ const Modal = forwardRef(
       >
         {/* 头部 */}
         {typeof headerRender === 'function'
-          ? headerRender({ visible, value: currentValue, triggerOk: handleOk })
+          ? headerRender({ open, value: currentValue, ok: handleOk })
           : null}
 
         {/* 分割线 */}
@@ -175,7 +180,7 @@ const Modal = forwardRef(
         {!children && typeof mainRender === 'function'
           ? mainRender({
               mainRef,
-              visible: currentVisible,
+              open: currentOpen,
               value: currentValue,
               allowClear,
               multiple,
@@ -195,7 +200,7 @@ const Modal = forwardRef(
                 if (typeof onChange === 'function') {
                   let goOn = await onChange(newValue, {
                     ...newArguments,
-                    onOk: () => {
+                    ok: () => {
                       handleOk(newValue, newArguments)
                     }
                   })
@@ -210,7 +215,7 @@ const Modal = forwardRef(
 
         {/* 底部 */}
         {typeof footerRender === 'function'
-          ? footerRender({ visible, value: currentValue, triggerOk: handleOk })
+          ? footerRender({ open, value: currentValue, ok: handleOk })
           : null}
       </NavBarModal>
     )

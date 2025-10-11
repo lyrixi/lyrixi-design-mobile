@@ -35,7 +35,6 @@ const Modal = forwardRef(
     },
     ref
   ) => {
-
     const modalRef = useRef(null)
     useImperativeHandle(ref, () => {
       return {
@@ -105,9 +104,7 @@ const Modal = forwardRef(
       <div
         data-animation={animation}
         style={maskStyle}
-        className={`mask modal-mask${
-          maskClassName ? ' ' + maskClassName : ''
-        }${getActiveClass()}`}
+        className={DOMUtil.classNames('mask modal-mask', maskClassName, getActiveClass())}
         onClick={handleMaskClick}
         ref={modalRef}
       >

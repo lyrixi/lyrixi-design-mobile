@@ -23,7 +23,7 @@ const DistrictModal = forwardRef(
       value,
 
       searchVisible,
-      visible,
+      open,
       min = '',
       ok,
 
@@ -98,14 +98,14 @@ const DistrictModal = forwardRef(
     return (
       <SelectModal
         ref={modalRef}
-        visible={visible}
+        open={open}
         value={value}
         {...props}
-        mainRender={({ mainRef, visible, value, allowClear, multiple, onChange }) => {
+        mainRender={({ mainRef, open, value, allowClear, multiple, onChange }) => {
           return (
             <DistrictMain
               ref={mainRef}
-              visible={visible}
+              visible={open}
               value={value}
               allowClear={allowClear}
               multiple={multiple}
@@ -124,11 +124,11 @@ const DistrictModal = forwardRef(
             />
           )
         }}
-        onChange={(newValue, { onOk, ...newArguments }) => {
+        onChange={(newValue, { ok, ...newArguments }) => {
           if (!Array.isArray(newValue) || !newValue.length) return
           const leafIndex = findDistrictLeafIndex(newValue, type)
           if (typeof leafIndex === 'number') {
-            onOk()
+            ok()
             return false
           }
         }}

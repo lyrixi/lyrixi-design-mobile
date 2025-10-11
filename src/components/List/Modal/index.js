@@ -33,11 +33,11 @@ const ListModal = forwardRef(
       <SelectModal
         ref={ref}
         {...props}
-        mainRender={({ mainRef, visible, value, allowClear, multiple, onChange }) => {
+        mainRender={({ mainRef, open, value, allowClear, multiple, onChange }) => {
           return (
             <Main
               ref={mainRef}
-              visible={visible}
+              visible={open}
               value={value}
               allowClear={allowClear}
               multiple={multiple}

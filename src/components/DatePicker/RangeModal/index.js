@@ -23,7 +23,6 @@ const RangeModal = forwardRef(
       defaultPickerValue,
       onError,
       onOk,
-      onVisibleChange,
 
       // Main
       type = 'date',
@@ -58,11 +57,11 @@ const RangeModal = forwardRef(
       <SelectModal
         ref={modalRef}
         {...props}
-        mainRender={({ mainRef, visible, value, allowClear, multiple, onChange: mainOnChange }) => {
+        mainRender={({ mainRef, open, value, allowClear, multiple, onChange: mainOnChange }) => {
           return (
             <RangeMain
               ref={mainRef}
-              visible={visible}
+              visible={open}
               value={value}
               allowClear={allowClear}
               multiple={multiple}
@@ -106,7 +105,6 @@ const RangeModal = forwardRef(
 
           setCurrentRangeId(newArguments?.rangeId || null)
         }}
-        onVisibleChange={onVisibleChange}
         value={formatValue(value || defaultPickerValue)}
         className={`picker-modal${props.className ? ' ' + props.className : ''}`}
       />

@@ -86,14 +86,14 @@ const RangeCombo = forwardRef(
         allowClear={allowClear}
         multiple={multiple}
         onChange={handleChange}
-        modalRender={({ modalRef, getComboDOM, visible, onVisibleChange }) => {
+        modalRender={({ modalRef, getComboDOM, open, onClose }) => {
           return (
             <RangeModal
               // 透传属性用于控制显隐, 及暴露modalDOM和getModalDOM
               ref={modalRef}
               getComboDOM={getComboDOM}
-              visible={visible}
-              onVisibleChange={onVisibleChange}
+              open={open}
+              onClose={onClose}
               // Combo
               value={formatValue(value)}
               allowClear={allowClear}

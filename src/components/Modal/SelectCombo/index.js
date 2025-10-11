@@ -51,7 +51,8 @@ const Combo = forwardRef(
       placeholder,
       onBeforeOpen,
       clearRender,
-      onVisibleChange
+      onClose,
+      onOpen
     },
     ref
   ) => {
@@ -84,34 +85,34 @@ const Combo = forwardRef(
         },
         ...modalRef?.current,
         close: () => {
-          setVisible(false)
+          setOpen(false)
         },
         open: () => {
-          setVisible(true)
+          setOpen(true)
         }
       }
     })
 
     // 控制Modal显隐
-    const [visible, setVisible] = useState(null)
+    const [open, setOpen] = useState(null)
 
-    useEffect(() => {
-      if (visible === null) return
-      typeof onVisibleChange === 'function' && onVisibleChange(visible)
-
-      // eslint-disable-next-line
-    }, [visible])
+    // 包装 setOpen 函数,在关闭时触发 onClose
+    function handleClose() {
+      setOpen(false)
+      typeof onClose === 'function' && onClose()
+    }
 
     // 点击文本框
     async function handleInputClick(e) {
       e.stopPropagation()
       if (readOnly || disabled) return
-      if (!visible && typeof onBeforeOpen === 'function') {
+      if (typeof onBeforeOpen === 'function') {
         let goOn = await onBeforeOpen()
         if (goOn === false) return
       }
 
-      setVisible(!visible)
+      setOpen(true)
+      onOpen && onOpen()
     }
 
     // 渲染清空按钮
@@ -143,9 +144,9 @@ const Combo = forwardRef(
       if (typeof comboRender === 'function') {
         return comboRender({
           comboRef,
-          visible,
+          open,
           style: comboStyle,
-          className: DOMUtil.classNames(visible ? 'expand' : '', comboClassName),
+          className: DOMUtil.classNames(open ? 'expand' : '', comboClassName),
           onClick: handleInputClick,
           value,
           allowClear,
@@ -168,8 +169,8 @@ const Combo = forwardRef(
             disabled={disabled}
             allowClear={allowClear}
             value={value}
-            onAdd={() => setVisible(true)}
-            onEdit={() => setVisible(true)}
+            onAdd={() => setOpen(true)}
+            onEdit={() => setOpen(true)}
             onChange={onChange}
           />
         )
@@ -212,8 +213,8 @@ const Combo = forwardRef(
             // allowClear,
             // multiple,
             // onChange: onChange,
-            onVisibleChange: setVisible,
-            visible: visible
+            onClose: handleClose,
+            open: open
           })}
       </Fragment>
     )

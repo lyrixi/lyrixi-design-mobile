@@ -86,6 +86,7 @@ const NumberKeyboard = forwardRef(
         {/* 输入框 */}
         <InputNode
           ref={inputRef}
+          className="seed-input-numberkeyboard"
           type="number"
           // 值控制
           value={value}

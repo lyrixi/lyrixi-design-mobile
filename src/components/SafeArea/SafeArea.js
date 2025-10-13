@@ -5,11 +5,11 @@ import DOMUtil from './../../utils/DOMUtil'
 // 内库使用-end
 
 /* 测试使用-start
-import { DOMUtil } from 'lyrixi-design-mobile'
+import { DOMUtil } from 'seedsui-react'
 测试使用-end */
 
 // 安全区域
-const SafeArea = forwardRef(({ ...props }, ref) => {
+const SafeArea = forwardRef(({ safeArea, className, ...props }, ref) => {
   const rootRef = useRef(null)
 
   // Expose
@@ -23,7 +23,11 @@ const SafeArea = forwardRef(({ ...props }, ref) => {
   return (
     <div
       {...props}
-      className={DOMUtil.classNames('safe-area height-bottom', props?.className)}
+      className={DOMUtil.classNames(
+        safeArea === 'auto' ? 'auto-safe-area' : 'safe-area',
+        'height-bottom',
+        className
+      )}
       ref={rootRef}
     ></div>
   )

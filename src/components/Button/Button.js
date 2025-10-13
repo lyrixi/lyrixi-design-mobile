@@ -13,10 +13,10 @@ const Button = forwardRef(
     {
       // 颜色: default, primary, link, warning, danger, success
       color = 'default',
-      // 变体: default, text, fill
-      variant = 'default',
-      // 边框: solid、dashed
-      border,
+      // 背景颜色: default, white, primary, link, warning, danger, success
+      bg = 'white',
+      // 边框: none, dotted, dashed, solid
+      border = 'solid',
       // 尺寸: xxs, xs, s, m, l, xl
       size = 'm',
       // 圆角: xxs, xs, s, m, l, xl
@@ -44,9 +44,10 @@ const Button = forwardRef(
         {...props}
         className={DOMUtil.classNames(
           'seed-button',
-          color && `color-${color}`,
-          variant && `variant-${variant}`,
-          border && `border-${border}`,
+          color && `color-${color} border-color-${color}`,
+          bg && `bg-${bg}`,
+          border !== 'none' && `border-width-default`,
+          border && `border-style-${border}`,
           size && `size-${size}`,
           radius && `radius-${radius}`,
           shape && `shape-${shape}`,

@@ -15,6 +15,7 @@ import { Keyboard, MathUtil } from 'lyrixi-design-mobile'
 const NumberKeyboard = forwardRef(
   (
     {
+      ok = null,
       // 值控制
       value = '',
       onChange,
@@ -112,7 +113,7 @@ const NumberKeyboard = forwardRef(
 
         {/* 数字键盘 */}
         <Keyboard.Number
-          ok={null}
+          ok={ok}
           value={value}
           onChange={handleChange}
           open={keyboardOpen}

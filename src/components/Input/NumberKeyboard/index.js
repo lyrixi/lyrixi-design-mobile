@@ -2,6 +2,7 @@ import React, { forwardRef, useImperativeHandle, useRef, useState } from 'react'
 import { maxLengthFormatter, minMaxFormatter, precisionFormatter } from './../Text/utils'
 
 import InputNode from './../Node'
+import correctInputNumber from './correctInputNumber'
 
 // 内库使用-start
 import Keyboard from './../../Keyboard'
@@ -72,7 +73,7 @@ const NumberKeyboard = forwardRef(
       val = maxLengthFormatter(val, { maxLength })
       // 输入.不触发onChange
       console.log('val', val, MathUtil.isNumber(val))
-      onChange && onChange(MathUtil.isNumber(val) ? val : '')
+      onChange && onChange(correctInputNumber(val))
     }
 
     const handleClose = () => {

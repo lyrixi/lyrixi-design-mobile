@@ -9,17 +9,19 @@ import ButtonQuick from './ButtonQuick'
 // 内库使用-start
 import LocaleUtil from './../../../utils/LocaleUtil'
 import DOMUtil from './../../../utils/DOMUtil'
+import SafeArea from './../../SafeArea'
 import Page from '../../Page'
 import Icon from './../../Icon'
 // 内库使用-end
 
 /* 测试使用-start
-import { LocaleUtil, DOMUtil, Page, Icon } from 'lyrixi-design-mobile'
+import { LocaleUtil, DOMUtil, SafeArea, Page, Icon } from 'lyrixi-design-mobile'
 测试使用-end */
 
 const KeyboardNumber = forwardRef(
   (
     {
+      safeArea = true,
       portal,
       // 值控制
       value = '',
@@ -192,6 +194,7 @@ const KeyboardNumber = forwardRef(
         {...props}
       >
         <Page
+          full={false}
           animation="slideUp"
           className={DOMUtil.classNames(
             'modal-animation bottom-center seed-keyboard-number-container',
@@ -214,7 +217,7 @@ const KeyboardNumber = forwardRef(
           </Page.Header>
 
           {/* 键盘主体 */}
-          <Page>
+          <Page full={false} layout="horizontal">
             <Page.Main>
               {/* 第一行 1-3 */}
               <div className="seed-keyboard-main-row">
@@ -257,6 +260,7 @@ const KeyboardNumber = forwardRef(
               )}
             </Page.Aside>
           </Page>
+          {safeArea && <SafeArea className="border-t" style={{ backgroundColor: 'white' }} />}
         </Page>
       </div>
     )

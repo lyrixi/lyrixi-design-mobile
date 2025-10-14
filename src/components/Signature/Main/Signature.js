@@ -25,6 +25,8 @@ const Signature = (
   const rootRef = useRef(null)
   const canvasRef = useRef(null)
   const isDrewRef = useRef(false)
+  // 标识是否正在绘制，用于解决鼠标移动时，没有开始绘制，则不处理
+  const isDrawingRef = useRef(false)
   // canvas坐标信息
   let clientRectRef = useRef(null)
   // 触摸信息
@@ -71,58 +73,74 @@ const Signature = (
     }
   }
 
-  function handleTouchStart(e) {
+  function handleStart(e) {
     e.stopPropagation()
     // 解决拖动时影响document弹性
-    e.currentTarget.addEventListener('touchmove', DOMUtil.preventDefault, false)
+    if (e.type === 'touchstart') {
+      e.currentTarget.addEventListener('touchmove', DOMUtil.preventDefault, false)
+    }
+
+    // 鼠标开始绘制
+    isDrawingRef.current = true
 
     // 防止尺寸变化
     updateContainer()
-    // console.log(
-    //   'updateContainer',
-    //   canvasRef.current.width,
-    //   rootRef.current.clientWidth,
-    //   canvasRef.current.height,
-    //   rootRef.current.clientHeight
-    // )
 
     // 防止下层还有焦点
     window.getSelection() ? window.getSelection().removeAllRanges() : document.selection.empty()
     canvasRef.current.ctx.strokeStyle = color
     canvasRef.current.ctx.lineWidth = lineWidth
     clientRectRef.current = canvasRef.current.getBoundingClientRect()
+
+    const pos = DOMUtil.getEventPosition(e)
     canvasRef.current.ctx.beginPath()
     canvasRef.current.ctx.moveTo(
-      e.changedTouches[0].clientX - clientRectRef.current.left,
-      e.changedTouches[0].clientY - clientRectRef.current.top
+      pos.clientX - clientRectRef.current.left,
+      pos.clientY - clientRectRef.current.top
     )
-    touchesRef.beginX = e.changedTouches[0].clientX - clientRectRef.current.left
-    touchesRef.beginY = e.changedTouches[0].clientY - clientRectRef.current.top
+    touchesRef.beginX = pos.clientX - clientRectRef.current.left
+    touchesRef.beginY = pos.clientY - clientRectRef.current.top
   }
-  function handleTouchMove(e) {
+
+  function handleMove(e) {
+    // 鼠标移动时，如果没有开始绘制，则不处理
+    if (!isDrawingRef.current) {
+      return
+    }
+
     e.stopPropagation()
+    const pos = DOMUtil.getEventPosition(e)
     canvasRef.current.ctx.lineTo(
-      e.changedTouches[0].clientX - clientRectRef.current.left,
-      e.changedTouches[0].clientY - clientRectRef.current.top
+      pos.clientX - clientRectRef.current.left,
+      pos.clientY - clientRectRef.current.top
     )
-    touchesRef.endX = e.changedTouches[0].clientX - clientRectRef.current.left
-    touchesRef.endY = e.changedTouches[0].clientY - clientRectRef.current.top
+    touchesRef.endX = pos.clientX - clientRectRef.current.left
+    touchesRef.endY = pos.clientY - clientRectRef.current.top
     canvasRef.current.ctx.stroke()
     // 标识是否绘制过
     isDrewRef.current = true
   }
-  function handleTouchEnd(e) {
+
+  function handleEnd(e) {
+    // 鼠标结束绘制
+    isDrawingRef.current = false
+
     // 解除对move时的弹性对当前div的锁定
-    e.currentTarget.removeEventListener('touchmove', DOMUtil.preventDefault, false)
+    if (e.type === 'touchend') {
+      e.currentTarget.removeEventListener('touchmove', DOMUtil.preventDefault, false)
+    }
   }
 
   return (
     <div className="signature-main-canvas" ref={rootRef} {...props}>
       <canvas
         ref={canvasRef}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
+        onTouchStart={handleStart}
+        onTouchMove={handleMove}
+        onTouchEnd={handleEnd}
+        onMouseDown={handleStart}
+        onMouseMove={handleMove}
+        onMouseUp={handleEnd}
       >
         Canvas画板
       </canvas>

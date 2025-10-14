@@ -14,7 +14,7 @@ export default () => {
       <Page.Main className="bg-white">
         <div className="demo-title">Transfer Modal</div>
         <Transfer.Modal
-          visible
+          open={true}
           list={[
             { id: '1', name: '1' },
             { id: '2', name: '2' },
@@ -28,6 +28,12 @@ export default () => {
           onChange={(newValue) => {
             console.log('newValue:', newValue)
             setValue(newValue)
+          }}
+          onClose={() => {
+            console.log('onClose')
+          }}
+          onOpen={() => {
+            console.log('onOpen')
           }}
         />
       </Page.Main>

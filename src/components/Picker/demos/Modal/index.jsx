@@ -22,12 +22,18 @@ export default () => {
   return (
     <>
       <Picker.Modal
-        visible={true}
+        open={true}
         value={'8571532967972181136'}
         list={list}
         onChange={(newValue) => {
           console.log('onChange:', newValue)
           // setValue(newValue)
+        }}
+        onClose={() => {
+          console.log('onClose')
+        }}
+        onOpen={() => {
+          console.log('onOpen')
         }}
       />
     </>

@@ -34,8 +34,11 @@ export default () => {
           setMulValue(newValue)
         }}
         // title="选择日期"
-        onVisibleChange={(visible) => {
-          console.log('visible:', visible)
+        onClose={() => {
+          console.log('onClose')
+        }}
+        onOpen={() => {
+          console.log('onOpen')
         }}
         allowClear
         min={new Date()}

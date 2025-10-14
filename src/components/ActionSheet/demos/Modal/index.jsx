@@ -29,15 +29,18 @@ export default () => {
       <Page.Main>
         {JSON.stringify(value)}
         <ActionSheet.Modal
-          visible={true}
+          open={true}
           value={value}
           list={list}
           onChange={(newValue) => {
             console.log('onChange:', newValue)
             setValue(newValue)
           }}
-          onVisibleChange={(visible) => {
-            console.log('visible:', visible)
+          onClose={() => {
+            console.log('onClose')
+          }}
+          onOpen={() => {
+            console.log('onOpen')
           }}
         />
       </Page.Main>

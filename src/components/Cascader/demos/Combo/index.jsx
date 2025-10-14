@@ -78,8 +78,11 @@ export default () => {
           }}
           safeArea={true}
           title="级联选择"
-          onVisibleChange={(visible) => {
-            console.log('visible:', visible)
+          onClose={() => {
+            console.log('onClose')
+          }}
+          onOpen={() => {
+            console.log('onOpen')
           }}
           clearRender={({ clearable, triggerClear }) => {
             return clearable ? <Input.IconClear onClick={triggerClear} /> : <Input.IconRightArrow />

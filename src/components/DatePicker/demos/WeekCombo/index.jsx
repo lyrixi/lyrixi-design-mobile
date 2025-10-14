@@ -34,8 +34,11 @@ export default () => {
           }
           return true
         }}
-        onVisibleChange={(visible) => {
-          console.log('visible:', visible)
+        onClose={() => {
+          console.log('onClose')
+        }}
+        onOpen={() => {
+          console.log('onOpen')
         }}
         maskStyle={{
           zIndex: 999

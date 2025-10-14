@@ -7,8 +7,11 @@ export default () => {
       <Page.Main className="bg-white">
         <Modal.DropdownCombo
           comboChildren={<Divider>Modal.DropdownCombo Left</Divider>}
-          onVisibleChange={(visible) => {
-            console.log('visible:', visible)
+          onClose={() => {
+            console.log('onClose')
+          }}
+          onOpen={() => {
+            console.log('onOpen')
           }}
           left={12}
           mainRender={() => (
@@ -20,8 +23,11 @@ export default () => {
 
         <Modal.DropdownCombo
           comboChildren={<Divider>Modal.DropdownCombo Right</Divider>}
-          onVisibleChange={(visible) => {
-            console.log('visible:', visible)
+          onClose={() => {
+            console.log('onClose')
+          }}
+          onOpen={() => {
+            console.log('onOpen')
           }}
           right={12}
           mainRender={() => (
@@ -33,8 +39,11 @@ export default () => {
 
         <Modal.DropdownCombo
           comboChildren={<Divider>Modal.DropdownCombo Center</Divider>}
-          onVisibleChange={(visible) => {
-            console.log('visible:', visible)
+          onClose={() => {
+            console.log('onClose')
+          }}
+          onOpen={() => {
+            console.log('onOpen')
           }}
           modalStyle={{
             width: '100%'

@@ -24,13 +24,16 @@ export default () => {
             name: '选项2'
           }
         ]}
-        visible={true}
+        open={true}
         onChange={(newValue) => {
           console.log('onChange:', newValue)
           setValue(newValue)
         }}
-        onVisibleChange={(visible) => {
-          console.log(visible)
+        onClose={() => {
+          console.log('onClose')
+        }}
+        onOpen={() => {
+          console.log('onOpen')
         }}
       />
     </>

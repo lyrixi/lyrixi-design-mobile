@@ -9,13 +9,19 @@ export default () => {
       <Page.Header className="text-center">List.Modal</Page.Header>
       <Page.Main>
         <List.Modal
-          visible={true}
+          open={true}
           pagination
           value={value}
           loadList={() => list}
           onChange={(value) => {
             console.log(value)
             setValue(value)
+          }}
+          onClose={() => {
+            console.log('onClose')
+          }}
+          onOpen={() => {
+            console.log('onOpen')
           }}
         />
       </Page.Main>

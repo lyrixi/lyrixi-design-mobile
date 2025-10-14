@@ -46,8 +46,11 @@ export default () => {
             console.log('onChange:', newValue)
             setValue(newValue)
           }}
-          onVisibleChange={(visible) => {
-            console.log('visible:', visible)
+          onClose={() => {
+            console.log('onClose')
+          }}
+          onOpen={() => {
+            console.log('onOpen')
           }}
           // style={{ height: '100px', backgroundColor: '#f8f8f8' }}
         />

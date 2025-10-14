@@ -34,6 +34,7 @@ toc: content
 | value      | 当前值       | `array`                  | -      |
 | list       | 选项列表     | `array`                  | -      |
 | onChange   | 变化回调     | `(value: array) => void` | -      |
+| ellipsis   | 省略配置     | `{max: number}`          | -      |
 | style      | 自定义样式   | `object`                 | -      |
 | className  | 自定义类名   | `string`                 | -      |
 

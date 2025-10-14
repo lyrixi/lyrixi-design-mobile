@@ -1,5 +1,14 @@
-import React, { forwardRef, useRef, useImperativeHandle } from 'react'
+import React, { forwardRef, useRef, useImperativeHandle, useState } from 'react'
 import Item from './Item'
+
+// 内库使用-start
+import LocaleUtil from './../../../utils/LocaleUtil'
+import DOMUtil from './../../../utils/DOMUtil'
+// 内库使用-end
+
+/* 测试使用-start
+import { LocaleUtil, DOMUtil } from 'seedsui-react'
+测试使用-end */
 
 // 选择组
 const Selector = forwardRef(
@@ -13,6 +22,8 @@ const Selector = forwardRef(
       value,
       list,
       onChange,
+      // 省略配置
+      ellipsis,
 
       // 样式
       style,
@@ -27,6 +38,9 @@ const Selector = forwardRef(
       if (!item || (!item.id && !item.name)) return false
       return true
     })
+
+    // 展开/收起状态
+    const [expanded, setExpanded] = useState(false)
 
     // 节点
     const rootRef = useRef(null)
@@ -90,6 +104,16 @@ const Selector = forwardRef(
       if (onChange) onChange(newValue)
     }
 
+    // 处理展开/收起
+    const handleToggleExpand = () => {
+      setExpanded(!expanded)
+    }
+
+    // 判断是否需要显示省略按钮
+    const hasEllipsis = ellipsis && ellipsis.max && list.length > ellipsis.max
+    // 实际显示的列表
+    const displayList = hasEllipsis && !expanded ? list.slice(0, ellipsis.max) : list
+
     return (
       <div
         {...props}
@@ -97,7 +121,7 @@ const Selector = forwardRef(
         style={Object.assign({ '--columns': columns }, style)}
         ref={rootRef}
       >
-        {list.map((item, index) => {
+        {displayList.map((item, index) => {
           return (
             <Item
               key={index}
@@ -109,6 +133,20 @@ const Selector = forwardRef(
             </Item>
           )
         })}
+        {hasEllipsis && (
+          <div className="selector-item selector-item-ellipsis" onClick={handleToggleExpand}>
+            <div className="selector-item-name">
+              {expanded ? LocaleUtil.locale('收起') : LocaleUtil.locale('更多')}
+            </div>
+            <i
+              className={DOMUtil.classNames(
+                'selector-item-ellipsis-icon',
+                expanded ? ' selector-item-ellipsis-icon-expanded' : '',
+                'seeds-icon-arrow-down'
+              )}
+            ></i>
+          </div>
+        )}
       </div>
     )
   }

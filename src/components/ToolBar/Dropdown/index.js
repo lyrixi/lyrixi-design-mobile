@@ -44,7 +44,7 @@ const Dropdown = forwardRef(
     },
     ref
   ) => {
-    const [visible, setVisible] = useState(false)
+    const [open, setOpen] = useState(false)
 
     const dropdownRef = useRef(null)
 
@@ -61,20 +61,20 @@ const Dropdown = forwardRef(
     }, [])
 
     // 获取标题节点
-    function getTitleNode(visible) {
+    function getTitleNode(open) {
       if (typeof titleRender === 'function') {
         return titleRender({
           className: 'toolbar-dropdown-combo-title',
-          visible: visible
+          open: open
         })
       }
       return <span className="toolbar-dropdown-combo-title">{title}</span>
     }
 
     // 获取箭头节点
-    function getArrowNode(visible) {
+    function getArrowNode(open) {
       if (typeof arrowRender === 'function') {
-        return arrowRender({ visible: visible })
+        return arrowRender({ open: open })
       }
       return <i className="seed-button-icon toolbar-dropdown-combo-arrow"></i>
     }
@@ -92,13 +92,13 @@ const Dropdown = forwardRef(
           className={DOMUtil.classNames(
             'toolbar-dropdown-combo toolbar-button',
             comboClassName,
-            visible ? 'expand' : ''
+            open ? 'expand' : ''
           )}
           style={comboStyle}
           onClick={onClick}
         >
-          {getTitleNode(visible)}
-          {getArrowNode(visible)}
+          {getTitleNode(open)}
+          {getArrowNode(open)}
         </Button>
       )
     }
@@ -117,12 +117,12 @@ const Dropdown = forwardRef(
         maskStyle={maskStyle}
         modalClassName="toolbar-dropdown-modal"
         onOpen={() => {
-          setVisible(true)
+          setOpen(true)
           closeAllDropdown({ visibleRef: dropdownRef })
           onOpen && onOpen()
         }}
         onClose={() => {
-          setVisible(false)
+          setOpen(false)
           onClose && onClose()
         }}
       >

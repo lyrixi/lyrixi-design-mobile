@@ -46,11 +46,11 @@ function ToolBarActionSheet({
   }
 
   // 获取标题节点
-  function getTitleNode(visible) {
+  function getTitleNode(open) {
     if (typeof titleRender === 'function') {
       return titleRender({
         className: 'toolbar-dropdown-combo-title',
-        visible: visible,
+        open: open,
         value: value?.[0]?.name
       })
     }
@@ -58,16 +58,16 @@ function ToolBarActionSheet({
   }
 
   // 获取箭头节点
-  function getArrowNode(visible) {
+  function getArrowNode(open) {
     if (typeof arrowRender === 'function') {
-      return arrowRender({ visible: visible })
+      return arrowRender({ open: open })
     }
     return <i className="seed-button-icon toolbar-dropdown-combo-arrow"></i>
   }
 
   // 获取Combo节点
   function getComboNode() {
-    return ({ visible, comboRef, onClick }) => (
+    return ({ open, comboRef, onClick }) => (
       <Button
         ref={comboRef}
         color={color}
@@ -78,13 +78,13 @@ function ToolBarActionSheet({
         className={DOMUtil.classNames(
           'toolbar-dropdown-combo toolbar-button',
           comboClassName,
-          visible ? 'expand' : ''
+          open ? 'expand' : ''
         )}
         style={comboStyle}
         onClick={onClick}
       >
-        {getTitleNode(visible)}
-        {getArrowNode(visible)}
+        {getTitleNode(open)}
+        {getArrowNode(open)}
       </Button>
     )
   }

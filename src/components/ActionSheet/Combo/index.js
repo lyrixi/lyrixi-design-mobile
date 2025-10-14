@@ -13,6 +13,10 @@ const NavBarCombo = BaseModal.NavBarCombo
 // 卡片选择
 const ActionSheetCombo = (
   {
+    // Combo
+    comboRender,
+    comboChildren,
+
     // Modal
     portal,
     maskClassName,
@@ -85,8 +89,27 @@ const ActionSheetCombo = (
     }
   }
 
-  return (
-    <>
+  // 获取 Combo 节点
+  function getComboNode() {
+    if (typeof comboRender === 'function') {
+      return comboRender({
+        comboRef,
+        open: open,
+        onClick: handleOpen
+      })
+    }
+
+    // 如果有 comboChildren，渲染 comboChildren
+    if (comboChildren) {
+      return (
+        <div ref={comboRef} onClick={handleOpen}>
+          {comboChildren}
+        </div>
+      )
+    }
+
+    // 默认使用 NavBarCombo
+    return (
       <NavBarCombo
         ref={comboRef}
         {...props}
@@ -96,6 +119,12 @@ const ActionSheetCombo = (
         onChange={onChange}
         onClick={handleOpen}
       />
+    )
+  }
+
+  return (
+    <>
+      {getComboNode()}
       <Modal
         ref={modalRef}
         open={open}

@@ -63,27 +63,14 @@ export default () => {
         <Divider>Dropdown</Divider>
         <div className="toolbar-bg">
           <ToolBar>
-            <ToolBar.Dropdown
-              left={12}
-              title="Dropdown left"
-              color="primary"
-              variant="fill"
-            >
+            <ToolBar.Dropdown left={12} title="Dropdown left" color="primary" variant="fill">
               <div style={{ height: '300px' }}>Modal Content</div>
             </ToolBar.Dropdown>
-            <ToolBar.Dropdown
-              title="Dropdown ref"
-              ref={dropdownRef}
-            >
+            <ToolBar.Dropdown title="Dropdown ref" ref={dropdownRef}>
               {getDropdownModalNode()}
             </ToolBar.Dropdown>
-            <ToolBar.Dropdown title="Dropdown modal">
-              {getDropdownModalNode()}
-            </ToolBar.Dropdown>
-            <ToolBar.Dropdown
-              right={12}
-              title="Dropdown right"
-            >
+            <ToolBar.Dropdown title="Dropdown modal">{getDropdownModalNode()}</ToolBar.Dropdown>
+            <ToolBar.Dropdown right={12} title="Dropdown right">
               <div style={{ height: '300px' }}>Modal Content</div>
             </ToolBar.Dropdown>
           </ToolBar>
@@ -93,8 +80,8 @@ export default () => {
         <div className="toolbar-bg">
           <ToolBar>
             <ToolBar.DateRange
-              arrowRender={({ visible }) => {
-                if (visible) {
+              arrowRender={({ open }) => {
+                if (open) {
                   return '^'
                 }
                 return '>'

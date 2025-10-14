@@ -18,8 +18,7 @@ import { DOMUtil, ObjectUtil } from 'lyrixi-design-mobile'
 const Combo = forwardRef(
   (
     {
-      // Combo Render
-      comboRender,
+      // Combo Style
       comboStyle,
       comboClassName,
 
@@ -38,7 +37,6 @@ const Combo = forwardRef(
       onClick,
 
       // Combo
-
       multiple,
       formatter,
       autoSize,
@@ -111,19 +109,6 @@ const Combo = forwardRef(
     }
 
     function getComboNode() {
-      if (typeof comboRender === 'function') {
-        return comboRender({
-          comboRef,
-          style: comboStyle || style,
-          className: DOMUtil.classNames(comboClassName, className),
-          onClick: handleInputClick,
-          value,
-          allowClear,
-          multiple,
-          onChange: onChange
-        })
-      }
-
       if (mode === 'tags') {
         return (
           <Tags

@@ -75,7 +75,7 @@ const DistrictMain = forwardRef(
             />
           )
         }}
-        visible={open}
+        open={open}
         value={value}
         list={list}
         loadData={

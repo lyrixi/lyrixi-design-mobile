@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from 'react'
+import React, { useState, forwardRef, useRef, useImperativeHandle } from 'react'
 import formatValue from './formatValue'
 import Main from './../Main'
 
@@ -20,6 +20,12 @@ const Modal = forwardRef(
       // Modal
       portal,
       value,
+      allowClear,
+      multiple,
+      onChange,
+      open,
+      onClose,
+      onOpen,
       headerRender,
 
       // Main
@@ -38,6 +44,24 @@ const Modal = forwardRef(
   ) => {
     // 没有设置headerRender的情况下, 大于15项显示搜索
     const [keyword, setKeyword] = useState('')
+    const [currentValue, setCurrentValue] = useState(value)
+    const modalRef = useRef(null)
+    const mainRef = useRef(null)
+
+    useImperativeHandle(ref, () => {
+      return {
+        ...modalRef.current,
+        ...mainRef.current
+      }
+    })
+
+    // 同步外部value到内部
+    React.useEffect(() => {
+      if (open) {
+        setCurrentValue(formatValue(value))
+      }
+    }, [open, value])
+
     let searchHeaderRender =
       Array.isArray(list) && list.length > 15
         ? () => {
@@ -55,33 +79,53 @@ const Modal = forwardRef(
         : null
     let searchHeaderVisible = headerRender !== undefined ? false : searchHeaderRender
 
+    async function handleOk() {
+      if (onChange) {
+        let goOn = await onChange(currentValue)
+        if (goOn === false) return
+      }
+      onClose && onClose()
+    }
+
+    function handleChange(newValue) {
+      setCurrentValue(newValue)
+      // 单选时立即关闭
+      if (multiple === false) {
+        if (onChange) {
+          onChange(newValue)
+        }
+        onClose && onClose()
+      }
+    }
+
     return (
       <SelectModal
-        ref={ref}
+        ref={modalRef}
         {...props}
-        headerRender={searchHeaderVisible ? searchHeaderRender : headerRender}
-        mainRender={({ mainRef, open, value, allowClear, multiple, onChange }) => {
-          return (
-            <Main
-              ref={mainRef}
-              visible={open}
-              value={value}
-              allowClear={allowClear}
-              multiple={multiple}
-              onChange={onChange}
-              list={searchHeaderVisible ? List.searchList(list, keyword) : list}
-              itemRender={itemRender}
-              layout={layout}
-              checkable={checkable}
-              checkbox={checkbox}
-              checkboxPosition={checkboxPosition}
-            />
-          )
-        }}
+        open={open}
+        onClose={onClose}
+        onOpen={onOpen}
+        onOk={handleOk}
+        ok={multiple !== false}
         portal={portal}
-        value={formatValue(value)}
         className={`select-modal${props.className ? ' ' + props.className : ''}`}
-      />
+      >
+        {searchHeaderVisible && searchHeaderVisible()}
+        <Main
+          ref={mainRef}
+          open={open}
+          value={currentValue}
+          allowClear={allowClear}
+          multiple={multiple}
+          onChange={handleChange}
+          list={searchHeaderVisible ? List.searchList(list, keyword) : list}
+          itemRender={itemRender}
+          layout={layout}
+          checkable={checkable}
+          checkbox={checkbox}
+          checkboxPosition={checkboxPosition}
+        />
+      </SelectModal>
     )
   }
 )

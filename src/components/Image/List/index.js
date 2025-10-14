@@ -5,7 +5,7 @@ import Item from './../Item'
 const List = ({
   list, // [{id: '', name: '', thumb: '', src: '', status: 'choose|uploading|fail|success'}]
   uploading,
-  visibleCount,
+  ellipsis,
   allowClear,
   // Events
   onChange,
@@ -21,17 +21,19 @@ const List = ({
     onChange && onChange(newList, { action: 'delete' })
   }
 
+  const maxVisible = ellipsis?.max
+
   return (
     <>
       {/* 图片列表 */}
       {list && list.length > 0
         ? list.map((item, index) => {
-            if (visibleCount && index + 1 > visibleCount) return null
+            if (maxVisible && index + 1 > maxVisible) return null
             return (
               <Item
                 key={index}
                 remainCount={
-                  visibleCount && index === visibleCount - 1 ? list.length - visibleCount : null
+                  maxVisible && index === maxVisible - 1 ? list.length - maxVisible : null
                 }
                 item={item}
                 index={index}

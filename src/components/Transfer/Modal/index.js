@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useState, useRef, useImperativeHandle } from 'react'
 import formatValue from './formatValue'
 import Main from './../Main'
 
@@ -17,32 +17,69 @@ const Modal = forwardRef(
     {
       // Main: common
       value,
+      allowClear,
+      multiple,
+      onChange,
+      open,
+      onClose,
+      onOpen,
 
       list,
       ...props
     },
     ref
   ) => {
+    const [currentValue, setCurrentValue] = useState(value)
+    const modalRef = useRef(null)
+    const mainRef = useRef(null)
+
+    useImperativeHandle(ref, () => {
+      return {
+        ...modalRef.current,
+        ...mainRef.current
+      }
+    })
+
+    // 同步外部value到内部
+    React.useEffect(() => {
+      if (open) {
+        setCurrentValue(formatValue(value))
+      }
+    }, [open, value])
+
+    async function handleOk() {
+      if (onChange) {
+        let goOn = await onChange(currentValue)
+        if (goOn === false) return
+      }
+      onClose && onClose()
+    }
+
+    function handleChange(newValue) {
+      setCurrentValue(newValue)
+    }
+
     return (
       <SelectModal
-        ref={ref}
+        ref={modalRef}
         {...props}
-        mainRender={({ mainRef, open, value, allowClear, multiple, onChange }) => {
-          return (
-            <Main
-              ref={mainRef}
-              visible={open}
-              value={value}
-              allowClear={allowClear}
-              multiple={multiple}
-              onChange={onChange}
-              list={list}
-            />
-          )
-        }}
+        open={open}
+        onClose={onClose}
+        onOpen={onOpen}
+        onOk={handleOk}
+        ok={true}
         className={`transfer-modal${props.className ? ' ' + props.className : ''}`}
-        value={formatValue(value)}
-      />
+      >
+        <Main
+          ref={mainRef}
+          open={open}
+          value={currentValue}
+          allowClear={allowClear}
+          multiple={multiple}
+          onChange={handleChange}
+          list={list}
+        />
+      </SelectModal>
     )
   }
 )

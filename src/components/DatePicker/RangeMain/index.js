@@ -17,7 +17,7 @@ import { LocaleUtil } from 'lyrixi-design-mobile'
 // 日期快捷选择
 function RangeMain(
   {
-    visible,
+    open,
 
     separator,
 

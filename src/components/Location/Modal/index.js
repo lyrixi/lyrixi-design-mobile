@@ -1,4 +1,4 @@
-import React, { useRef, forwardRef, useImperativeHandle } from 'react'
+import React, { useState, useRef, forwardRef, useImperativeHandle } from 'react'
 import Main from './../Main'
 
 // 内库使用-start
@@ -17,7 +17,12 @@ const LocationModal = forwardRef(
     {
       // Modal
       open,
+      onClose,
+      onOpen,
       value,
+      allowClear,
+      multiple,
+      onChange,
 
       // Main
       config,
@@ -27,11 +32,42 @@ const LocationModal = forwardRef(
     },
     ref
   ) => {
+    const [currentValue, setCurrentValue] = useState(value)
     const modalRef = useRef(null)
+    const mainRef = useRef(null)
 
     useImperativeHandle(ref, () => {
-      return modalRef.current
+      return {
+        ...modalRef.current,
+        ...mainRef.current
+      }
     })
+
+    // 同步外部value到内部currentValue
+    React.useEffect(() => {
+      if (open) {
+        setCurrentValue(value)
+      }
+    }, [open, value])
+
+    async function handleOk() {
+      if (onChange) {
+        let goOn = await onChange(currentValue)
+        if (goOn === false) return
+      }
+      onClose && onClose()
+    }
+
+    function handleChange(newValue) {
+      setCurrentValue(newValue)
+      // 单选时立即关闭
+      if (multiple === false) {
+        if (onChange) {
+          onChange(newValue)
+        }
+        onClose && onClose()
+      }
+    }
 
     return (
       <SelectModal
@@ -42,26 +78,25 @@ const LocationModal = forwardRef(
             : LocaleUtil.locale('查看地址', 'SeedsUI_view_address')
         }
         {...props}
-        mainRender={({ mainRef, open, value, allowClear, multiple, onChange }) => {
-          return (
-            <Main
-              ref={mainRef}
-              open={open}
-              value={value}
-              allowClear={allowClear}
-              multiple={multiple}
-              onChange={onChange}
-              config={config}
-              getLocation={getLocation}
-              getAddress={getAddress}
-            />
-          )
-        }}
         ok={open === 'choose' ? '' : null}
         open={open}
-        value={value}
+        onClose={onClose}
+        onOpen={onOpen}
+        onOk={handleOk}
         className={`map-modal${props.className ? ' ' + props.className : ''}`}
-      />
+      >
+        <Main
+          ref={mainRef}
+          open={open}
+          value={currentValue}
+          allowClear={allowClear}
+          multiple={multiple}
+          onChange={handleChange}
+          config={config}
+          getLocation={getLocation}
+          getAddress={getAddress}
+        />
+      </SelectModal>
     )
   }
 )

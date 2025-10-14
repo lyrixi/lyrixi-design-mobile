@@ -48,6 +48,9 @@ const DistrictCombo = forwardRef(
       loadCountryRegions,
       loadStreets,
       editableOptions,
+
+      // Combo props
+      onBeforeOpen,
       ...props
     },
     ref
@@ -55,18 +58,23 @@ const DistrictCombo = forwardRef(
     // eslint-disable-next-line
     type = formatType(type)
 
+    const [open, setOpen] = useState(false)
     // editableOptions需要根据list计算value的type, getList后才能计算value的type
     const listRef = useRef(null)
     let [readOnlyValue, setReadOnlyValue] = useState(null)
+    const comboRef = useRef(null)
+    const modalRef = useRef(null)
 
     // Expose api
-    const comboRef = useRef(null)
     useImperativeHandle(ref, () => {
       return {
         getReadOnlyValue: () => {
           return readOnlyValue
         },
-        ...comboRef.current
+        ...comboRef.current,
+        ...modalRef.current,
+        close: () => setOpen(false),
+        open: () => setOpen(true)
       }
     })
 
@@ -112,83 +120,90 @@ const DistrictCombo = forwardRef(
       return newValue
     }
 
-    return (
-      <Combo
-        ref={comboRef}
-        value={value}
-        onChange={
-          onChange
-            ? (newValue, ...other) => {
-                // 清空操作，公能清空非只读项
-                if (editableOptions && !newValue && Array.isArray(value) && value.length) {
-                  // 清空完成
-                  if (readOnlyValue?.length) {
-                    // eslint-disable-next-line
-                    newValue = readOnlyValue
-                  }
-                }
-                onChange(newValue, ...other)
-              }
-            : null
+    async function handleOpen() {
+      if (typeof onBeforeOpen === 'function') {
+        let goOn = await onBeforeOpen()
+        if (goOn === false) return
+      }
+      setOpen(true)
+    }
+
+    function handleClose() {
+      setOpen(false)
+    }
+
+    function handleChange(newValue, ...other) {
+      // 清空操作，公能清空非只读项
+      if (editableOptions && !newValue && Array.isArray(value) && value.length) {
+        // 清空完成
+        if (readOnlyValue?.length) {
+          // eslint-disable-next-line
+          newValue = readOnlyValue
         }
-        {...props}
-        multiple={multiple}
-        allowClear={allowClear}
-        // 只读项与值一致, 并且已经下钻到最末经, 只读
-        readOnly={(() => {
-          if (!Array.isArray(readOnlyValue) || !Array.isArray(value)) return readOnly
-          if (!ArrayUtil.isEqual(readOnlyValue, value)) return readOnly
-          const leafIndex = findDistrictLeafIndex(value, type)
-          return typeof leafIndex === 'number' ? true : readOnly
-        })()}
-        modalRender={({ modalRef, getComboDOM, open, onClose }) => {
-          return (
-            <DistrictModal
-              // 透传属性用于控制显隐, 及暴露modalDOM和getModalDOM
-              ref={modalRef}
-              getComboDOM={getComboDOM}
-              open={open}
-              onClose={onClose}
-              // Combo
-              value={value}
-              allowClear={allowClear}
-              multiple={multiple}
-              onOk={onChange}
-              // Modal Props
-              portal={portal}
-              maskClassName={maskClassName}
-              maskStyle={maskStyle}
-              className={modalClassName}
-              style={modalStyle}
-              title={title}
-              startType={startType}
-              type={type}
-              min={min}
-              searchVisible={searchVisible}
-              loadCountries={loadCountries}
-              loadCountryRegions={loadCountryRegions}
-              loadStreets={loadStreets}
-              editableOptions={editableOptions}
-            />
-          )
-        }}
-        clearRender={(clearParams) => {
-          let clearable = clearParams?.clearable
+      }
+      if (onChange) {
+        onChange(newValue, ...other)
+      }
+    }
 
-          // 只读项与值一致, 不允许清空
-          if (Array.isArray(readOnlyValue) && ArrayUtil.isEqual(readOnlyValue, value)) {
-            clearable = false
-          }
+    return (
+      <>
+        <Combo
+          ref={comboRef}
+          value={value}
+          onChange={handleChange}
+          {...props}
+          multiple={multiple}
+          allowClear={allowClear}
+          // 只读项与值一致, 并且已经下钻到最末经, 只读
+          readOnly={(() => {
+            if (!Array.isArray(readOnlyValue) || !Array.isArray(value)) return readOnly
+            if (!ArrayUtil.isEqual(readOnlyValue, value)) return readOnly
+            const leafIndex = findDistrictLeafIndex(value, type)
+            return typeof leafIndex === 'number' ? true : readOnly
+          })()}
+          onClick={handleOpen}
+          clearRender={(clearParams) => {
+            let clearable = clearParams?.clearable
 
-          // 自定义显隐清空按钮
-          if (typeof props?.clearRender === 'function') {
-            return props?.clearRender({ ...clearParams, clearable: clearable })
-          }
+            // 只读项与值一致, 不允许清空
+            if (Array.isArray(readOnlyValue) && ArrayUtil.isEqual(readOnlyValue, value)) {
+              clearable = false
+            }
 
-          // 默认清空按钮显隐
-          return clearable === false ? null : undefined
-        }}
-      />
+            // 自定义显隐清空按钮
+            if (typeof props?.clearRender === 'function') {
+              return props?.clearRender({ ...clearParams, clearable: clearable })
+            }
+
+            // 默认清空按钮显隐
+            return clearable === false ? null : undefined
+          }}
+        />
+        <DistrictModal
+          ref={modalRef}
+          open={open}
+          onClose={handleClose}
+          value={value}
+          allowClear={allowClear}
+          multiple={multiple}
+          onChange={handleChange}
+          portal={portal}
+          maskClassName={maskClassName}
+          maskStyle={maskStyle}
+          className={modalClassName}
+          style={modalStyle}
+          title={title}
+          startType={startType}
+          type={type}
+          min={min}
+          searchVisible={searchVisible}
+          loadCountries={loadCountries}
+          loadCountryRegions={loadCountryRegions}
+          loadStreets={loadStreets}
+          editableOptions={editableOptions}
+        />
+      </>
     )
   }
 )

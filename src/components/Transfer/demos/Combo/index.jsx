@@ -45,19 +45,6 @@ export default () => {
             console.log(newValue)
             setValue(newValue)
           }}
-          footerRender={({ value, triggerOk }) => {
-            return (
-              <Page.Footer
-                onClick={() => {
-                  triggerOk()
-                }}
-              >
-                <Button className="listpicker-footer-submit" color="primary">
-                  确定
-                </Button>
-              </Page.Footer>
-            )
-          }}
           mainProps={{
             titles: { selected: '标题1', unSelected: '标题2' }
           }}

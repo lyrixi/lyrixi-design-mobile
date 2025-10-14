@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useState, useRef, useImperativeHandle } from 'react'
 import Main from './../Main'
 
 // 内库使用-start
@@ -14,6 +14,15 @@ const SelectModal = Modal.SelectModal
 const ListModal = forwardRef(
   (
     {
+      // Modal
+      value,
+      allowClear,
+      multiple,
+      onChange,
+      open,
+      onClose,
+      onOpen,
+
       // Main
       loadList,
       pull,
@@ -29,32 +38,71 @@ const ListModal = forwardRef(
     },
     ref
   ) => {
+    const [currentValue, setCurrentValue] = useState(value)
+    const modalRef = useRef(null)
+    const mainRef = useRef(null)
+
+    useImperativeHandle(ref, () => {
+      return {
+        ...modalRef.current,
+        ...mainRef.current
+      }
+    })
+
+    // 同步外部value到内部
+    React.useEffect(() => {
+      if (open) {
+        setCurrentValue(value)
+      }
+    }, [open, value])
+
+    async function handleOk() {
+      if (onChange) {
+        let goOn = await onChange(currentValue)
+        if (goOn === false) return
+      }
+      onClose && onClose()
+    }
+
+    function handleChange(newValue) {
+      setCurrentValue(newValue)
+      // 单选时立即关闭
+      if (multiple === false) {
+        if (onChange) {
+          onChange(newValue)
+        }
+        onClose && onClose()
+      }
+    }
+
     return (
       <SelectModal
-        ref={ref}
+        ref={modalRef}
         {...props}
-        mainRender={({ mainRef, open, value, allowClear, multiple, onChange }) => {
-          return (
-            <Main
-              ref={mainRef}
-              visible={open}
-              value={value}
-              allowClear={allowClear}
-              multiple={multiple}
-              onChange={onChange}
-              loadList={loadList}
-              pull={pull}
-              pagination={pagination}
-              itemRender={itemRender}
-              layout={layout}
-              checkable={checkable}
-              checkbox={checkbox}
-              checkboxPosition={checkboxPosition}
-            />
-          )
-        }}
+        open={open}
+        onClose={onClose}
+        onOpen={onOpen}
+        onOk={handleOk}
+        ok={multiple !== false}
         className={`list-modal${props.className ? ' ' + props.className : ''}`}
-      />
+      >
+        <Main
+          ref={mainRef}
+          open={open}
+          value={currentValue}
+          allowClear={allowClear}
+          multiple={multiple}
+          onChange={handleChange}
+          loadList={loadList}
+          pull={pull}
+          pagination={pagination}
+          itemRender={itemRender}
+          layout={layout}
+          checkable={checkable}
+          checkbox={checkbox}
+          checkboxPosition={checkboxPosition}
+        />
+      </SelectModal>
     )
   }
 )

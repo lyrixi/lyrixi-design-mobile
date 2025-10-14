@@ -37,7 +37,7 @@ const Image = forwardRef(
       async = false,
       reUpload = true,
       count,
-      visibleCount,
+      ellipsis,
       type, // video.录相 | 其它.为拍照
       sourceType = ['album', 'camera'],
       sizeType = ['compressed'], // ['original', 'compressed']
@@ -329,7 +329,7 @@ const Image = forwardRef(
           type={type}
           list={list}
           uploading={uploading}
-          visibleCount={visibleCount}
+          ellipsis={ellipsis}
           allowClear={allowClear}
           // Events
           onChange={onChangeRef.current}

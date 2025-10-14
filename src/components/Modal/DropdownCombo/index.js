@@ -28,7 +28,7 @@ const Combo = forwardRef(
       maskStyle,
       modalClassName,
       modalStyle,
-      mainRender,
+      children,
 
       onBeforeOpen,
       onOpen,
@@ -118,7 +118,6 @@ const Combo = forwardRef(
     }
     const ComboNode = getComboNode()
 
-    console.log('ComboNode', ComboNode)
     return (
       <>
         {/* Combo */}
@@ -140,7 +139,7 @@ const Combo = forwardRef(
           }}
           open={open}
         >
-          {typeof mainRender === 'function' && mainRender({ open: _open, close: _close })}
+          {children}
         </DropdownModal>
       </>
     )

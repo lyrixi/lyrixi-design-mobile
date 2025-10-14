@@ -16,14 +16,17 @@ const SelectModal = Modal.SelectModal
 const DistrictModal = forwardRef(
   (
     {
-      // Filter useless props to protect the feature
-      multiple,
-
       // Modal
-      value,
-
-      searchVisible,
       open,
+      onClose,
+      onOpen,
+      value,
+      allowClear,
+      multiple,
+      onChange,
+
+      // Filter useless props to protect the feature
+      searchVisible,
       min = '',
       ok,
 
@@ -34,8 +37,6 @@ const DistrictModal = forwardRef(
       loadCountryRegions,
       loadStreets,
       editableOptions,
-      onChange,
-      onOk,
       ...props
     },
     ref
@@ -45,21 +46,24 @@ const DistrictModal = forwardRef(
 
     // 是否显示右上角确认按钮
     let [okVisible, setOkVisible] = useState(null)
-
-    // Expose api
+    const [currentValue, setCurrentValue] = useState(value)
     const modalRef = useRef(null)
+    const mainRef = useRef(null)
+
     useImperativeHandle(ref, () => {
       return {
-        ...modalRef.current
+        ...modalRef.current,
+        ...mainRef.current
       }
     })
 
-    // useEffect(() => {
-    //   if (visible) {
-    //     updateOkVisible(value)
-    //   }
-    //   // eslint-disable-next-line
-    // }, [visible])
+    // 同步外部value到内部currentValue
+    React.useEffect(() => {
+      if (open) {
+        setCurrentValue(value)
+        updateOkVisible(value)
+      }
+    }, [open, value])
 
     // 根据min判断是否显示确定按钮
     function updateOkVisible(tabs) {
@@ -87,7 +91,7 @@ const DistrictModal = forwardRef(
 
     // 加载完成后, 会更新value的值, 再更新Ok按钮显示状态
     function handleLoad() {
-      updateOkVisible(value)
+      updateOkVisible(currentValue)
     }
 
     // 下钻根据min更新Ok按钮显示状态
@@ -95,47 +99,57 @@ const DistrictModal = forwardRef(
       updateOkVisible(tabs)
     }
 
+    async function handleOk() {
+      if (onChange) {
+        let goOn = await onChange(currentValue)
+        if (goOn === false) return
+      }
+      onClose && onClose()
+    }
+
+    function handleChange(newValue, newArguments) {
+      setCurrentValue(newValue)
+      handleDrillDown(newValue)
+
+      // 如果到达叶子节点，立即关闭
+      if (!Array.isArray(newValue) || !newValue.length) return
+      const leafIndex = findDistrictLeafIndex(newValue, type)
+      if (typeof leafIndex === 'number') {
+        if (onChange) {
+          onChange(newValue)
+        }
+        onClose && onClose()
+      }
+    }
+
     return (
       <SelectModal
         ref={modalRef}
         open={open}
-        value={value}
-        {...props}
-        mainRender={({ mainRef, open, value, allowClear, multiple, onChange }) => {
-          return (
-            <DistrictMain
-              ref={mainRef}
-              visible={open}
-              value={value}
-              allowClear={allowClear}
-              multiple={multiple}
-              onChange={(newValue, newArguments) => {
-                handleDrillDown(newValue)
-                onChange(newValue, newArguments)
-              }}
-              searchVisible={searchVisible}
-              startType={startType}
-              type={type}
-              loadCountries={loadCountries}
-              loadCountryRegions={loadCountryRegions}
-              loadStreets={loadStreets}
-              editableOptions={editableOptions}
-              onLoad={handleLoad}
-            />
-          )
-        }}
-        onChange={(newValue, { ok, ...newArguments }) => {
-          if (!Array.isArray(newValue) || !newValue.length) return
-          const leafIndex = findDistrictLeafIndex(newValue, type)
-          if (typeof leafIndex === 'number') {
-            ok()
-            return false
-          }
-        }}
-        onOk={onOk}
+        onClose={onClose}
+        onOpen={onOpen}
+        onOk={handleOk}
         ok={ok ? ok : okVisible ? '' : null}
+        {...props}
         className={`cascader-modal${props.className ? ' ' + props.className : ''}`}
-      />
+      >
+        <DistrictMain
+          ref={mainRef}
+          open={open}
+          value={currentValue}
+          allowClear={allowClear}
+          multiple={multiple}
+          onChange={handleChange}
+          searchVisible={searchVisible}
+          startType={startType}
+          type={type}
+          loadCountries={loadCountries}
+          loadCountryRegions={loadCountryRegions}
+          loadStreets={loadStreets}
+          editableOptions={editableOptions}
+          onLoad={handleLoad}
+        />
+      </SelectModal>
     )
   }
 )

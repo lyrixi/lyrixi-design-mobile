@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useState, useRef, useImperativeHandle } from 'react'
 import formatValue from './formatValue'
 import Main from './../Main'
 
@@ -17,6 +17,12 @@ const Modal = forwardRef(
     {
       // Modal
       value,
+      allowClear,
+      multiple,
+      onChange,
+      open,
+      onClose,
+      onOpen,
       defaultPickerValue,
 
       // Main
@@ -25,26 +31,64 @@ const Modal = forwardRef(
     },
     ref
   ) => {
+    const [currentValue, setCurrentValue] = useState(value || defaultPickerValue)
+    const modalRef = useRef(null)
+    const mainRef = useRef(null)
+
+    useImperativeHandle(ref, () => {
+      return {
+        ...modalRef.current,
+        ...mainRef.current
+      }
+    })
+
+    // 同步外部value到内部
+    React.useEffect(() => {
+      if (open) {
+        setCurrentValue(formatValue(value || defaultPickerValue))
+      }
+    }, [open, value, defaultPickerValue])
+
+    async function handleOk() {
+      if (onChange) {
+        let goOn = await onChange(currentValue)
+        if (goOn === false) return
+      }
+      onClose && onClose()
+    }
+
+    function handleChange(newValue) {
+      setCurrentValue(newValue)
+      // 单选时立即关闭
+      if (multiple === false) {
+        if (onChange) {
+          onChange(newValue)
+        }
+        onClose && onClose()
+      }
+    }
+
     return (
       <SelectModal
-        ref={ref}
+        ref={modalRef}
         {...props}
-        mainRender={({ mainRef, open, value, allowClear, multiple, onChange }) => {
-          return (
-            <Main
-              ref={mainRef}
-              visible={open}
-              value={value}
-              allowClear={allowClear}
-              multiple={multiple}
-              onChange={onChange}
-              list={list}
-            />
-          )
-        }}
-        value={formatValue(value || defaultPickerValue)}
+        open={open}
+        onClose={onClose}
+        onOpen={onOpen}
+        onOk={handleOk}
+        ok={multiple !== false}
         className={`picker-modal${props.className ? ' ' + props.className : ''}`}
-      />
+      >
+        <Main
+          ref={mainRef}
+          open={open}
+          value={currentValue}
+          allowClear={allowClear}
+          multiple={multiple}
+          onChange={handleChange}
+          list={list}
+        />
+      </SelectModal>
     )
   }
 )

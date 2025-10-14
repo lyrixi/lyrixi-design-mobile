@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React, { useState, forwardRef, useRef, useImperativeHandle } from 'react'
 import validateMaxMin from './../utils/validateMaxMin'
 import formatValue from './formatValue'
 import WeekMain from './../WeekMain'
@@ -17,10 +17,15 @@ const WeekModal = forwardRef(
   (
     {
       // Modal
+      open,
+      onClose,
+      onOpen,
       value,
+      allowClear,
+      multiple,
+      onChange,
       defaultPickerValue,
       onError,
-      onOk,
 
       // Main
       min,
@@ -29,49 +34,81 @@ const WeekModal = forwardRef(
     },
     ref
   ) => {
+    const [currentValue, setCurrentValue] = useState(value)
+    const modalRef = useRef(null)
+    const mainRef = useRef(null)
+
+    useImperativeHandle(ref, () => {
+      return {
+        ...modalRef.current,
+        ...mainRef.current
+      }
+    })
+
+    // 同步外部value到内部currentValue
+    React.useEffect(() => {
+      if (open) {
+        setCurrentValue(formatValue(value || defaultPickerValue))
+      }
+    }, [open, value, defaultPickerValue])
+
+    async function handleOk() {
+      let validatedValue = currentValue
+      // 校验
+      if ((min || max) && validatedValue) {
+        let newValue = validateMaxMin(validatedValue, {
+          type: 'week',
+          min: min,
+          max: max,
+          onError: onError
+        })
+
+        if (newValue === false) return
+
+        validatedValue = newValue
+      }
+
+      // 触发 onChange
+      if (onChange) {
+        let goOn = await onChange(validatedValue)
+        if (goOn === false) return
+      }
+      onClose && onClose()
+    }
+
+    function handleChange(newValue) {
+      setCurrentValue(newValue)
+      // 单选时立即关闭
+      if (multiple === false) {
+        if (onChange) {
+          onChange(newValue)
+        }
+        onClose && onClose()
+      }
+    }
+
     return (
       <SelectModal
-        ref={ref}
+        ref={modalRef}
         {...props}
-        mainRender={({ mainRef, open, value, allowClear, multiple, onChange }) => {
-          return (
-            <WeekMain
-              ref={mainRef}
-              visible={open}
-              value={value}
-              allowClear={allowClear}
-              multiple={multiple}
-              onChange={onChange}
-              min={min}
-              max={max}
-            />
-          )
-        }}
-        onOk={async (currentValue) => {
-          // 校验
-          if ((min || max) && currentValue) {
-            let newValue = validateMaxMin(currentValue, {
-              type: 'week',
-              min: min,
-              max: max,
-              onError: onError
-            })
-
-            if (newValue === false) return false
-
-            // eslint-disable-next-line
-            currentValue = newValue
-          }
-
-          // 触发 onOk
-          if (onOk) {
-            let goOn = await onOk(currentValue)
-            return goOn
-          }
-        }}
-        value={formatValue(value || defaultPickerValue)}
+        open={open}
+        onClose={onClose}
+        onOpen={onOpen}
+        onOk={handleOk}
+        ok={multiple !== false}
         className={`picker-modal${props.className ? ' ' + props.className : ''}`}
-      />
+      >
+        <WeekMain
+          ref={mainRef}
+          open={open}
+          value={currentValue}
+          allowClear={allowClear}
+          multiple={multiple}
+          onChange={handleChange}
+          min={min}
+          max={max}
+        />
+      </SelectModal>
     )
   }
 )

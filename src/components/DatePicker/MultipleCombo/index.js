@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useState, useRef, useImperativeHandle } from 'react'
 import MultipleModal from './../MultipleModal'
 import getDisplayValue from './getDisplayValue'
 
@@ -38,57 +38,79 @@ const MultipleCombo = forwardRef(
       max,
       hourStep,
       minuteStep,
+
+      // Combo props
+      onBeforeOpen,
       ...props
     },
     ref
   ) => {
+    const [open, setOpen] = useState(false)
+    const comboRef = useRef(null)
+    const modalRef = useRef(null)
+
+    useImperativeHandle(ref, () => {
+      return {
+        ...comboRef.current,
+        ...modalRef.current,
+        close: () => setOpen(false),
+        open: () => setOpen(true)
+      }
+    })
+
+    async function handleOpen() {
+      if (typeof onBeforeOpen === 'function') {
+        let goOn = await onBeforeOpen()
+        if (goOn === false) return
+      }
+      setOpen(true)
+    }
+
+    function handleClose() {
+      setOpen(false)
+    }
+
     return (
-      <Combo
-        ref={ref}
-        formatter={() => {
-          return getDisplayValue({
-            type: type,
-            value: value,
-            separator: separator
-          })
-        }}
-        {...props}
-        value={value}
-        allowClear={allowClear}
-        multiple={multiple}
-        onChange={onChange}
-        // Modal
-        modalRender={({ modalRef, getComboDOM, open, onClose }) => {
-          return (
-            <MultipleModal
-              // 透传属性用于控制显隐, 及暴露modalDOM和getModalDOM
-              ref={modalRef}
-              getComboDOM={getComboDOM}
-              open={open}
-              onClose={onClose}
-              // Combo
-              value={value}
-              allowClear={allowClear}
-              multiple={multiple}
-              onOk={onChange}
-              // Modal Props
-              portal={portal}
-              maskClassName={maskClassName}
-              maskStyle={maskStyle}
-              className={modalClassName}
-              style={modalStyle}
-              title={title}
-              defaultPickerValue={defaultPickerValue}
-              onError={onError}
-              type={type}
-              min={min}
-              max={max}
-              hourStep={hourStep}
-              minuteStep={minuteStep}
-            />
-          )
-        }}
-      />
+      <>
+        <Combo
+          ref={comboRef}
+          formatter={() => {
+            return getDisplayValue({
+              type: type,
+              value: value,
+              separator: separator
+            })
+          }}
+          {...props}
+          value={value}
+          allowClear={allowClear}
+          multiple={multiple}
+          onChange={onChange}
+          onClick={handleOpen}
+        />
+        <MultipleModal
+          ref={modalRef}
+          open={open}
+          onClose={handleClose}
+          value={value}
+          allowClear={allowClear}
+          multiple={multiple}
+          onChange={onChange}
+          portal={portal}
+          maskClassName={maskClassName}
+          maskStyle={maskStyle}
+          className={modalClassName}
+          style={modalStyle}
+          title={title}
+          defaultPickerValue={defaultPickerValue}
+          onError={onError}
+          type={type}
+          min={min}
+          max={max}
+          hourStep={hourStep}
+          minuteStep={minuteStep}
+        />
+      </>
     )
   }
 )

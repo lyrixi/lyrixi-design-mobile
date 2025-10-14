@@ -167,12 +167,6 @@ export default () => {
             placeholder="Layout"
             multiple={false}
             title="Select"
-            headerRender={() => {
-              return <p>Header</p>
-            }}
-            footerRender={() => {
-              return <p>Footer</p>
-            }}
             allowClear
             value={value}
             list={list}

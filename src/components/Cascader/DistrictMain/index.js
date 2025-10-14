@@ -18,7 +18,7 @@ import { LocaleUtil, Loading, ArrayUtil } from 'lyrixi-design-mobile'
 const CascaderDistrictMain = forwardRef(
   (
     {
-      visible,
+      open,
       value,
       // 开始于国家country, 省份province
       startType,
@@ -48,14 +48,14 @@ const CascaderDistrictMain = forwardRef(
     })
 
     useEffect(() => {
-      if (!visible) {
+      if (!open) {
         return
       }
 
       // 没有合法的基础列表, 则更新列表
       initList()
       // eslint-disable-next-line
-    }, [visible])
+    }, [open])
 
     // 初始列表
     async function initList() {
@@ -117,7 +117,7 @@ const CascaderDistrictMain = forwardRef(
 
     return (
       <DistrictMain
-        visible={visible}
+        open={open}
         value={value}
         type={type}
         list={list}

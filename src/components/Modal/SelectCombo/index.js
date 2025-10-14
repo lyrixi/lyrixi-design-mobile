@@ -1,10 +1,7 @@
 import React, {
   forwardRef,
   useRef,
-  useImperativeHandle,
-  Fragment,
-  useState,
-  useEffect
+  useImperativeHandle
 } from 'react'
 import getDisplayValue from './formatter'
 
@@ -25,9 +22,6 @@ import { DOMUtil, ObjectUtil } from 'lyrixi-design-mobile'
 const Combo = forwardRef(
   (
     {
-      // Modal Render
-      modalRender,
-
       // Combo Render
       comboRender,
       comboStyle,
@@ -49,10 +43,11 @@ const Combo = forwardRef(
       readOnly,
       disabled,
       placeholder,
-      onBeforeOpen,
-      clearRender,
-      onClose,
-      onOpen
+      onClick,
+      clearRender: customClearRender,
+      className,
+      style,
+      ...props
     },
     ref
   ) => {
@@ -65,7 +60,6 @@ const Combo = forwardRef(
 
     // Expose methods
     const comboRef = useRef(null)
-    const modalRef = useRef(null)
     useImperativeHandle(ref, () => {
       return {
         // 显示文本
@@ -82,37 +76,15 @@ const Combo = forwardRef(
             comboDOM = comboRef.current.getRootDOM()
           }
           return comboDOM
-        },
-        ...modalRef?.current,
-        close: () => {
-          setOpen(false)
-        },
-        open: () => {
-          setOpen(true)
         }
       }
     })
 
-    // 控制Modal显隐
-    const [open, setOpen] = useState(null)
-
-    // 包装 setOpen 函数,在关闭时触发 onClose
-    function handleClose() {
-      setOpen(false)
-      typeof onClose === 'function' && onClose()
-    }
-
     // 点击文本框
-    async function handleInputClick(e) {
+    function handleInputClick(e) {
       e.stopPropagation()
       if (readOnly || disabled) return
-      if (typeof onBeforeOpen === 'function') {
-        let goOn = await onBeforeOpen()
-        if (goOn === false) return
-      }
-
-      setOpen(true)
-      onOpen && onOpen()
+      onClick && onClick(e)
     }
 
     // 渲染清空按钮
@@ -123,8 +95,8 @@ const Combo = forwardRef(
       }
 
       // 自定义清空按钮
-      if (typeof clearRender === 'function') {
-        return clearRender({ ...clearParams, value: value, readOnly: readOnly })
+      if (typeof customClearRender === 'function') {
+        return customClearRender({ ...clearParams, value: value, readOnly: readOnly })
       }
 
       return ObjectUtil.isEmpty(value) || !allowClear ? (
@@ -144,9 +116,8 @@ const Combo = forwardRef(
       if (typeof comboRender === 'function') {
         return comboRender({
           comboRef,
-          open,
-          style: comboStyle,
-          className: DOMUtil.classNames(open ? 'expand' : '', comboClassName),
+          style: comboStyle || style,
+          className: DOMUtil.classNames(comboClassName, className),
           onClick: handleInputClick,
           value,
           allowClear,
@@ -161,16 +132,16 @@ const Combo = forwardRef(
             separator={separator}
             leftIcon={leftIcon}
             rightIcon={rightIcon}
-            className={comboClassName}
-            style={comboStyle}
+            className={DOMUtil.classNames(comboClassName, className)}
+            style={comboStyle || style}
             clearRender={clearRender}
             placeholder={placeholder}
             readOnly={readOnly}
             disabled={disabled}
             allowClear={allowClear}
             value={value}
-            onAdd={() => setOpen(true)}
-            onEdit={() => setOpen(true)}
+            onAdd={handleInputClick}
+            onEdit={handleInputClick}
             onChange={onChange}
           />
         )
@@ -185,39 +156,20 @@ const Combo = forwardRef(
           placeholder={placeholder}
           leftIcon={leftIcon}
           rightIcon={rightIcon}
-          className={comboClassName}
-          style={comboStyle}
+          className={DOMUtil.classNames(comboClassName, className)}
+          style={comboStyle || style}
           clear={clearRender}
           onClick={handleInputClick}
           // 强制只读的控件, 只会清空时触发
           onChange={onChange}
           ref={comboRef}
+          {...props}
         />
       )
     }
     const ComboNode = getComboNode()
 
-    return (
-      <Fragment>
-        {/* Combo */}
-        {ComboNode}
-
-        {/* Modal */}
-        {typeof modalRender === 'function' &&
-          modalRender({
-            modalRef: modalRef,
-            getComboDOM: () => {
-              return comboRef.current
-            },
-            // value: value,
-            // allowClear,
-            // multiple,
-            // onChange: onChange,
-            onClose: handleClose,
-            open: open
-          })}
-      </Fragment>
-    )
+    return ComboNode
   }
 )
 

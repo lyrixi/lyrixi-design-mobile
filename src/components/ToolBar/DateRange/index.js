@@ -121,32 +121,29 @@ function DateRangeBar({
       maskStyle={maskStyle}
       onClose={handleCancel}
       ref={dropdownRef}
-      mainRender={() => {
-        return (
-          <div className="toolbar-daterange-modal">
-            <div className="toolbar-daterange-modal-body">
-              <DateRange
-                min={min}
-                max={max}
-                value={value}
-                allowClear={allowClear}
-                rangeId={rangeId}
-                ranges={ranges}
-                onChange={handleChange}
-              />
-            </div>
-            <FooterBar>
-              <FooterBar.Button onClick={handleCancel}>
-                {LocaleUtil.locale('取消', 'SeedsUI_cancel')}
-              </FooterBar.Button>
-              <FooterBar.Button className="primary" onClick={handleOk}>
-                {LocaleUtil.locale('确定', 'SeedsUI_ok')}
-              </FooterBar.Button>
-            </FooterBar>
-          </div>
-        )
-      }}
-    />
+    >
+      <div className="toolbar-daterange-modal">
+        <div className="toolbar-daterange-modal-body">
+          <DateRange
+            min={min}
+            max={max}
+            value={value}
+            allowClear={allowClear}
+            rangeId={rangeId}
+            ranges={ranges}
+            onChange={handleChange}
+          />
+        </div>
+        <FooterBar>
+          <FooterBar.Button onClick={handleCancel}>
+            {LocaleUtil.locale('取消', 'SeedsUI_cancel')}
+          </FooterBar.Button>
+          <FooterBar.Button className="primary" onClick={handleOk}>
+            {LocaleUtil.locale('确定', 'SeedsUI_ok')}
+          </FooterBar.Button>
+        </FooterBar>
+      </div>
+    </Dropdown>
   )
 }
 

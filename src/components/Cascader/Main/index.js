@@ -77,7 +77,7 @@ const Main = forwardRef(
     // 初始化tabs、选中tab、列表
     useEffect(() => {
       if (
-        !visible ||
+        !open ||
         !Array.isArray(externalList) ||
         !externalList.length ||
         ArrayUtil.isEqual(tabsRef.current, value, ['id', 'name'])
@@ -87,25 +87,25 @@ const Main = forwardRef(
 
       update(value, { action: 'load', list: externalList })
       // eslint-disable-next-line
-    }, [visible, JSON.stringify(value), JSON.stringify(externalList)])
+    }, [open, JSON.stringify(value), JSON.stringify(externalList)])
 
     // 更新错误信息
     useEffect(() => {
-      if (!visible || typeof externalList !== 'string') {
+      if (!open || typeof externalList !== 'string') {
         return
       }
 
       setCurrentList(externalList)
       // eslint-disable-next-line
-    }, [visible, JSON.stringify(externalList)])
+    }, [open, JSON.stringify(externalList)])
 
     // 隐藏还原搜索状态
     useEffect(() => {
-      if (!visible) {
+      if (!open) {
         resetSearch()
       }
       // eslint-disable-next-line
-    }, [visible])
+    }, [open])
 
     // 初始化tabs、选中tab、列表
     async function update(nextValue, { list: newExternalList, action } = {}) {

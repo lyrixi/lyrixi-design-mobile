@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useState, useRef, useImperativeHandle } from 'react'
 
 import WeekModal from './../WeekModal'
 
@@ -34,51 +34,73 @@ const WeekCombo = forwardRef(
       type,
       min,
       max,
+
+      // Combo props
+      onBeforeOpen,
       ...props
     },
     ref
   ) => {
+    const [open, setOpen] = useState(false)
+    const comboRef = useRef(null)
+    const modalRef = useRef(null)
+
+    useImperativeHandle(ref, () => {
+      return {
+        ...comboRef.current,
+        ...modalRef.current,
+        close: () => setOpen(false),
+        open: () => setOpen(true)
+      }
+    })
+
+    async function handleOpen() {
+      if (typeof onBeforeOpen === 'function') {
+        let goOn = await onBeforeOpen()
+        if (goOn === false) return
+      }
+      setOpen(true)
+    }
+
+    function handleClose() {
+      setOpen(false)
+    }
+
     return (
-      <Combo
-        ref={ref}
-        formatter={() => {
-          return DateUtil.format(value, 'week')
-        }}
-        {...props}
-        value={value}
-        allowClear={allowClear}
-        multiple={multiple}
-        onChange={onChange}
-        // Modal
-        modalRender={({ modalRef, getComboDOM, open, onClose }) => {
-          return (
-            <WeekModal
-              // 透传属性用于控制显隐, 及暴露modalDOM和getModalDOM
-              ref={modalRef}
-              getComboDOM={getComboDOM}
-              open={open}
-              onClose={onClose}
-              // Combo
-              value={value}
-              allowClear={allowClear}
-              multiple={multiple}
-              onOk={onChange}
-              // Modal Props
-              portal={portal}
-              maskClassName={maskClassName}
-              maskStyle={maskStyle}
-              className={modalClassName}
-              style={modalStyle}
-              title={title}
-              defaultPickerValue={defaultPickerValue}
-              onError={onError}
-              type={type}
-              min={min}
-              max={max}
-            />
-          )
-        }}
-      />
+      <>
+        <Combo
+          ref={comboRef}
+          formatter={() => {
+            return DateUtil.format(value, 'week')
+          }}
+          {...props}
+          value={value}
+          allowClear={allowClear}
+          multiple={multiple}
+          onChange={onChange}
+          onClick={handleOpen}
+        />
+        <WeekModal
+          ref={modalRef}
+          open={open}
+          onClose={handleClose}
+          value={value}
+          allowClear={allowClear}
+          multiple={multiple}
+          onChange={onChange}
+          portal={portal}
+          maskClassName={maskClassName}
+          maskStyle={maskStyle}
+          className={modalClassName}
+          style={modalStyle}
+          title={title}
+          defaultPickerValue={defaultPickerValue}
+          onError={onError}
+          type={type}
+          min={min}
+          max={max}
+        />
+      </>
     )
   }
 )

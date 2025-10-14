@@ -68,19 +68,24 @@ export default () => {
               title="Dropdown left"
               color="primary"
               variant="fill"
-              mainRender={() => <div style={{ height: '300px' }}>Modal Content</div>}
-            />
+            >
+              <div style={{ height: '300px' }}>Modal Content</div>
+            </ToolBar.Dropdown>
             <ToolBar.Dropdown
               title="Dropdown ref"
               ref={dropdownRef}
-              mainRender={() => getDropdownModalNode()}
-            />
-            <ToolBar.Dropdown title="Dropdown modal" mainRender={getDropdownModalNode} />
+            >
+              {getDropdownModalNode()}
+            </ToolBar.Dropdown>
+            <ToolBar.Dropdown title="Dropdown modal">
+              {getDropdownModalNode()}
+            </ToolBar.Dropdown>
             <ToolBar.Dropdown
               right={12}
               title="Dropdown right"
-              mainRender={() => <div style={{ height: '300px' }}>Modal Content</div>}
-            />
+            >
+              <div style={{ height: '300px' }}>Modal Content</div>
+            </ToolBar.Dropdown>
           </ToolBar>
         </div>
 

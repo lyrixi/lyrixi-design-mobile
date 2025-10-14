@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React, { useState, forwardRef, useRef, useImperativeHandle } from 'react'
 import validateMaxMin from '../utils/validateMaxMin'
 import formatValue from './../MultipleMain/formatValue'
 import MultipleMain from './../MultipleMain'
@@ -17,10 +17,15 @@ const Modal = forwardRef(
   (
     {
       // Modal
+      open,
+      onClose,
+      onOpen,
       value,
+      allowClear,
+      multiple,
+      onChange,
       defaultPickerValue,
       onError,
-      onOk,
 
       // Main
       type = 'date',
@@ -32,53 +37,86 @@ const Modal = forwardRef(
     },
     ref
   ) => {
+    const [currentValue, setCurrentValue] = useState(value)
+    const modalRef = useRef(null)
+    const mainRef = useRef(null)
+
+    useImperativeHandle(ref, () => {
+      return {
+        ...modalRef.current,
+        ...mainRef.current
+      }
+    })
+
+    // 同步外部value到内部currentValue
+    React.useEffect(() => {
+      if (open) {
+        setCurrentValue(formatValue(value || defaultPickerValue))
+      }
+    }, [open, value, defaultPickerValue])
+
+    async function handleOk() {
+      let validatedValue = currentValue
+      // 校验
+      if (min || max) {
+        // 校验值是否合法
+        for (let tab of validatedValue) {
+          let newValue = validateMaxMin(tab.value, {
+            type: type,
+            min: min,
+            max: max,
+            onError: onError
+          })
+
+          if (newValue === false) return
+          tab.value = newValue
+        }
+      }
+
+      // 触发 onChange
+      if (onChange) {
+        let goOn = await onChange(validatedValue)
+        if (goOn === false) return
+      }
+      onClose && onClose()
+    }
+
+    function handleChange(newValue) {
+      setCurrentValue(newValue)
+      // 单选时立即关闭
+      if (multiple === false) {
+        if (onChange) {
+          onChange(newValue)
+        }
+        onClose && onClose()
+      }
+    }
+
     return (
       <SelectModal
-        ref={ref}
+        ref={modalRef}
         {...props}
-        mainRender={({ mainRef, open, value, allowClear, multiple, onChange }) => {
-          return (
-            <MultipleMain
-              ref={mainRef}
-              visible={open}
-              value={value}
-              allowClear={allowClear}
-              multiple={multiple}
-              onChange={onChange}
-              type={type}
-              min={min}
-              max={max}
-              hourStep={hourStep}
-              minuteStep={minuteStep}
-            />
-          )
-        }}
-        onOk={async (currentValue) => {
-          // 校验
-          if (min || max) {
-            // 校验值是否合法
-            for (let tab of currentValue) {
-              let newValue = validateMaxMin(tab.value, {
-                type: type,
-                min: min,
-                max: max,
-                onError: onError
-              })
-
-              if (newValue === false) return false
-              tab.value = newValue
-            }
-          }
-
-          // 触发 onOk
-          if (onOk) {
-            let goOn = await onOk(currentValue)
-            return goOn
-          }
-        }}
-        value={formatValue(value || defaultPickerValue)}
+        open={open}
+        onClose={onClose}
+        onOpen={onOpen}
+        onOk={handleOk}
+        ok={multiple !== false}
         className={`picker-modal${props.className ? ' ' + props.className : ''}`}
-      />
+      >
+        <MultipleMain
+          ref={mainRef}
+          open={open}
+          value={currentValue}
+          allowClear={allowClear}
+          multiple={multiple}
+          onChange={handleChange}
+          type={type}
+          min={min}
+          max={max}
+          hourStep={hourStep}
+          minuteStep={minuteStep}
+        />
+      </SelectModal>
     )
   }
 )

@@ -19,10 +19,15 @@ const RangeModal = forwardRef(
   (
     {
       // Modal
+      open,
+      onClose,
+      onOpen,
       value,
+      allowClear,
+      multiple,
+      onChange,
       defaultPickerValue,
       onError,
-      onOk,
 
       // Main
       type = 'date',
@@ -45,69 +50,91 @@ const RangeModal = forwardRef(
       ranges = getDefaultRanges()
     }
 
+    const [currentValue, setCurrentValue] = useState(value)
+    const [currentRangeId, setCurrentRangeId] = useState(rangeId)
     const modalRef = useRef(null)
-    // 当前选中项
-    let [currentRangeId, setCurrentRangeId] = useState(rangeId)
+    const mainRef = useRef(null)
 
     useImperativeHandle(ref, () => {
-      return modalRef.current
+      return {
+        ...modalRef.current,
+        ...mainRef.current
+      }
     })
+
+    // 同步外部value到内部currentValue
+    React.useEffect(() => {
+      if (open) {
+        setCurrentValue(formatValue(value || defaultPickerValue))
+        setCurrentRangeId(rangeId)
+      }
+    }, [open, value, defaultPickerValue, rangeId])
+
+    async function handleOk() {
+      // 校验
+      let validatedValue = updateRangeValue(currentValue, type)
+
+      validatedValue = validateRange(validatedValue, {
+        type: type,
+        min: min,
+        max: max,
+        diff: diff,
+        onError: onError
+      })
+
+      if (validatedValue === false) return
+
+      // 触发 onChange
+      if (onChange) {
+        let goOn = await onChange(validatedValue, { rangeId: currentRangeId, ranges })
+        if (goOn === false) return
+      }
+      onClose && onClose()
+    }
+
+    function handleChange(newValue, { rangeId: newRangeId } = {}) {
+      setCurrentValue(newValue)
+      setCurrentRangeId(newRangeId)
+      // 单选时立即关闭
+      if (multiple === false) {
+        if (onChange) {
+          onChange(newValue, { rangeId: newRangeId, ranges })
+        }
+        onClose && onClose()
+      }
+    }
 
     return (
       <SelectModal
         ref={modalRef}
         {...props}
-        mainRender={({ mainRef, open, value, allowClear, multiple, onChange: mainOnChange }) => {
-          return (
-            <RangeMain
-              ref={mainRef}
-              visible={open}
-              value={value}
-              allowClear={allowClear}
-              multiple={multiple}
-              onChange={(newValue, { rangeId: newRangeId } = {}) => {
-                setCurrentRangeId(newRangeId)
-                mainOnChange(newValue, { rangeId: newRangeId })
-              }}
-              type={type}
-              min={min}
-              max={max}
-              hourStep={hourStep}
-              minuteStep={minuteStep}
-              disabledStart={disabledStart}
-              disabledEnd={disabledEnd}
-              titles={titles}
-              ranges={ranges}
-              portal={modalRef?.current?.rootDOM}
-              rangeId={currentRangeId}
-            />
-          )
-        }}
-        onOk={async (newValue, newArguments) => {
-          // 校验
-          let currentValue = updateRangeValue(newValue, type)
-
-          currentValue = validateRange(currentValue, {
-            type: type,
-            min: min,
-            max: max,
-            diff: diff,
-            onError: onError
-          })
-
-          if (currentValue === false) return false
-
-          // 触发 onOk
-          if (onOk) {
-            let goOn = await onOk(currentValue, { rangeId: newArguments?.rangeId || null })
-            return goOn
-          }
-
-          setCurrentRangeId(newArguments?.rangeId || null)
-        }}
-        value={formatValue(value || defaultPickerValue)}
+        open={open}
+        onClose={onClose}
+        onOpen={onOpen}
+        onOk={handleOk}
+        ok={multiple !== false}
         className={`picker-modal${props.className ? ' ' + props.className : ''}`}
-      />
+      >
+        <RangeMain
+          ref={mainRef}
+          open={open}
+          value={currentValue}
+          allowClear={allowClear}
+          multiple={multiple}
+          onChange={handleChange}
+          type={type}
+          min={min}
+          max={max}
+          hourStep={hourStep}
+          minuteStep={minuteStep}
+          disabledStart={disabledStart}
+          disabledEnd={disabledEnd}
+          titles={titles}
+          ranges={ranges}
+          portal={modalRef?.current?.rootDOM}
+          rangeId={currentRangeId}
+        />
+      </SelectModal>
     )
   }
 )

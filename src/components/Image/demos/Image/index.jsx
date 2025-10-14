@@ -114,7 +114,7 @@ export default () => {
           // Preview operate: start
           upload={<div style={{ width: '100%', height: '100%', backgroundColor: 'ref' }}>1</div>}
           allowChoose={list?.length ? false : true}
-          visibleCount={1}
+          ellipsis={{ max: 1 }}
           style={{
             '--cell-width': '32px',
             '--cell-height': '32px',

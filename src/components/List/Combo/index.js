@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react'
-import CascaderModal from './../Modal'
+import React, { forwardRef, useState, useRef, useImperativeHandle } from 'react'
+import ListModal from './../Modal'
 
 // 内库使用-start
 import Combo from './../../Modal/SelectCombo'
@@ -38,52 +38,74 @@ const ListCombo = forwardRef(
       checkable = true,
       checkbox,
       checkboxPosition,
+
+      // Combo props
+      onBeforeOpen,
       ...props
     },
     ref
   ) => {
+    const [open, setOpen] = useState(false)
+    const comboRef = useRef(null)
+    const modalRef = useRef(null)
+
+    useImperativeHandle(ref, () => {
+      return {
+        ...comboRef.current,
+        ...modalRef.current,
+        close: () => setOpen(false),
+        open: () => setOpen(true)
+      }
+    })
+
+    async function handleOpen() {
+      if (typeof onBeforeOpen === 'function') {
+        let goOn = await onBeforeOpen()
+        if (goOn === false) return
+      }
+      setOpen(true)
+    }
+
+    function handleClose() {
+      setOpen(false)
+    }
+
     return (
-      <Combo
-        ref={ref}
-        {...props}
-        value={value}
-        allowClear={allowClear}
-        multiple={multiple}
-        onChange={onChange}
-        // Modal
-        modalRender={({ modalRef, getComboDOM, open, onClose }) => {
-          return (
-            <CascaderModal
-              // 透传属性用于控制显隐, 及暴露modalDOM和getModalDOM
-              ref={modalRef}
-              getComboDOM={getComboDOM}
-              open={open}
-              onClose={onClose}
-              // Combo
-              value={value}
-              allowClear={allowClear}
-              multiple={multiple}
-              onOk={onChange}
-              // Modal Props
-              portal={portal}
-              maskClassName={maskClassName}
-              maskStyle={maskStyle}
-              className={modalClassName}
-              style={modalStyle}
-              title={title}
-              list={list}
-              itemRender={itemRender}
-              layout={layout}
-              checkable={checkable}
-              checkbox={checkbox}
-              checkboxPosition={checkboxPosition}
-              loadList={loadList}
-              pull={pull}
-              pagination={pagination}
-            />
-          )
-        }}
-      />
+      <>
+        <Combo
+          ref={comboRef}
+          {...props}
+          value={value}
+          allowClear={allowClear}
+          multiple={multiple}
+          onChange={onChange}
+          onClick={handleOpen}
+        />
+        <ListModal
+          ref={modalRef}
+          open={open}
+          onClose={handleClose}
+          value={value}
+          allowClear={allowClear}
+          multiple={multiple}
+          onChange={onChange}
+          portal={portal}
+          maskClassName={maskClassName}
+          maskStyle={maskStyle}
+          className={modalClassName}
+          style={modalStyle}
+          title={title}
+          list={list}
+          itemRender={itemRender}
+          layout={layout}
+          checkable={checkable}
+          checkbox={checkbox}
+          checkboxPosition={checkboxPosition}
+          loadList={loadList}
+          pull={pull}
+          pagination={pagination}
+        />
+      </>
     )
   }
 )

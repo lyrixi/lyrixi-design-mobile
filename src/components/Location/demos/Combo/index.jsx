@@ -110,18 +110,6 @@ export default () => {
         //   })
         // }}
         safeArea={true}
-        footerRender={({ visible, triggerOk }) => {
-          return visible === 'choose' ? (
-            <Footer
-              onOk={() => {
-                triggerOk()
-              }}
-              onClear={() => {
-                triggerOk(null)
-              }}
-            />
-          ) : null
-        }}
         mainProps={{
           // autoLocation: false,
           zoom: 16

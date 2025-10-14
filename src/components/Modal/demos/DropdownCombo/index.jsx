@@ -14,12 +14,11 @@ export default () => {
             console.log('onOpen')
           }}
           left={12}
-          mainRender={() => (
-            <div className="bg-white" style={{ height: '300px' }}>
-              Modal Content Left
-            </div>
-          )}
-        />
+        >
+          <div className="bg-white" style={{ height: '300px' }}>
+            Modal Content Left
+          </div>
+        </Modal.DropdownCombo>
 
         <Modal.DropdownCombo
           comboChildren={<Divider>Modal.DropdownCombo Right</Divider>}
@@ -30,12 +29,11 @@ export default () => {
             console.log('onOpen')
           }}
           right={12}
-          mainRender={() => (
-            <div className="bg-white" style={{ height: '300px' }}>
-              Modal Content Right
-            </div>
-          )}
-        />
+        >
+          <div className="bg-white" style={{ height: '300px' }}>
+            Modal Content Right
+          </div>
+        </Modal.DropdownCombo>
 
         <Modal.DropdownCombo
           comboChildren={<Divider>Modal.DropdownCombo Center</Divider>}
@@ -48,12 +46,11 @@ export default () => {
           modalStyle={{
             width: '100%'
           }}
-          mainRender={() => (
-            <div className="bg-white" style={{ height: '300px' }}>
-              Modal Content Left
-            </div>
-          )}
-        />
+        >
+          <div className="bg-white" style={{ height: '300px' }}>
+            Modal Content Left
+          </div>
+        </Modal.DropdownCombo>
       </Page.Main>
     </Page>
   )

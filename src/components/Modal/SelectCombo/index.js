@@ -1,8 +1,4 @@
-import React, {
-  forwardRef,
-  useRef,
-  useImperativeHandle
-} from 'react'
+import React, { forwardRef, useRef, useImperativeHandle } from 'react'
 import getDisplayValue from './formatter'
 
 import Input from './../../Input'
@@ -28,25 +24,27 @@ const Combo = forwardRef(
       comboClassName,
 
       // Input
-      leftIcon,
-      rightIcon,
-
-      // Combo
       value,
       onChange,
       allowClear,
+      readOnly,
+      disabled,
+      placeholder,
+      clearRender: customClearRender,
+      leftIcon,
+      rightIcon,
+      className,
+      style,
+      onClick,
+
+      // Combo
+
       multiple,
       formatter,
       autoSize,
       separator,
       mode,
-      readOnly,
-      disabled,
-      placeholder,
-      onClick,
-      clearRender: customClearRender,
-      className,
-      style,
+
       ...props
     },
     ref

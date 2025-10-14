@@ -46,13 +46,13 @@ const InputText = (
     // 自动获取焦点
     autoFocus, // 渲染时自动获取焦点
     autoSelect, // 渲染时自动选中
-    // 自定义渲染文本框
-    input,
     // 左右图标
     leftIcon,
     rightIcon,
+    // 自定义渲染文本框
+    inputRender,
     // 清除按键
-    clear,
+    clearRender,
     allowClear,
     // events
     onClick,
@@ -237,8 +237,8 @@ const InputText = (
 
   // render
   function getInputNode() {
-    if (typeof input === 'function') {
-      return input({
+    if (typeof inputRender === 'function') {
+      return inputRender({
         inputRef,
         id,
         name,
@@ -393,7 +393,7 @@ const InputText = (
 
       {/* Clear Icon */}
       {getClearNode({
-        clear,
+        clearRender,
         allowClear,
         disabled,
         readOnly,

@@ -379,7 +379,7 @@ const LocationCombo = forwardRef(
             props?.className,
             locationStatus === '-1' ? ' positioning' : ''
           )}
-          input={
+          inputRender={
             statusNode
               ? () => {
                   return statusNode

@@ -4,7 +4,7 @@ import findDistrictLeafIndex from './../DistrictMain/utils/findDistrictLeafIndex
 import DistrictMain from './../DistrictMain'
 
 // 内库使用-start
-import SelectModal from './../../Modal/SelectModal'
+import NavBarModal from './../../Modal/NavBarModal'
 // 内库使用-end
 
 /* 测试使用-start
@@ -123,7 +123,7 @@ const DistrictModal = forwardRef(
     }
 
     return (
-      <SelectModal
+      <NavBarModal
         ref={modalRef}
         open={open}
         onClose={onClose}
@@ -149,7 +149,7 @@ const DistrictModal = forwardRef(
           editableOptions={editableOptions}
           onLoad={handleLoad}
         />
-      </SelectModal>
+      </NavBarModal>
     )
   }
 )

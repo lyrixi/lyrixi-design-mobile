@@ -4,12 +4,12 @@ import Modal from './../Modal'
 
 // 内库使用-start
 import DateUtil from './../../../utils/DateUtil'
-import Combo from './../../Modal/SelectCombo'
+import NavBarCombo from './../../Modal/NavBarCombo'
 // 内库使用-end
 
 /* 测试使用-start
 import { DateUtil, Modal as BaseModal } from 'lyrixi-design-mobile'
-const Combo = BaseModal.SelectCombo
+const NavBarCombo = BaseModal.NavBarCombo
 测试使用-end */
 
 // DatePicker
@@ -70,7 +70,7 @@ const DatePickerCombo = forwardRef(
 
     return (
       <>
-        <Combo
+        <NavBarCombo
           ref={comboRef}
           formatter={() => {
             return DateUtil.format(value, type)

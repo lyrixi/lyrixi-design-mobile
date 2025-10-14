@@ -3,7 +3,7 @@ import Main from './../Main'
 
 // 内库使用-start
 import LocaleUtil from './../../../utils/LocaleUtil'
-import SelectModal from './../../Modal/SelectModal'
+import NavBarModal from './../../Modal/NavBarModal'
 // 内库使用-end
 
 /* 测试使用-start
@@ -70,7 +70,7 @@ const LocationModal = forwardRef(
     }
 
     return (
-      <SelectModal
+      <NavBarModal
         ref={modalRef}
         title={
           open === 'choose'
@@ -96,7 +96,7 @@ const LocationModal = forwardRef(
           getLocation={getLocation}
           getAddress={getAddress}
         />
-      </SelectModal>
+      </NavBarModal>
     )
   }
 )

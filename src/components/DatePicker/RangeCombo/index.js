@@ -5,12 +5,12 @@ import formatValue from './../RangeMain/formatValue'
 import RangeModal from './../RangeModal'
 
 // 内库使用-start
-import Combo from './../../Modal/SelectCombo'
+import NavBarCombo from './../../Modal/NavBarCombo'
 // 内库使用-end
 
 /* 测试使用-start
 import { Modal } from 'lyrixi-design-mobile'
-const Combo = Modal.SelectCombo
+const NavBarCombo = Modal.NavBarCombo
 测试使用-end */
 
 // 日期区间
@@ -94,7 +94,7 @@ const RangeCombo = forwardRef(
 
     return (
       <>
-        <Combo
+        <NavBarCombo
           ref={comboRef}
           separator={separator}
           // 用于回显displayValue

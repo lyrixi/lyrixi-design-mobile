@@ -1,137 +1,173 @@
-import React, { useState, useEffect, useRef, forwardRef, useImperativeHandle } from 'react'
+import React, { forwardRef, useRef, useImperativeHandle } from 'react'
+import getDisplayValue from './formatter'
 
-import NavBarModal from './../NavBarModal'
+import Input from './../../Input'
+
+import Tags from './Tags'
 
 // 内库使用-start
 import DOMUtil from './../../../utils/DOMUtil'
+import ObjectUtil from './../../../utils/ObjectUtil'
 // 内库使用-end
 
 /* 测试使用-start
-import { DOMUtil } from 'lyrixi-design-mobile'
+import { DOMUtil, ObjectUtil } from 'lyrixi-design-mobile'
 测试使用-end */
 
+// Combo
 const Combo = forwardRef(
   (
     {
+      // Combo Render
       comboRender,
-      comboChildren,
       comboStyle,
       comboClassName,
 
-      // NavBarModal
-      portal,
-      animation,
-      maskClassName,
-      maskStyle,
-      modalClassName,
-      modalStyle,
-      title,
-      titleClassName,
-      titleStyle,
-      ok,
-      onOk,
-      okClassName,
-      okStyle,
-      cancel,
-      onCancel,
-      onClose,
-      onOpen,
-      cancelClassName,
-      cancelStyle,
-      maskClosable,
-      children,
+      // Input
+      value,
+      onChange,
+      allowClear,
+      readOnly,
+      disabled,
+      placeholder,
+      clearRender: customClearRender,
+      leftIcon,
+      rightIcon,
+      className,
+      style,
+      onClick,
+
+      // Combo
+
+      multiple,
+      formatter,
+      autoSize,
+      separator,
+      mode,
+
       ...props
     },
     ref
   ) => {
-    const comboRef = useRef(null)
-    const [open, setOpen] = useState(false)
+    // 显示文本格式化
+    if (typeof formatter !== 'function') {
+      // eslint-disable-next-line
+      formatter = getDisplayValue
+    }
+    let displayValue = formatter(value, { separator })
 
-    // Expose
+    // Expose methods
+    const comboRef = useRef(null)
     useImperativeHandle(ref, () => {
       return {
-        comboDOM: comboRef.current,
-        getComboDOM: () => comboRef.current,
-        close: () => {
-          setOpen(false)
+        // 显示文本
+        displayValue: displayValue,
+        getDisplayValue: (newValue) => {
+          return displayValue
         },
-        open: () => {
-          setOpen(true)
+        comboDOM: comboRef?.current?.getRootDOM ? comboRef.current.getRootDOM() : comboRef.current,
+        getComboDOM: () => {
+          // div
+          let comboDOM = comboRef?.current
+          // Input.Text
+          if (comboRef?.current?.getRootDOM) {
+            comboDOM = comboRef.current.getRootDOM()
+          }
+          return comboDOM
         }
       }
     })
 
-    useEffect(() => {
-      if (typeof open !== 'boolean') return
-      if (open) {
-        onOpen()
-      } else {
-        onClose()
-      }
-      // eslint-disable-next-line
-    }, [open])
+    // 点击文本框
+    function handleInputClick(e) {
+      e.stopPropagation()
+      if (readOnly || disabled) return
+      onClick && onClick(e)
+    }
 
-    // 获取Combo节点
+    // 渲染清空按钮
+    function clearRender(clearParams) {
+      // 只读不显示清空按钮
+      if (readOnly || disabled) {
+        return null
+      }
+
+      // 自定义清空按钮
+      if (typeof customClearRender === 'function') {
+        return customClearRender({ ...clearParams, value: value, readOnly: readOnly })
+      }
+
+      return ObjectUtil.isEmpty(value) || !allowClear ? (
+        <Input.IconRightArrow />
+      ) : (
+        <Input.IconClear onClick={clearParams?.triggerClear} />
+      )
+    }
+
+    // 文本框
+    let InputNode = Input.Text
+    if (autoSize) {
+      InputNode = Input.AutoFit
+    }
+
     function getComboNode() {
       if (typeof comboRender === 'function') {
         return comboRender({
           comboRef,
-          open,
-          style: comboStyle,
-          className: DOMUtil.classNames('modal-navbar-combo', open ? 'expand' : '', comboClassName),
-          onClick: () => {
-            setOpen(true)
-          }
+          style: comboStyle || style,
+          className: DOMUtil.classNames(comboClassName, className),
+          onClick: handleInputClick,
+          value,
+          allowClear,
+          multiple,
+          onChange: onChange
         })
       }
+
+      if (mode === 'tags') {
+        return (
+          <Tags
+            separator={separator}
+            leftIcon={leftIcon}
+            rightIcon={rightIcon}
+            className={DOMUtil.classNames(comboClassName, className)}
+            style={comboStyle || style}
+            clearRender={clearRender}
+            placeholder={placeholder}
+            readOnly={readOnly}
+            disabled={disabled}
+            allowClear={allowClear}
+            value={value}
+            onAdd={handleInputClick}
+            onEdit={handleInputClick}
+            onChange={onChange}
+          />
+        )
+      }
+
       return (
-        <div
-          {...props}
-          className={DOMUtil.classNames('modal-navbar-combo', comboClassName)}
-          style={comboStyle}
-          onClick={() => {
-            setOpen(true)
-          }}
+        <InputNode
+          disabled={disabled}
+          allowClear={allowClear}
+          value={displayValue}
+          readOnly
+          placeholder={placeholder}
+          leftIcon={leftIcon}
+          rightIcon={rightIcon}
+          className={DOMUtil.classNames(comboClassName, className)}
+          style={comboStyle || style}
+          clear={clearRender}
+          onClick={handleInputClick}
+          // 强制只读的控件, 只会清空时触发
+          onChange={onChange}
           ref={comboRef}
-        >
-          {comboChildren}
-        </div>
+          {...props}
+        />
       )
     }
     const ComboNode = getComboNode()
 
-    return (
-      <>
-        {/* Combo */}
-        {ComboNode}
-
-        {/* Modal */}
-        <NavBarModal
-          portal={portal}
-          animation={animation}
-          maskClassName={maskClassName}
-          maskStyle={maskStyle}
-          className={modalClassName}
-          style={modalStyle}
-          title={title}
-          titleClassName={titleClassName}
-          titleStyle={titleStyle}
-          ok={ok}
-          onOk={onOk}
-          okClassName={okClassName}
-          okStyle={okStyle}
-          cancel={cancel}
-          onCancel={onCancel}
-          cancelClassName={cancelClassName}
-          cancelStyle={cancelStyle}
-          maskClosable={maskClosable}
-          onClose={setOpen}
-          open={open}
-        >
-          {children}
-        </NavBarModal>
-      </>
-    )
+    return ComboNode
   }
 )
 

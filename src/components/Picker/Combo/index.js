@@ -2,11 +2,11 @@ import React, { forwardRef, useState, useRef, useImperativeHandle } from 'react'
 import Modal from './../Modal'
 
 // 内库使用
-import Combo from './../../../components/Modal/SelectCombo'
+import NavBarCombo from './../../../components/Modal/NavBarCombo'
 
 // 测试使用
 // import { Modal } from 'lyrixi-design-mobile'
-// const Combo = Modal.SelectCombo
+// const NavBarCombo = Modal.NavBarCombo
 
 // Picker
 const PickerCombo = forwardRef(
@@ -61,7 +61,7 @@ const PickerCombo = forwardRef(
 
     return (
       <>
-        <Combo
+        <NavBarCombo
           ref={comboRef}
           {...props}
           value={value}

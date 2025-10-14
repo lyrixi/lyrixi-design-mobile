@@ -5,7 +5,7 @@ import Main from './../Main'
 // 内库使用-start
 import ToolBar from './../../../components/ToolBar'
 import List from './../../../components/List'
-import SelectModal from './../../../components/Modal/SelectModal'
+import NavBarModal from './../../../components/Modal/NavBarModal'
 // 内库使用-end
 
 /* 测试使用-start
@@ -99,7 +99,7 @@ const Modal = forwardRef(
     }
 
     return (
-      <SelectModal
+      <NavBarModal
         ref={modalRef}
         {...props}
         open={open}
@@ -125,7 +125,7 @@ const Modal = forwardRef(
           checkbox={checkbox}
           checkboxPosition={checkboxPosition}
         />
-      </SelectModal>
+      </NavBarModal>
     )
   }
 )

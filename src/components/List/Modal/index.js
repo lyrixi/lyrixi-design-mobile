@@ -2,7 +2,7 @@ import React, { forwardRef, useState, useRef, useImperativeHandle } from 'react'
 import Main from './../Main'
 
 // 内库使用-start
-import SelectModal from './../../Modal/SelectModal'
+import NavBarModal from './../../Modal/NavBarModal'
 // 内库使用-end
 
 /* 测试使用-start
@@ -76,7 +76,7 @@ const ListModal = forwardRef(
     }
 
     return (
-      <SelectModal
+      <NavBarModal
         ref={modalRef}
         {...props}
         open={open}
@@ -102,7 +102,7 @@ const ListModal = forwardRef(
           checkbox={checkbox}
           checkboxPosition={checkboxPosition}
         />
-      </SelectModal>
+      </NavBarModal>
     )
   }
 )

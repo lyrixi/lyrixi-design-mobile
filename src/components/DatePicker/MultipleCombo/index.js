@@ -3,12 +3,12 @@ import MultipleModal from './../MultipleModal'
 import getDisplayValue from './getDisplayValue'
 
 // 内库使用-start
-import Combo from './../../Modal/SelectCombo'
+import NavBarCombo from './../../Modal/NavBarCombo'
 // 内库使用-end
 
 /* 测试使用-start
 import { Modal } from 'lyrixi-design-mobile'
-const Combo = Modal.SelectCombo
+const NavBarCombo = Modal.NavBarCombo
 测试使用-end */
 
 // DatePicker
@@ -72,7 +72,7 @@ const MultipleCombo = forwardRef(
 
     return (
       <>
-        <Combo
+        <NavBarCombo
           ref={comboRef}
           formatter={() => {
             return getDisplayValue({

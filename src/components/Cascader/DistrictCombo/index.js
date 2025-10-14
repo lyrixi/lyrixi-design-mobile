@@ -10,12 +10,12 @@ import DistrictModal from './../DistrictModal'
 
 // 内库使用-start
 import ArrayUtil from './../../../utils/ArrayUtil'
-import Combo from './../../Modal/SelectCombo'
+import NavBarCombo from './../../Modal/NavBarCombo'
 // 内库使用-end
 
 /* 测试使用-start
 import { ArrayUtil, Modal } from 'lyrixi-design-mobile'
-const Combo = Modal.SelectCombo
+const NavBarCombo = Modal.NavBarCombo
 测试使用-end */
 
 // 级联选择
@@ -148,7 +148,7 @@ const DistrictCombo = forwardRef(
 
     return (
       <>
-        <Combo
+        <NavBarCombo
           ref={comboRef}
           value={value}
           onChange={handleChange}

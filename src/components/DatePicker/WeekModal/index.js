@@ -4,7 +4,7 @@ import formatValue from './formatValue'
 import WeekMain from './../WeekMain'
 
 // 内库使用-start
-import SelectModal from './../../Modal/SelectModal'
+import NavBarModal from './../../Modal/NavBarModal'
 // 内库使用-end
 
 /* 测试使用-start
@@ -88,7 +88,7 @@ const WeekModal = forwardRef(
     }
 
     return (
-      <SelectModal
+      <NavBarModal
         ref={modalRef}
         {...props}
         open={open}
@@ -108,7 +108,7 @@ const WeekModal = forwardRef(
           min={min}
           max={max}
         />
-      </SelectModal>
+      </NavBarModal>
     )
   }
 )

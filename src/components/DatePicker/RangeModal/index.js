@@ -6,7 +6,7 @@ import validateRange from './validateRange'
 import RangeMain from './../RangeMain'
 
 // 内库使用-start
-import SelectModal from './../../Modal/SelectModal'
+import NavBarModal from './../../Modal/NavBarModal'
 // 内库使用-end
 
 /* 测试使用-start
@@ -105,7 +105,7 @@ const RangeModal = forwardRef(
     }
 
     return (
-      <SelectModal
+      <NavBarModal
         ref={modalRef}
         {...props}
         open={open}
@@ -134,7 +134,7 @@ const RangeModal = forwardRef(
           portal={modalRef?.current?.rootDOM}
           rangeId={currentRangeId}
         />
-      </SelectModal>
+      </NavBarModal>
     )
   }
 )

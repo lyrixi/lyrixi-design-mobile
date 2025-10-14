@@ -4,7 +4,7 @@ import formatValue from './../MultipleMain/formatValue'
 import MultipleMain from './../MultipleMain'
 
 // 内库使用-start
-import SelectModal from './../../Modal/SelectModal'
+import NavBarModal from './../../Modal/NavBarModal'
 // 内库使用-end
 
 /* 测试使用-start
@@ -93,7 +93,7 @@ const Modal = forwardRef(
     }
 
     return (
-      <SelectModal
+      <NavBarModal
         ref={modalRef}
         {...props}
         open={open}
@@ -116,7 +116,7 @@ const Modal = forwardRef(
           hourStep={hourStep}
           minuteStep={minuteStep}
         />
-      </SelectModal>
+      </NavBarModal>
     )
   }
 )

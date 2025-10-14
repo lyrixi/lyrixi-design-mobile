@@ -76,12 +76,11 @@ const Combo = (
       </div>
       <Modal
         ref={modalRef}
-        visible={visible}
+        open={visible}
         value={value}
         onChange={handleChange}
-        onVisibleChange={(newVisible) => {
-          setVisible(newVisible)
-        }}
+        onOpen={() => setVisible(true)}
+        onClose={() => setVisible(false)}
         // 绘画配置
         color={color}
         backgroundColor={backgroundColor}

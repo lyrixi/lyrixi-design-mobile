@@ -9,7 +9,7 @@ import { LocaleUtil } from 'lyrixi-design-mobile'
 // 显示Loading
 // eslint-disable-next-line
 export default function (props) {
-  const { id, maskClassName, maskStyle, className, style, content, onVisibleChange } = {
+  const { id, maskClassName, maskStyle, className, style, content, onOpen } = {
     ...(this?.defaultProps || {}),
     ...(props || {})
   }
@@ -76,8 +76,8 @@ export default function (props) {
     // 显示
     mask.classList.add('active')
 
-    if (typeof onVisibleChange === 'function') {
-      onVisibleChange(true)
+    if (typeof onOpen === 'function') {
+      onOpen()
     }
 
     return mask

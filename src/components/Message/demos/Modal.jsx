@@ -13,7 +13,7 @@ export default () => {
           </Button>
         </Page.Main>
       </Page>
-      <Message.Modal visible={visible} onVisibleChange={setVisible}>
+      <Message.Modal open={visible} onClose={() => setVisible(false)}>
         <Message.Header>
           <Message.Icon className="seeds-icon-config color-primary" />
           <Message.Title>Title</Message.Title>

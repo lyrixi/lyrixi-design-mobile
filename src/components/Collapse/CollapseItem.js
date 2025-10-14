@@ -16,8 +16,9 @@ const CollapseItem = (
     title,
     arrowRender = 'collapse-item-header-arrow-icon',
     arrowPosition = 'right',
-    visible: externalVisible = true,
-    onVisibleChange,
+    open: externalOpen = true,
+    onOpen,
+    onClose,
     children,
     ...props
   },
@@ -25,15 +26,15 @@ const CollapseItem = (
 ) => {
   const rootRef = useRef(null)
 
-  const [visible, setVisible] = useState(externalVisible)
+  const [open, setOpen] = useState(externalOpen)
 
   // Controlled component
   useEffect(() => {
-    if (typeof externalVisible === 'boolean' && onVisibleChange) {
-      setVisible(externalVisible)
+    if (typeof externalOpen === 'boolean' && (onOpen || onClose)) {
+      setOpen(externalOpen)
     }
     // eslint-disable-next-line
-  }, [externalVisible])
+  }, [externalOpen])
 
   // Expose
   useImperativeHandle(ref, () => {
@@ -41,27 +42,36 @@ const CollapseItem = (
       rootDOM: rootRef.current,
       getRootDOM: () => rootRef.current,
       open: () => {
-        if (onVisibleChange) {
-          onVisibleChange(true)
+        if (onOpen) {
+          onOpen()
         } else {
-          setVisible(true)
+          setOpen(true)
         }
       },
       close: () => {
-        if (onVisibleChange) {
-          onVisibleChange(false)
+        if (onClose) {
+          onClose()
         } else {
-          setVisible(false)
+          setOpen(false)
         }
       }
     }
   })
 
   const handleClick = () => {
-    if (onVisibleChange) {
-      onVisibleChange(!visible)
+    const newOpen = !open
+    if (newOpen) {
+      if (onOpen) {
+        onOpen()
+      } else {
+        setOpen(true)
+      }
     } else {
-      setVisible(!visible)
+      if (onClose) {
+        onClose()
+      } else {
+        setOpen(false)
+      }
     }
   }
 
@@ -69,7 +79,7 @@ const CollapseItem = (
   function getArrowNode() {
     if (typeof arrowRender !== 'function') return null
 
-    return <div className="collapse-item-header-arrow">{arrowRender({ visible })}</div>
+    return <div className="collapse-item-header-arrow">{arrowRender({ open })}</div>
   }
 
   const ArrowNode = getArrowNode()
@@ -88,7 +98,7 @@ const CollapseItem = (
     }
 
     return headerRender({
-      visible
+      open
     })
   }
   const HeaderNode = getHeaderNode()
@@ -97,12 +107,12 @@ const CollapseItem = (
     <div
       ref={rootRef}
       {...props}
-      className={DOMUtil.classNames('collapse-item', props?.className, visible ? 'active' : '')}
+      className={DOMUtil.classNames('collapse-item', props?.className, open ? 'active' : '')}
     >
       <div className="collapse-item-header" onClick={handleClick}>
         {getHeaderNode()}
       </div>
-      <CollapseTransition visible={visible}>
+      <CollapseTransition open={open}>
         <div className="collapse-item-main">{children}</div>
       </CollapseTransition>
     </div>

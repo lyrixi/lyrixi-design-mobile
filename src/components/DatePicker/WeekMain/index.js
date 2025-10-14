@@ -13,7 +13,7 @@ import { LocaleUtil, DateUtil, Calendar } from 'lyrixi-design-mobile'
 // 日期快捷选择
 function WeekMain(
   {
-    visible = true,
+    open = true,
 
     value,
     min,

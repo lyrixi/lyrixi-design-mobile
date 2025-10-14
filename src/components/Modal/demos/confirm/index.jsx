@@ -63,8 +63,11 @@ export default () => {
                           onClick: () => true
                         }
                       ],
-                      onVisibleChange: (visible) => {
-                        console.log('onVisibleChange:', visible)
+                      onOpen: () => {
+                        console.log('onOpen:', true)
+                      },
+                      onClose: () => {
+                        console.log('onClose:', false)
                       }
                     })
                     return false

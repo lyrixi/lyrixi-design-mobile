@@ -6,8 +6,11 @@ export default () => {
     <>
       <Tooltip
         content={<p>123412341234</p>}
-        onVisibleChange={(visible) => {
-          console.log('visible:', visible)
+        onOpen={() => {
+          console.log('visible:', true)
+        }}
+        onClose={() => {
+          console.log('visible:', false)
         }}
       >
         <div style={{ margin: 100 }}>点击</div>

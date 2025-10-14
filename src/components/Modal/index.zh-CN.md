@@ -64,10 +64,10 @@ title: Modal
 | animation       | 动画类型         | `'none' \| 'slideLeft' \| 'slideRight' \| 'slideUp' \| 'slideDown' \| 'zoom' \| 'fade'` | `'zoom'`        |
 | referenceDOM    | 参考元素         | `HTMLElement \| function`                                                               | -               |
 | offset          | 偏移量           | `object`                                                                                | -               |
-| visible         | 是否可见         | `boolean`                                                                               | -               |
+| open            | 是否可见         | `boolean`                                                                               | -               |
 | maskClosable    | 点击遮罩是否关闭 | `boolean`                                                                               | `true`          |
-| onVisibleChange | 可见性变化回调   | `(visible: boolean) => void`                                                            | -               |
-| onClose         | 关闭回调         | `(e: Event) => void`                                                                    | -               |
+| onOpen          | 打开时的回调     | `() => void`                                                                            | -               |
+| onClose         | 关闭时的回调     | `(e: Event) => void`                                                                    | -               |
 | children        | 模态框内容       | `ReactNode`                                                                             | -               |
 
 ### Ref

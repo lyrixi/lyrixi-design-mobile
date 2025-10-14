@@ -55,11 +55,9 @@ function Thumbnail({ src, onPreview }) {
       {/* 预览 */}
       {previewTypeRef.current === 'browser' && (
         <Image.PreviewModal
-          visible={typeof previewCurrent === 'number'}
-          onVisibleChange={(visible) => {
-            if (!visible) {
-              setPreviewCurrent(null)
-            }
+          open={typeof previewCurrent === 'number'}
+          onClose={() => {
+            setPreviewCurrent(null)
           }}
           list={[{ src: src }]} // 需要预览的资源列表{src: '图片或视频的地址', type: 'video|image, 默认image', thumb: '封面地址'}
           current={previewCurrent}

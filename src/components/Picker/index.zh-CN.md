@@ -38,7 +38,7 @@ toc: content
 
 | 属性       | 说明         | 类型                     | 默认值 |
 | ---------- | ------------ | ------------------------ | ------ |
-| visible    | 是否可见     | `boolean`                | `true` |
+| open       | 是否可见     | `boolean`                | `true` |
 | value      | 当前值       | `array`                  | -      |
 | allowClear | 是否允许清除 | `boolean`                | -      |
 | onChange   | 变化回调     | `(value: array) => void` | -      |

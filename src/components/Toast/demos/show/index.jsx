@@ -14,8 +14,11 @@ export default () => {
       content: 'show toast',
       duration: 2000,
       maskClickable: false,
-      onVisibleChange: (visible) => {
-        console.log('custom visible:', visible)
+      onOpen: () => {
+        console.log('custom visible:', true)
+      },
+      onClose: () => {
+        console.log('custom visible:', false)
       }
     })
     console.log(toast)
@@ -23,8 +26,11 @@ export default () => {
     setTimeout(() => {
       Toast.show({
         content: 'hh',
-        onVisibleChange: (visible) => {
-          console.log('hh visible:', visible)
+        onOpen: () => {
+          console.log('hh visible:', true)
+        },
+        onClose: () => {
+          console.log('hh visible:', false)
         }
       })
     }, 1000)

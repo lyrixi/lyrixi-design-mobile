@@ -73,10 +73,8 @@ const Edit = () => {
     if (result.code === '1') {
       Toast.show({
         content: locale('提交成功!'),
-        onVisibleChange: (visible) => {
-          if (visible === false) {
-            // 提交完成后操作: 返回等
-          }
+        onClose: () => {
+          // 提交完成后操作: 返回等
         }
       })
     }
@@ -84,10 +82,8 @@ const Edit = () => {
     else if (result.code === '2') {
       Toast.show({
         content: result.message || locale('请勿重复提交!'),
-        onVisibleChange: (visible) => {
-          if (visible === false) {
-            // 提交完成后操作: 返回等
-          }
+        onClose: () => {
+          // 提交完成后操作: 返回等
         }
       })
     }

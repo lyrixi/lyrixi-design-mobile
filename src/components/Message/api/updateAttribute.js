@@ -14,7 +14,8 @@ function updateAttribute(
   {
     portal,
     maskClosable,
-    onVisibleChange,
+    onOpen,
+    onClose,
 
     // 遮罩
     maskClassName,
@@ -131,7 +132,8 @@ function updateAttribute(
 
   // 更新事件中用到的属性
   mask.maskClosable = maskClosable
-  mask.onVisibleChange = onVisibleChange
+  mask.onOpen = onOpen
+  mask.onClose = onClose
   mask.buttons = buttons
 
   // dom透传

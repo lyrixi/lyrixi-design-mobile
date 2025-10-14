@@ -69,7 +69,7 @@ const MessageCombo = forwardRef(
         >
           {children}
         </div>
-        <Modal visible={visible} onVisibleChange={setVisible}>
+        <Modal open={visible} onOpen={() => setVisible(true)} onClose={() => setVisible(false)}>
           {(IconNode || title) && (
             <Header>
               {IconNode}

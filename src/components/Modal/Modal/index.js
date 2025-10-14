@@ -22,9 +22,9 @@ const Modal = forwardRef(
       referenceDOM: externalReferenceDOM = null,
       offset = null,
 
-      visible,
+      open,
       maskClosable = true,
-      onVisibleChange,
+      onOpen,
       onClose,
 
       maskClassName,
@@ -49,7 +49,7 @@ const Modal = forwardRef(
       // 更新模态框位置对齐目标元素
       updateModalPosition()
       // eslint-disable-next-line
-    }, [visible])
+    }, [open])
 
     // 受控显隐时, 需要更新容器位置
     function updateModalPosition() {
@@ -61,7 +61,7 @@ const Modal = forwardRef(
 
       if (!referenceDOM || !maskDOM) return
       if (
-        visible &&
+        open &&
         referenceDOM &&
         maskDOM &&
         [undefined, null].includes(maskStyle?.top) &&
@@ -84,7 +84,6 @@ const Modal = forwardRef(
     // 点击遮罩
     function handleMaskClick(e) {
       if (maskClosable) {
-        onVisibleChange && onVisibleChange(false)
         onClose && onClose(e)
       }
       e.stopPropagation()
@@ -97,7 +96,7 @@ const Modal = forwardRef(
 
     // 获取激活状态样式
     function getActiveClass() {
-      return visible ? ' active' : ''
+      return open ? ' active' : ''
     }
 
     let ModalNode = (

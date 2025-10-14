@@ -16,7 +16,7 @@ import { DateUtil, TabBar } from 'lyrixi-design-mobile'
 // 日期多选
 function MultipleMain(
   {
-    visible = true,
+    open = true,
 
     separator,
     // Main fixed properties

@@ -7,7 +7,8 @@ export default function open({
   portal,
 
   maskClosable = true,
-  onVisibleChange,
+  onOpen,
+  onClose,
 
   // 遮罩
   maskClassName,
@@ -52,10 +53,10 @@ export default function open({
     if (e.target.classList.contains('mask')) {
       // 读取更新后的属性
       const maskClosable = mask?.maskClosable
-      const onVisibleChange = mask?.onVisibleChange
+      const onClose = mask?.onClose
 
       if (maskClosable) {
-        if (onVisibleChange) onVisibleChange(false)
+        if (onClose) onClose()
         destroy(e.currentTarget)
       }
     }
@@ -72,13 +73,13 @@ export default function open({
       const result = button.onClick()
       // 如果onClick返回false，不关闭弹窗
       if (result !== false) {
-        const onVisibleChange = mask?.onVisibleChange
-        if (onVisibleChange) onVisibleChange(false)
+        const onClose = mask?.onClose
+        if (onClose) onClose()
         destroy(e.currentTarget.closest('.message-mask'))
       }
     } else {
-      const onVisibleChange = mask?.onVisibleChange
-      if (onVisibleChange) onVisibleChange(false)
+      const onClose = mask?.onClose
+      if (onClose) onClose()
       destroy(e.currentTarget.closest('.message-mask'))
     }
     e.stopPropagation()
@@ -95,7 +96,8 @@ export default function open({
     portal,
 
     maskClosable,
-    onVisibleChange,
+    onOpen,
+    onClose,
 
     // 遮罩
     maskClassName,
@@ -124,6 +126,9 @@ export default function open({
     // 按钮数组
     buttons
   })
+
+  // Trigger onOpen
+  if (onOpen) onOpen()
 
   return mask
 }

@@ -23,7 +23,8 @@ const Modal = forwardRef(
       // Modal
       animation = 'slideUp',
       className,
-      onVisibleChange,
+      onOpen,
+      onClose,
       ...props
     },
     ref
@@ -43,7 +44,8 @@ const Modal = forwardRef(
       <BaseModal
         {...props}
         ref={modalRef}
-        onVisibleChange={onVisibleChange}
+        onOpen={onOpen}
+        onClose={onClose}
         animation={animation}
         className={DOMUtil.classNames('share-modal', className)}
       >
@@ -60,7 +62,7 @@ const Modal = forwardRef(
         <div
           className="share-modal-footer-button-cancel"
           onClick={() => {
-            onVisibleChange && onVisibleChange(false)
+            onClose && onClose()
           }}
         >
           {LocaleUtil.locale('取消', 'SeedsUI_cancel')}

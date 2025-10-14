@@ -8,7 +8,7 @@ let Main = forwardRef(
   (
     {
       // Modal
-      visible = true,
+      open = true,
 
       // Main
       value,
@@ -45,7 +45,7 @@ let Main = forwardRef(
       return {
         mainDOM: mainRef.current,
         getMainDOM: () => mainRef.current,
-        // 延迟解决Modal的useEffect visible 后执行的问题
+        // 延迟解决Modal的useEffect open 后执行的问题
         getValue: () => {
           return valueRef.current
         },
@@ -54,11 +54,11 @@ let Main = forwardRef(
     })
 
     useEffect(() => {
-      if (visible) {
+      if (open) {
         update()
       }
       // eslint-disable-next-line
-    }, [visible, JSON.stringify(value)])
+    }, [open, JSON.stringify(value)])
 
     // 更新视图
     function update() {

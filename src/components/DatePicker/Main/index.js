@@ -14,7 +14,7 @@ import { DateUtil } from 'lyrixi-design-mobile'
 // 日期选择
 function Main(
   {
-    visible = true,
+    open = true,
 
     value,
     type = 'date', // year | quarter | month | date | time | datetime | week

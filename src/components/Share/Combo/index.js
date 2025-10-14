@@ -102,10 +102,9 @@ const Combo = (
         portal={portal}
         className={modalClassName}
         style={modalStyle}
-        visible={visible}
-        onVisibleChange={(newVisible) => {
-          setVisible(newVisible)
-        }}
+        open={visible}
+        onOpen={() => setVisible(true)}
+        onClose={() => setVisible(false)}
         // Main
         shareTo={shareTo}
         onError={onError}

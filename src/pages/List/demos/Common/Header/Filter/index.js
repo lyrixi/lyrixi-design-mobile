@@ -29,8 +29,11 @@ function Filter({ queryParams, onSearch }) {
     <ToolBar.Filter
       color={active ? 'primary' : 'default'}
       variant="default"
-      onVisibleChange={(visible) => {
-        setVisible(visible)
+      onOpen={() => {
+        setVisible(true)
+      }}
+      onClose={() => {
+        setVisible(false)
       }}
       // 取消还原激活状态
       onCancel={() => {

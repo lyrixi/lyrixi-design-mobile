@@ -14,7 +14,7 @@ import { LocaleUtil, Loading, ToolBar, Page, Result, Typography } from 'lyrixi-d
 测试使用-end */
 
 // 搜索
-function SearchPage({ map, visible, onVisibleChange, onChange }) {
+function SearchPage({ map, open, onOpen, onClose, onChange }) {
   let [searchList, setSearchList] = useState(null)
   const [keyword, setKeyword] = useState('')
 
@@ -24,7 +24,7 @@ function SearchPage({ map, visible, onVisibleChange, onChange }) {
     setSearchList(null)
 
     // Go back
-    onVisibleChange && onVisibleChange(false)
+    onClose && onClose()
   }
 
   // 搜索
@@ -56,7 +56,7 @@ function SearchPage({ map, visible, onVisibleChange, onChange }) {
     handleBack()
   }
 
-  if (!visible) {
+  if (!open) {
     return null
   }
 

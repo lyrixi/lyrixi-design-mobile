@@ -29,7 +29,7 @@ export default function MoreWrapper({ children, more, onClick, ...props }) {
       })}
 
       {hasMore ? (
-        <ActionSheet.Modal visible={visible} list={more} onVisibleChange={setVisible} />
+        <ActionSheet.Modal open={visible} list={more} onOpen={() => setVisible(true)} onClose={() => setVisible(false)} />
       ) : null}
     </>
   )

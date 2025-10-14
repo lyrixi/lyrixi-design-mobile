@@ -5,8 +5,11 @@ export default () => {
   function handleToggle() {
     Toast.show({
       content: 'show toast',
-      onVisibleChange: (visible) => {
-        console.log('visible:', visible)
+      onOpen: () => {
+        console.log('visible:', true)
+      },
+      onClose: () => {
+        console.log('visible:', false)
       }
     })
     setTimeout(() => {

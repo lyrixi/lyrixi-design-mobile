@@ -15,10 +15,11 @@ const Modal = forwardRef(
   (
     {
       portal,
-      visible,
+      open,
       value,
       onChange,
-      onVisibleChange,
+      onOpen,
+      onClose,
 
       // 绘画配置
       color,
@@ -45,16 +46,16 @@ const Modal = forwardRef(
         ref={modalRef}
         {...props}
         className={`signature-modal${props?.className ? ' ' + props.className : ''}${
-          visible === true ? '' : ' hide'
+          open === true ? '' : ' hide'
         }`}
       >
-        {visible && (
+        {open && (
           <Main
             {...(mainProps || {})}
             value={value}
             onChange={onChange}
             onCancel={() => {
-              onVisibleChange && onVisibleChange(false)
+              onClose && onClose()
             }}
             // 绘画配置
             color={color}

@@ -17,7 +17,7 @@ export default () => {
           Modal visible toggle
         </div>
         <Modal.FilterModal
-          visible={true}
+          open={true}
           footerRender={({ close }) => (
             <Page.Footer>
               <FooterBar>

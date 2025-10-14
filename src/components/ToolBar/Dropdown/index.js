@@ -118,13 +118,14 @@ const Dropdown = forwardRef(
         mainRender={mainRender}
         modalClassName="toolbar-dropdown-modal"
         onOpen={() => {
+          setVisible(true)
           closeAllDropdown({ visibleRef: dropdownRef })
           onOpen && onOpen()
         }}
         onClose={() => {
+          setVisible(false)
           onClose && onClose()
         }}
-        onVisibleChange={setVisible}
       />
     )
   }

@@ -26,7 +26,7 @@ function SearchControl({ map, onChange }, ref) {
         }}
       />
 
-      <Page visible={visible} onVisibleChange={setVisible} map={map} onChange={onChange} />
+      <Page open={visible} onOpen={() => setVisible(true)} onClose={() => setVisible(false)} map={map} onChange={onChange} />
     </>
   )
 }

@@ -142,8 +142,11 @@ export default () => {
           console.log('修改:', val)
           setValue(val)
         }}
-        onVisibleChange={(visible) => {
-          console.log('显隐:', visible)
+        onOpen={() => {
+          console.log('显隐:', true)
+        }}
+        onClose={() => {
+          console.log('显隐:', false)
         }}
         onLocationStatusChange={(status) => {
           console.log('定位状态:', status)

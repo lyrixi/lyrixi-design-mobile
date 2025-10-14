@@ -343,7 +343,7 @@ const Image = forwardRef(
         {/* 预览 */}
         {previewTypeRef.current === 'browser' && (
           <PreviewModal
-            visible={typeof previewVisible === 'number'}
+            open={typeof previewVisible === 'number'}
             type={type}
             list={list} // 需要预览的资源列表{src: '图片或视频的地址', type: 'video|image, 默认image', thumb: '封面地址'}
             current={previewVisible}
@@ -359,11 +359,12 @@ const Image = forwardRef(
             onUpload={onUpload}
             onChange={onChange}
             {...preview}
-            onVisibleChange={(visible) => {
-              preview?.onVisibleChange?.(visible)
-              if (!visible) {
-                setPreviewVisible(null)
-              }
+            onOpen={() => {
+              preview?.onOpen?.()
+            }}
+            onClose={() => {
+              preview?.onClose?.()
+              setPreviewVisible(null)
             }}
           />
         )}

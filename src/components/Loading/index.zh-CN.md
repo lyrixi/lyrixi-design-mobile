@@ -38,7 +38,7 @@ toc: content
 | 属性     | 说明       | 类型                    | 默认值        |
 | -------- | ---------- | ----------------------- | ------------- |
 | portal   | 渲染容器   | `HTMLElement`           | -             |
-| visible  | 是否可见   | `boolean`               | `true`        |
+| open     | 是否可见   | `boolean`               | `true`        |
 | icon     | 加载图标   | `ReactNode \| function` | -             |
 | content  | 加载文本   | `string`                | `'加载中...'` |
 | children | 自定义内容 | `ReactNode`             | -             |

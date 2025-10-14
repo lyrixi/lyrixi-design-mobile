@@ -7,7 +7,7 @@ function hide(props) {
     if (mask.timeout) window.clearTimeout(mask.timeout)
     mask.timeout = setTimeout(() => {
       mask?.parentNode?.removeChild?.(mask)
-      props?.onVisibleChange && props?.onVisibleChange(false)
+      props?.onClose && props?.onClose()
     }, 300)
   }
 }

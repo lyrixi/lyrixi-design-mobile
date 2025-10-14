@@ -16,7 +16,7 @@ const Main = forwardRef(
   (
     {
       // Modal
-      visible = true,
+      open = true,
 
       // Main
       value,

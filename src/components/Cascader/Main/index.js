@@ -28,7 +28,7 @@ const Main = forwardRef(
   (
     {
       // Modal
-      visible = true,
+      open = true,
 
       // Main: common
       searchVisible,

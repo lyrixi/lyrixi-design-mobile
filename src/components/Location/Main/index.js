@@ -8,7 +8,7 @@ const Main = forwardRef(
   (
     {
       // 显示类型: preview、choose
-      visible,
+      open,
       allowClear,
 
       config,
@@ -45,10 +45,10 @@ const Main = forwardRef(
         ref={mainRef}
       >
         <div className="map-main-map">
-          {visible === 'preview' && (
+          {open === 'preview' && (
             <Preview ref={mapRef} config={config} value={value} {...props} />
           )}
-          {visible === 'choose' && (
+          {open === 'choose' && (
             <Choose
               ref={mapRef}
               config={config}

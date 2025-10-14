@@ -22,9 +22,9 @@ const DropdownModal = forwardRef(
       offset,
       left,
       right,
-      visible,
+      open,
+      onOpen,
       onClose,
-      onVisibleChange,
       portal,
 
       // Content
@@ -48,7 +48,7 @@ const DropdownModal = forwardRef(
         portal={portal}
         referenceDOM={referenceDOM}
         offset={offset}
-        visible={visible}
+        open={open}
         animation={getAnimation()}
         className={DOMUtil.classNames(
           modalClassName,
@@ -68,7 +68,7 @@ const DropdownModal = forwardRef(
           ...(![undefined, null].includes(left) ? { left: left } : {}),
           ...(![undefined, null].includes(right) ? { right: right } : {})
         }}
-        onVisibleChange={onVisibleChange}
+        onOpen={onOpen}
         onClose={onClose}
       >
         {children}

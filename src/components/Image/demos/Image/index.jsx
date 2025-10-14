@@ -131,10 +131,8 @@ export default () => {
                 zIndex: 1000
               }
             },
-            onVisibleChange: (visible) => {
-              if (!visible) {
-                HistoryUtil.back()
-              }
+            onClose: () => {
+              HistoryUtil.back()
             }
           }}
           onPreview={(item, index) => {

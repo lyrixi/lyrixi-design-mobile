@@ -20,8 +20,8 @@ export default () => {
             // 这里可以更换动画方向
             animation="slideDown"
             ref={modalRef}
-            visible={visible}
-            onVisibleChange={setVisible}
+            open={visible}
+            onClose={() => setVisible(false)}
           >
             <div className="bg-white" style={{ height: '300px' }}>
               Test

@@ -17,16 +17,20 @@ export default () => {
           Modal visible toggle
         </div>
         <Modal.NavBarModal
-          visible={visible}
+          open={visible}
           onOk={() => {
             console.log('Ok')
           }}
           onCancel={() => {
             console.log('Cancel')
           }}
-          onVisibleChange={(visible) => {
-            console.log(visible)
-            setVisible(visible)
+          onOpen={() => {
+            console.log(true)
+            setVisible(true)
+          }}
+          onClose={() => {
+            console.log(false)
+            setVisible(false)
           }}
         >
           <div className="bg-white" style={{ height: '300px' }}>

@@ -34,7 +34,7 @@ toc: content
 
 | 属性         | 说明         | 类型                      | 默认值 |
 | ------------ | ------------ | ------------------------- | ------ |
-| visible      | 显示类型     | `'preview' \| 'choose'`   | -      |
+| open         | 显示类型     | `'preview' \| 'choose'`   | -      |
 | allowClear   | 是否允许清除 | `boolean`                 | -      |
 | config       | 配置项       | `object`                  | -      |
 | autoLocation | 自动定位     | `boolean`                 | `true` |

@@ -31,7 +31,7 @@ const Filter = forwardRef(
       modalStyle,
       onCancel,
       footerRender,
-      onVisibleChange,
+      onOpen, onClose,
       children
     },
     ref
@@ -54,13 +54,17 @@ const Filter = forwardRef(
     })
 
     useEffect(() => {
-      // 初始化不回调onVisibleChange
+      // 初始化不回调onOpen/onClose
       if (!rootRef.current.isNotFirstVisible) {
         rootRef.current.isNotFirstVisible = true
         return
       }
 
-      onVisibleChange && onVisibleChange(visible)
+      if (visible) {
+        onOpen && onOpen()
+      } else {
+        onClose && onClose()
+      }
       // eslint-disable-next-line
     }, [visible])
 
@@ -102,8 +106,9 @@ const Filter = forwardRef(
             className: modalClassName,
             style: modalStyle
           }}
-          onVisibleChange={setVisible}
-          visible={visible}
+          onOpen={() => setVisible(true)}
+          onClose={() => setVisible(false)}
+          open={visible}
         >
           {children}
         </FilterModal>

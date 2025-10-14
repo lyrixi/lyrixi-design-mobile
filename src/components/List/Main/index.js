@@ -24,7 +24,7 @@ const Main = forwardRef(
   (
     {
       // Modal
-      visible = true,
+      open = true,
 
       // Main: common
       initialLoad = true, // 默认加载

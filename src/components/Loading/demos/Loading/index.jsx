@@ -11,11 +11,14 @@ export default () => {
   //       captionProps: {
   //         caption: ''
   //       },
-  //       onVisibleChange: (visible) => {
-  //         console.log('visible:', visible)
+  //       onOpen: () => {
+  //         console.log('visible:', true)
   //         setTimeout(() => {
   //           Loading.hide()
   //         }, 3000)
+  //       },
+  //       onClose: () => {
+  //         console.log('visible:', false)
   //       }
   //     })
   //   }, 2000)

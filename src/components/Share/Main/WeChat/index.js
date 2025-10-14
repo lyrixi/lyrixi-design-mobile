@@ -42,7 +42,7 @@ function WeChat({ shareTo }) {
             })
           }}
         />
-        <Guide visible={visible} onVisibleChange={setVisible} />
+        <Guide open={visible} onClose={() => setVisible(false)} />
       </>
     )
   }

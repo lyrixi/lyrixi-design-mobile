@@ -40,8 +40,9 @@ toc: content
 | --------------- | ---------------- | ---------------------------- | -------- |
 | portal          | 渲染容器         | `HTMLElement`                | -        |
 | maskClosable    | 点击遮罩是否关闭 | `boolean`                    | -        |
-| visible         | 是否可见         | `boolean`                    | -        |
-| onVisibleChange | 可见性变化回调   | `(visible: boolean) => void` | -        |
+| open            | 是否可见         | `boolean`                    | -        |
+| onOpen          | 打开时的回调     | `() => void`                 | -        |
+| onClose         | 关闭时的回调     | `(e: Event) => void`         | -        |
 | animation       | 动画类型         | `string`                     | `'zoom'` |
 | children        | 对话框内容       | `ReactNode`                  | -        |
 
@@ -73,7 +74,8 @@ toc: content
 | contentStyle    | 内容样式         | `object`                            | -              |
 | buttonsLayout   | 按钮布局         | `'horizontal' \| 'vertical'`        | `'horizontal'` |
 | buttons         | 按钮配置         | `ButtonConfig[]`                    | `[]`           |
-| onVisibleChange | 可见性变化回调   | `(visible: boolean) => void`        | -              |
+| onOpen          | 打开时的回调     | `() => void`                        | -              |
+| onClose         | 关闭时的回调     | `(e: Event) => void`                | -              |
 
 ### ButtonConfig
 

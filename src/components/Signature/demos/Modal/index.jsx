@@ -7,7 +7,7 @@ export default () => {
       <Page.Header className="text-center">手写签名</Page.Header>
       <Page.Main className="bg-white">
         <Signature.Modal
-          visible={true}
+          open={true}
           onChange={(base64) => {
             console.log(base64)
           }}

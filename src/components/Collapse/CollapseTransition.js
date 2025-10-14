@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 
 // CollapseTransition组件
-const CollapseTransition = ({ visible, children }) => {
+const CollapseTransition = ({ open, children }) => {
   const rootRef = useRef(null)
   // 显示动画计时器
   const enterTimerRef = useRef(null)
@@ -12,7 +12,7 @@ const CollapseTransition = ({ visible, children }) => {
 
   useEffect(() => {
     beforeEnter()
-    if (visible) enter()
+    if (open) enter()
     return () => {
       clearTimeout(enterTimerRef.current)
       clearTimeout(leaveTimerRef.current)
@@ -21,12 +21,12 @@ const CollapseTransition = ({ visible, children }) => {
   }, [])
 
   useEffect(() => {
-    triggerVisibleChange(visible)
+    triggerOpenChange(open)
     // eslint-disable-next-line
-  }, [visible])
+  }, [open])
 
   // 触发显示或隐藏
-  const triggerVisibleChange = (show) => {
+  const triggerOpenChange = (show) => {
     clearTimeout(enterTimerRef.current)
     clearTimeout(leaveTimerRef.current)
     if (show) {

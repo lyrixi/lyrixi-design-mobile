@@ -19,8 +19,9 @@ const Message = forwardRef(
       maskClosable,
       maskClassName,
       maskStyle,
-      visible,
-      onVisibleChange,
+      open,
+      onOpen,
+      onClose,
       animation = 'zoom',
       children,
       ...props
@@ -42,7 +43,7 @@ const Message = forwardRef(
 
     // 点击遮罩
     function handleMaskClick(e) {
-      if (maskClosable && onVisibleChange) onVisibleChange(false)
+      if (maskClosable && onClose) onClose()
       e.stopPropagation()
     }
 
@@ -53,7 +54,7 @@ const Message = forwardRef(
 
     // 获取激活状态样式
     function getActiveClass() {
-      return visible ? ' active' : ''
+      return open ? ' active' : ''
     }
 
     return createPortal(

@@ -10,7 +10,8 @@ const Tooltip = forwardRef(
       style,
       referenceDOM: externalReferenceDOM,
       children,
-      onVisibleChange,
+      onOpen,
+      onClose,
       ...props
     },
     ref
@@ -25,16 +26,20 @@ const Tooltip = forwardRef(
     })
 
     // 非受控显隐
-    let [visible, setVisible] = useState(null)
+    let [open, setOpen] = useState(null)
 
     // 受控显隐时, 需要更新容器位置
     useEffect(() => {
-      if (visible) {
+      if (open) {
         updatePosition()
       }
-      if (visible === null) return
-      typeof onVisibleChange === 'function' && onVisibleChange(visible)
-    }, [visible]) // eslint-disable-line
+      if (open === null) return
+      if (open) {
+        typeof onOpen === 'function' && onOpen()
+      } else {
+        typeof onClose === 'function' && onClose()
+      }
+    }, [open]) // eslint-disable-line
 
     // 更新位置
     function updatePosition(argReferenceDOM) {
@@ -84,7 +89,7 @@ const Tooltip = forwardRef(
           if (!style?.left && !style?.top && !style?.right && !style?.bottom) {
             updatePosition(e.currentTarget)
           }
-          setVisible(!visible)
+          setOpen(!open)
         }
       })
     } else {
@@ -96,11 +101,9 @@ const Tooltip = forwardRef(
         <Popup
           animation={animation}
           style={style}
-          visible={typeof visible === 'boolean' ? visible : visible}
-          onVisibleChange={(newVisible) => {
-            if (!newVisible) {
-              setVisible(newVisible)
-            }
+          open={typeof open === 'boolean' ? open : open}
+          onClose={() => {
+            setOpen(false)
           }}
           {...props}
           ref={rootRef}

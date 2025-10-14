@@ -1,16 +1,16 @@
 import React from 'react'
 import { createPortal } from 'react-dom'
 
-function Guide({ portal, visible, maskClassName, maskStyle, onVisibleChange }) {
+function Guide({ portal, open, maskClassName, maskStyle, onClose }) {
   const handlerClick = (e) => {
     e.stopPropagation()
-    if (onVisibleChange) onVisibleChange(false)
+    if (onClose) onClose()
   }
 
   return createPortal(
     <div
       className={`mask share-mask${maskClassName ? ' ' + maskClassName : ''}${
-        visible ? ' active' : ''
+        open ? ' active' : ''
       }`}
       style={maskStyle}
       onClick={handlerClick}

@@ -53,13 +53,18 @@ const CollapseGroup = ({ value, onChange, children, ...props }, ref) => {
     >
       {React.Children.map(children, (child, index) => {
         return React.cloneElement(child, {
-          visible: activeIndex === index,
+          open: activeIndex === index,
           key: index,
-          onVisibleChange: (visible) => {
-            let newActiveIndex = null
-            if (visible) {
-              newActiveIndex = index
+          onOpen: () => {
+            let newActiveIndex = index
+            if (onChange) {
+              onChange(newActiveIndex)
+            } else {
+              setActiveIndex(newActiveIndex)
             }
+          },
+          onClose: () => {
+            let newActiveIndex = null
             if (onChange) {
               onChange(newActiveIndex)
             } else {

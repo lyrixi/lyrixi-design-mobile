@@ -16,7 +16,8 @@ function show(props) {
     style,
     // Content html text
     content,
-    onVisibleChange
+    onOpen,
+    onClose
   } = {
     ...(this?.defaultProps || {}),
     ...(props || {})
@@ -79,15 +80,15 @@ function show(props) {
     mask.classList.add('active')
     mask.childNodes[0].classList.add('active')
 
-    if (typeof onVisibleChange === 'function') {
-      onVisibleChange(true)
+    if (typeof onOpen === 'function') {
+      onOpen()
     }
 
     // 显示数秒后隐藏
     if (mask.showTimeout) window.clearTimeout(mask.showTimeout)
     mask.showTimeout = setTimeout(
       () => {
-        hide({ onVisibleChange: onVisibleChange })
+        hide({ onClose: onClose })
       },
       typeof duration === 'number' ? duration : 2000
     )

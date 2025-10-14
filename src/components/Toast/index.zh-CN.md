@@ -37,12 +37,14 @@ title: Toast
 | className       | 自定义类名       | `string`                        | -          |
 | style           | 自定义样式       | `object`                        | -          |
 | content         | 提示内容         | `string \| ReactNode`           | -          |
-| onVisibleChange | 可见性变化回调   | `(visible: boolean) => void`    | -          |
+| onOpen          | 打开时的回调     | `() => void`                    | -          |
+| onClose         | 关闭时的回调     | `(e: Event) => void`            | -          |
 
 ## Toast.hide
 
 ### 属性
 
-| 属性            | 说明           | 类型                         | 默认值 |
-| --------------- | -------------- | ---------------------------- | ------ |
-| onVisibleChange | 可见性变化回调 | `(visible: boolean) => void` | -      |
+| 属性    | 说明         | 类型                | 默认值 |
+| ------- | ------------ | ------------------- | ------ |
+| onOpen  | 打开时的回调 | `() => void`        | -      |
+| onClose | 关闭时的回调 | `(e: Event) => void`| -      |

@@ -16,7 +16,7 @@ const LocationModal = forwardRef(
   (
     {
       // Modal
-      visible,
+      open,
       value,
 
       // Main
@@ -37,16 +37,16 @@ const LocationModal = forwardRef(
       <SelectModal
         ref={modalRef}
         title={
-          visible === 'choose'
+          open === 'choose'
             ? LocaleUtil.locale('选择地址', 'SeedsUI_choose_address')
             : LocaleUtil.locale('查看地址', 'SeedsUI_view_address')
         }
         {...props}
-        mainRender={({ mainRef, visible, value, allowClear, multiple, onChange }) => {
+        mainRender={({ mainRef, open, value, allowClear, multiple, onChange }) => {
           return (
             <Main
               ref={mainRef}
-              visible={visible}
+              open={open}
               value={value}
               allowClear={allowClear}
               multiple={multiple}
@@ -57,8 +57,8 @@ const LocationModal = forwardRef(
             />
           )
         }}
-        ok={visible === 'choose' ? '' : null}
-        visible={visible}
+        ok={open === 'choose' ? '' : null}
+        open={open}
         value={value}
         className={`map-modal${props.className ? ' ' + props.className : ''}`}
       />

@@ -74,8 +74,9 @@ export default () => {
           <div style={{ margin: '0 12px' }}>
             <Collapse.Item
               title="One"
-              visible={value === 0}
-              onVisibleChange={(visible) => setValue(visible ? 0 : null)}
+              open={value === 0}
+              onOpen={() => setValue(0)}
+              onClose={() => setValue(null)}
             >
               <div className="flex flex-center flex-middle border-b" style={{ height: 100 }}>
                 First Text
@@ -92,17 +93,17 @@ export default () => {
                 First Text
               </div>
             </Collapse.Item>
-            <Collapse.Item visible={false} title="Two" arrowPosition="left">
+            <Collapse.Item open={false} title="Two" arrowPosition="left">
               <div className="flex flex-center flex-middle border-b" style={{ height: 100 }}>
                 Second Text
               </div>
             </Collapse.Item>
-            <Collapse.Item visible={false} title="Three" arrowPosition="left">
+            <Collapse.Item open={false} title="Three" arrowPosition="left">
               <div className="flex flex-center flex-middle border-b" style={{ height: 100 }}>
                 Third Text
               </div>
             </Collapse.Item>
-            <Collapse.Item visible={false} title="Four" arrowPosition="left">
+            <Collapse.Item open={false} title="Four" arrowPosition="left">
               <div className="flex flex-center flex-middle border-b" style={{ height: 100 }}>
                 Fourth Text
               </div>
@@ -122,7 +123,7 @@ export default () => {
               </div>
             </Collapse.Item>
             <Collapse.Item
-              visible={false}
+              open={false}
               arrowRender={() => {
                 return (
                   <i
@@ -147,7 +148,7 @@ export default () => {
           <Divider>Custom Header</Divider>
           <div style={{ margin: '0 12px' }}>
             <Collapse.Item
-              visible={false}
+              open={false}
               headerRender={({ visible }) => {
                 return (
                   <div

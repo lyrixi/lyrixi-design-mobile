@@ -33,7 +33,7 @@ const PreviewMain = forwardRef(
       safeArea,
 
       // Modal
-      visible = true,
+      open = true,
 
       // Main: common
       type, // video | image
@@ -61,7 +61,7 @@ const PreviewMain = forwardRef(
       onUpload,
       onChange,
 
-      onVisibleChange,
+      onClose,
       ...props
     },
     ref
@@ -90,10 +90,10 @@ const PreviewMain = forwardRef(
       }
     })
     useEffect(() => {
-      if (!visible || typeof swiperRef?.current?.swiper?.slideTo !== 'function') return
+      if (!open || typeof swiperRef?.current?.swiper?.slideTo !== 'function') return
       swiperRef.current.swiper.slideTo(getActiveIndex({ current, list }), 0)
       // eslint-disable-next-line
-    }, [visible])
+    }, [open])
 
     // 显隐Loading
     function _showLoading(options) {
@@ -198,7 +198,7 @@ const PreviewMain = forwardRef(
         onChange: onChangeRef.current
       })
       _hideLoading()
-      onVisibleChange && onVisibleChange(false)
+      onClose && onClose()
       return chooseResult
     }
 
@@ -217,7 +217,7 @@ const PreviewMain = forwardRef(
         onChange: onChangeRef.current
       })
       _hideLoading()
-      onVisibleChange && onVisibleChange(false)
+      onClose && onClose()
       return chooseResult
     }
 
@@ -276,7 +276,7 @@ const PreviewMain = forwardRef(
           allowClose ? ' closable' : '',
           chooseVisible && typeof onChange === 'function' ? ' choosable' : '',
           allowClear && typeof onChange === 'function' ? ' clearable' : '',
-          visible ? '' : ' hide'
+          open ? '' : ' hide'
         )}
         style={{
           height: '100%',
@@ -327,7 +327,7 @@ const PreviewMain = forwardRef(
               )
             })}
         {/* Close */}
-        {allowClose && <PreviewClose onVisibleChange={onVisibleChange} />}
+        {allowClose && <PreviewClose onClose={onClose} />}
         {/* Delete */}
         {allowClear && typeof onChange === 'function' ? (
           <PreviewDelete onDelete={handleDelete} />

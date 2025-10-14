@@ -29,7 +29,6 @@ title: Keyboard
 | maskStyle       | 遮罩层样式                                            | CSSProperties                         | -      |
 | maskClassName   | 遮罩层类名                                            | string                                | -      |
 | maskClosable    | 点击遮罩是否关闭键盘                                  | boolean                               | true   |
-| visible         | 是否显示键盘                                          | boolean                               | false  |
-| onVisibleChange | 显示状态改变时的回调                                  | (visible: boolean) => void            | -      |
-| onOpen          | 键盘打开时触发（点击时才触发）                        | () => void                            | -      |
-| onClose         | 键盘关闭时触发（点击时才触发）                        | (event: Event) => void                | -      |
+| open            | 是否显示键盘                                          | boolean                               | false  |
+| onOpen          | 键盘打开时触发                                        | () => void                            | -      |
+| onClose         | 键盘关闭时触发                                        | (event: Event) => void                | -      |

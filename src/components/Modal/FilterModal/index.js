@@ -16,8 +16,9 @@ import { LocaleUtil, Page, NavBar } from 'lyrixi-design-mobile'
 function FilterModal(
   {
     // Modal fixed properties
-    visible,
-    onVisibleChange,
+    open,
+    onOpen,
+    onClose,
     onCancel,
     footerRender,
     children,
@@ -38,8 +39,9 @@ function FilterModal(
         onCancel && onCancel()
       }}
       className={DOMUtil.classNames('modal-filtermodal', props?.className)}
-      visible={visible}
-      onVisibleChange={onVisibleChange}
+      open={open}
+      onOpen={onOpen}
+      onClose={onClose}
     >
       <Page className="full modal-filtermodal-layout">
         <Page.Header>
@@ -47,7 +49,7 @@ function FilterModal(
             <NavBar.Button
               onClick={() => {
                 onCancel && onCancel()
-                onVisibleChange && onVisibleChange(false)
+                onClose && onClose()
               }}
             >
               {LocaleUtil.locale('取消', 'SeedsUI_cancel')}
@@ -59,7 +61,7 @@ function FilterModal(
         <Page.Main>{children}</Page.Main>
         {/* 底部 */}
         {typeof footerRender === 'function'
-          ? footerRender({ close: () => onVisibleChange && onVisibleChange(false) })
+          ? footerRender({ close: () => onClose && onClose() })
           : null}
       </Page>
     </Modal>

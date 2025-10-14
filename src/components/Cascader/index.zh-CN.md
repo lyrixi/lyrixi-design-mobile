@@ -34,7 +34,7 @@ toc: content
 
 | 属性           | 说明         | 类型                        | 默认值 |
 | -------------- | ------------ | --------------------------- | ------ |
-| visible        | 是否可见     | `boolean`                   | `true` |
+| open           | 是否可见     | `boolean`                   | `true` |
 | searchVisible  | 搜索是否可见 | `boolean`                   | -      |
 | value          | 当前值       | `array`                     | -      |
 | allowClear     | 是否允许清除 | `boolean`                   | -      |

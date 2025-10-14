@@ -58,7 +58,8 @@ const LocationCombo = forwardRef(
       value, // {latitude: '纬度', longitude: '经度', value: '地址'}
 
       portal = document.getElementById('root') || document.body,
-      onVisibleChange,
+      onOpen,
+      onClose,
       onLocationStatusChange,
       onChange,
       onError,
@@ -90,7 +91,7 @@ const LocationCombo = forwardRef(
     let [locationStatus, setLocationStatus] = useState('1')
 
     // 显示预览preview、选择choose
-    const [modalVisible, setModalVisible] = useState('')
+    const [modalOpen, setModalOpen] = useState('')
 
     const onChangeRef = useRef()
     onChangeRef.current = onChange
@@ -130,9 +131,16 @@ const LocationCombo = forwardRef(
 
     // 显隐回调
     useEffect(() => {
-      onVisibleChange && onVisibleChange(modalVisible)
+      if (modalOpen) {
+        onOpen && onOpen()
+      } else if (modalOpen === '') {
+        // Don't trigger onClose on initial render
+        return
+      } else {
+        onClose && onClose()
+      }
       // eslint-disable-next-line
-    }, [modalVisible])
+    }, [modalOpen])
 
     // 自动定位
     useEffect(() => {
@@ -226,7 +234,7 @@ const LocationCombo = forwardRef(
 
       // 点击整行预览或选点
       if (clickAction) {
-        setModalVisible(clickAction)
+        setModalOpen(clickAction)
         return
       }
     }
@@ -291,11 +299,11 @@ const LocationCombo = forwardRef(
           <i
             key="choose"
             className={`location-combo-icon location-combo-icon-choose${
-              modalVisible === 'choose' ? ' active' : ''
+              modalOpen === 'choose' ? ' active' : ''
             }`}
             onClick={(e) => {
               e.stopPropagation()
-              setModalVisible('choose')
+              setModalOpen('choose')
             }}
           ></i>
         )
@@ -307,11 +315,11 @@ const LocationCombo = forwardRef(
             key="preview"
             className={`location-combo-icon location-combo-icon-preview${
               _.isEmpty(value) ? ' disabled' : ''
-            }${modalVisible === 'preview' ? ' active' : ''}`}
+            }${modalOpen === 'preview' ? ' active' : ''}`}
             onClick={(e) => {
               e.stopPropagation()
               if (e.currentTarget.classList.contains('disabled')) return
-              setModalVisible('preview')
+              setModalOpen('preview')
             }}
           ></i>
         )
@@ -386,8 +394,9 @@ const LocationCombo = forwardRef(
           config={config}
           portal={portal}
           value={coordsToWgs84(value, type)}
-          visible={modalVisible}
-          onVisibleChange={setModalVisible}
+          open={modalOpen}
+          onOpen={() => {}}
+          onClose={() => setModalOpen('')}
           onChange={(_newValue) => {
             // 转坐标
             let newValue = wgs84ToCoords(_newValue, type)

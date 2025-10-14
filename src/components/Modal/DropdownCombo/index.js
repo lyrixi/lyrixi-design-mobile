@@ -30,7 +30,6 @@ const Combo = forwardRef(
       modalStyle,
       mainRender,
 
-      onVisibleChange,
       onBeforeOpen,
       onOpen,
       onClose
@@ -38,7 +37,7 @@ const Combo = forwardRef(
     ref
   ) => {
     const comboRef = useRef(null)
-    const [visible, setVisible] = useState(false)
+    const [open, setOpen] = useState(false)
 
     // Expose
     useImperativeHandle(ref, () => {
@@ -52,25 +51,28 @@ const Combo = forwardRef(
     })
 
     useEffect(() => {
-      if (visible === null) return
-      typeof onVisibleChange === 'function' && onVisibleChange(visible)
+      if (open === null) return
+      if (open) {
+        onOpen && onOpen()
+      } else {
+        onClose && onClose()
+      }
 
       // eslint-disable-next-line
-    }, [visible])
+    }, [open])
 
     function _close() {
-      setVisible(false)
+      setOpen(false)
     }
 
     function _open() {
-      setVisible(true)
+      setOpen(true)
     }
 
     async function handleClick(e) {
-      let newVisible = !visible
-      if (!newVisible) {
-        onClose && onClose()
-        setVisible(newVisible)
+      let newOpen = !open
+      if (!newOpen) {
+        setOpen(newOpen)
         return
       }
 
@@ -79,8 +81,7 @@ const Combo = forwardRef(
         if (goOn === false) return
       }
 
-      setVisible(newVisible)
-      onOpen && onOpen()
+      setOpen(newOpen)
     }
 
     // 获取Combo节点
@@ -88,11 +89,11 @@ const Combo = forwardRef(
       if (typeof comboRender === 'function') {
         return comboRender({
           comboRef,
-          visible,
+          open,
           style: comboStyle,
           className: DOMUtil.classNames(
             'modal-dropdown-combo',
-            visible ? 'expand' : '',
+            open ? 'expand' : '',
             comboClassName
           ),
           onClick: handleClick
@@ -106,7 +107,7 @@ const Combo = forwardRef(
           style={comboStyle}
           className={DOMUtil.classNames(
             'modal-dropdown-combo',
-            visible ? 'expand' : '',
+            open ? 'expand' : '',
             comboClassName
           )}
           onClick={handleClick}
@@ -135,10 +136,9 @@ const Combo = forwardRef(
           referenceDOM={comboRef.current?.rootDOM ? comboRef.current.rootDOM : comboRef.current}
           portal={portal}
           onClose={() => {
-            setVisible(false)
-            onClose && onClose()
+            setOpen(false)
           }}
-          visible={visible}
+          open={open}
         >
           {typeof mainRender === 'function' && mainRender({ open: _open, close: _close })}
         </DropdownModal>

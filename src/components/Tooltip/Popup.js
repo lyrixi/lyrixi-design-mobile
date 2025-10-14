@@ -26,9 +26,10 @@ const Popup = forwardRef(
       maskStyle,
 
       // 显隐
-      visible,
+      open,
       maskClosable = true,
-      onVisibleChange,
+      onOpen,
+      onClose,
       children,
       ...props
     },
@@ -40,7 +41,7 @@ const Popup = forwardRef(
 
     // 点击遮罩
     function handleMaskClick(e) {
-      if (maskClosable && onVisibleChange) onVisibleChange(false)
+      if (maskClosable && onClose) onClose()
       e.stopPropagation()
     }
 
@@ -79,7 +80,7 @@ const Popup = forwardRef(
     return createPortal(
       <div
         className={`mask tooltip-mask${maskClassName ? ' ' + maskClassName : ''}${
-          visible ? ' active' : ''
+          open ? ' active' : ''
         }`}
         style={maskStyle}
         onClick={handleMaskClick}
@@ -88,7 +89,7 @@ const Popup = forwardRef(
         <div
           className={`modal-animation tooltip tooltip-bottom${position ? ' ' + position : ''}${
             props.className ? ' ' + props.className : ''
-          }${visible ? ' active' : ''}`}
+          }${open ? ' active' : ''}`}
           style={style}
           data-animation={dataAnimation}
         >

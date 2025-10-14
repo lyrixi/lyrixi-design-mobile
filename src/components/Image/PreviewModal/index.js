@@ -14,12 +14,13 @@ const SelectModal = Modal.NavBarModal
 const PreviewModal = forwardRef(
   (
     {
-      visible,
+      open,
       type, // video | image
       // list, // 需要预览的资源列表{src: '图片或视频的地址', thumb: '封面地址', type: 'video|image, 默认image', children: node}
       current, // 当前显示的资源序号或者当前资源的src链接
 
-      onVisibleChange,
+      onOpen,
+      onClose,
 
       // Style
       allowChoose = false,
@@ -50,27 +51,26 @@ const PreviewModal = forwardRef(
     // 在预览页面, 列表被删除完成时, 隐藏modal
     useEffect(() => {
       if (!list || !list.length || !list[0].src) {
-        if (visible) {
-          onVisibleChange && onVisibleChange(false)
+        if (open) {
+          onClose && onClose()
         }
       }
       // eslint-disable-next-line
     }, [list])
 
     // 图片单击隐藏, 视频单击无反应, 显示不能触发
-    function handleVisibleChange(visible) {
-      if (!visible) {
-        if (onVisibleChange) onVisibleChange(false)
-      }
+    function handleClose() {
+      if (onClose) onClose()
     }
 
     return (
       <SelectModal
         className={DOMUtil.classNames('image-preview-modal', modalClassName)}
         style={modalStyle}
-        visible={visible}
+        open={open}
         animation="slideUp"
-        onVisibleChange={handleVisibleChange}
+        onClose={handleClose}
+        onOpen={onOpen}
         ok={false}
         portal={portal}
       >
@@ -78,7 +78,7 @@ const PreviewModal = forwardRef(
           className={mainClassName}
           style={mainStyle}
           ref={ref}
-          visible={visible}
+          open={open}
           type={type}
           list={list}
           current={current}
@@ -97,7 +97,7 @@ const PreviewModal = forwardRef(
           onFileChange={onFileChange}
           onUpload={onUpload}
           onChange={onChange}
-          onVisibleChange={onVisibleChange}
+          onClose={onClose}
         />
       </SelectModal>
     )

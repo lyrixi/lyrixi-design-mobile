@@ -11,7 +11,7 @@ const DistrictMain = forwardRef(
   (
     {
       // Modal
-      visible = true,
+      open = true,
 
       // Main
       value,
@@ -75,7 +75,7 @@ const DistrictMain = forwardRef(
             />
           )
         }}
-        visible={visible}
+        visible={open}
         value={value}
         list={list}
         loadData={

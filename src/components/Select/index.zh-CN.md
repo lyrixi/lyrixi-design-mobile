@@ -37,7 +37,7 @@ toc: content
 
 | 属性             | 说明           | 类型                   | 默认值 |
 | ---------------- | -------------- | ---------------------- | ------ |
-| visible          | 是否可见       | `boolean`              | `true` |
+| open             | 是否可见       | `boolean`              | `true` |
 | value            | 当前选中值     | `any \| any[]`         | -      |
 | multiple         | 是否多选       | `boolean`              | -      |
 | allowClear       | 是否允许清除   | `boolean`              | -      |

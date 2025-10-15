@@ -6,12 +6,11 @@ import Input from './../../Input'
 import Tags from './Tags'
 
 // 内库使用-start
-import DOMUtil from './../../../utils/DOMUtil'
 import ObjectUtil from './../../../utils/ObjectUtil'
 // 内库使用-end
 
 /* 测试使用-start
-import { DOMUtil, ObjectUtil } from 'lyrixi-design-mobile'
+import { ObjectUtil } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // Combo

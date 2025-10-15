@@ -392,17 +392,17 @@ const InputText = (
       </div>
 
       {/* Clear Icon */}
-      {getClearNode({
-        clearRender,
-        allowClear,
-        disabled,
-        readOnly,
-        value,
-        onClear: handleClear,
-        onTouchStart: (e) => {
-          inputRef.current.preventBlur = true
-        }
-      })}
+      {disabled || !allowClear
+        ? null
+        : getClearNode({
+            clearRender,
+            allowClear,
+            value,
+            onClear: handleClear,
+            onTouchStart: (e) => {
+              inputRef.current.preventBlur = true
+            }
+          })}
 
       {/* Right */}
       {rightIcon}

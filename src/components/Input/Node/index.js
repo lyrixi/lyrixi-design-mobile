@@ -47,7 +47,7 @@ const InputNode = (
   },
   ref
 ) => {
-  const formatterValue = typeof formatter === 'function' ? formatter(value) : null
+  let displayValue = typeof formatter === 'function' ? formatter(value) : null
 
   // InputStyle
   const { style, inputStyle } = splitInputStyle(externalStyle)
@@ -163,7 +163,7 @@ const InputNode = (
       className={DOMUtil.classNames(
         `seed-input`,
         className,
-        formatterValue ? 'seed-has-formatter' : '',
+        displayValue ? 'seed-has-formatter' : '',
         disabled ? ' disabled' : '',
         readOnly ? ' readonly' : ''
       )}
@@ -194,22 +194,22 @@ const InputNode = (
           )}
           style={inputStyle}
         >
-          {value || (cursor ? '' : placeholder)}
+          {typeof value === 'object' || !value || cursor ? placeholder : value}
         </div>
 
-        {/* Blur display formatterValue */}
-        {formatterValue ? <div className={`seed-input-formatter`}>{formatterValue}</div> : null}
+        {/* Blur display displayValue */}
+        {displayValue ? <div className={`seed-input-formatter`}>{displayValue}</div> : null}
       </div>
 
       {/* Clear Icon */}
-      {getClearNode({
-        clearRender,
-        allowClear,
-        disabled,
-        readOnly,
-        value,
-        onClear: handleClear
-      })}
+      {disabled || !allowClear
+        ? null
+        : getClearNode({
+            clearRender,
+            allowClear,
+            value,
+            onClear: handleClear
+          })}
 
       {/* Right */}
       {rightIcon}

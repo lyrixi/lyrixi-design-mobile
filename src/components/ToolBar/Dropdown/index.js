@@ -80,7 +80,7 @@ const Dropdown = forwardRef(
     }
 
     // 获取Combo节点
-    function getComboNode({ comboRef, onClick }) {
+    function getComboNode({ comboRef, open, onClick }) {
       return (
         <Button
           ref={comboRef}

@@ -90,12 +90,6 @@ const Combo = forwardRef(
         return comboRender({
           comboRef,
           open,
-          style: comboStyle,
-          className: DOMUtil.classNames(
-            'modal-dropdown-combo',
-            open ? 'expand' : '',
-            comboClassName
-          ),
           onClick: handleClick
         })
       }

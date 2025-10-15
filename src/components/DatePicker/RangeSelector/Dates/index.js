@@ -41,10 +41,6 @@ export default function CustomDates({
         modalClassName={modalClassName}
         modalStyle={modalStyle}
         portal={portal}
-        // 使用自定义InputText显示
-        combo={(comboProps) => {
-          return <InputText type={type} {...comboProps} />
-        }}
         type={type}
         value={value}
         disabledStart={disabledStart}
@@ -57,7 +53,7 @@ export default function CustomDates({
         onChange={onChange}
         placeholder={LocaleUtil.locale('请选择', 'SeedsUI_placeholder_select')}
         allowClear={allowClear}
-        clear={({ clearable, triggerClear }) => {
+        clearRender={({ clearable, triggerClear }) => {
           return clearable ? <Input.IconClear onClick={triggerClear} /> : <Input.IconRightArrow />
         }}
       />

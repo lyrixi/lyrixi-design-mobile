@@ -21,6 +21,8 @@ const Combo = forwardRef(
       // Combo Style
       comboStyle,
       comboClassName,
+      comboLeftIcon,
+      comboRightIcon,
 
       // Input
       value,
@@ -30,20 +32,14 @@ const Combo = forwardRef(
       disabled,
       placeholder,
       clearRender: customClearRender,
-      leftIcon,
-      rightIcon,
-      className,
-      style,
+
       onClick,
 
-      // Combo
-      multiple,
+      // Display Value
       formatter,
       autoSize,
       separator,
-      mode,
-
-      ...props
+      mode
     },
     ref
   ) => {
@@ -108,51 +104,45 @@ const Combo = forwardRef(
       InputNode = Input.AutoFit
     }
 
-    function getComboNode() {
-      if (mode === 'tags') {
-        return (
-          <Tags
-            separator={separator}
-            leftIcon={leftIcon}
-            rightIcon={rightIcon}
-            className={DOMUtil.classNames(comboClassName, className)}
-            style={comboStyle || style}
-            clearRender={clearRender}
-            placeholder={placeholder}
-            readOnly={readOnly}
-            disabled={disabled}
-            allowClear={allowClear}
-            value={value}
-            onAdd={handleInputClick}
-            onEdit={handleInputClick}
-            onChange={onChange}
-          />
-        )
-      }
-
+    if (mode === 'tags') {
       return (
-        <InputNode
+        <Tags
+          separator={separator}
+          readOnly={readOnly}
           disabled={disabled}
-          allowClear={allowClear}
-          value={displayValue}
-          readOnly
+          leftIcon={comboLeftIcon}
+          rightIcon={comboRightIcon}
+          className={comboClassName}
+          style={comboStyle}
+          clearRender={clearRender}
           placeholder={placeholder}
-          leftIcon={leftIcon}
-          rightIcon={rightIcon}
-          className={DOMUtil.classNames(comboClassName, className)}
-          style={comboStyle || style}
-          clear={clearRender}
-          onClick={handleInputClick}
-          // 强制只读的控件, 只会清空时触发
+          allowClear={allowClear}
+          value={value}
+          onAdd={handleInputClick}
+          onEdit={handleInputClick}
           onChange={onChange}
-          ref={comboRef}
-          {...props}
         />
       )
     }
-    const ComboNode = getComboNode()
 
-    return ComboNode
+    return (
+      <InputNode
+        disabled={disabled}
+        readOnly
+        allowClear={allowClear}
+        value={displayValue}
+        placeholder={placeholder}
+        leftIcon={comboLeftIcon}
+        rightIcon={comboRightIcon}
+        className={comboClassName}
+        style={comboStyle}
+        clearRender={clearRender}
+        onClick={handleInputClick}
+        // 强制只读的控件, 只会清空时触发
+        onChange={onChange}
+        ref={comboRef}
+      />
+    )
   }
 )
 

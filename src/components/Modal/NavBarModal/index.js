@@ -17,28 +17,41 @@ const NavBarModal = forwardRef(
     {
       safeArea,
 
-      // Modal fixed properties
+      // Open
       open,
       onClose,
-      onOpen,
 
-      // Modal: display properties
+      // Portal
       portal,
+
+      // Animation
       animation = 'slideUp',
+
+      // Mask
+      maskClosable = true,
       maskClassName,
       maskStyle,
+
+      // Modal
+      modalClassName,
+      modalStyle,
+
+      // Title
       title,
       titleClassName,
       titleStyle,
+
+      // Ok
       ok,
       onOk,
       okClassName,
       okStyle,
+
+      // Cancel
       cancel,
       onCancel,
       cancelClassName,
       cancelStyle,
-      maskClosable = true,
 
       // 主体
       children,
@@ -54,13 +67,6 @@ const NavBarModal = forwardRef(
         getModalDOM: () => modalRef.current
       }
     })
-
-    useEffect(() => {
-      if (open) {
-        if (onOpen) onOpen(open)
-      }
-      // eslint-disable-next-line
-    }, [open])
 
     // 事件
     function handleCancelClick(e) {
@@ -91,13 +97,13 @@ const NavBarModal = forwardRef(
           onClick={(e) => {
             e.stopPropagation()
           }}
-          {...props}
           className={DOMUtil.classNames(
             'modal-animation',
             'modal-navbarmodal',
-            props.className,
+            modalClassName,
             open ? ' active' : ''
           )}
+          style={modalStyle}
         >
           {/* 头 */}
           <NavBar

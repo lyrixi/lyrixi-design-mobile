@@ -66,8 +66,8 @@ function ToolBarActionSheet({
   }
 
   // 获取Combo节点
-  function getComboNode() {
-    return ({ open, comboRef, onClick }) => (
+  function getComboNode({ open, comboRef, onClick }) {
+    return (
       <Button
         ref={comboRef}
         color={color}

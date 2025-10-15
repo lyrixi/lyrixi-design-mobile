@@ -19,28 +19,31 @@ import { ObjectUtil } from 'lyrixi-design-mobile'
 const Combo = forwardRef(
   (
     {
-      // Combo Style
-      comboStyle,
-      comboClassName,
-      comboLeftIcon,
-      comboRightIcon,
+      // Style
+      style,
+      className,
 
-      // Input
+      // 图标
+      leftIcon,
+      rightIcon,
+      clearRender: customClearRender,
+
+      // 值
       value,
-      onChange,
       allowClear,
       readOnly,
       disabled,
       placeholder,
-      clearRender: customClearRender,
-
-      onClick,
 
       // Display Value
       formatter,
       autoSize,
       separator,
-      mode
+      mode,
+
+      // 事件
+      onChange,
+      onClick
     },
     ref
   ) => {
@@ -111,10 +114,10 @@ const Combo = forwardRef(
           separator={separator}
           readOnly={readOnly}
           disabled={disabled}
-          leftIcon={comboLeftIcon}
-          rightIcon={comboRightIcon}
-          className={comboClassName}
-          style={comboStyle}
+          leftIcon={leftIcon}
+          rightIcon={rightIcon}
+          className={className}
+          style={style}
           clearRender={clearRender}
           placeholder={placeholder}
           allowClear={allowClear}
@@ -133,10 +136,10 @@ const Combo = forwardRef(
         allowClear={allowClear}
         value={displayValue}
         placeholder={placeholder}
-        leftIcon={comboLeftIcon}
-        rightIcon={comboRightIcon}
-        className={comboClassName}
-        style={comboStyle}
+        leftIcon={leftIcon}
+        rightIcon={rightIcon}
+        className={className}
+        style={style}
         clearRender={clearRender}
         onClick={handleInputClick}
         // 强制只读的控件, 只会清空时触发

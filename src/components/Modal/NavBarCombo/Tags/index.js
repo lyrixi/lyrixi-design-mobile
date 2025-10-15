@@ -33,7 +33,7 @@ const Tags = ({
     <Input.Node
       leftIcon={leftIcon}
       rightIcon={rightIcon}
-      className={DOMUtil.classNames('select-combo-tags', className)}
+      className={className}
       disabled={disabled}
       readOnly={readOnly}
       style={style}

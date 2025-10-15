@@ -1,8 +1,10 @@
 import React, { forwardRef, useRef, useImperativeHandle } from 'react'
 import getDisplayValue from './formatter'
 
-import Input from './../../Input'
-
+import InputText from './../Text'
+import InputAutoFit from './../AutoFit'
+import IconRightArrow from './../Icon/RightArrow'
+import IconClear from './../Icon/Clear'
 import Tags from './Tags'
 
 // 内库使用-start
@@ -13,7 +15,7 @@ import ObjectUtil from './../../../utils/ObjectUtil'
 import { ObjectUtil } from 'lyrixi-design-mobile'
 测试使用-end */
 
-// Combo
+// 基础Combo: 仅渲染Input
 const Combo = forwardRef(
   (
     {
@@ -91,16 +93,16 @@ const Combo = forwardRef(
       }
 
       return ObjectUtil.isEmpty(value) || !allowClear ? (
-        <Input.IconRightArrow />
+        <IconRightArrow />
       ) : (
-        <Input.IconClear onClick={clearParams?.triggerClear} />
+        <IconClear onClick={clearParams?.triggerClear} />
       )
     }
 
     // 文本框
-    let InputNode = Input.Text
+    let InputNode = InputText
     if (autoSize) {
-      InputNode = Input.AutoFit
+      InputNode = InputAutoFit
     }
 
     if (mode === 'tags') {

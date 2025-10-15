@@ -4,12 +4,11 @@ import WeekModal from './../WeekModal'
 
 // 内库使用-start
 import DateUtil from './../../../utils/DateUtil'
-import NavBarCombo from './../../Modal/NavBarCombo'
+import Input from './../../Input'
 // 内库使用-end
 
 /* 测试使用-start
-import { DateUtil, Modal } from 'lyrixi-design-mobile'
-const NavBarCombo = Modal.NavBarCombo
+import { DateUtil, Input } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // 获取周
@@ -68,12 +67,16 @@ const WeekCombo = forwardRef(
 
     return (
       <>
-        <NavBarCombo
+        <Input.Select
           ref={comboRef}
+          {...props}
+          style={comboStyle}
+          className={comboClassName}
+          leftIcon={comboLeftIcon}
+          rightIcon={comboRightIcon}
           formatter={() => {
             return DateUtil.format(value, 'week')
           }}
-          {...props}
           value={value}
           allowClear={allowClear}
           multiple={multiple}

@@ -1,12 +1,13 @@
 import React, { forwardRef, useState, useRef, useImperativeHandle } from 'react'
 import Modal from './../Modal'
 
-// 内库使用
-import NavBarCombo from './../../../components/Modal/NavBarCombo'
+// 内库使用-start
+import Input from './../../Input'
+// 内库使用-end
 
-// 测试使用
-// import { Modal } from 'lyrixi-design-mobile'
-// const NavBarCombo = Modal.NavBarCombo
+/* 测试使用-start
+import { Input } from 'lyrixi-design-mobile'
+测试使用-end */
 
 // Picker
 const PickerCombo = forwardRef(
@@ -61,9 +62,13 @@ const PickerCombo = forwardRef(
 
     return (
       <>
-        <NavBarCombo
+        <Input.Select
           ref={comboRef}
           {...props}
+          style={comboStyle}
+          className={comboClassName}
+          leftIcon={comboLeftIcon}
+          rightIcon={comboRightIcon}
           value={value}
           allowClear={allowClear}
           multiple={multiple}

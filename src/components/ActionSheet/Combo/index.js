@@ -2,12 +2,11 @@ import React, { forwardRef, useState, useRef, useImperativeHandle } from 'react'
 import Modal from './../Modal'
 
 // 内库使用-start
-import NavBarCombo from './../../Modal/NavBarCombo'
+import Input from './../../Input'
 // 内库使用-end
 
 /* 测试使用-start
-import { BaseModal } from 'lyrixi-design-mobile'
-const NavBarCombo = BaseModal.NavBarCombo
+import { Input } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // 卡片选择
@@ -16,6 +15,11 @@ const ActionSheetCombo = (
     // Combo
     comboRender,
     comboChildren,
+
+    comboStyle,
+    comboClassName,
+    comboLeftIcon,
+    comboRightIcon,
 
     // Modal
     portal,
@@ -108,11 +112,15 @@ const ActionSheetCombo = (
       )
     }
 
-    // 默认使用 NavBarCombo
+    // 默认使用 Input.Select
     return (
-      <NavBarCombo
+      <Input.Select
         ref={comboRef}
         {...props}
+        style={comboStyle}
+        className={comboClassName}
+        leftIcon={comboLeftIcon}
+        rightIcon={comboRightIcon}
         value={value}
         allowClear={allowClear}
         multiple={multiple}

@@ -1,5 +1,4 @@
 import Modal from './Modal'
-import NavBarCombo from './NavBarCombo'
 import NavBarModal from './NavBarModal'
 import DropdownCombo from './DropdownCombo'
 import DropdownModal from './DropdownModal'
@@ -9,7 +8,6 @@ import FilterModal from './FilterModal'
 import getClassNameByAnimation from './api/getClassNameByAnimation'
 
 // NavBar
-Modal.NavBarCombo = NavBarCombo
 Modal.NavBarModal = NavBarModal
 
 // Dropdown

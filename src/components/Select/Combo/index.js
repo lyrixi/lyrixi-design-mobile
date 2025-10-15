@@ -2,12 +2,13 @@ import React, { forwardRef, useState, useRef, useImperativeHandle } from 'react'
 import NavBarModal from './../../../components/Modal/NavBarModal'
 import Main from './../Main'
 
-// 内库使用
-import NavBarCombo from './../../../components/Modal/NavBarCombo'
+// 内库使用-start
+import Input from './../../Input'
+// 内库使用-end
 
-// 测试使用
-// import { Modal } from 'lyrixi-design-mobile'
-// const NavBarCombo = Modal.NavBarCombo
+/* 测试使用-start
+import { Input } from 'lyrixi-design-mobile'
+测试使用-end */
 
 const SelectCombo = forwardRef(
   (
@@ -95,7 +96,7 @@ const SelectCombo = forwardRef(
 
     return (
       <>
-        <NavBarCombo
+        <Input.Select
           ref={comboRef}
           {...props}
           value={value}

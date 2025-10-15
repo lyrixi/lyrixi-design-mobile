@@ -5,12 +5,11 @@ import formatValue from './../RangeMain/formatValue'
 import RangeModal from './../RangeModal'
 
 // 内库使用-start
-import NavBarCombo from './../../Modal/NavBarCombo'
+import Input from './../../Input'
 // 内库使用-end
 
 /* 测试使用-start
-import { Modal } from 'lyrixi-design-mobile'
-const NavBarCombo = Modal.NavBarCombo
+import { Input } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // 日期区间
@@ -94,8 +93,13 @@ const RangeCombo = forwardRef(
 
     return (
       <>
-        <NavBarCombo
+        <Input.Select
           ref={comboRef}
+          {...props}
+          style={comboStyle}
+          className={comboClassName}
+          leftIcon={comboLeftIcon}
+          rightIcon={comboRightIcon}
           separator={separator}
           // 用于回显displayValue
           formatter={() => {
@@ -108,7 +112,6 @@ const RangeCombo = forwardRef(
             })
           }}
           className="datepicker-rangecombo"
-          {...props}
           value={formatValue(value)}
           allowClear={allowClear}
           multiple={multiple}

@@ -33,10 +33,6 @@ title: Modal
 
 <code src="./demos/NavBar/index.jsx"></code>
 
-### Modal.NavBarCombo
-
-<code src="./demos/NavBarCombo/index.jsx"></code>
-
 ### Modal.NavBarModal
 
 <code src="./demos/NavBarModal/index.jsx"></code>
@@ -57,18 +53,18 @@ title: Modal
 
 ### 属性
 
-| 属性            | 说明             | 类型                                                                                    | 默认值          |
-| --------------- | ---------------- | --------------------------------------------------------------------------------------- | --------------- |
-| safeArea        | 安全区域         | `boolean \| object`                                                                     | -               |
-| portal          | 渲染容器         | `HTMLElement \| boolean`                                                                | `document.body` |
-| animation       | 动画类型         | `'none' \| 'slideLeft' \| 'slideRight' \| 'slideUp' \| 'slideDown' \| 'zoom' \| 'fade'` | `'zoom'`        |
-| referenceDOM    | 参考元素         | `HTMLElement \| function`                                                               | -               |
-| offset          | 偏移量           | `object`                                                                                | -               |
-| open            | 是否可见         | `boolean`                                                                               | -               |
-| maskClosable    | 点击遮罩是否关闭 | `boolean`                                                                               | `true`          |
-| onOpen          | 打开时的回调     | `() => void`                                                                            | -               |
-| onClose         | 关闭时的回调     | `(e: Event) => void`                                                                    | -               |
-| children        | 模态框内容       | `ReactNode`                                                                             | -               |
+| 属性         | 说明             | 类型                                                                                    | 默认值          |
+| ------------ | ---------------- | --------------------------------------------------------------------------------------- | --------------- |
+| safeArea     | 安全区域         | `boolean \| object`                                                                     | -               |
+| portal       | 渲染容器         | `HTMLElement \| boolean`                                                                | `document.body` |
+| animation    | 动画类型         | `'none' \| 'slideLeft' \| 'slideRight' \| 'slideUp' \| 'slideDown' \| 'zoom' \| 'fade'` | `'zoom'`        |
+| referenceDOM | 参考元素         | `HTMLElement \| function`                                                               | -               |
+| offset       | 偏移量           | `object`                                                                                | -               |
+| open         | 是否可见         | `boolean`                                                                               | -               |
+| maskClosable | 点击遮罩是否关闭 | `boolean`                                                                               | `true`          |
+| onOpen       | 打开时的回调     | `() => void`                                                                            | -               |
+| onClose      | 关闭时的回调     | `(e: Event) => void`                                                                    | -               |
+| children     | 模态框内容       | `ReactNode`                                                                             | -               |
 
 ### Ref
 

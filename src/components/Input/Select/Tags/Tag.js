@@ -12,7 +12,7 @@ import { DOMUtil } from 'lyrixi-design-mobile'
 const Tag = ({ style, className, name, readOnly, disabled, allowClear, onEdit, onDelete }) => {
   return (
     <div
-      className={DOMUtil.classNames('select-combo-tags-item', className)}
+      className={DOMUtil.classNames('select-tags-item', className)}
       style={style}
       onClick={
         readOnly || disabled
@@ -26,7 +26,7 @@ const Tag = ({ style, className, name, readOnly, disabled, allowClear, onEdit, o
       {name}
       {readOnly || disabled || !allowClear ? null : (
         <i
-          className="select-combo-tags-item-clear"
+          className="select-tags-item-clear"
           onClick={(e) => {
             onDelete && onDelete()
             e.stopPropagation()

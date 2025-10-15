@@ -10,12 +10,11 @@ import DistrictModal from './../DistrictModal'
 
 // 内库使用-start
 import ArrayUtil from './../../../utils/ArrayUtil'
-import NavBarCombo from './../../Modal/NavBarCombo'
+import Input from './../../Input'
 // 内库使用-end
 
 /* 测试使用-start
-import { ArrayUtil, Modal } from 'lyrixi-design-mobile'
-const NavBarCombo = Modal.NavBarCombo
+import { ArrayUtil, Input } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // 级联选择
@@ -148,11 +147,15 @@ const DistrictCombo = forwardRef(
 
     return (
       <>
-        <NavBarCombo
+        <Input.Select
           ref={comboRef}
+          {...props}
+          style={comboStyle}
+          className={comboClassName}
+          leftIcon={comboLeftIcon}
+          rightIcon={comboRightIcon}
           value={value}
           onChange={handleChange}
-          {...props}
           multiple={multiple}
           allowClear={allowClear}
           // 只读项与值一致, 并且已经下钻到最末经, 只读

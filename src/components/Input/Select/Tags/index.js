@@ -1,14 +1,6 @@
 import React, { Fragment } from 'react'
 import Tag from './Tag'
-
-// 内库使用-start
-import DOMUtil from './../../../../utils/DOMUtil'
-import Input from './../../../Input'
-// 内库使用-end
-
-/* 测试使用-start
-import { DOMUtil, LocaleUtil, Input } from 'lyrixi-design-mobile'
-测试使用-end */
+import InputNode from './../../Node'
 
 // 标签模式
 const Tags = ({
@@ -30,7 +22,7 @@ const Tags = ({
   onChange
 }) => {
   return (
-    <Input.Node
+    <InputNode
       leftIcon={leftIcon}
       rightIcon={rightIcon}
       className={className}

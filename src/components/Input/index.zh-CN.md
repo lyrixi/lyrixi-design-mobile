@@ -49,6 +49,10 @@ toc: content
 
 <code src="./demos/Text/index.jsx"></code>
 
+### Input.Select
+
+<code src="./demos/Select/index.jsx"></code>
+
 ### 属性
 
 | 属性         | 说明         | 类型                                                                 | 默认值   |

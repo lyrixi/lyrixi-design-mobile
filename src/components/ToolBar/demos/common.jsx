@@ -256,7 +256,7 @@ export default () => {
                 filterRef.current?.open()
               }}
             >
-              Click to toggle filter modal visible
+              Click to toggle filter modal
             </ToolBar.Button>
             <ToolBar.Filter
               color="primary"

@@ -10,7 +10,7 @@ import Item from './Item'
 const Transfer = (
   {
     // Modal
-    visible,
+    open,
 
     // Main: common
     value,

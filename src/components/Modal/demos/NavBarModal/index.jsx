@@ -4,9 +4,9 @@ import { Page, Modal } from 'lyrixi-design-mobile'
 export default () => {
   const referenceRef = useRef(null)
   const modalRef = useRef(null)
-  const [visible, setVisible] = useState(false)
+  const [open, setOpen] = useState(false)
   function handleToggle() {
-    setVisible(!visible)
+    setOpen(!open)
   }
 
   return (
@@ -14,10 +14,10 @@ export default () => {
       <Page.Header className="text-center">Modal</Page.Header>
       <Page.Main className="bg-white">
         <div ref={referenceRef} className="demo-title" onClick={handleToggle}>
-          Modal visible toggle
+          Modal open toggle
         </div>
         <Modal.NavBarModal
-          open={visible}
+          open={open}
           onOk={() => {
             console.log('Ok')
           }}
@@ -26,11 +26,11 @@ export default () => {
           }}
           onOpen={() => {
             console.log(true)
-            setVisible(true)
+            setOpen(true)
           }}
           onClose={() => {
             console.log(false)
-            setVisible(false)
+            setOpen(false)
           }}
         >
           <div className="bg-white" style={{ height: '300px' }}>

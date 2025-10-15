@@ -3,9 +3,9 @@ import { Page, Modal } from 'lyrixi-design-mobile'
 
 export default () => {
   const modalRef = useRef(null)
-  const [visible, setVisible] = useState(false)
+  const [open, setOpen] = useState(false)
   function handleToggle() {
-    setVisible(!visible)
+    setOpen(!open)
   }
 
   return (
@@ -14,14 +14,14 @@ export default () => {
         <Page.Header className="text-center">Modal</Page.Header>
         <Page.Main className="bg-white">
           <div className="demo-title" onClick={handleToggle}>
-            Modal visible toggle
+            Modal open toggle
           </div>
           <Modal
             // 这里可以更换动画方向
             animation="slideDown"
             ref={modalRef}
-            open={visible}
-            onClose={() => setVisible(false)}
+            open={open}
+            onClose={() => setOpen(false)}
           >
             <div className="bg-white" style={{ height: '300px' }}>
               Test

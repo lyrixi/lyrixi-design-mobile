@@ -15,7 +15,7 @@ export default () => {
               filterRef.current?.open()
             }}
           >
-            Click to toggle visible
+            Click to toggle
           </div>
           <ToolBar.Filter
             color="primary"

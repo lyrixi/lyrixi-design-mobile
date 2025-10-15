@@ -20,7 +20,7 @@ export default () => {
       <Page.Header className="text-center">Message.open</Page.Header>
       <Page.Main className="bg-white">
         <Button className="flex" color="primary" size="l" onClick={handleToggle}>
-          Message visible toggle
+          Message toggle
         </Button>
       </Page.Main>
     </Page>

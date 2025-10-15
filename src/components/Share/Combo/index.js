@@ -44,7 +44,7 @@ const Combo = (
   },
   ref
 ) => {
-  const [visible, setVisible] = useState(false)
+  const [open, setOpen] = useState(false)
 
   const comboRef = useRef(null)
   const modalRef = useRef(null)
@@ -75,7 +75,7 @@ const Combo = (
       share(shareTo?.dingtalk || {})
       return
     }
-    setVisible(true)
+    setOpen(true)
   }
 
   // 显示项
@@ -102,9 +102,9 @@ const Combo = (
         portal={portal}
         className={modalClassName}
         style={modalStyle}
-        open={visible}
-        onOpen={() => setVisible(true)}
-        onClose={() => setVisible(false)}
+        open={open}
+        onOpen={() => setOpen(true)}
+        onClose={() => setOpen(false)}
         // Main
         shareTo={shareTo}
         onError={onError}

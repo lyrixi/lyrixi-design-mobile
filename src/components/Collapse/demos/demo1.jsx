@@ -149,14 +149,14 @@ export default () => {
           <div style={{ margin: '0 12px' }}>
             <Collapse.Item
               open={false}
-              headerRender={({ visible }) => {
+              headerRender={({ open }) => {
                 return (
                   <div
                     className="flex flex-middle"
-                    style={{ height: 40, borderBottom: visible ? '1px solid #e8e8e8' : 'none' }}
+                    style={{ height: 40, borderBottom: open ? '1px solid #e8e8e8' : 'none' }}
                   >
                     <div className="flex-1">Custom Header</div>
-                    {visible ? '^' : 'v'}
+                    {open ? '^' : 'v'}
                   </div>
                 )
               }}

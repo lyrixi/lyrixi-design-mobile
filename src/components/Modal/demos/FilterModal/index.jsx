@@ -4,9 +4,9 @@ import { Page, Modal, FooterBar } from 'lyrixi-design-mobile'
 export default () => {
   const referenceRef = useRef(null)
   const modalRef = useRef(null)
-  const [visible, setVisible] = useState(false)
+  const [open, setOpen] = useState(false)
   function handleToggle() {
-    setVisible(!visible)
+    setOpen(!open)
   }
 
   return (
@@ -14,7 +14,7 @@ export default () => {
       <Page.Header className="text-center">Modal</Page.Header>
       <Page.Main className="bg-white">
         <div ref={referenceRef} className="demo-title" onClick={handleToggle}>
-          Modal visible toggle
+          Modal open toggle
         </div>
         <Modal.FilterModal
           open={true}

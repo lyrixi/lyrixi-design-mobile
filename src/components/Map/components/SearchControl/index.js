@@ -12,7 +12,7 @@ import { ToolBar } from 'lyrixi-design-mobile'
 // 搜索
 function SearchControl({ map, onChange }, ref) {
   // 搜索结果页面显隐
-  const [visible, setVisible] = useState(false)
+  const [open, setOpen] = useState(false)
 
   return (
     <>
@@ -22,11 +22,17 @@ function SearchControl({ map, onChange }, ref) {
         // value={search}
         readOnly
         onClick={() => {
-          setVisible(!visible)
+          setOpen(!open)
         }}
       />
 
-      <Page open={visible} onOpen={() => setVisible(true)} onClose={() => setVisible(false)} map={map} onChange={onChange} />
+      <Page
+        open={open}
+        onOpen={() => setOpen(true)}
+        onClose={() => setOpen(false)}
+        map={map}
+        onChange={onChange}
+      />
     </>
   )
 }

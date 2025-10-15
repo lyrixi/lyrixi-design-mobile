@@ -12,7 +12,7 @@ import { Toast } from 'lyrixi-design-mobile'
 
 // 微信只支持分享到微信和朋友圈
 function WeChat({ shareTo }) {
-  const [visible, setVisible] = useState(false)
+  const [open, setOpen] = useState(false)
   if (shareTo?.wechat) {
     let { title, description, url, imageUrl, onSuccess, onError } = shareTo?.wechat || {}
     return (
@@ -26,7 +26,7 @@ function WeChat({ shareTo }) {
               link: url || '',
               imgUrl: imageUrl || '',
               onSuccess: function (res) {
-                setVisible(true)
+                setOpen(true)
                 onSuccess && onSuccess()
               },
               onError: function (err) {
@@ -42,7 +42,7 @@ function WeChat({ shareTo }) {
             })
           }}
         />
-        <Guide open={visible} onClose={() => setVisible(false)} />
+        <Guide open={open} onClose={() => setOpen(false)} />
       </>
     )
   }

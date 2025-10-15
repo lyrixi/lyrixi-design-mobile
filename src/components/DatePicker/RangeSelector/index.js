@@ -12,7 +12,7 @@ import Dates from './Dates'
 // 日期快捷选择
 function RangeSelector(
   {
-    visible,
+    open,
 
     // Main
     value,

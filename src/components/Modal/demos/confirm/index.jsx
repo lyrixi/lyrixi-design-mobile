@@ -93,7 +93,7 @@ export default () => {
         }}
       >
         <Button className="flex" color="primary" size="l" onClick={handleToggle}>
-          Message visible toggle
+          Message toggle
         </Button>
       </Page.Main>
     </Page>

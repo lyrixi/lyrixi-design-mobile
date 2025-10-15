@@ -29,7 +29,7 @@ const MessageCombo = forwardRef(
     ref
   ) => {
     // 控制Modal显隐
-    const [visible, setVisible] = useState(null)
+    const [open, setOpen] = useState(null)
 
     const comboRef = useRef(null)
     const modalRef = useRef(null)
@@ -39,16 +39,16 @@ const MessageCombo = forwardRef(
         getComboDOM: () => comboRef.current,
         ...modalRef.current,
         close: () => {
-          setVisible(false)
+          setOpen(false)
         },
         open: () => {
-          setVisible(true)
+          setOpen(true)
         }
       }
     })
 
     function handleClick() {
-      setVisible(true)
+      setOpen(true)
     }
 
     // 获取图标节点
@@ -69,7 +69,7 @@ const MessageCombo = forwardRef(
         >
           {children}
         </div>
-        <Modal open={visible} onOpen={() => setVisible(true)} onClose={() => setVisible(false)}>
+        <Modal open={open} onOpen={() => setOpen(true)} onClose={() => setOpen(false)}>
           {(IconNode || title) && (
             <Header>
               {IconNode}
@@ -88,7 +88,7 @@ const MessageCombo = forwardRef(
                     onClick={async (e) => {
                       let newVisible = await onClick(e)
                       if (typeof newVisible === 'boolean') {
-                        setVisible(!newVisible)
+                        setOpen(!newVisible)
                       }
                     }}
                   >

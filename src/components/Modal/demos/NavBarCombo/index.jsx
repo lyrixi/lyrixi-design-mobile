@@ -24,10 +24,10 @@ export default () => {
               console.log('Cancel')
             }}
             onOpen={() => {
-              console.log('visible:', true)
+              console.log('open:', true)
             }}
             onClose={() => {
-              console.log('visible:', false)
+              console.log('open:', false)
             }}
           >
             <div className="bg-white" style={{ height: '300px' }}>

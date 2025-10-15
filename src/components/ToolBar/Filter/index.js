@@ -31,13 +31,14 @@ const Filter = forwardRef(
       modalStyle,
       onCancel,
       footerRender,
-      onOpen, onClose,
+      onOpen,
+      onClose,
       children
     },
     ref
   ) => {
     const rootRef = useRef(null)
-    const [visible, setVisible] = useState(false)
+    const [open, setOpen] = useState(false)
 
     // Expose
     useImperativeHandle(ref, () => {
@@ -45,10 +46,10 @@ const Filter = forwardRef(
         rootDOM: rootRef.current,
         getRootDOM: () => rootRef.current,
         close: () => {
-          setVisible(false)
+          setOpen(false)
         },
         open: () => {
-          setVisible(true)
+          setOpen(true)
         }
       }
     })
@@ -60,13 +61,13 @@ const Filter = forwardRef(
         return
       }
 
-      if (visible) {
+      if (open) {
         onOpen && onOpen()
       } else {
         onClose && onClose()
       }
       // eslint-disable-next-line
-    }, [visible])
+    }, [open])
 
     // 获取图标节点
     function getIconNode() {
@@ -89,7 +90,7 @@ const Filter = forwardRef(
           className={DOMUtil.classNames('toolbar-button', comboClassName)}
           style={comboStyle}
           onClick={() => {
-            setVisible(true)
+            setOpen(true)
           }}
           ref={rootRef}
         >
@@ -106,9 +107,9 @@ const Filter = forwardRef(
             className: modalClassName,
             style: modalStyle
           }}
-          onOpen={() => setVisible(true)}
-          onClose={() => setVisible(false)}
-          open={visible}
+          onOpen={() => setOpen(true)}
+          onClose={() => setOpen(false)}
+          open={open}
         >
           {children}
         </FilterModal>

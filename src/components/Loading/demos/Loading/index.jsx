@@ -4,7 +4,7 @@ import { Page } from 'lyrixi-design-mobile'
 import Loading from './../../Loading/index.js'
 
 export default () => {
-  const [visible, setVisible] = useState(true)
+  const [open, setOpen] = useState(true)
   // useEffect(() => {
   //   setTimeout(() => {
   //     Loading.show({
@@ -12,13 +12,13 @@ export default () => {
   //         caption: ''
   //       },
   //       onOpen: () => {
-  //         console.log('visible:', true)
+  //         console.log('open:', true)
   //         setTimeout(() => {
   //           Loading.hide()
   //         }, 3000)
   //       },
   //       onClose: () => {
-  //         console.log('visible:', false)
+  //         console.log('open:', false)
   //       }
   //     })
   //   }, 2000)

@@ -15,10 +15,10 @@ export default () => {
       duration: 2000,
       maskClickable: false,
       onOpen: () => {
-        console.log('custom visible:', true)
+        console.log('custom open:', true)
       },
       onClose: () => {
-        console.log('custom visible:', false)
+        console.log('custom open:', false)
       }
     })
     console.log(toast)
@@ -27,10 +27,10 @@ export default () => {
       Toast.show({
         content: 'hh',
         onOpen: () => {
-          console.log('hh visible:', true)
+          console.log('hh open:', true)
         },
         onClose: () => {
-          console.log('hh visible:', false)
+          console.log('hh open:', false)
         }
       })
     }, 1000)
@@ -41,7 +41,7 @@ export default () => {
       <Page.Header className="text-center">Toast.show</Page.Header>
       <Page.Main className="bg-white">
         <div className="demo-title" onClick={handleToggle}>
-          Toast visible toggle
+          Toast open toggle
         </div>
       </Page.Main>
     </Page>

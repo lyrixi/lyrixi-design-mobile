@@ -24,7 +24,7 @@ const Combo = (
   },
   ref
 ) => {
-  const [visible, setVisible] = useState(false)
+  const [open, setOpen] = useState(false)
 
   const comboRef = useRef(null)
   const modalRef = useRef(null)
@@ -46,7 +46,7 @@ const Combo = (
 
   // 点击签名
   function handleSign() {
-    setVisible(true)
+    setOpen(true)
   }
 
   // 修改签名
@@ -56,7 +56,7 @@ const Combo = (
       let goOn = await onChange(base64)
       return goOn
     }
-    setVisible(false)
+    setOpen(false)
   }
 
   // 未签显示签名
@@ -76,11 +76,11 @@ const Combo = (
       </div>
       <Modal
         ref={modalRef}
-        open={visible}
+        open={open}
         value={value}
         onChange={handleChange}
-        onOpen={() => setVisible(true)}
-        onClose={() => setVisible(false)}
+        onOpen={() => setOpen(true)}
+        onClose={() => setOpen(false)}
         // 绘画配置
         color={color}
         backgroundColor={backgroundColor}

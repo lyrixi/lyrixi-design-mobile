@@ -6,10 +6,10 @@ export default () => {
     Toast.show({
       content: 'show toast',
       onOpen: () => {
-        console.log('visible:', true)
+        console.log('open:', true)
       },
       onClose: () => {
-        console.log('visible:', false)
+        console.log('open:', false)
       }
     })
     setTimeout(() => {
@@ -22,7 +22,7 @@ export default () => {
       <Page.Header className="text-center">Toast.hide</Page.Header>
       <Page.Main className="bg-white">
         <div className="demo-title" onClick={handleToggle}>
-          Toast visible toggle
+          Toast open toggle
         </div>
       </Page.Main>
     </Page>

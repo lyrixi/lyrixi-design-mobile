@@ -7,7 +7,7 @@ export default () => {
       <Page.Header className="text-center">Share To</Page.Header>
       <Page.Main className="bg-white">
         <Share.Modal
-          visible
+          open
           shareTo={{
             wechat: {
               title: '标题',

@@ -7,10 +7,10 @@ export default () => {
       <Tooltip
         content={<p>123412341234</p>}
         onOpen={() => {
-          console.log('visible:', true)
+          console.log('open:', true)
         }}
         onClose={() => {
-          console.log('visible:', false)
+          console.log('open:', false)
         }}
       >
         <div style={{ margin: 100 }}>点击</div>

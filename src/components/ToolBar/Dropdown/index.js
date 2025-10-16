@@ -29,9 +29,12 @@ const Dropdown = forwardRef(
       arrowRender = () => <i className="seed-button-icon toolbar-dropdown-combo-arrow"></i>,
 
       // Button Style
-      color = 'default',
-      variant = 'text',
-      shape,
+      comboColor = 'default',
+      comboBackgroundColor,
+      comboShape,
+      comboBorder,
+      comboRadius,
+      comboSize,
 
       // Mask
 
@@ -131,11 +134,12 @@ const Dropdown = forwardRef(
         {/* Combo */}
         <Button
           ref={comboRef}
-          color={color}
-          variant={variant}
-          size="s"
-          radius="s"
-          shape={shape}
+          color={comboColor}
+          backgroundColor={comboBackgroundColor}
+          border={comboBorder}
+          size={comboSize || 's'}
+          radius={comboRadius || 's'}
+          shape={comboShape}
           className={DOMUtil.classNames(
             'toolbar-dropdown-combo toolbar-button',
             comboClassName,

@@ -10,7 +10,21 @@ import { DOMUtil, Button } from 'lyrixi-design-mobile'
 测试使用-end */
 
 const ToolBarButton = forwardRef(
-  ({ variant, color, shape, className, style, children, onClick }, ref) => {
+  (
+    {
+      comboColor,
+      comboBackgroundColor,
+      comboShape,
+      comboBorder,
+      comboRadius,
+      comboSize,
+      comboClassName,
+      comboStyle,
+      children,
+      onClick
+    },
+    ref
+  ) => {
     const rootRef = useRef(null)
 
     // Expose
@@ -23,13 +37,14 @@ const ToolBarButton = forwardRef(
 
     return (
       <Button
-        style={style}
-        className={DOMUtil.classNames('toolbar-button', className)}
-        size="s"
-        radius="s"
-        variant={variant}
-        color={color}
-        shape={shape}
+        style={comboStyle}
+        className={DOMUtil.classNames('toolbar-button', comboClassName)}
+        size={comboSize || 's'}
+        radius={comboRadius || 's'}
+        color={comboColor}
+        backgroundColor={comboBackgroundColor}
+        border={comboBorder}
+        shape={comboShape}
         onClick={onClick}
         ref={rootRef}
       >

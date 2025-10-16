@@ -15,9 +15,12 @@ const Filter = forwardRef(
   (
     {
       // Button Style
-      color = 'default',
-      variant = 'text',
-      shape,
+      comboColor = 'default',
+      comboBackgroundColor,
+      comboShape,
+      comboBorder,
+      comboRadius,
+      comboSize,
       comboStyle,
       comboClassName,
 
@@ -82,11 +85,12 @@ const Filter = forwardRef(
       <>
         {/* Combo */}
         <Button
-          color={color}
-          variant={variant}
-          size="s"
-          radius="s"
-          shape={shape}
+          color={comboColor}
+          backgroundColor={comboBackgroundColor}
+          border={comboBorder}
+          size={comboSize || 's'}
+          radius={comboRadius || 's'}
+          shape={comboShape}
           className={DOMUtil.classNames('toolbar-button', comboClassName)}
           style={comboStyle}
           onClick={() => {

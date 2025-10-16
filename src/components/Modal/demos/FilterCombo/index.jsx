@@ -32,7 +32,6 @@ export default () => {
           </ToolBar.Filter>
           <ToolBar.Filter
             ref={filterRef}
-            variant="default"
             shape="square"
             onOk={({ close }) => {
               console.log('submit')

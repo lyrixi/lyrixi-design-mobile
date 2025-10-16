@@ -13,9 +13,12 @@ import { DOMUtil, ActionSheet, Button } from 'lyrixi-design-mobile'
 // 操作表下拉
 function ToolBarActionSheet({
   // Combo Style
-  color = 'default',
-  variant = 'text',
-  shape,
+  comboColor = 'default',
+  comboBackgroundColor,
+  comboShape,
+  comboBorder,
+  comboRadius,
+  comboSize,
   comboStyle,
   comboClassName,
 
@@ -23,6 +26,8 @@ function ToolBarActionSheet({
   portal,
   maskClassName,
   maskStyle,
+  modalClassName,
+  modalStyle,
 
   // Combo Value
   title = '',
@@ -70,11 +75,12 @@ function ToolBarActionSheet({
     return (
       <Button
         ref={comboRef}
-        color={color}
-        variant={variant}
-        size="s"
-        radius="s"
-        shape={shape}
+        color={comboColor}
+        backgroundColor={comboBackgroundColor}
+        border={comboBorder}
+        size={comboSize || 's'}
+        radius={comboRadius || 's'}
+        shape={comboShape}
         className={DOMUtil.classNames(
           'toolbar-dropdown-combo toolbar-button',
           comboClassName,
@@ -94,6 +100,8 @@ function ToolBarActionSheet({
       portal={portal}
       maskClassName={maskClassName}
       maskStyle={maskStyle}
+      modalClassName={modalClassName}
+      modalStyle={modalStyle}
       comboRender={getComboNode}
       value={value?.[0]}
       list={list}

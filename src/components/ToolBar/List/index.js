@@ -6,15 +6,20 @@ import List from './List'
 // 列表下拉
 function ToolBarList({
   // Combo Style
-  variant,
-  color,
-  shape,
+  comboColor,
+  comboBackgroundColor,
+  comboShape,
+  comboBorder,
+  comboRadius,
+  comboSize,
   comboStyle,
   comboClassName,
 
   // Mask
   maskClassName,
   maskStyle,
+  modalClassName,
+  modalStyle,
 
   // Modal
   portal,
@@ -47,13 +52,18 @@ function ToolBarList({
       offset={offset}
       left={left}
       right={right}
-      variant={variant}
-      color={color}
-      shape={shape}
+      comboColor={comboColor}
+      comboBackgroundColor={comboBackgroundColor}
+      comboShape={comboShape}
+      comboBorder={comboBorder}
+      comboRadius={comboRadius}
+      comboSize={comboSize}
       comboStyle={comboStyle}
       comboClassName={comboClassName}
       maskClassName={maskClassName}
       maskStyle={maskStyle}
+      modalClassName={modalClassName}
+      modalStyle={modalStyle}
       title={title || value?.[0]?.name}
       arrowRender={arrowRender}
       ref={dropdownRef}

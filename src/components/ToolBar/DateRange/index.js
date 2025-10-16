@@ -21,9 +21,12 @@ function DateRangeBar({
   portal,
 
   // Combo Style
-  variant,
-  color,
-  shape,
+  comboColor,
+  comboBackgroundColor,
+  comboShape,
+  comboBorder,
+  comboRadius,
+  comboSize,
   title,
   arrowRender,
   comboStyle,
@@ -32,6 +35,8 @@ function DateRangeBar({
   // Modal
   maskClassName,
   maskStyle,
+  modalClassName,
+  modalStyle,
 
   // Combo Value
   type = 'date',
@@ -112,13 +117,18 @@ function DateRangeBar({
       portal={portal}
       title={title || getDisplayValue({ value, type, rangeId, ranges })}
       arrowRender={arrowRender}
-      variant={variant}
-      color={color}
-      shape={shape}
+      comboColor={comboColor}
+      comboBackgroundColor={comboBackgroundColor}
+      comboShape={comboShape}
+      comboBorder={comboBorder}
+      comboRadius={comboRadius}
+      comboSize={comboSize}
       comboStyle={comboStyle}
       comboClassName={comboClassName}
       maskClassName={maskClassName}
       maskStyle={maskStyle}
+      modalClassName={modalClassName}
+      modalStyle={modalStyle}
       onClose={handleCancel}
       ref={dropdownRef}
     >

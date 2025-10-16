@@ -63,7 +63,7 @@ export default () => {
         <Divider>Dropdown</Divider>
         <div className="toolbar-bg">
           <ToolBar>
-            <ToolBar.Dropdown left={12} title="Dropdown left" color="primary" variant="fill">
+            <ToolBar.Dropdown left={12} title="Dropdown left" comboColor="primary" comboBorder="fill">
               <div style={{ height: '300px' }}>Modal Content</div>
             </ToolBar.Dropdown>
             <ToolBar.Dropdown title="Dropdown ref" ref={dropdownRef}>
@@ -110,7 +110,7 @@ export default () => {
             />
             <ToolBar.DateRange
               portal={mainDOM}
-              variant="fill"
+              comboBorder="fill"
               title={!dateRange ? 'DateRange' : undefined}
               value={dateRange}
               // allowClear={true}
@@ -150,7 +150,7 @@ export default () => {
             />
             <ToolBar.List
               portal={mainDOM}
-              variant="fill"
+              comboBorder="fill"
               title={!item ? 'List' : undefined}
               value={item}
               onChange={setItem}
@@ -178,8 +178,8 @@ export default () => {
           <ToolBar>
             <ToolBar.ActionSheet
               portal={mainDOM}
-              // color="primary"
-              // variant="fill"
+              // comboColor="primary"
+              // comboBorder="fill"
               title={!item ? 'ActionSheet' : undefined}
               value={item}
               onChange={setItem}
@@ -206,7 +206,7 @@ export default () => {
         <Divider>Button</Divider>
         <div className="toolbar-bg">
           <ToolBar>
-            <ToolBar.Button shape="square" onClick={() => console.log(1)}>
+            <ToolBar.Button comboShape="square" onClick={() => console.log(1)}>
               <Icon className="seeds-icons seeds-icon-barcode"></Icon>
             </ToolBar.Button>
             <Space.Compact>
@@ -218,8 +218,8 @@ export default () => {
               <ToolBar.List
                 portal={mainDOM}
                 arrowRender={null}
-                shape="square"
-                variant="fill"
+                comboShape="square"
+                comboBorder="fill"
                 title={<Icon className="seeds-icons seeds-icon-three-dots"></Icon>}
                 maskStyle={{
                   zIndex: 99
@@ -237,10 +237,10 @@ export default () => {
                   }
                 ]}
               />
-              <ToolBar.Button shape="square" onClick={() => console.log(1)}>
+              <ToolBar.Button comboShape="square" onClick={() => console.log(1)}>
                 <Icon className="seeds-icons seeds-icon-barcode"></Icon>
               </ToolBar.Button>
-              <ToolBar.Filter variant="fill" shape="square">
+              <ToolBar.Filter comboBorder="fill" comboShape="square">
                 <div style={{ height: '300px' }}>Modal Content</div>
               </ToolBar.Filter>
             </Space.Compact>
@@ -259,8 +259,8 @@ export default () => {
               Click to toggle filter modal
             </ToolBar.Button>
             <ToolBar.Filter
-              color="primary"
-              shape="square"
+              comboColor="primary"
+              comboShape="square"
               icon={<Icon className="toolbar-button-icon seeds-icons seeds-icon-search" />}
               onReset={() => {
                 console.log('reset')
@@ -273,8 +273,8 @@ export default () => {
             </ToolBar.Filter>
             <ToolBar.Filter
               ref={filterRef}
-              variant="fill"
-              shape="square"
+              comboBorder="fill"
+              comboShape="square"
               onReset={() => {
                 console.log('reset')
               }}
@@ -297,10 +297,10 @@ export default () => {
               }}
             />
             <Space.Compact>
-              <ToolBar.Button shape="square" onClick={() => console.log(1)}>
+              <ToolBar.Button comboShape="square" onClick={() => console.log(1)}>
                 <Icon className="seeds-icons seeds-icon-barcode"></Icon>
               </ToolBar.Button>
-              <ToolBar.Filter variant="fill" shape="square">
+              <ToolBar.Filter comboBorder="fill" comboShape="square">
                 <div style={{ height: '300px' }}>Modal Content</div>
               </ToolBar.Filter>
             </Space.Compact>
@@ -318,10 +318,10 @@ export default () => {
               }}
             />
             <Space.Compact>
-              <ToolBar.Button shape="square" onClick={() => console.log(1)}>
+              <ToolBar.Button comboShape="square" onClick={() => console.log(1)}>
                 <Icon className="seeds-icons seeds-icon-barcode"></Icon>
               </ToolBar.Button>
-              <ToolBar.Filter variant="fill" shape="square">
+              <ToolBar.Filter comboBorder="fill" comboShape="square">
                 <div style={{ height: '300px' }}>Modal Content</div>
               </ToolBar.Filter>
             </Space.Compact>

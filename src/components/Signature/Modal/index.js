@@ -3,11 +3,12 @@ import { createPortal } from 'react-dom'
 import Main from './../Main'
 
 // 内库使用-start
+import DOMUtil from './../../../utils/DOMUtil'
 import Page from './../../Page'
 // 内库使用-end
 
 /* 测试使用-start
-import { Page } from 'lyrixi-design-mobile'
+import { DOMUtil, Page } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // Modal
@@ -20,6 +21,8 @@ const Modal = forwardRef(
       onChange,
       onOpen,
       onClose,
+      modalClassName,
+      modalStyle,
 
       // 绘画配置
       color,
@@ -45,9 +48,12 @@ const Modal = forwardRef(
       <Page
         ref={modalRef}
         {...props}
-        className={`signature-modal${props?.className ? ' ' + props.className : ''}${
+        className={DOMUtil.classNames(
+          'signature-modal',
+          modalClassName,
           open === true ? '' : ' hide'
-        }`}
+        )}
+        style={modalStyle}
       >
         {open && (
           <Main

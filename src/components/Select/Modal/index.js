@@ -3,14 +3,15 @@ import formatValue from './formatValue'
 import Main from './../Main'
 
 // 内库使用-start
+import DOMUtil from './../../../utils/DOMUtil'
 import ToolBar from './../../../components/ToolBar'
 import List from './../../../components/List'
 import NavBarModal from './../../../components/Modal/NavBarModal'
 // 内库使用-end
 
 /* 测试使用-start
-import { ToolBar, List, Modal } from 'lyrixi-design-mobile'
-const SelectModal = Modal.SelectModal
+import { DOMUtil, ToolBar, List, Modal } from 'lyrixi-design-mobile'
+const NavBarModal = Modal.NavBarModal
 测试使用-end */
 
 // Modal
@@ -37,6 +38,9 @@ const Modal = forwardRef(
       checkable,
       checkbox,
       checkboxPosition,
+
+      modalClassName,
+      modalStyle,
 
       ...props
     },
@@ -108,7 +112,8 @@ const Modal = forwardRef(
         onOk={handleOk}
         ok={multiple !== false}
         portal={portal}
-        className={`select-modal${props.className ? ' ' + props.className : ''}`}
+        modalClassName={DOMUtil.classNames('select-modal', modalClassName)}
+        modalStyle={modalStyle}
       >
         {searchHeaderVisible && searchHeaderVisible()}
         <Main

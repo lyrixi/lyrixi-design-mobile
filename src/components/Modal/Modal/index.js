@@ -24,11 +24,12 @@ const Modal = forwardRef(
 
       open,
       maskClosable = true,
-      onOpen,
       onClose,
 
       maskClassName,
       maskStyle,
+      modalClassName,
+      modalStyle,
 
       children,
       ...props
@@ -112,9 +113,10 @@ const Modal = forwardRef(
           className={DOMUtil.classNames(
             'modal-animation modal',
             animationClassName ? ' ' + animationClassName : '',
-            props.className,
+            modalClassName,
             getActiveClass()
           )}
+          style={modalStyle}
           data-animation={animation}
           onClick={handleModalClick}
         >

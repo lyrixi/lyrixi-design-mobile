@@ -2,12 +2,13 @@ import React, { forwardRef, useState, useRef, useImperativeHandle } from 'react'
 import Main from './../Main'
 
 // 内库使用-start
+import DOMUtil from './../../../utils/DOMUtil'
 import NavBarModal from './../../Modal/NavBarModal'
 // 内库使用-end
 
 /* 测试使用-start
-import { Modal } from 'lyrixi-design-mobile'
-const SelectModal = Modal.SelectModal
+import { DOMUtil, Modal } from 'lyrixi-design-mobile'
+const NavBarModal = Modal.NavBarModal
 测试使用-end */
 
 // Modal
@@ -22,6 +23,9 @@ const ListModal = forwardRef(
       open,
       onClose,
       onOpen,
+
+      modalClassName,
+      modalStyle,
 
       // Main
       loadList,
@@ -84,7 +88,8 @@ const ListModal = forwardRef(
         onOpen={onOpen}
         onOk={handleOk}
         ok={multiple !== false}
-        className={`list-modal${props.className ? ' ' + props.className : ''}`}
+        modalClassName={DOMUtil.classNames('list-modal', modalClassName)}
+        modalStyle={modalStyle}
       >
         <Main
           ref={mainRef}

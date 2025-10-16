@@ -8,7 +8,7 @@ import NavBarModal from './../../Modal/NavBarModal'
 
 /* 测试使用-start
 import { Modal } from 'lyrixi-design-mobile'
-const SelectModal = Modal.SelectModal
+const NavBarModal = Modal.NavBarModal
 测试使用-end */
 
 // Modal

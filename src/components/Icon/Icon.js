@@ -8,7 +8,7 @@ import DOMUtil from './../../utils/DOMUtil'
 import { DOMUtil } from 'lyrixi-design-mobile'
 测试使用-end */
 
-const Icon = forwardRef(({ size, className, disabled, children, ...props }, ref) => {
+const Icon = forwardRef(({ size, style, className, disabled, children, ...props }, ref) => {
   const rootRef = useRef(null)
 
   // Expose
@@ -21,16 +21,13 @@ const Icon = forwardRef(({ size, className, disabled, children, ...props }, ref)
 
   return (
     <i
-      style={
-        typeof size === 'number'
-          ? {
-              width: `${size}px`,
-              height: `${size}px`,
-              fontSize: `${size}px`,
-              lineHeight: `${size}px`
-            }
-          : {}
-      }
+      style={{
+        width: `${size || 16}px`,
+        height: `${size || 16}px`,
+        fontSize: `${size || 16}px`,
+        lineHeight: `${size || 16}px`,
+        ...(style || {})
+      }}
       {...props}
       className={DOMUtil.classNames('lyrixi-icon', className)}
       disabled={disabled}

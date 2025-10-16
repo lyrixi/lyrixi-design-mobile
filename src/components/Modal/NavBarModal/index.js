@@ -54,8 +54,7 @@ const NavBarModal = forwardRef(
       cancelStyle,
 
       // 主体
-      children,
-      ...props
+      children
     },
     ref
   ) => {

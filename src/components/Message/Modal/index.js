@@ -19,6 +19,8 @@ const Message = forwardRef(
       maskClosable,
       maskClassName,
       maskStyle,
+      modalClassName,
+      modalStyle,
       open,
       onOpen,
       onClose,
@@ -68,10 +70,11 @@ const Message = forwardRef(
           {...props}
           className={DOMUtil.classNames(
             'modal-animation message-modal',
-            props.className,
+            modalClassName,
             getClassNameByAnimation(animation),
             getActiveClass()
           )}
+          style={modalStyle}
           data-animation={animation}
           ref={modalRef}
           onClick={handleModalClick}

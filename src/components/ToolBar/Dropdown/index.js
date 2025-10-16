@@ -3,17 +3,26 @@ import closeAllDropdown from './../utils/closeAllDropdown'
 
 // 内库使用-start
 import DOMUtil from './../../../utils/DOMUtil'
-import Modal from './../../Modal'
+import DropdownModal from './../../Modal/DropdownModal'
 import Button from './../../Button'
 // 内库使用-end
 
 /* 测试使用-start
 import { DOMUtil, Modal, Button } from 'lyrixi-design-mobile'
+const DropdownModal = Modal.DropdownModal
 测试使用-end */
 
 const Dropdown = forwardRef(
   (
     {
+      // Style
+      maskClassName,
+      maskStyle,
+      modalClassName,
+      modalStyle,
+      comboStyle,
+      comboClassName,
+
       // Combo
       title = '',
       titleRender,
@@ -23,12 +32,9 @@ const Dropdown = forwardRef(
       color = 'default',
       variant = 'text',
       shape,
-      comboStyle,
-      comboClassName,
 
       // Mask
-      maskClassName,
-      maskStyle,
+
       children,
 
       // Modal
@@ -39,26 +45,67 @@ const Dropdown = forwardRef(
       left,
       right,
 
+      onBeforeOpen,
       onClose,
       onOpen
     },
     ref
   ) => {
     const [open, setOpen] = useState(false)
-
-    const dropdownRef = useRef(null)
+    const comboRef = useRef(null)
 
     // Expose
     useImperativeHandle(ref, () => {
-      return dropdownRef.current
+      return {
+        comboDOM: comboRef.current?.rootDOM ? comboRef.current.rootDOM : comboRef.current,
+        getComboDOM: () =>
+          comboRef.current?.getRootDOM ? comboRef.current.getRootDOM() : comboRef.current,
+        close: _close,
+        open: _open
+      }
     })
 
     // 将所有dropdown合并到一个数组里, 用于全量关闭
     useEffect(() => {
       if (!window.dropdownRefs) window.dropdownRefs = []
-      window.dropdownRefs.push(dropdownRef)
+      window.dropdownRefs.push(ref)
       // eslint-disable-next-line
     }, [])
+
+    useEffect(() => {
+      if (open === null) return
+      if (open) {
+        closeAllDropdown({ visibleRef: ref })
+        onOpen && onOpen()
+      } else {
+        onClose && onClose()
+      }
+
+      // eslint-disable-next-line
+    }, [open])
+
+    function _close() {
+      setOpen(false)
+    }
+
+    function _open() {
+      setOpen(true)
+    }
+
+    async function handleClick(e) {
+      let newOpen = !open
+      if (!newOpen) {
+        setOpen(newOpen)
+        return
+      }
+
+      if (typeof onBeforeOpen === 'function') {
+        let goOn = await onBeforeOpen()
+        if (goOn === false) return
+      }
+
+      setOpen(newOpen)
+    }
 
     // 获取标题节点
     function getTitleNode(open) {
@@ -79,9 +126,9 @@ const Dropdown = forwardRef(
       return <i className="seed-button-icon toolbar-dropdown-combo-arrow"></i>
     }
 
-    // 获取Combo节点
-    function getComboNode({ comboRef, open, onClick }) {
-      return (
+    return (
+      <>
+        {/* Combo */}
         <Button
           ref={comboRef}
           color={color}
@@ -95,39 +142,31 @@ const Dropdown = forwardRef(
             open ? 'expand' : ''
           )}
           style={comboStyle}
-          onClick={onClick}
+          onClick={handleClick}
         >
           {getTitleNode(open)}
           {getArrowNode(open)}
         </Button>
-      )
-    }
 
-    return (
-      <Modal.DropdownCombo
-        ref={dropdownRef}
-        portal={portal}
-        offset={offset}
-        left={left}
-        right={right}
-        // Combo
-        comboRender={getComboNode}
-        // Modal
-        maskClassName={DOMUtil.classNames('toolbar-dropdown-mask', maskClassName)}
-        maskStyle={maskStyle}
-        modalClassName="toolbar-dropdown-modal"
-        onOpen={() => {
-          setOpen(true)
-          closeAllDropdown({ visibleRef: dropdownRef })
-          onOpen && onOpen()
-        }}
-        onClose={() => {
-          setOpen(false)
-          onClose && onClose()
-        }}
-      >
-        {children}
-      </Modal.DropdownCombo>
+        {/* Modal */}
+        <DropdownModal
+          modalClassName={DOMUtil.classNames('toolbar-dropdown-modal', modalClassName)}
+          modalStyle={modalStyle}
+          maskClassName={DOMUtil.classNames('toolbar-dropdown-mask', maskClassName)}
+          maskStyle={maskStyle}
+          offset={offset}
+          left={left}
+          right={right}
+          referenceDOM={comboRef.current?.rootDOM ? comboRef.current.rootDOM : comboRef.current}
+          portal={portal}
+          onClose={() => {
+            setOpen(false)
+          }}
+          open={open}
+        >
+          {children}
+        </DropdownModal>
+      </>
     )
   }
 )

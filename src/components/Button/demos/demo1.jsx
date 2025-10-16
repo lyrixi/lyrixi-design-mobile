@@ -12,197 +12,197 @@ export default () => {
       <Page.Main>
         <Divider>Color & Background & Border</Divider>
         <div style={{ marginTop: 'var(--seed-space-l)' }}>
-          <Button bg="white" radius="m" style={buttonStyle}>
-            bg="white"
+          <Button backgroundColor="white" radius="m" style={buttonStyle}>
+            backgroundColor="white"
           </Button>
-          <Button bg="white" radius="m" disabled style={buttonStyle}>
+          <Button backgroundColor="white" radius="m" disabled style={buttonStyle}>
             disabled
           </Button>
           <br />
-          <Button bg="default" border="none" radius="m" style={buttonStyle}>
-            bg="default" border="none"
+          <Button backgroundColor="default" border="none" radius="m" style={buttonStyle}>
+            backgroundColor="default" border="none"
           </Button>
-          <Button bg="default" border="solid" radius="m" style={buttonStyle}>
-            bg="default" border="solid"
+          <Button backgroundColor="default" border="solid" radius="m" style={buttonStyle}>
+            backgroundColor="default" border="solid"
           </Button>
-          <Button bg="default" border="dashed" radius="m" style={buttonStyle}>
-            bg="default" border="dashed"
+          <Button backgroundColor="default" border="dashed" radius="m" style={buttonStyle}>
+            backgroundColor="default" border="dashed"
           </Button>
           <br />
-          <Button bg="transparent" border="none" radius="m" style={buttonStyle}>
-            bg="transparent" border="none"
+          <Button backgroundColor="transparent" border="none" radius="m" style={buttonStyle}>
+            backgroundColor="transparent" border="none"
           </Button>
-          <Button bg="transparent" border="solid" radius="m" style={buttonStyle}>
-            bg="transparent" border="solid"
+          <Button backgroundColor="transparent" border="solid" radius="m" style={buttonStyle}>
+            backgroundColor="transparent" border="solid"
           </Button>
-          <Button bg="transparent" border="dashed" radius="m" style={buttonStyle}>
-            bg="transparent" border="dashed"
+          <Button backgroundColor="transparent" border="dashed" radius="m" style={buttonStyle}>
+            backgroundColor="transparent" border="dashed"
           </Button>
         </div>
 
         <div style={{ marginTop: 'var(--seed-space-l)' }}>
-          <Button color="white" bg="primary" radius="m" style={buttonStyle}>
-            color="white" bg="primary"
+          <Button color="white" backgroundColor="primary" radius="m" style={buttonStyle}>
+            color="white" backgroundColor="primary"
           </Button>
           <br />
-          <Button color="primary" bg="primary-lighten" border="none" radius="m" style={buttonStyle}>
-            color="primary" bg="primary-lighten"
+          <Button color="primary" backgroundColor="primary-lighten" border="none" radius="m" style={buttonStyle}>
+            color="primary" backgroundColor="primary-lighten"
           </Button>
           <Button
             color="primary"
-            bg="primary-lighten"
+            backgroundColor="primary-lighten"
             border="solid"
             radius="m"
             style={buttonStyle}
           >
-            color="primary" bg="primary-lighten" border="solid"
+            color="primary" backgroundColor="primary-lighten" border="solid"
           </Button>
           <Button
             color="primary"
-            bg="primary-lighten"
+            backgroundColor="primary-lighten"
             border="dashed"
             radius="m"
             style={buttonStyle}
           >
-            color="primary" bg="primary-lighten" border="dashed"
+            color="primary" backgroundColor="primary-lighten" border="dashed"
           </Button>
           <br />
-          <Button color="primary" bg="transparent" border="none" radius="m" style={buttonStyle}>
-            color="primary" bg="transparent" border="none"
+          <Button color="primary" backgroundColor="transparent" border="none" radius="m" style={buttonStyle}>
+            color="primary" backgroundColor="transparent" border="none"
           </Button>
-          <Button color="primary" bg="transparent" border="solid" radius="m" style={buttonStyle}>
-            color="primary" bg="transparent" border="solid"
+          <Button color="primary" backgroundColor="transparent" border="solid" radius="m" style={buttonStyle}>
+            color="primary" backgroundColor="transparent" border="solid"
           </Button>
-          <Button color="primary" bg="transparent" border="dashed" radius="m" style={buttonStyle}>
-            color="primary" bg="transparent" border="dashed"
+          <Button color="primary" backgroundColor="transparent" border="dashed" radius="m" style={buttonStyle}>
+            color="primary" backgroundColor="transparent" border="dashed"
           </Button>
         </div>
 
         <div style={{ marginTop: 'var(--seed-space-l)' }}>
-          <Button color="white" bg="link" radius="m" style={buttonStyle}>
-            color="white" bg="link"
+          <Button color="white" backgroundColor="link" radius="m" style={buttonStyle}>
+            color="white" backgroundColor="link"
           </Button>
           <br />
-          <Button color="link" bg="link-lighten" border="none" radius="m" style={buttonStyle}>
-            color="link" bg="link-lighten"
+          <Button color="link" backgroundColor="link-lighten" border="none" radius="m" style={buttonStyle}>
+            color="link" backgroundColor="link-lighten"
           </Button>
-          <Button color="link" bg="link-lighten" border="solid" radius="m" style={buttonStyle}>
-            color="link" bg="link-lighten" border="solid"
+          <Button color="link" backgroundColor="link-lighten" border="solid" radius="m" style={buttonStyle}>
+            color="link" backgroundColor="link-lighten" border="solid"
           </Button>
-          <Button color="link" bg="link-lighten" border="dashed" radius="m" style={buttonStyle}>
-            color="link" bg="link-lighten" border="dashed"
+          <Button color="link" backgroundColor="link-lighten" border="dashed" radius="m" style={buttonStyle}>
+            color="link" backgroundColor="link-lighten" border="dashed"
           </Button>
           <br />
-          <Button color="link" bg="transparent" border="none" radius="m" style={buttonStyle}>
-            color="link" bg="transparent" border="none"
+          <Button color="link" backgroundColor="transparent" border="none" radius="m" style={buttonStyle}>
+            color="link" backgroundColor="transparent" border="none"
           </Button>
-          <Button color="link" bg="transparent" border="solid" radius="m" style={buttonStyle}>
-            color="link" bg="transparent" border="solid"
+          <Button color="link" backgroundColor="transparent" border="solid" radius="m" style={buttonStyle}>
+            color="link" backgroundColor="transparent" border="solid"
           </Button>
-          <Button color="link" bg="transparent" border="dashed" radius="m" style={buttonStyle}>
-            color="link" bg="transparent" border="dashed"
+          <Button color="link" backgroundColor="transparent" border="dashed" radius="m" style={buttonStyle}>
+            color="link" backgroundColor="transparent" border="dashed"
           </Button>
         </div>
 
         <div style={{ marginTop: 'var(--seed-space-l)' }}>
-          <Button color="white" bg="warning" radius="m" style={buttonStyle}>
-            color="white" bg="warning"
+          <Button color="white" backgroundColor="warning" radius="m" style={buttonStyle}>
+            color="white" backgroundColor="warning"
           </Button>
           <br />
-          <Button color="warning" bg="warning-lighten" border="none" radius="m" style={buttonStyle}>
-            color="warning" bg="warning-lighten"
+          <Button color="warning" backgroundColor="warning-lighten" border="none" radius="m" style={buttonStyle}>
+            color="warning" backgroundColor="warning-lighten"
           </Button>
           <Button
             color="warning"
-            bg="warning-lighten"
+            backgroundColor="warning-lighten"
             border="solid"
             radius="m"
             style={buttonStyle}
           >
-            color="warning" bg="warning-lighten" border="solid"
+            color="warning" backgroundColor="warning-lighten" border="solid"
           </Button>
           <Button
             color="warning"
-            bg="warning-lighten"
+            backgroundColor="warning-lighten"
             border="dashed"
             radius="m"
             style={buttonStyle}
           >
-            color="warning" bg="warning-lighten" border="dashed"
+            color="warning" backgroundColor="warning-lighten" border="dashed"
           </Button>
           <br />
-          <Button color="warning" bg="transparent" border="none" radius="m" style={buttonStyle}>
-            color="warning" bg="transparent" border="none"
+          <Button color="warning" backgroundColor="transparent" border="none" radius="m" style={buttonStyle}>
+            color="warning" backgroundColor="transparent" border="none"
           </Button>
-          <Button color="warning" bg="transparent" border="solid" radius="m" style={buttonStyle}>
-            color="warning" bg="transparent" border="solid"
+          <Button color="warning" backgroundColor="transparent" border="solid" radius="m" style={buttonStyle}>
+            color="warning" backgroundColor="transparent" border="solid"
           </Button>
-          <Button color="warning" bg="transparent" border="dashed" radius="m" style={buttonStyle}>
-            color="warning" bg="transparent" border="dashed"
+          <Button color="warning" backgroundColor="transparent" border="dashed" radius="m" style={buttonStyle}>
+            color="warning" backgroundColor="transparent" border="dashed"
           </Button>
         </div>
 
         <div style={{ marginTop: 'var(--seed-space-l)' }}>
-          <Button color="white" bg="danger" radius="m" style={buttonStyle}>
-            color="white" bg="danger"
+          <Button color="white" backgroundColor="danger" radius="m" style={buttonStyle}>
+            color="white" backgroundColor="danger"
           </Button>
           <br />
-          <Button color="danger" bg="danger-lighten" border="none" radius="m" style={buttonStyle}>
-            color="danger" bg="danger-lighten"
+          <Button color="danger" backgroundColor="danger-lighten" border="none" radius="m" style={buttonStyle}>
+            color="danger" backgroundColor="danger-lighten"
           </Button>
-          <Button color="danger" bg="danger-lighten" border="solid" radius="m" style={buttonStyle}>
-            color="danger" bg="danger-lighten" border="solid"
+          <Button color="danger" backgroundColor="danger-lighten" border="solid" radius="m" style={buttonStyle}>
+            color="danger" backgroundColor="danger-lighten" border="solid"
           </Button>
-          <Button color="danger" bg="danger-lighten" border="dashed" radius="m" style={buttonStyle}>
-            color="danger" bg="danger-lighten" border="dashed"
+          <Button color="danger" backgroundColor="danger-lighten" border="dashed" radius="m" style={buttonStyle}>
+            color="danger" backgroundColor="danger-lighten" border="dashed"
           </Button>
           <br />
-          <Button color="danger" bg="transparent" border="none" radius="m" style={buttonStyle}>
-            color="danger" bg="transparent" border="none"
+          <Button color="danger" backgroundColor="transparent" border="none" radius="m" style={buttonStyle}>
+            color="danger" backgroundColor="transparent" border="none"
           </Button>
-          <Button color="danger" bg="transparent" border="solid" radius="m" style={buttonStyle}>
-            color="danger" bg="transparent" border="solid"
+          <Button color="danger" backgroundColor="transparent" border="solid" radius="m" style={buttonStyle}>
+            color="danger" backgroundColor="transparent" border="solid"
           </Button>
-          <Button color="danger" bg="transparent" border="dashed" radius="m" style={buttonStyle}>
-            color="danger" bg="transparent" border="dashed"
+          <Button color="danger" backgroundColor="transparent" border="dashed" radius="m" style={buttonStyle}>
+            color="danger" backgroundColor="transparent" border="dashed"
           </Button>
         </div>
 
         <div style={{ marginTop: 'var(--seed-space-l)' }}>
-          <Button color="white" bg="success" radius="m" style={buttonStyle}>
-            color="white" bg="success"
+          <Button color="white" backgroundColor="success" radius="m" style={buttonStyle}>
+            color="white" backgroundColor="success"
           </Button>
           <br />
-          <Button color="success" bg="success-lighten" border="none" radius="m" style={buttonStyle}>
-            color="success" bg="success-lighten"
+          <Button color="success" backgroundColor="success-lighten" border="none" radius="m" style={buttonStyle}>
+            color="success" backgroundColor="success-lighten"
           </Button>
           <Button
             color="success"
-            bg="success-lighten"
+            backgroundColor="success-lighten"
             border="solid"
             radius="m"
             style={buttonStyle}
           >
-            color="success" bg="success-lighten" border="solid"
+            color="success" backgroundColor="success-lighten" border="solid"
           </Button>
           <Button
             color="success"
-            bg="success-lighten"
+            backgroundColor="success-lighten"
             border="dashed"
             radius="m"
             style={buttonStyle}
           >
-            color="success" bg="success-lighten" border="dashed"
+            color="success" backgroundColor="success-lighten" border="dashed"
           </Button>
           <br />
-          <Button color="success" bg="transparent" border="none" radius="m" style={buttonStyle}>
-            color="success" bg="transparent" border="none"
+          <Button color="success" backgroundColor="transparent" border="none" radius="m" style={buttonStyle}>
+            color="success" backgroundColor="transparent" border="none"
           </Button>
-          <Button color="success" bg="transparent" border="solid" radius="m" style={buttonStyle}>
-            color="success" bg="transparent" border="solid"
+          <Button color="success" backgroundColor="transparent" border="solid" radius="m" style={buttonStyle}>
+            color="success" backgroundColor="transparent" border="solid"
           </Button>
-          <Button color="success" bg="transparent" border="dashed" radius="m" style={buttonStyle}>
-            color="success" bg="transparent" border="dashed"
+          <Button color="success" backgroundColor="transparent" border="dashed" radius="m" style={buttonStyle}>
+            color="success" backgroundColor="transparent" border="dashed"
           </Button>
         </div>
 
@@ -210,7 +210,7 @@ export default () => {
 
         <Divider>Shape</Divider>
         <div>
-          <Button shape="round" color="white" bg="primary" style={buttonStyle}>
+          <Button shape="round" color="white" backgroundColor="primary" style={buttonStyle}>
             Round
           </Button>
           <Button shape="circle" size="s" style={buttonStyle}>
@@ -222,29 +222,29 @@ export default () => {
           <br />
 
           <Divider>Flex</Divider>
-          <Button color="white" bg="primary" radius="m" className="flex" style={buttonStyle}>
+          <Button color="white" backgroundColor="primary" radius="m" className="flex" style={buttonStyle}>
             primary flex
           </Button>
         </div>
         <br />
 
         <Divider>Size & radius</Divider>
-        <Button color="white" bg="primary" size="xxs" radius="xxs" style={buttonStyle}>
+        <Button color="white" backgroundColor="primary" size="xxs" radius="xxs" style={buttonStyle}>
           primary xxs
         </Button>
-        <Button color="white" bg="primary" size="xs" radius="xs" style={buttonStyle}>
+        <Button color="white" backgroundColor="primary" size="xs" radius="xs" style={buttonStyle}>
           primary xs
         </Button>
-        <Button color="white" bg="primary" size="s" radius="s" style={buttonStyle}>
+        <Button color="white" backgroundColor="primary" size="s" radius="s" style={buttonStyle}>
           primary s
         </Button>
-        <Button color="white" bg="primary" size="m" radius="m" style={buttonStyle}>
+        <Button color="white" backgroundColor="primary" size="m" radius="m" style={buttonStyle}>
           primary m
         </Button>
-        <Button color="white" bg="primary" size="l" radius="l" style={buttonStyle}>
+        <Button color="white" backgroundColor="primary" size="l" radius="l" style={buttonStyle}>
           primary l
         </Button>
-        <Button color="white" bg="primary" size="xl" radius="xl" style={buttonStyle}>
+        <Button color="white" backgroundColor="primary" size="xl" radius="xl" style={buttonStyle}>
           primary xl
         </Button>
       </Page.Main>

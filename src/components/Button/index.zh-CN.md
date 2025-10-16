@@ -23,16 +23,16 @@ toc: content
 
 ### 属性
 
-| 属性      | 说明       | 类型                                                                     | 默认值      |
-| --------- | ---------- | ------------------------------------------------------------------------ | ----------- |
-| color     | 按钮颜色   | `'default' \| 'primary' \| 'link' \| 'warning' \| 'danger' \| 'success'` | `'default'` |
-| variant   | 按钮变体   | `'default' \| 'text' \| 'fill'`                                          | `'default'` |
-| size      | 按钮尺寸   | `'xxs' \| 'xs' \| 's' \| 'm' \| 'l' \| 'xl'`                             | -           |
-| radius    | 圆角大小   | `'xxs' \| 'xs' \| 's' \| 'm' \| 'l' \| 'xl'`                             | -           |
-| shape     | 按钮形状   | `'square' \| 'circle' \| 'round'`                                        | -           |
-| className | 自定义类名 | `string`                                                                 | -           |
-| children  | 按钮内容   | `ReactNode`                                                              | -           |
-| disabled  | 是否禁用   | `boolean`                                                                | `false`     |
+| 属性            | 说明       | 类型                                                                                                                                                                                                      | 默认值      |
+| --------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| color           | 按钮颜色   | `'default' \| 'primary' \| 'link' \| 'warning' \| 'danger' \| 'success'`                                                                                                                                  | `'default'` |
+| backgroundColor | 背景颜色   | `'default' \| 'white' \| 'transparent' \| 'primary' \| 'primary-lighten' \| 'link' \| 'link-lighten' \| 'warning' \| 'warning-lighten' \| 'danger' \| 'danger-lighten' \| 'success' \| 'success-lighten'` | `'white'`   |
+| border          | 边框样式   | `'none' \| 'dotted' \| 'dashed' \| 'solid'`                                                                                                                                                               | `'solid'`   |
+| size            | 按钮尺寸   | `'xxs' \| 'xs' \| 's' \| 'm' \| 'l' \| 'xl'`                                                                                                                                                              | `'m'`       |
+| radius          | 圆角大小   | `'xxs' \| 'xs' \| 's' \| 'm' \| 'l' \| 'xl'`                                                                                                                                                              | -           |
+| shape           | 按钮形状   | `'square' \| 'circle' \| 'round'`                                                                                                                                                                         | -           |
+| className       | 自定义类名 | `string`                                                                                                                                                                                                  | -           |
+| children        | 按钮内容   | `ReactNode`                                                                                                                                                                                               | -           |
 
 ### Ref
 

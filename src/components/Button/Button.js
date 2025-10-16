@@ -14,7 +14,7 @@ const Button = forwardRef(
       // 颜色: default, primary, link, warning, danger, success
       color = 'default',
       // 背景颜色: default, white, primary, link, warning, danger, success
-      bg = 'white',
+      backgroundColor = 'white',
       // 边框: none, dotted, dashed, solid
       border = 'solid',
       // 尺寸: xxs, xs, s, m, l, xl
@@ -45,7 +45,7 @@ const Button = forwardRef(
         className={DOMUtil.classNames(
           'seed-button',
           color && `color-${color} border-color-${color}`,
-          bg && `bg-${bg}`,
+          backgroundColor && `bg-${backgroundColor}`,
           border !== 'none' && `border-width-default`,
           border && `border-style-${border}`,
           size && `size-${size}`,

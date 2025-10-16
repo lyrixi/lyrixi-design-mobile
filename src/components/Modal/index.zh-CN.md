@@ -37,10 +37,6 @@ title: Modal
 
 <code src="./demos/NavBarModal/index.jsx"></code>
 
-### Modal.DropdownCombo
-
-<code src="./demos/DropdownCombo/index.jsx"></code>
-
 ### Message.open 示例 (替代 Modal.alert)
 
 <code src="./demos/alert/index.jsx"></code>

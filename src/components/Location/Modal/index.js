@@ -2,12 +2,13 @@ import React, { useState, useRef, forwardRef, useImperativeHandle } from 'react'
 import Main from './../Main'
 
 // 内库使用-start
+import DOMUtil from './../../../utils/DOMUtil'
 import LocaleUtil from './../../../utils/LocaleUtil'
 import NavBarModal from './../../Modal/NavBarModal'
 // 内库使用-end
 
 /* 测试使用-start
-import { LocaleUtil, Modal, SafeArea } from 'lyrixi-design-mobile'
+import { DOMUtil, LocaleUtil, Modal, SafeArea } from 'lyrixi-design-mobile'
 const NavBarModal = Modal.NavBarModal
 测试使用-end */
 
@@ -23,6 +24,9 @@ const LocationModal = forwardRef(
       allowClear,
       multiple,
       onChange,
+
+      modalClassName,
+      modalStyle,
 
       // Main
       config,
@@ -83,7 +87,8 @@ const LocationModal = forwardRef(
         onClose={onClose}
         onOpen={onOpen}
         onOk={handleOk}
-        className={`map-modal${props.className ? ' ' + props.className : ''}`}
+        modalClassName={DOMUtil.classNames('map-modal', modalClassName)}
+        modalStyle={modalStyle}
       >
         <Main
           ref={mainRef}

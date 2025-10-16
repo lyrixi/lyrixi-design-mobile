@@ -113,8 +113,8 @@ const SelectCombo = forwardRef(
           portal={portal}
           maskClassName={maskClassName}
           maskStyle={maskStyle}
-          className={modalClassName}
-          style={modalStyle}
+          modalClassName={DOMUtil.classNames('select-modal', modalClassName)}
+          modalStyle={modalStyle}
           title={title}
           ok={multiple !== false}
         >

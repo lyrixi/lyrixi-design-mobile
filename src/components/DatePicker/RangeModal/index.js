@@ -6,11 +6,12 @@ import validateRange from './validateRange'
 import RangeMain from './../RangeMain'
 
 // 内库使用-start
+import DOMUtil from './../../../utils/DOMUtil'
 import NavBarModal from './../../Modal/NavBarModal'
 // 内库使用-end
 
 /* 测试使用-start
-import { Modal } from 'lyrixi-design-mobile'
+import { DOMUtil, Modal } from 'lyrixi-design-mobile'
 const NavBarModal = Modal.NavBarModal
 测试使用-end */
 
@@ -28,6 +29,9 @@ const RangeModal = forwardRef(
       onChange,
       defaultPickerValue,
       onError,
+
+      modalClassName,
+      modalStyle,
 
       // Main
       type = 'date',
@@ -113,7 +117,8 @@ const RangeModal = forwardRef(
         onOpen={onOpen}
         onOk={handleOk}
         ok={multiple !== false}
-        className={`picker-modal${props.className ? ' ' + props.className : ''}`}
+        modalClassName={DOMUtil.classNames('picker-modal', modalClassName)}
+        modalStyle={modalStyle}
       >
         <RangeMain
           ref={mainRef}

@@ -4,11 +4,12 @@ import findDistrictLeafIndex from './../DistrictMain/utils/findDistrictLeafIndex
 import DistrictMain from './../DistrictMain'
 
 // 内库使用-start
+import DOMUtil from './../../../utils/DOMUtil'
 import NavBarModal from './../../Modal/NavBarModal'
 // 内库使用-end
 
 /* 测试使用-start
-import { Modal } from 'lyrixi-design-mobile'
+import { DOMUtil, Modal } from 'lyrixi-design-mobile'
 const NavBarModal = Modal.NavBarModal
 测试使用-end */
 
@@ -29,6 +30,9 @@ const DistrictModal = forwardRef(
       searchVisible,
       min = '',
       ok,
+
+      modalClassName,
+      modalStyle,
 
       // Main
       startType,
@@ -131,7 +135,8 @@ const DistrictModal = forwardRef(
         onOk={handleOk}
         ok={ok ? ok : okVisible ? '' : null}
         {...props}
-        className={`cascader-modal${props.className ? ' ' + props.className : ''}`}
+        modalClassName={DOMUtil.classNames('cascader-modal', modalClassName)}
+        modalStyle={modalStyle}
       >
         <DistrictMain
           ref={mainRef}

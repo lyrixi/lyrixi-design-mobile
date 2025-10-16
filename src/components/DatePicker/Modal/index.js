@@ -4,12 +4,13 @@ import formatValue from './formatValue'
 import Main from './../Main'
 
 // 内库使用-start
+import DOMUtil from './../../../utils/DOMUtil'
 import NavBarModal from './../../Modal/NavBarModal'
 // 内库使用-end
 
 /* 测试使用-start
-import { Modal as BaseModal } from 'lyrixi-design-mobile'
-const SelectModal = BaseModal.SelectModal
+import { DOMUtil, Modal as BaseModal } from 'lyrixi-design-mobile'
+const NavBarModal = BaseModal.NavBarModal
 测试使用-end */
 
 // Modal
@@ -26,6 +27,9 @@ const Modal = forwardRef(
       onChange,
       defaultPickerValue,
       onError,
+
+      modalClassName,
+      modalStyle,
 
       // Main
       type = 'date',
@@ -99,7 +103,8 @@ const Modal = forwardRef(
         onOpen={onOpen}
         onOk={handleOk}
         ok={multiple !== false}
-        className={`picker-modal${props.className ? ' ' + props.className : ''}`}
+        modalClassName={DOMUtil.classNames('picker-modal', modalClassName)}
+        modalStyle={modalStyle}
       >
         <Main
           ref={mainRef}

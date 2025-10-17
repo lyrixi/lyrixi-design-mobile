@@ -12,13 +12,28 @@ import { Button, DOMUtil } from 'lyrixi-design-mobile'
 
 // 底部按钮
 const FooterBarButton = forwardRef(
-  ({ variant = 'fill', radius = 'm', size = 'm', className, more, onClick, ...props }, ref) => {
+  (
+    {
+      color,
+      backgroundColor = 'default',
+      size = 'm',
+      radius = 'm',
+      border = 'none',
+      className,
+      more,
+      onClick,
+      ...props
+    },
+    ref
+  ) => {
     const button = (
       <Button
         ref={ref}
-        variant={variant}
-        radius={radius}
+        color={color}
+        backgroundColor={backgroundColor}
         size={size}
+        radius={radius}
+        border={border}
         className={DOMUtil.classNames('footerbar-button', className)}
         {...props}
       />

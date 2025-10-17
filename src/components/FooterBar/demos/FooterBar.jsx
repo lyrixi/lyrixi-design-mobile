@@ -35,7 +35,7 @@ export default () => {
 
           <FooterBar.Button
             color="primary"
-            variant="text"
+            backgroundColor="transparent"
             size="s"
             onClick={(e) => {
               console.log(e)
@@ -44,7 +44,7 @@ export default () => {
             Ok
           </FooterBar.Button>
           <FooterBar.Button
-            variant="text"
+            backgroundColor="transparent"
             size="s"
             onClick={(e) => {
               console.log(e)
@@ -86,7 +86,7 @@ export default () => {
           <FooterBar.Button
             disabled
             color="primary"
-            variant="text"
+            backgroundColor="transparent"
             size="s"
             onClick={(e) => {
               console.log(e)
@@ -96,7 +96,7 @@ export default () => {
           </FooterBar.Button>
           <FooterBar.Button
             disabled
-            variant="text"
+            backgroundColor="transparent"
             size="s"
             onClick={(e) => {
               console.log(e)
@@ -142,8 +142,8 @@ export default () => {
             Cancel
           </FooterBar.Button>
           <FooterBar.Button
-            color="primary"
-            variant=""
+            color="white"
+            backgroundColor="primary"
             onClick={(e) => {
               console.log(e)
             }}
@@ -192,8 +192,8 @@ export default () => {
           </FooterBar.Button>
           <FooterBar.Button
             disabled
-            color="primary"
-            variant=""
+            color="white"
+            backgroundColor="primary"
             onClick={(e) => {
               console.log(e)
             }}

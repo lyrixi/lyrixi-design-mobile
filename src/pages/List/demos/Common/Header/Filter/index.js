@@ -28,7 +28,7 @@ function Filter({ queryParams, onSearch }) {
   return (
     <ToolBar.Filter
       color={active ? 'primary' : 'default'}
-      variant="default"
+      backgroundColor="default"
       onOpen={() => {
         setVisible(true)
       }}

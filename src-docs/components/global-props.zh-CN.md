@@ -38,4 +38,5 @@ toc: content
 | onError   | 错误事件         | {status: '', message: ''}             | Empty  |
 | onSuccess | 成功事件         | result                                | Empty  |
 | onLoad    | 加载事件         | result                                | Empty  |
+| onOk      | 确定事件         | Empty                                 | Empty  |
 | onCancel  | 取消事件         | Empty                                 | Empty  |

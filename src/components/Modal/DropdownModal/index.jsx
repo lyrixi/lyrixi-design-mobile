@@ -13,22 +13,28 @@ import { DOMUtil } from 'lyrixi-design-mobile'
 const DropdownModal = forwardRef(
   (
     {
-      // Modal
+      portal,
+      open,
+
+      // Style
+      maskClosable,
       maskClassName,
       maskStyle,
       modalClassName,
       modalStyle,
+
+      // Offset
       referenceDOM,
       offset,
       left,
       right,
-      open,
-      onOpen,
-      onClose,
-      portal,
 
       // Content
-      children
+      children,
+
+      // Events
+      onOpen,
+      onClose
     },
     ref
   ) => {

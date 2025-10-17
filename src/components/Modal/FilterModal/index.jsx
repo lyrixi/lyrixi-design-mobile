@@ -15,31 +15,44 @@ import { LocaleUtil, Page, NavBar } from 'lyrixi-design-mobile'
 // 侧边查询
 function FilterModal(
   {
-    // Modal fixed properties
+    portal,
     open,
-    onOpen,
-    onClose,
-    onCancel,
+    // Style
+    maskClosable,
+    maskClassName,
+    maskStyle,
+    modalClassName,
+    modalStyle,
+
+    // Components
     footerRender,
     children,
-    ...props
+
+    // Events
+    onOpen,
+    onClose,
+    onCancel
   },
   ref
 ) {
   return (
     <Modal
       ref={ref}
-      animation="slideLeft" // slideLeft | slideRight | slideUp | slideDown | zoom | fade
-      {...props}
-      maskClassName={props?.maskClassName}
-      maskStyle={props?.maskStyle}
+      portal={portal}
+      open={open}
+      animation="slideLeft"
+      // Style
+      maskClosable={maskClosable}
+      maskClassName={maskClassName}
+      maskStyle={maskStyle}
+      modalClassName={DOMUtil.classNames('modal-filtermodal', modalClassName)}
+      modalStyle={modalStyle}
+      // Events
       onMaskClick={() => {
         // Set maskClosable false (default is true)
-        if (props?.maskClosable !== undefined && !props?.maskClosable) return
+        if (maskClosable !== undefined && !maskClosable) return
         onCancel && onCancel()
       }}
-      className={DOMUtil.classNames('modal-filtermodal', props?.className)}
-      open={open}
       onOpen={onOpen}
       onClose={onClose}
     >

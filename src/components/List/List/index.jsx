@@ -82,9 +82,9 @@ const List = (
           // 单选
           else {
             if (!checked) {
-              newValue = allowClear ? null : [item]
+              newValue = allowClear ? null : item
             } else {
-              newValue = [item]
+              newValue = item
             }
           }
           onChange && onChange(newValue, { checked: checked, item: item })

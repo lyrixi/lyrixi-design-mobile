@@ -15,24 +15,27 @@ import { DOMUtil, SafeArea, Tooltip } from 'lyrixi-design-mobile'
 const Modal = forwardRef(
   (
     {
-      safeArea,
       portal,
-      animation = 'zoom', // none | slideLeft | slideRight | slideUp | slideDown | zoom | fade
-      // 自动调整位置
-      referenceDOM: externalReferenceDOM = null,
-      offset = null,
-
       open,
-      maskClosable = true,
-      onClose,
+      safeArea,
+      animation = 'zoom', // none | slideLeft | slideRight | slideUp | slideDown | zoom | fade
 
+      // Style
+      maskClosable = true,
       maskClassName,
       maskStyle,
       modalClassName,
       modalStyle,
 
+      // Offset
+      referenceDOM: externalReferenceDOM = null, // 自动调整位置
+      offset = null,
+
+      // Components
       children,
-      ...props
+
+      // Events
+      onClose
     },
     ref
   ) => {
@@ -109,7 +112,6 @@ const Modal = forwardRef(
         ref={modalRef}
       >
         <div
-          {...props}
           className={DOMUtil.classNames(
             'modal-animation modal',
             animationClassName ? ' ' + animationClassName : '',

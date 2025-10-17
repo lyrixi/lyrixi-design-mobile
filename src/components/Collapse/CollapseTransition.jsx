@@ -21,12 +21,12 @@ const CollapseTransition = ({ open, children }) => {
   }, [])
 
   useEffect(() => {
-    triggerOpenChange(open)
+    setOpen(open)
     // eslint-disable-next-line
   }, [open])
 
   // 触发显示或隐藏
-  const triggerOpenChange = (show) => {
+  const setOpen = (show) => {
     clearTimeout(enterTimerRef.current)
     clearTimeout(leaveTimerRef.current)
     if (show) {

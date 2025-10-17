@@ -206,7 +206,7 @@ export default () => {
         <Divider>Button</Divider>
         <div className="toolbar-bg">
           <ToolBar>
-            <ToolBar.Button comboShape="square" onClick={() => console.log(1)}>
+            <ToolBar.Button shape="square" onClick={() => console.log(1)}>
               <Icon className="seeds-icons seeds-icon-barcode"></Icon>
             </ToolBar.Button>
             <Space.Compact>
@@ -237,7 +237,7 @@ export default () => {
                   }
                 ]}
               />
-              <ToolBar.Button comboShape="square" onClick={() => console.log(1)}>
+              <ToolBar.Button shape="square" onClick={() => console.log(1)}>
                 <Icon className="seeds-icons seeds-icon-barcode"></Icon>
               </ToolBar.Button>
               <ToolBar.Filter comboBorder="fill" comboShape="square">
@@ -297,7 +297,7 @@ export default () => {
               }}
             />
             <Space.Compact>
-              <ToolBar.Button comboShape="square" onClick={() => console.log(1)}>
+              <ToolBar.Button shape="square" onClick={() => console.log(1)}>
                 <Icon className="seeds-icons seeds-icon-barcode"></Icon>
               </ToolBar.Button>
               <ToolBar.Filter comboBorder="fill" comboShape="square">
@@ -318,7 +318,7 @@ export default () => {
               }}
             />
             <Space.Compact>
-              <ToolBar.Button comboShape="square" onClick={() => console.log(1)}>
+              <ToolBar.Button shape="square" onClick={() => console.log(1)}>
                 <Icon className="seeds-icons seeds-icon-barcode"></Icon>
               </ToolBar.Button>
               <ToolBar.Filter comboBorder="fill" comboShape="square">

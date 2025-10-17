@@ -11,6 +11,7 @@ import Tel from './Tel'
 import Text from './Text'
 import Node from './Node'
 import Search from './Search'
+import Select from './Select'
 import Textarea from './Textarea'
 
 import Url from './Url'
@@ -33,6 +34,7 @@ export default {
   Text: Text,
   Node: Node,
   Search: Search,
+  Select: Select,
   Textarea: Textarea,
   Url: Url,
   IconClear: IconClear,

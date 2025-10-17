@@ -19,8 +19,10 @@ const CascaderCombo = forwardRef(
       comboClassName,
       comboLeftIcon,
       comboRightIcon,
+
       modalStyle,
       modalClassName,
+
       maskStyle,
       maskClassName,
 

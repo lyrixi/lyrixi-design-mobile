@@ -1,6 +1,6 @@
 import React, { forwardRef, useRef, useImperativeHandle, useEffect } from 'react'
 import extractNumber from './extractNumber'
-import Instance from './instance.jsx'
+import Instance from './instance'
 
 // 生成二维码
 const QRCode = forwardRef(({ style, text, children, ...props }, ref) => {

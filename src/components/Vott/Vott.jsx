@@ -1,5 +1,5 @@
 import React, { forwardRef, useRef, useImperativeHandle, useEffect } from 'react'
-import Instance from './instance.jsx'
+import Instance from './instance'
 import BridgeBrowser from './../../utils/Bridge/browser'
 
 // 内库使用-start

@@ -1,6 +1,6 @@
 import LocaleUtil from './../LocaleUtil'
 import createDebugElement from './createDebugElement'
-import triggerClickLimit from './triggerClickLimit'
+import multipleClick from './multipleClick'
 
 // 内库使用-start
 import Toast from './../../components/Toast'
@@ -25,7 +25,7 @@ let Debugger = {
       target = createDebugElement()
     }
     if (!target) return
-    triggerClickLimit(target, 10, () => {
+    multipleClick(target, 10, () => {
       this.showDebug()
     })
   },

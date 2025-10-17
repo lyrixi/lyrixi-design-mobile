@@ -64,12 +64,12 @@ const DistrictMain = forwardRef(
     return (
       <Main
         ref={districtMainRef}
-        tabbar={({ tabs, activeTab, triggerActiveTab }) => {
+        tabbar={({ tabs, activeTab, onActiveTabChange }) => {
           return (
             <Tabs
-              tabs={tabs}
-              activeTab={activeTab}
-              onActiveTab={triggerActiveTab}
+              list={tabs}
+              value={activeTab}
+              onChange={onActiveTabChange}
               // 禁用判断
               editableOptions={editableOptions}
             />

@@ -324,11 +324,11 @@ const Main = forwardRef(
         return tabbar({
           tabs: tabsRef.current,
           activeTab: activeTab,
-          triggerActiveTab: handleClickTab
+          onActiveTabChange: handleClickTab
         })
       }
 
-      return <Tabs tabs={tabsRef.current} activeTab={activeTab} onActiveTab={handleClickTab} />
+      return <Tabs list={tabsRef.current} value={activeTab} onChange={handleClickTab} />
     }
 
     // 重置搜索状态

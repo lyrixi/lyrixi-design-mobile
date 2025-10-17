@@ -2,23 +2,23 @@ import React from 'react'
 import { testEditableOptions } from './utils'
 
 function Tabs({
-  tabs,
-  activeTab,
-  onActiveTab,
+  list,
+  value,
+  onChange,
   // 禁用判断
   editableOptions
 }) {
   return (
     <div className="cascader-tabs">
-      {Array.isArray(tabs) && tabs.length
-        ? tabs.map((tab, index) => {
+      {Array.isArray(list) && list.length
+        ? list.map((tab, index) => {
             return (
               <div
                 onClick={(e) => {
                   e.stopPropagation()
-                  onActiveTab && onActiveTab(tab)
+                  onChange && onChange(tab)
                 }}
-                className={`cascader-tab${tab?.id === activeTab?.id ? ' active' : ''}${
+                className={`cascader-tab${tab?.id === value?.id ? ' active' : ''}${
                   testEditableOptions(tab, {
                     editableOptions
                   })

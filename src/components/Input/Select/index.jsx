@@ -84,7 +84,7 @@ const Combo = forwardRef(
     }
 
     // 渲染清空按钮
-    function clearRender(clearParams) {
+    function clearRender({ clearable, onClear }) {
       // 只读不显示清空按钮
       if (readOnly || disabled) {
         return null
@@ -92,13 +92,13 @@ const Combo = forwardRef(
 
       // 自定义清空按钮
       if (typeof customClearRender === 'function') {
-        return customClearRender({ ...clearParams, value: value, readOnly: readOnly })
+        return customClearRender({ clearable, onClear })
       }
 
       return ObjectUtil.isEmpty(value) || !allowClear ? (
         <IconRightArrow />
       ) : (
-        <IconClear onClick={clearParams?.triggerClear} />
+        <IconClear onClick={onClear} />
       )
     }
 

@@ -59,12 +59,8 @@ export default () => {
                 }
               ]}
               // 互斥图标
-              clearRender={({ clearable, triggerClear }) => {
-                return clearable ? (
-                  <Input.IconClear onClick={triggerClear} />
-                ) : (
-                  <Input.IconRightArrow />
-                )
+              clearRender={({ clearable, onClear }) => {
+                return clearable ? <Input.IconClear onClick={onClear} /> : <Input.IconRightArrow />
               }}
             />
           </Form.Item>
@@ -102,12 +98,8 @@ export default () => {
                 }
               ]}
               // 互斥图标
-              clearRender={({ clearable, triggerClear }) => {
-                return clearable ? (
-                  <Input.IconClear onClick={triggerClear} />
-                ) : (
-                  <Input.IconRightArrow />
-                )
+              clearRender={({ clearable, onClear }) => {
+                return clearable ? <Input.IconClear onClick={onClear} /> : <Input.IconRightArrow />
               }}
             />
           </Form.Item>

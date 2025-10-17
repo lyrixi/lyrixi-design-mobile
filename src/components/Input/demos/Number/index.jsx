@@ -25,8 +25,8 @@ export default () => {
           maxLength={18}
           trim={true}
           allowClear
-          clearRender={({ clearable, triggerClear }) => {
-            return clearable ? <Input.IconClear onClick={triggerClear} /> : <Input.IconRightArrow />
+          clearRender={({ clearable, onClear }) => {
+            return clearable ? <Input.IconClear onClick={onClear} /> : <Input.IconRightArrow />
           }}
           // formatter={(currentValue) => {
           //   return '$' + MathUtil.thousands(currentValue)

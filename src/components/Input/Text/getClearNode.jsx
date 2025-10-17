@@ -11,7 +11,7 @@ function getClearNode({ clearRender, allowClear, value, onClear, onTouchStart })
     let clearNode = clearRender({
       allowClear,
       clearable: clearable,
-      triggerClear: onClear,
+      onClear: onClear,
       // 解决点击失焦后触发onBlur的问题
       onTouchStart: onTouchStart
     })

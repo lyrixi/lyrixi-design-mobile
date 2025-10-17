@@ -144,13 +144,6 @@ const Edit = () => {
                   }
                 ]}
                 allowClear
-                clear={({ clearable, triggerClear }) => {
-                  return clearable ? (
-                    <Input.IconClear onClick={triggerClear} />
-                  ) : (
-                    <Input.IconRightArrow />
-                  )
-                }}
               />
             </Form.Item>
             <Form.Item height={44} name="picker" label={locale('Picker')}>
@@ -167,13 +160,6 @@ const Edit = () => {
                   }
                 ]}
                 allowClear
-                clear={({ clearable, triggerClear }) => {
-                  return clearable ? (
-                    <Input.IconClear onClick={triggerClear} />
-                  ) : (
-                    <Input.IconRightArrow />
-                  )
-                }}
               />
             </Form.Item>
             <Form.Item height={50} name="switch" valuePropName="checked" label={locale('Switch')}>
@@ -274,71 +260,19 @@ const Edit = () => {
               <Input.Url placeholder={locale('Please input')} />
             </Form.Item>
             <Form.Item height={44} name="datetime" label={locale('Datetime')}>
-              <DatePicker.Combo
-                type="datetime"
-                placeholder={locale('Please select')}
-                allowClear
-                clear={({ clearable, triggerClear }) => {
-                  return clearable ? (
-                    <Input.IconClear onClick={triggerClear} />
-                  ) : (
-                    <Input.IconRightArrow />
-                  )
-                }}
-              />
+              <DatePicker.Combo type="datetime" placeholder={locale('Please select')} allowClear />
             </Form.Item>
             <Form.Item height={44} name="date" label={locale('Date')}>
-              <DatePicker.Combo
-                placeholder={locale('Please select')}
-                allowClear
-                clear={({ clearable, triggerClear }) => {
-                  return clearable ? (
-                    <Input.IconClear onClick={triggerClear} />
-                  ) : (
-                    <Input.IconRightArrow />
-                  )
-                }}
-              />
+              <DatePicker.Combo placeholder={locale('Please select')} allowClear />
             </Form.Item>
             <Form.Item height={44} name="time" label={locale('Time')}>
-              <DatePicker.Combo
-                type="time"
-                placeholder={locale('Please select')}
-                allowClear
-                clear={({ clearable, triggerClear }) => {
-                  return clearable ? (
-                    <Input.IconClear onClick={triggerClear} />
-                  ) : (
-                    <Input.IconRightArrow />
-                  )
-                }}
-              />
+              <DatePicker.Combo type="time" placeholder={locale('Please select')} allowClear />
             </Form.Item>
             <Form.Item height={44} name="dateRange" label={locale('Date range')}>
-              <DatePicker.RangeCombo
-                placeholder={locale('Please select')}
-                allowClear
-                clear={({ clearable, triggerClear }) => {
-                  return clearable ? (
-                    <Input.IconClear onClick={triggerClear} />
-                  ) : (
-                    <Input.IconRightArrow />
-                  )
-                }}
-              />
+              <DatePicker.RangeCombo placeholder={locale('Please select')} allowClear />
             </Form.Item>
             <Form.Item height={44} name="district" label={locale('District')}>
-              <Cascader.DistrictCombo
-                placeholder={locale('Please select')}
-                allowClear
-                clear={({ clearable, triggerClear }) => {
-                  return clearable ? (
-                    <Input.IconClear onClick={triggerClear} />
-                  ) : (
-                    <Input.IconRightArrow />
-                  )
-                }}
-              />
+              <Cascader.DistrictCombo placeholder={locale('Please select')} allowClear />
             </Form.Item>
             <Form.Item height={44} name="location" label={locale('Location')}>
               <Location.Combo
@@ -351,9 +285,6 @@ const Edit = () => {
                 allowClear
                 previewVisible
                 chooseVisible
-                clear={({ clearable, triggerClear }) => {
-                  return clearable ? <Input.IconClear onClick={triggerClear} /> : null
-                }}
               />
             </Form.Item>
             <Form.Item height={52} name="signature" label={locale('Signature')}>

@@ -53,8 +53,8 @@ export default function CustomDates({
         onChange={onChange}
         placeholder={LocaleUtil.locale('请选择', 'SeedsUI_placeholder_select')}
         allowClear={allowClear}
-        clearRender={({ clearable, triggerClear }) => {
-          return clearable ? <Input.IconClear onClick={triggerClear} /> : <Input.IconRightArrow />
+        clearRender={({ clearable, onClear }) => {
+          return clearable ? <Input.IconClear onClick={onClear} /> : <Input.IconRightArrow />
         }}
       />
     </div>

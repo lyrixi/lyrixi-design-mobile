@@ -48,11 +48,6 @@ function FilterModal(
       modalClassName={DOMUtil.classNames('modal-filtermodal', modalClassName)}
       modalStyle={modalStyle}
       // Events
-      onMaskClick={() => {
-        // Set maskClosable false (default is true)
-        if (maskClosable !== undefined && !maskClosable) return
-        onCancel && onCancel()
-      }}
       onOpen={onOpen}
       onClose={onClose}
     >

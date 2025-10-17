@@ -1,4 +1,4 @@
-import Calendar from './Calendar.js'
+import Calendar from './Calendar'
 import Header from './Header'
 import isDisabledDate from './utils/isDisabledDate'
 

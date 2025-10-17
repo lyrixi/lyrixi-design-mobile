@@ -1,7 +1,7 @@
 import React from 'react'
 import { Page } from 'lyrixi-design-mobile'
 // import { Loading } from 'lyrixi-design-mobile'
-import Loading from './../../../Loading/index.js'
+import Loading from './../../../Loading/index.jsx'
 
 export default () => {
   function handleToggle() {

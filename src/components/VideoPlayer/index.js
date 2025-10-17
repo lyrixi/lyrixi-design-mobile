@@ -1,3 +1,3 @@
-import VideoPlayer from './VideoPlayer.js'
+import VideoPlayer from './VideoPlayer'
 
 export default VideoPlayer

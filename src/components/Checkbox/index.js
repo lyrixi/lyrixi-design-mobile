@@ -1,4 +1,4 @@
-import Checkbox from './Checkbox.js'
+import Checkbox from './Checkbox'
 import Group from './Group'
 
 Checkbox.Group = Group

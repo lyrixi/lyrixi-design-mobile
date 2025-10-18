@@ -9,17 +9,17 @@ import { ActionSheet } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // More功能的包装组件
-export default function MoreWrapper({ children, more, onClick, ...props }) {
+export default function MoreWrapper({ children, moreList, onClick, ...props }) {
   const [open, setOpen] = useState(false)
 
   function handleClick(e) {
     onClick && onClick(e)
-    if (Array.isArray(more) && more.length) {
+    if (Array.isArray(moreList) && moreList.length) {
       setOpen(true)
     }
   }
 
-  const hasMore = Array.isArray(more) && more.length
+  const hasMore = Array.isArray(moreList) && moreList.length
 
   return (
     <>
@@ -31,7 +31,7 @@ export default function MoreWrapper({ children, more, onClick, ...props }) {
       {hasMore ? (
         <ActionSheet.Modal
           open={open}
-          list={more}
+          list={moreList}
           onOpen={() => setOpen(true)}
           onClose={() => setOpen(false)}
         />

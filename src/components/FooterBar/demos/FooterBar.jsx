@@ -9,7 +9,7 @@ export default () => {
         <FooterBar>
           <FooterBar.Icon
             className="seeds-icon-three-dots"
-            more={[
+            moreList={[
               {
                 id: 'option1',
                 name: 'Option 1',
@@ -59,7 +59,7 @@ export default () => {
           <FooterBar.Icon
             disabled
             className="seeds-icon-three-dots"
-            more={[
+            moreList={[
               {
                 id: 'option1',
                 name: 'Option 1',
@@ -110,7 +110,7 @@ export default () => {
         <FooterBar>
           <FooterBar.Tab
             name="More"
-            more={[
+            moreList={[
               {
                 id: 'option1',
                 name: 'Option 1',
@@ -156,7 +156,7 @@ export default () => {
         <FooterBar>
           <FooterBar.Tab
             name="More"
-            more={[
+            moreList={[
               {
                 disabled: true,
                 id: 'option1',

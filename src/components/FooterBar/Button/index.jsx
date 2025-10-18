@@ -20,7 +20,7 @@ const FooterBarButton = forwardRef(
       radius = 'm',
       border = 'none',
       className,
-      more,
+      moreList,
       onClick,
       ...props
     },
@@ -39,9 +39,9 @@ const FooterBarButton = forwardRef(
       />
     )
 
-    if (more) {
+    if (moreList) {
       return (
-        <MoreWrapper more={more} onClick={onClick}>
+        <MoreWrapper moreList={moreList} onClick={onClick}>
           {button}
         </MoreWrapper>
       )

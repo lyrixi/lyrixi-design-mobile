@@ -11,7 +11,7 @@ import { Icon, DOMUtil } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // 底部图标
-const FooterBarIcon = forwardRef(({ size = 22, className, more, onClick, ...props }, ref) => {
+const FooterBarIcon = forwardRef(({ size = 22, className, moreList, onClick, ...props }, ref) => {
   const icon = (
     <Icon
       ref={ref}
@@ -21,9 +21,9 @@ const FooterBarIcon = forwardRef(({ size = 22, className, more, onClick, ...prop
     />
   )
 
-  if (more) {
+  if (moreList) {
     return (
-      <MoreWrapper more={more} onClick={onClick}>
+      <MoreWrapper moreList={moreList} onClick={onClick}>
         {icon}
       </MoreWrapper>
     )

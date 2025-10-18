@@ -43,17 +43,17 @@ function FilterModal(
       animation="slideLeft"
       // Style
       maskClosable={maskClosable}
-      maskClassName={maskClassName}
+      maskClassName={DOMUtil.classNames('filterModal-mask', maskClassName)}
       maskStyle={maskStyle}
-      modalClassName={DOMUtil.classNames('modal-filtermodal', modalClassName)}
+      modalClassName={DOMUtil.classNames('filterModal', modalClassName)}
       modalStyle={modalStyle}
       // Events
       onOpen={onOpen}
       onClose={onClose}
     >
-      <Page className="full modal-filtermodal-layout">
+      <Page className="full filterModal-layout">
         <Page.Header>
-          <NavBar className="modal-filtermodal-navbar">
+          <NavBar className="filterModal-navbar">
             <NavBar.Button
               onClick={() => {
                 onCancel && onCancel()

@@ -82,11 +82,7 @@ const NavBarModal = forwardRef(
 
     let Node = (
       <div
-        className={DOMUtil.classNames(
-          'mask modal-navbarmodal-mask',
-          maskClassName,
-          open ? 'active' : ''
-        )}
+        className={DOMUtil.classNames('mask navbarModal-mask', maskClassName, open ? 'active' : '')}
         style={maskStyle}
         onClick={handleMaskClick}
         ref={modalRef}
@@ -98,7 +94,7 @@ const NavBarModal = forwardRef(
           }}
           className={DOMUtil.classNames(
             'modal-animation',
-            'modal-navbarmodal',
+            'navbarModal',
             modalClassName,
             open ? ' active' : ''
           )}

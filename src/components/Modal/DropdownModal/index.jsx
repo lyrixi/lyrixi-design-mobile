@@ -87,11 +87,13 @@ const DropdownModal = forwardRef(
         portal={portal}
         open={open}
         animation={animation}
+        // Style
+        maskClosable={maskClosable}
         maskClassName={DOMUtil.classNames(
           maskClassName,
           ![undefined, null].includes(left) || ![undefined, null].includes(right)
-            ? 'seed-mask-dropdown-side'
-            : 'seed-mask-dropdown-center'
+            ? 'dropdownModal-mask-side'
+            : 'dropdownModal-mask-center'
         )}
         maskStyle={{
           ...maskStyle,
@@ -102,9 +104,10 @@ const DropdownModal = forwardRef(
         modalClassName={DOMUtil.classNames(
           modalClassName,
           ![undefined, null].includes(left) || ![undefined, null].includes(right)
-            ? 'seed-modal-dropdown-side'
-            : 'seed-modal-dropdown-center'
+            ? 'dropdownModal-side'
+            : 'dropdownModal-center'
         )}
+        // Events
         onOpen={onOpen}
         onClose={onClose}
       >

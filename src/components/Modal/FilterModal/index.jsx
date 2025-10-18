@@ -53,7 +53,7 @@ function FilterModal(
     >
       <Page className="full bg-white">
         <Page.Header className="bg-default">
-          <NavBar className="filterModal-navbar">
+          <NavBar>
             <NavBar.Button
               onClick={(e) => {
                 e.stopPropagation()

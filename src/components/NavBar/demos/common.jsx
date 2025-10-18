@@ -10,7 +10,7 @@ export default () => {
         <NavBar>
           <NavBar.Button icon="seeds-icon-arrow-left">Back</NavBar.Button>
           <NavBar.Title>Title</NavBar.Title>
-          <NavBar.Button className="primary">Ok</NavBar.Button>
+          <NavBar.Button color="primary">Ok</NavBar.Button>
         </NavBar>
 
         <Divider>Button Shape</Divider>

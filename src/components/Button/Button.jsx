@@ -2,15 +2,21 @@ import React, { useRef, forwardRef, useImperativeHandle } from 'react'
 
 // 内库使用-start
 import DOMUtil from './../../utils/DOMUtil'
+import Icon from './../Icon'
 // 内库使用-end
 
 /* 测试使用-start
-import { DOMUtil } from 'lyrixi-design-mobile'
+import { DOMUtil, Icon } from 'lyrixi-design-mobile'
 测试使用-end */
 
 const Button = forwardRef(
   (
     {
+      // Icon
+      icon,
+      iconPosition,
+      iconSize,
+      iconShape,
       // 颜色: default, primary, link, warning, danger, success
       color = 'default',
       // 背景颜色: default, white, primary, link, warning, danger, success
@@ -55,7 +61,13 @@ const Button = forwardRef(
         )}
         ref={rootRef}
       >
-        {children}
+        {icon && iconPosition !== 'right' && (
+          <Icon icon={icon} className="seed-button-icon" size={iconSize} shape={iconShape} />
+        )}
+        {children && <div className="seed-button-text">{children}</div>}
+        {icon && iconPosition === 'right' && (
+          <Icon icon={icon} className="seed-button-icon" size={iconSize} shape={iconShape} />
+        )}
       </div>
     )
   }

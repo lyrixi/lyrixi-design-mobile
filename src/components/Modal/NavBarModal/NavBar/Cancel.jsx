@@ -19,7 +19,7 @@ const Cancel = ({ text, onClick, ...props }) => {
     <NavBar.Button
       {...props}
       iconShape="circle"
-      icon={text ? '' : 'modal-navbar-button-close-icon'}
+      icon={text ? '' : 'navbarModal-button-close-icon'}
       onClick={handleClick}
     >
       {text}

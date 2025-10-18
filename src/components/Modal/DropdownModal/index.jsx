@@ -15,6 +15,7 @@ import { DOMUtil, Tooltip } from 'lyrixi-design-mobile'
 const DropdownModal = forwardRef(
   (
     {
+      safeArea,
       portal,
       open,
 
@@ -35,7 +36,6 @@ const DropdownModal = forwardRef(
       children,
 
       // Events
-      onOpen,
       onClose
     },
     ref
@@ -84,6 +84,7 @@ const DropdownModal = forwardRef(
     return (
       <Modal
         ref={modalRef}
+        safeArea={safeArea}
         portal={portal}
         open={open}
         animation={animation}
@@ -108,7 +109,6 @@ const DropdownModal = forwardRef(
             : 'dropdownModal-center'
         )}
         // Events
-        onOpen={onOpen}
         onClose={onClose}
       >
         {children}

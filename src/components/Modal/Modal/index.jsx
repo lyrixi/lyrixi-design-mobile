@@ -14,9 +14,9 @@ import { DOMUtil, SafeArea, Tooltip } from 'lyrixi-design-mobile'
 const Modal = forwardRef(
   (
     {
+      safeArea,
       portal,
       open,
-      safeArea,
       animation = 'zoom', // none | slideLeft | slideRight | slideUp | slideDown | zoom | fade
 
       // Style

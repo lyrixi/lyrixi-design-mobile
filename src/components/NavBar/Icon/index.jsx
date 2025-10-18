@@ -45,7 +45,7 @@ const NavBarIcon = forwardRef(({ children, shape, iconRender, size, ...props }, 
     <div
       {...props}
       className={DOMUtil.classNames(
-        'navbar-button-icon',
+        'seed-button-icon',
         props.className,
         typeof shape === 'string' ? 'shape-' + shape : ''
       )}

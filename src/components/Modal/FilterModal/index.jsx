@@ -15,6 +15,7 @@ import { LocaleUtil, Page, NavBar } from 'lyrixi-design-mobile'
 // 侧边查询
 function FilterModal(
   {
+    safeArea,
     portal,
     open,
     // Style
@@ -29,7 +30,6 @@ function FilterModal(
     children,
 
     // Events
-    onOpen,
     onClose,
     onCancel
   },
@@ -38,6 +38,7 @@ function FilterModal(
   return (
     <Modal
       ref={ref}
+      safeArea={safeArea}
       portal={portal}
       open={open}
       animation="slideLeft"
@@ -48,7 +49,6 @@ function FilterModal(
       modalClassName={DOMUtil.classNames('filterModal', modalClassName)}
       modalStyle={modalStyle}
       // Events
-      onOpen={onOpen}
       onClose={onClose}
     >
       <Page className="full bg-white">

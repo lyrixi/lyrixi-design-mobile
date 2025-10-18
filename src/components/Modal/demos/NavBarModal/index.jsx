@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react'
 import { Page, Modal, Button, Input } from 'lyrixi-design-mobile'
 
 export default () => {
-  const modalRef = useRef(null)
   const [open, setOpen] = useState(false)
 
   function handleToggle() {
@@ -27,34 +26,15 @@ export default () => {
           NavBarModal open toggle
         </div>
         <Modal.NavBarModal
-          ref={modalRef}
           open={open}
           onClose={() => setOpen(false)}
-          title="编辑信息"
-          ok="保存"
-          cancel="取消"
+          title="Title"
+          ok="Ok"
+          // cancel="Cancel"
           onOk={handleOk}
-          onCancel={handleCancel}
-          animation="slideUp"
+          // onCancel={handleCancel}
         >
-          <div className="bg-white p-4" style={{ minHeight: '300px' }}>
-            <div className="mb-3">
-              <label className="form-label">姓名</label>
-              <Input placeholder="请输入姓名" />
-            </div>
-            <div className="mb-3">
-              <label className="form-label">邮箱</label>
-              <Input type="email" placeholder="请输入邮箱" />
-            </div>
-            <div className="mb-3">
-              <label className="form-label">电话</label>
-              <Input type="tel" placeholder="请输入电话号码" />
-            </div>
-            <div>
-              <label className="form-label">备注</label>
-              <textarea className="form-control" rows="3" placeholder="请输入备注信息" />
-            </div>
-          </div>
+          <div style={{ height: '300px', width: '300px' }}>Content</div>
         </Modal.NavBarModal>
       </Page.Main>
     </Page>

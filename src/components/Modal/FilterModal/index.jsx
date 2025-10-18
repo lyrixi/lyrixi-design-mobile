@@ -55,7 +55,9 @@ function FilterModal(
         <Page.Header>
           <NavBar className="filterModal-navbar">
             <NavBar.Button
-              onClick={() => {
+              onClick={(e) => {
+                e.stopPropagation()
+
                 onCancel && onCancel()
                 onClose && onClose()
               }}

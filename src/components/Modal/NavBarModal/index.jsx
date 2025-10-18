@@ -1,14 +1,13 @@
-import React, { forwardRef, useRef, useImperativeHandle, useEffect } from 'react'
-import { createPortal } from 'react-dom'
+import React, { forwardRef } from 'react'
+import Modal from '../Modal'
 import NavBar from './NavBar'
 
 // 内库使用-start
 import DOMUtil from './../../../utils/DOMUtil'
-import SafeArea from './../../SafeArea'
 // 内库使用-end
 
 /* 测试使用-start
-import { DOMUtil, SafeArea, LocaleUtil } from 'lyrixi-design-mobile'
+import { DOMUtil } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // NavBarModal
@@ -58,79 +57,52 @@ const NavBarModal = forwardRef(
     },
     ref
   ) => {
-    // Expose
-    const modalRef = useRef(null)
-    useImperativeHandle(ref, () => {
-      return {
-        modalDOM: modalRef?.current,
-        getModalDOM: () => modalRef.current
-      }
-    })
-
     // 事件
     function handleCancelClick(e) {
-      onCancel && onCancel(e)
+      e.stopPropagation()
+
+      onCancel && onCancel()
       onClose && onClose()
     }
-    function handleMaskClick(e) {
-      e.stopPropagation()
-      if (!e.target.classList.contains('mask')) return
-      if (maskClosable) {
-        onClose && onClose()
-      }
-    }
 
-    let Node = (
-      <div
-        className={DOMUtil.classNames('mask navbarModal-mask', maskClassName, open ? 'active' : '')}
-        style={maskStyle}
-        onClick={handleMaskClick}
-        ref={modalRef}
+    return (
+      <Modal
+        ref={ref}
+        open={open}
+        onClose={onClose}
+        portal={portal}
+        animation={animation}
+        maskClosable={maskClosable}
+        maskClassName={DOMUtil.classNames('navbarModal-mask', maskClassName)}
+        maskStyle={maskStyle}
+        modalClassName={DOMUtil.classNames('navbarModal', modalClassName)}
+        modalStyle={modalStyle}
+        safeArea={safeArea}
       >
-        <div
-          data-animation={animation}
-          onClick={(e) => {
-            e.stopPropagation()
-          }}
-          className={DOMUtil.classNames(
-            'modal-animation',
-            'navbarModal',
-            modalClassName,
-            open ? ' active' : ''
-          )}
-          style={modalStyle}
-        >
-          {/* 头 */}
-          <NavBar
-            title={title}
-            titleClassName={titleClassName}
-            titleStyle={titleStyle}
-            cancel={cancel}
-            onCancel={handleCancelClick}
-            cancelClassName={cancelClassName}
-            cancelStyle={cancelStyle}
-            ok={ok}
-            onOk={
-              typeof onOk === 'function'
-                ? () => {
-                    onOk({ close: () => onClose && onClose() })
-                  }
-                : null
-            }
-            okClassName={okClassName}
-            okStyle={okStyle}
-          />
-          {/* 主体 */}
-          {children}
-          {safeArea === true && <SafeArea />}
-        </div>
-      </div>
+        {/* 头 */}
+        <NavBar
+          title={title}
+          titleClassName={titleClassName}
+          titleStyle={titleStyle}
+          cancel={cancel}
+          onCancel={handleCancelClick}
+          cancelClassName={cancelClassName}
+          cancelStyle={cancelStyle}
+          ok={ok}
+          onOk={
+            typeof onOk === 'function'
+              ? () => {
+                  onOk({ close: () => onClose && onClose() })
+                }
+              : null
+          }
+          okClassName={okClassName}
+          okStyle={okStyle}
+        />
+        {/* 主体 */}
+        {children}
+      </Modal>
     )
-
-    if (portal === null || portal === false) {
-      return Node
-    }
-    return createPortal(Node, portal || document.getElementById('root') || document.body)
   }
 )
 

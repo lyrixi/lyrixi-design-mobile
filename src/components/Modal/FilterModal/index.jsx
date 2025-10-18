@@ -51,8 +51,8 @@ function FilterModal(
       onOpen={onOpen}
       onClose={onClose}
     >
-      <Page className="full filterModal-layout">
-        <Page.Header>
+      <Page className="full bg-white">
+        <Page.Header className="bg-default">
           <NavBar className="filterModal-navbar">
             <NavBar.Button
               onClick={(e) => {

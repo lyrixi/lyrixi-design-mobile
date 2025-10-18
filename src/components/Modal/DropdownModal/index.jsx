@@ -1,12 +1,14 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useEffect, useRef, useImperativeHandle } from 'react'
 import Modal from './../Modal'
+import getAnimation from './getAnimation'
 
 // 内库使用-start
 import DOMUtil from './../../../utils/DOMUtil'
+import Tooltip from './../../Tooltip'
 // 内库使用-end
 
 /* 测试使用-start
-import { DOMUtil } from 'lyrixi-design-mobile'
+import { DOMUtil, Tooltip } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // DropdownModal
@@ -24,7 +26,7 @@ const DropdownModal = forwardRef(
       modalStyle,
 
       // Offset
-      referenceDOM,
+      referenceDOM: externalReferenceDOM,
       offset,
       left,
       right,
@@ -38,31 +40,53 @@ const DropdownModal = forwardRef(
     },
     ref
   ) => {
-    function getAnimation() {
-      if (![undefined, null].includes(left)) {
-        return 'slideDownLeft'
+    // 构建动画
+    const animation = getAnimation(left, right)
+
+    const modalRef = useRef(null)
+
+    // 继续向外暴露与 Modal 相同的实例能力
+    useImperativeHandle(ref, () => modalRef.current)
+
+    useEffect(() => {
+      // 更新模态框位置对齐目标元素
+      updateModalPosition()
+      // eslint-disable-next-line
+    }, [open])
+
+    // 受控显隐时, 需要更新容器位置
+    function updateModalPosition() {
+      let maskDOM = modalRef?.current?.maskDOM
+
+      // 参考元素
+      let referenceDOM =
+        typeof externalReferenceDOM === 'function' ? externalReferenceDOM() : externalReferenceDOM
+
+      if (!referenceDOM || !maskDOM) return
+      if (
+        open &&
+        referenceDOM &&
+        maskDOM &&
+        [undefined, null].includes(maskStyle?.top) &&
+        [undefined, null].includes(maskStyle?.bottom)
+      ) {
+        Tooltip.updatePositionByReferenceDOM(maskDOM, {
+          referenceDOM: referenceDOM,
+          parentDOM: portal,
+          animation: animation,
+          offset: offset,
+          left: maskStyle?.left,
+          right: maskStyle?.right
+        })
       }
-      if (![undefined, null].includes(right)) {
-        return 'slideDownRight'
-      }
-      return 'slideDown'
     }
 
     return (
       <Modal
-        ref={ref}
+        ref={modalRef}
         portal={portal}
-        referenceDOM={referenceDOM}
-        offset={offset}
         open={open}
-        animation={getAnimation()}
-        className={DOMUtil.classNames(
-          modalClassName,
-          ![undefined, null].includes(left) || ![undefined, null].includes(right)
-            ? 'seed-modal-dropdown-side'
-            : 'seed-modal-dropdown-center'
-        )}
-        style={modalStyle}
+        animation={animation}
         maskClassName={DOMUtil.classNames(
           maskClassName,
           ![undefined, null].includes(left) || ![undefined, null].includes(right)
@@ -74,6 +98,13 @@ const DropdownModal = forwardRef(
           ...(![undefined, null].includes(left) ? { left: left } : {}),
           ...(![undefined, null].includes(right) ? { right: right } : {})
         }}
+        modalStyle={modalStyle}
+        modalClassName={DOMUtil.classNames(
+          modalClassName,
+          ![undefined, null].includes(left) || ![undefined, null].includes(right)
+            ? 'seed-modal-dropdown-side'
+            : 'seed-modal-dropdown-center'
+        )}
         onOpen={onOpen}
         onClose={onClose}
       >

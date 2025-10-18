@@ -1,7 +1,9 @@
 import isEmpty from './isEmpty'
+import randomUUID from './randomUUID'
 
 const ObjectUtil = {
-  isEmpty
+  isEmpty,
+  randomUUID
 }
 
 export default ObjectUtil

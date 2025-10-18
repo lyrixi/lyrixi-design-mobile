@@ -2,13 +2,14 @@ import React, { useImperativeHandle, useRef, useEffect, useState, forwardRef } f
 import closeAllDropdown from './../utils/closeAllDropdown'
 
 // 内库使用-start
+import ObjectUtil from './../../../utils/ObjectUtil'
 import DOMUtil from './../../../utils/DOMUtil'
 import DropdownModal from './../../Modal/DropdownModal'
 import Button from './../../Button'
 // 内库使用-end
 
 /* 测试使用-start
-import { DOMUtil, Modal, Button } from 'lyrixi-design-mobile'
+import { ObjectUtil, DOMUtil, Modal, Button } from 'lyrixi-design-mobile'
 const DropdownModal = Modal.DropdownModal
 测试使用-end */
 
@@ -56,6 +57,8 @@ const Dropdown = forwardRef(
   ) => {
     const [open, setOpen] = useState(false)
     const comboRef = useRef(null)
+    // 唯一id，用于关闭时排除其他dropdown
+    const idRef = useRef(ObjectUtil.randomUUID())
 
     // Expose
     useImperativeHandle(ref, () => {
@@ -68,17 +71,26 @@ const Dropdown = forwardRef(
       }
     })
 
-    // 将所有dropdown合并到一个数组里, 用于全量关闭
+    // 注册当前实例到全局集合
     useEffect(() => {
-      if (!window.dropdownRefs) window.dropdownRefs = []
-      window.dropdownRefs.push(ref)
+      if (!window.dropdowns) window.dropdowns = {}
+      window.dropdowns[idRef.current] = {
+        close: _close,
+        open: _open
+      }
+
+      // 组件卸载时移除实例
+      return () => {
+        delete window.dropdowns[idRef.current]
+      }
       // eslint-disable-next-line
     }, [])
 
     useEffect(() => {
       if (open === null) return
       if (open) {
-        closeAllDropdown({ visibleRef: ref })
+        // 打开前先关闭其他所有 dropdown
+        closeAllDropdown({ exceptId: idRef.current })
         onOpen && onOpen()
       } else {
         onClose && onClose()

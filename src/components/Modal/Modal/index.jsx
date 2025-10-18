@@ -1,11 +1,10 @@
-import React, { useImperativeHandle, useRef, forwardRef, useEffect } from 'react'
+import React, { useImperativeHandle, useRef, forwardRef } from 'react'
 import { createPortal } from 'react-dom'
 import getClassNameByAnimation from './../api/getClassNameByAnimation'
 
 // 内库使用-start
 import DOMUtil from './../../../utils/DOMUtil'
 import SafeArea from './../../SafeArea'
-import Tooltip from './../../Tooltip'
 // 内库使用-end
 
 /* 测试使用-start
@@ -27,10 +26,6 @@ const Modal = forwardRef(
       modalClassName,
       modalStyle,
 
-      // Offset
-      referenceDOM: externalReferenceDOM = null, // 自动调整位置
-      offset = null,
-
       // Components
       children,
 
@@ -39,48 +34,20 @@ const Modal = forwardRef(
     },
     ref
   ) => {
+    const maskRef = useRef(null)
     const modalRef = useRef(null)
     useImperativeHandle(ref, () => {
       return {
+        maskDOM: maskRef.current,
+        getMaskDOM: () => {
+          return maskRef.current
+        },
         modalDOM: modalRef.current,
         getModalDOM: () => {
           return modalRef.current
         }
       }
     })
-
-    useEffect(() => {
-      // 更新模态框位置对齐目标元素
-      updateModalPosition()
-      // eslint-disable-next-line
-    }, [open])
-
-    // 受控显隐时, 需要更新容器位置
-    function updateModalPosition() {
-      let maskDOM = modalRef?.current
-
-      // 参考元素
-      let referenceDOM =
-        typeof externalReferenceDOM === 'function' ? externalReferenceDOM() : externalReferenceDOM
-
-      if (!referenceDOM || !maskDOM) return
-      if (
-        open &&
-        referenceDOM &&
-        maskDOM &&
-        [undefined, null].includes(maskStyle?.top) &&
-        [undefined, null].includes(maskStyle?.bottom)
-      ) {
-        Tooltip.updatePositionByReferenceDOM(maskDOM, {
-          referenceDOM: referenceDOM,
-          parentDOM: portal,
-          animation: animation,
-          offset: offset,
-          left: maskStyle?.left,
-          right: maskStyle?.right
-        })
-      }
-    }
 
     // 构建动画
     let animationClassName = getClassNameByAnimation(animation)
@@ -109,7 +76,7 @@ const Modal = forwardRef(
         style={maskStyle}
         className={DOMUtil.classNames('mask modal-mask', maskClassName, getActiveClass())}
         onClick={handleMaskClick}
-        ref={modalRef}
+        ref={maskRef}
       >
         <div
           className={DOMUtil.classNames(
@@ -121,6 +88,7 @@ const Modal = forwardRef(
           style={modalStyle}
           data-animation={animation}
           onClick={handleModalClick}
+          ref={modalRef}
         >
           {children}
           {safeArea === true && <SafeArea />}

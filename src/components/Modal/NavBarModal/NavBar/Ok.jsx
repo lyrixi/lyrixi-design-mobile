@@ -9,7 +9,7 @@ import LocaleUtil from './../../../../utils/LocaleUtil'
 import { NavBar, LocaleUtil } from 'lyrixi-design-mobile'
 测试使用-start */
 
-const Ok = ({ total, text, onClick, ...props }) => {
+const Ok = ({ total, text, onClick }) => {
   // 点击确定
   function handleOkClick(e) {
     e.stopPropagation()
@@ -21,7 +21,7 @@ const Ok = ({ total, text, onClick, ...props }) => {
   }
 
   return (
-    <NavBar.Button className="primary" {...props} onClick={handleOkClick}>
+    <NavBar.Button className="primary" onClick={handleOkClick}>
       {text && typeof text === 'string' ? text : LocaleUtil.locale('确定', 'SeedsUI_ok')}
       {typeof total === 'number' && `(${total})`}
     </NavBar.Button>

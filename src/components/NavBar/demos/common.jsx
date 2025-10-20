@@ -15,13 +15,33 @@ export default () => {
 
         <Divider>Button Shape</Divider>
         <NavBar>
-          <NavBar.Button iconShape="circle" icon="seeds-icon-close" />
-          <NavBar.Button iconShape="square" icon="seeds-icon-three-dots" />
+          <NavBar.Button
+            icon="seeds-icon-close"
+            iconSize={20}
+            iconPadding={8}
+            iconRadius="100%"
+            iconBackgroundColor="secondary"
+          />
+          <NavBar.Button
+            icon="seeds-icon-three-dots"
+            iconSize={20}
+            iconPadding={8}
+            iconRadius="2px"
+            iconBackgroundColor="secondary"
+          >
+            More
+          </NavBar.Button>
         </NavBar>
 
         <Divider>Title</Divider>
         <NavBar>
-          <NavBar.Button iconShape="circle" icon="seeds-icon-close" />
+          <NavBar.Button
+            icon="seeds-icon-close"
+            iconSize={20}
+            iconPadding={8}
+            iconRadius="100%"
+            iconBackgroundColor="secondary"
+          />
           <NavBar.Title>Title</NavBar.Title>
           <NavBar.Button className="primary">Ok</NavBar.Button>
         </NavBar>

@@ -26,10 +26,15 @@ const DistrictCombo = forwardRef(
 
       // Modal
       portal,
-      maskClassName,
-      maskStyle,
-      modalClassName,
+      comboStyle,
+      comboClassName,
+      comboLeftIcon,
+      comboRightIcon,
       modalStyle,
+      modalClassName,
+      maskStyle,
+      maskClassName,
+
       title,
 
       value,

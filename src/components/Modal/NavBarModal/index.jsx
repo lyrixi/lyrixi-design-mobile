@@ -1,14 +1,13 @@
 import React, { forwardRef } from 'react'
 import Modal from '../Modal'
-// import NavBar from './NavBar'
+import NavBar from './NavBar'
 
 // 内库使用-start
-import NavBar from '../../NavBar'
 import DOMUtil from './../../../utils/DOMUtil'
 // 内库使用-end
 
 /* 测试使用-start
-import { NavBar, DOMUtil } from 'lyrixi-design-mobile'
+import { DOMUtil } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // NavBarModal
@@ -28,20 +27,14 @@ const NavBarModal = forwardRef(
 
       // Title
       title,
-      titleClassName,
-      titleStyle,
 
       // Ok
       ok,
       onOk,
-      okClassName,
-      okStyle,
 
       // Cancel
       cancel,
       onCancel,
-      cancelClassName,
-      cancelStyle,
 
       // Components
       children,
@@ -81,29 +74,15 @@ const NavBarModal = forwardRef(
         // Events
         onClose={onClose}
       >
-        <NavBar>
-          <NavBar.Button
-            icon="navbarModal-button-close-icon"
-            className={cancelClassName}
-            style={cancelStyle}
-            onClick={handleCancelClick}
-          >
-            {cancel}
-          </NavBar.Button>
-          <NavBar.Title className={titleClassName} style={titleStyle}>
-            {title}
-          </NavBar.Title>
-          {ok && (
-            <NavBar.Button
-              color="primary"
-              className={okClassName}
-              style={okStyle}
-              onClick={handleOkClick}
-            >
-              {ok}
-            </NavBar.Button>
-          )}
-        </NavBar>
+        <div>
+          <NavBar
+            title={title}
+            ok={ok}
+            cancel={cancel}
+            onOk={handleOkClick}
+            onCancel={handleCancelClick}
+          />
+        </div>
 
         {/* 主体 */}
         {children}

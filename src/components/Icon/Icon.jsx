@@ -1,4 +1,5 @@
 import React, { useImperativeHandle, forwardRef, useRef } from 'react'
+import { colorClasses, backgroundColorClasses, sizeClasses, radiusClasses } from './../Button/enums'
 
 // 内库使用-start
 import DOMUtil from './../../utils/DOMUtil'
@@ -9,8 +10,48 @@ import { DOMUtil } from 'lyrixi-design-mobile'
 测试使用-end */
 
 const Icon = forwardRef(
-  ({ size, icon, style, className, shape, disabled, children, ...props }, ref) => {
+  (
+    {
+      icon,
+      // 颜色: default, transparent, primary, link, warning, danger, success
+      color,
+      // 背景颜色: default, transparent, white, primary, link, warning, danger, success
+      backgroundColor,
+      // 尺寸: xxs, xs, s, m, l, xl
+      size = 'm',
+      // 内边距: 数值
+      padding,
+      // 圆角: xxs, xs, s, m, l, xl
+      radius,
+      disabled,
+      style,
+      className,
+      children,
+      ...props
+    },
+    ref
+  ) => {
     const rootRef = useRef(null)
+
+    // 判断颜色是否在枚举值中
+    const isColorClass = colorClasses.includes(color)
+    const isBackgroundColorClass = backgroundColorClasses.includes(backgroundColor)
+    const isSizeClass = sizeClasses.includes(size)
+    const isRadiusClass = radiusClasses.includes(radius)
+    let innerSize =
+      typeof size === 'number' && typeof padding === 'number' ? (size || 16) - padding : size
+
+    // 构建自定义样式
+    const iconStyle = {
+      ...(!isColorClass && color ? { color } : {}),
+      ...(!isBackgroundColorClass && backgroundColor ? { backgroundColor } : {}),
+      ...(!isSizeClass && innerSize ? { fontSize: `${innerSize}px` } : {}),
+      ...(typeof size === 'number'
+        ? { width: size, height: size, fontSize: innerSize, lineHeight: size }
+        : {}),
+      ...(!isRadiusClass && radius ? { borderRadius: radius } : {}),
+      ...style
+    }
 
     // Expose
     useImperativeHandle(ref, () => {
@@ -22,19 +63,16 @@ const Icon = forwardRef(
 
     return (
       <i
-        style={{
-          width: `${size || 16}px`,
-          height: `${size || 16}px`,
-          fontSize: `${size || 16}px`,
-          lineHeight: `${size || 16}px`,
-          ...(style || {})
-        }}
+        style={iconStyle}
         {...props}
         className={DOMUtil.classNames(
-          'lyrixi-icon',
+          'icon',
           icon,
-          className,
-          shape ? 'shape-' + shape : ''
+          isColorClass && color && `color-${color} border-color-${color}`,
+          isBackgroundColorClass && backgroundColor && `bg-${backgroundColor}`,
+          isSizeClass && size && `size-${size}`,
+          isRadiusClass && radius && `radius-${radius}`,
+          className
         )}
         disabled={disabled}
         ref={rootRef}

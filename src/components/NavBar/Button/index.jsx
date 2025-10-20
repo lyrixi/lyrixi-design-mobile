@@ -9,17 +9,58 @@ import Button from './../../Button'
 import { DOMUtil, Button } from 'lyrixi-design-mobile'
 测试使用-end */
 
-const NavBarButton = forwardRef(({ className, size, border, ...props }, ref) => {
-  return (
-    <Button
-      border="null"
-      color="secondary"
-      iconSize={16}
-      {...props}
-      className={DOMUtil.classNames('navbar-button', className)}
-      ref={ref}
-    />
-  )
-})
+const NavBarButton = forwardRef(
+  (
+    {
+      // Icon
+      icon,
+      iconPosition,
+      iconColor,
+      iconBackgroundColor,
+      iconSize = 16,
+      iconPadding,
+      iconRadius,
+
+      // Button
+      color = 'secondary',
+      backgroundColor,
+      size = 22,
+      padding = 8,
+      style,
+      className,
+      children,
+
+      // Events
+      onClick
+    },
+    ref
+  ) => {
+    return (
+      <Button
+        // Icon
+        icon={icon}
+        iconPosition={iconPosition}
+        iconColor={iconColor}
+        iconBackgroundColor={iconBackgroundColor}
+        iconSize={iconSize}
+        iconPadding={iconPadding}
+        iconRadius={iconRadius}
+        // Button
+        color={color}
+        backgroundColor={backgroundColor}
+        size={size}
+        padding={padding}
+        radius=""
+        border="null"
+        style={style}
+        className={DOMUtil.classNames('navbar-button', className)}
+        onClick={onClick}
+        ref={ref}
+      >
+        {children}
+      </Button>
+    )
+  }
+)
 
 export default NavBarButton

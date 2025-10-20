@@ -13,12 +13,7 @@
     height: 20px;
     padding: 0 4px;
     font-size: var(--seed-font-size-xs);
-    &.shape-round,
-    &.shape-circle {
-      border-radius: 20px;
-    }
-    &.shape-square,
-    &.shape-circle {
+    &.shape-square {
       width: 20px;
     }
   }
@@ -26,12 +21,7 @@
     height: 24px;
     padding: 0 8px;
     font-size: var(--seed-font-size-s);
-    &.shape-round,
-    &.shape-circle {
-      border-radius: 24px;
-    }
-    &.shape-square,
-    &.shape-circle {
+    &.shape-square {
       width: 24px;
     }
   }
@@ -39,12 +29,7 @@
     height: 32px;
     padding: 0 12px;
     font-size: var(--seed-font-size-m);
-    &.shape-round,
-    &.shape-circle {
-      border-radius: 32px;
-    }
-    &.shape-square,
-    &.shape-circle {
+    &.shape-square {
       padding: 0;
       width: 32px;
     }
@@ -54,12 +39,7 @@
     padding: 0 16px;
     font-size: var(--seed-font-size-l);
 
-    &.shape-round,
-    &.shape-circle {
-      border-radius: 40px;
-    }
-    &.shape-square,
-    &.shape-circle {
+    &.shape-square {
       width: 40px;
     }
   }
@@ -69,12 +49,7 @@
     // 字号太大会不好看
     font-size: var(--seed-font-size-xl);
 
-    &.shape-round,
-    &.shape-circle {
-      border-radius: 48px;
-    }
-    &.shape-square,
-    &.shape-circle {
+    &.shape-square {
       width: 48px;
     }
   }
@@ -84,12 +59,7 @@
     // 字号太大会不好看
     font-size: var(--seed-font-size-xxl);
 
-    &.shape-round,
-    &.shape-circle {
-      border-radius: 56px;
-    }
-    &.shape-square,
-    &.shape-circle {
+    &.shape-square {
       width: 24px;
     }
   }
@@ -103,6 +73,9 @@
 }
 
 // Icon
+.seed-button-icon {
+  color: currentColor;
+}
 .seed-button-icon + .seed-button-text,
 .seed-button-text + .seed-button-icon {
   margin-left: 4px;

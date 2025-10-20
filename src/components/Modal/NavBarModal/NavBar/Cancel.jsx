@@ -8,22 +8,26 @@ import NavBar from './../../../NavBar'
 import { NavBar } from 'lyrixi-design-mobile'
 测试使用-start */
 
-const Cancel = ({ text, onClick, ...props }) => {
+const Cancel = ({ text, onClick }) => {
   // 点击取消
   function handleClick(e) {
     e.stopPropagation()
     if (onClick) onClick(e)
   }
 
+  if (text) {
+    return <NavBar.Button onClick={handleClick}>{text}</NavBar.Button>
+  }
+
   return (
     <NavBar.Button
-      {...props}
-      iconShape="circle"
-      icon={text ? '' : 'navbarModal-button-close-icon'}
+      icon="seeds-icon-close"
+      iconSize={20}
+      iconPadding={8}
+      iconRadius="100%"
+      iconBackgroundColor="secondary"
       onClick={handleClick}
-    >
-      {text}
-    </NavBar.Button>
+    />
   )
 }
 

@@ -45,7 +45,13 @@ export default () => {
             color="white" backgroundColor="primary"
           </Button>
           <br />
-          <Button color="primary" backgroundColor="primary-lighten" border="none" radius="m" style={buttonStyle}>
+          <Button
+            color="primary"
+            backgroundColor="primary-lighten"
+            border="none"
+            radius="m"
+            style={buttonStyle}
+          >
             color="primary" backgroundColor="primary-lighten"
           </Button>
           <Button
@@ -67,13 +73,31 @@ export default () => {
             color="primary" backgroundColor="primary-lighten" border="dashed"
           </Button>
           <br />
-          <Button color="primary" backgroundColor="transparent" border="none" radius="m" style={buttonStyle}>
+          <Button
+            color="primary"
+            backgroundColor="transparent"
+            border="none"
+            radius="m"
+            style={buttonStyle}
+          >
             color="primary" backgroundColor="transparent" border="none"
           </Button>
-          <Button color="primary" backgroundColor="transparent" border="solid" radius="m" style={buttonStyle}>
+          <Button
+            color="primary"
+            backgroundColor="transparent"
+            border="solid"
+            radius="m"
+            style={buttonStyle}
+          >
             color="primary" backgroundColor="transparent" border="solid"
           </Button>
-          <Button color="primary" backgroundColor="transparent" border="dashed" radius="m" style={buttonStyle}>
+          <Button
+            color="primary"
+            backgroundColor="transparent"
+            border="dashed"
+            radius="m"
+            style={buttonStyle}
+          >
             color="primary" backgroundColor="transparent" border="dashed"
           </Button>
         </div>
@@ -83,23 +107,59 @@ export default () => {
             color="white" backgroundColor="link"
           </Button>
           <br />
-          <Button color="link" backgroundColor="link-lighten" border="none" radius="m" style={buttonStyle}>
+          <Button
+            color="link"
+            backgroundColor="link-lighten"
+            border="none"
+            radius="m"
+            style={buttonStyle}
+          >
             color="link" backgroundColor="link-lighten"
           </Button>
-          <Button color="link" backgroundColor="link-lighten" border="solid" radius="m" style={buttonStyle}>
+          <Button
+            color="link"
+            backgroundColor="link-lighten"
+            border="solid"
+            radius="m"
+            style={buttonStyle}
+          >
             color="link" backgroundColor="link-lighten" border="solid"
           </Button>
-          <Button color="link" backgroundColor="link-lighten" border="dashed" radius="m" style={buttonStyle}>
+          <Button
+            color="link"
+            backgroundColor="link-lighten"
+            border="dashed"
+            radius="m"
+            style={buttonStyle}
+          >
             color="link" backgroundColor="link-lighten" border="dashed"
           </Button>
           <br />
-          <Button color="link" backgroundColor="transparent" border="none" radius="m" style={buttonStyle}>
+          <Button
+            color="link"
+            backgroundColor="transparent"
+            border="none"
+            radius="m"
+            style={buttonStyle}
+          >
             color="link" backgroundColor="transparent" border="none"
           </Button>
-          <Button color="link" backgroundColor="transparent" border="solid" radius="m" style={buttonStyle}>
+          <Button
+            color="link"
+            backgroundColor="transparent"
+            border="solid"
+            radius="m"
+            style={buttonStyle}
+          >
             color="link" backgroundColor="transparent" border="solid"
           </Button>
-          <Button color="link" backgroundColor="transparent" border="dashed" radius="m" style={buttonStyle}>
+          <Button
+            color="link"
+            backgroundColor="transparent"
+            border="dashed"
+            radius="m"
+            style={buttonStyle}
+          >
             color="link" backgroundColor="transparent" border="dashed"
           </Button>
         </div>
@@ -109,7 +169,13 @@ export default () => {
             color="white" backgroundColor="warning"
           </Button>
           <br />
-          <Button color="warning" backgroundColor="warning-lighten" border="none" radius="m" style={buttonStyle}>
+          <Button
+            color="warning"
+            backgroundColor="warning-lighten"
+            border="none"
+            radius="m"
+            style={buttonStyle}
+          >
             color="warning" backgroundColor="warning-lighten"
           </Button>
           <Button
@@ -131,13 +197,31 @@ export default () => {
             color="warning" backgroundColor="warning-lighten" border="dashed"
           </Button>
           <br />
-          <Button color="warning" backgroundColor="transparent" border="none" radius="m" style={buttonStyle}>
+          <Button
+            color="warning"
+            backgroundColor="transparent"
+            border="none"
+            radius="m"
+            style={buttonStyle}
+          >
             color="warning" backgroundColor="transparent" border="none"
           </Button>
-          <Button color="warning" backgroundColor="transparent" border="solid" radius="m" style={buttonStyle}>
+          <Button
+            color="warning"
+            backgroundColor="transparent"
+            border="solid"
+            radius="m"
+            style={buttonStyle}
+          >
             color="warning" backgroundColor="transparent" border="solid"
           </Button>
-          <Button color="warning" backgroundColor="transparent" border="dashed" radius="m" style={buttonStyle}>
+          <Button
+            color="warning"
+            backgroundColor="transparent"
+            border="dashed"
+            radius="m"
+            style={buttonStyle}
+          >
             color="warning" backgroundColor="transparent" border="dashed"
           </Button>
         </div>
@@ -147,23 +231,59 @@ export default () => {
             color="white" backgroundColor="danger"
           </Button>
           <br />
-          <Button color="danger" backgroundColor="danger-lighten" border="none" radius="m" style={buttonStyle}>
+          <Button
+            color="danger"
+            backgroundColor="danger-lighten"
+            border="none"
+            radius="m"
+            style={buttonStyle}
+          >
             color="danger" backgroundColor="danger-lighten"
           </Button>
-          <Button color="danger" backgroundColor="danger-lighten" border="solid" radius="m" style={buttonStyle}>
+          <Button
+            color="danger"
+            backgroundColor="danger-lighten"
+            border="solid"
+            radius="m"
+            style={buttonStyle}
+          >
             color="danger" backgroundColor="danger-lighten" border="solid"
           </Button>
-          <Button color="danger" backgroundColor="danger-lighten" border="dashed" radius="m" style={buttonStyle}>
+          <Button
+            color="danger"
+            backgroundColor="danger-lighten"
+            border="dashed"
+            radius="m"
+            style={buttonStyle}
+          >
             color="danger" backgroundColor="danger-lighten" border="dashed"
           </Button>
           <br />
-          <Button color="danger" backgroundColor="transparent" border="none" radius="m" style={buttonStyle}>
+          <Button
+            color="danger"
+            backgroundColor="transparent"
+            border="none"
+            radius="m"
+            style={buttonStyle}
+          >
             color="danger" backgroundColor="transparent" border="none"
           </Button>
-          <Button color="danger" backgroundColor="transparent" border="solid" radius="m" style={buttonStyle}>
+          <Button
+            color="danger"
+            backgroundColor="transparent"
+            border="solid"
+            radius="m"
+            style={buttonStyle}
+          >
             color="danger" backgroundColor="transparent" border="solid"
           </Button>
-          <Button color="danger" backgroundColor="transparent" border="dashed" radius="m" style={buttonStyle}>
+          <Button
+            color="danger"
+            backgroundColor="transparent"
+            border="dashed"
+            radius="m"
+            style={buttonStyle}
+          >
             color="danger" backgroundColor="transparent" border="dashed"
           </Button>
         </div>
@@ -173,7 +293,13 @@ export default () => {
             color="white" backgroundColor="success"
           </Button>
           <br />
-          <Button color="success" backgroundColor="success-lighten" border="none" radius="m" style={buttonStyle}>
+          <Button
+            color="success"
+            backgroundColor="success-lighten"
+            border="none"
+            radius="m"
+            style={buttonStyle}
+          >
             color="success" backgroundColor="success-lighten"
           </Button>
           <Button
@@ -195,13 +321,31 @@ export default () => {
             color="success" backgroundColor="success-lighten" border="dashed"
           </Button>
           <br />
-          <Button color="success" backgroundColor="transparent" border="none" radius="m" style={buttonStyle}>
+          <Button
+            color="success"
+            backgroundColor="transparent"
+            border="none"
+            radius="m"
+            style={buttonStyle}
+          >
             color="success" backgroundColor="transparent" border="none"
           </Button>
-          <Button color="success" backgroundColor="transparent" border="solid" radius="m" style={buttonStyle}>
+          <Button
+            color="success"
+            backgroundColor="transparent"
+            border="solid"
+            radius="m"
+            style={buttonStyle}
+          >
             color="success" backgroundColor="transparent" border="solid"
           </Button>
-          <Button color="success" backgroundColor="transparent" border="dashed" radius="m" style={buttonStyle}>
+          <Button
+            color="success"
+            backgroundColor="transparent"
+            border="dashed"
+            radius="m"
+            style={buttonStyle}
+          >
             color="success" backgroundColor="transparent" border="dashed"
           </Button>
         </div>
@@ -210,19 +354,25 @@ export default () => {
 
         <Divider>Shape</Divider>
         <div>
-          <Button shape="round" color="white" backgroundColor="primary" style={buttonStyle}>
+          <Button square radius="m" color="white" backgroundColor="primary" style={buttonStyle}>
             Round
           </Button>
-          <Button shape="circle" size="s" style={buttonStyle}>
+          <Button square radius="100%" size="s" style={buttonStyle}>
             <Icon className="seeds-icons seeds-icon-barcode"></Icon>
           </Button>
-          <Button shape="square" size="s" radius="m" style={buttonStyle}>
+          <Button square size="s" radius="m" style={buttonStyle}>
             <Icon className="seeds-icons seeds-icon-barcode"></Icon>
           </Button>
           <br />
 
           <Divider>Flex</Divider>
-          <Button color="white" backgroundColor="primary" radius="m" className="flex" style={buttonStyle}>
+          <Button
+            color="white"
+            backgroundColor="primary"
+            radius="m"
+            className="flex"
+            style={buttonStyle}
+          >
             primary flex
           </Button>
         </div>

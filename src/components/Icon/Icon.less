@@ -1,5 +1,9 @@
 // icon 图标
-.lyrixi-icon {
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   // Disabled events
   &[disabled],
   &.disabled {
@@ -7,21 +11,36 @@
     opacity: 0.3;
   }
 
-  // Shape
-  &.shape-circle,
-  &.shape-square {
-    background-color: #f3f3f6;
-    height: 20px;
-    width: 20px;
-    .icon {
-      width: 12px;
-      height: 12px;
-      font-size: 12px;
-    }
+  // Size
+  &.size-xxs {
+    width: var(--font-size-xxs);
+    height: var(--font-size-xxs);
+    font-size: var(--font-size-xxs);
   }
-
-  &.shape-circle {
-    border-radius: 20px;
+  &.size-xs {
+    width: var(--font-size-xs);
+    height: var(--font-size-xs);
+    font-size: var(--font-size-xs);
+  }
+  &.size-s {
+    width: var(--font-size-s);
+    height: var(--font-size-s);
+    font-size: var(--font-size-s);
+  }
+  &.size-m {
+    width: var(--font-size-m);
+    height: var(--font-size-m);
+    font-size: var(--font-size-m);
+  }
+  &.size-l {
+    width: var(--font-size-l);
+    height: var(--font-size-l);
+    font-size: var(--font-size-l);
+  }
+  &.size-xl {
+    width: var(--font-size-xl);
+    height: var(--font-size-xl);
+    font-size: var(--font-size-xl);
   }
 }
 

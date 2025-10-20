@@ -25,21 +25,17 @@ const NavBarModal = forwardRef(
       modalClassName,
       modalStyle,
 
-      // Title
+      // NavBar
       title,
-
-      // Ok
       ok,
-      onOk,
-
-      // Cancel
       cancel,
-      onCancel,
 
       // Components
       children,
 
       // Events
+      onCancel,
+      onOk,
       onClose
     },
     ref
@@ -74,15 +70,13 @@ const NavBarModal = forwardRef(
         // Events
         onClose={onClose}
       >
-        <div>
-          <NavBar
-            title={title}
-            ok={ok}
-            cancel={cancel}
-            onOk={handleOkClick}
-            onCancel={handleCancelClick}
-          />
-        </div>
+        <NavBar
+          title={title}
+          ok={ok}
+          cancel={cancel}
+          onOk={handleOkClick}
+          onCancel={handleCancelClick}
+        />
 
         {/* 主体 */}
         {children}

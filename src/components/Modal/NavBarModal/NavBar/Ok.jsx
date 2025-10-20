@@ -16,6 +16,10 @@ const Ok = ({ total, text, onClick, ...props }) => {
     if (onClick) onClick(e)
   }
 
+  if (!text) {
+    return <NavBar.Button>&nbsp;&nbsp;</NavBar.Button>
+  }
+
   return (
     <NavBar.Button className="primary" {...props} onClick={handleOkClick}>
       {text && typeof text === 'string' ? text : LocaleUtil.locale('确定', 'SeedsUI_ok')}

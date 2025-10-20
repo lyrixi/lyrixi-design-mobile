@@ -31,7 +31,7 @@ const Head = forwardRef(({ title, ok, onOk, cancel, onCancel }, ref) => {
       <NavBar.Title>{title}</NavBar.Title>
 
       {/* 确认 */}
-      {ok && <Ok text={ok} onClick={onOk} />}
+      <Ok text={ok} onClick={onOk} />
     </NavBar>
   )
 })

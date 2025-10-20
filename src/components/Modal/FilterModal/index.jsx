@@ -18,6 +18,7 @@ function FilterModal(
     safeArea,
     portal,
     open,
+
     // Style
     maskClosable,
     maskClassName,

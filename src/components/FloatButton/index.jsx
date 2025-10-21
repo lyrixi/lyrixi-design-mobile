@@ -143,10 +143,7 @@ function FloatButton(
     <div
       ref={rootRef}
       {...props}
-      className={DOMUtil.classNames(
-        'float-button-container',
-        props?.className
-      )}
+      className={DOMUtil.classNames('float-button-container', props?.className)}
       onTouchStart={draggable ? handleTouchStart : null}
       onTouchMove={draggable ? handleTouchMove : null}
       onTouchEnd={draggable ? handleTouchEnd : null}
@@ -157,15 +154,6 @@ function FloatButton(
           item.id = '' + index
         }
 
-        // 内容
-        let Content = (
-          <>
-            {/* icon更多class：float-button-icon-more */}
-            {getIconNode(item)}
-            {item.name ? <div className="float-button-label">{item.name}</div> : null}
-          </>
-        )
-
         // 分组
         if (Array.isArray(item.children) && item.children.length) {
           return (
@@ -175,13 +163,17 @@ function FloatButton(
               list={item.children}
               className={DOMUtil.classNames('float-button', item.className)}
               style={item.style}
-              onClick={(e) => {
-                e.stopPropagation()
-              }}
               onChange={onChange}
-            >
-              {Content}
-            </ActionSheet.Combo>
+              comboRender={({ comboRef, onClick }) => {
+                return (
+                  <div ref={comboRef} onClick={onClick}>
+                    {/* icon更多class：float-button-icon-more */}
+                    {getIconNode(item)}
+                    {item.name ? <div className="float-button-label">{item.name}</div> : null}
+                  </div>
+                )
+              }}
+            />
           )
         }
         // 未分组

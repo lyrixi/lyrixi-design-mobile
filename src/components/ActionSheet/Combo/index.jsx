@@ -12,38 +12,37 @@ import { Input } from 'lyrixi-design-mobile'
 // 卡片选择
 const ActionSheetCombo = (
   {
-    // Combo
+    portal,
+
+    // Components
+    title,
     comboRender,
     comboChildren,
+    itemRender,
 
+    // Style
     comboStyle,
     comboClassName,
     comboLeftIcon,
     comboRightIcon,
-
-    // Modal
-    portal,
-    maskClassName,
-    maskStyle,
-    modalClassName,
     modalStyle,
+    modalClassName,
+    maskStyle,
+    maskClassName,
 
+    // Value
     value,
     allowClear,
-    multiple,
-    onChange,
-
-    title,
     list,
 
-    // Combo props
+    // Events
     onBeforeOpen,
+    onChange,
     ...props
   },
   ref
 ) => {
   const [open, setOpen] = useState(false)
-  const [currentValue, setCurrentValue] = useState(value)
   const comboRef = useRef(null)
   const modalRef = useRef(null)
 
@@ -55,18 +54,11 @@ const ActionSheetCombo = (
       open: () => setOpen(true)
     }
   })
-
-  // 同步外部value到内部currentValue
-  React.useEffect(() => {
-    setCurrentValue(value)
-  }, [value])
-
   async function handleOpen() {
     if (typeof onBeforeOpen === 'function') {
       let goOn = await onBeforeOpen()
       if (goOn === false) return
     }
-    setCurrentValue(value)
     setOpen(true)
   }
 
@@ -74,23 +66,11 @@ const ActionSheetCombo = (
     setOpen(false)
   }
 
-  async function handleOk() {
+  function handleChange(newValue) {
     if (onChange) {
-      let goOn = await onChange(currentValue)
-      if (goOn === false) return
+      onChange(newValue)
     }
     setOpen(false)
-  }
-
-  function handleChange(newValue) {
-    setCurrentValue(newValue)
-    // 单选时立即关闭
-    if (multiple === false) {
-      if (onChange) {
-        onChange(newValue)
-      }
-      setOpen(false)
-    }
   }
 
   // 获取 Combo 节点
@@ -123,7 +103,6 @@ const ActionSheetCombo = (
         rightIcon={comboRightIcon}
         value={value}
         allowClear={allowClear}
-        multiple={multiple}
         onChange={onChange}
         onClick={handleOpen}
       />
@@ -136,19 +115,22 @@ const ActionSheetCombo = (
       <Modal
         ref={modalRef}
         open={open}
-        onClose={handleClose}
-        onOk={handleOk}
-        value={currentValue}
-        allowClear={allowClear}
-        multiple={multiple}
-        onChange={handleChange}
         portal={portal}
+        // Value
+        value={value}
+        list={list}
+        allowClear={allowClear}
+        // Components
+        itemRender={itemRender}
+        // Style
+        title={title}
         maskClassName={maskClassName}
         maskStyle={maskStyle}
         className={modalClassName}
         style={modalStyle}
-        title={title}
-        list={list}
+        // Events
+        onClose={handleClose}
+        onChange={handleChange}
       />
     </>
   )

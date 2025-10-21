@@ -29,12 +29,7 @@ export default function MoreWrapper({ children, moreList, onClick, ...props }) {
       })}
 
       {hasMore ? (
-        <ActionSheet.Modal
-          open={open}
-          list={moreList}
-          onOpen={() => setOpen(true)}
-          onClose={() => setOpen(false)}
-        />
+        <ActionSheet.Modal open={open} list={moreList} onClose={() => setOpen(false)} />
       ) : null}
     </>
   )

@@ -53,6 +53,20 @@ export default () => {
             console.log('onOpen')
           }}
           // style={{ height: '100px', backgroundColor: '#f8f8f8' }}
+          itemRender={(item, { onChange }) => {
+            return (
+              <ActionSheet.Item
+                key={item?.id || index}
+                active={item?.id === value?.id}
+                disabled={item?.disabled}
+                onClick={() => {
+                  onChange(item)
+                }}
+              >
+                Custom Node: {item.name}
+              </ActionSheet.Item>
+            )
+          }}
         />
       </Page.Main>
     </Page>

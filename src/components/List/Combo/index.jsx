@@ -15,10 +15,12 @@ const ListCombo = forwardRef(
     {
       // Modal
       portal,
-      maskClassName,
-      maskStyle,
-      modalClassName,
+      comboStyle,
+      comboClassName,
       modalStyle,
+      modalClassName,
+      maskStyle,
+      maskClassName,
       title,
 
       value,

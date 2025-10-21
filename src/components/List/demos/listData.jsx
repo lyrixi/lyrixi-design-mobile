@@ -3,8 +3,8 @@ import { Button } from 'lyrixi-design-mobile'
 
 export default [
   {
-    image: 'https://api.dicebear.com/7.x/miniavs/svg?seed=3',
-    avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=3',
+    imageUrl: 'https://api.dicebear.com/7.x/miniavs/svg?seed=3',
+    avatarUrl: 'https://api.dicebear.com/7.x/miniavs/svg?seed=3',
     id: '1',
     name: '1',
     description: 'description',

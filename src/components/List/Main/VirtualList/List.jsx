@@ -17,7 +17,7 @@ const List = (
     onChange,
     // List config
     itemRender,
-    layout,
+    itemLayout,
     checkable,
     // virtual config
     height
@@ -65,7 +65,7 @@ const List = (
             // Item Data
             itemData={item}
             // Global Config
-            layout={layout}
+            itemLayout={itemLayout}
             checkable={checkable}
             checked={value?.findIndex?.((valueItem) => valueItem?.id === item.id) >= 0}
             onChange={(checked) => {

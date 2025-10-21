@@ -31,7 +31,7 @@ const VirtualList = (
 
     // List config
     itemRender,
-    layout,
+    itemLayout,
     checkable,
 
     // Render
@@ -163,7 +163,7 @@ const VirtualList = (
         onChange={onChange}
         // List config
         itemRender={itemRender}
-        layout={layout}
+        itemLayout={itemLayout}
         checkable={checkable}
         // virtual config
         height={totalHeight}

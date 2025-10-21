@@ -44,7 +44,7 @@ const Main = forwardRef(
 
       // List config
       itemRender,
-      layout,
+      itemLayout,
       checkable,
 
       // Render
@@ -300,7 +300,7 @@ const Main = forwardRef(
         }}
         // List config
         itemRender={itemRender}
-        layout={layout}
+        itemLayout={itemLayout}
         checkable={checkable}
         // Render
         prepend={prepend}

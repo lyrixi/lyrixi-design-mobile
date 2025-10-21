@@ -27,7 +27,7 @@ const List = (
     */
     // Group 配置项
     // Item 配置项
-    layout, // vertical
+    itemLayout, // vertical
     itemRender,
     checkable,
     onChange
@@ -75,20 +75,21 @@ const List = (
     return (
       <Item
         key={item.id ?? index}
-        multiple={multiple}
-        // Custom ItemRender or Item
-        itemRender={itemRender}
-        // Display Item
-        title={item.name}
-        // Other Item
-        {...item}
         // Item Data
-        itemData={item}
-        // Global Config
-        layout={layout}
+        item={item}
+        // Style
+        disabled={item.disabled}
+        imageUrl={item.imageUrl}
+        avatarUrl={item.avatarUrl}
+        title={item.name}
+        description={item.description}
+        note={item.note}
+        content={item.content}
+        action={item.action}
+        // GLobal Config
+        itemLayout={itemLayout}
         checkable={checkable}
         checked={value?.findIndex?.((valueItem) => valueItem?.id === item.id) >= 0}
-        onChange={handleChange}
         onClick={(e) => {
           e.stopPropagation()
           handleChange(item, { checked: !checked })

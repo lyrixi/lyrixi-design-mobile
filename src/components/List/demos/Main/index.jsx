@@ -14,7 +14,7 @@ export default () => {
       <Page.Header className="text-center">Layout vertical</Page.Header>
       <List.Main
         ref={mainRef}
-        layout="vertical"
+        itemLayout="vertical"
         // pagination
         value={value}
         reload={true}
@@ -34,7 +34,7 @@ export default () => {
           // console.log({ list, value, onChange, pagination })
           return <div>Custom prepend</div>
         }}
-        layout="horizontal"
+        itemLayout="horizontal"
         // true: 默认Card包裹Item
         itemRender={true}
         // pagination

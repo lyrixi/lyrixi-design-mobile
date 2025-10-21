@@ -35,7 +35,7 @@ const ListCombo = forwardRef(
 
       // List config
       itemRender,
-      layout,
+      itemLayout,
       multiple = false,
       checkable = true,
 
@@ -102,7 +102,7 @@ const ListCombo = forwardRef(
           title={title}
           list={list}
           itemRender={itemRender}
-          layout={layout}
+          itemLayout={itemLayout}
           checkable={checkable}
           loadList={loadList}
           pull={pull}

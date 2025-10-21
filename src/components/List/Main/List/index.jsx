@@ -27,7 +27,7 @@ const Main = forwardRef(
 
       // List config
       itemRender,
-      layout,
+      itemLayout,
       checkable,
 
       // Render
@@ -62,7 +62,7 @@ const Main = forwardRef(
             onChange={onChange}
             // List config
             itemRender={itemRender}
-            layout={layout}
+            itemLayout={itemLayout}
             checkable={checkable}
           />
         )}

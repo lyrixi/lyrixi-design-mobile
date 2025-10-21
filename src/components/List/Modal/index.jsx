@@ -34,7 +34,7 @@ const ListModal = forwardRef(
 
       // List config
       itemRender,
-      layout,
+      itemLayout,
       checkable,
       ...props
     },
@@ -100,7 +100,7 @@ const ListModal = forwardRef(
           pull={pull}
           pagination={pagination}
           itemRender={itemRender}
-          layout={layout}
+          itemLayout={itemLayout}
           checkable={checkable}
         />
       </NavBarModal>

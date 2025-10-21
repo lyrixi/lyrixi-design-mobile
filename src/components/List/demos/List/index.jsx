@@ -22,7 +22,7 @@ export default () => {
             setValue(newValue)
           }}
           // Item 配置
-          layout="vertical"
+          itemLayout="vertical"
         />
       </Page.Main>
     </Page>

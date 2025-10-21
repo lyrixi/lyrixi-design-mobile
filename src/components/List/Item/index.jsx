@@ -12,7 +12,6 @@ import { DOMUtil,Checkbox } from 'lyrixi-design-mobile'
 const Item = ({
   // Item Data
   item,
-  multiple,
 
   // Style
   disabled,
@@ -25,7 +24,7 @@ const Item = ({
   action,
 
   // GLobal Config
-  layout,
+  itemLayout,
   checkable,
   checked,
   onClick,
@@ -107,10 +106,9 @@ const Item = ({
         className={DOMUtil.classNames(
           'list-item',
           className,
-          multiple ? 'multiple' : '',
           disabled ? 'disabled' : '',
           checked ? 'checked' : '',
-          layout ? layout : ''
+          itemLayout ? itemLayout : ''
         )}
         onClick={(e) => {
           e.stopPropagation()

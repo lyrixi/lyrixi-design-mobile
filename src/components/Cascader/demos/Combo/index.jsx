@@ -81,9 +81,6 @@ export default () => {
           onClose={() => {
             console.log('onClose')
           }}
-          onOpen={() => {
-            console.log('onOpen')
-          }}
           clearRender={({ clearable, onClear }) => {
             return clearable ? <Input.IconClear onClick={onClear} /> : <Input.IconRightArrow />
           }}

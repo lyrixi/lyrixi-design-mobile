@@ -20,7 +20,6 @@ const DistrictModal = forwardRef(
       // Modal
       open,
       onClose,
-      onOpen,
       value,
       allowClear,
       multiple,
@@ -131,7 +130,6 @@ const DistrictModal = forwardRef(
         ref={modalRef}
         open={open}
         onClose={onClose}
-        onOpen={onOpen}
         onOk={handleOk}
         ok={ok ? ok : okVisible ? '' : null}
         {...props}

@@ -13,31 +13,31 @@ import { Input } from 'lyrixi-design-mobile'
 const CascaderCombo = forwardRef(
   (
     {
-      // Modal
       portal,
+
+      // Style
       comboStyle,
       comboClassName,
       comboLeftIcon,
       comboRightIcon,
-
       modalStyle,
       modalClassName,
-
       maskStyle,
       maskClassName,
 
+      // Components
       title,
       searchVisible,
 
+      // Value
       value,
+      list,
       allowClear,
       multiple,
-      onChange,
-
-      list,
       loadData,
 
-      // Combo props
+      // Events
+      onChange,
       onBeforeOpen,
       ...props
     },

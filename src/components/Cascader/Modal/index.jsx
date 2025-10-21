@@ -18,7 +18,6 @@ const CascaderModal = forwardRef(
       // Modal
       open,
       onClose,
-      onOpen,
       value,
       allowClear,
       multiple,
@@ -81,7 +80,6 @@ const CascaderModal = forwardRef(
         ref={modalRef}
         open={open}
         onClose={onClose}
-        onOpen={onOpen}
         ok={null}
         {...props}
         modalClassName={DOMUtil.classNames('cascader-modal', modalClassName)}

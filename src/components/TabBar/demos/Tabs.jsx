@@ -38,6 +38,7 @@ export default () => {
           }}
         />
         <TabBar.Tabs
+          gap={12}
           list={[
             {
               id: 'Fruit',

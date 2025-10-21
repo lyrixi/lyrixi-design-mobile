@@ -5,7 +5,6 @@ import sliceArray from './sliceArray'
 import getTreeChildren from './getTreeChildren'
 import formatValue from './../utils/formatValue'
 import formatList from './../utils/formatList'
-import Tabs from './Tabs'
 import ListItem from './ListItem'
 import SearchHeader from './SearchPage/Header'
 import SearchPage from './SearchPage'
@@ -17,10 +16,11 @@ import ArrayUtil from './../../../utils/ArrayUtil'
 import IndexBar from './../../IndexBar'
 import Loading from './../../Loading'
 import Page from './../../Page'
+import TabBar from './../../TabBar'
 // 内库使用-end
 
 /* 测试使用-start
-import { LocaleUtil, ArrayUtil, IndexBar, Loading, Page } from 'lyrixi-design-mobile'
+import { LocaleUtil, ArrayUtil, IndexBar, Loading, Page, TabBar } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // 主体
@@ -328,7 +328,9 @@ const Main = forwardRef(
         })
       }
 
-      return <Tabs list={tabsRef.current} value={activeTab} onChange={handleClickTab} />
+      return (
+        <TabBar.Tabs gap={12} list={tabsRef.current} value={activeTab} onChange={handleClickTab} />
+      )
     }
 
     // 重置搜索状态

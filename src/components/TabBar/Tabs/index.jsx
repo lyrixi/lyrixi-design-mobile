@@ -12,7 +12,7 @@ import { DOMUtil } from 'lyrixi-design-mobile'
 const Tabs = forwardRef(
   (
     {
-      separator,
+      // Value
       value,
       list = [],
       /*
@@ -26,9 +26,16 @@ const Tabs = forwardRef(
         }
       ]
       */
+
+      // Style
+      separator,
+      gap,
+      style,
       className,
       disabled,
       descriptionPosition = 'bottom',
+
+      // Events
       onChange,
       ...props
     },
@@ -61,7 +68,7 @@ const Tabs = forwardRef(
 
       // 遍历
       return list.map((item, index) => {
-        const { name, description, placeholder, props: tabProps = {} } = item
+        const { name, description, placeholder } = item
         let checked = getIsChecked(item)
         return (
           <Fragment key={index}>
@@ -76,15 +83,19 @@ const Tabs = forwardRef(
                 item?.disabled ? ' disabled' : '',
                 checked ? ' active' : ''
               )}
-              data-index={index}
-              {...tabProps}
+              style={{
+                ...style,
+                marginLeft: gap || style?.marginLeft
+              }}
               onClick={(e) => {
                 e.stopPropagation()
                 onChange && onChange(item)
               }}
             >
               <div className="tabbar-tabs-tab">
-                {typeof item.iconRender === 'function' ? item.iconRender({ checked: checked }) : null}
+                {typeof item.iconRender === 'function'
+                  ? item.iconRender({ ...item, checked: checked })
+                  : null}
                 {description && descriptionPosition === 'top' ? (
                   <div className={`tabbar-tabs-tab-description`}>{description}</div>
                 ) : null}
@@ -109,11 +120,8 @@ const Tabs = forwardRef(
     return (
       <div
         {...props}
-        className={DOMUtil.classNames(
-          'tabbar-tabs',
-          className,
-          Array.isArray(list) && list?.length ? `tabbar-tabs-total-${list.length}` : ''
-        )}
+        style={style}
+        className={DOMUtil.classNames('tabbar-tabs', className, gap ? 'compact' : '')}
         disabled={disabled}
         ref={rootRef}
       >

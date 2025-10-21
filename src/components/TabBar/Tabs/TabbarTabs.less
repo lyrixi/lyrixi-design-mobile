@@ -24,32 +24,17 @@
   }
 }
 
-// 两个选中线长, 其它短
-.tabbar-tabs.tabbar-tabs-total-2 {
-  .tabbar-tabs-tab-wrapper.active {
-    color: var(--seed-primary);
+// 选中效果
+.tabbar-tabs-tab-wrapper.active {
+  color: var(--seed-primary);
 
-    .tabbar-tabs-tab-name {
-      font-weight: 500;
-    }
-
-    &::after {
-      display: block;
-    }
+  .tabbar-tabs-tab-name {
+    font-weight: 500;
   }
-}
 
-.tabbar-tabs:not(.tabbar-tabs-total-2) {
-  .tabbar-tabs-tab-wrapper.active {
-    color: var(--seed-primary);
-
-    .tabbar-tabs-tab-name {
-      font-weight: 500;
-    }
-
-    .tabbar-tabs-tab::after {
-      display: block;
-    }
+  // 显示选中条
+  .tabbar-tabs-tab::after {
+    display: block;
   }
 }
 
@@ -91,6 +76,14 @@
   &[disabled] {
     opacity: 0.5;
     pointer-events: none;
+  }
+}
+
+// 紧凑显示
+.tabbar-tabs.compact {
+  .tabbar-tabs-tab-wrapper {
+    flex: initial;
+    padding: 0;
   }
 }
 

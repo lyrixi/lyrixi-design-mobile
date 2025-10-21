@@ -36,8 +36,6 @@ const ListModal = forwardRef(
       itemRender,
       layout,
       checkable,
-      checkbox,
-      checkboxPosition,
       ...props
     },
     ref
@@ -104,8 +102,6 @@ const ListModal = forwardRef(
           itemRender={itemRender}
           layout={layout}
           checkable={checkable}
-          checkbox={checkbox}
-          checkboxPosition={checkboxPosition}
         />
       </NavBarModal>
     )

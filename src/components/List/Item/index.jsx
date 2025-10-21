@@ -1,5 +1,4 @@
 import React from 'react'
-import ItemWrapper from './Wrapper'
 
 // 内库使用-start
 import DOMUtil from './../../../utils/DOMUtil'
@@ -11,32 +10,25 @@ import { DOMUtil,Checkbox } from 'lyrixi-design-mobile'
 测试使用-end */
 
 const Item = ({
+  // Item Data
+  item,
   multiple,
-  // Custom ItemWrapper or Item
-  itemRender,
 
-  // Display Item
+  // Style
   disabled,
-  imageRender,
   imageUrl,
   avatarUrl,
-  avatarRender,
   title,
   description,
   note,
   content,
   action,
 
-  // Item Data
-  itemData,
-
   // GLobal Config
   layout,
   checkable,
-  checkbox,
-  checkboxPosition = 'left',
   checked,
-  onChange,
+  onClick,
 
   // Item Style
   className,
@@ -46,33 +38,16 @@ const Item = ({
   function getCheckboxNode() {
     if (!checkable) return null
 
-    if (typeof checkbox === 'function') {
-      let newCheckBox = checkbox({ ...(itemData || {}), checked })
-      if (newCheckBox !== undefined) return newCheckBox
-    }
-
     return <Checkbox checked={checked} />
   }
 
   // 获取note
   function getNoteNode() {
-    let Note = null
-    if (typeof note === 'function') {
-      Note = note({ ...(itemData || {}), checked })
-    } else if (typeof note === 'string') {
-      Note = note
-    } else {
-      Note = note
-    }
-
-    return <div className="list-item-meta-note">{Note}</div>
+    return <div className="list-item-meta-note">{note}</div>
   }
 
   // 渲染图片
   function getImageNode() {
-    if (typeof imageRender === 'function') {
-      return imageRender({ ...(itemData || {}), checked })
-    }
     if (typeof imageUrl === 'string') {
       return (
         <div className={`list-item-meta-image`}>
@@ -95,9 +70,6 @@ const Item = ({
 
   // 渲染头像
   function getAvatarNode() {
-    if (typeof avatarRender === 'function') {
-      return avatarRender({ ...(itemData || {}), checked })
-    }
     if (typeof avatarUrl === 'string') {
       return (
         <div className={`list-item-meta-avatar`}>
@@ -121,7 +93,7 @@ const Item = ({
   // 获取action
   function getActionNode() {
     if (typeof action === 'function') {
-      return action({ ...(itemData || {}), checked })
+      return action({ ...(item || {}), checked })
     }
 
     return null
@@ -137,16 +109,16 @@ const Item = ({
           className,
           multiple ? 'multiple' : '',
           disabled ? 'disabled' : '',
-          checked ? 'active' : '',
+          checked ? 'checked' : '',
           layout ? layout : ''
         )}
         onClick={(e) => {
           e.stopPropagation()
-          onChange && onChange(!checked)
+          onClick && onClick(e)
         }}
       >
         {/* Left Checkbox */}
-        {checkboxPosition !== 'right' && getCheckboxNode(checked)}
+        {checkable !== 'right' && getCheckboxNode(checked)}
 
         {/* Main */}
         <div className="list-item-main">
@@ -172,49 +144,8 @@ const Item = ({
         </div>
 
         {/* Right Checkbox */}
-        {checkboxPosition === 'right' && getCheckboxNode(checked)}
+        {checkable === 'right' && getCheckboxNode(checked)}
       </div>
-    )
-  }
-
-  // Custom ItemWrapper or Item
-  if (itemRender) {
-    let ItemWrapperNode = ItemWrapper
-    if (typeof itemRender === 'function') {
-      return itemRender({
-        checked,
-        onChange,
-        // data
-        itemData,
-        // config
-        layout,
-        checkable,
-        checkbox,
-        checkboxPosition,
-        // Node
-        children: getItemNode(),
-        // Item style
-        style: style,
-        className: className
-      })
-    }
-
-    return (
-      <ItemWrapperNode
-        checked={checked}
-        onChange={onChange}
-        // data
-        itemData={itemData}
-        // config
-        layout={layout}
-        checkbox={checkbox}
-        checkboxPosition={checkboxPosition}
-        // Item style
-        style={style}
-        className={className}
-      >
-        {getItemNode()}
-      </ItemWrapperNode>
     )
   }
 

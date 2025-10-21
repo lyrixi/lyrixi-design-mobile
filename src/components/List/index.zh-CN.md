@@ -44,18 +44,16 @@ toc: content
 
 ### 属性
 
-| 属性             | 说明         | 类型                                 | 默认值    |
-| ---------------- | ------------ | ------------------------------------ | --------- |
-| allowClear       | 是否允许清除 | `boolean`                            | -         |
-| multiple         | 是否多选     | `boolean`                            | -         |
-| value            | 当前选中值   | `any \| any[]`                       | -         |
-| list             | 数据列表     | `array`                              | -         |
-| layout           | 布局方式     | `'vertical'`                         | -         |
-| itemRender       | 自定义包装器 | `function`                           | -         |
-| checkable        | 是否可选中   | `boolean`                            | -         |
-| checkbox         | 复选框配置   | `ReactNode \| function`              | -         |
-| checkboxPosition | 复选框位置   | `'left' \| 'right'`                  | `'right'` |
-| onChange         | 选择变化回调 | `(value: any, info: object) => void` | -         |
+| 属性       | 说明         | 类型                                 | 默认值 |
+| ---------- | ------------ | ------------------------------------ | ------ |
+| allowClear | 是否允许清除 | `boolean`                            | -      |
+| multiple   | 是否多选     | `boolean`                            | -      |
+| value      | 当前选中值   | `any \| any[]`                       | -      |
+| list       | 数据列表     | `array`                              | -      |
+| layout     | 布局方式     | `'vertical'`                         | -      |
+| itemRender | 自定义包装器 | `function`                           | -      |
+| checkable  | 是否可选中   | `boolean \| 'left' \| 'right'`       | -      |
+| onChange   | 选择变化回调 | `(value: any, info: object) => void` | -      |
 
 ### Ref
 

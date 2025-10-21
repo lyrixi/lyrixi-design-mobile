@@ -38,8 +38,6 @@ const ListCombo = forwardRef(
       layout,
       multiple = false,
       checkable = true,
-      checkbox,
-      checkboxPosition,
 
       // Events
       onChange,
@@ -106,8 +104,6 @@ const ListCombo = forwardRef(
           itemRender={itemRender}
           layout={layout}
           checkable={checkable}
-          checkbox={checkbox}
-          checkboxPosition={checkboxPosition}
           loadList={loadList}
           pull={pull}
           pagination={pagination}

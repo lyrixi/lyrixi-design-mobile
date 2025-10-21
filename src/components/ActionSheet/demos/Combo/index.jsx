@@ -57,7 +57,7 @@ export default () => {
             return (
               <ActionSheet.Item
                 key={item?.id || index}
-                active={item?.id === value?.id}
+                checked={item?.id === value?.id}
                 disabled={item?.disabled}
                 onClick={() => {
                   onChange(item)

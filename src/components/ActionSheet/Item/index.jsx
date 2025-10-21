@@ -8,7 +8,7 @@ import DOMUtil from './../../../utils/DOMUtil'
 import { DOMUtil } from 'lyrixi-design-mobile'
 测试使用-end */
 
-const Item = ({ active, disabled, style, className, onClick, children }) => {
+const Item = ({ checked, disabled, style, className, onClick, children }) => {
   return (
     <div
       style={style}
@@ -16,7 +16,7 @@ const Item = ({ active, disabled, style, className, onClick, children }) => {
         'actionsheet-option',
         className,
         disabled ? 'disabled' : '',
-        active ? 'active' : ''
+        checked ? 'checked' : ''
       )}
       onClick={(e) => {
         e.stopPropagation()

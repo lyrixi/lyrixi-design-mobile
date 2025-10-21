@@ -29,8 +29,6 @@ const Main = forwardRef(
       itemRender,
       layout,
       checkable,
-      checkbox,
-      checkboxPosition,
 
       // Render
       prepend,
@@ -66,8 +64,6 @@ const Main = forwardRef(
             itemRender={itemRender}
             layout={layout}
             checkable={checkable}
-            checkbox={checkbox}
-            checkboxPosition={checkboxPosition}
           />
         )}
 

@@ -13,7 +13,6 @@ export default () => {
         <List
           ref={listRef}
           checkable
-          checkboxPosition="right"
           allowClear
           multiple={true}
           value={value}
@@ -24,12 +23,6 @@ export default () => {
           }}
           // Item 配置
           layout="vertical"
-          // checkbox={({ checked }) => {
-          //   return <Checkbox checked={checked} />
-          // }}
-          // itemRender={function ({ children }) {
-          //   return <div className="list-wrapper-custom">{children}</div>
-          // }}
         />
       </Page.Main>
     </Page>

@@ -19,8 +19,6 @@ const List = (
     itemRender,
     layout,
     checkable,
-    checkbox,
-    checkboxPosition,
     // virtual config
     height
   },
@@ -69,8 +67,6 @@ const List = (
             // Global Config
             layout={layout}
             checkable={checkable}
-            checkbox={item.checkbox || checkbox}
-            checkboxPosition={item.checkboxPosition || checkboxPosition}
             checked={value?.findIndex?.((valueItem) => valueItem?.id === item.id) >= 0}
             onChange={(checked) => {
               let newValue = null

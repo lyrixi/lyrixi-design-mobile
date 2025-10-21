@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Page, List, Card, Divider, Checkbox, Message, ToolBar } from 'lyrixi-design-mobile'
+import { Page, List, Card, Divider, ToolBar } from 'lyrixi-design-mobile'
 import listData from './../data'
 
 export default () => {
@@ -81,7 +81,7 @@ export default () => {
         </Card>
 
         <Card>
-          <Divider>Checkbox</Divider>
+          <Divider>itemRender</Divider>
           <List.Combo
             style={{ margin: '0 12px' }}
             placeholder="Single Select"
@@ -89,10 +89,6 @@ export default () => {
             multiple={false}
             value={value}
             onChange={setValue}
-            checkbox={({ checked }) => {
-              return <Checkbox checked={checked} />
-            }}
-            checkboxPosition="left"
             loadList={() => list}
             checkable
           />

@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Page, List, Checkbox, Button } from 'lyrixi-design-mobile'
-import Wrapper from './Wrapper'
+import { Page, List } from 'lyrixi-design-mobile'
 import listData from './../listData'
 
 export default () => {
@@ -14,7 +13,6 @@ export default () => {
         <List
           ref={listRef}
           checkable
-          checkboxPosition="right"
           allowClear
           multiple={true}
           value={value}
@@ -25,13 +23,6 @@ export default () => {
           }}
           // Item 配置
           layout="vertical"
-          // checkbox={({ checked }) => {
-          //   return <Checkbox checked={checked} />
-          // }}
-          // true: 默认Card包裹Item
-          // itemRender={function ({ children }) {
-          //   return <div className="list-wrapper-custom">{children}</div>
-          // }}
         />
       </Page.Main>
     </Page>

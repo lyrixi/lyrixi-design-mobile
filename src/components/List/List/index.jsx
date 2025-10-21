@@ -17,8 +17,6 @@ const List = (
     },
     // No Group
     {
-      checkbox: ({ checked }) => { return null },
-      checkboxPosition: 'left',
       avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=3',
       id: '选项1',
       name: '选项1',
@@ -32,8 +30,6 @@ const List = (
     layout, // vertical
     itemRender,
     checkable,
-    checkbox,
-    checkboxPosition = 'right',
     onChange
   },
   ref
@@ -49,8 +45,33 @@ const List = (
     }
   })
 
+  function handleChange(item, { checked }) {
+    let newValue = null
+    // 多选
+    if (multiple) {
+      if (!checked) {
+        newValue = value.filter((valueItem) => valueItem?.id !== item.id)
+      } else {
+        newValue = [...(value || []), item]
+      }
+    }
+    // 单选
+    else {
+      if (!checked) {
+        newValue = allowClear ? null : item
+      } else {
+        newValue = item
+      }
+    }
+    onChange && onChange(newValue, { checked: checked, item: item })
+  }
+
   // 获取单项
   function getItemNode(item, index) {
+    if (typeof itemRender === 'function') {
+      return itemRender(item, { onChange: handleChange })
+    }
+
     return (
       <Item
         key={item.id ?? index}
@@ -66,28 +87,11 @@ const List = (
         // Global Config
         layout={layout}
         checkable={checkable}
-        checkbox={item.checkbox || checkbox}
-        checkboxPosition={item.checkboxPosition || checkboxPosition}
         checked={value?.findIndex?.((valueItem) => valueItem?.id === item.id) >= 0}
-        onChange={(checked) => {
-          let newValue = null
-          // 多选
-          if (multiple) {
-            if (!checked) {
-              newValue = value.filter((valueItem) => valueItem?.id !== item.id)
-            } else {
-              newValue = [...(value || []), item]
-            }
-          }
-          // 单选
-          else {
-            if (!checked) {
-              newValue = allowClear ? null : item
-            } else {
-              newValue = item
-            }
-          }
-          onChange && onChange(newValue, { checked: checked, item: item })
+        onChange={handleChange}
+        onClick={(e) => {
+          e.stopPropagation()
+          handleChange(item, { checked: !checked })
         }}
       />
     )

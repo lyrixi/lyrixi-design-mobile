@@ -103,7 +103,7 @@ const ActionSheetModal = forwardRef(
               return (
                 <Item
                   key={item?.id || index}
-                  active={item?.id === value?.id}
+                  checked={item?.id === value?.id}
                   disabled={item?.disabled}
                   style={optionStyle}
                   className={optionClassName}

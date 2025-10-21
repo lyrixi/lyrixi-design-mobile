@@ -13,10 +13,12 @@ import { Input } from 'lyrixi-design-mobile'
 const ListCombo = forwardRef(
   (
     {
-      // Modal
       portal,
+      // Style
       comboStyle,
       comboClassName,
+      comboLeftIcon,
+      comboRightIcon,
       modalStyle,
       modalClassName,
       maskStyle,
@@ -25,7 +27,6 @@ const ListCombo = forwardRef(
 
       value,
       allowClear,
-      onChange,
 
       list,
       loadList,
@@ -40,7 +41,8 @@ const ListCombo = forwardRef(
       checkbox,
       checkboxPosition,
 
-      // Combo props
+      // Events
+      onChange,
       onBeforeOpen,
       ...props
     },

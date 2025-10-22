@@ -2,6 +2,7 @@ import { Request, Device, LocaleUtil } from 'lyrixi-design-mobile'
 const locale = LocaleUtil.locale
 
 // 获取列表
+// 兼容新 List.Main 要求：外部仍返回数组，调用处已包装为新对象
 function queryData(params, { success } = {}) {
   return new Promise((resolve) => {
     // 查询

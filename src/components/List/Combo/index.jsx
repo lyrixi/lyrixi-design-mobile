@@ -29,7 +29,8 @@ const ListCombo = forwardRef(
       allowClear,
 
       list,
-      loadList,
+      // 新版：加载数据方法，返回 { status, message, page, rows, list, totalPage, totalRows }
+      loadData,
       pull,
       pagination,
 
@@ -104,7 +105,7 @@ const ListCombo = forwardRef(
           itemRender={itemRender}
           itemLayout={itemLayout}
           checkable={checkable}
-          loadList={loadList}
+          loadData={loadData}
           pull={pull}
           pagination={pagination}
         />

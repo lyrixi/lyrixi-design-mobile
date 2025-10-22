@@ -32,9 +32,18 @@ const Common = () => {
       {/* 列表 */}
       <Main
         ref={mainRef}
-        loadList={({ page, action }) => {
+        loadData={async ({ page, action }) => {
           console.log('action:', action)
-          return queryData({ page: page, rows: 20, ...queryParams })
+          const list = await queryData({ page: page, rows: 20, ...queryParams })
+          return {
+            status: Array.isArray(list) && list.length === 0 ? 'empty' : undefined,
+            message: '',
+            page: page,
+            rows: 20,
+            list: Array.isArray(list) ? list : [],
+            totalPage: undefined,
+            totalRows: 213
+          }
         }}
         // value={value}
         onChange={() => {

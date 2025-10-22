@@ -17,7 +17,7 @@ const Main = (
     // 加载完成事件(不常用)
     onLoad,
     // 必传参数
-    loadList
+    loadData
   },
   ref
 ) => {
@@ -34,7 +34,7 @@ const Main = (
       pagination={{
         rows: 20
       }}
-      loadList={loadList}
+      loadData={loadData}
       onLoad={onLoad}
     />
   )

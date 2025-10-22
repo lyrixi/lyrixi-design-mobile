@@ -50,9 +50,18 @@ const Cache = () => {
       <Main
         ref={mainRef}
         cache={cacheConfig}
-        loadList={({ page, action }) => {
+        loadData={async ({ page, action }) => {
           console.log('action:', action)
-          return queryData({ page: page, ...queryParams })
+          const list = await queryData({ page: page, rows: rows, ...queryParams })
+          return {
+            status: Array.isArray(list) && list.length === 0 ? 'empty' : undefined,
+            message: '',
+            page: page,
+            rows: 20,
+            list: Array.isArray(list) ? list : [],
+            totalPage: undefined,
+            totalRows: 213
+          }
         }}
       />
 

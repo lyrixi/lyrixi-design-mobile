@@ -34,17 +34,25 @@ const IndexBarList = () => {
       {/* 列表 */}
       <Main
         ref={mainRef}
-        loadList={({ page, action }) => {
+        loadData={async ({ page, action }) => {
           console.log('action:', action)
-          return queryData(
+          const list = await queryData(
             { page: page, rows: 20, ...queryParams },
             {
-              // 请求完成, 显示IndexBar
               onSuccess: () => {
                 setIndexBarVisible(true)
               }
             }
           )
+          return {
+            status: Array.isArray(list) && list.length === 0 ? 'empty' : undefined,
+            message: '',
+            page: page,
+            rows: 20,
+            list: Array.isArray(list) ? list : [],
+            totalPage: undefined,
+            totalRows: 213
+          }
         }}
         onLoad={() => {
           console.log('更新IndexBar数据...')

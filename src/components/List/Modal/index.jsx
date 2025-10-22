@@ -28,7 +28,8 @@ const ListModal = forwardRef(
       modalStyle,
 
       // Main
-      loadList,
+      // 新版：加载数据方法，返回 { status, message, page, rows, list, totalPage, totalRows }
+      loadData,
       pull,
       pagination,
 
@@ -96,7 +97,7 @@ const ListModal = forwardRef(
           allowClear={allowClear}
           multiple={multiple}
           onChange={handleChange}
-          loadList={loadList}
+          loadData={loadData}
           pull={pull}
           pagination={pagination}
           itemRender={itemRender}

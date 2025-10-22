@@ -37,9 +37,17 @@ const Main = forwardRef(
       // 显示
       loading,
       // 请求属性
-      loadList,
+      // loadData: (params: { page: number, action: 'load'|'reload'|'topRefresh'|'bottomRefresh'|'retry', rows?: number }) => Promise<{
+      //   status?: 'empty'|'500', // 'empty' 无数据, '500' 异常
+      //   message?: string,       // 失败或异常时的提示信息
+      //   page?: number,          // 当前页数
+      //   rows?: number,          // 每页请求条数
+      //   list: Array<any>,       // 列表数据(必填)
+      //   totalPage?: number,     // 总页数(与 totalRows 二选一传递即可)
+      //   totalRows?: number      // 总条数(与 totalPage 二选一传递即可)
+      // }>
+      loadData,
       pull = true, // 是否允许下拉刷新
-      pagination, // {totalPages: 10, totalItems: 100, rows: 100}
       onLoad,
 
       // List config
@@ -103,7 +111,7 @@ const Main = forwardRef(
           if (action === 'load') {
             init()
           } else {
-            _loadList(action || 'reload')
+            _loadData(action || 'reload')
           }
         },
         // 获取设置列表
@@ -140,57 +148,64 @@ const Main = forwardRef(
       }
 
       // 没有缓存直接再次查询
-      _loadList('load')
+      _loadData('load')
     }
 
     // 顶部刷新和初始化, action: 'load | reload | topRefresh'
-    async function _loadList(action) {
+    async function _loadData(action) {
       // Scroll to top
       scrollToTop(mainRef.current?.rootDOM)
 
       // Query List
-      let newList = null
-      if (typeof loadList === 'function') {
-        pageRef.current = 1
+      let result = null
+      pageRef.current = 1
 
-        setLoadAction(action)
-        newList = await loadList({ page: pageRef.current, action: action })
-        setLoadAction('')
-      }
+      setLoadAction(action)
+      result = await loadData({ page: pageRef.current, action: action })
+      setLoadAction('')
 
-      // Succeed to get first page list
-      if (Array.isArray(newList)) {
-        if (newList.length) {
-          setList(newList)
-          setMainStatus(null)
+      // 结果处理
+      const resultList = Array.isArray(result?.list) ? result.list : []
+      const resultStatus = result?.status
+      const resultMessage = result?.message
 
-          // Check if there are more items
-          if (
-            hasMoreItems({
-              list: newList,
-              currentPage: 1,
-              currentList: newList,
-              pagination
-            }) === false
-          ) {
-            setBottomStatus('noMore')
-          } else {
-            setBottomStatus('loading')
-          }
+      // 成功: 有数据
+      if (resultList.length) {
+        setList(resultList)
+        setMainStatus(null)
+
+        // 当前为第一页, 检查是否还有下一页
+        if (
+          hasMoreItems({
+            list: resultList,
+            currentList: resultList,
+            pagination: {
+              page: result?.page || 1,
+              rows: result?.rows,
+              totalPages: result?.totalPage,
+              totalItems: result?.totalRows
+            }
+          }) === false
+        ) {
+          setBottomStatus('noMore')
         } else {
-          setList(null)
-          setBottomStatus('')
-          setMainStatus({
-            status: 'empty'
-          })
+          setBottomStatus('loading')
         }
       }
-      // Failed to get first page list
+      // 成功: 无数据 或 显示空态
+      else if (result && (resultStatus === 'empty' || resultList.length === 0)) {
+        setList(null)
+        setBottomStatus('')
+        setMainStatus({
+          status: 'empty'
+        })
+      }
+      // 失败
       else {
         setList(null)
         setMainStatus({
           status: '500',
-          title: newList && typeof newList === 'string' ? newList : ''
+          title: typeof resultMessage === 'string' ? resultMessage : ''
         })
       }
 
@@ -206,37 +221,44 @@ const Main = forwardRef(
       pageRef.current++
       let action = 'bottomRefresh'
       setLoadAction(action)
-      let nextList = await loadList({ page: pageRef.current, action: action })
+      let result = await loadData({ page: pageRef.current, action: action })
       setLoadAction(action)
 
-      // Succeed to get next page list
-      if (Array.isArray(nextList)) {
-        if (nextList.length) {
-          // 非分组列表直接合并, 分组列表合并分组
-          let newList = isGroups(list) ? mergeGroups(list, nextList) : list.concat(nextList)
-          setList(newList)
+      const nextList = Array.isArray(result?.list) ? result.list : []
+      const isError = result?.status === '500'
 
-          // Check if there are more items
-          if (
-            hasMoreItems({
-              list: newList,
-              currentPage: pageRef.current,
-              currentList: nextList,
-              pagination
-            }) === false
-          ) {
-            setBottomStatus('noMore')
-          } else {
-            setBottomStatus('loading')
-          }
-        } else {
+      // 成功: 下一页有数据
+      if (!isError && nextList.length) {
+        // 非分组列表直接合并, 分组列表合并分组
+        let newList = isGroups(list) ? mergeGroups(list, nextList) : list.concat(nextList)
+        setList(newList)
+
+        // 检查是否还有下一页
+        if (
+          hasMoreItems({
+            list: newList,
+            currentList: nextList,
+            pagination: {
+              page: result?.page || pageRef.current,
+              rows: result?.rows,
+              totalPages: result?.totalPage,
+              totalItems: result?.totalRows
+            }
+          }) === false
+        ) {
           setBottomStatus('noMore')
+        } else {
+          setBottomStatus('loading')
         }
-      }
-      // Failed to get the next page list
-      else {
+      } else if (!isError && nextList.length === 0) {
+        // 成功: 下一页无数据, 到底了
+        setBottomStatus('noMore')
+      } else {
+        // 失败
         pageRef.current--
-        setBottomStatus(nextList && typeof nextList === 'string' ? nextList : 'error')
+        setBottomStatus(
+          result?.message && typeof result?.message === 'string' ? result.message : 'error'
+        )
       }
 
       return true
@@ -246,7 +268,7 @@ const Main = forwardRef(
     function getReloadButton() {
       if (reload === true) {
         return (
-          <Button className="result-button" color="primary" onClick={() => _loadList('retry')}>
+          <Button className="result-button" color="primary" onClick={() => _loadData('retry')}>
             {LocaleUtil.locale('重试', 'SeedsUI_retry')}
           </Button>
         )
@@ -269,10 +291,8 @@ const Main = forwardRef(
         virtual={virtual}
         className={`list-main${props.className ? ' ' + props.className : ''}`}
         // Request
-        onTopRefresh={pull && typeof loadList === 'function' ? () => _loadList('topRefresh') : null}
-        onBottomRefresh={
-          pagination && typeof loadList === 'function' ? handleBottomRefresh : undefined
-        }
+        onTopRefresh={pull && typeof loadData === 'function' ? () => _loadData('topRefresh') : null}
+        onBottomRefresh={typeof loadData === 'function' ? handleBottomRefresh : undefined}
         // Main: common
         allowClear={allowClear}
         multiple={multiple}
@@ -308,7 +328,7 @@ const Main = forwardRef(
         append={append}
       >
         {/* 底部错误提示 */}
-        {pagination && <InfiniteScroll status={bottomStatus} />}
+        {typeof loadData === 'function' && <InfiniteScroll status={bottomStatus} />}
         {/* 页面级错误提示 */}
         {mainStatus && (
           <Result

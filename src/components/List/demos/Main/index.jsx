@@ -18,9 +18,17 @@ export default () => {
         // pagination
         value={value}
         reload={true}
-        loadList={() => {
-          return listData
-          // return 'errror message'
+        loadData={({ page }) => {
+          // 兼容演示：将原有数组封装为新返回结构
+          return {
+            status: listData?.length ? undefined : 'empty',
+            message: '',
+            page: page,
+            rows: 20,
+            list: listData,
+            totalPage: undefined,
+            totalRows: listData?.length || 0
+          }
         }}
         onChange={(value) => {
           console.log(value)
@@ -40,9 +48,16 @@ export default () => {
         // pagination
         value={value}
         reload={true}
-        loadList={() => {
-          return listData
-          // return 'errror message'
+        loadData={({ page }) => {
+          return {
+            status: listData?.length ? undefined : 'empty',
+            message: '',
+            page: page,
+            rows: 20,
+            list: listData,
+            totalPage: undefined,
+            totalRows: listData?.length || 0
+          }
         }}
         onChange={(value) => {
           console.log(value)

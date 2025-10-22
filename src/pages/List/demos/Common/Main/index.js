@@ -28,8 +28,6 @@ const Main = (
       virtual={virtual}
       cache={cache}
       loading={mainLoadingRender}
-      // 初始化不发请求, 可自行决定请求的时机:mainRef.current.reload('load'), 通常用于Modal中, 显示再发请求
-      // pageinitialLoad={false}
       // 开启分页, 并传入每页条数
       pagination={{
         rows: 20

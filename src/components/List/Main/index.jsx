@@ -32,7 +32,7 @@ const Main = forwardRef(
       value,
       onChange,
       onScroll,
-      // 显示
+      // 骨架屏
       loading,
       // 请求属性
       // loadData: (params: { page: number, action: 'load'|'reload'|'topRefresh'|'bottomRefresh'|'retry', rows?: number }) => Promise<{
@@ -108,6 +108,7 @@ const Main = forwardRef(
 
     // 渲染完成执行onLoad
     useEffect(() => {
+      if (!list) return
       onLoad && onLoad()
       // eslint-disable-next-line
     }, [list])
@@ -122,13 +123,12 @@ const Main = forwardRef(
 
     // 初始化
     function init() {
-      // 直接查询数据
       loadPage(1, 'load')
     }
 
     // 统一加载方法: 根据 page 判断刷新/底部加载
     async function loadPage(page, action) {
-      pageRef.current = page
+      if (typeof loadData !== 'function') return
 
       // Scroll to top in FirstPage
       if (page <= 1) {
@@ -139,13 +139,11 @@ const Main = forwardRef(
         return
       }
 
-      // 刷新/初始化
-      // Query List
-      let result = null
-      pageRef.current = 1
-
+      pageRef.current = page
+      debugger
+      // 请求数据
       setLoadAction(action)
-      result = await loadData({ page: 1, action: action })
+      let result = await loadData({ page: 1, action: action })
       setLoadAction('')
 
       // 结果处理
@@ -165,7 +163,7 @@ const Main = forwardRef(
 
       // 成功: 有数据
       // 非分组列表直接合并, 分组列表合并分组
-      let newList = isGroups(list) ? mergeGroups(list, resultList) : list.concat(resultList)
+      let newList = isGroups(list) ? mergeGroups(list, resultList) : (list || []).concat(resultList)
       setList(newList)
       setMainResult(null)
 
@@ -205,14 +203,8 @@ const Main = forwardRef(
         virtual={virtual}
         className={`list-main${props.className ? ' ' + props.className : ''}`}
         // Request
-        onTopRefresh={
-          pull && typeof loadData === 'function' ? () => loadPage(1, 'topRefresh') : null
-        }
-        onBottomRefresh={
-          typeof loadData === 'function'
-            ? () => loadPage(pageRef.current + 1, 'bottomRefresh')
-            : undefined
-        }
+        onTopRefresh={pull ? () => loadPage(1, 'topRefresh') : null}
+        onBottomRefresh={() => loadPage(pageRef.current + 1, 'bottomRefresh')}
         // Main: common
         allowClear={allowClear}
         multiple={multiple}
@@ -243,9 +235,7 @@ const Main = forwardRef(
         append={append}
       >
         {/* 底部错误提示 */}
-        {typeof loadData === 'function' && (
-          <InfiniteScroll status={bottomResult?.status} content={bottomResult?.message} />
-        )}
+        <InfiniteScroll status={bottomResult?.status} content={bottomResult?.message} />
         {/* 页面级错误提示 */}
         {mainResult && (
           <Result

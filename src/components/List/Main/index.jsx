@@ -140,7 +140,7 @@ const Main = forwardRef(
       }
 
       pageRef.current = page
-      debugger
+
       // 请求数据
       setLoadAction(action)
       let result = await loadData({ page: 1, action: action })

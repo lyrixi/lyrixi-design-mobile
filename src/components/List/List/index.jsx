@@ -50,7 +50,7 @@ const List = (
     // 多选
     if (multiple) {
       if (!checked) {
-        newValue = value.filter((valueItem) => valueItem?.id !== item.id)
+        newValue = (value || []).filter((valueItem) => valueItem?.id !== item.id)
       } else {
         newValue = [...(value || []), item]
       }
@@ -68,8 +68,12 @@ const List = (
 
   // 获取单项
   function getItemNode(item, index) {
+    let checked = multiple
+      ? value?.findIndex?.((valueItem) => valueItem?.id === item.id) >= 0
+      : value?.id === item.id
+
     if (typeof itemRender === 'function') {
-      return itemRender(item, { onChange: handleChange })
+      return itemRender(item, { checked, onChange: handleChange })
     }
 
     return (
@@ -89,7 +93,7 @@ const List = (
         // GLobal Config
         itemLayout={itemLayout}
         checkable={checkable}
-        checked={value?.findIndex?.((valueItem) => valueItem?.id === item.id) >= 0}
+        checked={checked}
         onClick={(e) => {
           e.stopPropagation()
           handleChange(item, { checked: !checked })

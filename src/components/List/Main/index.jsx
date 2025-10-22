@@ -103,7 +103,7 @@ const Main = forwardRef(
           if (action === 'load') {
             init()
           } else {
-            loadData(action || 'reload')
+            _loadList(action || 'reload')
           }
         },
         // 获取设置列表
@@ -140,11 +140,11 @@ const Main = forwardRef(
       }
 
       // 没有缓存直接再次查询
-      loadData('load')
+      _loadList('load')
     }
 
     // 顶部刷新和初始化, action: 'load | reload | topRefresh'
-    async function loadData(action) {
+    async function _loadList(action) {
       // Scroll to top
       scrollToTop(mainRef.current?.rootDOM)
 
@@ -246,7 +246,7 @@ const Main = forwardRef(
     function getReloadButton() {
       if (reload === true) {
         return (
-          <Button className="result-button" color="primary" onClick={() => loadData('retry')}>
+          <Button className="result-button" color="primary" onClick={() => _loadList('retry')}>
             {LocaleUtil.locale('重试', 'SeedsUI_retry')}
           </Button>
         )
@@ -269,7 +269,7 @@ const Main = forwardRef(
         virtual={virtual}
         className={`list-main${props.className ? ' ' + props.className : ''}`}
         // Request
-        onTopRefresh={pull && typeof loadList === 'function' ? () => loadData('topRefresh') : null}
+        onTopRefresh={pull && typeof loadList === 'function' ? () => _loadList('topRefresh') : null}
         onBottomRefresh={
           pagination && typeof loadList === 'function' ? handleBottomRefresh : undefined
         }

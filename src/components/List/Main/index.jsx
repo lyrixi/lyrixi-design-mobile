@@ -38,7 +38,8 @@ const Main = forwardRef(
       //   list: Array<any>,       // 修改页面渲染列表
       // }>
       loadData,
-      pull = true, // 是否允许下拉刷新
+      disableTopRefresh = true, // 是否允许下拉刷新
+      disableBottomRefresh = true, // 是否允许底部刷新
       onLoad,
 
       // List config
@@ -173,8 +174,8 @@ const Main = forwardRef(
         virtual={virtual}
         className={`list-main${props.className ? ' ' + props.className : ''}`}
         // Request
-        onTopRefresh={pull ? () => loadPage('topRefresh') : null}
-        onBottomRefresh={() => loadPage('bottomRefresh')}
+        onTopRefresh={disableTopRefresh ? null : () => loadPage('topRefresh')}
+        onBottomRefresh={disableBottomRefresh ? null : () => loadPage('bottomRefresh')}
         // Main: common
         allowClear={allowClear}
         multiple={multiple}

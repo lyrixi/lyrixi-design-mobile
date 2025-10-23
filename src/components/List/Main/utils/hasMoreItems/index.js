@@ -2,10 +2,16 @@ import getListLength from './getListLength'
 
 // Check list if there are more items to load
 function hasMoreItems({ list, currentList, pagination }) {
+  let listLength = getListLength(list)
   let totalPages = pagination?.totalPages
   let totalRows = pagination?.totalRows
   let rows = pagination?.rows
   let page = pagination?.page
+
+  // 总条数已加载完成
+  if (totalRows && listLength >= totalRows) {
+    return false
+  }
 
   // 根据单页条数和总条数获取总页数
   if (typeof totalPages !== 'number' && totalRows && rows) {
@@ -18,11 +24,11 @@ function hasMoreItems({ list, currentList, pagination }) {
   }
 
   // 列表数大于总条数, 无下一页
-  if (typeof totalRows === 'number' && getListLength(list) >= totalRows) {
+  if (typeof totalRows === 'number' && listLength >= totalRows) {
     return false
   }
   // 当前页列表数小于页限制条数, 无下一页
-  if (typeof rows === 'number' && getListLength(currentList) < rows) {
+  if (typeof rows === 'number' && listLength < rows) {
     return false
   }
   return true

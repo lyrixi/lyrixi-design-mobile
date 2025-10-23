@@ -176,7 +176,7 @@ const Main = forwardRef(
             page: result?.page || 1,
             rows: result?.rows,
             totalPages: result?.totalPage,
-            totalItems: result?.totalRows
+            totalRows: result?.totalRows
           }
         }) === false
       ) {

@@ -30,8 +30,9 @@ const ListModal = forwardRef(
       // Main
       // 新版：加载数据方法，返回 { status, message, list }
       loadData,
-      pull,
       pagination,
+      disableTopRefresh,
+      disableBottomRefresh,
 
       // List config
       itemRender,
@@ -98,8 +99,9 @@ const ListModal = forwardRef(
           multiple={multiple}
           onChange={handleChange}
           loadData={loadData}
-          pull={pull}
           pagination={pagination}
+          disableTopRefresh={disableTopRefresh}
+          disableBottomRefresh={disableBottomRefresh}
           itemRender={itemRender}
           itemLayout={itemLayout}
           checkable={checkable}

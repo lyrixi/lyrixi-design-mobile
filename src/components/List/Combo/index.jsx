@@ -31,8 +31,9 @@ const ListCombo = forwardRef(
       list,
       // 新版：加载数据方法，返回 { status, message, list }
       loadData,
-      pull,
       pagination,
+      disableTopRefresh,
+      disableBottomRefresh,
 
       // List config
       itemRender,
@@ -106,8 +107,9 @@ const ListCombo = forwardRef(
           itemLayout={itemLayout}
           checkable={checkable}
           loadData={loadData}
-          pull={pull}
           pagination={pagination}
+          disableTopRefresh={disableTopRefresh}
+          disableBottomRefresh={disableBottomRefresh}
         />
       </>
     )

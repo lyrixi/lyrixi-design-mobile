@@ -17,7 +17,8 @@ export default () => {
         itemLayout="vertical"
         // pagination
         value={value}
-        loadData={({ page }) => {
+        loadData={({ page, list, action }) => {
+          console.log({ page, list, action })
           // 兼容演示：将原有数组封装为新返回结构
           return {
             status: listData?.length ? undefined : 'empty',

@@ -33,7 +33,7 @@ const Main = forwardRef(
       onChange,
       onScroll,
       // 骨架屏
-      loading,
+      loadingRender,
       // 请求属性
       // loadData: (params: { page: number, action: 'load'|'reload'|'topRefresh'|'bottomRefresh'|'retry', rows?: number }) => Promise<{
       //   status?: 'empty'|'500', // 'empty' 无数据, '500' 异常
@@ -255,7 +255,7 @@ const Main = forwardRef(
           </Result>
         )}
         {/* 页面加载遮罩 */}
-        <Loading type={loadAction} loading={loading} />
+        <Loading type={loadAction} loadingRender={loadingRender} />
       </ListNode>
     )
   }

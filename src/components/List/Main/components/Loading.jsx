@@ -10,9 +10,9 @@ import { Skeleton, Loading } from 'lyrixi-design-mobile'
 测试使用-end */
 
 // 暂无数据或者错误
-const MainLoading = ({ type, loading }) => {
-  if (typeof loading === 'function') {
-    return loading({ action: type })
+const MainLoading = ({ type, loadingRender }) => {
+  if (typeof loadingRender === 'function') {
+    return loadingRender({ action: type })
   }
   if (type === 'load' || type === 'retry') {
     return <Skeleton.List animated={false} />

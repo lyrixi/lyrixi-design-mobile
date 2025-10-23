@@ -17,17 +17,13 @@ export default () => {
         itemLayout="vertical"
         // pagination
         value={value}
-        loadData={({ page, list, action }) => {
-          console.log({ page, list, action })
+        loadData={({ list, action }) => {
+          console.log({ list, action })
           // 兼容演示：将原有数组封装为新返回结构
           return {
             status: listData?.length ? undefined : 'empty',
             message: '',
-            page: page,
-            rows: 20,
-            list: listData,
-            totalPage: undefined,
-            totalRows: listData?.length || 0
+            list: listData
           }
         }}
         onChange={(value) => {

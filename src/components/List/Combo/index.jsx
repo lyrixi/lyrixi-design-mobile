@@ -29,7 +29,7 @@ const ListCombo = forwardRef(
       allowClear,
 
       list,
-      // 新版：加载数据方法，返回 { status, message, page, rows, list, totalPage, totalRows }
+      // 新版：加载数据方法，返回 { status, message, list }
       loadData,
       pull,
       pagination,

@@ -21,14 +21,10 @@ export default () => {
             title="Default Select"
             value={value}
             onChange={setValue}
-            loadData={({ page }) => ({
+            loadData={({ list }) => ({
               status: '', // 'empty|500'
               message: '',
-              page,
-              rows: 20,
-              list,
-              totalPage: undefined,
-              totalRows: 213
+              list
             })}
           />
         </Card>
@@ -42,14 +38,10 @@ export default () => {
             multiple={false}
             value={value}
             onChange={setValue}
-            loadData={({ page }) => ({
+            loadData={({ list }) => ({
               status: '', // 'empty|500'
               message: '',
-              page,
-              rows: 20,
-              list,
-              totalPage: undefined,
-              totalRows: 213
+              list
             })}
             checkable
           />
@@ -63,14 +55,10 @@ export default () => {
             allowClear
             value={value}
             onChange={setValue}
-            loadData={({ page }) => ({
+            loadData={({ list }) => ({
               status: '', // 'empty|500'
               message: '',
-              page,
-              rows: 20,
-              list,
-              totalPage: undefined,
-              totalRows: 213
+              list
             })}
             checkable
           />
@@ -85,14 +73,10 @@ export default () => {
             allowClear
             value={value}
             onChange={setValue}
-            loadData={({ page }) => ({
+            loadData={({ list }) => ({
               status: '', // 'empty|500'
               message: '',
-              page,
-              rows: 20,
-              list,
-              totalPage: undefined,
-              totalRows: 213
+              list
             })}
             checkable
           />
@@ -107,14 +91,10 @@ export default () => {
             allowClear
             value={value}
             onChange={setValue}
-            loadData={({ page }) => ({
+            loadData={({ list }) => ({
               status: '', // 'empty|500'
               message: '',
-              page,
-              rows: 20,
-              list,
-              totalPage: undefined,
-              totalRows: 213
+              list
             })}
             checkable
           />
@@ -129,14 +109,10 @@ export default () => {
             multiple={false}
             value={value}
             onChange={setValue}
-            loadData={({ page }) => ({
+            loadData={({ list }) => ({
               status: '', // 'empty|500'
               message: '',
-              page,
-              rows: 20,
-              list,
-              totalPage: undefined,
-              totalRows: 213
+              list
             })}
             checkable
           />
@@ -159,14 +135,10 @@ export default () => {
             value={value}
             list={list}
             onChange={setValue}
-            loadData={({ page }) => ({
+            loadData={({ list }) => ({
               status: '', // 'empty|500'
               message: '',
-              page,
-              rows: 20,
-              list,
-              totalPage: undefined,
-              totalRows: 213
+              list
             })}
             checkable
           />

@@ -34,10 +34,10 @@ const IndexBarList = () => {
       {/* 列表 */}
       <Main
         ref={mainRef}
-        loadData={async ({ page, action }) => {
+        loadData={async ({ list, action }) => {
           console.log('action:', action)
-          const list = await queryData(
-            { page: page, rows: 20, ...queryParams },
+          const newList = await queryData(
+            { page: 1, rows: 20, ...queryParams },
             {
               onSuccess: () => {
                 setIndexBarVisible(true)
@@ -45,13 +45,9 @@ const IndexBarList = () => {
             }
           )
           return {
-            status: Array.isArray(list) && list.length === 0 ? 'empty' : undefined,
+            status: Array.isArray(newList) && newList.length === 0 ? 'empty' : undefined,
             message: '',
-            page: page,
-            rows: 20,
-            list: Array.isArray(list) ? list : [],
-            totalPage: undefined,
-            totalRows: 213
+            list: Array.isArray(newList) ? newList : []
           }
         }}
         onLoad={() => {

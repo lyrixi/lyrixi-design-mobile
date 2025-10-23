@@ -42,18 +42,14 @@ const Virtual = () => {
             return 71
           }
         }}
-        loadData={async ({ page, action }) => {
+        loadData={async ({ list, action }) => {
           console.log('action:', action)
-          const list = await queryData({ page: page, rows: 20, ...queryParams })
+          const newList = await queryData({ page: 1, rows: 20, ...queryParams })
           // 兼容老的 queryData 返回数组，这里转换为新结构
           return {
-            status: Array.isArray(list) && list.length === 0 ? 'empty' : undefined,
+            status: Array.isArray(newList) && newList.length === 0 ? 'empty' : undefined,
             message: '',
-            page: page,
-            rows: 20,
-            list: Array.isArray(list) ? list : [],
-            totalPage: undefined,
-            totalRows: 213
+            list: Array.isArray(newList) ? newList : []
           }
         }}
       />

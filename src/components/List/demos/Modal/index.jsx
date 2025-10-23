@@ -12,14 +12,10 @@ export default () => {
           open={true}
           pagination
           value={value}
-          loadData={({ page }) => ({
+          loadData={({ list }) => ({
             status: '', // 'empty|500'
             message: '',
-            page,
-            rows,
-            list,
-            totalPage: undefined,
-            totalRows: 213
+            list
           })}
           onChange={(value) => {
             console.log(value)

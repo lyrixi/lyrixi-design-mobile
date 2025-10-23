@@ -35,7 +35,7 @@ const Main = forwardRef(
       // 骨架屏
       loadingRender,
       // 请求属性
-      // loadData: (params: { page: number, action: 'load'|'reload'|'topRefresh'|'bottomRefresh'|'retry', rows?: number }) => Promise<{
+      // loadData: (params: { page: number, action: 'load'|'reload'|'topRefresh'|'bottomRefresh'|'retry', list }) => Promise<{
       //   status?: 'empty'|'500', // 'empty' 无数据, '500' 异常
       //   message?: string,       // 失败或异常时的提示信息
       //   page?: number,          // 当前页数
@@ -143,7 +143,7 @@ const Main = forwardRef(
 
       // 请求数据
       setLoadAction(action)
-      let result = await loadData({ page: 1, action: action })
+      let result = await loadData({ page: 1, list: list, action: action })
       setLoadAction('')
 
       // 结果处理

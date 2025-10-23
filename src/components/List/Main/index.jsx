@@ -1,7 +1,4 @@
 import React, { useImperativeHandle, forwardRef, useRef, useEffect, useState } from 'react'
-import mergeGroups from './utils/mergeGroups'
-import isGroups from './utils/isGroups'
-import hasMoreItems from './utils/hasMoreItems'
 import scrollToTop from './utils/scrollToTop'
 import InfiniteScroll from './../InfiniteScroll'
 import Loading from './components/Loading'
@@ -35,14 +32,10 @@ const Main = forwardRef(
       // 骨架屏
       loadingRender,
       // 请求属性
-      // loadData: (params: { page: number, action: 'load'|'reload'|'topRefresh'|'bottomRefresh'|'retry', list }) => Promise<{
-      //   status?: 'empty'|'500', // 'empty' 无数据, '500' 异常
-      //   message?: string,       // 失败或异常时的提示信息
-      //   page?: number,          // 当前页数
-      //   rows?: number,          // 每页请求条数
-      //   list: Array<any>,       // 列表数据(必填)
-      //   totalPage?: number,     // 总页数(与 totalRows 二选一传递即可)
-      //   totalRows?: number      // 总条数(与 totalPage 二选一传递即可)
+      // loadData: (params: { list: 页面已渲染的列表, action: 'load'|'reload'|'topRefresh'|'bottomRefresh'|'retry' }) => Promise<{
+      //   status?: 'empty'|'500'|'noMore'|'loading', // 'empty' 无数据, '500' 异常, 'noMore' 没有更多数据, 'loading' 有更多数据
+      //   message?: string,       // 对应status的提示
+      //   list: Array<any>,       // 修改页面渲染列表
       // }>
       loadData,
       pull = true, // 是否允许下拉刷新
@@ -72,8 +65,6 @@ const Main = forwardRef(
 
     // 容器
     const mainRef = useRef(null)
-    // 分页
-    const pageRef = useRef(1)
 
     const [list, setList] = useState(null)
     // 全屏提示: {status: 'empty|500', title: ''}
@@ -123,72 +114,51 @@ const Main = forwardRef(
 
     // 初始化
     function init() {
-      loadPage(1, 'load')
+      loadPage('load')
     }
 
     // 统一加载方法: 根据 page 判断刷新/底部加载
-    async function loadPage(page, action) {
+    async function loadPage(action) {
       if (typeof loadData !== 'function') return
 
       // Scroll to top in FirstPage
-      if (page <= 1) {
+      if (['load', 'reload', 'topRefresh', 'retry'].includes(action)) {
         scrollToTop(mainRef.current?.rootDOM)
       }
-      // 底部加载, 全局有报错, 或者无数据了不再底部加载
-      else if (mainResult || bottomResult) {
-        return
-      }
-
-      pageRef.current = page
 
       // 请求数据
       setLoadAction(action)
-      let result = await loadData({ page: 1, list: list, action: action })
+      let result = await loadData({ list: list, action: action })
       setLoadAction('')
 
-      // 结果处理
-      const resultList = Array.isArray(result?.list) ? result.list : []
-      const resultStatus = result?.status
-      const resultMessage = result?.message
+      // 成功: 有数据
+      if (Array.isArray(result?.list)) {
+        setList(result.list)
+      }
 
-      // 失败: 报错
-      if (resultStatus) {
+      // 失败: 页面级报错
+      if (['empty', '500'].includes(result?.status)) {
         setList(null)
-        setMainResult({
-          status: resultStatus,
-          message: resultMessage
-        })
+        setMainResult(result)
         return false
       }
 
-      // 成功: 有数据
-      // 非分组列表直接合并, 分组列表合并分组
-      let newList = isGroups(list) ? mergeGroups(list, resultList) : (list || []).concat(resultList)
-      setList(newList)
-      setMainResult(null)
-
-      // 判断是否加载完成
-      if (
-        hasMoreItems({
-          list: newList,
-          currentList: resultList,
-          pagination: {
-            page: result?.page || 1,
-            rows: result?.rows,
-            totalPages: result?.totalPage,
-            totalRows: result?.totalRows
-          }
-        }) === false
-      ) {
+      // 成功: 没有更多数据
+      if (['noMore'].includes(result?.status)) {
         setBottomResult({
           status: 'noMore',
           message: LocaleUtil.locale('没有更多了', 'SeedsUI_no_more_data')
         })
-      } else {
+        return true
+      }
+
+      // 成功: 仍有更多数据
+      if (['loading'].includes(result?.status)) {
         setBottomResult({
           status: 'loading',
           message: LocaleUtil.locale('加载中', 'SeedsUI_refreshing')
         })
+        return true
       }
 
       return true
@@ -203,8 +173,8 @@ const Main = forwardRef(
         virtual={virtual}
         className={`list-main${props.className ? ' ' + props.className : ''}`}
         // Request
-        onTopRefresh={pull ? () => loadPage(1, 'topRefresh') : null}
-        onBottomRefresh={() => loadPage(pageRef.current + 1, 'bottomRefresh')}
+        onTopRefresh={pull ? () => loadPage('topRefresh') : null}
+        onBottomRefresh={() => loadPage('bottomRefresh')}
         // Main: common
         allowClear={allowClear}
         multiple={multiple}
@@ -244,11 +214,7 @@ const Main = forwardRef(
             title={mainResult?.title}
           >
             {mainResult?.status !== 'empty' ? (
-              <Button
-                className="result-button"
-                color="primary"
-                onClick={() => loadPage(1, 'retry')}
-              >
+              <Button className="result-button" color="primary" onClick={() => loadPage('retry')}>
                 {LocaleUtil.locale('重试', 'SeedsUI_retry')}
               </Button>
             ) : null}

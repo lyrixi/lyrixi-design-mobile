@@ -134,8 +134,17 @@ const Main = forwardRef(
       // 请求数据
       setLoadAction(action)
       let newResult = await loadData({ previousResult: result, action: action })
-      setResult(newResult)
       setLoadAction('')
+
+      // 返回数据异常，不更新结果
+      if (!['empty', '500', 'noMore', 'loading'].includes(newResult?.status)) {
+        console.error(
+          `loadData return data must contains status: ['empty','500','noMore','loading']`,
+          newResult
+        )
+        return false
+      }
+      setResult(newResult)
 
       return true
     }

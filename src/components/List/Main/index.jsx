@@ -13,9 +13,8 @@ import Button from './../../Button'
 // 内库使用-end
 
 /* 测试使用-start
-import { Device, LocaleUtil, Storage, Result, Button } from 'lyrixi-design-mobile'
+import { Device, LocaleUtil, Result, Button } from 'lyrixi-design-mobile'
 测试使用-end */
-
 const Main = forwardRef(
   (
     {
@@ -67,11 +66,15 @@ const Main = forwardRef(
     // 容器
     const mainRef = useRef(null)
 
-    const [list, setList] = useState(null)
-    // 全屏提示: {status: 'empty|500', title: ''}
-    const [mainResult, setMainResult] = useState(null)
-    // 底部提示: loading | noMore | error
-    const [bottomResult, setBottomResult] = useState(null)
+    // 请求结果
+    /*
+    {
+      status: 'empty'|'500'|'noMore'|'loading', // 'empty' 无数据, '500' 异常, 'noMore' 没有更多数据, 'loading' 有更多数据
+      message?: string,       // 对应status的提示
+      list: Array<any>,       // 修改页面渲染列表
+    }
+    */
+    const [result, setResult] = useState(null)
     // 加载显示: load | reload | topRefresh | bottomRefresh
     const [loadAction, setLoadAction] = useState('')
 
@@ -130,37 +133,8 @@ const Main = forwardRef(
       // 请求数据
       setLoadAction(action)
       let result = await loadData({ list: list, action: action })
+      setResult(result)
       setLoadAction('')
-
-      // 成功: 有数据
-      if (Array.isArray(result?.list)) {
-        setList(result.list)
-      }
-
-      // 失败: 页面级报错
-      if (['empty', '500'].includes(result?.status)) {
-        setList(null)
-        setMainResult(result)
-        return false
-      }
-
-      // 成功: 没有更多数据
-      if (['noMore'].includes(result?.status)) {
-        setBottomResult({
-          status: 'noMore',
-          message: LocaleUtil.locale('没有更多了', 'SeedsUI_no_more_data')
-        })
-        return true
-      }
-
-      // 成功: 仍有更多数据
-      if (['loading'].includes(result?.status)) {
-        setBottomResult({
-          status: 'loading',
-          message: LocaleUtil.locale('加载中', 'SeedsUI_refreshing')
-        })
-        return true
-      }
 
       return true
     }
@@ -202,19 +176,17 @@ const Main = forwardRef(
         checkable={checkable}
         // Render
         prepend={prepend}
-        list={list}
+        list={result?.list}
         append={append}
       >
         {/* 底部错误提示 */}
-        <InfiniteScroll status={bottomResult?.status} content={bottomResult?.message} />
+        {!disableBottomRefresh && ['noMore', 'loading'].includes(result?.status) ? (
+          <InfiniteScroll status={result?.status} content={result?.message} />
+        ) : null}
         {/* 页面级错误提示 */}
-        {mainResult && (
-          <Result
-            className="list-main-result"
-            status={mainResult?.status}
-            title={mainResult?.title}
-          >
-            {mainResult?.status !== 'empty' ? (
+        {['empty', '500'].includes(result?.status) && (
+          <Result className="list-main-result" status={result?.status} title={result?.message}>
+            {result?.status !== 'empty' ? (
               <Button className="result-button" color="primary" onClick={() => loadPage('retry')}>
                 {LocaleUtil.locale('重试', 'SeedsUI_retry')}
               </Button>

@@ -21,7 +21,7 @@ export default () => {
             title="Default Select"
             value={value}
             onChange={setValue}
-            loadData={({ list }) => ({
+            loadData={({ previousResult }) => ({
               status: '', // 'empty|500'
               message: '',
               list
@@ -38,7 +38,7 @@ export default () => {
             multiple={false}
             value={value}
             onChange={setValue}
-            loadData={({ list }) => ({
+            loadData={({ previousResult }) => ({
               status: '', // 'empty|500'
               message: '',
               list
@@ -55,7 +55,7 @@ export default () => {
             allowClear
             value={value}
             onChange={setValue}
-            loadData={({ list }) => ({
+            loadData={({ previousResult }) => ({
               status: '', // 'empty|500'
               message: '',
               list
@@ -73,7 +73,7 @@ export default () => {
             allowClear
             value={value}
             onChange={setValue}
-            loadData={({ list }) => ({
+            loadData={({ previousResult }) => ({
               status: '', // 'empty|500'
               message: '',
               list
@@ -91,7 +91,7 @@ export default () => {
             allowClear
             value={value}
             onChange={setValue}
-            loadData={({ list }) => ({
+            loadData={({ previousResult }) => ({
               status: '', // 'empty|500'
               message: '',
               list
@@ -109,7 +109,7 @@ export default () => {
             multiple={false}
             value={value}
             onChange={setValue}
-            loadData={({ list }) => ({
+            loadData={({ previousResult }) => ({
               status: '', // 'empty|500'
               message: '',
               list
@@ -135,7 +135,7 @@ export default () => {
             value={value}
             list={list}
             onChange={setValue}
-            loadData={({ list }) => ({
+            loadData={({ previousResult }) => ({
               status: '', // 'empty|500'
               message: '',
               list

@@ -32,7 +32,7 @@ const Common = () => {
       {/* 列表 */}
       <Main
         ref={mainRef}
-        loadData={async ({ list, action }) => {
+        loadData={async ({ previousResult, action }) => {
           console.log('action:', action)
           const newList = await queryData({ page: 1, rows: 20, ...queryParams })
           return {

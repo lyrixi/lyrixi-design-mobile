@@ -197,7 +197,7 @@ const Main = forwardRef(
         {['empty', 'error'].includes(result?.status) && (
           <Result
             className="list-main-result"
-            status={result?.status === 'error' ? '500' : result?.status}
+            status={result?.status === 'error' ? '500' : 'empty'}
             title={result?.message}
           >
             {result?.status !== 'empty' ? (

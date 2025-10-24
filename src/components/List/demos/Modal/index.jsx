@@ -12,7 +12,7 @@ export default () => {
           open={true}
           pagination
           value={value}
-          loadData={({ list }) => ({
+          loadData={({ previousResult }) => ({
             status: '', // 'empty|500'
             message: '',
             list

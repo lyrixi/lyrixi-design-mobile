@@ -104,8 +104,11 @@ const Main = forwardRef(
 
     // 渲染完成执行onLoad
     useEffect(() => {
-      if (!result?.list) return
-      onLoad && onLoad()
+      if (!result) return
+
+      onLoad && onLoad({ result: result, action: loadAction })
+
+      setLoadAction('')
       // eslint-disable-next-line
     }, [result])
 
@@ -134,7 +137,6 @@ const Main = forwardRef(
       // 请求数据
       setLoadAction(action)
       let newResult = await loadData({ previousResult: result, action: action })
-      setLoadAction('')
 
       // 返回数据异常，不更新结果
       if (!['empty', 'error', 'noMore', 'loading'].includes(newResult?.status)) {

@@ -53,7 +53,7 @@ const Main = forwardRef(
         {typeof prepend === 'function' ? prepend({ list, value, onChange }) : null}
 
         {/* 列表 */}
-        {Array.isArray(list) && list.length && (
+        {Array.isArray(list) && list.length ? (
           <List
             allowClear={allowClear}
             multiple={multiple}
@@ -65,7 +65,7 @@ const Main = forwardRef(
             itemLayout={itemLayout}
             checkable={checkable}
           />
-        )}
+        ) : null}
 
         {/* 底部 */}
         {typeof append === 'function' ? append({ list, value, onChange }) : null}

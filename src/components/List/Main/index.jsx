@@ -33,7 +33,7 @@ const Main = forwardRef(
       loadingRender,
       // 请求属性
       // loadData: (params: { list: 页面已渲染的列表, action: 'load'|'reload'|'topRefresh'|'bottomRefresh'|'retry' }) => Promise<{
-      //   status?: 'empty'|'500'|'noMore'|'loading', // 'empty' 无数据, '500' 异常, 'noMore' 没有更多数据, 'loading' 有更多数据
+      //   status?: 'empty'|'error'|'noMore'|'loading', // 'empty' 无数据, 'error' 异常, 'noMore' 没有更多数据, 'loading' 有更多数据
       //   message?: string,       // 对应status的提示
       //   list: Array<any>,       // 修改页面渲染列表
       // }>
@@ -70,7 +70,7 @@ const Main = forwardRef(
     // 请求结果
     /*
     {
-      status: 'empty'|'500'|'noMore'|'loading', // 'empty' 无数据, '500' 异常, 'noMore' 没有更多数据, 'loading' 有更多数据
+      status: 'empty'|'error'|'noMore'|'loading', // 'empty' 无数据, 'error' 异常, 'noMore' 没有更多数据, 'loading' 有更多数据
       message?: string,       // 对应status的提示
       list: Array<any>,       // 修改页面渲染列表
     }
@@ -92,7 +92,7 @@ const Main = forwardRef(
           if (action === 'load') {
             init()
           } else {
-            loadPage(1, action || 'reload')
+            loadPage(action || 'reload')
           }
         },
         // 获取结果
@@ -137,9 +137,9 @@ const Main = forwardRef(
       setLoadAction('')
 
       // 返回数据异常，不更新结果
-      if (!['empty', '500', 'noMore', 'loading'].includes(newResult?.status)) {
+      if (!['empty', 'error', 'noMore', 'loading'].includes(newResult?.status)) {
         console.error(
-          `loadData return data must contains status: ['empty','500','noMore','loading']`,
+          `loadData return data must contains status: ['empty','error','noMore','loading']`,
           newResult
         )
         return false
@@ -194,8 +194,12 @@ const Main = forwardRef(
           <InfiniteScroll status={result?.status} content={result?.message} />
         ) : null}
         {/* 页面级错误提示 */}
-        {['empty', '500'].includes(result?.status) && (
-          <Result className="list-main-result" status={result?.status} title={result?.message}>
+        {['empty', 'error'].includes(result?.status) && (
+          <Result
+            className="list-main-result"
+            status={result?.status === 'error' ? '500' : result?.status}
+            title={result?.message}
+          >
             {result?.status !== 'empty' ? (
               <Button className="result-button" color="primary" onClick={() => loadPage('retry')}>
                 {LocaleUtil.locale('重试', 'SeedsUI_retry')}

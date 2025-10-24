@@ -95,9 +95,9 @@ const Main = forwardRef(
             loadPage(1, action || 'reload')
           }
         },
-        // 获取设置列表
-        getList: () => {
-          return list
+        // 获取结果
+        getResult: () => {
+          return result
         }
       }
     })

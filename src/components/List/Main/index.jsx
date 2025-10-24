@@ -15,6 +15,7 @@ import Button from './../../Button'
 /* 测试使用-start
 import { Device, LocaleUtil, Result, Button } from 'lyrixi-design-mobile'
 测试使用-end */
+
 const Main = forwardRef(
   (
     {
@@ -37,8 +38,8 @@ const Main = forwardRef(
       //   list: Array<any>,       // 修改页面渲染列表
       // }>
       loadData,
-      disableTopRefresh = true, // 是否允许下拉刷新
-      disableBottomRefresh = true, // 是否允许底部刷新
+      disableTopRefresh = false, // 是否允许下拉刷新
+      disableBottomRefresh = false, // 是否允许底部刷新
       onLoad,
 
       // List config
@@ -103,10 +104,10 @@ const Main = forwardRef(
 
     // 渲染完成执行onLoad
     useEffect(() => {
-      if (!list) return
+      if (!result?.list) return
       onLoad && onLoad()
       // eslint-disable-next-line
-    }, [list])
+    }, [result])
 
     // 默认加载
     useEffect(() => {
@@ -132,8 +133,8 @@ const Main = forwardRef(
 
       // 请求数据
       setLoadAction(action)
-      let result = await loadData({ list: list, action: action })
-      setResult(result)
+      let newResult = await loadData({ previousResult: result, action: action })
+      setResult(newResult)
       setLoadAction('')
 
       return true

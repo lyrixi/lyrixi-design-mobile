@@ -10,6 +10,7 @@ import { DOMUtil } from 'lyrixi-design-mobile'
 
 const ButtonQuick = ({ onClick, className = '', children }) => {
   const handleClick = (e) => {
+    e.stopPropagation()
     if (onClick) {
       onClick(e)
     }
@@ -19,7 +20,7 @@ const ButtonQuick = ({ onClick, className = '', children }) => {
   return (
     <div
       className={DOMUtil.classNames('seed-keyboard-button-quick', className)}
-      onClick={handleClick}
+      onTouchStart={handleClick}
     >
       {children}
     </div>

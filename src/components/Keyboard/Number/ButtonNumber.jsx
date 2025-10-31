@@ -7,9 +7,9 @@ import DOMUtil from '../../../utils/DOMUtil'
 /* 测试使用-start
 import { DOMUtil } from 'lyrixi-design-mobile'
 测试使用-end */
-
 const ButtonNumber = ({ children, onClick, className = '' }) => {
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.stopPropagation()
     if (onClick) {
       onClick(children)
     }
@@ -18,7 +18,7 @@ const ButtonNumber = ({ children, onClick, className = '' }) => {
   return (
     <div
       className={DOMUtil.classNames('seed-keyboard-button seed-keyboard-button-number', className)}
-      onClick={handleClick}
+      onTouchStart={handleClick}
     >
       {children}
     </div>

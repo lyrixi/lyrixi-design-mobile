@@ -3,15 +3,10 @@
 @import './ButtonAction.less';
 
 // 数字键盘样式
-// 基于 .mask 覆盖样式
-.seed-keyboard-number-mask {
+// 基于 .modal-animation 覆盖样式
+.seed-keyboardNumberModal {
   position: fixed;
   z-index: 1000;
-}
-
-// 键盘容器
-// 基于 .modal-animation 覆盖样式
-.seed-keyboard-number-container {
   width: 100%;
   background-color: var(--seed-bg-default);
 }
@@ -32,9 +27,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: var(--seed-bg-button-default);
   font-size: var(--seed-font-size-xxl);
   color: var(--seed-font-color-default);
   cursor: pointer;
   user-select: none;
+  &:active {
+    background-color: var(--seed-bg-default);
+  }
 }

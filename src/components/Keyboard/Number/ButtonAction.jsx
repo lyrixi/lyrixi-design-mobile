@@ -10,6 +10,7 @@ import { DOMUtil } from 'lyrixi-design-mobile'
 
 const ButtonAction = ({ onClick, className = '', children }) => {
   const handleClick = (e) => {
+    e.stopPropagation()
     if (onClick) {
       onClick(e)
     }
@@ -22,7 +23,7 @@ const ButtonAction = ({ onClick, className = '', children }) => {
   return (
     <div
       className={DOMUtil.classNames('seed-keyboard-button seed-keyboard-button-action', className)}
-      onClick={handleClick}
+      onTouchStart={handleClick}
     >
       {children}
     </div>

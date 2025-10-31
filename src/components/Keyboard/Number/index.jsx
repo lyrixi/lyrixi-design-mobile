@@ -129,7 +129,7 @@ const KeyboardNumber = forwardRef(
     }
 
     // 处理确定按钮
-    const handleOk = (e) => {
+    const handleOk = () => {
       if (onOk) {
         onOk(value)
       }
@@ -139,7 +139,7 @@ const KeyboardNumber = forwardRef(
     }
 
     // 处理取消按钮
-    const handleCancel = (e) => {
+    const handleCancel = () => {
       if (onCancel) {
         onCancel()
       }
